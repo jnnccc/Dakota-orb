@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+
+
+
+
+
+
+
+
+<head>
+  <meta name="sandia.approval_type" content="formal" />
+  <meta name="sandia.approved" content="pending" />
+  <meta name="sandia.create_date" content="unknown" />
+  <meta name="keywords" content="DAKOTA (Public) TBD" />
+  <meta name="description" content="DAKOTA (Public) Trac Pages" />
+  <link rev="owns" title="Content Owner" href="mailto:briadam@sandia.gov" />
+    <title>
+      dakota_scilab_compiled.patch on Ticket #4069 – Attachment
+     – DAKOTA (Public)
+    </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link rel="search" href="/trac/dakota/search" />
+        <link rel="help" href="/trac/dakota/wiki/TracGuide" />
+        <link rel="alternate" href="/trac/dakota/raw-attachment/ticket/4069/dakota_scilab_compiled.patch" type="text/x-diff; charset=iso-8859-15" title="Original Format" />
+        <link rel="up" href="/trac/dakota/ticket/4069" title="Ticket #4069" />
+        <link rel="start" href="/trac/dakota/wiki" />
+        <link rel="stylesheet" href="/trac/dakota/chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="/trac/dakota/chrome/common/css/code.css" type="text/css" />
+        <link rel="shortcut icon" href="/trac/dakota/chrome/shared/sandia_icon.ico" type="image/x-icon" />
+        <link rel="icon" href="/trac/dakota/chrome/shared/sandia_icon.ico" type="image/x-icon" />
+      <link type="application/opensearchdescription+xml" rel="search" href="/trac/dakota/search/opensearch" title="Search DAKOTA (Public)" />
+    <script type="text/javascript" src="/trac/dakota/chrome/common/js/jquery.js"></script><script type="text/javascript" src="/trac/dakota/chrome/common/js/babel.js"></script><script type="text/javascript" src="/trac/dakota/chrome/common/js/trac.js"></script><script type="text/javascript" src="/trac/dakota/chrome/common/js/search.js"></script>
+    <!--[if lt IE 7]>
+    <script type="text/javascript" src="/trac/dakota/chrome/common/js/ie_pre7_hacks.js"></script>
+    <![endif]-->
+      <script type="text/javascript" src="/trac/dakota/chrome/common/js/folding.js"></script>
+      <script type="text/javascript">
+        jQuery(document).ready(function($) {
+          $('#preview table.code').enableCollapsibleColumns($('#preview table.code thead th.content'));
+        });
+      </script>
+  <link rel="stylesheet" href="/trac/dakota/chrome/shared/snl.css" type="text/css" />
+  <style>
+    #header { margin-bottom: -73px; }
+    #sitenav {
+       clear: both;
+       color: #aaa;
+       font-size: 12px;
+       text-align: right;
+       margin-right: 10px;
+       margin-bottom: 14px;
+    }
+    #sitenav, #sitenav :link, #sitenav :visited {
+      color: #fff;
+    }
+    #sitenav :link:hover, #sitenav :visited:hover {
+      color: #333;
+      background-color: #08b; /* pulled from the background of the SNL logo */
+    }
+  </style>
+</head>
+<body>
+    <div style="background-image: url(/trac/dakota/chrome/shared/snl-banner-back.jpg);" id="banner">
+    <a id="snlbanner_link" href="http://www.sandia.gov"><img src="/trac/dakota/chrome/shared/snl-banner.gif" alt="Sandia National Laboratories" /></a>
+    <div id="header">
+    <table height="100%"><td valign="center">
+      <h1><a href="https://software.sandia.gov/trac/dakota">DAKOTA (Public)</a></h1>
+        <h2>Design and Analysis Kit for Terascale Applications<br /> </h2>
+    </td></table>
+      </div>
+    <div id="sitenav" class="nav">
+      <ul><li class="last"></li></ul>
+    </div>
+    <form name="search" id="search" action="/trac/dakota/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="Search DAKOTA (Public)" onblur="if(value==''){value='Search DAKOTA (Public)'}" onfocus="if(value=='Search DAKOTA (Public)'){value=''}" />
+          <input onclick="if (document.search.q.value == 'Search DAKOTA (Public)') document.search.q.value = ''" type="submit" value="Search" />
+        </div>
+    </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first"><a href="/trac/dakota/login">Login</a></li><li><a href="/trac/dakota/prefs">Preferences</a></li><li><a href="/trac/dakota/wiki/TracGuide">Help/Guide</a></li><li class="last"><a href="/trac/dakota/about">About Trac</a></li>
+    </ul>
+  </div>
+  </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="/trac/dakota/wiki">Wiki</a></li><li><a href="/trac/dakota/timeline">Timeline</a></li><li><a href="/trac/dakota/roadmap">Roadmap</a></li><li><a href="/trac/dakota/browser">Source</a></li><li><a href="/trac/dakota/query">Tickets</a></li><li class="last"><a href="/trac/dakota/search">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+          <ul>
+              <li class="last first"><a href="/trac/dakota/ticket/4069">Back to Ticket #4069</a></li>
+          </ul>
+        <hr />
+      </div>
+      <div id="notice" class="system-message">
+          <div id="moderation_required">Attachments you submit will be routed for moderation.  If you have an account, please <a href="/trac/dakota/login">log in</a> first.</div>
+      </div>
+    <div id="content" class="attachment">
+        <h1><a href="/trac/dakota/ticket/4069">Ticket #4069</a>: dakota_scilab_compiled.patch</h1>
+        <table id="info" summary="Description">
+          <tbody>
+            <tr>
+              <th scope="col">File dakota_scilab_compiled.patch,
+                <span title="2507485 bytes">2.4 MB</span>
+                (added by anonymous, <a class="timeline" href="/trac/dakota/timeline?from=2011-08-30T09%3A09%3A29-06%3A00&amp;precision=second" title="2011-08-30T09:09:29-06:00 in Timeline">6 years</a> ago)</th>
+            </tr>
+            <tr>
+              <td class="message searchable">
+                
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div id="preview" class="searchable">
+          
+    <p>
+        <strong>HTML preview not available</strong>, since the file size exceeds 262144 bytes.
+      Try <a href="/trac/dakota/raw-attachment/ticket/4069/dakota_scilab_compiled.patch">downloading</a> the file instead.
+    </p>
+
+        </div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="last first">
+          <a rel="nofollow" href="/trac/dakota/raw-attachment/ticket/4069/dakota_scilab_compiled.patch">Original Format</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+  <div id="footer" lang="en" xml:lang="en">
+    <a id="traclogo" href="http://trac.edgewall.org/"><img src="/trac/dakota/chrome/common/trac_logo_mini.png" alt="Trac Powered" /></a>
+    <a id="snllogo" href="http://www.sandia.gov/"><img src="/trac/dakota/chrome/shared/sandia_logo.png" alt="Sandia National Laboratories" /></a>
+    <p align="center">
+      ©2010 Sandia Corporation <br />
+      <a href="http://www.sandia.gov/general/privacy-security/index.html">Privacy and Security</a> |
+        <a href="mailto:briadam@sandia.gov">Site Contact</a>
+    </p>
+  </div>
+</body>
+</html>

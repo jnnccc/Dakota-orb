@@ -1,0 +1,278 @@
+\section{Polynomial\+Approximation Class Reference}
+\label{classPecos_1_1PolynomialApproximation}\index{Polynomial\+Approximation@{Polynomial\+Approximation}}
+
+
+Derived approximation class for global basis polynomials.  
+
+
+Inheritance diagram for Polynomial\+Approximation\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.666667cm]{classPecos_1_1PolynomialApproximation}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPecos_1_1PolynomialApproximation_acce5e029c6bfc26288c4d695a15b6604}{Polynomial\+Approximation} (const \hyperlink{classPecos_1_1SharedBasisApproxData}{Shared\+Basis\+Approx\+Data} \&shared\+\_\+data)\label{classPecos_1_1PolynomialApproximation_acce5e029c6bfc26288c4d695a15b6604}
+
+\begin{DoxyCompactList}\small\item\em standard constructor \end{DoxyCompactList}\item 
+\hyperlink{classPecos_1_1PolynomialApproximation_ac6deeb4b25bdc57d94bcdf7b37823ce7}{$\sim$\+Polynomial\+Approximation} ()\label{classPecos_1_1PolynomialApproximation_ac6deeb4b25bdc57d94bcdf7b37823ce7}
+
+\begin{DoxyCompactList}\small\item\em destructorboth \end{DoxyCompactList}\item 
+virtual void \hyperlink{classPecos_1_1PolynomialApproximation_ae52119f660e0118d838f45bffb7d12d1}{allocate\+\_\+arrays} ()=0\label{classPecos_1_1PolynomialApproximation_ae52119f660e0118d838f45bffb7d12d1}
+
+\begin{DoxyCompactList}\small\item\em size derived class data attributes \end{DoxyCompactList}\item 
+virtual void \hyperlink{classPecos_1_1PolynomialApproximation_a489e05c9d1bc07d7120ce3dfc9a7e66a}{allocate\+\_\+component\+\_\+sobol} ()\label{classPecos_1_1PolynomialApproximation_a489e05c9d1bc07d7120ce3dfc9a7e66a}
+
+\begin{DoxyCompactList}\small\item\em size component Sobol arrays \end{DoxyCompactList}\item 
+virtual void \hyperlink{classPecos_1_1PolynomialApproximation_ae369b467e0829f05cfcd1b68d90fb741}{compute\+\_\+component\+\_\+sobol} ()=0\label{classPecos_1_1PolynomialApproximation_ae369b467e0829f05cfcd1b68d90fb741}
+
+\begin{DoxyCompactList}\small\item\em Computes sensitivity indices according to V\+BD specification. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classPecos_1_1PolynomialApproximation_af826aa330c2b83a225dce2407bac6e39}{compute\+\_\+total\+\_\+sobol} ()=0\label{classPecos_1_1PolynomialApproximation_af826aa330c2b83a225dce2407bac6e39}
+
+\begin{DoxyCompactList}\small\item\em Computes total sensitivity indices according to V\+BD specification and existing computations from \hyperlink{classPecos_1_1PolynomialApproximation_ae369b467e0829f05cfcd1b68d90fb741}{compute\+\_\+component\+\_\+sobol()} \end{DoxyCompactList}\item 
+virtual U\+Long\+U\+Long\+Map \hyperlink{classPecos_1_1PolynomialApproximation_a0edcfdc2d2b3f4e37d3a3f7d591cf9e0}{sparse\+\_\+sobol\+\_\+index\+\_\+map} () const \label{classPecos_1_1PolynomialApproximation_a0edcfdc2d2b3f4e37d3a3f7d591cf9e0}
+
+\begin{DoxyCompactList}\small\item\em return \hyperlink{classPecos_1_1RegressOrthogPolyApproximation_ac024e059bf921ce1d6aaf0506066b8a3}{Regress\+Orthog\+Poly\+Approximation\+::sparse\+Sobol\+Index\+Map} \end{DoxyCompactList}\item 
+virtual const Real\+Vector \& \hyperlink{classPecos_1_1PolynomialApproximation_aed55fee7da787c78db161950b3d8868f}{gradient\+\_\+basis\+\_\+variables} (const Real\+Vector \&x)=0\label{classPecos_1_1PolynomialApproximation_aed55fee7da787c78db161950b3d8868f}
+
+\begin{DoxyCompactList}\small\item\em retrieve the gradient for a response expansion with respect to all variables included in the polynomial bases using the given parameter vector and default D\+VV \end{DoxyCompactList}\item 
+virtual const Real\+Vector \& \hyperlink{classPecos_1_1PolynomialApproximation_acbdc4eeec56540a31e44ca2df5414ffd}{gradient\+\_\+basis\+\_\+variables} (const Real\+Vector \&x, const Sizet\+Array \&dvv)=0\label{classPecos_1_1PolynomialApproximation_acbdc4eeec56540a31e44ca2df5414ffd}
+
+\begin{DoxyCompactList}\small\item\em retrieve the gradient for a response expansion with respect to variables included in the polynomial basis for a given parameter vector and a given D\+VV subset \end{DoxyCompactList}\item 
+virtual const Real\+Vector \& \hyperlink{classPecos_1_1PolynomialApproximation_a4aacf10d0420769485310745b8643a2b}{gradient\+\_\+nonbasis\+\_\+variables} (const Real\+Vector \&x)=0\label{classPecos_1_1PolynomialApproximation_a4aacf10d0420769485310745b8643a2b}
+
+\begin{DoxyCompactList}\small\item\em retrieve the gradient for a response expansion with respect to all variables not included in the polynomial bases (nonprobabilistic variables such as design or epistemic when not in \char`\"{}all\char`\"{} mode) using the given parameter vector and default D\+VV \end{DoxyCompactList}\item 
+virtual const Real\+Sym\+Matrix \& \hyperlink{classPecos_1_1PolynomialApproximation_a735ab9f5114a1c5ef68dfa34d270a2a3}{hessian\+\_\+basis\+\_\+variables} (const Real\+Vector \&x)=0\label{classPecos_1_1PolynomialApproximation_a735ab9f5114a1c5ef68dfa34d270a2a3}
+
+\begin{DoxyCompactList}\small\item\em retrieve the Hessian of the response expansion with respect to all variables included in the polynomial basis (e.\+g., probabilistic variables) for a given parameter vector \end{DoxyCompactList}\item 
+virtual Real \hyperlink{classPecos_1_1PolynomialApproximation_a3bc7383faad1dad8b9b1e27860e11bb6}{stored\+\_\+value} (const Real\+Vector \&x, size\+\_\+t index)=0\label{classPecos_1_1PolynomialApproximation_a3bc7383faad1dad8b9b1e27860e11bb6}
+
+\begin{DoxyCompactList}\small\item\em retrieve the response value for a stored expansion using the given parameter vector \end{DoxyCompactList}\item 
+virtual const Real\+Vector \& \hyperlink{classPecos_1_1PolynomialApproximation_ac0a4a7a7c14b9c8e8efe31ce1499abc7}{stored\+\_\+gradient\+\_\+basis\+\_\+variables} (const Real\+Vector \&x, size\+\_\+t index)=0\label{classPecos_1_1PolynomialApproximation_ac0a4a7a7c14b9c8e8efe31ce1499abc7}
+
+\begin{DoxyCompactList}\small\item\em retrieve the response gradient for a stored expansion with respect to all variables included in the polynomial bases; evaluate for the given parameter vector. \end{DoxyCompactList}\item 
+virtual const Real\+Vector \& \hyperlink{classPecos_1_1PolynomialApproximation_a03d14a5cdff18a4c1d67f12a575d8eb6}{stored\+\_\+gradient\+\_\+nonbasis\+\_\+variables} (const Real\+Vector \&x, size\+\_\+t index)=0\label{classPecos_1_1PolynomialApproximation_a03d14a5cdff18a4c1d67f12a575d8eb6}
+
+\begin{DoxyCompactList}\small\item\em retrieve the response gradient for a stored expansion with respect to all variables not included in the polynomial bases; evaluate for the given parameter vector. \end{DoxyCompactList}\item 
+virtual Real \hyperlink{classPecos_1_1PolynomialApproximation_ae748f0525197363b2279cd36511fb791}{mean} ()=0\label{classPecos_1_1PolynomialApproximation_ae748f0525197363b2279cd36511fb791}
+
+\begin{DoxyCompactList}\small\item\em return the mean of the expansion, treating all variables as random \end{DoxyCompactList}\item 
+virtual Real \hyperlink{classPecos_1_1PolynomialApproximation_a69da68e2a4dd4b51439150ebfe4dc239}{mean} (const Real\+Vector \&x)=0\label{classPecos_1_1PolynomialApproximation_a69da68e2a4dd4b51439150ebfe4dc239}
+
+\begin{DoxyCompactList}\small\item\em return the mean of the expansion for a given parameter vector, treating a subset of the variables as random \end{DoxyCompactList}\item 
+virtual const Real\+Vector \& \hyperlink{classPecos_1_1PolynomialApproximation_abcb01df2fc2d4c44bab6b56ad7def50c}{mean\+\_\+gradient} ()=0\label{classPecos_1_1PolynomialApproximation_abcb01df2fc2d4c44bab6b56ad7def50c}
+
+\begin{DoxyCompactList}\small\item\em return the gradient of the expansion mean for a given parameter vector, treating all variables as random \end{DoxyCompactList}\item 
+virtual const Real\+Vector \& \hyperlink{classPecos_1_1PolynomialApproximation_a941461d09fc3c204012a12ceda5cfdde}{mean\+\_\+gradient} (const Real\+Vector \&x, const Sizet\+Array \&dvv)=0\label{classPecos_1_1PolynomialApproximation_a941461d09fc3c204012a12ceda5cfdde}
+
+\begin{DoxyCompactList}\small\item\em return the gradient of the expansion mean for a given parameter vector and given D\+VV, treating a subset of the variables as random \end{DoxyCompactList}\item 
+virtual Real \hyperlink{classPecos_1_1PolynomialApproximation_ac20ad205d017d71c3c6b209c1dfafe6f}{variance} ()=0\label{classPecos_1_1PolynomialApproximation_ac20ad205d017d71c3c6b209c1dfafe6f}
+
+\begin{DoxyCompactList}\small\item\em return the variance of the expansion, treating all variables as random \end{DoxyCompactList}\item 
+virtual Real \hyperlink{classPecos_1_1PolynomialApproximation_aa605184b6960045162f94a4f0302d95e}{variance} (const Real\+Vector \&x)=0\label{classPecos_1_1PolynomialApproximation_aa605184b6960045162f94a4f0302d95e}
+
+\begin{DoxyCompactList}\small\item\em return the variance of the expansion for a given parameter vector, treating a subset of the variables as random \end{DoxyCompactList}\item 
+virtual const Real\+Vector \& \hyperlink{classPecos_1_1PolynomialApproximation_a9d096037fca9bfcc8af60186bf6e914f}{variance\+\_\+gradient} ()=0\label{classPecos_1_1PolynomialApproximation_a9d096037fca9bfcc8af60186bf6e914f}
+
+\begin{DoxyCompactList}\small\item\em return the gradient of the expansion variance for a given parameter vector, treating all variables as random \end{DoxyCompactList}\item 
+virtual const Real\+Vector \& \hyperlink{classPecos_1_1PolynomialApproximation_a1222664e145d8077eea75bfff3aca15a}{variance\+\_\+gradient} (const Real\+Vector \&x, const Sizet\+Array \&dvv)=0\label{classPecos_1_1PolynomialApproximation_a1222664e145d8077eea75bfff3aca15a}
+
+\begin{DoxyCompactList}\small\item\em return the gradient of the expansion variance for a given parameter vector and given D\+VV, treating a subset of the variables as random \end{DoxyCompactList}\item 
+virtual Real \hyperlink{classPecos_1_1PolynomialApproximation_a7e3e8ebdd9b22e460cc4c97528b5c2e2}{covariance} (\hyperlink{classPecos_1_1PolynomialApproximation}{Polynomial\+Approximation} $\ast$poly\+\_\+approx\+\_\+2)=0\label{classPecos_1_1PolynomialApproximation_a7e3e8ebdd9b22e460cc4c97528b5c2e2}
+
+\begin{DoxyCompactList}\small\item\em return the covariance between two response expansions, treating all variables as random \end{DoxyCompactList}\item 
+virtual Real \hyperlink{classPecos_1_1PolynomialApproximation_ac510eafe010d3ae6b6d4d4c296ae3f8b}{covariance} (const Real\+Vector \&x, \hyperlink{classPecos_1_1PolynomialApproximation}{Polynomial\+Approximation} $\ast$poly\+\_\+approx\+\_\+2)=0\label{classPecos_1_1PolynomialApproximation_ac510eafe010d3ae6b6d4d4c296ae3f8b}
+
+\begin{DoxyCompactList}\small\item\em return the covariance between two response expansions for a given parameter vector, treating a subset of the variables as random \end{DoxyCompactList}\item 
+virtual Real \hyperlink{classPecos_1_1PolynomialApproximation_ae3f6a8d87917102636d171f5c86a2fb5}{delta\+\_\+covariance} (\hyperlink{classPecos_1_1PolynomialApproximation}{Polynomial\+Approximation} $\ast$poly\+\_\+approx\+\_\+2)\label{classPecos_1_1PolynomialApproximation_ae3f6a8d87917102636d171f5c86a2fb5}
+
+\begin{DoxyCompactList}\small\item\em return the change in covariance between two response expansions, treating all variables as random \end{DoxyCompactList}\item 
+virtual Real \hyperlink{classPecos_1_1PolynomialApproximation_a5a89afe07fb520282fa35dfc9ca2b0a1}{delta\+\_\+covariance} (const Real\+Vector \&x, \hyperlink{classPecos_1_1PolynomialApproximation}{Polynomial\+Approximation} $\ast$poly\+\_\+approx\+\_\+2)\label{classPecos_1_1PolynomialApproximation_a5a89afe07fb520282fa35dfc9ca2b0a1}
+
+\begin{DoxyCompactList}\small\item\em return the change in covariance between two response expansions for a given parameter vector, treating a subset of the variables as random \end{DoxyCompactList}\item 
+virtual Real \hyperlink{classPecos_1_1PolynomialApproximation_aa276ec09d706b03780f9bc01af40514e}{delta\+\_\+mean} ()\label{classPecos_1_1PolynomialApproximation_aa276ec09d706b03780f9bc01af40514e}
+
+\begin{DoxyCompactList}\small\item\em return the change in mean between two response expansions, treating all variables as random \end{DoxyCompactList}\item 
+virtual Real \hyperlink{classPecos_1_1PolynomialApproximation_a47a27e963aa71bb3dfc2aa623f7f3e92}{delta\+\_\+mean} (const Real\+Vector \&x)\label{classPecos_1_1PolynomialApproximation_a47a27e963aa71bb3dfc2aa623f7f3e92}
+
+\begin{DoxyCompactList}\small\item\em return the change in mean between two response expansions, treating a subset of the variables as random \end{DoxyCompactList}\item 
+virtual Real \hyperlink{classPecos_1_1PolynomialApproximation_a91067291a8c8ca1f582e24706aac5ea7}{delta\+\_\+std\+\_\+deviation} ()\label{classPecos_1_1PolynomialApproximation_a91067291a8c8ca1f582e24706aac5ea7}
+
+\begin{DoxyCompactList}\small\item\em return the change in standard deviation between two response expansions, treating all variables as random \end{DoxyCompactList}\item 
+virtual Real \hyperlink{classPecos_1_1PolynomialApproximation_a4755135ffbf0475a447f71d7b782afa8}{delta\+\_\+std\+\_\+deviation} (const Real\+Vector \&x)\label{classPecos_1_1PolynomialApproximation_a4755135ffbf0475a447f71d7b782afa8}
+
+\begin{DoxyCompactList}\small\item\em return the change in standard deviation between two response expansions, treating a subset of the variables as random \end{DoxyCompactList}\item 
+virtual Real \hyperlink{classPecos_1_1PolynomialApproximation_af4a1a73ea647b8989096db81a7e36278}{delta\+\_\+beta} (bool cdf\+\_\+flag, Real z\+\_\+bar)\label{classPecos_1_1PolynomialApproximation_af4a1a73ea647b8989096db81a7e36278}
+
+\begin{DoxyCompactList}\small\item\em return the change in reliability index (mapped from z\+\_\+bar) between two response expansions, treating all variables as random \end{DoxyCompactList}\item 
+virtual Real \hyperlink{classPecos_1_1PolynomialApproximation_ad878382953dfa3146f4862f6195ea351}{delta\+\_\+beta} (const Real\+Vector \&x, bool cdf\+\_\+flag, Real z\+\_\+bar)\label{classPecos_1_1PolynomialApproximation_ad878382953dfa3146f4862f6195ea351}
+
+\begin{DoxyCompactList}\small\item\em return the change in reliability index (mapped from z\+\_\+bar) between two response expansions, treating a subset of the variables as random \end{DoxyCompactList}\item 
+virtual Real \hyperlink{classPecos_1_1PolynomialApproximation_a677b7ca69b5b17169b3f6e3ccb972ce6}{delta\+\_\+z} (bool cdf\+\_\+flag, Real beta\+\_\+bar)\label{classPecos_1_1PolynomialApproximation_a677b7ca69b5b17169b3f6e3ccb972ce6}
+
+\begin{DoxyCompactList}\small\item\em return the change in response level (mapped from beta\+\_\+bar) between two response expansions, treating all variables as random \end{DoxyCompactList}\item 
+virtual Real \hyperlink{classPecos_1_1PolynomialApproximation_a3280b1f280ca2af6d965d5562fc42770}{delta\+\_\+z} (const Real\+Vector \&x, bool cdf\+\_\+flag, Real beta\+\_\+bar)\label{classPecos_1_1PolynomialApproximation_a3280b1f280ca2af6d965d5562fc42770}
+
+\begin{DoxyCompactList}\small\item\em return the change in response level (mapped from beta\+\_\+bar) between two response expansions, treating a subset of the variables as random \end{DoxyCompactList}\item 
+virtual void \hyperlink{classPecos_1_1PolynomialApproximation_a1b63b514dc73ab12312bacfcdd7cdfc7}{compute\+\_\+moments} (bool full\+\_\+stats=true)=0\label{classPecos_1_1PolynomialApproximation_a1b63b514dc73ab12312bacfcdd7cdfc7}
+
+\begin{DoxyCompactList}\small\item\em compute central response moments using some combination of expansion post-\/processing and numerical integration \end{DoxyCompactList}\item 
+virtual void \hyperlink{classPecos_1_1PolynomialApproximation_acd777543cf4cc477dcf3a460778c4d96}{compute\+\_\+moments} (const Real\+Vector \&x, bool full\+\_\+stats=true)=0\label{classPecos_1_1PolynomialApproximation_acd777543cf4cc477dcf3a460778c4d96}
+
+\begin{DoxyCompactList}\small\item\em compute central response moments in all-\/variables mode using some combination of expansion post-\/processing and numerical integration \end{DoxyCompactList}\item 
+bool \hyperlink{classPecos_1_1PolynomialApproximation_aed1866c1996955f9ad44021dc97e6b00}{deep\+\_\+copied\+\_\+surrogate\+\_\+data} () const \label{classPecos_1_1PolynomialApproximation_aed1866c1996955f9ad44021dc97e6b00}
+
+\begin{DoxyCompactList}\small\item\em returns true if surr\+Data is a deep copy of orig\+Surr\+Data \end{DoxyCompactList}\item 
+const Real\+Vector \& \hyperlink{classPecos_1_1PolynomialApproximation_a866d58cb48bf4b186438893130785811}{expansion\+\_\+moments} () const \label{classPecos_1_1PolynomialApproximation_a866d58cb48bf4b186438893130785811}
+
+\begin{DoxyCompactList}\small\item\em return expansion\+Moments \end{DoxyCompactList}\item 
+const Real\+Vector \& \hyperlink{classPecos_1_1PolynomialApproximation_ae595e64f70b8dcb174bf76438d2df19a}{numerical\+\_\+integration\+\_\+moments} () const \label{classPecos_1_1PolynomialApproximation_ae595e64f70b8dcb174bf76438d2df19a}
+
+\begin{DoxyCompactList}\small\item\em return numerical\+Moments \end{DoxyCompactList}\item 
+const Real\+Vector \& \hyperlink{classPecos_1_1PolynomialApproximation_a05509beee5c681b6a6af6344c54ef85c}{moments} () const 
+\begin{DoxyCompactList}\small\item\em return preferred response moments (either expansion or numerical integration, depending on approximation type) \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1PolynomialApproximation_a9b8b15104b9fcb415f36502df2319a89}{standardize\+\_\+moments} (const Real\+Vector \&central\+\_\+moments, Real\+Vector \&std\+\_\+moments)\label{classPecos_1_1PolynomialApproximation_a9b8b15104b9fcb415f36502df2319a89}
+
+\begin{DoxyCompactList}\small\item\em standardize central moments 2-\/n and eliminate excess kurtosis \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1PolynomialApproximation_a725333d01cc0f8dc70b251218cfa186f}{expansion\+\_\+coefficient\+\_\+flag} (bool coeff\+\_\+flag)\label{classPecos_1_1PolynomialApproximation_a725333d01cc0f8dc70b251218cfa186f}
+
+\begin{DoxyCompactList}\small\item\em set Expansion\+Config\+Options\+::expansion\+Coeff\+Flag \end{DoxyCompactList}\item 
+bool \hyperlink{classPecos_1_1PolynomialApproximation_a89548e99400489d6e02b31fefcd5ad65}{expansion\+\_\+coefficient\+\_\+flag} () const \label{classPecos_1_1PolynomialApproximation_a89548e99400489d6e02b31fefcd5ad65}
+
+\begin{DoxyCompactList}\small\item\em get Expansion\+Config\+Options\+::expansion\+Coeff\+Flag \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1PolynomialApproximation_a5f71234d90af02a1e05682e4f4a075b5}{expansion\+\_\+coefficient\+\_\+gradient\+\_\+flag} (bool grad\+\_\+flag)\label{classPecos_1_1PolynomialApproximation_a5f71234d90af02a1e05682e4f4a075b5}
+
+\begin{DoxyCompactList}\small\item\em set Expansion\+Config\+Options\+::expansion\+Coeff\+Grad\+Flag \end{DoxyCompactList}\item 
+bool \hyperlink{classPecos_1_1PolynomialApproximation_a409e9b9d4a9d4bc2f6ca5b791d70af1a}{expansion\+\_\+coefficient\+\_\+gradient\+\_\+flag} () const \label{classPecos_1_1PolynomialApproximation_a409e9b9d4a9d4bc2f6ca5b791d70af1a}
+
+\begin{DoxyCompactList}\small\item\em get Expansion\+Config\+Options\+::expansion\+Coeff\+Grad\+Flag \end{DoxyCompactList}\item 
+const Real\+Vector \& \hyperlink{classPecos_1_1PolynomialApproximation_a08e328106adf656e3cee47ea689d2f13}{sobol\+\_\+indices} () const \label{classPecos_1_1PolynomialApproximation_a08e328106adf656e3cee47ea689d2f13}
+
+\begin{DoxyCompactList}\small\item\em return sobol\+Indices \end{DoxyCompactList}\item 
+const Real\+Vector \& \hyperlink{classPecos_1_1PolynomialApproximation_aeaab4fe47cd3ede82c8939c1bb0489fb}{total\+\_\+sobol\+\_\+indices} () const \label{classPecos_1_1PolynomialApproximation_aeaab4fe47cd3ede82c8939c1bb0489fb}
+
+\begin{DoxyCompactList}\small\item\em return total\+Sobol\+Indices \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classPecos_1_1PolynomialApproximation_aa1896011336650ae7b14965aebd72e1e}{surrogate\+\_\+data} (const Surrogate\+Data \&data)\label{classPecos_1_1PolynomialApproximation_aa1896011336650ae7b14965aebd72e1e}
+
+\begin{DoxyCompactList}\small\item\em set \hyperlink{classPecos_1_1PolynomialApproximation_adea5235bed42287989f0bf6821f9bcf0}{Polynomial\+Approximation\+::orig\+Surr\+Data} \end{DoxyCompactList}\item 
+const Surrogate\+Data \& \hyperlink{classPecos_1_1PolynomialApproximation_a8b84d7f8e6de5203f20a47fa66b38ed3}{surrogate\+\_\+data} () const \label{classPecos_1_1PolynomialApproximation_a8b84d7f8e6de5203f20a47fa66b38ed3}
+
+\begin{DoxyCompactList}\small\item\em get \hyperlink{classPecos_1_1PolynomialApproximation_a8e8d62a29dcb5dd55fd03bef1a2b3ea6}{Polynomial\+Approximation\+::surr\+Data} (const) \end{DoxyCompactList}\item 
+Surrogate\+Data \& \hyperlink{classPecos_1_1PolynomialApproximation_a0acf94a33f9a66b6823627d75ce566d4}{surrogate\+\_\+data} ()\label{classPecos_1_1PolynomialApproximation_a0acf94a33f9a66b6823627d75ce566d4}
+
+\begin{DoxyCompactList}\small\item\em get \hyperlink{classPecos_1_1PolynomialApproximation_a8e8d62a29dcb5dd55fd03bef1a2b3ea6}{Polynomial\+Approximation\+::surr\+Data} (non-\/const) \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1PolynomialApproximation_aef8f0c32bdeff7756a9c614607c03058}{compute\+\_\+coefficients} (size\+\_\+t index=\+\_\+\+N\+P\+OS)\label{classPecos_1_1PolynomialApproximation_aef8f0c32bdeff7756a9c614607c03058}
+
+\begin{DoxyCompactList}\small\item\em calculate the approximation coefficients using a set of surrogate data \end{DoxyCompactList}\item 
+const Real\+Vector \& \hyperlink{classPecos_1_1PolynomialApproximation_a42bf374bf23c32c941ee2acae5ad56a4}{gradient} (const Real\+Vector \&x)\label{classPecos_1_1PolynomialApproximation_a42bf374bf23c32c941ee2acae5ad56a4}
+
+\begin{DoxyCompactList}\small\item\em generic base class function mapped to gradient\+\_\+basis\+\_\+variables(x) \end{DoxyCompactList}\item 
+const Real\+Sym\+Matrix \& \hyperlink{classPecos_1_1PolynomialApproximation_ad0b8d39aa7ec7b96b8753ac84e806d42}{hessian} (const Real\+Vector \&x)\label{classPecos_1_1PolynomialApproximation_ad0b8d39aa7ec7b96b8753ac84e806d42}
+
+\begin{DoxyCompactList}\small\item\em generic base class function mapped to hessian\+\_\+basis\+\_\+variables(x) \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1PolynomialApproximation_a7a80972ae3e63c06ce3a3c0a23a493eb}{synchronize\+\_\+surrogate\+\_\+data} (size\+\_\+t index)\label{classPecos_1_1PolynomialApproximation_a7a80972ae3e63c06ce3a3c0a23a493eb}
+
+\begin{DoxyCompactList}\small\item\em update surr\+Data from orig\+Surr\+Data based on deep or shallow copy \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1PolynomialApproximation_a1018349fe99125fb141db359fe63b72c}{response\+\_\+data\+\_\+to\+\_\+surplus\+\_\+data} (size\+\_\+t index)\label{classPecos_1_1PolynomialApproximation_a1018349fe99125fb141db359fe63b72c}
+
+\begin{DoxyCompactList}\small\item\em modify orig\+Surr\+Data to create hierarchical surplus response data within surr\+Data \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1PolynomialApproximation_a4596913d9bcd687dffaa5c1138c2b400}{integrate\+\_\+moments} (const Real\+Vector \&coeffs, const Real\+Vector \&t1\+\_\+wts, Real\+Vector \&\hyperlink{classPecos_1_1PolynomialApproximation_a05509beee5c681b6a6af6344c54ef85c}{moments})\label{classPecos_1_1PolynomialApproximation_a4596913d9bcd687dffaa5c1138c2b400}
+
+\begin{DoxyCompactList}\small\item\em compute central moments of response using type1 numerical integration \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1PolynomialApproximation_a84661c4aa789a38de9e83ae350abebb4}{integrate\+\_\+moments} (const Real\+Vector \&t1\+\_\+coeffs, const Real\+Matrix \&t2\+\_\+coeffs, const Real\+Vector \&t1\+\_\+wts, const Real\+Matrix \&t2\+\_\+wts, Real\+Vector \&\hyperlink{classPecos_1_1PolynomialApproximation_a05509beee5c681b6a6af6344c54ef85c}{moments})\label{classPecos_1_1PolynomialApproximation_a84661c4aa789a38de9e83ae350abebb4}
+
+\begin{DoxyCompactList}\small\item\em compute central moments of response using type1/2 numerical integration \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1PolynomialApproximation_a5510657b27410ccddc71d02964b94732}{allocate\+\_\+total\+\_\+sobol} ()\label{classPecos_1_1PolynomialApproximation_a5510657b27410ccddc71d02964b94732}
+
+\begin{DoxyCompactList}\small\item\em size total Sobol arrays \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Surrogate\+Data \hyperlink{classPecos_1_1PolynomialApproximation_adea5235bed42287989f0bf6821f9bcf0}{orig\+Surr\+Data}\label{classPecos_1_1PolynomialApproximation_adea5235bed42287989f0bf6821f9bcf0}
+
+\begin{DoxyCompactList}\small\item\em Surrogate\+Data instance containing the variables (shared) and response (unique) data arrays for constructing a surrogate of a single response function; this is the original unmodified data set, prior to any potential manipulations by the approximation classes. \end{DoxyCompactList}\item 
+Surrogate\+Data \hyperlink{classPecos_1_1PolynomialApproximation_a8e8d62a29dcb5dd55fd03bef1a2b3ea6}{surr\+Data}\label{classPecos_1_1PolynomialApproximation_a8e8d62a29dcb5dd55fd03bef1a2b3ea6}
+
+\begin{DoxyCompactList}\small\item\em Surrogate\+Data instance used in current approximation builds, potentially reflecting data modifications relative to orig\+Surr\+Data. \end{DoxyCompactList}\item 
+bool \hyperlink{classPecos_1_1PolynomialApproximation_a2360afb8f64a97ee47b06f6f5bc26618}{expansion\+Coeff\+Flag}\label{classPecos_1_1PolynomialApproximation_a2360afb8f64a97ee47b06f6f5bc26618}
+
+\begin{DoxyCompactList}\small\item\em flag for calculation of expansion coefficients from response values \end{DoxyCompactList}\item 
+bool \hyperlink{classPecos_1_1PolynomialApproximation_af9a1bf1104405cef21ee2fb1c8d61594}{expansion\+Coeff\+Grad\+Flag}\label{classPecos_1_1PolynomialApproximation_af9a1bf1104405cef21ee2fb1c8d61594}
+
+\begin{DoxyCompactList}\small\item\em flag for calculation of gradients of expansion coefficients from response gradients \end{DoxyCompactList}\item 
+Real\+Vector \hyperlink{classPecos_1_1PolynomialApproximation_a5276542d5b32abfc1ea217fcb7c18a1b}{expansion\+Moments}\label{classPecos_1_1PolynomialApproximation_a5276542d5b32abfc1ea217fcb7c18a1b}
+
+\begin{DoxyCompactList}\small\item\em mean and central moments 2/3/4 computed from the stochastic expansion form. For \hyperlink{classPecos_1_1OrthogPolyApproximation}{Orthog\+Poly\+Approximation}, these are primary, and for \hyperlink{classPecos_1_1InterpPolyApproximation}{Interp\+Poly\+Approximation}, they are secondary. Conversions to standardized moments (std deviation, skewness, kurtosis) are performed elsewhere. \end{DoxyCompactList}\item 
+Real\+Vector \hyperlink{classPecos_1_1PolynomialApproximation_a839faafc67c72fdb46fff643aa3b17e2}{numerical\+Moments}\label{classPecos_1_1PolynomialApproximation_a839faafc67c72fdb46fff643aa3b17e2}
+
+\begin{DoxyCompactList}\small\item\em mean and central moments 2/3/4 computed via numerical integration of the response. For \hyperlink{classPecos_1_1OrthogPolyApproximation}{Orthog\+Poly\+Approximation}, these are secondary, and for \hyperlink{classPecos_1_1InterpPolyApproximation}{Interp\+Poly\+Approximation}, they are primary. Conversions to standardized moments (std deviation, skewness, kurtosis) are performed elsewhere. \end{DoxyCompactList}\item 
+Real\+Vector \hyperlink{classPecos_1_1PolynomialApproximation_aa31607477f28dae20016926c8f163347}{approx\+Gradient}\label{classPecos_1_1PolynomialApproximation_aa31607477f28dae20016926c8f163347}
+
+\begin{DoxyCompactList}\small\item\em gradient of the polynomial approximation returned by \hyperlink{classPecos_1_1PolynomialApproximation_a42bf374bf23c32c941ee2acae5ad56a4}{gradient()} \end{DoxyCompactList}\item 
+Real\+Sym\+Matrix \hyperlink{classPecos_1_1PolynomialApproximation_a20bd98dd52963ca471a44fecf188ff67}{approx\+Hessian}\label{classPecos_1_1PolynomialApproximation_a20bd98dd52963ca471a44fecf188ff67}
+
+\begin{DoxyCompactList}\small\item\em Hessian of the polynomial approximation returned by \hyperlink{classPecos_1_1PolynomialApproximation_ad0b8d39aa7ec7b96b8753ac84e806d42}{hessian()} \end{DoxyCompactList}\item 
+Real\+Vector \hyperlink{classPecos_1_1PolynomialApproximation_a56830fcf2252fb98f479e8e2c113fc54}{mean\+Gradient}\label{classPecos_1_1PolynomialApproximation_a56830fcf2252fb98f479e8e2c113fc54}
+
+\begin{DoxyCompactList}\small\item\em gradient of the primary mean (expansion mean for Orthog\+Poly, numerical integration mean for Interp\+Poly) \end{DoxyCompactList}\item 
+Real\+Vector \hyperlink{classPecos_1_1PolynomialApproximation_a3769408ee078e3440e543b8fb1c31cc0}{variance\+Gradient}\label{classPecos_1_1PolynomialApproximation_a3769408ee078e3440e543b8fb1c31cc0}
+
+\begin{DoxyCompactList}\small\item\em gradient of the primary variance (expansion variance for Orthog\+Poly, numerical integration variance for Interp\+Poly) \end{DoxyCompactList}\item 
+short \hyperlink{classPecos_1_1PolynomialApproximation_a8ba5b50b82732e477573ffdaeeb65719}{computed\+Mean}\label{classPecos_1_1PolynomialApproximation_a8ba5b50b82732e477573ffdaeeb65719}
+
+\begin{DoxyCompactList}\small\item\em track computation of mean and mean gradient to avoid unnecessary recomputation \end{DoxyCompactList}\item 
+short \hyperlink{classPecos_1_1PolynomialApproximation_a6ff71a9804b99aa9d70fe94d692d1ea2}{computed\+Variance}\label{classPecos_1_1PolynomialApproximation_a6ff71a9804b99aa9d70fe94d692d1ea2}
+
+\begin{DoxyCompactList}\small\item\em track computation of variance and variance gradient to avoid unnecessary recomputation \end{DoxyCompactList}\item 
+Real\+Vector \hyperlink{classPecos_1_1PolynomialApproximation_ae5a04ee47e59e952c069781a13a29c37}{x\+Prev\+Mean}\label{classPecos_1_1PolynomialApproximation_ae5a04ee47e59e952c069781a13a29c37}
+
+\begin{DoxyCompactList}\small\item\em track previous evaluation point for all\+\_\+variables mean to avoid unnecessary recomputation \end{DoxyCompactList}\item 
+Real\+Vector \hyperlink{classPecos_1_1PolynomialApproximation_a1cab07114f59198600ba0edbdd37ba35}{x\+Prev\+Mean\+Grad}\label{classPecos_1_1PolynomialApproximation_a1cab07114f59198600ba0edbdd37ba35}
+
+\begin{DoxyCompactList}\small\item\em track previous evaluation point for all\+\_\+variables mean gradient to avoid unnecessary recomputation \end{DoxyCompactList}\item 
+Real\+Vector \hyperlink{classPecos_1_1PolynomialApproximation_af7635a6a3a22c2efbaa61a43f5893c1b}{x\+Prev\+Var}\label{classPecos_1_1PolynomialApproximation_af7635a6a3a22c2efbaa61a43f5893c1b}
+
+\begin{DoxyCompactList}\small\item\em track previous evaluation point for all\+\_\+variables variance to avoid unnecessary recomputation \end{DoxyCompactList}\item 
+Real\+Vector \hyperlink{classPecos_1_1PolynomialApproximation_a1707b68e85ab387644504746cde5b37b}{x\+Prev\+Var\+Grad}\label{classPecos_1_1PolynomialApproximation_a1707b68e85ab387644504746cde5b37b}
+
+\begin{DoxyCompactList}\small\item\em track previous evaluation point for all\+\_\+variables variance gradient to avoid unnecessary recomputation \end{DoxyCompactList}\item 
+Real\+Vector \hyperlink{classPecos_1_1PolynomialApproximation_ae701faa5aed8807339593e9e622b3f10}{sobol\+Indices}\label{classPecos_1_1PolynomialApproximation_ae701faa5aed8807339593e9e622b3f10}
+
+\begin{DoxyCompactList}\small\item\em global sensitivities as given by Sobol\textquotesingle{} \end{DoxyCompactList}\item 
+Real\+Vector \hyperlink{classPecos_1_1PolynomialApproximation_a215e3586a19726f01e446e950eeece65}{total\+Sobol\+Indices}\label{classPecos_1_1PolynomialApproximation_a215e3586a19726f01e446e950eeece65}
+
+\begin{DoxyCompactList}\small\item\em total global sensitivities as given by Sobol\textquotesingle{} \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Derived approximation class for global basis polynomials. 
+
+The \hyperlink{classPecos_1_1PolynomialApproximation}{Polynomial\+Approximation} class provides a global approximation based on basis polynomials. This includes orthogonal polynomials used for polynomial chaos expansions and interpolation polynomials used for stochastic collocation. 
+
+\subsection{Member Function Documentation}
+\index{Pecos\+::\+Polynomial\+Approximation@{Pecos\+::\+Polynomial\+Approximation}!moments@{moments}}
+\index{moments@{moments}!Pecos\+::\+Polynomial\+Approximation@{Pecos\+::\+Polynomial\+Approximation}}
+\subsubsection[{\texorpdfstring{moments() const }{moments() const }}]{\setlength{\rightskip}{0pt plus 5cm}const Real\+Vector \& moments (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classPecos_1_1PolynomialApproximation_a05509beee5c681b6a6af6344c54ef85c}
+
+
+return preferred response moments (either expansion or numerical integration, depending on approximation type) 
+
+All current cases prefer expansion\+Moments (with the distinction drawn between interpolation and integration rules, we prefer Gauss integration rules on interpolant expansions). 
+
+References Polynomial\+Approximation\+::expansion\+Moments, Expansion\+Config\+Options\+::exp\+Basis\+Type, Shared\+Poly\+Approx\+Data\+::exp\+Config\+Options, Polynomial\+Approximation\+::numerical\+Moments, and Basis\+Approximation\+::shared\+Data\+Rep.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Polynomial\+Approximation.\+hpp\item 
+Polynomial\+Approximation.\+cpp\end{DoxyCompactItemize}

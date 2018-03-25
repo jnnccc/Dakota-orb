@@ -1,0 +1,107 @@
+.TH "SharedProjectOrthogPolyApproxData" 3 "Wed Dec 27 2017" "Version Version 1.0" "PECOS" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SharedProjectOrthogPolyApproxData \- Derived approximation class for multivariate orthogonal polynomial approximation with coefficient estimation via numerical integration\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSharedOrthogPolyApproxData\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSharedProjectOrthogPolyApproxData\fP (short basis_type, const UShortArray &approx_order, size_t num_vars)"
+.br
+.RI "\fIlightweight constructor \fP"
+.ti -1c
+.RI "\fBSharedProjectOrthogPolyApproxData\fP (short basis_type, const UShortArray &approx_order, size_t num_vars, const \fBExpansionConfigOptions\fP &ec_options, const \fBBasisConfigOptions\fP &bc_options)"
+.br
+.RI "\fIfull constructor \fP"
+.ti -1c
+.RI "\fB~SharedProjectOrthogPolyApproxData\fP ()"
+.br
+.RI "\fIdestructor \fP"
+.ti -1c
+.RI "void \fBallocate_data\fP (size_t index=_NPOS)"
+.br
+.RI "\fIallocate the shared data prior to building the set of approximations \fP"
+.ti -1c
+.RI "void \fBpre_push_data\fP ()"
+.br
+.RI "\fIrestores previously popped approximation data \fP"
+.ti -1c
+.RI "void \fBpost_push_data\fP ()"
+.br
+.RI "\fIrestores previously popped approximation data \fP"
+.ti -1c
+.RI "void \fBincrement_data\fP (size_t index=_NPOS)"
+.br
+.RI "\fIupdate the shared data prior to rebuilding the set of approximations \fP"
+.ti -1c
+.RI "void \fBdecrement_data\fP ()"
+.br
+.RI "\fIdecrement the previous increment and store its shared data for later retrieval \fP"
+.ti -1c
+.RI "void \fBpre_finalize_data\fP ()"
+.br
+.RI "\fIfinalizes the shared approximation data following a set of increments \fP"
+.ti -1c
+.RI "void \fBpost_finalize_data\fP ()"
+.br
+.RI "\fIfinalizes the shared approximation data following a set of increments \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "size_t \fBpre_combine_data\fP ()"
+.br
+.RI "\fIcombines current and stored approximation data \fP"
+.ti -1c
+.RI "void \fBincrement_component_sobol\fP ()"
+.br
+.ti -1c
+.RI "\fBTensorProductDriver\fP * \fBtpq_driver\fP ()"
+.br
+.RI "\fIreturn driverRep cast to requested derived type \fP"
+.ti -1c
+.RI "\fBCombinedSparseGridDriver\fP * \fBcsg_driver\fP ()"
+.br
+.RI "\fIreturn driverRep cast to requested derived type \fP"
+.ti -1c
+.RI "\fBCubatureDriver\fP * \fBcub_driver\fP ()"
+.br
+.RI "\fIreturn driverRep cast to requested derived type \fP"
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBsparse_grid_multi_index\fP (\fBCombinedSparseGridDriver\fP *\fBcsg_driver\fP, UShort2DArray &\fBmulti_index\fP)"
+.br
+.RI "\fIinitialize multi_index using a sparse grid expansion \fP"
+.ti -1c
+.RI "Real \fBtensor_product_value\fP (const RealVector &x, const RealVector &tp_coeffs, const UShortArray &approx_order, const UShort2DArray &tp_mi, RealVector &accumulator)"
+.br
+.RI "\fIPerform efficient calculation of tensor-product value via Horner's rule\&. \fP"
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBProjectOrthogPolyApproximation\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Derived approximation class for multivariate orthogonal polynomial approximation with coefficient estimation via numerical integration\&. 
+
+The \fBSharedProjectOrthogPolyApproxData\fP class provides a global approximation based on multivariate orthogonal polynomials, where the coefficients are computed using numerical integration approaches such as quadrature, cubature, sparse grids, and random sampling\&. It is used primarily for polynomial chaos expansion aproaches to UQ\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for PECOS from the source code\&.

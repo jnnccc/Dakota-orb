@@ -1,0 +1,144 @@
+.TH "DataTransformation" 3 "Wed Dec 27 2017" "Version Version 1.0" "PECOS" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DataTransformation \- Base class for forward/inverse transformations between time and frequency domain data\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBInverseTransformation\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDataTransformation\fP ()"
+.br
+.RI "\fIdefault constructor \fP"
+.ti -1c
+.RI "\fBDataTransformation\fP (const String &data_trans_type)"
+.br
+.RI "\fIstandard constructor for envelope \fP"
+.ti -1c
+.RI "\fBDataTransformation\fP (const \fBDataTransformation\fP &data_trans)"
+.br
+.RI "\fIcopy constructor \fP"
+.ti -1c
+.RI "virtual \fB~DataTransformation\fP ()"
+.br
+.RI "\fIdestructor \fP"
+.ti -1c
+.RI "\fBDataTransformation\fP \fBoperator=\fP (const \fBDataTransformation\fP &data_trans)"
+.br
+.RI "\fIassignment operator \fP"
+.ti -1c
+.RI "virtual void \fBinitialize\fP (const Real &total_t, const Real &w_bar, size_t seed)"
+.br
+.RI "\fIset scalar data \fP"
+.ti -1c
+.RI "virtual void \fBpower_spectral_density\fP (const String &psd_name, const Real &param=0\&.)"
+.br
+.RI "\fIset PSD to standard embedded function \fP"
+.ti -1c
+.RI "virtual void \fBpower_spectral_density\fP (const RealVector &psd)"
+.br
+.RI "\fIpass a discretized PSD directly: vector or pairs\&.\&.\&. \fP"
+.ti -1c
+.RI "virtual const RealVector & \fBcompute_sample\fP ()"
+.br
+.RI "\fIcompute and return \fBInverseTransformation::inverseSample\fP \fP"
+.ti -1c
+.RI "virtual const RealMatrix & \fBcompute_samples\fP (size_t num_samples)"
+.br
+.RI "\fIcompute and return \fBInverseTransformation::inverseSamples\fP \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDataTransformation\fP (\fBBaseConstructor\fP)"
+.br
+.RI "\fIconstructor initializes the base class part of letter classes (\fBBaseConstructor\fP overloading avoids infinite recursion in the derived class constructors - Coplien, p\&. 139) \fP"
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBProbabilityTransformation\fP \fBprobTransform\fP"
+.br
+.RI "\fInonlinear variable transformation \fP"
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDataTransformation\fP * \fBget_data_trans\fP (const String &data_trans_type)"
+.br
+.RI "\fIUsed only by the standard envelope constructor to initialize transRep to the appropriate derived type\&. \fP"
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBDataTransformation\fP * \fBdataTransRep\fP"
+.br
+.RI "\fIpointer to the letter (initialized only for the envelope) \fP"
+.ti -1c
+.RI "int \fBreferenceCount\fP"
+.br
+.RI "\fInumber of objects sharing dataTransRep \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Base class for forward/inverse transformations between time and frequency domain data\&. 
+
+The base class for data transformations based on forward/inverse mappings between the time and frequency domain based on spectral/FFT, Karhunen-Loeve, and sampling-based approaches\&. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "\fBDataTransformation\fP ()"
+
+.PP
+default constructor The default constructor: dataTransRep is NULL in this case\&. This makes it necessary to check for NULL in the copy constructor, assignment operator, and destructor\&. 
+.SS "\fBDataTransformation\fP (const String & data_trans_type)"
+
+.PP
+standard constructor for envelope Envelope constructor only needs to extract enough data to properly execute get_data_trans, since \fBDataTransformation(BaseConstructor)\fP builds the actual base class data for the derived transformations\&. 
+.PP
+References DataTransformation::dataTransRep, and DataTransformation::get_data_trans()\&.
+.SS "\fBDataTransformation\fP (const \fBDataTransformation\fP & data_trans)"
+
+.PP
+copy constructor Copy constructor manages sharing of dataTransRep and incrementing of referenceCount\&. 
+.PP
+References DataTransformation::dataTransRep, DataTransformation::operator=(), and DataTransformation::referenceCount\&.
+.SS "~\fBDataTransformation\fP ()\fC [virtual]\fP"
+
+.PP
+destructor Destructor decrements referenceCount and only deletes dataTransRep when referenceCount reaches zero\&. 
+.PP
+References DataTransformation::dataTransRep, DataTransformation::initialize(), and DataTransformation::referenceCount\&.
+.SS "\fBDataTransformation\fP (\fBBaseConstructor\fP)\fC [protected]\fP"
+
+.PP
+constructor initializes the base class part of letter classes (\fBBaseConstructor\fP overloading avoids infinite recursion in the derived class constructors - Coplien, p\&. 139) This constructor is the one which must build the base class data for all derived classes\&. \fBget_data_trans()\fP instantiates a derived class letter and the derived constructor selects this base class constructor in its initialization list (to avoid recursion in the base class constructor calling \fBget_data_trans()\fP again)\&. Since the letter IS the representation, its rep pointer is set to NULL (an uninitialized pointer causes problems in ~DataTransformation)\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBDataTransformation\fP operator= (const \fBDataTransformation\fP & data_trans)"
+
+.PP
+assignment operator Assignment operator decrements referenceCount for old dataTransRep, assigns new dataTransRep, and increments referenceCount for new dataTransRep\&. 
+.PP
+References DataTransformation::dataTransRep, and DataTransformation::referenceCount\&.
+.PP
+Referenced by DataTransformation::DataTransformation()\&.
+.SS "\fBDataTransformation\fP * get_data_trans (const String & data_trans_type)\fC [private]\fP"
+
+.PP
+Used only by the standard envelope constructor to initialize transRep to the appropriate derived type\&. Used only by the envelope constructor to initialize dataTransRep to the appropriate derived type\&. 
+.PP
+Referenced by DataTransformation::DataTransformation()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for PECOS from the source code\&.

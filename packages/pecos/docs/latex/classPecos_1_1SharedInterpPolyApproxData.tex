@@ -1,0 +1,636 @@
+\section{Shared\+Interp\+Poly\+Approx\+Data Class Reference}
+\label{classPecos_1_1SharedInterpPolyApproxData}\index{Shared\+Interp\+Poly\+Approx\+Data@{Shared\+Interp\+Poly\+Approx\+Data}}
+
+
+Derived approximation class for interpolation polynomials (global approximation).  
+
+
+Inheritance diagram for Shared\+Interp\+Poly\+Approx\+Data\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classPecos_1_1SharedInterpPolyApproxData}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPecos_1_1SharedInterpPolyApproxData_ad6d25f2ccaeaff4d96f8bd1472e61c5d}{Shared\+Interp\+Poly\+Approx\+Data} (short basis\+\_\+type, size\+\_\+t num\+\_\+vars)\label{classPecos_1_1SharedInterpPolyApproxData_ad6d25f2ccaeaff4d96f8bd1472e61c5d}
+
+\begin{DoxyCompactList}\small\item\em standard constructor \end{DoxyCompactList}\item 
+\hyperlink{classPecos_1_1SharedInterpPolyApproxData_a9f60ce35fa8e788d4eee9cb8afc034bd}{Shared\+Interp\+Poly\+Approx\+Data} (short basis\+\_\+type, size\+\_\+t num\+\_\+vars, const \hyperlink{classPecos_1_1ExpansionConfigOptions}{Expansion\+Config\+Options} \&ec\+\_\+options, const \hyperlink{classPecos_1_1BasisConfigOptions}{Basis\+Config\+Options} \&bc\+\_\+options)\label{classPecos_1_1SharedInterpPolyApproxData_a9f60ce35fa8e788d4eee9cb8afc034bd}
+
+\begin{DoxyCompactList}\small\item\em alternate constructor \end{DoxyCompactList}\item 
+\hyperlink{classPecos_1_1SharedInterpPolyApproxData_a10190ade86d4389d77f21b9c20ed5cb8}{$\sim$\+Shared\+Interp\+Poly\+Approx\+Data} ()\label{classPecos_1_1SharedInterpPolyApproxData_a10190ade86d4389d77f21b9c20ed5cb8}
+
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{classPecos_1_1SharedInterpPolyApproxData_a6cdac92e4b4313f2a73677c9c39fdb3f}{initialize\+\_\+driver\+\_\+types\+\_\+rules} (const Short\+Array \&u\+\_\+types, const \hyperlink{classPecos_1_1BasisConfigOptions}{Basis\+Config\+Options} \&bc\+\_\+options, Short\+Array \&basis\+\_\+types, Short\+Array \&colloc\+\_\+rules)
+\begin{DoxyCompactList}\small\item\em define n-\/D basis types and collocation rules based on u\+\_\+types and basis configuration options for use in configuring integration drivers \end{DoxyCompactList}\item 
+static void \hyperlink{classPecos_1_1SharedInterpPolyApproxData_aa89044de171121ba6852986b1e308dc7}{construct\+\_\+basis} (const Short\+Array \&u\+\_\+types, const \hyperlink{classPecos_1_1AleatoryDistParams}{Aleatory\+Dist\+Params} \&adp, const \hyperlink{classPecos_1_1BasisConfigOptions}{Basis\+Config\+Options} \&bc\+\_\+options, std\+::vector$<$ \hyperlink{classPecos_1_1BasisPolynomial}{Basis\+Polynomial} $>$ \&poly\+\_\+basis)\label{classPecos_1_1SharedInterpPolyApproxData_aa89044de171121ba6852986b1e308dc7}
+
+\begin{DoxyCompactList}\small\item\em initialize basis types and collocation rules, construct a vector of basis polynomials for driver usage (not the vector$<$vector$<$\+Basis\+Polynomial$>$ $>$ used herein), and initialize distribution parameters within this basis \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classPecos_1_1SharedInterpPolyApproxData_af8c5dd497976d775d2c600c9950f6b2e}{allocate\+\_\+data} (size\+\_\+t index=\+\_\+\+N\+P\+OS)\label{classPecos_1_1SharedInterpPolyApproxData_af8c5dd497976d775d2c600c9950f6b2e}
+
+\begin{DoxyCompactList}\small\item\em allocate the shared data prior to building the set of approximations \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1SharedInterpPolyApproxData_a4890d7d6305c020f7b6885b46760bc1f}{increment\+\_\+data} (size\+\_\+t index=\+\_\+\+N\+P\+OS)\label{classPecos_1_1SharedInterpPolyApproxData_a4890d7d6305c020f7b6885b46760bc1f}
+
+\begin{DoxyCompactList}\small\item\em update the shared data prior to rebuilding the set of approximations \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1SharedInterpPolyApproxData_a60174b370eea362e66f5e90876f3c1be}{decrement\+\_\+data} ()\label{classPecos_1_1SharedInterpPolyApproxData_a60174b370eea362e66f5e90876f3c1be}
+
+\begin{DoxyCompactList}\small\item\em decrement the previous increment and store its shared data for later retrieval \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1SharedInterpPolyApproxData_ac19cc0185f757af210f8bc3a31dc85b7}{post\+\_\+push\+\_\+data} ()\label{classPecos_1_1SharedInterpPolyApproxData_ac19cc0185f757af210f8bc3a31dc85b7}
+
+\begin{DoxyCompactList}\small\item\em restores previously popped approximation data \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1SharedInterpPolyApproxData_a627c3fbb950715823e57acd6bfa0fd72}{post\+\_\+finalize\+\_\+data} ()\label{classPecos_1_1SharedInterpPolyApproxData_a627c3fbb950715823e57acd6bfa0fd72}
+
+\begin{DoxyCompactList}\small\item\em finalizes the shared approximation data following a set of increments \end{DoxyCompactList}\item 
+size\+\_\+t \hyperlink{classPecos_1_1SharedInterpPolyApproxData_a9eb4d06b29a49d454be12741309d8a2b}{pre\+\_\+combine\+\_\+data} ()\label{classPecos_1_1SharedInterpPolyApproxData_a9eb4d06b29a49d454be12741309d8a2b}
+
+\begin{DoxyCompactList}\small\item\em combines current and stored approximation data \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1SharedInterpPolyApproxData_a3cc1fd74564bd6f83a59ac8ddc1fc264}{store\+\_\+data} (size\+\_\+t index=\+\_\+\+N\+P\+OS)\label{classPecos_1_1SharedInterpPolyApproxData_a3cc1fd74564bd6f83a59ac8ddc1fc264}
+
+\begin{DoxyCompactList}\small\item\em stores current approximation data for later combination \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1SharedInterpPolyApproxData_a6e88613d26c8cf89c7d8365016ee67c2}{restore\+\_\+data} (size\+\_\+t index=\+\_\+\+N\+P\+OS)\label{classPecos_1_1SharedInterpPolyApproxData_a6e88613d26c8cf89c7d8365016ee67c2}
+
+\begin{DoxyCompactList}\small\item\em restores previously stored approximation data \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1SharedInterpPolyApproxData_ab48a802281615eb09255d0a8acd06987}{remove\+\_\+stored\+\_\+data} (size\+\_\+t index=\+\_\+\+N\+P\+OS)\label{classPecos_1_1SharedInterpPolyApproxData_ab48a802281615eb09255d0a8acd06987}
+
+\begin{DoxyCompactList}\small\item\em removes a redundant stored approximation data prior to combination \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1SharedInterpPolyApproxData_a263397cd08813d707b4084cf13cad679}{clear\+\_\+stored\+\_\+data} ()\label{classPecos_1_1SharedInterpPolyApproxData_a263397cd08813d707b4084cf13cad679}
+
+\begin{DoxyCompactList}\small\item\em clear stored approximation data \end{DoxyCompactList}\item 
+virtual void \hyperlink{classPecos_1_1SharedInterpPolyApproxData_a3f12e868d8f2a63dbbb4eaba76b0ca73}{allocate\+\_\+component\+\_\+sobol} ()=0\label{classPecos_1_1SharedInterpPolyApproxData_a3f12e868d8f2a63dbbb4eaba76b0ca73}
+
+\begin{DoxyCompactList}\small\item\em allocate sobol\+Index\+Map based on collocation keys \end{DoxyCompactList}\item 
+virtual void \hyperlink{classPecos_1_1SharedInterpPolyApproxData_a901b3fa36e4464e6b9b9e1463dfe4434}{increment\+\_\+component\+\_\+sobol} ()=0\label{classPecos_1_1SharedInterpPolyApproxData_a901b3fa36e4464e6b9b9e1463dfe4434}
+
+\begin{DoxyCompactList}\small\item\em update sobol\+Index\+Map based on a refinement increment \end{DoxyCompactList}\item 
+virtual void \hyperlink{classPecos_1_1SharedInterpPolyApproxData_aaa884abe47a04ae88f2ccbdaeb44bf7e}{set\+\_\+new\+\_\+point} (const Real\+Vector \&x, const U\+Short\+Array \&basis\+\_\+index, short order)=0\label{classPecos_1_1SharedInterpPolyApproxData_aaa884abe47a04ae88f2ccbdaeb44bf7e}
+
+\begin{DoxyCompactList}\small\item\em set point values within 1D basis polynomials for purposes of barycentric precomputation \end{DoxyCompactList}\item 
+virtual void \hyperlink{classPecos_1_1SharedInterpPolyApproxData_ac1987c591a938c068d797b8e212f9d61}{set\+\_\+new\+\_\+point} (const Real\+Vector \&x, const U\+Short\+Array \&basis\+\_\+index, const Sizet\+List \&subset\+\_\+indices, short order)=0\label{classPecos_1_1SharedInterpPolyApproxData_ac1987c591a938c068d797b8e212f9d61}
+
+\begin{DoxyCompactList}\small\item\em set point values within subset of 1D basis polynomials for purposes of barycentric precomputation \end{DoxyCompactList}\item 
+virtual size\+\_\+t \hyperlink{classPecos_1_1SharedInterpPolyApproxData_a518ae68ac63e34396bda1ea2a7b196c0}{barycentric\+\_\+exact\+\_\+index} (const U\+Short\+Array \&basis\+\_\+index)=0\label{classPecos_1_1SharedInterpPolyApproxData_a518ae68ac63e34396bda1ea2a7b196c0}
+
+\begin{DoxyCompactList}\small\item\em for an exact point match in all dimensions, return the tensor-\/product index of the matching point \end{DoxyCompactList}\item 
+virtual size\+\_\+t \hyperlink{classPecos_1_1SharedInterpPolyApproxData_a4fbb23a77904175ba41f2b1227d0fb48}{barycentric\+\_\+exact\+\_\+index} (const U\+Short\+Array \&basis\+\_\+index, const Sizet\+List \&subset\+\_\+indices)=0\label{classPecos_1_1SharedInterpPolyApproxData_a4fbb23a77904175ba41f2b1227d0fb48}
+
+\begin{DoxyCompactList}\small\item\em for an exact point match in all dimensions within subset\+\_\+indices, return the tensor-\/product index of the matching point \end{DoxyCompactList}\item 
+virtual void \hyperlink{classPecos_1_1SharedInterpPolyApproxData_af3fdba189ef1be4278ed198f21621ebb}{precompute\+\_\+keys} (const U\+Short\+Array \&basis\+\_\+index)
+\begin{DoxyCompactList}\small\item\em if needed for efficiency, precompute the count and max values for the collocation keys \end{DoxyCompactList}\item 
+virtual void \hyperlink{classPecos_1_1SharedInterpPolyApproxData_a8a006b2611ce5fa80285ff6c3dad67c0}{precompute\+\_\+keys} (const U\+Short\+Array \&basis\+\_\+index, const Sizet\+List \&subset\+\_\+indices)
+\begin{DoxyCompactList}\small\item\em if needed for efficiency, precompute the count and max values for the collocation keys within the subset \end{DoxyCompactList}\item 
+virtual void \hyperlink{classPecos_1_1SharedInterpPolyApproxData_a01d4893d40fc53f6193cef94658443a9}{precompute\+\_\+max\+\_\+keys} (const U\+Short\+Array \&basis\+\_\+index)
+\begin{DoxyCompactList}\small\item\em if needed for efficiency, precompute the max values for the collocation keys \end{DoxyCompactList}\item 
+virtual void \hyperlink{classPecos_1_1SharedInterpPolyApproxData_affd9fbab13d20744790f0b5267e4eceb}{precompute\+\_\+max\+\_\+keys} (const U\+Short\+Array \&basis\+\_\+index, const Sizet\+List \&subset\+\_\+indices)
+\begin{DoxyCompactList}\small\item\em if needed for efficiency, precompute the max values for the collocation keys within the subset \end{DoxyCompactList}\item 
+virtual unsigned short \hyperlink{classPecos_1_1SharedInterpPolyApproxData_aebc21f7540417a6aa2671b7ead1ff376}{tensor\+\_\+product\+\_\+num\+\_\+key} (size\+\_\+t i, unsigned short level\+\_\+i)
+\begin{DoxyCompactList}\small\item\em return the number of collocation keys for i$^\wedge$\{th\} variable and level\+\_\+i index set \end{DoxyCompactList}\item 
+virtual unsigned short \hyperlink{classPecos_1_1SharedInterpPolyApproxData_a48c241725ff74c5f3d500b287cb5d5b5}{tensor\+\_\+product\+\_\+max\+\_\+key} (size\+\_\+t i, unsigned short level\+\_\+i)
+\begin{DoxyCompactList}\small\item\em return the maximum collocation key value for i$^\wedge$\{th\} variable and level\+\_\+i index set \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1SharedInterpPolyApproxData_a835514f9023eedb9649e08b9f6ef9bc6}{type1\+\_\+interpolant\+\_\+value} (const Real\+Vector \&x, const U\+Short\+Array \&key, const U\+Short\+Array \&basis\+\_\+index)\label{classPecos_1_1SharedInterpPolyApproxData_a835514f9023eedb9649e08b9f6ef9bc6}
+
+\begin{DoxyCompactList}\small\item\em return value of type 1 interpolation polynomial using all dimensions \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1SharedInterpPolyApproxData_ae4458706f4d72b79990c2c1e5e9751eb}{type1\+\_\+interpolant\+\_\+value} (const Real\+Vector \&x, const U\+Short\+Array \&key, const U\+Short\+Array \&basis\+\_\+index, const Sizet\+List \&subset\+\_\+indices)
+\begin{DoxyCompactList}\small\item\em return value of type 1 interpolation polynomial using interpolated (non-\/integrated) dimension subset \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1SharedInterpPolyApproxData_a28337752c15300b873673c595adb7cc0}{type1\+\_\+interpolant\+\_\+gradient} (const Real\+Vector \&x, size\+\_\+t deriv\+\_\+index, const U\+Short\+Array \&key, const U\+Short\+Array \&basis\+\_\+index)\label{classPecos_1_1SharedInterpPolyApproxData_a28337752c15300b873673c595adb7cc0}
+
+\begin{DoxyCompactList}\small\item\em return gradient of type 1 interpolation polynomial using all dimensions \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1SharedInterpPolyApproxData_ad635c37b41cb66f1d144acf6f12b465b}{type1\+\_\+interpolant\+\_\+gradient} (const Real\+Vector \&x, size\+\_\+t deriv\+\_\+index, const U\+Short\+Array \&key, const U\+Short\+Array \&basis\+\_\+index, const Sizet\+List \&subset\+\_\+indices)
+\begin{DoxyCompactList}\small\item\em return gradient of type 1 interpolation polynomial using interpolated (non-\/integrated) dimension subset \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1SharedInterpPolyApproxData_a4a2b43a73d46e796feaadc52736c7eac}{type2\+\_\+interpolant\+\_\+value} (const Real\+Vector \&x, size\+\_\+t interp\+\_\+index, const U\+Short\+Array \&key, const U\+Short\+Array \&basis\+\_\+index)\label{classPecos_1_1SharedInterpPolyApproxData_a4a2b43a73d46e796feaadc52736c7eac}
+
+\begin{DoxyCompactList}\small\item\em return value of type 2 interpolation polynomial using all dimensions \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1SharedInterpPolyApproxData_a16b8f3feb73a786a5974455be56703a1}{type2\+\_\+interpolant\+\_\+value} (const Real\+Vector \&x, size\+\_\+t interp\+\_\+index, const U\+Short\+Array \&key, const U\+Short\+Array \&basis\+\_\+index, const Sizet\+List \&subset\+\_\+indices)
+\begin{DoxyCompactList}\small\item\em return value of type 2 interpolation polynomial using interpolated (non-\/integrated) dimension subset \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1SharedInterpPolyApproxData_ab80fd304a277fc389fadcde453c815ff}{type2\+\_\+interpolant\+\_\+gradient} (const Real\+Vector \&x, size\+\_\+t deriv\+\_\+index, size\+\_\+t interp\+\_\+index, const U\+Short\+Array \&key, const U\+Short\+Array \&basis\+\_\+index)\label{classPecos_1_1SharedInterpPolyApproxData_ab80fd304a277fc389fadcde453c815ff}
+
+\begin{DoxyCompactList}\small\item\em return gradient of type 2 interpolation polynomial using all dimensions \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1SharedInterpPolyApproxData_acfb9530e8107ee37dc01edc67c761ef1}{type2\+\_\+interpolant\+\_\+gradient} (const Real\+Vector \&x, size\+\_\+t deriv\+\_\+index, size\+\_\+t interp\+\_\+index, const U\+Short\+Array \&key, const U\+Short\+Array \&basis\+\_\+index, const Sizet\+List \&subset\+\_\+indices)
+\begin{DoxyCompactList}\small\item\em return gradient of type 2 interpolation polynomial using interpolated (non-\/integrated) dimension subset \end{DoxyCompactList}\item 
+size\+\_\+t \hyperlink{classPecos_1_1SharedInterpPolyApproxData_a9b52639337c3dfbcd2ddb9588e930abe}{barycentric\+\_\+active\+\_\+variables} (const U\+Short\+Array \&basis\+\_\+index)\label{classPecos_1_1SharedInterpPolyApproxData_a9b52639337c3dfbcd2ddb9588e930abe}
+
+\begin{DoxyCompactList}\small\item\em compute the number of variables that are active for barycentric interpolation \end{DoxyCompactList}\item 
+size\+\_\+t \hyperlink{classPecos_1_1SharedInterpPolyApproxData_ab93dce831b1b896b05417fc2b68e4595}{barycentric\+\_\+active\+\_\+variables} (const U\+Short\+Array \&basis\+\_\+index, const Sizet\+List \&subset\+\_\+indices)\label{classPecos_1_1SharedInterpPolyApproxData_ab93dce831b1b896b05417fc2b68e4595}
+
+\begin{DoxyCompactList}\small\item\em compute the number of variables within subset\+\_\+indices that are active for barycentric interpolation \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1SharedInterpPolyApproxData_a93f1de37d982eaf7902e5ed1eb640d3b}{barycentric\+\_\+value\+\_\+factor} (const U\+Short\+Array \&key, const U\+Short\+Array \&basis\+\_\+index)\label{classPecos_1_1SharedInterpPolyApproxData_a93f1de37d982eaf7902e5ed1eb640d3b}
+
+\begin{DoxyCompactList}\small\item\em compute the product of 1D barycentric value factors \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1SharedInterpPolyApproxData_a5b4b1a2390826e5869adc8230512b2e1}{barycentric\+\_\+value\+\_\+factor} (const U\+Short\+Array \&key, const U\+Short\+Array \&basis\+\_\+index, const Sizet\+List \&subset\+\_\+indices)\label{classPecos_1_1SharedInterpPolyApproxData_a5b4b1a2390826e5869adc8230512b2e1}
+
+\begin{DoxyCompactList}\small\item\em compute the product of a subset of 1D barycentric value factors \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1SharedInterpPolyApproxData_a60684969aa472abd213e746cc95e1b3e}{barycentric\+\_\+value\+\_\+scaling} (const U\+Short\+Array \&basis\+\_\+index)\label{classPecos_1_1SharedInterpPolyApproxData_a60684969aa472abd213e746cc95e1b3e}
+
+\begin{DoxyCompactList}\small\item\em compute the product of 1D barycentric weight factor sums for use in the denominator of the barycentric interpolation formula (second form) \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1SharedInterpPolyApproxData_aebfe4bd53cc5e7eb34efd7efb7aa07e6}{barycentric\+\_\+value\+\_\+scaling} (const U\+Short\+Array \&basis\+\_\+index, const Sizet\+List \&subset\+\_\+indices)\label{classPecos_1_1SharedInterpPolyApproxData_aebfe4bd53cc5e7eb34efd7efb7aa07e6}
+
+\begin{DoxyCompactList}\small\item\em compute the product of a subset of 1D barycentric weight factor sums for use in the denominator of the barycentric interpolation formula (second form) \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1SharedInterpPolyApproxData_a268c12abc76f46fec2d5503cc165acc6}{barycentric\+\_\+gradient\+\_\+factor} (size\+\_\+t deriv\+\_\+index, const U\+Short\+Array \&key, const U\+Short\+Array \&basis\+\_\+index)\label{classPecos_1_1SharedInterpPolyApproxData_a268c12abc76f46fec2d5503cc165acc6}
+
+\begin{DoxyCompactList}\small\item\em compute the product of 1D barycentric gradient factors \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1SharedInterpPolyApproxData_a103b2fbb180aa1503e33b0042d6df0c9}{barycentric\+\_\+gradient\+\_\+factor} (size\+\_\+t deriv\+\_\+index, const U\+Short\+Array \&key, const U\+Short\+Array \&basis\+\_\+index, const Sizet\+List \&subset\+\_\+indices)
+\begin{DoxyCompactList}\small\item\em compute the product of a subset of 1D barycentric gradient factors \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1SharedInterpPolyApproxData_a74259549a81c3c749048e7e4897f53e2}{barycentric\+\_\+gradient\+\_\+scaling} (const U\+Short\+Array \&basis\+\_\+index)\label{classPecos_1_1SharedInterpPolyApproxData_a74259549a81c3c749048e7e4897f53e2}
+
+\begin{DoxyCompactList}\small\item\em compute the product of 1D barycentric gradient scalings \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1SharedInterpPolyApproxData_a4e79a558ac8c7fbcde9c5e32cabd5570}{barycentric\+\_\+gradient\+\_\+scaling} (const U\+Short\+Array \&basis\+\_\+index, const Sizet\+List \&subset\+\_\+indices)\label{classPecos_1_1SharedInterpPolyApproxData_a4e79a558ac8c7fbcde9c5e32cabd5570}
+
+\begin{DoxyCompactList}\small\item\em compute the product of a subset of 1D barycentric gradient scalings \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1SharedInterpPolyApproxData_a8678f730daa3e7ec66203c3533e7acaa}{type1\+\_\+weight} (const U\+Short\+Array \&key, const U\+Short\+Array \&basis\+\_\+index, const Sizet\+List \&subset\+\_\+indices)
+\begin{DoxyCompactList}\small\item\em return type 1 product weight from integration of type 1 interpolation polynomials using integrated dimension subset \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1SharedInterpPolyApproxData_a918e8806a0ff6806ba99e55affe9a04f}{type1\+\_\+weight} (const U\+Short\+Array \&key, const U\+Short\+Array \&basis\+\_\+index, const Bit\+Array \&member\+\_\+bits, Real \&member\+\_\+t1\+\_\+wt\+\_\+prod, Real \&nonmember\+\_\+t1\+\_\+wt\+\_\+prod)
+\begin{DoxyCompactList}\small\item\em return type 1 product weights from integration of type 1 interpolation polynomials for both member and nonmember sets \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1SharedInterpPolyApproxData_a254f6c1d6c1a0a64298957e4428c10a4}{type2\+\_\+weight} (size\+\_\+t interp\+\_\+index, const U\+Short\+Array \&key, const U\+Short\+Array \&basis\+\_\+index, const Sizet\+List \&subset\+\_\+indices)
+\begin{DoxyCompactList}\small\item\em return type 2 product weight from integration of type 1/2 interpolation polynomials using integrated dimension subset \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1SharedInterpPolyApproxData_a11007d8fbe2b11118e1fa517a948ac48}{type2\+\_\+weight} (size\+\_\+t interp\+\_\+index, const U\+Short\+Array \&key, const U\+Short\+Array \&basis\+\_\+index, const Bit\+Array \&member\+\_\+bits, Real \&member\+\_\+t2\+\_\+wt\+\_\+prod, Real \&nonmember\+\_\+t2\+\_\+wt\+\_\+prod)
+\begin{DoxyCompactList}\small\item\em return type 2 product weight from integration of type 1/2 interpolation polynomials for both member and nonmember sets \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1SharedInterpPolyApproxData_a8cec4f56b444b6dc0415a587012860b0}{tensor\+\_\+product\+\_\+value} (const Real\+Vector \&x, const Real\+Vector \&exp\+\_\+t1\+\_\+coeffs, const Real\+Matrix \&exp\+\_\+t2\+\_\+coeffs, const U\+Short\+Array \&basis\+\_\+index, const U\+Short2\+D\+Array \&key, const Sizet\+Array \&colloc\+\_\+index)
+\begin{DoxyCompactList}\small\item\em compute the value of a tensor interpolant on a tensor grid; contributes to value(x) \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1SharedInterpPolyApproxData_a8996f48505f3c7ad5ed17a006b4ec11d}{tensor\+\_\+product\+\_\+value} (const Real\+Vector \&x, const Real\+Vector \&subset\+\_\+t1\+\_\+coeffs, const Real\+Matrix \&subset\+\_\+t2\+\_\+coeffs, const U\+Short\+Array \&basis\+\_\+index, const U\+Short2\+D\+Array \&subset\+\_\+key, const Sizet\+Array \&subset\+\_\+colloc\+\_\+index, const Sizet\+List \&subset\+\_\+indices)
+\begin{DoxyCompactList}\small\item\em compute the value of a tensor interpolant on a tensor grid over a subset of the variables; contributes to value(x) \end{DoxyCompactList}\item 
+const Real\+Vector \& \hyperlink{classPecos_1_1SharedInterpPolyApproxData_a399c6078aedd99c3ae8e95b79742cdf5}{tensor\+\_\+product\+\_\+gradient\+\_\+basis\+\_\+variables} (const Real\+Vector \&x, const Real\+Vector \&exp\+\_\+t1\+\_\+coeffs, const Real\+Matrix \&exp\+\_\+t2\+\_\+coeffs, const U\+Short\+Array \&basis\+\_\+index, const U\+Short2\+D\+Array \&key, const Sizet\+Array \&colloc\+\_\+index)\label{classPecos_1_1SharedInterpPolyApproxData_a399c6078aedd99c3ae8e95b79742cdf5}
+
+\begin{DoxyCompactList}\small\item\em compute the gradient of a tensor interpolant on a tensor grid with respect to variables that are included in the polynomial basis; contributes to gradient\+\_\+basis\+\_\+variables(x) \end{DoxyCompactList}\item 
+const Real\+Vector \& \hyperlink{classPecos_1_1SharedInterpPolyApproxData_a270628afd71964f2923b8a356a8f30ef}{tensor\+\_\+product\+\_\+gradient\+\_\+basis\+\_\+variables} (const Real\+Vector \&x, const Real\+Vector \&subset\+\_\+t1\+\_\+coeffs, const Real\+Matrix \&subset\+\_\+t2\+\_\+coeffs, const U\+Short\+Array \&basis\+\_\+index, const U\+Short2\+D\+Array \&subset\+\_\+key, const Sizet\+Array \&subset\+\_\+colloc\+\_\+index, const Sizet\+List \&subset\+\_\+indices)\label{classPecos_1_1SharedInterpPolyApproxData_a270628afd71964f2923b8a356a8f30ef}
+
+\begin{DoxyCompactList}\small\item\em compute the gradient of a tensor interpolant on a tensor grid with respect to variables that are included in the polynomial basis; contributes to gradient\+\_\+basis\+\_\+variables(x) \end{DoxyCompactList}\item 
+const Real\+Vector \& \hyperlink{classPecos_1_1SharedInterpPolyApproxData_ad4f29e05ded8b3a5683444124d1afe2b}{tensor\+\_\+product\+\_\+gradient\+\_\+basis\+\_\+variables} (const Real\+Vector \&x, const Real\+Vector \&exp\+\_\+t1\+\_\+coeffs, const Real\+Matrix \&exp\+\_\+t2\+\_\+coeffs, const U\+Short\+Array \&basis\+\_\+index, const U\+Short2\+D\+Array \&key, const Sizet\+Array \&colloc\+\_\+index, const Sizet\+Array \&dvv)\label{classPecos_1_1SharedInterpPolyApproxData_ad4f29e05ded8b3a5683444124d1afe2b}
+
+\begin{DoxyCompactList}\small\item\em compute the gradient of a tensor interpolant on a tensor grid with respect to variables that are included in the polynomial basis for given D\+VV; contributes to gradient\+\_\+basis\+\_\+variables(x, dvv) \end{DoxyCompactList}\item 
+const Real\+Vector \& \hyperlink{classPecos_1_1SharedInterpPolyApproxData_ae51c50e333a72c0185801efc41967666}{tensor\+\_\+product\+\_\+gradient\+\_\+nonbasis\+\_\+variables} (const Real\+Vector \&x, const Real\+Matrix \&exp\+\_\+t1\+\_\+coeff\+\_\+grads, const U\+Short\+Array \&basis\+\_\+index, const U\+Short2\+D\+Array \&key, const Sizet\+Array \&colloc\+\_\+index)\label{classPecos_1_1SharedInterpPolyApproxData_ae51c50e333a72c0185801efc41967666}
+
+\begin{DoxyCompactList}\small\item\em compute the gradient of a tensor interpolant on a tensor grid with respect to variables that are not included in the polynomial basis; contributes to gradient\+\_\+nonbasis\+\_\+variables(x) \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1SharedInterpPolyApproxData_a0c16024e7c4a723a86a91325384061b0}{resize\+\_\+polynomial\+\_\+basis} (unsigned short max\+\_\+level)\label{classPecos_1_1SharedInterpPolyApproxData_a0c16024e7c4a723a86a91325384061b0}
+
+\begin{DoxyCompactList}\small\item\em resize polynomial\+Basis to accomodate an update in max interpolation level \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1SharedInterpPolyApproxData_a3ffa30ce4a1fc0da8012f7b440ffd9d0}{resize\+\_\+polynomial\+\_\+basis} (const U\+Short\+Array \&lev\+\_\+index)\label{classPecos_1_1SharedInterpPolyApproxData_a3ffa30ce4a1fc0da8012f7b440ffd9d0}
+
+\begin{DoxyCompactList}\small\item\em resize polynomial\+Basis to accomodate an update in interpolation levels \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1SharedInterpPolyApproxData_a4bdd4b14c446ea5d1f97acf9aebe90b5}{update\+\_\+tensor\+\_\+interpolation\+\_\+basis} (const U\+Short\+Array \&lev\+\_\+index, const Sizet\+List \&subset\+\_\+indices)\label{classPecos_1_1SharedInterpPolyApproxData_a4bdd4b14c446ea5d1f97acf9aebe90b5}
+
+\begin{DoxyCompactList}\small\item\em update polynomial\+Basis for a subset of variables after a change in quadrature order \end{DoxyCompactList}\item 
+bool \hyperlink{classPecos_1_1SharedInterpPolyApproxData_ab3d29fe58f1951dbed35555f68a934e7}{same\+\_\+basis} (unsigned short level, size\+\_\+t v1, size\+\_\+t v2)\label{classPecos_1_1SharedInterpPolyApproxData_ab3d29fe58f1951dbed35555f68a934e7}
+
+\begin{DoxyCompactList}\small\item\em for a particular level, test for equality between basis v2 and basis v1 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::vector$<$ \hyperlink{classPecos_1_1BasisPolynomial}{Basis\+Polynomial} $>$ $>$ \hyperlink{classPecos_1_1SharedInterpPolyApproxData_a86109b71b063d95880c10f0290f9a723}{polynomial\+Basis}
+\begin{DoxyCompactList}\small\item\em 2D array of one-\/dimensional basis polynomial objects used in constructing the multivariate orthogonal/interpolation polynomials. \end{DoxyCompactList}\item 
+bool \hyperlink{classPecos_1_1SharedInterpPolyApproxData_aa7a819fbf65278fd13d9c427041f4c7d}{barycentric\+Flag}\label{classPecos_1_1SharedInterpPolyApproxData_aa7a819fbf65278fd13d9c427041f4c7d}
+
+\begin{DoxyCompactList}\small\item\em flag indicating use of barycentric interpolation for global value-\/based Lagrange interpolation \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classPecos_1_1SharedInterpPolyApproxData_abc1447630ce19662bb54b4935ac871d2}{initialize\+\_\+polynomial\+\_\+basis\+\_\+type} (short \&poly\+\_\+type\+\_\+1d, short \&rule)\label{classPecos_1_1SharedInterpPolyApproxData_abc1447630ce19662bb54b4935ac871d2}
+
+\begin{DoxyCompactList}\small\item\em define the 1D basis type and collocation rule \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1SharedInterpPolyApproxData_ac40774432d0aa54bc1a2b24cad8bd5d8}{update\+\_\+tensor\+\_\+interpolation\+\_\+basis} (const U\+Short\+Array \&lev\+\_\+index)\label{classPecos_1_1SharedInterpPolyApproxData_ac40774432d0aa54bc1a2b24cad8bd5d8}
+
+\begin{DoxyCompactList}\small\item\em update polynomial\+Basis after a change in quadrature order \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1SharedInterpPolyApproxData_afa692c8fd193ae10e7e992f29bb40882}{update\+\_\+sparse\+\_\+interpolation\+\_\+basis} (unsigned short max\+\_\+level)\label{classPecos_1_1SharedInterpPolyApproxData_afa692c8fd193ae10e7e992f29bb40882}
+
+\begin{DoxyCompactList}\small\item\em update polynomial\+Basis after a change in sparse grid level \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1SharedInterpPolyApproxData_a8f3fd2dd21981b9bd4612f2f0f9d6921}{update\+\_\+interpolation\+\_\+basis} (unsigned short lev\+\_\+index, size\+\_\+t var\+\_\+index)\label{classPecos_1_1SharedInterpPolyApproxData_a8f3fd2dd21981b9bd4612f2f0f9d6921}
+
+\begin{DoxyCompactList}\small\item\em update polynomial\+Basis for a variable index after an update in level \end{DoxyCompactList}\item 
+bool \hyperlink{classPecos_1_1SharedInterpPolyApproxData_a83795f68a8b6ef46e06513c3ece8902a}{find\+\_\+basis} (unsigned short level, size\+\_\+t v1, size\+\_\+t \&v2)\label{classPecos_1_1SharedInterpPolyApproxData_a83795f68a8b6ef46e06513c3ece8902a}
+
+\begin{DoxyCompactList}\small\item\em for a particular level, find index of basis v2 that matches basis v1 \end{DoxyCompactList}\item 
+bool \hyperlink{classPecos_1_1SharedInterpPolyApproxData_a580885077877c95fd202178646466dd9}{barycentric\+\_\+value\+\_\+factor} (\hyperlink{classPecos_1_1BasisPolynomial}{Basis\+Polynomial} \&pb\+\_\+lv, unsigned short key\+\_\+lv, Real \&prod)\label{classPecos_1_1SharedInterpPolyApproxData_a580885077877c95fd202178646466dd9}
+
+\begin{DoxyCompactList}\small\item\em compute the product of 1D barycentric value factors \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1SharedInterpPolyApproxData_ad33329165f7aa11eebf4754fcb26b4cd}{barycentric\+\_\+partial\+\_\+indexing} (const U\+Short\+Array \&basis\+\_\+index, Sizet\+List \&pt\+\_\+factors, Sizet\+List \&act\+\_\+v\+\_\+set, size\+\_\+t \&num\+\_\+act\+\_\+pts, size\+\_\+t \&pt\+\_\+index)\label{classPecos_1_1SharedInterpPolyApproxData_ad33329165f7aa11eebf4754fcb26b4cd}
+
+\begin{DoxyCompactList}\small\item\em shared utility for barycentric interpolation over a partial variable subset\+: define pt\+\_\+factors, act\+\_\+v\+\_\+set, num\+\_\+act\+\_\+pts, and return pt\+\_\+index \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1SharedInterpPolyApproxData_a3621c913edc1a1b2c93996963461c4b1}{barycentric\+\_\+partial\+\_\+indexing} (const U\+Short\+Array \&basis\+\_\+index, const Sizet\+List \&subset\+\_\+indices, Sizet\+List \&pt\+\_\+factors, Sizet\+List \&act\+\_\+v\+\_\+set, size\+\_\+t \&num\+\_\+act\+\_\+pts, size\+\_\+t \&pt\+\_\+index)\label{classPecos_1_1SharedInterpPolyApproxData_a3621c913edc1a1b2c93996963461c4b1}
+
+\begin{DoxyCompactList}\small\item\em shared utility for barycentric interpolation over a partial variable subset\+: define pt\+\_\+factors, act\+\_\+v\+\_\+set, num\+\_\+act\+\_\+pts, and return pt\+\_\+index \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1SharedInterpPolyApproxData_acba09fe1d05ec5909443f2cd365ece97}{accumulate\+\_\+barycentric\+\_\+partial} (const Real\+Vector \&t1\+\_\+coeffs, const U\+Short\+Array \&basis\+\_\+index, const U\+Short2\+D\+Array \&key, const Sizet\+Array \&colloc\+\_\+index, const Sizet\+List \&pt\+\_\+factors, const Sizet\+List \&act\+\_\+v\+\_\+set, size\+\_\+t num\+\_\+act\+\_\+pts, size\+\_\+t pt\+\_\+index, Real\+Vector \&accumulator)\label{classPecos_1_1SharedInterpPolyApproxData_acba09fe1d05ec5909443f2cd365ece97}
+
+\begin{DoxyCompactList}\small\item\em shared code for barycentric interpolation over an active variable subset \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1SharedInterpPolyApproxData_af3de387fc4856a30cdf17fe72dfcd94a}{accumulate\+\_\+barycentric\+\_\+gradient} (unsigned short bi0, unsigned short key\+\_\+i0, size\+\_\+t ei\+\_\+0, Real $\ast$accum\+\_\+0, Real t1\+\_\+coeff, const Real\+Vector \&bc\+\_\+vf\+\_\+0, const Real\+Vector \&bc\+\_\+gf\+\_\+0)\label{classPecos_1_1SharedInterpPolyApproxData_af3de387fc4856a30cdf17fe72dfcd94a}
+
+\begin{DoxyCompactList}\small\item\em shared code for barycentric gradient evaluation for active variable 0 \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1SharedInterpPolyApproxData_ad7ae4f0344220d14a39976defafd2bc1}{accumulate\+\_\+barycentric\+\_\+gradient} (size\+\_\+t j, unsigned short bij, unsigned short key\+\_\+ij, \hyperlink{classPecos_1_1BasisPolynomial}{Basis\+Polynomial} \&poly\+\_\+j, Real\+Matrix \&accumulator)\label{classPecos_1_1SharedInterpPolyApproxData_ad7ae4f0344220d14a39976defafd2bc1}
+
+\begin{DoxyCompactList}\small\item\em shared code for barycentric gradient evaluation for active variables 1\+:n \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Real\+Vector \hyperlink{classPecos_1_1SharedInterpPolyApproxData_a213e5944dbdea6145f990213101c333b}{tp\+Gradient}\label{classPecos_1_1SharedInterpPolyApproxData_a213e5944dbdea6145f990213101c333b}
+
+\begin{DoxyCompactList}\small\item\em the gradient of a tensor-\/product interpolant; a contributor to approx\+Gradient \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bfseries Interp\+Poly\+Approximation}\label{classPecos_1_1SharedInterpPolyApproxData_aafe9d45ff8baa100e0ebb9b2692540c7}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Derived approximation class for interpolation polynomials (global approximation). 
+
+The \hyperlink{classPecos_1_1SharedInterpPolyApproxData}{Shared\+Interp\+Poly\+Approx\+Data} class provides a global approximation based on interpolation polynomials. It is used primarily for stochastic collocation approaches to uncertainty quantification. 
+
+\subsection{Member Function Documentation}
+\index{Pecos\+::\+Shared\+Interp\+Poly\+Approx\+Data@{Pecos\+::\+Shared\+Interp\+Poly\+Approx\+Data}!initialize\+\_\+driver\+\_\+types\+\_\+rules@{initialize\+\_\+driver\+\_\+types\+\_\+rules}}
+\index{initialize\+\_\+driver\+\_\+types\+\_\+rules@{initialize\+\_\+driver\+\_\+types\+\_\+rules}!Pecos\+::\+Shared\+Interp\+Poly\+Approx\+Data@{Pecos\+::\+Shared\+Interp\+Poly\+Approx\+Data}}
+\subsubsection[{\texorpdfstring{initialize\+\_\+driver\+\_\+types\+\_\+rules(const Short\+Array \&u\+\_\+types, const Basis\+Config\+Options \&bc\+\_\+options, Short\+Array \&basis\+\_\+types, Short\+Array \&colloc\+\_\+rules)}{initialize_driver_types_rules(const ShortArray &u_types, const BasisConfigOptions &bc_options, ShortArray &basis_types, ShortArray &colloc_rules)}}]{\setlength{\rightskip}{0pt plus 5cm}bool initialize\+\_\+driver\+\_\+types\+\_\+rules (
+\begin{DoxyParamCaption}
+\item[{const Short\+Array \&}]{u\+\_\+types, }
+\item[{const {\bf Basis\+Config\+Options} \&}]{bc\+\_\+options, }
+\item[{Short\+Array \&}]{basis\+\_\+types, }
+\item[{Short\+Array \&}]{colloc\+\_\+rules}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classPecos_1_1SharedInterpPolyApproxData_a6cdac92e4b4313f2a73677c9c39fdb3f}
+
+
+define n-\/D basis types and collocation rules based on u\+\_\+types and basis configuration options for use in configuring integration drivers 
+
+These basis types may include orthogonal polynomials for purposes of computing their Gauss points and weights within integration drivers; thus they differ in general from the interpolation polynomial basis used for approximation.
+
+This version provides the polynomial types needed to retrieve collocation points and weights by an integration driver. These may involve orthogonal polynomials which will differ from the interpolation polynomial types used in the basis. 
+
+References Basis\+Config\+Options\+::equidistant\+Rules, Basis\+Config\+Options\+::gauss\+Rule\+Override, Shared\+Poly\+Approx\+Data\+::initialize\+\_\+orthogonal\+\_\+basis\+\_\+type\+\_\+rule(), Shared\+Interp\+Poly\+Approx\+Data\+::initialize\+\_\+polynomial\+\_\+basis\+\_\+type(), Basis\+Config\+Options\+::nested\+Rules, Basis\+Config\+Options\+::open\+Rule\+Override, Basis\+Config\+Options\+::piecewise\+Basis, and Basis\+Config\+Options\+::use\+Derivs.
+
+
+
+Referenced by Shared\+Interp\+Poly\+Approx\+Data\+::construct\+\_\+basis(), and Integration\+Driver\+::initialize\+\_\+grid().
+
+\index{Pecos\+::\+Shared\+Interp\+Poly\+Approx\+Data@{Pecos\+::\+Shared\+Interp\+Poly\+Approx\+Data}!precompute\+\_\+keys@{precompute\+\_\+keys}}
+\index{precompute\+\_\+keys@{precompute\+\_\+keys}!Pecos\+::\+Shared\+Interp\+Poly\+Approx\+Data@{Pecos\+::\+Shared\+Interp\+Poly\+Approx\+Data}}
+\subsubsection[{\texorpdfstring{precompute\+\_\+keys(const U\+Short\+Array \&basis\+\_\+index)}{precompute_keys(const UShortArray &basis_index)}}]{\setlength{\rightskip}{0pt plus 5cm}void precompute\+\_\+keys (
+\begin{DoxyParamCaption}
+\item[{const U\+Short\+Array \&}]{basis\+\_\+index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classPecos_1_1SharedInterpPolyApproxData_af3fdba189ef1be4278ed198f21621ebb}
+
+
+if needed for efficiency, precompute the count and max values for the collocation keys 
+
+Default implementation; overridden by Hierarch\+Interp\+Poly\+Approx\+Data. 
+
+Reimplemented in \hyperlink{classPecos_1_1SharedHierarchInterpPolyApproxData_af3fdba189ef1be4278ed198f21621ebb}{Shared\+Hierarch\+Interp\+Poly\+Approx\+Data}.
+
+
+
+Referenced by Shared\+Interp\+Poly\+Approx\+Data\+::barycentric\+\_\+active\+\_\+variables(), and Shared\+Interp\+Poly\+Approx\+Data\+::barycentric\+\_\+partial\+\_\+indexing().
+
+\index{Pecos\+::\+Shared\+Interp\+Poly\+Approx\+Data@{Pecos\+::\+Shared\+Interp\+Poly\+Approx\+Data}!precompute\+\_\+keys@{precompute\+\_\+keys}}
+\index{precompute\+\_\+keys@{precompute\+\_\+keys}!Pecos\+::\+Shared\+Interp\+Poly\+Approx\+Data@{Pecos\+::\+Shared\+Interp\+Poly\+Approx\+Data}}
+\subsubsection[{\texorpdfstring{precompute\+\_\+keys(const U\+Short\+Array \&basis\+\_\+index, const Sizet\+List \&subset\+\_\+indices)}{precompute_keys(const UShortArray &basis_index, const SizetList &subset_indices)}}]{\setlength{\rightskip}{0pt plus 5cm}void precompute\+\_\+keys (
+\begin{DoxyParamCaption}
+\item[{const U\+Short\+Array \&}]{basis\+\_\+index, }
+\item[{const Sizet\+List \&}]{subset\+\_\+indices}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classPecos_1_1SharedInterpPolyApproxData_a8a006b2611ce5fa80285ff6c3dad67c0}
+
+
+if needed for efficiency, precompute the count and max values for the collocation keys within the subset 
+
+Default implementation; overridden by Hierarch\+Interp\+Poly\+Approx\+Data. 
+
+Reimplemented in \hyperlink{classPecos_1_1SharedHierarchInterpPolyApproxData_a8a006b2611ce5fa80285ff6c3dad67c0}{Shared\+Hierarch\+Interp\+Poly\+Approx\+Data}.
+
+
+
+References Shared\+Interp\+Poly\+Approx\+Data\+::precompute\+\_\+max\+\_\+keys().
+
+\index{Pecos\+::\+Shared\+Interp\+Poly\+Approx\+Data@{Pecos\+::\+Shared\+Interp\+Poly\+Approx\+Data}!precompute\+\_\+max\+\_\+keys@{precompute\+\_\+max\+\_\+keys}}
+\index{precompute\+\_\+max\+\_\+keys@{precompute\+\_\+max\+\_\+keys}!Pecos\+::\+Shared\+Interp\+Poly\+Approx\+Data@{Pecos\+::\+Shared\+Interp\+Poly\+Approx\+Data}}
+\subsubsection[{\texorpdfstring{precompute\+\_\+max\+\_\+keys(const U\+Short\+Array \&basis\+\_\+index)}{precompute_max_keys(const UShortArray &basis_index)}}]{\setlength{\rightskip}{0pt plus 5cm}void precompute\+\_\+max\+\_\+keys (
+\begin{DoxyParamCaption}
+\item[{const U\+Short\+Array \&}]{basis\+\_\+index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classPecos_1_1SharedInterpPolyApproxData_a01d4893d40fc53f6193cef94658443a9}
+
+
+if needed for efficiency, precompute the max values for the collocation keys 
+
+Default implementation; overridden by Hierarch\+Interp\+Poly\+Approx\+Data. 
+
+Reimplemented in \hyperlink{classPecos_1_1SharedHierarchInterpPolyApproxData_a01d4893d40fc53f6193cef94658443a9}{Shared\+Hierarch\+Interp\+Poly\+Approx\+Data}.
+
+
+
+Referenced by Shared\+Interp\+Poly\+Approx\+Data\+::precompute\+\_\+keys(), Shared\+Interp\+Poly\+Approx\+Data\+::tensor\+\_\+product\+\_\+gradient\+\_\+basis\+\_\+variables(), Shared\+Interp\+Poly\+Approx\+Data\+::tensor\+\_\+product\+\_\+gradient\+\_\+nonbasis\+\_\+variables(), and Shared\+Interp\+Poly\+Approx\+Data\+::tensor\+\_\+product\+\_\+value().
+
+\index{Pecos\+::\+Shared\+Interp\+Poly\+Approx\+Data@{Pecos\+::\+Shared\+Interp\+Poly\+Approx\+Data}!precompute\+\_\+max\+\_\+keys@{precompute\+\_\+max\+\_\+keys}}
+\index{precompute\+\_\+max\+\_\+keys@{precompute\+\_\+max\+\_\+keys}!Pecos\+::\+Shared\+Interp\+Poly\+Approx\+Data@{Pecos\+::\+Shared\+Interp\+Poly\+Approx\+Data}}
+\subsubsection[{\texorpdfstring{precompute\+\_\+max\+\_\+keys(const U\+Short\+Array \&basis\+\_\+index, const Sizet\+List \&subset\+\_\+indices)}{precompute_max_keys(const UShortArray &basis_index, const SizetList &subset_indices)}}]{\setlength{\rightskip}{0pt plus 5cm}void precompute\+\_\+max\+\_\+keys (
+\begin{DoxyParamCaption}
+\item[{const U\+Short\+Array \&}]{basis\+\_\+index, }
+\item[{const Sizet\+List \&}]{subset\+\_\+indices}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classPecos_1_1SharedInterpPolyApproxData_affd9fbab13d20744790f0b5267e4eceb}
+
+
+if needed for efficiency, precompute the max values for the collocation keys within the subset 
+
+Default implementation; overridden by Hierarch\+Interp\+Poly\+Approx\+Data. 
+
+Reimplemented in \hyperlink{classPecos_1_1SharedHierarchInterpPolyApproxData_affd9fbab13d20744790f0b5267e4eceb}{Shared\+Hierarch\+Interp\+Poly\+Approx\+Data}.
+
+
+
+References Shared\+Interp\+Poly\+Approx\+Data\+::tensor\+\_\+product\+\_\+num\+\_\+key().
+
+\index{Pecos\+::\+Shared\+Interp\+Poly\+Approx\+Data@{Pecos\+::\+Shared\+Interp\+Poly\+Approx\+Data}!tensor\+\_\+product\+\_\+num\+\_\+key@{tensor\+\_\+product\+\_\+num\+\_\+key}}
+\index{tensor\+\_\+product\+\_\+num\+\_\+key@{tensor\+\_\+product\+\_\+num\+\_\+key}!Pecos\+::\+Shared\+Interp\+Poly\+Approx\+Data@{Pecos\+::\+Shared\+Interp\+Poly\+Approx\+Data}}
+\subsubsection[{\texorpdfstring{tensor\+\_\+product\+\_\+num\+\_\+key(size\+\_\+t i, unsigned short level\+\_\+i)}{tensor_product_num_key(size_t i, unsigned short level_i)}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned short tensor\+\_\+product\+\_\+num\+\_\+key (
+\begin{DoxyParamCaption}
+\item[{size\+\_\+t}]{i, }
+\item[{unsigned short}]{level\+\_\+i}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classPecos_1_1SharedInterpPolyApproxData_aebc21f7540417a6aa2671b7ead1ff376}
+
+
+return the number of collocation keys for i$^\wedge$\{th\} variable and level\+\_\+i index set 
+
+Default implementation; overridden by Hierarch\+Interp\+Poly\+Approx\+Data. 
+
+Reimplemented in \hyperlink{classPecos_1_1SharedHierarchInterpPolyApproxData_aebc21f7540417a6aa2671b7ead1ff376}{Shared\+Hierarch\+Interp\+Poly\+Approx\+Data}.
+
+
+
+References Shared\+Interp\+Poly\+Approx\+Data\+::polynomial\+Basis, and Shared\+Interp\+Poly\+Approx\+Data\+::tensor\+\_\+product\+\_\+max\+\_\+key().
+
+
+
+Referenced by Shared\+Interp\+Poly\+Approx\+Data\+::accumulate\+\_\+barycentric\+\_\+partial(), Shared\+Interp\+Poly\+Approx\+Data\+::barycentric\+\_\+partial\+\_\+indexing(), Shared\+Interp\+Poly\+Approx\+Data\+::precompute\+\_\+max\+\_\+keys(), and Shared\+Interp\+Poly\+Approx\+Data\+::tensor\+\_\+product\+\_\+gradient\+\_\+nonbasis\+\_\+variables().
+
+\index{Pecos\+::\+Shared\+Interp\+Poly\+Approx\+Data@{Pecos\+::\+Shared\+Interp\+Poly\+Approx\+Data}!tensor\+\_\+product\+\_\+max\+\_\+key@{tensor\+\_\+product\+\_\+max\+\_\+key}}
+\index{tensor\+\_\+product\+\_\+max\+\_\+key@{tensor\+\_\+product\+\_\+max\+\_\+key}!Pecos\+::\+Shared\+Interp\+Poly\+Approx\+Data@{Pecos\+::\+Shared\+Interp\+Poly\+Approx\+Data}}
+\subsubsection[{\texorpdfstring{tensor\+\_\+product\+\_\+max\+\_\+key(size\+\_\+t i, unsigned short level\+\_\+i)}{tensor_product_max_key(size_t i, unsigned short level_i)}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned short tensor\+\_\+product\+\_\+max\+\_\+key (
+\begin{DoxyParamCaption}
+\item[{size\+\_\+t}]{i, }
+\item[{unsigned short}]{level\+\_\+i}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classPecos_1_1SharedInterpPolyApproxData_a48c241725ff74c5f3d500b287cb5d5b5}
+
+
+return the maximum collocation key value for i$^\wedge$\{th\} variable and level\+\_\+i index set 
+
+Default implementation; overridden by Hierarch\+Interp\+Poly\+Approx\+Data. 
+
+Reimplemented in \hyperlink{classPecos_1_1SharedHierarchInterpPolyApproxData_a48c241725ff74c5f3d500b287cb5d5b5}{Shared\+Hierarch\+Interp\+Poly\+Approx\+Data}.
+
+
+
+References Shared\+Interp\+Poly\+Approx\+Data\+::barycentric\+\_\+partial\+\_\+indexing(), and Shared\+Interp\+Poly\+Approx\+Data\+::polynomial\+Basis.
+
+
+
+Referenced by Shared\+Interp\+Poly\+Approx\+Data\+::accumulate\+\_\+barycentric\+\_\+partial(), Shared\+Interp\+Poly\+Approx\+Data\+::tensor\+\_\+product\+\_\+gradient\+\_\+basis\+\_\+variables(), Shared\+Interp\+Poly\+Approx\+Data\+::tensor\+\_\+product\+\_\+gradient\+\_\+nonbasis\+\_\+variables(), Shared\+Interp\+Poly\+Approx\+Data\+::tensor\+\_\+product\+\_\+num\+\_\+key(), and Shared\+Interp\+Poly\+Approx\+Data\+::tensor\+\_\+product\+\_\+value().
+
+\index{Pecos\+::\+Shared\+Interp\+Poly\+Approx\+Data@{Pecos\+::\+Shared\+Interp\+Poly\+Approx\+Data}!type1\+\_\+interpolant\+\_\+value@{type1\+\_\+interpolant\+\_\+value}}
+\index{type1\+\_\+interpolant\+\_\+value@{type1\+\_\+interpolant\+\_\+value}!Pecos\+::\+Shared\+Interp\+Poly\+Approx\+Data@{Pecos\+::\+Shared\+Interp\+Poly\+Approx\+Data}}
+\subsubsection[{\texorpdfstring{type1\+\_\+interpolant\+\_\+value(const Real\+Vector \&x, const U\+Short\+Array \&key, const U\+Short\+Array \&basis\+\_\+index, const Sizet\+List \&subset\+\_\+indices)}{type1_interpolant_value(const RealVector &x, const UShortArray &key, const UShortArray &basis_index, const SizetList &subset_indices)}}]{\setlength{\rightskip}{0pt plus 5cm}Real type1\+\_\+interpolant\+\_\+value (
+\begin{DoxyParamCaption}
+\item[{const Real\+Vector \&}]{x, }
+\item[{const U\+Short\+Array \&}]{key, }
+\item[{const U\+Short\+Array \&}]{basis\+\_\+index, }
+\item[{const Sizet\+List \&}]{subset\+\_\+indices}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\label{classPecos_1_1SharedInterpPolyApproxData_ae4458706f4d72b79990c2c1e5e9751eb}
+
+
+return value of type 1 interpolation polynomial using interpolated (non-\/integrated) dimension subset 
+
+Combined expansion version. 
+
+References Shared\+Interp\+Poly\+Approx\+Data\+::polynomial\+Basis, and Shared\+Interp\+Poly\+Approx\+Data\+::type1\+\_\+interpolant\+\_\+gradient().
+
+\index{Pecos\+::\+Shared\+Interp\+Poly\+Approx\+Data@{Pecos\+::\+Shared\+Interp\+Poly\+Approx\+Data}!type1\+\_\+interpolant\+\_\+gradient@{type1\+\_\+interpolant\+\_\+gradient}}
+\index{type1\+\_\+interpolant\+\_\+gradient@{type1\+\_\+interpolant\+\_\+gradient}!Pecos\+::\+Shared\+Interp\+Poly\+Approx\+Data@{Pecos\+::\+Shared\+Interp\+Poly\+Approx\+Data}}
+\subsubsection[{\texorpdfstring{type1\+\_\+interpolant\+\_\+gradient(const Real\+Vector \&x, size\+\_\+t deriv\+\_\+index, const U\+Short\+Array \&key, const U\+Short\+Array \&basis\+\_\+index, const Sizet\+List \&subset\+\_\+indices)}{type1_interpolant_gradient(const RealVector &x, size_t deriv_index, const UShortArray &key, const UShortArray &basis_index, const SizetList &subset_indices)}}]{\setlength{\rightskip}{0pt plus 5cm}Real type1\+\_\+interpolant\+\_\+gradient (
+\begin{DoxyParamCaption}
+\item[{const Real\+Vector \&}]{x, }
+\item[{size\+\_\+t}]{deriv\+\_\+index, }
+\item[{const U\+Short\+Array \&}]{key, }
+\item[{const U\+Short\+Array \&}]{basis\+\_\+index, }
+\item[{const Sizet\+List \&}]{subset\+\_\+indices}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\label{classPecos_1_1SharedInterpPolyApproxData_ad635c37b41cb66f1d144acf6f12b465b}
+
+
+return gradient of type 1 interpolation polynomial using interpolated (non-\/integrated) dimension subset 
+
+Combined expansion version. 
+
+References Shared\+Interp\+Poly\+Approx\+Data\+::polynomial\+Basis, and Shared\+Interp\+Poly\+Approx\+Data\+::type2\+\_\+interpolant\+\_\+value().
+
+\index{Pecos\+::\+Shared\+Interp\+Poly\+Approx\+Data@{Pecos\+::\+Shared\+Interp\+Poly\+Approx\+Data}!type2\+\_\+interpolant\+\_\+value@{type2\+\_\+interpolant\+\_\+value}}
+\index{type2\+\_\+interpolant\+\_\+value@{type2\+\_\+interpolant\+\_\+value}!Pecos\+::\+Shared\+Interp\+Poly\+Approx\+Data@{Pecos\+::\+Shared\+Interp\+Poly\+Approx\+Data}}
+\subsubsection[{\texorpdfstring{type2\+\_\+interpolant\+\_\+value(const Real\+Vector \&x, size\+\_\+t interp\+\_\+index, const U\+Short\+Array \&key, const U\+Short\+Array \&basis\+\_\+index, const Sizet\+List \&subset\+\_\+indices)}{type2_interpolant_value(const RealVector &x, size_t interp_index, const UShortArray &key, const UShortArray &basis_index, const SizetList &subset_indices)}}]{\setlength{\rightskip}{0pt plus 5cm}Real type2\+\_\+interpolant\+\_\+value (
+\begin{DoxyParamCaption}
+\item[{const Real\+Vector \&}]{x, }
+\item[{size\+\_\+t}]{interp\+\_\+index, }
+\item[{const U\+Short\+Array \&}]{key, }
+\item[{const U\+Short\+Array \&}]{basis\+\_\+index, }
+\item[{const Sizet\+List \&}]{subset\+\_\+indices}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\label{classPecos_1_1SharedInterpPolyApproxData_a16b8f3feb73a786a5974455be56703a1}
+
+
+return value of type 2 interpolation polynomial using interpolated (non-\/integrated) dimension subset 
+
+Combined expansion version. 
+
+References Shared\+Interp\+Poly\+Approx\+Data\+::polynomial\+Basis, and Shared\+Interp\+Poly\+Approx\+Data\+::type2\+\_\+interpolant\+\_\+gradient().
+
+\index{Pecos\+::\+Shared\+Interp\+Poly\+Approx\+Data@{Pecos\+::\+Shared\+Interp\+Poly\+Approx\+Data}!type2\+\_\+interpolant\+\_\+gradient@{type2\+\_\+interpolant\+\_\+gradient}}
+\index{type2\+\_\+interpolant\+\_\+gradient@{type2\+\_\+interpolant\+\_\+gradient}!Pecos\+::\+Shared\+Interp\+Poly\+Approx\+Data@{Pecos\+::\+Shared\+Interp\+Poly\+Approx\+Data}}
+\subsubsection[{\texorpdfstring{type2\+\_\+interpolant\+\_\+gradient(const Real\+Vector \&x, size\+\_\+t deriv\+\_\+index, size\+\_\+t interp\+\_\+index, const U\+Short\+Array \&key, const U\+Short\+Array \&basis\+\_\+index, const Sizet\+List \&subset\+\_\+indices)}{type2_interpolant_gradient(const RealVector &x, size_t deriv_index, size_t interp_index, const UShortArray &key, const UShortArray &basis_index, const SizetList &subset_indices)}}]{\setlength{\rightskip}{0pt plus 5cm}Real type2\+\_\+interpolant\+\_\+gradient (
+\begin{DoxyParamCaption}
+\item[{const Real\+Vector \&}]{x, }
+\item[{size\+\_\+t}]{deriv\+\_\+index, }
+\item[{size\+\_\+t}]{interp\+\_\+index, }
+\item[{const U\+Short\+Array \&}]{key, }
+\item[{const U\+Short\+Array \&}]{basis\+\_\+index, }
+\item[{const Sizet\+List \&}]{subset\+\_\+indices}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\label{classPecos_1_1SharedInterpPolyApproxData_acfb9530e8107ee37dc01edc67c761ef1}
+
+
+return gradient of type 2 interpolation polynomial using interpolated (non-\/integrated) dimension subset 
+
+Combined expansion version. 
+
+References Shared\+Interp\+Poly\+Approx\+Data\+::barycentric\+\_\+active\+\_\+variables(), and Shared\+Interp\+Poly\+Approx\+Data\+::polynomial\+Basis.
+
+\index{Pecos\+::\+Shared\+Interp\+Poly\+Approx\+Data@{Pecos\+::\+Shared\+Interp\+Poly\+Approx\+Data}!barycentric\+\_\+gradient\+\_\+factor@{barycentric\+\_\+gradient\+\_\+factor}}
+\index{barycentric\+\_\+gradient\+\_\+factor@{barycentric\+\_\+gradient\+\_\+factor}!Pecos\+::\+Shared\+Interp\+Poly\+Approx\+Data@{Pecos\+::\+Shared\+Interp\+Poly\+Approx\+Data}}
+\subsubsection[{\texorpdfstring{barycentric\+\_\+gradient\+\_\+factor(size\+\_\+t deriv\+\_\+index, const U\+Short\+Array \&key, const U\+Short\+Array \&basis\+\_\+index, const Sizet\+List \&subset\+\_\+indices)}{barycentric_gradient_factor(size_t deriv_index, const UShortArray &key, const UShortArray &basis_index, const SizetList &subset_indices)}}]{\setlength{\rightskip}{0pt plus 5cm}Real barycentric\+\_\+gradient\+\_\+factor (
+\begin{DoxyParamCaption}
+\item[{size\+\_\+t}]{deriv\+\_\+index, }
+\item[{const U\+Short\+Array \&}]{key, }
+\item[{const U\+Short\+Array \&}]{basis\+\_\+index, }
+\item[{const Sizet\+List \&}]{subset\+\_\+indices}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\label{classPecos_1_1SharedInterpPolyApproxData_a103b2fbb180aa1503e33b0042d6df0c9}
+
+
+compute the product of a subset of 1D barycentric gradient factors 
+
+Combined expansion version. 
+
+References Basis\+Polynomial\+::barycentric\+\_\+gradient\+\_\+factor(), Shared\+Interp\+Poly\+Approx\+Data\+::barycentric\+\_\+gradient\+\_\+scaling(), Basis\+Polynomial\+::barycentric\+\_\+value\+\_\+factor(), and Shared\+Interp\+Poly\+Approx\+Data\+::polynomial\+Basis.
+
+\index{Pecos\+::\+Shared\+Interp\+Poly\+Approx\+Data@{Pecos\+::\+Shared\+Interp\+Poly\+Approx\+Data}!type1\+\_\+weight@{type1\+\_\+weight}}
+\index{type1\+\_\+weight@{type1\+\_\+weight}!Pecos\+::\+Shared\+Interp\+Poly\+Approx\+Data@{Pecos\+::\+Shared\+Interp\+Poly\+Approx\+Data}}
+\subsubsection[{\texorpdfstring{type1\+\_\+weight(const U\+Short\+Array \&key, const U\+Short\+Array \&basis\+\_\+index, const Sizet\+List \&subset\+\_\+indices)}{type1_weight(const UShortArray &key, const UShortArray &basis_index, const SizetList &subset_indices)}}]{\setlength{\rightskip}{0pt plus 5cm}Real type1\+\_\+weight (
+\begin{DoxyParamCaption}
+\item[{const U\+Short\+Array \&}]{key, }
+\item[{const U\+Short\+Array \&}]{basis\+\_\+index, }
+\item[{const Sizet\+List \&}]{subset\+\_\+indices}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\label{classPecos_1_1SharedInterpPolyApproxData_a8678f730daa3e7ec66203c3533e7acaa}
+
+
+return type 1 product weight from integration of type 1 interpolation polynomials using integrated dimension subset 
+
+Combined expansion partial weight. 
+
+References Shared\+Poly\+Approx\+Data\+::driver\+Rep, and Integration\+Driver\+::type1\+\_\+collocation\+\_\+weights\+\_\+1d().
+
+
+
+Referenced by Shared\+Interp\+Poly\+Approx\+Data\+::barycentric\+\_\+gradient\+\_\+scaling(), Hierarch\+Interp\+Poly\+Approximation\+::expectation(), Hierarch\+Interp\+Poly\+Approximation\+::expectation\+\_\+gradient(), Hierarch\+Interp\+Poly\+Approximation\+::member\+\_\+coefficients\+\_\+weights(), Nodal\+Interp\+Poly\+Approximation\+::tensor\+\_\+product\+\_\+covariance(), and Nodal\+Interp\+Poly\+Approximation\+::tensor\+\_\+product\+\_\+variance\+\_\+gradient().
+
+\index{Pecos\+::\+Shared\+Interp\+Poly\+Approx\+Data@{Pecos\+::\+Shared\+Interp\+Poly\+Approx\+Data}!type1\+\_\+weight@{type1\+\_\+weight}}
+\index{type1\+\_\+weight@{type1\+\_\+weight}!Pecos\+::\+Shared\+Interp\+Poly\+Approx\+Data@{Pecos\+::\+Shared\+Interp\+Poly\+Approx\+Data}}
+\subsubsection[{\texorpdfstring{type1\+\_\+weight(const U\+Short\+Array \&key, const U\+Short\+Array \&basis\+\_\+index, const Bit\+Array \&member\+\_\+bits, Real \&member\+\_\+t1\+\_\+wt\+\_\+prod, Real \&nonmember\+\_\+t1\+\_\+wt\+\_\+prod)}{type1_weight(const UShortArray &key, const UShortArray &basis_index, const BitArray &member_bits, Real &member_t1_wt_prod, Real &nonmember_t1_wt_prod)}}]{\setlength{\rightskip}{0pt plus 5cm}void type1\+\_\+weight (
+\begin{DoxyParamCaption}
+\item[{const U\+Short\+Array \&}]{key, }
+\item[{const U\+Short\+Array \&}]{basis\+\_\+index, }
+\item[{const Bit\+Array \&}]{member\+\_\+bits, }
+\item[{Real \&}]{member\+\_\+t1\+\_\+wt\+\_\+prod, }
+\item[{Real \&}]{nonmember\+\_\+t1\+\_\+wt\+\_\+prod}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\label{classPecos_1_1SharedInterpPolyApproxData_a918e8806a0ff6806ba99e55affe9a04f}
+
+
+return type 1 product weights from integration of type 1 interpolation polynomials for both member and nonmember sets 
+
+V\+BD member and non-\/member partial weights. 
+
+References Shared\+Poly\+Approx\+Data\+::driver\+Rep, Integration\+Driver\+::type1\+\_\+collocation\+\_\+weights\+\_\+1d(), and Shared\+Interp\+Poly\+Approx\+Data\+::type2\+\_\+weight().
+
+\index{Pecos\+::\+Shared\+Interp\+Poly\+Approx\+Data@{Pecos\+::\+Shared\+Interp\+Poly\+Approx\+Data}!type2\+\_\+weight@{type2\+\_\+weight}}
+\index{type2\+\_\+weight@{type2\+\_\+weight}!Pecos\+::\+Shared\+Interp\+Poly\+Approx\+Data@{Pecos\+::\+Shared\+Interp\+Poly\+Approx\+Data}}
+\subsubsection[{\texorpdfstring{type2\+\_\+weight(size\+\_\+t interp\+\_\+index, const U\+Short\+Array \&key, const U\+Short\+Array \&basis\+\_\+index, const Sizet\+List \&subset\+\_\+indices)}{type2_weight(size_t interp_index, const UShortArray &key, const UShortArray &basis_index, const SizetList &subset_indices)}}]{\setlength{\rightskip}{0pt plus 5cm}Real type2\+\_\+weight (
+\begin{DoxyParamCaption}
+\item[{size\+\_\+t}]{interp\+\_\+index, }
+\item[{const U\+Short\+Array \&}]{key, }
+\item[{const U\+Short\+Array \&}]{basis\+\_\+index, }
+\item[{const Sizet\+List \&}]{subset\+\_\+indices}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\label{classPecos_1_1SharedInterpPolyApproxData_a254f6c1d6c1a0a64298957e4428c10a4}
+
+
+return type 2 product weight from integration of type 1/2 interpolation polynomials using integrated dimension subset 
+
+Combined expansion partial weight. 
+
+References Shared\+Poly\+Approx\+Data\+::driver\+Rep, Integration\+Driver\+::type1\+\_\+collocation\+\_\+weights\+\_\+1d(), and Integration\+Driver\+::type2\+\_\+collocation\+\_\+weights\+\_\+1d().
+
+
+
+Referenced by Hierarch\+Interp\+Poly\+Approximation\+::expectation(), Hierarch\+Interp\+Poly\+Approximation\+::expectation\+\_\+gradient(), Nodal\+Interp\+Poly\+Approximation\+::member\+\_\+coefficients\+\_\+weights(), Hierarch\+Interp\+Poly\+Approximation\+::member\+\_\+coefficients\+\_\+weights(), and Shared\+Interp\+Poly\+Approx\+Data\+::type1\+\_\+weight().
+
+\index{Pecos\+::\+Shared\+Interp\+Poly\+Approx\+Data@{Pecos\+::\+Shared\+Interp\+Poly\+Approx\+Data}!type2\+\_\+weight@{type2\+\_\+weight}}
+\index{type2\+\_\+weight@{type2\+\_\+weight}!Pecos\+::\+Shared\+Interp\+Poly\+Approx\+Data@{Pecos\+::\+Shared\+Interp\+Poly\+Approx\+Data}}
+\subsubsection[{\texorpdfstring{type2\+\_\+weight(size\+\_\+t interp\+\_\+index, const U\+Short\+Array \&key, const U\+Short\+Array \&basis\+\_\+index, const Bit\+Array \&member\+\_\+bits, Real \&member\+\_\+t2\+\_\+wt\+\_\+prod, Real \&nonmember\+\_\+t2\+\_\+wt\+\_\+prod)}{type2_weight(size_t interp_index, const UShortArray &key, const UShortArray &basis_index, const BitArray &member_bits, Real &member_t2_wt_prod, Real &nonmember_t2_wt_prod)}}]{\setlength{\rightskip}{0pt plus 5cm}void type2\+\_\+weight (
+\begin{DoxyParamCaption}
+\item[{size\+\_\+t}]{interp\+\_\+index, }
+\item[{const U\+Short\+Array \&}]{key, }
+\item[{const U\+Short\+Array \&}]{basis\+\_\+index, }
+\item[{const Bit\+Array \&}]{member\+\_\+bits, }
+\item[{Real \&}]{member\+\_\+t2\+\_\+wt\+\_\+prod, }
+\item[{Real \&}]{nonmember\+\_\+t2\+\_\+wt\+\_\+prod}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\label{classPecos_1_1SharedInterpPolyApproxData_a11007d8fbe2b11118e1fa517a948ac48}
+
+
+return type 2 product weight from integration of type 1/2 interpolation polynomials for both member and nonmember sets 
+
+Combined expansion partial weight. 
+
+References Shared\+Poly\+Approx\+Data\+::driver\+Rep, Integration\+Driver\+::type1\+\_\+collocation\+\_\+weights\+\_\+1d(), and Integration\+Driver\+::type2\+\_\+collocation\+\_\+weights\+\_\+1d().
+
+\index{Pecos\+::\+Shared\+Interp\+Poly\+Approx\+Data@{Pecos\+::\+Shared\+Interp\+Poly\+Approx\+Data}!tensor\+\_\+product\+\_\+value@{tensor\+\_\+product\+\_\+value}}
+\index{tensor\+\_\+product\+\_\+value@{tensor\+\_\+product\+\_\+value}!Pecos\+::\+Shared\+Interp\+Poly\+Approx\+Data@{Pecos\+::\+Shared\+Interp\+Poly\+Approx\+Data}}
+\subsubsection[{\texorpdfstring{tensor\+\_\+product\+\_\+value(const Real\+Vector \&x, const Real\+Vector \&exp\+\_\+t1\+\_\+coeffs, const Real\+Matrix \&exp\+\_\+t2\+\_\+coeffs, const U\+Short\+Array \&basis\+\_\+index, const U\+Short2\+D\+Array \&key, const Sizet\+Array \&colloc\+\_\+index)}{tensor_product_value(const RealVector &x, const RealVector &exp_t1_coeffs, const RealMatrix &exp_t2_coeffs, const UShortArray &basis_index, const UShort2DArray &key, const SizetArray &colloc_index)}}]{\setlength{\rightskip}{0pt plus 5cm}Real tensor\+\_\+product\+\_\+value (
+\begin{DoxyParamCaption}
+\item[{const Real\+Vector \&}]{x, }
+\item[{const Real\+Vector \&}]{exp\+\_\+t1\+\_\+coeffs, }
+\item[{const Real\+Matrix \&}]{exp\+\_\+t2\+\_\+coeffs, }
+\item[{const U\+Short\+Array \&}]{basis\+\_\+index, }
+\item[{const U\+Short2\+D\+Array \&}]{key, }
+\item[{const Sizet\+Array \&}]{colloc\+\_\+index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classPecos_1_1SharedInterpPolyApproxData_a8cec4f56b444b6dc0415a587012860b0}
+
+
+compute the value of a tensor interpolant on a tensor grid; contributes to value(x) 
+
+Barycentric approach is only valid for value-\/based global Lagrange interpolation, either nodal or hierarchical. General approach is valid for value-\/based or gradient-\/enhanced, local or global, and nodal or hierarchical. 
+
+References Shared\+Interp\+Poly\+Approx\+Data\+::accumulate\+\_\+barycentric\+\_\+partial(), Shared\+Interp\+Poly\+Approx\+Data\+::barycentric\+\_\+active\+\_\+variables(), Shared\+Interp\+Poly\+Approx\+Data\+::barycentric\+\_\+exact\+\_\+index(), Shared\+Interp\+Poly\+Approx\+Data\+::barycentric\+\_\+partial\+\_\+indexing(), Shared\+Interp\+Poly\+Approx\+Data\+::barycentric\+\_\+value\+\_\+scaling(), Shared\+Interp\+Poly\+Approx\+Data\+::barycentric\+Flag, Shared\+Basis\+Approx\+Data\+::num\+Vars, Shared\+Interp\+Poly\+Approx\+Data\+::polynomial\+Basis, Shared\+Interp\+Poly\+Approx\+Data\+::precompute\+\_\+max\+\_\+keys(), Shared\+Interp\+Poly\+Approx\+Data\+::set\+\_\+new\+\_\+point(), Shared\+Interp\+Poly\+Approx\+Data\+::tensor\+\_\+product\+\_\+max\+\_\+key(), Basis\+Polynomial\+::type1\+\_\+value(), and Basis\+Polynomial\+::type2\+\_\+value().
+
+
+
+Referenced by Shared\+Interp\+Poly\+Approx\+Data\+::same\+\_\+basis(), and Hierarch\+Interp\+Poly\+Approximation\+::value().
+
+\index{Pecos\+::\+Shared\+Interp\+Poly\+Approx\+Data@{Pecos\+::\+Shared\+Interp\+Poly\+Approx\+Data}!tensor\+\_\+product\+\_\+value@{tensor\+\_\+product\+\_\+value}}
+\index{tensor\+\_\+product\+\_\+value@{tensor\+\_\+product\+\_\+value}!Pecos\+::\+Shared\+Interp\+Poly\+Approx\+Data@{Pecos\+::\+Shared\+Interp\+Poly\+Approx\+Data}}
+\subsubsection[{\texorpdfstring{tensor\+\_\+product\+\_\+value(const Real\+Vector \&x, const Real\+Vector \&subset\+\_\+t1\+\_\+coeffs, const Real\+Matrix \&subset\+\_\+t2\+\_\+coeffs, const U\+Short\+Array \&basis\+\_\+index, const U\+Short2\+D\+Array \&subset\+\_\+key, const Sizet\+Array \&subset\+\_\+colloc\+\_\+index, const Sizet\+List \&subset\+\_\+indices)}{tensor_product_value(const RealVector &x, const RealVector &subset_t1_coeffs, const RealMatrix &subset_t2_coeffs, const UShortArray &basis_index, const UShort2DArray &subset_key, const SizetArray &subset_colloc_index, const SizetList &subset_indices)}}]{\setlength{\rightskip}{0pt plus 5cm}Real tensor\+\_\+product\+\_\+value (
+\begin{DoxyParamCaption}
+\item[{const Real\+Vector \&}]{x, }
+\item[{const Real\+Vector \&}]{subset\+\_\+t1\+\_\+coeffs, }
+\item[{const Real\+Matrix \&}]{subset\+\_\+t2\+\_\+coeffs, }
+\item[{const U\+Short\+Array \&}]{basis\+\_\+index, }
+\item[{const U\+Short2\+D\+Array \&}]{subset\+\_\+key, }
+\item[{const Sizet\+Array \&}]{subset\+\_\+colloc\+\_\+index, }
+\item[{const Sizet\+List \&}]{subset\+\_\+indices}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classPecos_1_1SharedInterpPolyApproxData_a8996f48505f3c7ad5ed17a006b4ec11d}
+
+
+compute the value of a tensor interpolant on a tensor grid over a subset of the variables; contributes to value(x) 
+
+All variables version. 
+
+References Shared\+Interp\+Poly\+Approx\+Data\+::accumulate\+\_\+barycentric\+\_\+partial(), Shared\+Interp\+Poly\+Approx\+Data\+::barycentric\+\_\+active\+\_\+variables(), Shared\+Interp\+Poly\+Approx\+Data\+::barycentric\+\_\+exact\+\_\+index(), Shared\+Interp\+Poly\+Approx\+Data\+::barycentric\+\_\+partial\+\_\+indexing(), Shared\+Interp\+Poly\+Approx\+Data\+::barycentric\+\_\+value\+\_\+scaling(), Shared\+Interp\+Poly\+Approx\+Data\+::barycentric\+Flag, Shared\+Basis\+Approx\+Data\+::num\+Vars, Shared\+Interp\+Poly\+Approx\+Data\+::polynomial\+Basis, Shared\+Interp\+Poly\+Approx\+Data\+::precompute\+\_\+max\+\_\+keys(), Shared\+Interp\+Poly\+Approx\+Data\+::set\+\_\+new\+\_\+point(), Shared\+Interp\+Poly\+Approx\+Data\+::tensor\+\_\+product\+\_\+gradient\+\_\+basis\+\_\+variables(), Shared\+Interp\+Poly\+Approx\+Data\+::tensor\+\_\+product\+\_\+max\+\_\+key(), Shared\+Interp\+Poly\+Approx\+Data\+::type1\+\_\+interpolant\+\_\+value(), and Shared\+Interp\+Poly\+Approx\+Data\+::type2\+\_\+interpolant\+\_\+value().
+
+
+
+\subsection{Member Data Documentation}
+\index{Pecos\+::\+Shared\+Interp\+Poly\+Approx\+Data@{Pecos\+::\+Shared\+Interp\+Poly\+Approx\+Data}!polynomial\+Basis@{polynomial\+Basis}}
+\index{polynomial\+Basis@{polynomial\+Basis}!Pecos\+::\+Shared\+Interp\+Poly\+Approx\+Data@{Pecos\+::\+Shared\+Interp\+Poly\+Approx\+Data}}
+\subsubsection[{\texorpdfstring{polynomial\+Basis}{polynomialBasis}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$std\+::vector$<${\bf Basis\+Polynomial}$>$ $>$ polynomial\+Basis\hspace{0.3cm}{\ttfamily [protected]}}\label{classPecos_1_1SharedInterpPolyApproxData_a86109b71b063d95880c10f0290f9a723}
+
+
+2D array of one-\/dimensional basis polynomial objects used in constructing the multivariate orthogonal/interpolation polynomials. 
+
+Each variable (inner array size = num\+Vars) has multiple integration orders associated with it (outer array size). 
+
+Referenced by Shared\+Nodal\+Interp\+Poly\+Approx\+Data\+::accumulate\+\_\+barycentric(), Shared\+Nodal\+Interp\+Poly\+Approx\+Data\+::accumulate\+\_\+barycentric\+\_\+gradient(), Shared\+Interp\+Poly\+Approx\+Data\+::accumulate\+\_\+barycentric\+\_\+partial(), Shared\+Nodal\+Interp\+Poly\+Approx\+Data\+::accumulate\+\_\+horners(), Shared\+Nodal\+Interp\+Poly\+Approx\+Data\+::accumulate\+\_\+horners\+\_\+gradient(), Shared\+Interp\+Poly\+Approx\+Data\+::barycentric\+\_\+active\+\_\+variables(), Shared\+Hierarch\+Interp\+Poly\+Approx\+Data\+::barycentric\+\_\+exact\+\_\+index(), Shared\+Nodal\+Interp\+Poly\+Approx\+Data\+::barycentric\+\_\+exact\+\_\+index(), Shared\+Interp\+Poly\+Approx\+Data\+::barycentric\+\_\+gradient\+\_\+factor(), Shared\+Interp\+Poly\+Approx\+Data\+::barycentric\+\_\+gradient\+\_\+scaling(), Shared\+Interp\+Poly\+Approx\+Data\+::barycentric\+\_\+partial\+\_\+indexing(), Shared\+Interp\+Poly\+Approx\+Data\+::barycentric\+\_\+value\+\_\+factor(), Shared\+Interp\+Poly\+Approx\+Data\+::barycentric\+\_\+value\+\_\+scaling(), Shared\+Nodal\+Interp\+Poly\+Approx\+Data\+::basis\+\_\+product(), Shared\+Interp\+Poly\+Approx\+Data\+::find\+\_\+basis(), Shared\+Interp\+Poly\+Approx\+Data\+::resize\+\_\+polynomial\+\_\+basis(), Shared\+Hierarch\+Interp\+Poly\+Approx\+Data\+::set\+\_\+new\+\_\+point(), Shared\+Nodal\+Interp\+Poly\+Approx\+Data\+::set\+\_\+new\+\_\+point(), Nodal\+Interp\+Poly\+Approximation\+::tensor\+\_\+product\+\_\+covariance(), Shared\+Interp\+Poly\+Approx\+Data\+::tensor\+\_\+product\+\_\+gradient\+\_\+basis\+\_\+variables(), Shared\+Interp\+Poly\+Approx\+Data\+::tensor\+\_\+product\+\_\+gradient\+\_\+nonbasis\+\_\+variables(), Shared\+Interp\+Poly\+Approx\+Data\+::tensor\+\_\+product\+\_\+max\+\_\+key(), Nodal\+Interp\+Poly\+Approximation\+::tensor\+\_\+product\+\_\+mean(), Nodal\+Interp\+Poly\+Approximation\+::tensor\+\_\+product\+\_\+mean\+\_\+gradient(), Shared\+Interp\+Poly\+Approx\+Data\+::tensor\+\_\+product\+\_\+num\+\_\+key(), Shared\+Interp\+Poly\+Approx\+Data\+::tensor\+\_\+product\+\_\+value(), Nodal\+Interp\+Poly\+Approximation\+::tensor\+\_\+product\+\_\+variance\+\_\+gradient(), Shared\+Interp\+Poly\+Approx\+Data\+::type1\+\_\+interpolant\+\_\+gradient(), Shared\+Interp\+Poly\+Approx\+Data\+::type1\+\_\+interpolant\+\_\+value(), Shared\+Interp\+Poly\+Approx\+Data\+::type2\+\_\+interpolant\+\_\+gradient(), Shared\+Interp\+Poly\+Approx\+Data\+::type2\+\_\+interpolant\+\_\+value(), Shared\+Interp\+Poly\+Approx\+Data\+::update\+\_\+interpolation\+\_\+basis(), and Shared\+Nodal\+Interp\+Poly\+Approx\+Data\+::update\+\_\+nonzero\+\_\+basis\+\_\+products().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Shared\+Interp\+Poly\+Approx\+Data.\+hpp\item 
+Shared\+Interp\+Poly\+Approx\+Data.\+cpp\end{DoxyCompactItemize}

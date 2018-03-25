@@ -1,0 +1,346 @@
+.TH "PolynomialApproximation" 3 "Wed Dec 27 2017" "Version Version 1.0" "PECOS" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PolynomialApproximation \- Derived approximation class for global basis polynomials\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBBasisApproximation\fP\&.
+.PP
+Inherited by \fBInterpPolyApproximation\fP, and \fBOrthogPolyApproximation\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBPolynomialApproximation\fP (const \fBSharedBasisApproxData\fP &shared_data)"
+.br
+.RI "\fIstandard constructor \fP"
+.ti -1c
+.RI "\fB~PolynomialApproximation\fP ()"
+.br
+.RI "\fIdestructorboth \fP"
+.ti -1c
+.RI "virtual void \fBallocate_arrays\fP ()=0"
+.br
+.RI "\fIsize derived class data attributes \fP"
+.ti -1c
+.RI "virtual void \fBallocate_component_sobol\fP ()"
+.br
+.RI "\fIsize component Sobol arrays \fP"
+.ti -1c
+.RI "virtual void \fBcompute_component_sobol\fP ()=0"
+.br
+.RI "\fIComputes sensitivity indices according to VBD specification\&. \fP"
+.ti -1c
+.RI "virtual void \fBcompute_total_sobol\fP ()=0"
+.br
+.RI "\fIComputes total sensitivity indices according to VBD specification and existing computations from \fBcompute_component_sobol()\fP \fP"
+.ti -1c
+.RI "virtual ULongULongMap \fBsparse_sobol_index_map\fP () const "
+.br
+.RI "\fIreturn \fBRegressOrthogPolyApproximation::sparseSobolIndexMap\fP \fP"
+.ti -1c
+.RI "virtual const RealVector & \fBgradient_basis_variables\fP (const RealVector &x)=0"
+.br
+.RI "\fIretrieve the gradient for a response expansion with respect to all variables included in the polynomial bases using the given parameter vector and default DVV \fP"
+.ti -1c
+.RI "virtual const RealVector & \fBgradient_basis_variables\fP (const RealVector &x, const SizetArray &dvv)=0"
+.br
+.RI "\fIretrieve the gradient for a response expansion with respect to variables included in the polynomial basis for a given parameter vector and a given DVV subset \fP"
+.ti -1c
+.RI "virtual const RealVector & \fBgradient_nonbasis_variables\fP (const RealVector &x)=0"
+.br
+.RI "\fIretrieve the gradient for a response expansion with respect to all variables not included in the polynomial bases (nonprobabilistic variables such as design or epistemic when not in 'all' mode) using the given parameter vector and default DVV \fP"
+.ti -1c
+.RI "virtual const RealSymMatrix & \fBhessian_basis_variables\fP (const RealVector &x)=0"
+.br
+.RI "\fIretrieve the Hessian of the response expansion with respect to all variables included in the polynomial basis (e\&.g\&., probabilistic variables) for a given parameter vector \fP"
+.ti -1c
+.RI "virtual Real \fBstored_value\fP (const RealVector &x, size_t index)=0"
+.br
+.RI "\fIretrieve the response value for a stored expansion using the given parameter vector \fP"
+.ti -1c
+.RI "virtual const RealVector & \fBstored_gradient_basis_variables\fP (const RealVector &x, size_t index)=0"
+.br
+.RI "\fIretrieve the response gradient for a stored expansion with respect to all variables included in the polynomial bases; evaluate for the given parameter vector\&. \fP"
+.ti -1c
+.RI "virtual const RealVector & \fBstored_gradient_nonbasis_variables\fP (const RealVector &x, size_t index)=0"
+.br
+.RI "\fIretrieve the response gradient for a stored expansion with respect to all variables not included in the polynomial bases; evaluate for the given parameter vector\&. \fP"
+.ti -1c
+.RI "virtual Real \fBmean\fP ()=0"
+.br
+.RI "\fIreturn the mean of the expansion, treating all variables as random \fP"
+.ti -1c
+.RI "virtual Real \fBmean\fP (const RealVector &x)=0"
+.br
+.RI "\fIreturn the mean of the expansion for a given parameter vector, treating a subset of the variables as random \fP"
+.ti -1c
+.RI "virtual const RealVector & \fBmean_gradient\fP ()=0"
+.br
+.RI "\fIreturn the gradient of the expansion mean for a given parameter vector, treating all variables as random \fP"
+.ti -1c
+.RI "virtual const RealVector & \fBmean_gradient\fP (const RealVector &x, const SizetArray &dvv)=0"
+.br
+.RI "\fIreturn the gradient of the expansion mean for a given parameter vector and given DVV, treating a subset of the variables as random \fP"
+.ti -1c
+.RI "virtual Real \fBvariance\fP ()=0"
+.br
+.RI "\fIreturn the variance of the expansion, treating all variables as random \fP"
+.ti -1c
+.RI "virtual Real \fBvariance\fP (const RealVector &x)=0"
+.br
+.RI "\fIreturn the variance of the expansion for a given parameter vector, treating a subset of the variables as random \fP"
+.ti -1c
+.RI "virtual const RealVector & \fBvariance_gradient\fP ()=0"
+.br
+.RI "\fIreturn the gradient of the expansion variance for a given parameter vector, treating all variables as random \fP"
+.ti -1c
+.RI "virtual const RealVector & \fBvariance_gradient\fP (const RealVector &x, const SizetArray &dvv)=0"
+.br
+.RI "\fIreturn the gradient of the expansion variance for a given parameter vector and given DVV, treating a subset of the variables as random \fP"
+.ti -1c
+.RI "virtual Real \fBcovariance\fP (\fBPolynomialApproximation\fP *poly_approx_2)=0"
+.br
+.RI "\fIreturn the covariance between two response expansions, treating all variables as random \fP"
+.ti -1c
+.RI "virtual Real \fBcovariance\fP (const RealVector &x, \fBPolynomialApproximation\fP *poly_approx_2)=0"
+.br
+.RI "\fIreturn the covariance between two response expansions for a given parameter vector, treating a subset of the variables as random \fP"
+.ti -1c
+.RI "virtual Real \fBdelta_covariance\fP (\fBPolynomialApproximation\fP *poly_approx_2)"
+.br
+.RI "\fIreturn the change in covariance between two response expansions, treating all variables as random \fP"
+.ti -1c
+.RI "virtual Real \fBdelta_covariance\fP (const RealVector &x, \fBPolynomialApproximation\fP *poly_approx_2)"
+.br
+.RI "\fIreturn the change in covariance between two response expansions for a given parameter vector, treating a subset of the variables as random \fP"
+.ti -1c
+.RI "virtual Real \fBdelta_mean\fP ()"
+.br
+.RI "\fIreturn the change in mean between two response expansions, treating all variables as random \fP"
+.ti -1c
+.RI "virtual Real \fBdelta_mean\fP (const RealVector &x)"
+.br
+.RI "\fIreturn the change in mean between two response expansions, treating a subset of the variables as random \fP"
+.ti -1c
+.RI "virtual Real \fBdelta_std_deviation\fP ()"
+.br
+.RI "\fIreturn the change in standard deviation between two response expansions, treating all variables as random \fP"
+.ti -1c
+.RI "virtual Real \fBdelta_std_deviation\fP (const RealVector &x)"
+.br
+.RI "\fIreturn the change in standard deviation between two response expansions, treating a subset of the variables as random \fP"
+.ti -1c
+.RI "virtual Real \fBdelta_beta\fP (bool cdf_flag, Real z_bar)"
+.br
+.RI "\fIreturn the change in reliability index (mapped from z_bar) between two response expansions, treating all variables as random \fP"
+.ti -1c
+.RI "virtual Real \fBdelta_beta\fP (const RealVector &x, bool cdf_flag, Real z_bar)"
+.br
+.RI "\fIreturn the change in reliability index (mapped from z_bar) between two response expansions, treating a subset of the variables as random \fP"
+.ti -1c
+.RI "virtual Real \fBdelta_z\fP (bool cdf_flag, Real beta_bar)"
+.br
+.RI "\fIreturn the change in response level (mapped from beta_bar) between two response expansions, treating all variables as random \fP"
+.ti -1c
+.RI "virtual Real \fBdelta_z\fP (const RealVector &x, bool cdf_flag, Real beta_bar)"
+.br
+.RI "\fIreturn the change in response level (mapped from beta_bar) between two response expansions, treating a subset of the variables as random \fP"
+.ti -1c
+.RI "virtual void \fBcompute_moments\fP (bool full_stats=true)=0"
+.br
+.RI "\fIcompute central response moments using some combination of expansion post-processing and numerical integration \fP"
+.ti -1c
+.RI "virtual void \fBcompute_moments\fP (const RealVector &x, bool full_stats=true)=0"
+.br
+.RI "\fIcompute central response moments in all-variables mode using some combination of expansion post-processing and numerical integration \fP"
+.ti -1c
+.RI "bool \fBdeep_copied_surrogate_data\fP () const "
+.br
+.RI "\fIreturns true if surrData is a deep copy of origSurrData \fP"
+.ti -1c
+.RI "const RealVector & \fBexpansion_moments\fP () const "
+.br
+.RI "\fIreturn expansionMoments \fP"
+.ti -1c
+.RI "const RealVector & \fBnumerical_integration_moments\fP () const "
+.br
+.RI "\fIreturn numericalMoments \fP"
+.ti -1c
+.RI "const RealVector & \fBmoments\fP () const "
+.br
+.RI "\fIreturn preferred response moments (either expansion or numerical integration, depending on approximation type) \fP"
+.ti -1c
+.RI "void \fBstandardize_moments\fP (const RealVector &central_moments, RealVector &std_moments)"
+.br
+.RI "\fIstandardize central moments 2-n and eliminate excess kurtosis \fP"
+.ti -1c
+.RI "void \fBexpansion_coefficient_flag\fP (bool coeff_flag)"
+.br
+.RI "\fIset ExpansionConfigOptions::expansionCoeffFlag \fP"
+.ti -1c
+.RI "bool \fBexpansion_coefficient_flag\fP () const "
+.br
+.RI "\fIget ExpansionConfigOptions::expansionCoeffFlag \fP"
+.ti -1c
+.RI "void \fBexpansion_coefficient_gradient_flag\fP (bool grad_flag)"
+.br
+.RI "\fIset ExpansionConfigOptions::expansionCoeffGradFlag \fP"
+.ti -1c
+.RI "bool \fBexpansion_coefficient_gradient_flag\fP () const "
+.br
+.RI "\fIget ExpansionConfigOptions::expansionCoeffGradFlag \fP"
+.ti -1c
+.RI "const RealVector & \fBsobol_indices\fP () const "
+.br
+.RI "\fIreturn sobolIndices \fP"
+.ti -1c
+.RI "const RealVector & \fBtotal_sobol_indices\fP () const "
+.br
+.RI "\fIreturn totalSobolIndices \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBsurrogate_data\fP (const SurrogateData &data)"
+.br
+.RI "\fIset \fBPolynomialApproximation::origSurrData\fP \fP"
+.ti -1c
+.RI "const SurrogateData & \fBsurrogate_data\fP () const "
+.br
+.RI "\fIget \fBPolynomialApproximation::surrData\fP (const) \fP"
+.ti -1c
+.RI "SurrogateData & \fBsurrogate_data\fP ()"
+.br
+.RI "\fIget \fBPolynomialApproximation::surrData\fP (non-const) \fP"
+.ti -1c
+.RI "void \fBcompute_coefficients\fP (size_t index=_NPOS)"
+.br
+.RI "\fIcalculate the approximation coefficients using a set of surrogate data \fP"
+.ti -1c
+.RI "const RealVector & \fBgradient\fP (const RealVector &x)"
+.br
+.RI "\fIgeneric base class function mapped to gradient_basis_variables(x) \fP"
+.ti -1c
+.RI "const RealSymMatrix & \fBhessian\fP (const RealVector &x)"
+.br
+.RI "\fIgeneric base class function mapped to hessian_basis_variables(x) \fP"
+.ti -1c
+.RI "void \fBsynchronize_surrogate_data\fP (size_t index)"
+.br
+.RI "\fIupdate surrData from origSurrData based on deep or shallow copy \fP"
+.ti -1c
+.RI "void \fBresponse_data_to_surplus_data\fP (size_t index)"
+.br
+.RI "\fImodify origSurrData to create hierarchical surplus response data within surrData \fP"
+.ti -1c
+.RI "void \fBintegrate_moments\fP (const RealVector &coeffs, const RealVector &t1_wts, RealVector &\fBmoments\fP)"
+.br
+.RI "\fIcompute central moments of response using type1 numerical integration \fP"
+.ti -1c
+.RI "void \fBintegrate_moments\fP (const RealVector &t1_coeffs, const RealMatrix &t2_coeffs, const RealVector &t1_wts, const RealMatrix &t2_wts, RealVector &\fBmoments\fP)"
+.br
+.RI "\fIcompute central moments of response using type1/2 numerical integration \fP"
+.ti -1c
+.RI "void \fBallocate_total_sobol\fP ()"
+.br
+.RI "\fIsize total Sobol arrays \fP"
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "SurrogateData \fBorigSurrData\fP"
+.br
+.RI "\fISurrogateData instance containing the variables (shared) and response (unique) data arrays for constructing a surrogate of a single response function; this is the original unmodified data set, prior to any potential manipulations by the approximation classes\&. \fP"
+.ti -1c
+.RI "SurrogateData \fBsurrData\fP"
+.br
+.RI "\fISurrogateData instance used in current approximation builds, potentially reflecting data modifications relative to origSurrData\&. \fP"
+.ti -1c
+.RI "bool \fBexpansionCoeffFlag\fP"
+.br
+.RI "\fIflag for calculation of expansion coefficients from response values \fP"
+.ti -1c
+.RI "bool \fBexpansionCoeffGradFlag\fP"
+.br
+.RI "\fIflag for calculation of gradients of expansion coefficients from response gradients \fP"
+.ti -1c
+.RI "RealVector \fBexpansionMoments\fP"
+.br
+.RI "\fImean and central moments 2/3/4 computed from the stochastic expansion form\&. For \fBOrthogPolyApproximation\fP, these are primary, and for \fBInterpPolyApproximation\fP, they are secondary\&. Conversions to standardized moments (std deviation, skewness, kurtosis) are performed elsewhere\&. \fP"
+.ti -1c
+.RI "RealVector \fBnumericalMoments\fP"
+.br
+.RI "\fImean and central moments 2/3/4 computed via numerical integration of the response\&. For \fBOrthogPolyApproximation\fP, these are secondary, and for \fBInterpPolyApproximation\fP, they are primary\&. Conversions to standardized moments (std deviation, skewness, kurtosis) are performed elsewhere\&. \fP"
+.ti -1c
+.RI "RealVector \fBapproxGradient\fP"
+.br
+.RI "\fIgradient of the polynomial approximation returned by \fBgradient()\fP \fP"
+.ti -1c
+.RI "RealSymMatrix \fBapproxHessian\fP"
+.br
+.RI "\fIHessian of the polynomial approximation returned by \fBhessian()\fP \fP"
+.ti -1c
+.RI "RealVector \fBmeanGradient\fP"
+.br
+.RI "\fIgradient of the primary mean (expansion mean for OrthogPoly, numerical integration mean for InterpPoly) \fP"
+.ti -1c
+.RI "RealVector \fBvarianceGradient\fP"
+.br
+.RI "\fIgradient of the primary variance (expansion variance for OrthogPoly, numerical integration variance for InterpPoly) \fP"
+.ti -1c
+.RI "short \fBcomputedMean\fP"
+.br
+.RI "\fItrack computation of mean and mean gradient to avoid unnecessary recomputation \fP"
+.ti -1c
+.RI "short \fBcomputedVariance\fP"
+.br
+.RI "\fItrack computation of variance and variance gradient to avoid unnecessary recomputation \fP"
+.ti -1c
+.RI "RealVector \fBxPrevMean\fP"
+.br
+.RI "\fItrack previous evaluation point for all_variables mean to avoid unnecessary recomputation \fP"
+.ti -1c
+.RI "RealVector \fBxPrevMeanGrad\fP"
+.br
+.RI "\fItrack previous evaluation point for all_variables mean gradient to avoid unnecessary recomputation \fP"
+.ti -1c
+.RI "RealVector \fBxPrevVar\fP"
+.br
+.RI "\fItrack previous evaluation point for all_variables variance to avoid unnecessary recomputation \fP"
+.ti -1c
+.RI "RealVector \fBxPrevVarGrad\fP"
+.br
+.RI "\fItrack previous evaluation point for all_variables variance gradient to avoid unnecessary recomputation \fP"
+.ti -1c
+.RI "RealVector \fBsobolIndices\fP"
+.br
+.RI "\fIglobal sensitivities as given by Sobol' \fP"
+.ti -1c
+.RI "RealVector \fBtotalSobolIndices\fP"
+.br
+.RI "\fItotal global sensitivities as given by Sobol' \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Derived approximation class for global basis polynomials\&. 
+
+The \fBPolynomialApproximation\fP class provides a global approximation based on basis polynomials\&. This includes orthogonal polynomials used for polynomial chaos expansions and interpolation polynomials used for stochastic collocation\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "const RealVector & moments () const\fC [inline]\fP"
+
+.PP
+return preferred response moments (either expansion or numerical integration, depending on approximation type) All current cases prefer expansionMoments (with the distinction drawn between interpolation and integration rules, we prefer Gauss integration rules on interpolant expansions)\&. 
+.PP
+References PolynomialApproximation::expansionMoments, ExpansionConfigOptions::expBasisType, SharedPolyApproxData::expConfigOptions, PolynomialApproximation::numericalMoments, and BasisApproximation::sharedDataRep\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for PECOS from the source code\&.

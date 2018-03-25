@@ -1,0 +1,159 @@
+\section{L\+H\+S\+Driver Class Reference}
+\label{classPecos_1_1LHSDriver}\index{L\+H\+S\+Driver@{L\+H\+S\+Driver}}
+
+
+Driver class for Latin Hypercube Sampling (L\+HS)  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPecos_1_1LHSDriver_a63f7ee20058ada4b708b70a7141d6e88}{L\+H\+S\+Driver} ()\label{classPecos_1_1LHSDriver_a63f7ee20058ada4b708b70a7141d6e88}
+
+\begin{DoxyCompactList}\small\item\em default constructor \end{DoxyCompactList}\item 
+\hyperlink{classPecos_1_1LHSDriver_a59f03e1cdfb2ddb52b595330656595f6}{L\+H\+S\+Driver} (const String \&sample\+\_\+type, short sample\+\_\+ranks\+\_\+mode=I\+G\+N\+O\+R\+E\+\_\+\+R\+A\+N\+KS, bool reports=true)\label{classPecos_1_1LHSDriver_a59f03e1cdfb2ddb52b595330656595f6}
+
+\begin{DoxyCompactList}\small\item\em constructor \end{DoxyCompactList}\item 
+\hyperlink{classPecos_1_1LHSDriver_a2e2bf01d3e26e194124fadb43f00609a}{$\sim$\+L\+H\+S\+Driver} ()\label{classPecos_1_1LHSDriver_a2e2bf01d3e26e194124fadb43f00609a}
+
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1LHSDriver_a7a959ceea818c488ad082f91dd3f3d74}{initialize} (const String \&sample\+\_\+type, short sample\+\_\+ranks\+\_\+mode=I\+G\+N\+O\+R\+E\+\_\+\+R\+A\+N\+KS, bool reports=true)\label{classPecos_1_1LHSDriver_a7a959ceea818c488ad082f91dd3f3d74}
+
+\begin{DoxyCompactList}\small\item\em populate data when not passed through ctor \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1LHSDriver_ad857540cd2836f32986cf920e68b9de3}{seed} (int seed)\label{classPecos_1_1LHSDriver_ad857540cd2836f32986cf920e68b9de3}
+
+\begin{DoxyCompactList}\small\item\em set random\+Seed \end{DoxyCompactList}\item 
+int \hyperlink{classPecos_1_1LHSDriver_ab26add6ea67f675176dae7afae03f03e}{seed} () const \label{classPecos_1_1LHSDriver_ab26add6ea67f675176dae7afae03f03e}
+
+\begin{DoxyCompactList}\small\item\em return random\+Seed \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1LHSDriver_a4453b46712e75030a013cf80127fce67}{rng} (String unif\+\_\+gen)\label{classPecos_1_1LHSDriver_a4453b46712e75030a013cf80127fce67}
+
+\begin{DoxyCompactList}\small\item\em set random number generator, passing the name of the uniform generator\+: rnum2 or mt19937 (default). Passed value is superceded by environment variable D\+A\+K\+O\+T\+A\+\_\+\+L\+H\+S\+\_\+\+U\+N\+I\+F\+G\+EN, if present \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1LHSDriver_a968dc84c7b328c0fde5435adfbcd4ae4}{advance\+\_\+seed\+\_\+sequence} ()
+\begin{DoxyCompactList}\small\item\em reseed using a deterministic sequence \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1LHSDriver_a89134ad076d9b362b992f1c4d6beda0b}{generate\+\_\+samples} (const Real\+Vector \&cd\+\_\+l\+\_\+bnds, const Real\+Vector \&cd\+\_\+u\+\_\+bnds, const Int\+Vector \&ddr\+\_\+l\+\_\+bnds, const Int\+Vector \&ddr\+\_\+u\+\_\+bnds, const Int\+Set\+Array \&ddsi\+\_\+values, const String\+Set\+Array \&ddss\+\_\+values, const Real\+Set\+Array \&ddsr\+\_\+values, const Real\+Vector \&cs\+\_\+l\+\_\+bnds, const Real\+Vector \&cs\+\_\+u\+\_\+bnds, const Int\+Vector \&dsr\+\_\+l\+\_\+bnds, const Int\+Vector \&dsr\+\_\+u\+\_\+bnds, const Int\+Set\+Array \&dssi\+\_\+values, const String\+Set\+Array \&dsss\+\_\+values, const Real\+Set\+Array \&dssr\+\_\+values, const \hyperlink{classPecos_1_1AleatoryDistParams}{Aleatory\+Dist\+Params} \&adp, const \hyperlink{classPecos_1_1EpistemicDistParams}{Epistemic\+Dist\+Params} \&edp, int num\+\_\+samples, Real\+Matrix \&samples\+\_\+array, Real\+Matrix \&rank\+\_\+array)
+\begin{DoxyCompactList}\small\item\em generates the desired set of parameter samples from within general user-\/specified probabilistic distributions (\hyperlink{classPecos_1_1AleatoryDistParams}{Aleatory\+Dist\+Params} and \hyperlink{classPecos_1_1EpistemicDistParams}{Epistemic\+Dist\+Params} instances augmented with design and state variables) \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1LHSDriver_ab6f579d6a8f20974b4de2b41b0256597}{generate\+\_\+samples} (const \hyperlink{classPecos_1_1AleatoryDistParams}{Aleatory\+Dist\+Params} \&adp, const \hyperlink{classPecos_1_1EpistemicDistParams}{Epistemic\+Dist\+Params} \&edp, int num\+\_\+samples, Real\+Matrix \&samples\+\_\+array, bool backfill\+\_\+flag=false)\label{classPecos_1_1LHSDriver_ab6f579d6a8f20974b4de2b41b0256597}
+
+\begin{DoxyCompactList}\small\item\em generates the desired set of parameter samples from within \hyperlink{classPecos_1_1AleatoryDistParams}{Aleatory\+Dist\+Params} and \hyperlink{classPecos_1_1EpistemicDistParams}{Epistemic\+Dist\+Params} specifications \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1LHSDriver_ac603c16fc0c6da159f0f2188071fd10f}{generate\+\_\+samples} (const \hyperlink{classPecos_1_1AleatoryDistParams}{Aleatory\+Dist\+Params} \&adp, int num\+\_\+samples, Real\+Matrix \&samples\+\_\+array, bool backfill\+\_\+flag=false)\label{classPecos_1_1LHSDriver_ac603c16fc0c6da159f0f2188071fd10f}
+
+\begin{DoxyCompactList}\small\item\em generates the desired set of parameter samples from within an \hyperlink{classPecos_1_1AleatoryDistParams}{Aleatory\+Dist\+Params} specification \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1LHSDriver_a1ea01ac381f57675a33c1330ba48dfa8}{generate\+\_\+samples} (const \hyperlink{classPecos_1_1EpistemicDistParams}{Epistemic\+Dist\+Params} \&edp, int num\+\_\+samples, Real\+Matrix \&samples\+\_\+array, bool backfill\+\_\+flag=false)\label{classPecos_1_1LHSDriver_a1ea01ac381f57675a33c1330ba48dfa8}
+
+\begin{DoxyCompactList}\small\item\em generates the desired set of parameter samples from within a \hyperlink{classPecos_1_1EpistemicDistParams}{Epistemic\+Dist\+Params} specification \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1LHSDriver_a3a7e4173b0731e7dcd12828f7cae7732}{generate\+\_\+normal\+\_\+samples} (const Real\+Vector \&n\+\_\+means, const Real\+Vector \&n\+\_\+std\+\_\+devs, const Real\+Vector \&n\+\_\+l\+\_\+bnds, const Real\+Vector \&n\+\_\+u\+\_\+bnds, int num\+\_\+samples, Real\+Sym\+Matrix \&correl\+\_\+matrix, Real\+Matrix \&samples\+\_\+array)\label{classPecos_1_1LHSDriver_a3a7e4173b0731e7dcd12828f7cae7732}
+
+\begin{DoxyCompactList}\small\item\em generates the desired set of parameter samples from within uncorrelated normal distributions \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1LHSDriver_ae7a28d8e09d882572dc9d86b1afe5d5f}{generate\+\_\+uniform\+\_\+samples} (const Real\+Vector \&u\+\_\+l\+\_\+bnds, const Real\+Vector \&u\+\_\+u\+\_\+bnds, int num\+\_\+samples, Real\+Matrix \&samples\+\_\+array, bool backfill\+\_\+flag=false)\label{classPecos_1_1LHSDriver_ae7a28d8e09d882572dc9d86b1afe5d5f}
+
+\begin{DoxyCompactList}\small\item\em generates the desired set of parameter samples from within uncorrelated uniform distributions \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1LHSDriver_aee047994918369381f1f07bb0635d722}{generate\+\_\+uniform\+\_\+index\+\_\+samples} (const Int\+Vector \&index\+\_\+l\+\_\+bnds, const Int\+Vector \&index\+\_\+u\+\_\+bnds, int num\+\_\+samples, Int\+Matrix \&index\+\_\+samples)\label{classPecos_1_1LHSDriver_aee047994918369381f1f07bb0635d722}
+
+\begin{DoxyCompactList}\small\item\em generates integer index samples from within uncorrelated uniform distributions \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1LHSDriver_aef441ba078058c664fd1674840f8a313}{generate\+\_\+unique\+\_\+index\+\_\+samples} (const Int\+Vector \&index\+\_\+l\+\_\+bnds, const Int\+Vector \&index\+\_\+u\+\_\+bnds, int num\+\_\+samples, Int\+Matrix \&sorted\+\_\+samples)\label{classPecos_1_1LHSDriver_aef441ba078058c664fd1674840f8a313}
+
+\begin{DoxyCompactList}\small\item\em generates unique integer index samples from within uncorrelated uniform distributions (more expensive than non-\/unique case) \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1LHSDriver_abd371874beed602dd10eab53fd1a70c0}{generate\+\_\+unique\+\_\+samples} (const Real\+Vector \&cd\+\_\+l\+\_\+bnds, const Real\+Vector \&cd\+\_\+u\+\_\+bnds, const Int\+Vector \&ddri\+\_\+l\+\_\+bnds, const Int\+Vector \&ddri\+\_\+u\+\_\+bnds, const Int\+Set\+Array \&ddsi\+\_\+values, const String\+Set\+Array \&ddss\+\_\+values, const Real\+Set\+Array \&ddsr\+\_\+values, const Real\+Vector \&cs\+\_\+l\+\_\+bnds, const Real\+Vector \&cs\+\_\+u\+\_\+bnds, const Int\+Vector \&dsri\+\_\+l\+\_\+bnds, const Int\+Vector \&dsri\+\_\+u\+\_\+bnds, const Int\+Set\+Array \&dssi\+\_\+values, const String\+Set\+Array \&dsss\+\_\+values, const Real\+Set\+Array \&dssr\+\_\+values, const \hyperlink{classPecos_1_1AleatoryDistParams}{Aleatory\+Dist\+Params} \&adp, const \hyperlink{classPecos_1_1EpistemicDistParams}{Epistemic\+Dist\+Params} \&edp, int num\+\_\+samples, Real\+Matrix \&samples, Real\+Matrix \&sample\+\_\+ranks)\label{classPecos_1_1LHSDriver_abd371874beed602dd10eab53fd1a70c0}
+
+\begin{DoxyCompactList}\small\item\em Similar to generate\+\_\+samples but this function ensures that all discrete samples are unique. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classPecos_1_1LHSDriver_a9bdfdc41dd463d47a3a040c37e9ebbe2}{check\+\_\+error} (int err\+\_\+code, const char $\ast$err\+\_\+source) const \label{classPecos_1_1LHSDriver_a9bdfdc41dd463d47a3a040c37e9ebbe2}
+
+\begin{DoxyCompactList}\small\item\em checks the return codes from L\+HS routines and aborts if an error is returned \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{classPecos_1_1LHSDriver_afa529bd148f75631d3ba0086b65f51e5}{abort\+\_\+if\+\_\+no\+\_\+lhs} ()\label{classPecos_1_1LHSDriver_afa529bd148f75631d3ba0086b65f51e5}
+
+\begin{DoxyCompactList}\small\item\em checks whether L\+HS is enabled in the build and aborts if not \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+String \hyperlink{classPecos_1_1LHSDriver_abf698fee418ab29591da10a6446c0c18}{sample\+Type}\label{classPecos_1_1LHSDriver_abf698fee418ab29591da10a6446c0c18}
+
+\begin{DoxyCompactList}\small\item\em type of sampling\+: random, lhs, incremental\+\_\+lhs, or incremental\+\_\+random \end{DoxyCompactList}\item 
+int \hyperlink{classPecos_1_1LHSDriver_a81ab89411a148610c9749af8e95cd453}{random\+Seed}\label{classPecos_1_1LHSDriver_a81ab89411a148610c9749af8e95cd453}
+
+\begin{DoxyCompactList}\small\item\em the current random number seed \end{DoxyCompactList}\item 
+short \hyperlink{classPecos_1_1LHSDriver_ac44aac00b4d7c697a8e5d8f32acccaf2}{sample\+Ranks\+Mode}\label{classPecos_1_1LHSDriver_ac44aac00b4d7c697a8e5d8f32acccaf2}
+
+\begin{DoxyCompactList}\small\item\em mode of sample ranks I/O\+: I\+G\+N\+O\+R\+E\+\_\+\+R\+A\+N\+KS, S\+E\+T\+\_\+\+R\+A\+N\+KS, G\+E\+T\+\_\+\+R\+A\+N\+KS, or S\+E\+T\+\_\+\+G\+E\+T\+\_\+\+R\+A\+N\+KS \end{DoxyCompactList}\item 
+bool \hyperlink{classPecos_1_1LHSDriver_a6659689711fd1c7d227a7c8a4e093d12}{report\+Flag}\label{classPecos_1_1LHSDriver_a6659689711fd1c7d227a7c8a4e093d12}
+
+\begin{DoxyCompactList}\small\item\em flag for generating L\+HS report output \end{DoxyCompactList}\item 
+short \hyperlink{classPecos_1_1LHSDriver_abc4c4d1b5324bce157150cda69831718}{allow\+Seed\+Advance}\label{classPecos_1_1LHSDriver_abc4c4d1b5324bce157150cda69831718}
+
+\begin{DoxyCompactList}\small\item\em for honoring \hyperlink{classPecos_1_1LHSDriver_a968dc84c7b328c0fde5435adfbcd4ae4}{advance\+\_\+seed\+\_\+sequence()} calls \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Driver class for Latin Hypercube Sampling (L\+HS) 
+
+This class provides common code for sampling methods which employ the Latin Hypercube Sampling (L\+HS) package from Sandia Albuquerque\textquotesingle{}s Risk and Reliability organization. 
+
+\subsection{Member Function Documentation}
+\index{Pecos\+::\+L\+H\+S\+Driver@{Pecos\+::\+L\+H\+S\+Driver}!advance\+\_\+seed\+\_\+sequence@{advance\+\_\+seed\+\_\+sequence}}
+\index{advance\+\_\+seed\+\_\+sequence@{advance\+\_\+seed\+\_\+sequence}!Pecos\+::\+L\+H\+S\+Driver@{Pecos\+::\+L\+H\+S\+Driver}}
+\subsubsection[{\texorpdfstring{advance\+\_\+seed\+\_\+sequence()}{advance_seed_sequence()}}]{\setlength{\rightskip}{0pt plus 5cm}void advance\+\_\+seed\+\_\+sequence (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classPecos_1_1LHSDriver_a968dc84c7b328c0fde5435adfbcd4ae4}
+
+
+reseed using a deterministic sequence 
+
+It would be preferable to call srand() only once and then call rand() for each L\+HS execution (the intended usage model), but possible interaction with other uses of rand() in other contexts is a concern. E.\+g., an srand(clock()) executed elsewhere would ruin the repeatability of the \hyperlink{classPecos_1_1LHSDriver}{L\+H\+S\+Driver} seed sequence. The only way to insure isolation is to reseed each time. Any induced correlation should be inconsequential for the intended use. 
+
+References L\+H\+S\+Driver\+::allow\+Seed\+Advance, L\+H\+S\+Driver\+::generate\+\_\+samples(), L\+H\+S\+Driver\+::random\+Seed, and L\+H\+S\+Driver\+::seed().
+
+
+
+Referenced by Fourier\+Inverse\+Transformation\+::compute\+\_\+sample\+\_\+grigoriu(), and Fourier\+Inverse\+Transformation\+::compute\+\_\+sample\+\_\+shinozuka\+\_\+deodatis().
+
+\index{Pecos\+::\+L\+H\+S\+Driver@{Pecos\+::\+L\+H\+S\+Driver}!generate\+\_\+samples@{generate\+\_\+samples}}
+\index{generate\+\_\+samples@{generate\+\_\+samples}!Pecos\+::\+L\+H\+S\+Driver@{Pecos\+::\+L\+H\+S\+Driver}}
+\subsubsection[{\texorpdfstring{generate\+\_\+samples(const Real\+Vector \&cd\+\_\+l\+\_\+bnds, const Real\+Vector \&cd\+\_\+u\+\_\+bnds, const Int\+Vector \&ddr\+\_\+l\+\_\+bnds, const Int\+Vector \&ddr\+\_\+u\+\_\+bnds, const Int\+Set\+Array \&ddsi\+\_\+values, const String\+Set\+Array \&ddss\+\_\+values, const Real\+Set\+Array \&ddsr\+\_\+values, const Real\+Vector \&cs\+\_\+l\+\_\+bnds, const Real\+Vector \&cs\+\_\+u\+\_\+bnds, const Int\+Vector \&dsr\+\_\+l\+\_\+bnds, const Int\+Vector \&dsr\+\_\+u\+\_\+bnds, const Int\+Set\+Array \&dssi\+\_\+values, const String\+Set\+Array \&dsss\+\_\+values, const Real\+Set\+Array \&dssr\+\_\+values, const Aleatory\+Dist\+Params \&adp, const Epistemic\+Dist\+Params \&edp, int num\+\_\+samples, Real\+Matrix \&samples\+\_\+array, Real\+Matrix \&rank\+\_\+array)}{generate_samples(const RealVector &cd_l_bnds, const RealVector &cd_u_bnds, const IntVector &ddr_l_bnds, const IntVector &ddr_u_bnds, const IntSetArray &ddsi_values, const StringSetArray &ddss_values, const RealSetArray &ddsr_values, const RealVector &cs_l_bnds, const RealVector &cs_u_bnds, const IntVector &dsr_l_bnds, const IntVector &dsr_u_bnds, const IntSetArray &dssi_values, const StringSetArray &dsss_values, const RealSetArray &dssr_values, const AleatoryDistParams &adp, const EpistemicDistParams &edp, int num_samples, RealMatrix &samples_array, RealMatrix &rank_array)}}]{\setlength{\rightskip}{0pt plus 5cm}void generate\+\_\+samples (
+\begin{DoxyParamCaption}
+\item[{const Real\+Vector \&}]{cd\+\_\+l\+\_\+bnds, }
+\item[{const Real\+Vector \&}]{cd\+\_\+u\+\_\+bnds, }
+\item[{const Int\+Vector \&}]{ddri\+\_\+l\+\_\+bnds, }
+\item[{const Int\+Vector \&}]{ddri\+\_\+u\+\_\+bnds, }
+\item[{const Int\+Set\+Array \&}]{ddsi\+\_\+values, }
+\item[{const String\+Set\+Array \&}]{ddss\+\_\+values, }
+\item[{const Real\+Set\+Array \&}]{ddsr\+\_\+values, }
+\item[{const Real\+Vector \&}]{cs\+\_\+l\+\_\+bnds, }
+\item[{const Real\+Vector \&}]{cs\+\_\+u\+\_\+bnds, }
+\item[{const Int\+Vector \&}]{dsri\+\_\+l\+\_\+bnds, }
+\item[{const Int\+Vector \&}]{dsri\+\_\+u\+\_\+bnds, }
+\item[{const Int\+Set\+Array \&}]{dssi\+\_\+values, }
+\item[{const String\+Set\+Array \&}]{dsss\+\_\+values, }
+\item[{const Real\+Set\+Array \&}]{dssr\+\_\+values, }
+\item[{const {\bf Aleatory\+Dist\+Params} \&}]{adp, }
+\item[{const {\bf Epistemic\+Dist\+Params} \&}]{edp, }
+\item[{int}]{num\+\_\+samples, }
+\item[{Real\+Matrix \&}]{samples, }
+\item[{Real\+Matrix \&}]{sample\+\_\+ranks}
+\end{DoxyParamCaption}
+)}\label{classPecos_1_1LHSDriver_a89134ad076d9b362b992f1c4d6beda0b}
+
+
+generates the desired set of parameter samples from within general user-\/specified probabilistic distributions (\hyperlink{classPecos_1_1AleatoryDistParams}{Aleatory\+Dist\+Params} and \hyperlink{classPecos_1_1EpistemicDistParams}{Epistemic\+Dist\+Params} instances augmented with design and state variables) 
+
+While it would be desirable in some cases to carve this function into smaller parts and allow multiple invocations of L\+H\+S\+\_\+\+R\+UN following a single initialization of types and arrays, the L\+HS code does not currently allow this\+: it will return an error if L\+H\+S\+\_\+\+I\+N\+I\+T/\+L\+H\+S\+\_\+\+I\+N\+I\+T\+\_\+\+M\+EM, at least one distribution call (i.\+e., L\+H\+S\+\_\+\+D\+I\+ST, L\+H\+S\+\_\+\+U\+D\+I\+ST or L\+H\+S\+\_\+\+S\+D\+I\+ST), and L\+H\+S\+\_\+\+P\+R\+EP are not called prior to each invocation of L\+H\+S\+\_\+\+R\+UN. Since L\+H\+S\+\_\+\+I\+N\+I\+T/\+L\+H\+S\+\_\+\+I\+N\+I\+T\+\_\+\+M\+EM require input of a seed, the approach to computing multiple distinct sample sets must employ \hyperlink{classPecos_1_1LHSDriver_a968dc84c7b328c0fde5435adfbcd4ae4}{advance\+\_\+seed\+\_\+sequence()} to re-\/seed multiple \hyperlink{classPecos_1_1LHSDriver_a89134ad076d9b362b992f1c4d6beda0b}{generate\+\_\+samples()} calls, rather than continuing an existing random number sequence. 
+
+References Aleatory\+Dist\+Params\+::beta\+\_\+alphas(), Aleatory\+Dist\+Params\+::beta\+\_\+betas(), Aleatory\+Dist\+Params\+::beta\+\_\+lower\+\_\+bounds(), Aleatory\+Dist\+Params\+::beta\+\_\+upper\+\_\+bounds(), Aleatory\+Dist\+Params\+::binomial\+\_\+num\+\_\+trials(), Aleatory\+Dist\+Params\+::binomial\+\_\+probability\+\_\+per\+\_\+trial(), L\+H\+S\+Driver\+::check\+\_\+error(), Epistemic\+Dist\+Params\+::continuous\+\_\+interval\+\_\+basic\+\_\+probabilities(), Epistemic\+Dist\+Params\+::discrete\+\_\+interval\+\_\+basic\+\_\+probabilities(), Epistemic\+Dist\+Params\+::discrete\+\_\+set\+\_\+int\+\_\+values\+\_\+probabilities(), Epistemic\+Dist\+Params\+::discrete\+\_\+set\+\_\+real\+\_\+values\+\_\+probabilities(), Epistemic\+Dist\+Params\+::discrete\+\_\+set\+\_\+string\+\_\+values\+\_\+probabilities(), Aleatory\+Dist\+Params\+::exponential\+\_\+betas(), Aleatory\+Dist\+Params\+::frechet\+\_\+alphas(), Aleatory\+Dist\+Params\+::frechet\+\_\+betas(), Aleatory\+Dist\+Params\+::gamma\+\_\+alphas(), Aleatory\+Dist\+Params\+::gamma\+\_\+betas(), L\+H\+S\+Driver\+::generate\+\_\+unique\+\_\+samples(), Aleatory\+Dist\+Params\+::geometric\+\_\+probability\+\_\+per\+\_\+trial(), Aleatory\+Dist\+Params\+::gumbel\+\_\+alphas(), Aleatory\+Dist\+Params\+::gumbel\+\_\+betas(), Aleatory\+Dist\+Params\+::histogram\+\_\+bin\+\_\+pairs(), Aleatory\+Dist\+Params\+::histogram\+\_\+point\+\_\+int\+\_\+pairs(), Aleatory\+Dist\+Params\+::histogram\+\_\+point\+\_\+real\+\_\+pairs(), Aleatory\+Dist\+Params\+::histogram\+\_\+point\+\_\+string\+\_\+pairs(), Aleatory\+Dist\+Params\+::hypergeometric\+\_\+num\+\_\+drawn(), Aleatory\+Dist\+Params\+::hypergeometric\+\_\+selected\+\_\+population(), Aleatory\+Dist\+Params\+::hypergeometric\+\_\+total\+\_\+population(), Aleatory\+Dist\+Params\+::lognormal\+\_\+error\+\_\+factors(), Aleatory\+Dist\+Params\+::lognormal\+\_\+lambdas(), Aleatory\+Dist\+Params\+::lognormal\+\_\+lower\+\_\+bounds(), Aleatory\+Dist\+Params\+::lognormal\+\_\+means(), Aleatory\+Dist\+Params\+::lognormal\+\_\+std\+\_\+deviations(), Aleatory\+Dist\+Params\+::lognormal\+\_\+upper\+\_\+bounds(), Aleatory\+Dist\+Params\+::lognormal\+\_\+zetas(), Aleatory\+Dist\+Params\+::loguniform\+\_\+lower\+\_\+bounds(), Aleatory\+Dist\+Params\+::loguniform\+\_\+upper\+\_\+bounds(), Aleatory\+Dist\+Params\+::negative\+\_\+binomial\+\_\+num\+\_\+trials(), Aleatory\+Dist\+Params\+::negative\+\_\+binomial\+\_\+probability\+\_\+per\+\_\+trial(), Aleatory\+Dist\+Params\+::normal\+\_\+lower\+\_\+bounds(), Aleatory\+Dist\+Params\+::normal\+\_\+means(), Aleatory\+Dist\+Params\+::normal\+\_\+std\+\_\+deviations(), Aleatory\+Dist\+Params\+::normal\+\_\+upper\+\_\+bounds(), Aleatory\+Dist\+Params\+::poisson\+\_\+lambdas(), L\+H\+S\+Driver\+::random\+Seed, L\+H\+S\+Driver\+::report\+Flag, L\+H\+S\+Driver\+::sample\+Ranks\+Mode, L\+H\+S\+Driver\+::sample\+Type, Aleatory\+Dist\+Params\+::triangular\+\_\+lower\+\_\+bounds(), Aleatory\+Dist\+Params\+::triangular\+\_\+modes(), Aleatory\+Dist\+Params\+::triangular\+\_\+upper\+\_\+bounds(), Aleatory\+Dist\+Params\+::uncertain\+\_\+correlations(), Aleatory\+Dist\+Params\+::uniform\+\_\+lower\+\_\+bounds(), Aleatory\+Dist\+Params\+::uniform\+\_\+upper\+\_\+bounds(), Aleatory\+Dist\+Params\+::weibull\+\_\+alphas(), and Aleatory\+Dist\+Params\+::weibull\+\_\+betas().
+
+
+
+Referenced by L\+H\+S\+Driver\+::abort\+\_\+if\+\_\+no\+\_\+lhs(), L\+H\+S\+Driver\+::advance\+\_\+seed\+\_\+sequence(), L\+H\+S\+Driver\+::generate\+\_\+normal\+\_\+samples(), L\+H\+S\+Driver\+::generate\+\_\+samples(), L\+H\+S\+Driver\+::generate\+\_\+uniform\+\_\+index\+\_\+samples(), L\+H\+S\+Driver\+::generate\+\_\+uniform\+\_\+samples(), and L\+H\+S\+Driver\+::generate\+\_\+unique\+\_\+samples().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+L\+H\+S\+Driver.\+hpp\item 
+L\+H\+S\+Driver.\+cpp\end{DoxyCompactItemize}

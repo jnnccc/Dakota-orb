@@ -1,0 +1,284 @@
+\section{Lagrange\+Interp\+Polynomial Class Reference}
+\label{classPecos_1_1LagrangeInterpPolynomial}\index{Lagrange\+Interp\+Polynomial@{Lagrange\+Interp\+Polynomial}}
+
+
+Derived basis polynomial class for 1-\/D Lagrange interpolation polynomials.  
+
+
+Inheritance diagram for Lagrange\+Interp\+Polynomial\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classPecos_1_1LagrangeInterpPolynomial}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPecos_1_1LagrangeInterpPolynomial_aeb93b2977cfd4d359ecb67c64e2e6800}{Lagrange\+Interp\+Polynomial} ()\label{classPecos_1_1LagrangeInterpPolynomial_aeb93b2977cfd4d359ecb67c64e2e6800}
+
+\begin{DoxyCompactList}\small\item\em default constructor \end{DoxyCompactList}\item 
+\hyperlink{classPecos_1_1LagrangeInterpPolynomial_ad045b5254012df8ad6fb5dc8087d6b4c}{Lagrange\+Interp\+Polynomial} (const Real\+Array \&interp\+\_\+pts)\label{classPecos_1_1LagrangeInterpPolynomial_ad045b5254012df8ad6fb5dc8087d6b4c}
+
+\begin{DoxyCompactList}\small\item\em standard constructor \end{DoxyCompactList}\item 
+\hyperlink{classPecos_1_1LagrangeInterpPolynomial_a0409bc4b474c957cca221c01b72e1f73}{$\sim$\+Lagrange\+Interp\+Polynomial} ()\label{classPecos_1_1LagrangeInterpPolynomial_a0409bc4b474c957cca221c01b72e1f73}
+
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1LagrangeInterpPolynomial_a2b603ac91089253b885e55fde37cd9c3}{type1\+\_\+value} (unsigned short i)
+\begin{DoxyCompactList}\small\item\em retrieve the value of the i\+\_\+th Lagrange polynomial for a given parameter x using barycentric formulation \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1LagrangeInterpPolynomial_abb79c6ea3bd58a7ca9c4b3bfdd85be9c}{type1\+\_\+value} (Real x, unsigned short i)
+\begin{DoxyCompactList}\small\item\em retrieve the value of the i\+\_\+th Lagrange polynomial for a given parameter x using traditional characteristic polynomial formulation \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1LagrangeInterpPolynomial_adc62caa2483812a460fa3bd6d5dd79df}{type1\+\_\+gradient} (unsigned short i)
+\begin{DoxyCompactList}\small\item\em retrieve the gradient of the i\+\_\+th Lagrange polynomial for a given parameter x using barycentric formulation \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1LagrangeInterpPolynomial_a005465761c081a210eef9879ec5686f8}{type1\+\_\+gradient} (Real x, unsigned short i)
+\begin{DoxyCompactList}\small\item\em retrieve the gradient of the i\+\_\+th Lagrange polynomial for a given parameter x using traditional characteristic polynomial formulation \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1LagrangeInterpPolynomial_a676f72cadd45161151de088ca488af8a}{set\+\_\+new\+\_\+point} (Real x, short request\+\_\+order)
+\item 
+void \hyperlink{classPecos_1_1LagrangeInterpPolynomial_ac7d2c87832f8eb608a7d9b9d18013ead}{set\+\_\+new\+\_\+point} (Real x, short request\+\_\+order, const U\+Short\+Array \&delta\+\_\+key)
+\item 
+size\+\_\+t \hyperlink{classPecos_1_1LagrangeInterpPolynomial_aed1b9a98e9f80287b21581e7278aa253}{exact\+\_\+index} () const \label{classPecos_1_1LagrangeInterpPolynomial_aed1b9a98e9f80287b21581e7278aa253}
+
+\begin{DoxyCompactList}\small\item\em returns the index of a collocation point that is an exact match with the point to be interpolated (from \hyperlink{classPecos_1_1LagrangeInterpPolynomial_a676f72cadd45161151de088ca488af8a}{set\+\_\+new\+\_\+point()}) if detected (\+\_\+\+N\+P\+OS if not) \end{DoxyCompactList}\item 
+size\+\_\+t \hyperlink{classPecos_1_1LagrangeInterpPolynomial_a90937bbedd0d5c002f5015cf3847cbaf}{exact\+\_\+delta\+\_\+index} () const \label{classPecos_1_1LagrangeInterpPolynomial_a90937bbedd0d5c002f5015cf3847cbaf}
+
+\begin{DoxyCompactList}\small\item\em returns the index of a hierarchical increment to the interpolation points that is an exact match with the point to be interpolated (from \hyperlink{classPecos_1_1LagrangeInterpPolynomial_a676f72cadd45161151de088ca488af8a}{set\+\_\+new\+\_\+point()}) if detected (\+\_\+\+N\+P\+OS if not) \end{DoxyCompactList}\item 
+const Real\+Vector \& \hyperlink{classPecos_1_1LagrangeInterpPolynomial_ab95f72f936b15b2f4cecde96d34d798c}{barycentric\+\_\+value\+\_\+factors} () const \label{classPecos_1_1LagrangeInterpPolynomial_ab95f72f936b15b2f4cecde96d34d798c}
+
+\begin{DoxyCompactList}\small\item\em return the barycentric value factors \end{DoxyCompactList}\item 
+const Real\+Vector \& \hyperlink{classPecos_1_1LagrangeInterpPolynomial_a1f77beaf45743dce80d8253b8f7a9394}{barycentric\+\_\+gradient\+\_\+factors} () const \label{classPecos_1_1LagrangeInterpPolynomial_a1f77beaf45743dce80d8253b8f7a9394}
+
+\begin{DoxyCompactList}\small\item\em return the barycentric gradient factors \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1LagrangeInterpPolynomial_a72c4d54d2ef767ab8329f1fb67c7a3fe}{barycentric\+\_\+value\+\_\+factor} (unsigned short i) const \label{classPecos_1_1LagrangeInterpPolynomial_a72c4d54d2ef767ab8329f1fb67c7a3fe}
+
+\begin{DoxyCompactList}\small\item\em return a particular barycentric value factor \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1LagrangeInterpPolynomial_a9cd03b3dfa402dcb120423d116e07d6b}{barycentric\+\_\+gradient\+\_\+factor} (unsigned short i) const \label{classPecos_1_1LagrangeInterpPolynomial_a9cd03b3dfa402dcb120423d116e07d6b}
+
+\begin{DoxyCompactList}\small\item\em return a particular barycentric gradient factor \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1LagrangeInterpPolynomial_ad36b23949c632dd0a6784f82f90050e4}{barycentric\+\_\+value\+\_\+factor\+\_\+sum} () const \label{classPecos_1_1LagrangeInterpPolynomial_ad36b23949c632dd0a6784f82f90050e4}
+
+\begin{DoxyCompactList}\small\item\em return the sum of all barycentric value factors for use in computing the barycentric interpolant denominator \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1LagrangeInterpPolynomial_ae0b1d51779230f3ce9fe3d7c4fc14198}{barycentric\+\_\+difference\+\_\+product} () const \label{classPecos_1_1LagrangeInterpPolynomial_ae0b1d51779230f3ce9fe3d7c4fc14198}
+
+\begin{DoxyCompactList}\small\item\em return the product of all differences between the interpolation points and a current point \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classPecos_1_1LagrangeInterpPolynomial_a9a5fd3dc945d15c8423dc66dcd137b4f}{precompute\+\_\+data} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classPecos_1_1LagrangeInterpPolynomial_aafa5adb96d26d33ef0f61b390d819f66}{init\+\_\+new\+\_\+point} (Real x, short request\+\_\+order, short \&compute\+\_\+order)
+\begin{DoxyCompactList}\small\item\em define compute order from request order and new\+Point match \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1LagrangeInterpPolynomial_a2a866d84c0640d43946fcde7b0cdd8d6}{allocate\+\_\+factors} (short compute\+\_\+order)
+\begin{DoxyCompactList}\small\item\em based on compute order, size barycentric value/gradient factors \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Real\+Vector \hyperlink{classPecos_1_1LagrangeInterpPolynomial_ad03ebcd5b1f04eafbe1a63a0f0531323}{bc\+Weights}\label{classPecos_1_1LagrangeInterpPolynomial_ad03ebcd5b1f04eafbe1a63a0f0531323}
+
+\begin{DoxyCompactList}\small\item\em set of denominator products calculated from interp\+Pts in \hyperlink{classPecos_1_1LagrangeInterpPolynomial_a9a5fd3dc945d15c8423dc66dcd137b4f}{precompute\+\_\+data()}; in barycentric formulations, these are the weights \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1LagrangeInterpPolynomial_a313026836e25a5343e39c3d85028ad65}{new\+Point}\label{classPecos_1_1LagrangeInterpPolynomial_a313026836e25a5343e39c3d85028ad65}
+
+\begin{DoxyCompactList}\small\item\em the parameter value for evaluation of the interpolant \end{DoxyCompactList}\item 
+short \hyperlink{classPecos_1_1LagrangeInterpPolynomial_a26ebb456478d76c18ce529af2999ada3}{new\+Pt\+Order}\label{classPecos_1_1LagrangeInterpPolynomial_a26ebb456478d76c18ce529af2999ada3}
+
+\begin{DoxyCompactList}\small\item\em order of data that has been precomputed at new\+Point \end{DoxyCompactList}\item 
+size\+\_\+t \hyperlink{classPecos_1_1LagrangeInterpPolynomial_a9420cf614b90798b9423727ff03d4731}{exact\+Index}\label{classPecos_1_1LagrangeInterpPolynomial_a9420cf614b90798b9423727ff03d4731}
+
+\begin{DoxyCompactList}\small\item\em index of interpolation point that exactly matches the interpolated value x \end{DoxyCompactList}\item 
+size\+\_\+t \hyperlink{classPecos_1_1LagrangeInterpPolynomial_a041eca6801cc6ba2230113995a3d5ac0}{exact\+Delta\+Index}\label{classPecos_1_1LagrangeInterpPolynomial_a041eca6801cc6ba2230113995a3d5ac0}
+
+\begin{DoxyCompactList}\small\item\em index within a hierarchical increment to the interpolation points that exactly matches the interpolated value x \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1LagrangeInterpPolynomial_a0782385d3528cb761abfcc6ea2b3fd5a}{diff\+Product}\label{classPecos_1_1LagrangeInterpPolynomial_a0782385d3528cb761abfcc6ea2b3fd5a}
+
+\begin{DoxyCompactList}\small\item\em product of point differences (x-\/x\+\_\+j) for a particular new\+Point x and interp\+Pts x\+\_\+j \end{DoxyCompactList}\item 
+Real\+Vector \hyperlink{classPecos_1_1LagrangeInterpPolynomial_a13d3692709e894353a15de77679689c5}{bc\+Value\+Factors}\label{classPecos_1_1LagrangeInterpPolynomial_a13d3692709e894353a15de77679689c5}
+
+\begin{DoxyCompactList}\small\item\em terms bc\+Weights\mbox{[}j\mbox{]}/(x-\/x\mbox{[}j\mbox{]}) from barycentric formulation \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1LagrangeInterpPolynomial_afa0ec5fd637f41c0510e9114da41d68d}{bc\+Value\+Factor\+Sum}\label{classPecos_1_1LagrangeInterpPolynomial_afa0ec5fd637f41c0510e9114da41d68d}
+
+\begin{DoxyCompactList}\small\item\em sum of bc\+Value\+Factors used for evaluating barycentric interpolant denominator term \end{DoxyCompactList}\item 
+Real\+Vector \hyperlink{classPecos_1_1LagrangeInterpPolynomial_a4e3c6bbd363dee4bef97ea9621d54b75}{bc\+Grad\+Factors}\label{classPecos_1_1LagrangeInterpPolynomial_a4e3c6bbd363dee4bef97ea9621d54b75}
+
+\begin{DoxyCompactList}\small\item\em terms for gradients of barycentric interpolants \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Derived basis polynomial class for 1-\/D Lagrange interpolation polynomials. 
+
+The \hyperlink{classPecos_1_1LagrangeInterpPolynomial}{Lagrange\+Interp\+Polynomial} class evaluates a univariate Lagrange interpolation polynomial. The order of the polynomial is dictated by the number of interpolation points (order = N\+\_\+p -\/ 1). It enables multidimensional interpolants within \hyperlink{classPecos_1_1InterpPolyApproximation}{Interp\+Poly\+Approximation}. This class supports both the traditional characteristic polynomial form of Lagrange interpolation as well as barycentric Lagrange interpolation (the second form from Berrut and Trefethen, 2004). The former is used for actual evaluation of 1D polynomial values (when needed), whereas the latter allows alternative interpolant evaluations with additional precomputation that improve efficiency from O(n$^\wedge$2) evaluations to O(n). 
+
+\subsection{Member Function Documentation}
+\index{Pecos\+::\+Lagrange\+Interp\+Polynomial@{Pecos\+::\+Lagrange\+Interp\+Polynomial}!type1\+\_\+value@{type1\+\_\+value}}
+\index{type1\+\_\+value@{type1\+\_\+value}!Pecos\+::\+Lagrange\+Interp\+Polynomial@{Pecos\+::\+Lagrange\+Interp\+Polynomial}}
+\subsubsection[{\texorpdfstring{type1\+\_\+value(unsigned short i)}{type1_value(unsigned short i)}}]{\setlength{\rightskip}{0pt plus 5cm}Real type1\+\_\+value (
+\begin{DoxyParamCaption}
+\item[{unsigned short}]{i}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classPecos_1_1LagrangeInterpPolynomial_a2b603ac91089253b885e55fde37cd9c3}
+
+
+retrieve the value of the i\+\_\+th Lagrange polynomial for a given parameter x using barycentric formulation 
+
+Compute value of the Lagrange polynomial (1st barycentric form) corresponding to interpolation point i using data from previous call to \hyperlink{classPecos_1_1LagrangeInterpPolynomial_a676f72cadd45161151de088ca488af8a}{set\+\_\+new\+\_\+point()}. 
+
+Reimplemented from \hyperlink{classPecos_1_1BasisPolynomial_a5f87c364dcb43473f02b99b090d99cbb}{Basis\+Polynomial}.
+
+
+
+References Lagrange\+Interp\+Polynomial\+::bc\+Value\+Factors, Lagrange\+Interp\+Polynomial\+::diff\+Product, and Lagrange\+Interp\+Polynomial\+::exact\+Index.
+
+\index{Pecos\+::\+Lagrange\+Interp\+Polynomial@{Pecos\+::\+Lagrange\+Interp\+Polynomial}!type1\+\_\+value@{type1\+\_\+value}}
+\index{type1\+\_\+value@{type1\+\_\+value}!Pecos\+::\+Lagrange\+Interp\+Polynomial@{Pecos\+::\+Lagrange\+Interp\+Polynomial}}
+\subsubsection[{\texorpdfstring{type1\+\_\+value(\+Real x, unsigned short i)}{type1_value(Real x, unsigned short i)}}]{\setlength{\rightskip}{0pt plus 5cm}Real type1\+\_\+value (
+\begin{DoxyParamCaption}
+\item[{Real}]{x, }
+\item[{unsigned short}]{i}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classPecos_1_1LagrangeInterpPolynomial_abb79c6ea3bd58a7ca9c4b3bfdd85be9c}
+
+
+retrieve the value of the i\+\_\+th Lagrange polynomial for a given parameter x using traditional characteristic polynomial formulation 
+
+Compute value of the Lagrange polynomial (traditional characteristic polynomial form) corresponding to interpolation point i. 
+
+Reimplemented from \hyperlink{classPecos_1_1BasisPolynomial_a1fab871e99cec3a1933a2b1e9ed8a625}{Basis\+Polynomial}.
+
+
+
+References Lagrange\+Interp\+Polynomial\+::bc\+Weights, and Interpolation\+Polynomial\+::interp\+Pts.
+
+\index{Pecos\+::\+Lagrange\+Interp\+Polynomial@{Pecos\+::\+Lagrange\+Interp\+Polynomial}!type1\+\_\+gradient@{type1\+\_\+gradient}}
+\index{type1\+\_\+gradient@{type1\+\_\+gradient}!Pecos\+::\+Lagrange\+Interp\+Polynomial@{Pecos\+::\+Lagrange\+Interp\+Polynomial}}
+\subsubsection[{\texorpdfstring{type1\+\_\+gradient(unsigned short i)}{type1_gradient(unsigned short i)}}]{\setlength{\rightskip}{0pt plus 5cm}Real type1\+\_\+gradient (
+\begin{DoxyParamCaption}
+\item[{unsigned short}]{i}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classPecos_1_1LagrangeInterpPolynomial_adc62caa2483812a460fa3bd6d5dd79df}
+
+
+retrieve the gradient of the i\+\_\+th Lagrange polynomial for a given parameter x using barycentric formulation 
+
+Compute derivative with respect to x of the Lagrange polynomial (1st barycentric form) corresponding to interpolation point i using data from previous call to \hyperlink{classPecos_1_1LagrangeInterpPolynomial_a676f72cadd45161151de088ca488af8a}{set\+\_\+new\+\_\+point()}. 
+
+Reimplemented from \hyperlink{classPecos_1_1BasisPolynomial_ac88b2920bdede895a618385160254741}{Basis\+Polynomial}.
+
+
+
+References Lagrange\+Interp\+Polynomial\+::bc\+Grad\+Factors, Lagrange\+Interp\+Polynomial\+::diff\+Product, and Lagrange\+Interp\+Polynomial\+::exact\+Index.
+
+\index{Pecos\+::\+Lagrange\+Interp\+Polynomial@{Pecos\+::\+Lagrange\+Interp\+Polynomial}!type1\+\_\+gradient@{type1\+\_\+gradient}}
+\index{type1\+\_\+gradient@{type1\+\_\+gradient}!Pecos\+::\+Lagrange\+Interp\+Polynomial@{Pecos\+::\+Lagrange\+Interp\+Polynomial}}
+\subsubsection[{\texorpdfstring{type1\+\_\+gradient(\+Real x, unsigned short i)}{type1_gradient(Real x, unsigned short i)}}]{\setlength{\rightskip}{0pt plus 5cm}Real type1\+\_\+gradient (
+\begin{DoxyParamCaption}
+\item[{Real}]{x, }
+\item[{unsigned short}]{i}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classPecos_1_1LagrangeInterpPolynomial_a005465761c081a210eef9879ec5686f8}
+
+
+retrieve the gradient of the i\+\_\+th Lagrange polynomial for a given parameter x using traditional characteristic polynomial formulation 
+
+Compute derivative with respect to x of the Lagrange polynomial (traditional characteristic polynomial form) corresponding to interpolation point i. 
+
+Reimplemented from \hyperlink{classPecos_1_1BasisPolynomial_a6f69ec84983f551e7e0e4a18b78b4498}{Basis\+Polynomial}.
+
+
+
+References Lagrange\+Interp\+Polynomial\+::bc\+Weights, Interpolation\+Polynomial\+::interp\+Pts, and Pecos\+::sum().
+
+\index{Pecos\+::\+Lagrange\+Interp\+Polynomial@{Pecos\+::\+Lagrange\+Interp\+Polynomial}!set\+\_\+new\+\_\+point@{set\+\_\+new\+\_\+point}}
+\index{set\+\_\+new\+\_\+point@{set\+\_\+new\+\_\+point}!Pecos\+::\+Lagrange\+Interp\+Polynomial@{Pecos\+::\+Lagrange\+Interp\+Polynomial}}
+\subsubsection[{\texorpdfstring{set\+\_\+new\+\_\+point(\+Real x, short request\+\_\+order)}{set_new_point(Real x, short request_order)}}]{\setlength{\rightskip}{0pt plus 5cm}void set\+\_\+new\+\_\+point (
+\begin{DoxyParamCaption}
+\item[{Real}]{x, }
+\item[{short}]{request\+\_\+order}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classPecos_1_1LagrangeInterpPolynomial_a676f72cadd45161151de088ca488af8a}
+Define the bc\+Value\+Factors (and exact\+Index if needed) corresponding to x. 
+
+Reimplemented from \hyperlink{classPecos_1_1BasisPolynomial_afdf46109d433281e37d3de26f4bd1b3d}{Basis\+Polynomial}.
+
+
+
+References Lagrange\+Interp\+Polynomial\+::allocate\+\_\+factors(), Lagrange\+Interp\+Polynomial\+::bc\+Grad\+Factors, Lagrange\+Interp\+Polynomial\+::bc\+Value\+Factors, Lagrange\+Interp\+Polynomial\+::bc\+Value\+Factor\+Sum, Lagrange\+Interp\+Polynomial\+::bc\+Weights, Lagrange\+Interp\+Polynomial\+::diff\+Product, Lagrange\+Interp\+Polynomial\+::exact\+Delta\+Index, Lagrange\+Interp\+Polynomial\+::exact\+Index, Lagrange\+Interp\+Polynomial\+::init\+\_\+new\+\_\+point(), Interpolation\+Polynomial\+::interp\+Pts, and Lagrange\+Interp\+Polynomial\+::new\+Point.
+
+\index{Pecos\+::\+Lagrange\+Interp\+Polynomial@{Pecos\+::\+Lagrange\+Interp\+Polynomial}!set\+\_\+new\+\_\+point@{set\+\_\+new\+\_\+point}}
+\index{set\+\_\+new\+\_\+point@{set\+\_\+new\+\_\+point}!Pecos\+::\+Lagrange\+Interp\+Polynomial@{Pecos\+::\+Lagrange\+Interp\+Polynomial}}
+\subsubsection[{\texorpdfstring{set\+\_\+new\+\_\+point(\+Real x, short request\+\_\+order, const U\+Short\+Array \&delta\+\_\+key)}{set_new_point(Real x, short request_order, const UShortArray &delta_key)}}]{\setlength{\rightskip}{0pt plus 5cm}void set\+\_\+new\+\_\+point (
+\begin{DoxyParamCaption}
+\item[{Real}]{x, }
+\item[{short}]{request\+\_\+order, }
+\item[{const U\+Short\+Array \&}]{delta\+\_\+key}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classPecos_1_1LagrangeInterpPolynomial_ac7d2c87832f8eb608a7d9b9d18013ead}
+Define the bc\+Value\+Factors (and exact\+Index if needed) corresponding to x. 
+
+Reimplemented from \hyperlink{classPecos_1_1BasisPolynomial_a01ad737aacfeb1918ffae9b52323336a}{Basis\+Polynomial}.
+
+
+
+References Lagrange\+Interp\+Polynomial\+::allocate\+\_\+factors(), Lagrange\+Interp\+Polynomial\+::bc\+Grad\+Factors, Lagrange\+Interp\+Polynomial\+::bc\+Value\+Factors, Lagrange\+Interp\+Polynomial\+::bc\+Value\+Factor\+Sum, Lagrange\+Interp\+Polynomial\+::bc\+Weights, Lagrange\+Interp\+Polynomial\+::diff\+Product, Lagrange\+Interp\+Polynomial\+::exact\+Delta\+Index, Lagrange\+Interp\+Polynomial\+::exact\+Index, Lagrange\+Interp\+Polynomial\+::init\+\_\+new\+\_\+point(), Interpolation\+Polynomial\+::interp\+Pts, and Lagrange\+Interp\+Polynomial\+::new\+Point.
+
+\index{Pecos\+::\+Lagrange\+Interp\+Polynomial@{Pecos\+::\+Lagrange\+Interp\+Polynomial}!precompute\+\_\+data@{precompute\+\_\+data}}
+\index{precompute\+\_\+data@{precompute\+\_\+data}!Pecos\+::\+Lagrange\+Interp\+Polynomial@{Pecos\+::\+Lagrange\+Interp\+Polynomial}}
+\subsubsection[{\texorpdfstring{precompute\+\_\+data()}{precompute_data()}}]{\setlength{\rightskip}{0pt plus 5cm}void precompute\+\_\+data (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classPecos_1_1LagrangeInterpPolynomial_a9a5fd3dc945d15c8423dc66dcd137b4f}
+Pre-\/compute denominator products that are only a function of the interpolation points. 
+
+Reimplemented from \hyperlink{classPecos_1_1InterpolationPolynomial_a9a5fd3dc945d15c8423dc66dcd137b4f}{Interpolation\+Polynomial}.
+
+
+
+References Lagrange\+Interp\+Polynomial\+::bc\+Weights, Lagrange\+Interp\+Polynomial\+::init\+\_\+new\+\_\+point(), and Interpolation\+Polynomial\+::interp\+Pts.
+
+\index{Pecos\+::\+Lagrange\+Interp\+Polynomial@{Pecos\+::\+Lagrange\+Interp\+Polynomial}!init\+\_\+new\+\_\+point@{init\+\_\+new\+\_\+point}}
+\index{init\+\_\+new\+\_\+point@{init\+\_\+new\+\_\+point}!Pecos\+::\+Lagrange\+Interp\+Polynomial@{Pecos\+::\+Lagrange\+Interp\+Polynomial}}
+\subsubsection[{\texorpdfstring{init\+\_\+new\+\_\+point(\+Real x, short request\+\_\+order, short \&compute\+\_\+order)}{init_new_point(Real x, short request_order, short &compute_order)}}]{\setlength{\rightskip}{0pt plus 5cm}void init\+\_\+new\+\_\+point (
+\begin{DoxyParamCaption}
+\item[{Real}]{x, }
+\item[{short}]{request\+\_\+order, }
+\item[{short \&}]{compute\+\_\+order}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classPecos_1_1LagrangeInterpPolynomial_aafa5adb96d26d33ef0f61b390d819f66}
+
+
+define compute order from request order and new\+Point match 
+
+Shared initialization code. 
+
+References Lagrange\+Interp\+Polynomial\+::exact\+Delta\+Index, Lagrange\+Interp\+Polynomial\+::exact\+Index, Lagrange\+Interp\+Polynomial\+::new\+Point, and Lagrange\+Interp\+Polynomial\+::new\+Pt\+Order.
+
+
+
+Referenced by Lagrange\+Interp\+Polynomial\+::precompute\+\_\+data(), and Lagrange\+Interp\+Polynomial\+::set\+\_\+new\+\_\+point().
+
+\index{Pecos\+::\+Lagrange\+Interp\+Polynomial@{Pecos\+::\+Lagrange\+Interp\+Polynomial}!allocate\+\_\+factors@{allocate\+\_\+factors}}
+\index{allocate\+\_\+factors@{allocate\+\_\+factors}!Pecos\+::\+Lagrange\+Interp\+Polynomial@{Pecos\+::\+Lagrange\+Interp\+Polynomial}}
+\subsubsection[{\texorpdfstring{allocate\+\_\+factors(short compute\+\_\+order)}{allocate_factors(short compute_order)}}]{\setlength{\rightskip}{0pt plus 5cm}void allocate\+\_\+factors (
+\begin{DoxyParamCaption}
+\item[{short}]{compute\+\_\+order}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}\label{classPecos_1_1LagrangeInterpPolynomial_a2a866d84c0640d43946fcde7b0cdd8d6}
+
+
+based on compute order, size barycentric value/gradient factors 
+
+Shared initialization code. 
+
+References Lagrange\+Interp\+Polynomial\+::bc\+Grad\+Factors, Lagrange\+Interp\+Polynomial\+::bc\+Value\+Factors, Lagrange\+Interp\+Polynomial\+::bc\+Weights, and Interpolation\+Polynomial\+::interp\+Pts.
+
+
+
+Referenced by Lagrange\+Interp\+Polynomial\+::set\+\_\+new\+\_\+point().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Lagrange\+Interp\+Polynomial.\+hpp\item 
+Lagrange\+Interp\+Polynomial.\+cpp\end{DoxyCompactItemize}

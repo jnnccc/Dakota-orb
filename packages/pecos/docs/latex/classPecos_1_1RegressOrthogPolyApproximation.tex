@@ -1,0 +1,460 @@
+\section{Regress\+Orthog\+Poly\+Approximation Class Reference}
+\label{classPecos_1_1RegressOrthogPolyApproximation}\index{Regress\+Orthog\+Poly\+Approximation@{Regress\+Orthog\+Poly\+Approximation}}
+
+
+Derived approximation class for multivariate orthogonal polynomial approximation with coefficient estimation via regression.  
+
+
+Inheritance diagram for Regress\+Orthog\+Poly\+Approximation\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classPecos_1_1RegressOrthogPolyApproximation}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPecos_1_1RegressOrthogPolyApproximation_a45958a30da42872849de46c6a4c5f3b2}{Regress\+Orthog\+Poly\+Approximation} (const \hyperlink{classPecos_1_1SharedBasisApproxData}{Shared\+Basis\+Approx\+Data} \&shared\+\_\+data)\label{classPecos_1_1RegressOrthogPolyApproximation_a45958a30da42872849de46c6a4c5f3b2}
+
+\begin{DoxyCompactList}\small\item\em default constructor \end{DoxyCompactList}\item 
+\hyperlink{classPecos_1_1RegressOrthogPolyApproximation_a7d524ebb37fb0a57807a0e0a335672eb}{$\sim$\+Regress\+Orthog\+Poly\+Approximation} ()\label{classPecos_1_1RegressOrthogPolyApproximation_a7d524ebb37fb0a57807a0e0a335672eb}
+
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1RegressOrthogPolyApproximation_ae83af320003f04bcce689976b514fd9c}{build\+\_\+linear\+\_\+system} (Real\+Matrix \&A, Real\+Matrix \&B, Real\+Matrix \&points)\label{classPecos_1_1RegressOrthogPolyApproximation_ae83af320003f04bcce689976b514fd9c}
+
+\begin{DoxyCompactList}\small\item\em Build the pce vandermonde matrix A and extract the function (and gradient) data b so that we can solve (possible approximately) Ax=b; also populate the matrix of points corresponding to the random variable sample set. \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1RegressOrthogPolyApproximation_a6e3d3029730d8df2e8cd04d70cdb8c8c}{build\+\_\+linear\+\_\+system} (Real\+Matrix \&A, Real\+Matrix \&B, Real\+Matrix \&points, const U\+Short2\+D\+Array \&multi\+\_\+index)\label{classPecos_1_1RegressOrthogPolyApproximation_a6e3d3029730d8df2e8cd04d70cdb8c8c}
+
+\begin{DoxyCompactList}\small\item\em Build the pce vandermonde matrix A and extract the function (and gradient) data b so that we can solve (possible approximately) Ax=b using the provided multi-\/index; also populate the matrix of points corresponding to the random variable sample set. \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1RegressOrthogPolyApproximation_abbfb4fff2facc0982dbce0e7eab8b2fe}{build\+\_\+linear\+\_\+system} (Real\+Matrix \&A, Real\+Matrix \&B)\label{classPecos_1_1RegressOrthogPolyApproximation_abbfb4fff2facc0982dbce0e7eab8b2fe}
+
+\begin{DoxyCompactList}\small\item\em Build the pce vandermonde matrix A and extract the function (and gradient) data b so that we can solve (possible approximately) Ax=b. \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1RegressOrthogPolyApproximation_a28018036bd652f9eaa722ab919317a23}{build\+\_\+linear\+\_\+system} (Real\+Matrix \&A, Real\+Matrix \&B, const U\+Short2\+D\+Array \&multi\+\_\+index)\label{classPecos_1_1RegressOrthogPolyApproximation_a28018036bd652f9eaa722ab919317a23}
+
+\begin{DoxyCompactList}\small\item\em Build the pce vandermonde matrix A and extract the function (and gradient) data b so that we can solve (possible approximately) Ax=b using the provided multi-\/index. \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1RegressOrthogPolyApproximation_a620d894eef826b544a8ddb15e10c3e19}{build\+\_\+linear\+\_\+system} (Real\+Matrix \&A)\label{classPecos_1_1RegressOrthogPolyApproximation_a620d894eef826b544a8ddb15e10c3e19}
+
+\begin{DoxyCompactList}\small\item\em Build the pce vandermonde matrix A used in solving the system Ax=b. \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1RegressOrthogPolyApproximation_a3596c36aef41fa9dfe102f9324bedc0e}{build\+\_\+linear\+\_\+system} (Real\+Matrix \&A, const U\+Short2\+D\+Array \&multi\+\_\+index)\label{classPecos_1_1RegressOrthogPolyApproximation_a3596c36aef41fa9dfe102f9324bedc0e}
+
+\begin{DoxyCompactList}\small\item\em Build the pce vandermonde matrix A used in solving the system Ax=b using the provided multi-\/index. \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1RegressOrthogPolyApproximation_a5ad922fb56aeaaa1ca613930eefd0040}{augment\+\_\+linear\+\_\+system} (const Real\+Vector\+Array \&samples, Real\+Matrix \&A, const U\+Short2\+D\+Array \&multi\+\_\+index)\label{classPecos_1_1RegressOrthogPolyApproximation_a5ad922fb56aeaaa1ca613930eefd0040}
+
+\begin{DoxyCompactList}\small\item\em augment a Vandermonde matrix with additional sample points for a fixed multi-\/index \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classPecos_1_1RegressOrthogPolyApproximation_ac789358ee49633613d6c97593be06f9d}{min\+\_\+coefficients} () const \label{classPecos_1_1RegressOrthogPolyApproximation_ac789358ee49633613d6c97593be06f9d}
+
+\begin{DoxyCompactList}\small\item\em return the minimum number of samples (unknowns) required to build the derived class approximation type in num\+Vars dimensions \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1RegressOrthogPolyApproximation_aef8f0c32bdeff7756a9c614607c03058}{compute\+\_\+coefficients} (size\+\_\+t index=\+\_\+\+N\+P\+OS)\label{classPecos_1_1RegressOrthogPolyApproximation_aef8f0c32bdeff7756a9c614607c03058}
+
+\begin{DoxyCompactList}\small\item\em calculate the approximation coefficients using a set of surrogate data \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1RegressOrthogPolyApproximation_a8ba12605934048176c1d1c5722465523}{increment\+\_\+coefficients} (size\+\_\+t index=\+\_\+\+N\+P\+OS)\label{classPecos_1_1RegressOrthogPolyApproximation_a8ba12605934048176c1d1c5722465523}
+
+\begin{DoxyCompactList}\small\item\em recalculate approximation coefficients following a surrogate data update \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1RegressOrthogPolyApproximation_abc17a7104c33d8146f4a0ee7b6c6f37a}{store\+\_\+coefficients} (size\+\_\+t index=\+\_\+\+N\+P\+OS)\label{classPecos_1_1RegressOrthogPolyApproximation_abc17a7104c33d8146f4a0ee7b6c6f37a}
+
+\begin{DoxyCompactList}\small\item\em store the current coefficients for later combination \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1RegressOrthogPolyApproximation_ad05b093ee96314c9e05bad8e06c2dae7}{restore\+\_\+coefficients} (size\+\_\+t index=\+\_\+\+N\+P\+OS)\label{classPecos_1_1RegressOrthogPolyApproximation_ad05b093ee96314c9e05bad8e06c2dae7}
+
+\begin{DoxyCompactList}\small\item\em restore a previously stored coefficient state \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1RegressOrthogPolyApproximation_af5c6af74d2c8c5575fefb46ce55af90d}{swap\+\_\+coefficients} (size\+\_\+t index)\label{classPecos_1_1RegressOrthogPolyApproximation_af5c6af74d2c8c5575fefb46ce55af90d}
+
+\begin{DoxyCompactList}\small\item\em swap the current coefficients with a previously stored set \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1RegressOrthogPolyApproximation_a63d12cc6021fda4896b8738d72dfcc86}{remove\+\_\+stored\+\_\+coefficients} (size\+\_\+t index=\+\_\+\+N\+P\+OS)\label{classPecos_1_1RegressOrthogPolyApproximation_a63d12cc6021fda4896b8738d72dfcc86}
+
+\begin{DoxyCompactList}\small\item\em remove a redundant stored entry prior to combine\+\_\+coefficients (default is pop\+\_\+back) \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1RegressOrthogPolyApproximation_a7c794213befc83c9f90137f22e4cd39d}{combine\+\_\+coefficients} (size\+\_\+t swap\+\_\+index)\label{classPecos_1_1RegressOrthogPolyApproximation_a7c794213befc83c9f90137f22e4cd39d}
+
+\begin{DoxyCompactList}\small\item\em combine the current coefficients with a previously stored set \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1RegressOrthogPolyApproximation_a37ef37829b412fefa40d53b395846781}{allocate\+\_\+arrays} ()\label{classPecos_1_1RegressOrthogPolyApproximation_a37ef37829b412fefa40d53b395846781}
+
+\begin{DoxyCompactList}\small\item\em initialize multi\+Index, expansion\+Coeffs, et al. \end{DoxyCompactList}\item 
+size\+\_\+t \hyperlink{classPecos_1_1RegressOrthogPolyApproximation_a1472574cce875722141b69b4eb629572}{expansion\+\_\+terms} () const 
+\begin{DoxyCompactList}\small\item\em retrieve number of terms in the orthogonal polynomial expansion \end{DoxyCompactList}\item 
+const Real\+Vector \& \hyperlink{classPecos_1_1RegressOrthogPolyApproximation_af479d04cda6ec328a589f1b63ddb37eb}{dimension\+\_\+decay\+\_\+rates} ()\label{classPecos_1_1RegressOrthogPolyApproximation_af479d04cda6ec328a589f1b63ddb37eb}
+
+\begin{DoxyCompactList}\small\item\em estimate chaos expansion coefficient decay rates for each random variable dimension using linear least squares in semilog space \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1RegressOrthogPolyApproximation_a7bc9dcdf32fc46f97e286268c1ac51b0}{value} (const Real\+Vector \&x)\label{classPecos_1_1RegressOrthogPolyApproximation_a7bc9dcdf32fc46f97e286268c1ac51b0}
+
+\begin{DoxyCompactList}\small\item\em retrieve the approximate function value for a given parameter vector \end{DoxyCompactList}\item 
+const Real\+Vector \& \hyperlink{classPecos_1_1RegressOrthogPolyApproximation_ae3b6ea541392b74cf0cc8758e206277c}{gradient\+\_\+basis\+\_\+variables} (const Real\+Vector \&x)\label{classPecos_1_1RegressOrthogPolyApproximation_ae3b6ea541392b74cf0cc8758e206277c}
+
+\begin{DoxyCompactList}\small\item\em retrieve the gradient for a response expansion with respect to all variables included in the polynomial bases using the given parameter vector and default D\+VV \end{DoxyCompactList}\item 
+const Real\+Vector \& \hyperlink{classPecos_1_1RegressOrthogPolyApproximation_a3ffb563ae1658344bfc2ad882def9e7c}{gradient\+\_\+basis\+\_\+variables} (const Real\+Vector \&x, const Sizet\+Array \&dvv)\label{classPecos_1_1RegressOrthogPolyApproximation_a3ffb563ae1658344bfc2ad882def9e7c}
+
+\begin{DoxyCompactList}\small\item\em retrieve the gradient for a response expansion with respect to variables included in the polynomial basis for a given parameter vector and a given D\+VV subset \end{DoxyCompactList}\item 
+const Real\+Vector \& \hyperlink{classPecos_1_1RegressOrthogPolyApproximation_a518e8604f973a4b161a9b5718a0aa25e}{gradient\+\_\+nonbasis\+\_\+variables} (const Real\+Vector \&x)\label{classPecos_1_1RegressOrthogPolyApproximation_a518e8604f973a4b161a9b5718a0aa25e}
+
+\begin{DoxyCompactList}\small\item\em retrieve the gradient for a response expansion with respect to all variables not included in the polynomial bases (nonprobabilistic variables such as design or epistemic when not in \char`\"{}all\char`\"{} mode) using the given parameter vector and default D\+VV \end{DoxyCompactList}\item 
+const Real\+Sym\+Matrix \& \hyperlink{classPecos_1_1RegressOrthogPolyApproximation_a830729654265d84af637960f8c63f2bc}{hessian\+\_\+basis\+\_\+variables} (const Real\+Vector \&x)\label{classPecos_1_1RegressOrthogPolyApproximation_a830729654265d84af637960f8c63f2bc}
+
+\begin{DoxyCompactList}\small\item\em retrieve the Hessian of the response expansion with respect to all variables included in the polynomial basis (e.\+g., probabilistic variables) for a given parameter vector \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1RegressOrthogPolyApproximation_a1abe918dbdc66ac0fde85f1ab3c061af}{stored\+\_\+value} (const Real\+Vector \&x, size\+\_\+t index)\label{classPecos_1_1RegressOrthogPolyApproximation_a1abe918dbdc66ac0fde85f1ab3c061af}
+
+\begin{DoxyCompactList}\small\item\em retrieve the response value for a stored expansion using the given parameter vector \end{DoxyCompactList}\item 
+const Real\+Vector \& \hyperlink{classPecos_1_1RegressOrthogPolyApproximation_a7689fc058e2efdde6ce4dfe898864592}{stored\+\_\+gradient\+\_\+basis\+\_\+variables} (const Real\+Vector \&x, size\+\_\+t index)\label{classPecos_1_1RegressOrthogPolyApproximation_a7689fc058e2efdde6ce4dfe898864592}
+
+\begin{DoxyCompactList}\small\item\em retrieve the response gradient for a stored expansion with respect to all variables included in the polynomial bases; evaluate for the given parameter vector. \end{DoxyCompactList}\item 
+const Real\+Vector \& \hyperlink{classPecos_1_1RegressOrthogPolyApproximation_af0c9184d9a0da7b0e3d0d3ecbfc8f434}{stored\+\_\+gradient\+\_\+nonbasis\+\_\+variables} (const Real\+Vector \&x, size\+\_\+t index)\label{classPecos_1_1RegressOrthogPolyApproximation_af0c9184d9a0da7b0e3d0d3ecbfc8f434}
+
+\begin{DoxyCompactList}\small\item\em retrieve the response gradient for a stored expansion with respect to all variables not included in the polynomial bases; evaluate for the given parameter vector. \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1RegressOrthogPolyApproximation_aed107df248a4555c052446fbc10a8e61}{mean} (const Real\+Vector \&x)
+\item 
+const Real\+Vector \& \hyperlink{classPecos_1_1RegressOrthogPolyApproximation_a24f2edc21c9887121cda78faae1c1475}{mean\+\_\+gradient} (const Real\+Vector \&x, const Sizet\+Array \&dvv)
+\item 
+Real \hyperlink{classPecos_1_1RegressOrthogPolyApproximation_ac0085912d4abb9caa3f480b9c6778c0e}{covariance} (\hyperlink{classPecos_1_1PolynomialApproximation}{Polynomial\+Approximation} $\ast$poly\+\_\+approx\+\_\+2)\label{classPecos_1_1RegressOrthogPolyApproximation_ac0085912d4abb9caa3f480b9c6778c0e}
+
+\begin{DoxyCompactList}\small\item\em return the covariance between two response expansions, treating all variables as random \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1RegressOrthogPolyApproximation_afc1731a3d89818d49c03a3c20a7a2898}{covariance} (const Real\+Vector \&x, \hyperlink{classPecos_1_1PolynomialApproximation}{Polynomial\+Approximation} $\ast$poly\+\_\+approx\+\_\+2)\label{classPecos_1_1RegressOrthogPolyApproximation_afc1731a3d89818d49c03a3c20a7a2898}
+
+\begin{DoxyCompactList}\small\item\em return the covariance between two response expansions for a given parameter vector, treating a subset of the variables as random \end{DoxyCompactList}\item 
+const Real\+Vector \& \hyperlink{classPecos_1_1RegressOrthogPolyApproximation_ae898fc2f42f1077268f89fc2e9f2c71c}{variance\+\_\+gradient} ()
+\item 
+const Real\+Vector \& \hyperlink{classPecos_1_1RegressOrthogPolyApproximation_a791e127a445f8a6c9c3a7966d12c1431}{variance\+\_\+gradient} (const Real\+Vector \&x, const Sizet\+Array \&dvv)
+\item 
+void \hyperlink{classPecos_1_1RegressOrthogPolyApproximation_abec3f45a112004b53f83b3a03e0d06db}{compute\+\_\+component\+\_\+sobol} ()\label{classPecos_1_1RegressOrthogPolyApproximation_abec3f45a112004b53f83b3a03e0d06db}
+
+\begin{DoxyCompactList}\small\item\em Performs global sensitivity analysis via variance-\/based decomposition; computes component (main and interaction) Sobol\textquotesingle{} indices. \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1RegressOrthogPolyApproximation_ada0deadfa2c3202ed4e58d066ee079f2}{compute\+\_\+total\+\_\+sobol} ()\label{classPecos_1_1RegressOrthogPolyApproximation_ada0deadfa2c3202ed4e58d066ee079f2}
+
+\begin{DoxyCompactList}\small\item\em Performs global sensitivity analysis via variance-\/based decomposition; computes total Sobol\textquotesingle{} indices. \end{DoxyCompactList}\item 
+U\+Long\+U\+Long\+Map \hyperlink{classPecos_1_1RegressOrthogPolyApproximation_a0edcfdc2d2b3f4e37d3a3f7d591cf9e0}{sparse\+\_\+sobol\+\_\+index\+\_\+map} () const \label{classPecos_1_1RegressOrthogPolyApproximation_a0edcfdc2d2b3f4e37d3a3f7d591cf9e0}
+
+\begin{DoxyCompactList}\small\item\em return \hyperlink{classPecos_1_1RegressOrthogPolyApproximation_ac024e059bf921ce1d6aaf0506066b8a3}{Regress\+Orthog\+Poly\+Approximation\+::sparse\+Sobol\+Index\+Map} \end{DoxyCompactList}\item 
+Real\+Vector \hyperlink{classPecos_1_1RegressOrthogPolyApproximation_ac64f16ff9fbfb80c4bafa969b4a92e1d}{approximation\+\_\+coefficients} (bool normalized) const \label{classPecos_1_1RegressOrthogPolyApproximation_ac64f16ff9fbfb80c4bafa969b4a92e1d}
+
+\begin{DoxyCompactList}\small\item\em retrieve or form a set of dense coefficients that correspond to \hyperlink{classPecos_1_1SharedOrthogPolyApproxData_a0fbdd5817bc6dd026f6d42269ca8e703}{Shared\+Orthog\+Poly\+Approx\+Data\+::multi\+Index} \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1RegressOrthogPolyApproximation_a2e7b82322962df3fd036b9e0783d8fc9}{approximation\+\_\+coefficients} (const Real\+Vector \&approx\+\_\+coeffs, bool normalized)\label{classPecos_1_1RegressOrthogPolyApproximation_a2e7b82322962df3fd036b9e0783d8fc9}
+
+\begin{DoxyCompactList}\small\item\em set an array of dense coefficients corresponding to \hyperlink{classPecos_1_1SharedOrthogPolyApproxData_a0fbdd5817bc6dd026f6d42269ca8e703}{Shared\+Orthog\+Poly\+Approx\+Data\+::multi\+Index} \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1RegressOrthogPolyApproximation_a4beb4a3300443171ac2233e87c970e39}{print\+\_\+coefficients} (std\+::ostream \&s, bool normalized)\label{classPecos_1_1RegressOrthogPolyApproximation_a4beb4a3300443171ac2233e87c970e39}
+
+\begin{DoxyCompactList}\small\item\em print the coefficient array computed in \hyperlink{classPecos_1_1RegressOrthogPolyApproximation_aef8f0c32bdeff7756a9c614607c03058}{compute\+\_\+coefficients()} \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1RegressOrthogPolyApproximation_acbb94332d149ea052464dac73321ddcf}{coefficient\+\_\+labels} (std\+::vector$<$ std\+::string $>$ \&all\+\_\+coeff\+\_\+tags) const \label{classPecos_1_1RegressOrthogPolyApproximation_acbb94332d149ea052464dac73321ddcf}
+
+\begin{DoxyCompactList}\small\item\em retrieve a vector of coefficient label strings, one per expansion term \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classPecos_1_1RegressOrthogPolyApproximation_a964315e08afd9d4511296ab8008e5e5a}{set\+\_\+fault\+\_\+info} ()\label{classPecos_1_1RegressOrthogPolyApproximation_a964315e08afd9d4511296ab8008e5e5a}
+
+\begin{DoxyCompactList}\small\item\em set the information needed to ensure fault tolerance \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1RegressOrthogPolyApproximation_ae78d3d33497fe9098edd746de21a7ec1}{select\+\_\+solver} (bool cv\+\_\+active)
+\begin{DoxyCompactList}\small\item\em selects the solver for L1 or L2 minimization based on user input \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1RegressOrthogPolyApproximation_a08178623bb5f60f7c648a50e0881ea67}{run\+\_\+regression} ()\label{classPecos_1_1RegressOrthogPolyApproximation_a08178623bb5f60f7c648a50e0881ea67}
+
+\begin{DoxyCompactList}\small\item\em Run the regression method set in \hyperlink{classPecos_1_1RegressOrthogPolyApproximation_ae78d3d33497fe9098edd746de21a7ec1}{select\+\_\+solver()} to compute the expansion coefficients using L1 or L2 minimization. \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1RegressOrthogPolyApproximation_ab929bba0036bc4faded3c5d04096c5e7}{adapt\+\_\+regression} ()\label{classPecos_1_1RegressOrthogPolyApproximation_ab929bba0036bc4faded3c5d04096c5e7}
+
+\begin{DoxyCompactList}\small\item\em perform an adaptive selection of candidate basis for fixed data, employing a generalized sparse grid to define the candidate basis index sets \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1RegressOrthogPolyApproximation_a45d104d728774a70b5eb5db9c973fbb9}{select\+\_\+best\+\_\+active\+\_\+multi\+\_\+index} ()\label{classPecos_1_1RegressOrthogPolyApproximation_a45d104d728774a70b5eb5db9c973fbb9}
+
+\begin{DoxyCompactList}\small\item\em from among the active index sets, select the candidate refinement that provides the greatest reduction in cross-\/validation error \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1RegressOrthogPolyApproximation_a23beef9c5abe68bfe1ff64cb369728f9}{select\+\_\+best\+\_\+basis\+\_\+expansion} ()\label{classPecos_1_1RegressOrthogPolyApproximation_a23beef9c5abe68bfe1ff64cb369728f9}
+
+\begin{DoxyCompactList}\small\item\em from among the candidate basis expansions, select the option that provides the greatest reduction in cross-\/validation error \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1RegressOrthogPolyApproximation_a0aaa35b1fb9133a5debab73eb2a1755a}{run\+\_\+cross\+\_\+validation\+\_\+solver} (const U\+Short2\+D\+Array \&multi\+\_\+index, Real\+Vector \&exp\+\_\+coeffs, Sizet\+Set \&sparse\+\_\+indices)\label{classPecos_1_1RegressOrthogPolyApproximation_a0aaa35b1fb9133a5debab73eb2a1755a}
+
+\begin{DoxyCompactList}\small\item\em Use cross validation to choose solver hyper-\/parameters when solving the linear system Ax=b. e.\+g. if the linear solver has an epsilon tolerance internally select the best epsilon and return the corresponding solution. \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1RegressOrthogPolyApproximation_ac05214a2c0f990429de7bdc84eb6c88f}{run\+\_\+cross\+\_\+validation\+\_\+expansion} ()\label{classPecos_1_1RegressOrthogPolyApproximation_ac05214a2c0f990429de7bdc84eb6c88f}
+
+\begin{DoxyCompactList}\small\item\em Use cross validation to find the hyper-\/parameters of the polynomial chaos expansion. e.\+g. find the \textquotesingle{}best\textquotesingle{} total degree basis. \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1RegressOrthogPolyApproximation_a0549317b27b46115434d47120ef4e5e4}{compressed\+\_\+sensing} (Real\+Matrix \&A, Real\+Matrix \&B)\label{classPecos_1_1RegressOrthogPolyApproximation_a0549317b27b46115434d47120ef4e5e4}
+
+\begin{DoxyCompactList}\small\item\em encapsulate usage of C\+S\+Tool.\+solve() and bookkeeping of its sparse solution \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1RegressOrthogPolyApproximation_ab9b4257400d6a5dc9ede939b798ba7ff}{estimate\+\_\+compressed\+\_\+sensing\+\_\+options\+\_\+via\+\_\+cross\+\_\+validation} (Real\+Matrix \&vandermonde\+\_\+matrix, Real\+Matrix \&rhs, std\+::vector$<$ \hyperlink{classPecos_1_1CompressedSensingOptions}{Compressed\+Sensing\+Options} $>$ \&best\+\_\+cs\+\_\+opts, Real\+Vector \&best\+\_\+predictor\+\_\+indicators, Real\+Matrix\+Array \&predictor\+\_\+options\+\_\+history, Real\+Matrix\+Array \&predictor\+\_\+indicators\+\_\+history, Real\+Matrix\+Array \&predictor\+\_\+partition\+\_\+indicators\+\_\+history, size\+\_\+t num\+\_\+data\+\_\+pts\+\_\+fn)\label{classPecos_1_1RegressOrthogPolyApproximation_ab9b4257400d6a5dc9ede939b798ba7ff}
+
+\begin{DoxyCompactList}\small\item\em For a specific vandermonde matrix find the compressed sennsing. \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1RegressOrthogPolyApproximation_ae24741be7aa96a157561ff4f29884bdf}{update\+\_\+sparse} (Real $\ast$dense\+\_\+coeffs, size\+\_\+t num\+\_\+dense\+\_\+terms)\label{classPecos_1_1RegressOrthogPolyApproximation_ae24741be7aa96a157561ff4f29884bdf}
+
+\begin{DoxyCompactList}\small\item\em define multi\+Index and expansion\+Coeffs from nonzero dense\+\_\+coeffs \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1RegressOrthogPolyApproximation_a710dea77684cad24de3ce1bdc9557608}{update\+\_\+sparse\+\_\+indices} (Real $\ast$dense\+\_\+coeffs, size\+\_\+t num\+\_\+dense\+\_\+terms, Sizet\+Set \&sparse\+\_\+indices)\label{classPecos_1_1RegressOrthogPolyApproximation_a710dea77684cad24de3ce1bdc9557608}
+
+\begin{DoxyCompactList}\small\item\em augment sparse\+\_\+indices based on nonzero dense\+\_\+coeffs \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1RegressOrthogPolyApproximation_a4d9aca3b0892e8d46e8c417ca1845ecb}{update\+\_\+sparse\+\_\+coeffs} (Real $\ast$dense\+\_\+coeffs, Real\+Vector \&exp\+\_\+coeffs, const Sizet\+Set \&sparse\+\_\+indices)\label{classPecos_1_1RegressOrthogPolyApproximation_a4d9aca3b0892e8d46e8c417ca1845ecb}
+
+\begin{DoxyCompactList}\small\item\em define sparse expansion\+Coeffs from dense\+\_\+coeffs and sparse\+\_\+indices \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1RegressOrthogPolyApproximation_a14f0eeac7f1af2bd9357a56b9661e49e}{update\+\_\+sparse\+\_\+coeff\+\_\+grads} (Real $\ast$dense\+\_\+coeffs, int row, Real\+Matrix \&exp\+\_\+coeff\+\_\+grads, const Sizet\+Set \&sparse\+\_\+indices)\label{classPecos_1_1RegressOrthogPolyApproximation_a14f0eeac7f1af2bd9357a56b9661e49e}
+
+\begin{DoxyCompactList}\small\item\em define a row of sparse expansion\+Coeff\+Grads from dense\+\_\+coeffs and sparse\+\_\+indices \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1RegressOrthogPolyApproximation_a512bafb19f7612dd5f44215d79148899}{update\+\_\+sparse\+\_\+sobol} (const Sizet\+Set \&sparse\+\_\+indices, const U\+Short2\+D\+Array \&shared\+\_\+multi\+\_\+index, const Bit\+Array\+U\+Long\+Map \&shared\+\_\+sobol\+\_\+map)\label{classPecos_1_1RegressOrthogPolyApproximation_a512bafb19f7612dd5f44215d79148899}
+
+\begin{DoxyCompactList}\small\item\em define sparse\+Sobol\+Index\+Map from sparse\+Indices, shared multi\+\_\+index, and shared sobol\+Index\+Map \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1RegressOrthogPolyApproximation_a782c0c088bb005a5b609e221d7230974}{sparse\+\_\+restriction} (U\+Short2\+D\+Array \&multi\+\_\+index, Sizet\+Set \&sparse\+\_\+indices)
+\begin{DoxyCompactList}\small\item\em Perform restriction from dense arrays + sparse\+\_\+indices key into packed arrays without key. \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1RegressOrthogPolyApproximation_a30bb17a6ca9a1d97fa4363c05a0f64f2}{frontier\+\_\+restriction} (U\+Short2\+D\+Array \&multi\+\_\+index, Sizet\+Set \&sparse\+\_\+indices)
+\begin{DoxyCompactList}\small\item\em Perform restriction from original multi\+\_\+index by defining a Pareto frontier of recovered terms and then pruning multi\+\_\+index back to a complete set (no gaps) within this Pareto frontier. \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1RegressOrthogPolyApproximation_a85039f6b94d998746b027e2b37451725}{advance\+\_\+multi\+\_\+index} (const U\+Short2\+D\+Array \&multi\+\_\+index, U\+Short\+Array\+Set\+Array \&mi\+\_\+advancements)\label{classPecos_1_1RegressOrthogPolyApproximation_a85039f6b94d998746b027e2b37451725}
+
+\begin{DoxyCompactList}\small\item\em perform Shared\+Orthog\+Poly\+Approx\+Data\+::num\+Advancements expansions of multi\+\_\+index to create the candidates array \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1RegressOrthogPolyApproximation_a6d892728f3028e8c4e2e3f58d6b1b6f1}{advance\+\_\+multi\+\_\+index\+\_\+front} (const U\+Short2\+D\+Array \&multi\+\_\+index, U\+Short\+Array\+Set\+Array \&mi\+\_\+advancements)\label{classPecos_1_1RegressOrthogPolyApproximation_a6d892728f3028e8c4e2e3f58d6b1b6f1}
+
+\begin{DoxyCompactList}\small\item\em perform Shared\+Orthog\+Poly\+Approx\+Data\+::num\+Advancements expansions of multi\+\_\+index to create the candidates array \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1RegressOrthogPolyApproximation_a9fecb74763f160cfbcfd7c959e79413b}{add\+\_\+admissible\+\_\+forward\+\_\+neighbors} (const U\+Short2\+D\+Array \&reference\+\_\+mi, U\+Short\+Array\+Set \&fwd\+\_\+neighbors)\label{classPecos_1_1RegressOrthogPolyApproximation_a9fecb74763f160cfbcfd7c959e79413b}
+
+\begin{DoxyCompactList}\small\item\em generate a set of admissible forward neighbors from a reference multi-\/index (non-\/frontier version) \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1RegressOrthogPolyApproximation_a923e8924a329aebd0b942481762c5191}{add\+\_\+admissible\+\_\+forward\+\_\+neighbors} (const U\+Short\+Array\+Set \&reference\+\_\+mi, U\+Short\+Array\+Set \&fwd\+\_\+neighbors)\label{classPecos_1_1RegressOrthogPolyApproximation_a923e8924a329aebd0b942481762c5191}
+
+\begin{DoxyCompactList}\small\item\em generate a set of admissible forward neighbors from a reference multi-\/index (frontier version) \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1RegressOrthogPolyApproximation_acc325af7bfbd577cde6db5a0a4ee3a65}{define\+\_\+frontier} (const U\+Short2\+D\+Array \&multi\+\_\+index, U\+Short\+Array\+Set \&combined\+\_\+pareto)\label{classPecos_1_1RegressOrthogPolyApproximation_acc325af7bfbd577cde6db5a0a4ee3a65}
+
+\begin{DoxyCompactList}\small\item\em define a multi-\/index frontier from the incoming multi\+\_\+index. This differs from a Pareto frontier in that the definition of dominated is relaxed (must not be $<$ another term in all dimensions, but can be equal). \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1RegressOrthogPolyApproximation_afcbd478e4d15e4b4a409ceb96f816da1}{define\+\_\+frontier} (const U\+Short\+Array \&mi\+\_\+i, U\+Short\+Array\+Set \&combined\+\_\+pareto)\label{classPecos_1_1RegressOrthogPolyApproximation_afcbd478e4d15e4b4a409ceb96f816da1}
+
+\begin{DoxyCompactList}\small\item\em update a multi-\/index frontier from an incoming multi\+\_\+index term. This differs from a Pareto frontier in that the definition of dominated is relaxed (must not be $<$ another term in all dimensions, but can be equal). \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1RegressOrthogPolyApproximation_a22d8b8acb914d470168b4d2e54108bcc}{inflate} (Sizet\+Set \&sparse\+\_\+ind, size\+\_\+t num\+\_\+terms)\label{classPecos_1_1RegressOrthogPolyApproximation_a22d8b8acb914d470168b4d2e54108bcc}
+
+\begin{DoxyCompactList}\small\item\em define a default definition for sparse\+\_\+ind\+: 0 to num\+\_\+terms-\/1 \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1RegressOrthogPolyApproximation_ae7bff164ddf6a1808fcd160250394db3}{overlay\+\_\+expansion} (const Sizet\+Set \&sparse\+\_\+ind\+\_\+2, const Sizet\+Array \&append\+\_\+mi\+\_\+map, const Real\+Vector \&exp\+\_\+coeffs\+\_\+2, const Real\+Matrix \&exp\+\_\+grads\+\_\+2, int coeff\+\_\+2)\label{classPecos_1_1RegressOrthogPolyApproximation_ae7bff164ddf6a1808fcd160250394db3}
+
+\begin{DoxyCompactList}\small\item\em overlay the passed expansion with the aggregate expansion\{Coeffs,Coeff\+Grads\} as managed by the multi\+\_\+index\+\_\+map \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1RegressOrthogPolyApproximation_a6f7fd05fcf79dadea0f443e654524ef0}{multiply\+\_\+expansion} (const Sizet\+Set \&sparse\+\_\+ind\+\_\+b, const U\+Short2\+D\+Array \&multi\+\_\+index\+\_\+b, const Real\+Vector \&exp\+\_\+coeffs\+\_\+b, const Real\+Matrix \&exp\+\_\+grads\+\_\+b, const U\+Short2\+D\+Array \&multi\+\_\+index\+\_\+c)\label{classPecos_1_1RegressOrthogPolyApproximation_a6f7fd05fcf79dadea0f443e654524ef0}
+
+\begin{DoxyCompactList}\small\item\em multiply current expansion (\char`\"{}a\char`\"{}) with incoming expansion (\char`\"{}b\char`\"{}) and store in product expansion (\char`\"{}c\char`\"{}) \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1RegressOrthogPolyApproximation_a20995a034f76fb927a5b19f33120ff87}{grid\+Search\+Function} (Real\+Matrix \&opts, int M, int N, int num\+\_\+function\+\_\+samples)
+\begin{DoxyCompactList}\small\item\em Define the set of options used in the cross validation grid search. \end{DoxyCompactList}\item 
+void {\bfseries least\+\_\+interpolation} (Real\+Matrix \&pts, Real\+Matrix \&vals)\label{classPecos_1_1RegressOrthogPolyApproximation_a737d974b67a766de61e52d22548c5493}
+
+\item 
+void {\bfseries transform\+\_\+least\+\_\+interpolant} (Real\+Matrix \&L, Real\+Matrix \&U, Real\+Matrix \&H, Int\+Vector \&p, Real\+Matrix \&vals)\label{classPecos_1_1RegressOrthogPolyApproximation_a4415d293fb3edd38dfb94bd2a8526688}
+
+\item 
+void {\bfseries least\+\_\+factorization} (Real\+Matrix \&x, U\+Short2\+D\+Array \&basis\+\_\+indices, Real\+Matrix \&l, Real\+Matrix \&u, Real\+Matrix \&H, Int\+Vector \&p, Int\+Vector \&k)\label{classPecos_1_1RegressOrthogPolyApproximation_a98194a26a6ef44fc22f57ac878f1db9d}
+
+\item 
+void {\bfseries get\+\_\+least\+\_\+polynomial\+\_\+coefficients} (Real\+Vector \&v, Int\+Vector \&k, U\+Short2\+D\+Array \&basis\+\_\+indices, int num\+\_\+dims, int num\+\_\+pts, Real\+Matrix \&H)\label{classPecos_1_1RegressOrthogPolyApproximation_ac53b83c9fa44b84d7d80c4891b880145}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Int\+Vector \hyperlink{classPecos_1_1RegressOrthogPolyApproximation_a91b7cfcff596c4bf387e9135a7cd2cac}{best\+Approx\+Order}\label{classPecos_1_1RegressOrthogPolyApproximation_a91b7cfcff596c4bf387e9135a7cd2cac}
+
+\begin{DoxyCompactList}\small\item\em order of orthogonal best polynomial expansion found using cross validation \end{DoxyCompactList}\item 
+\hyperlink{classPecos_1_1CompressedSensingOptions}{Compressed\+Sensing\+Options} \hyperlink{classPecos_1_1RegressOrthogPolyApproximation_a5cb0a9a62f3b6e4062e40a98f2d4f487}{C\+S\+Opts}\label{classPecos_1_1RegressOrthogPolyApproximation_a5cb0a9a62f3b6e4062e40a98f2d4f487}
+
+\begin{DoxyCompactList}\small\item\em Stuct use to define the options of a compressed sensing solve. \end{DoxyCompactList}\item 
+Fault\+Info \hyperlink{classPecos_1_1RegressOrthogPolyApproximation_ab9866069e035ae562cb9e1544c7060ec}{fault\+Info}\label{classPecos_1_1RegressOrthogPolyApproximation_ab9866069e035ae562cb9e1544c7060ec}
+
+\begin{DoxyCompactList}\small\item\em store the fault info about the response data \end{DoxyCompactList}\item 
+bool \hyperlink{classPecos_1_1RegressOrthogPolyApproximation_a9ee684244014d5ccdd8966a19509ea18}{sparse\+Soln}\label{classPecos_1_1RegressOrthogPolyApproximation_a9ee684244014d5ccdd8966a19509ea18}
+
+\begin{DoxyCompactList}\small\item\em tracks use of sparse solvers, indicated the need to employ sparse\+Indices and sparse\+Sobol\+Index\+Map \end{DoxyCompactList}\item 
+Sizet\+Set \hyperlink{classPecos_1_1RegressOrthogPolyApproximation_a819a2dac4c21386731e1816a76daee0a}{sparse\+Indices}
+\begin{DoxyCompactList}\small\item\em tracks sparse terms within multi\+Index and expansion\{Coeffs,Coeff\+Grads\} that are retained from an original candidate set \end{DoxyCompactList}\item 
+Sizet\+Set\+Array \hyperlink{classPecos_1_1RegressOrthogPolyApproximation_a3898009a73072d58ec03cfbc01b72775}{stored\+Sparse\+Indices}\label{classPecos_1_1RegressOrthogPolyApproximation_a3898009a73072d58ec03cfbc01b72775}
+
+\begin{DoxyCompactList}\small\item\em copy of sparse\+Indices stored in \hyperlink{classPecos_1_1RegressOrthogPolyApproximation_abc17a7104c33d8146f4a0ee7b6c6f37a}{store\+\_\+coefficients()} for use in \hyperlink{classPecos_1_1RegressOrthogPolyApproximation_a7c794213befc83c9f90137f22e4cd39d}{combine\+\_\+coefficients()} \end{DoxyCompactList}\item 
+U\+Long\+U\+Long\+Map \hyperlink{classPecos_1_1RegressOrthogPolyApproximation_ac024e059bf921ce1d6aaf0506066b8a3}{sparse\+Sobol\+Index\+Map}\label{classPecos_1_1RegressOrthogPolyApproximation_ac024e059bf921ce1d6aaf0506066b8a3}
+
+\begin{DoxyCompactList}\small\item\em maps shared index from sobol\+Index\+Map values to sparse index into sparse sobol\+Indices \end{DoxyCompactList}\item 
+U\+Short2\+D\+Array \hyperlink{classPecos_1_1RegressOrthogPolyApproximation_ab55140ee7ed797ba62f79b641a42ecc4}{adapted\+Multi\+Index}\label{classPecos_1_1RegressOrthogPolyApproximation_ab55140ee7ed797ba62f79b641a42ecc4}
+
+\begin{DoxyCompactList}\small\item\em P\+CE multi-\/index during the basis adaptation process. Once complete, the shared multi\+Index and sparse\+Indices are updated. \end{DoxyCompactList}\item 
+Sizet\+Set \hyperlink{classPecos_1_1RegressOrthogPolyApproximation_abcffb72ea01fbd6efabd4f2a43f31acb}{adapted\+Sparse\+Indices}\label{classPecos_1_1RegressOrthogPolyApproximation_abcffb72ea01fbd6efabd4f2a43f31acb}
+
+\begin{DoxyCompactList}\small\item\em sparse indices identifying recovered expansion coefficients within adapted\+Multi\+Index during the basis adaptation process. Once complete, the shared multi\+Index and sparse\+Indices are updated. \end{DoxyCompactList}\item 
+U\+Short2\+D\+Array \hyperlink{classPecos_1_1RegressOrthogPolyApproximation_acd7822b6002b162f0f0b95e4a5022b36}{best\+Adapted\+Multi\+Index}\label{classPecos_1_1RegressOrthogPolyApproximation_acd7822b6002b162f0f0b95e4a5022b36}
+
+\begin{DoxyCompactList}\small\item\em the adapted multi-\/index that corresponds to the best solution identified Due to frontier/sparse restriction operations, best\+Adapted\+Multi\+Index cannot be assumed to be a subset of adapted\+Multi\+Index. \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1RegressOrthogPolyApproximation_a4b2a7f795768f4c8dd83a42ed26141b1}{cv\+Error\+Ref}\label{classPecos_1_1RegressOrthogPolyApproximation_a4b2a7f795768f4c8dd83a42ed26141b1}
+
+\begin{DoxyCompactList}\small\item\em the cross validation error reference point for adapting a CS candidate basis; it\textquotesingle{}s state is reset for each response QoI \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Derived approximation class for multivariate orthogonal polynomial approximation with coefficient estimation via regression. 
+
+The \hyperlink{classPecos_1_1RegressOrthogPolyApproximation}{Regress\+Orthog\+Poly\+Approximation} class provides a global approximation based on multivariate orthogonal polynomials, where the coefficients are computed using regression approaches such as least squares (L2) or compressed sensing (L1). It is used primarily for polynomial chaos expansion aproaches to UQ. 
+
+\subsection{Member Function Documentation}
+\index{Pecos\+::\+Regress\+Orthog\+Poly\+Approximation@{Pecos\+::\+Regress\+Orthog\+Poly\+Approximation}!expansion\+\_\+terms@{expansion\+\_\+terms}}
+\index{expansion\+\_\+terms@{expansion\+\_\+terms}!Pecos\+::\+Regress\+Orthog\+Poly\+Approximation@{Pecos\+::\+Regress\+Orthog\+Poly\+Approximation}}
+\subsubsection[{\texorpdfstring{expansion\+\_\+terms() const }{expansion_terms() const }}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t expansion\+\_\+terms (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classPecos_1_1RegressOrthogPolyApproximation_a1472574cce875722141b69b4eb629572}
+
+
+retrieve number of terms in the orthogonal polynomial expansion 
+
+default implementation if no sparsity (overridden in \hyperlink{classPecos_1_1RegressOrthogPolyApproximation}{Regress\+Orthog\+Poly\+Approximation} for CS) 
+
+Reimplemented from \hyperlink{classPecos_1_1OrthogPolyApproximation_a1472574cce875722141b69b4eb629572}{Orthog\+Poly\+Approximation}.
+
+
+
+References Orthog\+Poly\+Approximation\+::expansion\+\_\+terms(), and Regress\+Orthog\+Poly\+Approximation\+::sparse\+Indices.
+
+\index{Pecos\+::\+Regress\+Orthog\+Poly\+Approximation@{Pecos\+::\+Regress\+Orthog\+Poly\+Approximation}!mean@{mean}}
+\index{mean@{mean}!Pecos\+::\+Regress\+Orthog\+Poly\+Approximation@{Pecos\+::\+Regress\+Orthog\+Poly\+Approximation}}
+\subsubsection[{\texorpdfstring{mean(const Real\+Vector \&x)}{mean(const RealVector &x)}}]{\setlength{\rightskip}{0pt plus 5cm}Real mean (
+\begin{DoxyParamCaption}
+\item[{const Real\+Vector \&}]{x}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classPecos_1_1RegressOrthogPolyApproximation_aed107df248a4555c052446fbc10a8e61}
+In this case, a subset of the expansion variables are random variables and the mean of the expansion involves evaluating the expectation over this subset. 
+
+Reimplemented from \hyperlink{classPecos_1_1OrthogPolyApproximation_aed107df248a4555c052446fbc10a8e61}{Orthog\+Poly\+Approximation}.
+
+
+
+References Polynomial\+Approximation\+::computed\+Mean, Polynomial\+Approximation\+::expansion\+Coeff\+Flag, Orthog\+Poly\+Approximation\+::expansion\+Coeffs, Polynomial\+Approximation\+::expansion\+Moments, Shared\+Poly\+Approx\+Data\+::match\+\_\+nonrandom\+\_\+vars(), Orthog\+Poly\+Approximation\+::mean(), Orthog\+Poly\+Approximation\+::mean\+\_\+gradient(), Shared\+Orthog\+Poly\+Approx\+Data\+::multi\+Index, Shared\+Orthog\+Poly\+Approx\+Data\+::multivariate\+\_\+polynomial(), Shared\+Poly\+Approx\+Data\+::non\+Random\+Indices, Basis\+Approximation\+::shared\+Data\+Rep, Regress\+Orthog\+Poly\+Approximation\+::sparse\+Indices, Polynomial\+Approximation\+::x\+Prev\+Mean, and Shared\+Orthog\+Poly\+Approx\+Data\+::zero\+\_\+random().
+
+\index{Pecos\+::\+Regress\+Orthog\+Poly\+Approximation@{Pecos\+::\+Regress\+Orthog\+Poly\+Approximation}!mean\+\_\+gradient@{mean\+\_\+gradient}}
+\index{mean\+\_\+gradient@{mean\+\_\+gradient}!Pecos\+::\+Regress\+Orthog\+Poly\+Approximation@{Pecos\+::\+Regress\+Orthog\+Poly\+Approximation}}
+\subsubsection[{\texorpdfstring{mean\+\_\+gradient(const Real\+Vector \&x, const Sizet\+Array \&dvv)}{mean_gradient(const RealVector &x, const SizetArray &dvv)}}]{\setlength{\rightskip}{0pt plus 5cm}const Real\+Vector \& mean\+\_\+gradient (
+\begin{DoxyParamCaption}
+\item[{const Real\+Vector \&}]{x, }
+\item[{const Sizet\+Array \&}]{dvv}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classPecos_1_1RegressOrthogPolyApproximation_a24f2edc21c9887121cda78faae1c1475}
+In this function, a subset of the expansion variables are random variables and any augmented design/state variables (i.\+e., not inserted as random variable distribution parameters) are included in the expansion. In this case, the mean of the expansion is the expectation over the random subset and the derivative of the mean is the derivative of the remaining expansion over the non-\/random subset. This function must handle the mixed case, where some design/state variables are augmented (and are part of the expansion\+: derivatives are evaluated as described above) and some are inserted (derivatives are obtained from expansion\+Coeff\+Grads). 
+
+Reimplemented from \hyperlink{classPecos_1_1OrthogPolyApproximation_a24f2edc21c9887121cda78faae1c1475}{Orthog\+Poly\+Approximation}.
+
+
+
+References Polynomial\+Approximation\+::computed\+Mean, Regress\+Orthog\+Poly\+Approximation\+::covariance(), Polynomial\+Approximation\+::expansion\+Coeff\+Flag, Polynomial\+Approximation\+::expansion\+Coeff\+Grad\+Flag, Orthog\+Poly\+Approximation\+::expansion\+Coeff\+Grads, Orthog\+Poly\+Approximation\+::expansion\+Coeffs, Shared\+Poly\+Approx\+Data\+::match\+\_\+nonrandom\+\_\+vars(), Orthog\+Poly\+Approximation\+::mean\+\_\+gradient(), Polynomial\+Approximation\+::mean\+Gradient, Shared\+Orthog\+Poly\+Approx\+Data\+::multi\+Index, Shared\+Poly\+Approx\+Data\+::non\+Random\+Indices, Shared\+Poly\+Approx\+Data\+::random\+Vars\+Key, Basis\+Approximation\+::shared\+Data\+Rep, Regress\+Orthog\+Poly\+Approximation\+::sparse\+Indices, Polynomial\+Approximation\+::x\+Prev\+Mean\+Grad, and Shared\+Orthog\+Poly\+Approx\+Data\+::zero\+\_\+random().
+
+\index{Pecos\+::\+Regress\+Orthog\+Poly\+Approximation@{Pecos\+::\+Regress\+Orthog\+Poly\+Approximation}!variance\+\_\+gradient@{variance\+\_\+gradient}}
+\index{variance\+\_\+gradient@{variance\+\_\+gradient}!Pecos\+::\+Regress\+Orthog\+Poly\+Approximation@{Pecos\+::\+Regress\+Orthog\+Poly\+Approximation}}
+\subsubsection[{\texorpdfstring{variance\+\_\+gradient()}{variance_gradient()}}]{\setlength{\rightskip}{0pt plus 5cm}const Real\+Vector \& variance\+\_\+gradient (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classPecos_1_1RegressOrthogPolyApproximation_ae898fc2f42f1077268f89fc2e9f2c71c}
+In this function, all expansion variables are random variables and any design/state variables are omitted from the expansion. The mixed derivative case (some design variables are inserted and some are augmented) requires no special treatment. 
+
+Reimplemented from \hyperlink{classPecos_1_1OrthogPolyApproximation_ae898fc2f42f1077268f89fc2e9f2c71c}{Orthog\+Poly\+Approximation}.
+
+
+
+References Polynomial\+Approximation\+::computed\+Variance, Polynomial\+Approximation\+::expansion\+Coeff\+Flag, Polynomial\+Approximation\+::expansion\+Coeff\+Grad\+Flag, Orthog\+Poly\+Approximation\+::expansion\+Coeff\+Grads, Orthog\+Poly\+Approximation\+::expansion\+Coeffs, Shared\+Orthog\+Poly\+Approx\+Data\+::multi\+Index, Shared\+Poly\+Approx\+Data\+::non\+Random\+Indices, Shared\+Orthog\+Poly\+Approx\+Data\+::norm\+\_\+squared(), Basis\+Approximation\+::shared\+Data\+Rep, Regress\+Orthog\+Poly\+Approximation\+::sparse\+Indices, Orthog\+Poly\+Approximation\+::variance\+\_\+gradient(), and Polynomial\+Approximation\+::variance\+Gradient.
+
+\index{Pecos\+::\+Regress\+Orthog\+Poly\+Approximation@{Pecos\+::\+Regress\+Orthog\+Poly\+Approximation}!variance\+\_\+gradient@{variance\+\_\+gradient}}
+\index{variance\+\_\+gradient@{variance\+\_\+gradient}!Pecos\+::\+Regress\+Orthog\+Poly\+Approximation@{Pecos\+::\+Regress\+Orthog\+Poly\+Approximation}}
+\subsubsection[{\texorpdfstring{variance\+\_\+gradient(const Real\+Vector \&x, const Sizet\+Array \&dvv)}{variance_gradient(const RealVector &x, const SizetArray &dvv)}}]{\setlength{\rightskip}{0pt plus 5cm}const Real\+Vector \& variance\+\_\+gradient (
+\begin{DoxyParamCaption}
+\item[{const Real\+Vector \&}]{x, }
+\item[{const Sizet\+Array \&}]{dvv}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classPecos_1_1RegressOrthogPolyApproximation_a791e127a445f8a6c9c3a7966d12c1431}
+In this function, a subset of the expansion variables are random variables and any augmented design/state variables (i.\+e., not inserted as random variable distribution parameters) are included in the expansion. This function must handle the mixed case, where some design/state variables are augmented (and are part of the expansion) and some are inserted (derivatives are obtained from expansion\+Coeff\+Grads). 
+
+Reimplemented from \hyperlink{classPecos_1_1OrthogPolyApproximation_a791e127a445f8a6c9c3a7966d12c1431}{Orthog\+Poly\+Approximation}.
+
+
+
+References Polynomial\+Approximation\+::computed\+Variance, Polynomial\+Approximation\+::expansion\+Coeff\+Flag, Polynomial\+Approximation\+::expansion\+Coeff\+Grad\+Flag, Orthog\+Poly\+Approximation\+::expansion\+Coeff\+Grads, Orthog\+Poly\+Approximation\+::expansion\+Coeffs, Shared\+Poly\+Approx\+Data\+::match\+\_\+nonrandom\+\_\+vars(), Shared\+Poly\+Approx\+Data\+::match\+\_\+random\+\_\+key(), Shared\+Orthog\+Poly\+Approx\+Data\+::multi\+Index, Shared\+Orthog\+Poly\+Approx\+Data\+::multivariate\+\_\+polynomial(), Shared\+Orthog\+Poly\+Approx\+Data\+::multivariate\+\_\+polynomial\+\_\+gradient(), Shared\+Poly\+Approx\+Data\+::non\+Random\+Indices, Shared\+Orthog\+Poly\+Approx\+Data\+::norm\+\_\+squared(), Shared\+Poly\+Approx\+Data\+::random\+Indices, Shared\+Poly\+Approx\+Data\+::random\+Vars\+Key, Basis\+Approximation\+::shared\+Data\+Rep, Regress\+Orthog\+Poly\+Approximation\+::sparse\+Indices, Orthog\+Poly\+Approximation\+::variance\+\_\+gradient(), Polynomial\+Approximation\+::variance\+Gradient, Polynomial\+Approximation\+::x\+Prev\+Var\+Grad, and Shared\+Orthog\+Poly\+Approx\+Data\+::zero\+\_\+random().
+
+\index{Pecos\+::\+Regress\+Orthog\+Poly\+Approximation@{Pecos\+::\+Regress\+Orthog\+Poly\+Approximation}!select\+\_\+solver@{select\+\_\+solver}}
+\index{select\+\_\+solver@{select\+\_\+solver}!Pecos\+::\+Regress\+Orthog\+Poly\+Approximation@{Pecos\+::\+Regress\+Orthog\+Poly\+Approximation}}
+\subsubsection[{\texorpdfstring{select\+\_\+solver(bool cv\+\_\+active)}{select_solver(bool cv_active)}}]{\setlength{\rightskip}{0pt plus 5cm}void select\+\_\+solver (
+\begin{DoxyParamCaption}
+\item[{bool}]{cv\+\_\+active}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classPecos_1_1RegressOrthogPolyApproximation_ae78d3d33497fe9098edd746de21a7ec1}
+
+
+selects the solver for L1 or L2 minimization based on user input 
+
+In this case, regression is used in place of spectral projection. That is, instead of calculating the P\+CE coefficients using inner products, linear least squares is used to estimate the P\+CE coefficients which best match a set of response samples. The least squares estimation is performed using D\+G\+E\+L\+SS (S\+VD) or D\+G\+G\+L\+SE (equality-\/constrained) from L\+A\+P\+A\+CK, based on anchor point and derivative data availability. 
+
+References Shared\+Poly\+Approx\+Data\+::basis\+Config\+Options, Expansion\+Config\+Options\+::convergence\+Tol, Regress\+Orthog\+Poly\+Approximation\+::\+C\+S\+Opts, Compressed\+Sensing\+Options\+::delta, Compressed\+Sensing\+Options\+::epsilon, Expansion\+Config\+Options\+::exp\+Coeffs\+Soln\+Approach, Shared\+Poly\+Approx\+Data\+::exp\+Config\+Options, Regress\+Orthog\+Poly\+Approximation\+::fault\+Info, Regression\+Config\+Options\+::l2\+Penalty, Compressed\+Sensing\+Options\+::max\+Num\+Iterations, Expansion\+Config\+Options\+::max\+Solver\+Iterations, Shared\+Orthog\+Poly\+Approx\+Data\+::multi\+Index, Regression\+Config\+Options\+::noise\+Tols, Compressed\+Sensing\+Options\+::num\+Function\+Samples, Expansion\+Config\+Options\+::output\+Level, Shared\+Regress\+Orthog\+Poly\+Approx\+Data\+::regress\+Config\+Options, Basis\+Approximation\+::shared\+Data\+Rep, Compressed\+Sensing\+Options\+::solver, Compressed\+Sensing\+Options\+::solver\+Tolerance, Regress\+Orthog\+Poly\+Approximation\+::sparse\+Soln, Polynomial\+Approximation\+::surr\+Data, Basis\+Config\+Options\+::use\+Derivs, and Compressed\+Sensing\+Options\+::verbosity.
+
+
+
+Referenced by Regress\+Orthog\+Poly\+Approximation\+::compute\+\_\+coefficients(), Regress\+Orthog\+Poly\+Approximation\+::run\+\_\+cross\+\_\+validation\+\_\+expansion(), and Regress\+Orthog\+Poly\+Approximation\+::run\+\_\+cross\+\_\+validation\+\_\+solver().
+
+\index{Pecos\+::\+Regress\+Orthog\+Poly\+Approximation@{Pecos\+::\+Regress\+Orthog\+Poly\+Approximation}!sparse\+\_\+restriction@{sparse\+\_\+restriction}}
+\index{sparse\+\_\+restriction@{sparse\+\_\+restriction}!Pecos\+::\+Regress\+Orthog\+Poly\+Approximation@{Pecos\+::\+Regress\+Orthog\+Poly\+Approximation}}
+\subsubsection[{\texorpdfstring{sparse\+\_\+restriction(\+U\+Short2\+D\+Array \&multi\+\_\+index, Sizet\+Set \&sparse\+\_\+indices)}{sparse_restriction(UShort2DArray &multi_index, SizetSet &sparse_indices)}}]{\setlength{\rightskip}{0pt plus 5cm}void sparse\+\_\+restriction (
+\begin{DoxyParamCaption}
+\item[{U\+Short2\+D\+Array \&}]{multi\+\_\+index, }
+\item[{Sizet\+Set \&}]{sparse\+\_\+indices}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classPecos_1_1RegressOrthogPolyApproximation_a782c0c088bb005a5b609e221d7230974}
+
+
+Perform restriction from dense arrays + sparse\+\_\+indices key into packed arrays without key. 
+
+This version clears out all terms not recovered in CS and may leave multi-\/index gaps. 
+
+References Regress\+Orthog\+Poly\+Approximation\+::frontier\+\_\+restriction().
+
+
+
+Referenced by Regress\+Orthog\+Poly\+Approximation\+::select\+\_\+best\+\_\+basis\+\_\+expansion(), and Regress\+Orthog\+Poly\+Approximation\+::update\+\_\+sparse\+\_\+sobol().
+
+\index{Pecos\+::\+Regress\+Orthog\+Poly\+Approximation@{Pecos\+::\+Regress\+Orthog\+Poly\+Approximation}!frontier\+\_\+restriction@{frontier\+\_\+restriction}}
+\index{frontier\+\_\+restriction@{frontier\+\_\+restriction}!Pecos\+::\+Regress\+Orthog\+Poly\+Approximation@{Pecos\+::\+Regress\+Orthog\+Poly\+Approximation}}
+\subsubsection[{\texorpdfstring{frontier\+\_\+restriction(\+U\+Short2\+D\+Array \&multi\+\_\+index, Sizet\+Set \&sparse\+\_\+indices)}{frontier_restriction(UShort2DArray &multi_index, SizetSet &sparse_indices)}}]{\setlength{\rightskip}{0pt plus 5cm}void frontier\+\_\+restriction (
+\begin{DoxyParamCaption}
+\item[{U\+Short2\+D\+Array \&}]{multi\+\_\+index, }
+\item[{Sizet\+Set \&}]{sparse\+\_\+indices}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classPecos_1_1RegressOrthogPolyApproximation_a30bb17a6ca9a1d97fa4363c05a0f64f2}
+
+
+Perform restriction from original multi\+\_\+index by defining a Pareto frontier of recovered terms and then pruning multi\+\_\+index back to a complete set (no gaps) within this Pareto frontier. 
+
+This version clears out only the dominated multi-\/index terms not recovered in CS to avoid multi-\/index gaps; it provides a frontier with all supporting terms. 
+
+References Regress\+Orthog\+Poly\+Approximation\+::advance\+\_\+multi\+\_\+index(), Shared\+Orthog\+Poly\+Approx\+Data\+::assess\+\_\+dominance(), Basis\+Approximation\+::shared\+Data\+Rep, and Shared\+Orthog\+Poly\+Approx\+Data\+::update\+\_\+pareto\+\_\+set().
+
+
+
+Referenced by Regress\+Orthog\+Poly\+Approximation\+::select\+\_\+best\+\_\+basis\+\_\+expansion(), and Regress\+Orthog\+Poly\+Approximation\+::sparse\+\_\+restriction().
+
+\index{Pecos\+::\+Regress\+Orthog\+Poly\+Approximation@{Pecos\+::\+Regress\+Orthog\+Poly\+Approximation}!grid\+Search\+Function@{grid\+Search\+Function}}
+\index{grid\+Search\+Function@{grid\+Search\+Function}!Pecos\+::\+Regress\+Orthog\+Poly\+Approximation@{Pecos\+::\+Regress\+Orthog\+Poly\+Approximation}}
+\subsubsection[{\texorpdfstring{grid\+Search\+Function(\+Real\+Matrix \&opts, int M, int N, int num\+\_\+function\+\_\+samples)}{gridSearchFunction(RealMatrix &opts, int M, int N, int num_function_samples)}}]{\setlength{\rightskip}{0pt plus 5cm}void grid\+Search\+Function (
+\begin{DoxyParamCaption}
+\item[{Real\+Matrix \&}]{opts, }
+\item[{int}]{M, }
+\item[{int}]{N, }
+\item[{int}]{num\+\_\+function\+\_\+samples}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classPecos_1_1RegressOrthogPolyApproximation_a20995a034f76fb927a5b19f33120ff87}
+
+
+Define the set of options used in the cross validation grid search. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em opts} & (output) the options to be used in the grid search \\
+\hline
+{\em M} & The number of rows of the vandermonde matrix \\
+\hline
+{\em N} & The number of columns of the vandermonde matrix \\
+\hline
+\end{DoxyParams}
+
+
+References Pecos\+::cartesian\+\_\+product(), Regress\+Orthog\+Poly\+Approximation\+::\+C\+S\+Opts, Compressed\+Sensing\+Options\+::delta, Regress\+Orthog\+Poly\+Approximation\+::estimate\+\_\+compressed\+\_\+sensing\+\_\+options\+\_\+via\+\_\+cross\+\_\+validation(), Shared\+Poly\+Approx\+Data\+::exp\+Config\+Options, Compressed\+Sensing\+Options\+::max\+Num\+Iterations, Regression\+Config\+Options\+::noise\+Tols, Expansion\+Config\+Options\+::output\+Level, Shared\+Regress\+Orthog\+Poly\+Approx\+Data\+::regress\+Config\+Options, Basis\+Approximation\+::shared\+Data\+Rep, Compressed\+Sensing\+Options\+::solver, and Compressed\+Sensing\+Options\+::solver\+Tolerance.
+
+
+
+\subsection{Member Data Documentation}
+\index{Pecos\+::\+Regress\+Orthog\+Poly\+Approximation@{Pecos\+::\+Regress\+Orthog\+Poly\+Approximation}!sparse\+Indices@{sparse\+Indices}}
+\index{sparse\+Indices@{sparse\+Indices}!Pecos\+::\+Regress\+Orthog\+Poly\+Approximation@{Pecos\+::\+Regress\+Orthog\+Poly\+Approximation}}
+\subsubsection[{\texorpdfstring{sparse\+Indices}{sparseIndices}}]{\setlength{\rightskip}{0pt plus 5cm}Sizet\+Set sparse\+Indices\hspace{0.3cm}{\ttfamily [private]}}\label{classPecos_1_1RegressOrthogPolyApproximation_a819a2dac4c21386731e1816a76daee0a}
+
+
+tracks sparse terms within multi\+Index and expansion\{Coeffs,Coeff\+Grads\} that are retained from an original candidate set 
+
+a set is used to manage unique indices among expansion\+Coeff\{s,Grads\}. Sorting also simplifies covariance calculations, but care must be exercised to retain synchronization with expansion\+Coeff\{s,Grads\} ordering when merging sparse multi-\/indices. 
+
+Referenced by Regress\+Orthog\+Poly\+Approximation\+::adapt\+\_\+regression(), Regress\+Orthog\+Poly\+Approximation\+::approximation\+\_\+coefficients(), Regress\+Orthog\+Poly\+Approximation\+::coefficient\+\_\+labels(), Regress\+Orthog\+Poly\+Approximation\+::combine\+\_\+coefficients(), Regress\+Orthog\+Poly\+Approximation\+::compressed\+\_\+sensing(), Regress\+Orthog\+Poly\+Approximation\+::compute\+\_\+component\+\_\+sobol(), Regress\+Orthog\+Poly\+Approximation\+::compute\+\_\+total\+\_\+sobol(), Regress\+Orthog\+Poly\+Approximation\+::covariance(), Regress\+Orthog\+Poly\+Approximation\+::dimension\+\_\+decay\+\_\+rates(), Regress\+Orthog\+Poly\+Approximation\+::expansion\+\_\+terms(), Regress\+Orthog\+Poly\+Approximation\+::gradient\+\_\+basis\+\_\+variables(), Regress\+Orthog\+Poly\+Approximation\+::gradient\+\_\+nonbasis\+\_\+variables(), Regress\+Orthog\+Poly\+Approximation\+::hessian\+\_\+basis\+\_\+variables(), Regress\+Orthog\+Poly\+Approximation\+::mean(), Regress\+Orthog\+Poly\+Approximation\+::mean\+\_\+gradient(), Regress\+Orthog\+Poly\+Approximation\+::multiply\+\_\+expansion(), Regress\+Orthog\+Poly\+Approximation\+::overlay\+\_\+expansion(), Regress\+Orthog\+Poly\+Approximation\+::print\+\_\+coefficients(), Regress\+Orthog\+Poly\+Approximation\+::restore\+\_\+coefficients(), Regress\+Orthog\+Poly\+Approximation\+::run\+\_\+cross\+\_\+validation\+\_\+expansion(), Regress\+Orthog\+Poly\+Approximation\+::select\+\_\+best\+\_\+active\+\_\+multi\+\_\+index(), Regress\+Orthog\+Poly\+Approximation\+::select\+\_\+best\+\_\+basis\+\_\+expansion(), Regress\+Orthog\+Poly\+Approximation\+::store\+\_\+coefficients(), Regress\+Orthog\+Poly\+Approximation\+::swap\+\_\+coefficients(), Regress\+Orthog\+Poly\+Approximation\+::update\+\_\+sparse(), Regress\+Orthog\+Poly\+Approximation\+::value(), and Regress\+Orthog\+Poly\+Approximation\+::variance\+\_\+gradient().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Regress\+Orthog\+Poly\+Approximation.\+hpp\item 
+Regress\+Orthog\+Poly\+Approximation.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,529 @@
+.TH "SharedOrthogPolyApproxData" 3 "Wed Dec 27 2017" "Version Version 1.0" "PECOS" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SharedOrthogPolyApproxData \- Derived approximation class for orthogonal polynomials (global approximation)\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSharedPolyApproxData\fP\&.
+.PP
+Inherited by \fBSharedProjectOrthogPolyApproxData\fP, and \fBSharedRegressOrthogPolyApproxData\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSharedOrthogPolyApproxData\fP (short basis_type, const UShortArray &approx_order, size_t num_vars)"
+.br
+.RI "\fIstandard constructor \fP"
+.ti -1c
+.RI "\fBSharedOrthogPolyApproxData\fP (short basis_type, const UShortArray &approx_order, size_t num_vars, const \fBExpansionConfigOptions\fP &ec_options, const \fBBasisConfigOptions\fP &bc_options)"
+.br
+.RI "\fIalternate constructor \fP"
+.ti -1c
+.RI "\fB~SharedOrthogPolyApproxData\fP ()"
+.br
+.RI "\fIdestructor \fP"
+.ti -1c
+.RI "void \fBallocate_data\fP (const UShort2DArray &mi)"
+.br
+.RI "\fIalternative form for setting multiIndex (expansion import) and allocating related arrays \fP"
+.ti -1c
+.RI "const UShort2DArray & \fBmulti_index\fP () const "
+.br
+.RI "\fIget multiIndex \fP"
+.ti -1c
+.RI "size_t \fBexpansion_terms\fP () const "
+.br
+.RI "\fIretrieve size of multiIndex \fP"
+.ti -1c
+.RI "const UShortArray & \fBexpansion_order\fP () const "
+.br
+.RI "\fIget approxOrder \fP"
+.ti -1c
+.RI "void \fBexpansion_order\fP (const UShortArray &order)"
+.br
+.RI "\fIset approxOrder \fP"
+.ti -1c
+.RI "void \fBincrement_order\fP ()"
+.br
+.RI "\fIuniformly increment approxOrder \fP"
+.ti -1c
+.RI "void \fBconstruct_basis\fP (const ShortArray &u_types, const \fBAleatoryDistParams\fP &adp)"
+.br
+.RI "\fIinvoke \fBinitialize_orthogonal_basis_types_rules()\fP, \fBinitialize_polynomial_basis()\fP, and, if needed, \fBupdate_basis_distribution_parameters()\fP using class member data \fP"
+.ti -1c
+.RI "void \fBorthogonal_basis_types\fP (const ShortArray &opb_types)"
+.br
+.RI "\fIset orthogPolyTypes \fP"
+.ti -1c
+.RI "const ShortArray & \fBorthogonal_basis_types\fP () const "
+.br
+.RI "\fIget orthogPolyTypes \fP"
+.ti -1c
+.RI "const std::vector< \fBBasisPolynomial\fP > & \fBpolynomial_basis\fP () const "
+.br
+.RI "\fIget polynomialBasis \fP"
+.ti -1c
+.RI "std::vector< \fBBasisPolynomial\fP > & \fBpolynomial_basis\fP ()"
+.br
+.ti -1c
+.RI "void \fBpolynomial_basis\fP (const std::vector< \fBBasisPolynomial\fP > &poly_basis)"
+.br
+.RI "\fIset polynomialBasis \fP"
+.ti -1c
+.RI "void \fBcoefficients_norms_flag\fP (bool flag)"
+.br
+.RI "\fIset \fBNumericGenOrthogPolynomial::coeffsNormsFlag\fP \fP"
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static void \fBconstruct_basis\fP (const ShortArray &u_types, const \fBAleatoryDistParams\fP &adp, const \fBBasisConfigOptions\fP &bc_options, std::vector< \fBBasisPolynomial\fP > &poly_basis)"
+.br
+.RI "\fIinvoke \fBinitialize_orthogonal_basis_types_rules()\fP, \fBinitialize_polynomial_basis()\fP, and, if needed, \fBupdate_basis_distribution_parameters()\fP using passed data \fP"
+.ti -1c
+.RI "static void \fBconstruct_basis\fP (const ShortArray &u_types, const \fBAleatoryDistParams\fP &adp, const \fBBasisConfigOptions\fP &bc_options, std::vector< \fBBasisPolynomial\fP > &poly_basis, ShortArray &basis_types, ShortArray &colloc_rules)"
+.br
+.RI "\fIinvoke \fBinitialize_orthogonal_basis_types_rules()\fP, \fBinitialize_polynomial_basis()\fP, and, if needed, \fBupdate_basis_distribution_parameters()\fP using passed data \fP"
+.ti -1c
+.RI "static void \fBcoefficients_norms_flag\fP (bool flag, ShortArray &poly_types, std::vector< \fBBasisPolynomial\fP > &poly_basis)"
+.br
+.RI "\fIset \fBNumericGenOrthogPolynomial::coeffsNormsFlag\fP \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBallocate_data\fP (size_t index=_NPOS)"
+.br
+.RI "\fIallocate the shared data prior to building the set of approximations \fP"
+.ti -1c
+.RI "size_t \fBpre_combine_data\fP ()"
+.br
+.RI "\fIcombines current and stored approximation data \fP"
+.ti -1c
+.RI "void \fBpost_combine_data\fP ()"
+.br
+.RI "\fIcombines current and stored approximation data \fP"
+.ti -1c
+.RI "void \fBstore_data\fP (size_t index=_NPOS)"
+.br
+.ti -1c
+.RI "void \fBrestore_data\fP (size_t index=_NPOS)"
+.br
+.RI "\fIrestores previously stored approximation data \fP"
+.ti -1c
+.RI "void \fBremove_stored_data\fP (size_t index=_NPOS)"
+.br
+.RI "\fIremoves a redundant stored approximation data prior to combination \fP"
+.ti -1c
+.RI "void \fBclear_stored_data\fP ()"
+.br
+.RI "\fIclear stored approximation data \fP"
+.ti -1c
+.RI "size_t \fBmaximal_expansion\fP ()"
+.br
+.RI "\fIdetect whether current expansion settings are the most refined \fP"
+.ti -1c
+.RI "void \fBswap_shared_data\fP (size_t index)"
+.br
+.RI "\fIswap current shared data with a stored shared data set, as identified by stored index \fP"
+.ti -1c
+.RI "void \fBsparse_grid_level_to_expansion_order\fP (\fBCombinedSparseGridDriver\fP *csg_driver, const UShortArray &levels, UShortArray &exp_order)"
+.br
+.RI "\fIconvert a sparse grid index set and a growth setting to an integrand_order \fP"
+.ti -1c
+.RI "void \fBquadrature_order_to_integrand_order\fP (\fBIntegrationDriver\fP *int_driver, const UShortArray &quad_order, UShortArray &int_order)"
+.br
+.RI "\fIconvert quadrature orders to integrand orders using rigorous mappings \fP"
+.ti -1c
+.RI "void \fBintegrand_order_to_expansion_order\fP (const UShortArray &int_order, UShortArray &exp_order)"
+.br
+.RI "\fIconvert integrand orders to expansion orders using rigorous mappings \fP"
+.ti -1c
+.RI "void \fBincrement_trial_set\fP (\fBCombinedSparseGridDriver\fP *csg_driver, UShort2DArray &aggregated_mi)"
+.br
+.RI "\fIhelper function for incrementing that is modular on sparse grid driver and multi-index \fP"
+.ti -1c
+.RI "void \fBdecrement_trial_set\fP (const UShortArray &trial_set, UShort2DArray &aggregated_mi, bool save_map=true)"
+.br
+.RI "\fIhelper function for decrementing that is modular on trial set and multi-index \fP"
+.ti -1c
+.RI "void \fBpre_push_trial_set\fP (const UShortArray &trial_set, UShort2DArray &aggregated_mi, bool monotonic=true)"
+.br
+.RI "\fIhelper function for restoring that is modular on trial set and multi-index \fP"
+.ti -1c
+.RI "void \fBpost_push_trial_set\fP (const UShortArray &trial_set, UShort2DArray &aggregated_mi, bool save_map=true)"
+.br
+.RI "\fIhelper function for restoring that is modular on trial set and multi-index \fP"
+.ti -1c
+.RI "void \fBpush_trial_set\fP (const UShortArray &trial_set, UShort2DArray &aggregated_mi, bool monotonic=true, bool save_map=true)"
+.br
+.RI "\fIhelper function for restoring that is modular on trial set and multi-index \fP"
+.ti -1c
+.RI "void \fBprecompute_maximal_rules\fP (const UShort2DArray &\fBmulti_index\fP)"
+.br
+.RI "\fIPrecompute a maximal order of quadrature rules (based on a multiIndex) when too expensive to compute on demand\&. \fP"
+.ti -1c
+.RI "void \fBprecompute_maximal_rules\fP (const UShortArray &approx_order)"
+.br
+.RI "\fIPrecompute a maximal order of quadrature rules (based on an approxOrder) when too expensive to compute on demand\&. \fP"
+.ti -1c
+.RI "void \fBallocate_component_sobol\fP (const UShort2DArray &\fBmulti_index\fP)"
+.br
+.RI "\fIallocate sobolIndexMap from multi_index \fP"
+.ti -1c
+.RI "void \fBupdate_component_sobol\fP (const UShort2DArray &\fBmulti_index\fP)"
+.br
+.RI "\fIupdate sobolIndexMap using new multi_index terms (from multifidelity overlay or a new QoI in orthogonal least interpolation) \fP"
+.ti -1c
+.RI "void \fBappend_multi_index\fP (const UShort2DArray &append_mi, UShort2DArray &combined_mi)"
+.br
+.RI "\fIappend multi-indices from append_mi that do not already appear in combined_mi \fP"
+.ti -1c
+.RI "void \fBappend_multi_index\fP (const UShortArraySet &append_mi, UShort2DArray &combined_mi)"
+.br
+.RI "\fIappend multi-indices from append_mi that do not already appear in combined_mi \fP"
+.ti -1c
+.RI "void \fBappend_multi_index\fP (const UShort2DArray &append_mi, UShort2DArray &combined_mi, SizetArray &append_mi_map, size_t &append_mi_map_ref)"
+.br
+.RI "\fIappend multi-indices from append_mi that do not already appear in combined_mi; define append_mi_map and append_mi_map_ref \fP"
+.ti -1c
+.RI "void \fBappend_multi_index\fP (const UShort2DArray &append_mi, UShort2DArray &combined_mi, SizetSet &append_mi_map, size_t &append_mi_map_ref)"
+.br
+.RI "\fIappend multi-indices from append_mi that do not already appear in combined_mi; define append_mi_map and append_mi_map_ref \fP"
+.ti -1c
+.RI "void \fBappend_leading_multi_index\fP (const UShort2DArray &append_mi, UShort2DArray &combined_mi, SizetSet &append_mi_map, size_t &append_mi_map_ref)"
+.br
+.RI "\fIappend multi-indices from append_mi that do not already appear in combined_mi (consistent ordering assumed); define append_mi_map and append_mi_map_ref \fP"
+.ti -1c
+.RI "void \fBappend_multi_index\fP (const UShort2DArray &append_mi, SizetArray &append_mi_map, size_t &append_mi_map_ref, UShort2DArray &combined_mi)"
+.br
+.RI "\fIappend multi-indices from append_mi that do not already appear in combined_mi, using previously defined append_mi_map and append_mi_map_ref for mapping \fP"
+.ti -1c
+.RI "void \fBappend_multi_index\fP (SizetSet &sparse_indices, const UShort2DArray &append_mi, UShort2DArray &combined_mi, RealVector &exp_coeffs, RealMatrix &exp_coeff_grads)"
+.br
+.RI "\fIappend multi-indices from append_mi that do not already appear in combined_mi, updating sparse_indices, exp_coeffs, and exp_coeff_grads \fP"
+.ti -1c
+.RI "Real \fBnorm_squared\fP (const UShortArray &indices)"
+.br
+.RI "\fIreturns the norm-squared of a particular multivariate polynomial, treating all variables as probabilistic \fP"
+.ti -1c
+.RI "Real \fBnorm_squared\fP (const UShortArray &indices, const SizetList &rand_indices)"
+.br
+.RI "\fIreturns the norm-squared of a particular multivariate polynomial, treating a subset of the variables as probabilistic \fP"
+.ti -1c
+.RI "Real \fBmultivariate_polynomial\fP (const RealVector &x, const UShortArray &indices)"
+.br
+.RI "\fIcalculate a particular multivariate orthogonal polynomial value evaluated at a particular parameter set \fP"
+.ti -1c
+.RI "Real \fBmultivariate_polynomial\fP (const RealVector &x, const UShortArray &indices, const SizetList &non_rand_indices)"
+.br
+.RI "\fIcalculate a particular multivariate orthogonal polynomial value over the nonrandom variable subset evaluated at a particular parameter set \fP"
+.ti -1c
+.RI "Real \fBmultivariate_polynomial_gradient\fP (const RealVector &x, size_t deriv_index, const UShortArray &indices)"
+.br
+.RI "\fIcompute multivariate orthogonal polynomial gradient evaluated at x for term corresponding to indices and derivative variable deriv_index \fP"
+.ti -1c
+.RI "Real \fBmultivariate_polynomial_gradient\fP (const RealVector &x, size_t deriv_index, const UShortArray &indices, const SizetList &non_rand_indices)"
+.br
+.RI "\fIcompute multivariate orthogonal polynomial gradient evaluated at x for term corresponding to indices, for derivative variable deriv_index, and for a nonrandom variable subset \fP"
+.ti -1c
+.RI "Real \fBmultivariate_polynomial_hessian\fP (const RealVector &x, size_t deriv_index_i, size_t deriv_index_j, const UShortArray &indices)"
+.br
+.RI "\fIcompute multivariate orthogonal polynomial Hessian for term corresponding to deriv_index, evaluated at x \fP"
+.ti -1c
+.RI "const RealVector & \fBmultivariate_polynomial_gradient_vector\fP (const RealVector &x, const UShortArray &indices)"
+.br
+.RI "\fIcalculate multivariate orthogonal polynomial gradient vector evaluated at a particular parameter set \fP"
+.ti -1c
+.RI "const RealVector & \fBmultivariate_polynomial_gradient_vector\fP (const RealVector &x, const UShortArray &indices, const SizetArray &dvv)"
+.br
+.RI "\fIcalculate multivariate orthogonal polynomial gradient vector with respect to specified dvv and evaluated at a particular parameter set \fP"
+.ti -1c
+.RI "const RealSymMatrix & \fBmultivariate_polynomial_hessian_matrix\fP (const RealVector &x, const UShortArray &indices)"
+.br
+.RI "\fIcalculate multivariate orthogonal polynomial gradient vector evaluated at a particular parameter set \fP"
+.ti -1c
+.RI "void \fBupdate_pareto_set\fP (const UShort2DArray &\fBmulti_index\fP, UShort2DArray &combined_pareto)"
+.br
+.RI "\fIdefine/update a combined Pareto set with a new multi_index by omitting terms that are weakly Pareto dominated (more omissions = smaller resulting set) \fP"
+.ti -1c
+.RI "void \fBupdate_pareto_set\fP (const UShortArray &mi_i, UShort2DArray &combined_pareto)"
+.br
+.RI "\fIdefine/update a combined Pareto set for a new multi_index term \fP"
+.ti -1c
+.RI "void \fBupdate_frontier\fP (const UShortArraySet &\fBmulti_index\fP, UShortArraySet &mi_frontier)"
+.br
+.RI "\fIdefine/update a leading multi_index frontier omitting points that are strongly Pareto dominated (fewer omissions = larger resulting set) \fP"
+.ti -1c
+.RI "void \fBupdate_frontier\fP (const UShort2DArray &\fBmulti_index\fP, UShortArraySet &mi_frontier)"
+.br
+.RI "\fIdefine/update a leading multi_index frontier omitting points that are strongly Pareto dominated (fewer omissions = larger resulting set) \fP"
+.ti -1c
+.RI "void \fBupdate_frontier\fP (const UShortArray &mi_i, UShortArraySet &mi_frontier)"
+.br
+.RI "\fIupdate/update a leading multi_index frontier for a new multi_index term \fP"
+.ti -1c
+.RI "void \fBassess_dominance\fP (const UShortArray &new_order, const UShortArray &existing_order, bool &new_dominated, bool &existing_dominated)"
+.br
+.RI "\fIassess bi-directional weak dominance for a 'challenger' polynomial index set against an 'incumbent' polynomial index set \fP"
+.ti -1c
+.RI "void \fBassess_strong_dominance\fP (const UShortArray &order_a, const UShortArray &order_b, bool &a_dominated, bool &b_dominated)"
+.br
+.RI "\fIassess bi-directional strong dominance between two polynomial index sets \fP"
+.ti -1c
+.RI "bool \fBzero_random\fP (const UShortArray &indices) const "
+.br
+.RI "\fItest for nonzero indices in random variable subset \fP"
+.ti -1c
+.RI "void \fBget_tag\fP (char *tag, size_t j, unsigned short order) const "
+.br
+.RI "\fIGenerate the coefficient tag for variable j of given expansion term order\&. \fP"
+.ti -1c
+.RI "void \fBgradient_check\fP ()"
+.br
+.RI "\fItests 1D gradient computations (active in DEBUG compile mode) \fP"
+.in -1c
+.SS "Static Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static Real \fBmultivariate_polynomial\fP (const RealVector &x, const UShortArray &indices, std::vector< \fBBasisPolynomial\fP > &\fBpolynomial_basis\fP)"
+.br
+.RI "\fIcalculate a particular multivariate orthogonal polynomial value evaluated at a particular parameter set \fP"
+.ti -1c
+.RI "static Real \fBmultivariate_polynomial\fP (const RealVector &x, const UShortArray &indices, const SizetList &non_rand_indices, std::vector< \fBBasisPolynomial\fP > &\fBpolynomial_basis\fP)"
+.br
+.RI "\fIcalculate a particular multivariate orthogonal polynomial value over the nonrandom variable subset evaluated at a particular parameter set \fP"
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "ShortArray \fBorthogPolyTypes\fP"
+.br
+.RI "\fIarray of basis types for each one-dimensional orthogonal polynomial: HERMITE_ORTHOG, LEGENDRE_ORTHOG, LAGUERRE_ORTHOG, JACOBI_ORTHOG, GEN_LAGUERRE_ORTHOG, CHEBYSHEV_ORTHOG, or NUM_GEN_ORTHOG \fP"
+.ti -1c
+.RI "std::vector< \fBBasisPolynomial\fP > \fBpolynomialBasis\fP"
+.br
+.RI "\fIarray of one-dimensional basis polynomial objects which are used in constructing the multivariate orthogonal/interpolation polynomials \fP"
+.ti -1c
+.RI "UShortArray \fBapproxOrder\fP"
+.br
+.RI "\fIorder of orthogonal polynomial expansion \fP"
+.ti -1c
+.RI "UShortArray \fBapproxOrderPrev\fP"
+.br
+.RI "\fIprevious value of approxOrder; used for detecting when a multiIndex update is needed \fP"
+.ti -1c
+.RI "UShort2DArray \fBmultiIndex\fP"
+.br
+.RI "\fInumber of exp terms-by-number of vars array for identifying the orders of the one-dimensional orthogonal polynomials contributing to each of the multivariate orthogonal polynomials \fP"
+.ti -1c
+.RI "UShort2DArray \fBcombinedMultiIndex\fP"
+.br
+.RI "\fImulti-index that is the result of expansion combination \fP"
+.ti -1c
+.RI "UShort2DArray \fBstoredApproxOrder\fP"
+.br
+.RI "\fIarray of stored approxOrder's cached in store_coefficients() for use in combine_coefficients() \fP"
+.ti -1c
+.RI "UShort3DArray \fBstoredMultiIndex\fP"
+.br
+.RI "\fIarray of stored multiIndex's cached in store_coefficients() for use in combine_coefficients() \fP"
+.ti -1c
+.RI "Sizet2DArray \fBstoredMultiIndexMap\fP"
+.br
+.RI "\fImapping of terms when aggregating storedMultiIndex with multiIndex in \fBpre_combine_data()\fP \fP"
+.ti -1c
+.RI "UShort3DArray \fBtpMultiIndex\fP"
+.br
+.RI "\fInumSmolyakIndices-by-numTensorProductPts-by-numVars array for identifying the orders of the one-dimensional orthogonal polynomials contributing to each of the multivariate orthogonal polynomials\&. \fP"
+.ti -1c
+.RI "Sizet2DArray \fBtpMultiIndexMap\fP"
+.br
+.RI "\fIsparse grid bookkeeping: mapping from num tensor-products by tensor-product multi-indices into aggregated multiIndex \fP"
+.ti -1c
+.RI "SizetArray \fBtpMultiIndexMapRef\fP"
+.br
+.RI "\fIsparse grid bookkeeping: reference points for tpMultiIndexMap \fP"
+.ti -1c
+.RI "std::deque< UShort2DArray > \fBpoppedTPMultiIndex\fP"
+.br
+.RI "\fIpopped instances of tpMultiIndex that were computed but not selected \fP"
+.ti -1c
+.RI "std::deque< SizetArray > \fBpoppedTPMultiIndexMap\fP"
+.br
+.RI "\fIpopped instances of tpMultiIndexMap that were computed but not selected \fP"
+.ti -1c
+.RI "std::deque< size_t > \fBpoppedTPMultiIndexMapRef\fP"
+.br
+.RI "\fIpopped instances of tpMultiIndexMapRef that were computed but not selected \fP"
+.ti -1c
+.RI "size_t \fBpushIndex\fP"
+.br
+.RI "\fIindex into popped sets of data to be restored (stored in this class for used by each \fBProjectOrthogPolyApproximation\fP) \fP"
+.ti -1c
+.RI "RealVector \fBmvpGradient\fP"
+.br
+.RI "\fIData vector for storing the gradients of individual expansion term polynomials (see \fBmultivariate_polynomial_gradient_vector()\fP) \fP"
+.ti -1c
+.RI "RealSymMatrix \fBmvpHessian\fP"
+.br
+.RI "\fIData matrix for storing the Hessians of individual expansion term polynomials (see \fBmultivariate_polynomial_hessian_matrix()\fP) \fP"
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBOrthogPolyApproximation\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Derived approximation class for orthogonal polynomials (global approximation)\&. 
+
+The \fBSharedOrthogPolyApproxData\fP class provides a global approximation based on orthogonal polynomials\&. It is used primarily for polynomial chaos expansions (for stochastic finite element approaches to uncertainty quantification)\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "void construct_basis (const ShortArray & u_types, const \fBAleatoryDistParams\fP & adp)\fC [inline]\fP"
+
+.PP
+invoke \fBinitialize_orthogonal_basis_types_rules()\fP, \fBinitialize_polynomial_basis()\fP, and, if needed, \fBupdate_basis_distribution_parameters()\fP using class member data This function is invoked to create orthogPolyTypes and polynomialBasis for cases where they have not already been created by an \fBIntegrationDriver\fP (i\&.e\&., expansion_samples or regression)\&. 
+.PP
+References SharedPolyApproxData::basisConfigOptions, SharedOrthogPolyApproxData::orthogPolyTypes, and SharedOrthogPolyApproxData::polynomialBasis\&.
+.PP
+Referenced by SharedOrthogPolyApproxData::construct_basis(), and SharedOrthogPolyApproxData::increment_order()\&.
+.SS "void construct_basis (const ShortArray & u_types, const \fBAleatoryDistParams\fP & adp, const \fBBasisConfigOptions\fP & bc_options, std::vector< \fBBasisPolynomial\fP > & poly_basis)\fC [inline]\fP, \fC [static]\fP"
+
+.PP
+invoke \fBinitialize_orthogonal_basis_types_rules()\fP, \fBinitialize_polynomial_basis()\fP, and, if needed, \fBupdate_basis_distribution_parameters()\fP using passed data This function is invoked to create orthogPolyTypes and polynomialBasis for cases where they have not already been created by an \fBIntegrationDriver\fP (i\&.e\&., expansion_samples or regression)\&. 
+.PP
+References SharedOrthogPolyApproxData::construct_basis()\&.
+.SS "void construct_basis (const ShortArray & u_types, const \fBAleatoryDistParams\fP & adp, const \fBBasisConfigOptions\fP & bc_options, std::vector< \fBBasisPolynomial\fP > & poly_basis, ShortArray & basis_types, ShortArray & colloc_rules)\fC [inline]\fP, \fC [static]\fP"
+
+.PP
+invoke \fBinitialize_orthogonal_basis_types_rules()\fP, \fBinitialize_polynomial_basis()\fP, and, if needed, \fBupdate_basis_distribution_parameters()\fP using passed data This function is invoked to create orthogPolyTypes and polynomialBasis for cases where they have not already been created by an \fBIntegrationDriver\fP (i\&.e\&., expansion_samples or regression)\&. 
+.PP
+References SharedPolyApproxData::initialize_orthogonal_basis_types_rules(), SharedPolyApproxData::initialize_polynomial_basis(), SharedOrthogPolyApproxData::orthogonal_basis_types(), and SharedPolyApproxData::update_basis_distribution_parameters()\&.
+.SS "void store_data (size_t index = \fC_NPOS\fP)\fC [protected]\fP, \fC [virtual]\fP"
+Default storage, specialized in derived classes\&. 
+.PP
+Implements \fBSharedPolyApproxData\fP\&.
+.PP
+References SharedOrthogPolyApproxData::approxOrder, SharedPolyApproxData::driverRep, ExpansionConfigOptions::expCoeffsSolnApproach, SharedPolyApproxData::expConfigOptions, SharedOrthogPolyApproxData::multiIndex, IntegrationDriver::store_grid(), SharedOrthogPolyApproxData::storedApproxOrder, and SharedOrthogPolyApproxData::storedMultiIndex\&.
+.SS "void sparse_grid_level_to_expansion_order (\fBCombinedSparseGridDriver\fP * csg_driver, const UShortArray & level, UShortArray & exp_order)\fC [protected]\fP"
+
+.PP
+convert a sparse grid index set and a growth setting to an integrand_order The optional growth_rate supports the option of forcing the computed integrand order to be conservative in the presence of exponential growth due to nested quadrature rules\&. This avoids aggressive formulation of PCE expansion orders when an exponential rule takes a large jump that is not balanced by the other index set component mappings\&. Note that restricting the expansion growth directly from the level (*_RESTRICTED_GROWTH cases below used by SPARSE_INT_RESTR_TENSOR_SUM_EXP) is similar but not identical to restricting the quadrature order growth from the level and then computing the integrand and expansion orders from the restricted quadrature order (default UNRESTRICTED_GROWTH case below used by SPARSE_INT_TENSOR_SUM_EXP and TENSOR_INT_TENSOR_SUM_EXP, where quadrature rule restriction happens elsewhere)\&. In particular, these approaches differ in granularity of control, since the former approach grows linearly and the latter approach selects the minimal quadrature order (from nonlinear growth or lookup) that meets a linear target\&. 
+.PP
+References SharedOrthogPolyApproxData::integrand_order_to_expansion_order(), SparseGridDriver::level_to_order(), and SharedOrthogPolyApproxData::quadrature_order_to_integrand_order()\&.
+.PP
+Referenced by SharedOrthogPolyApproxData::clear_stored_data(), SharedOrthogPolyApproxData::increment_trial_set(), SharedProjectOrthogPolyApproxData::pre_combine_data(), and SharedProjectOrthogPolyApproxData::sparse_grid_multi_index()\&.
+.SS "void append_multi_index (const UShort2DArray & append_mi, UShort2DArray & combined_mi)\fC [protected]\fP"
+
+.PP
+append multi-indices from append_mi that do not already appear in combined_mi Append to combined_mi based on append_mi\&. 
+.PP
+Referenced by RegressOrthogPolyApproximation::adapt_regression(), RegressOrthogPolyApproximation::advance_multi_index(), SharedOrthogPolyApproxData::append_leading_multi_index(), SharedOrthogPolyApproxData::append_multi_index(), SharedOrthogPolyApproxData::increment_trial_set(), SharedRegressOrthogPolyApproxData::increment_trial_set(), SharedOrthogPolyApproxData::integrand_order_to_expansion_order(), SharedProjectOrthogPolyApproxData::pre_combine_data(), SharedOrthogPolyApproxData::pre_combine_data(), SharedProjectOrthogPolyApproxData::pre_finalize_data(), SharedOrthogPolyApproxData::pre_push_trial_set(), SharedRegressOrthogPolyApproxData::set_restriction(), and SharedProjectOrthogPolyApproxData::sparse_grid_multi_index()\&.
+.SS "void append_multi_index (const UShortArraySet & append_mi, UShort2DArray & combined_mi)\fC [protected]\fP"
+
+.PP
+append multi-indices from append_mi that do not already appear in combined_mi Append to combined_mi based on append_mi\&. 
+.PP
+References SharedOrthogPolyApproxData::append_multi_index()\&.
+.SS "void append_multi_index (const UShort2DArray & append_mi, UShort2DArray & combined_mi, SizetArray & append_mi_map, size_t & append_mi_map_ref)\fC [protected]\fP"
+
+.PP
+append multi-indices from append_mi that do not already appear in combined_mi; define append_mi_map and append_mi_map_ref Append append_mi to combined_mi, and update append_mi_map (SizetArray) and append_mi_map_ref to facilitate related aggregations without repeated searching\&. 
+.PP
+References SharedOrthogPolyApproxData::append_multi_index()\&.
+.SS "void append_multi_index (const UShort2DArray & append_mi, UShort2DArray & combined_mi, SizetSet & append_mi_map, size_t & append_mi_map_ref)\fC [protected]\fP"
+
+.PP
+append multi-indices from append_mi that do not already appear in combined_mi; define append_mi_map and append_mi_map_ref Append append_mi to combined_mi, and update append_mi_map (SizetSet) and append_mi_map_ref to facilitate related aggregations without repeated searching\&. 
+.PP
+References SharedOrthogPolyApproxData::append_leading_multi_index()\&.
+.SS "void append_leading_multi_index (const UShort2DArray & append_mi, UShort2DArray & combined_mi, SizetSet & append_mi_map, size_t & append_mi_map_ref)\fC [protected]\fP"
+
+.PP
+append multi-indices from append_mi that do not already appear in combined_mi (consistent ordering assumed); define append_mi_map and append_mi_map_ref Append append_mi to combined_mi, and update append_mi_map (SizetSet) and append_mi_map_ref to facilitate related aggregations without repeated searching\&. This case is used when append_mi and combined_mi follow a consistent order without gaps\&. 
+.PP
+References SharedOrthogPolyApproxData::append_multi_index()\&.
+.PP
+Referenced by SharedOrthogPolyApproxData::append_multi_index(), and RegressOrthogPolyApproximation::compressed_sensing()\&.
+.SS "void append_multi_index (const UShort2DArray & append_mi, SizetArray & append_mi_map, size_t & append_mi_map_ref, UShort2DArray & combined_mi)\fC [protected]\fP"
+
+.PP
+append multi-indices from append_mi that do not already appear in combined_mi, using previously defined append_mi_map and append_mi_map_ref for mapping Append to combined_mi based on append_mi and previously defined append_mi_map and append_mi_map_ref\&. If necessary, update append_mi_map and append_mi_map_ref\&. 
+.PP
+References SharedOrthogPolyApproxData::append_multi_index()\&.
+.SS "void append_multi_index (SizetSet & sparse_indices, const UShort2DArray & append_mi, UShort2DArray & combined_mi, RealVector & exp_coeffs, RealMatrix & exp_coeff_grads)\fC [protected]\fP"
+
+.PP
+append multi-indices from append_mi that do not already appear in combined_mi, updating sparse_indices, exp_coeffs, and exp_coeff_grads Append to combined_mi based on append_mi and previously defined append_mi_map and append_mi_map_ref\&. If necessary, update append_mi_map and append_mi_map_ref\&. 
+.PP
+References SharedBasisApproxData::numVars, and SharedOrthogPolyApproxData::update_pareto_set()\&.
+.SS "Real norm_squared (const UShortArray & indices, const SizetList & rand_indices)\fC [inline]\fP, \fC [protected]\fP"
+
+.PP
+returns the norm-squared of a particular multivariate polynomial, treating a subset of the variables as probabilistic All variables version\&. 
+.PP
+References SharedOrthogPolyApproxData::polynomialBasis\&.
+.SS "Real multivariate_polynomial (const RealVector & x, const UShortArray & indices, const SizetList & non_rand_indices)\fC [inline]\fP, \fC [protected]\fP"
+
+.PP
+calculate a particular multivariate orthogonal polynomial value over the nonrandom variable subset evaluated at a particular parameter set All variables version\&. 
+.PP
+References SharedOrthogPolyApproxData::multivariate_polynomial(), and SharedOrthogPolyApproxData::polynomialBasis\&.
+.SS "Real multivariate_polynomial (const RealVector & x, const UShortArray & indices, const SizetList & non_rand_indices, std::vector< \fBBasisPolynomial\fP > & polynomial_basis)\fC [inline]\fP, \fC [static]\fP, \fC [protected]\fP"
+
+.PP
+calculate a particular multivariate orthogonal polynomial value over the nonrandom variable subset evaluated at a particular parameter set All variables version\&. 
+.PP
+References SharedOrthogPolyApproxData::multivariate_polynomial_gradient()\&.
+.SS "Real multivariate_polynomial_gradient (const RealVector & x, size_t deriv_index, const UShortArray & indices, const SizetList & non_rand_indices)\fC [inline]\fP, \fC [protected]\fP"
+
+.PP
+compute multivariate orthogonal polynomial gradient evaluated at x for term corresponding to indices, for derivative variable deriv_index, and for a nonrandom variable subset All variables version\&. 
+.PP
+References SharedOrthogPolyApproxData::multivariate_polynomial_gradient_vector(), and SharedOrthogPolyApproxData::polynomialBasis\&.
+.SS "void assess_dominance (const UShortArray & new_order, const UShortArray & existing_order, bool & new_dominated, bool & existing_dominated)\fC [protected]\fP"
+
+.PP
+assess bi-directional weak dominance for a 'challenger' polynomial index set against an 'incumbent' polynomial index set Weak Pareto dominance: multi_index a weakly dominates multi_index b iff a_i >= b_i for all i and a_i > b_i for at least one dimension\&. Here we add the additional distinction of a challenger versus an incumbent: tie goes to the incumbent (the challenger is dominated and is not added redundantly to the Pareto set)\&. 
+.PP
+References SharedOrthogPolyApproxData::assess_strong_dominance()\&.
+.PP
+Referenced by RegressOrthogPolyApproximation::frontier_restriction(), SharedOrthogPolyApproxData::update_frontier(), and SharedOrthogPolyApproxData::update_pareto_set()\&.
+.SS "void assess_strong_dominance (const UShortArray & order_a, const UShortArray & order_b, bool & a_dominated, bool & b_dominated)\fC [protected]\fP"
+
+.PP
+assess bi-directional strong dominance between two polynomial index sets Strong Pareto dominance: multi_index a strongly dominates multi_index b iff a_i > b_i for all i\&. This case needs no notion of challenger versus incumbent\&. 
+.PP
+Referenced by SharedOrthogPolyApproxData::assess_dominance(), and SharedOrthogPolyApproxData::update_frontier()\&.
+.SS "void gradient_check ()\fC [protected]\fP"
+
+.PP
+tests 1D gradient computations (active in DEBUG compile mode) This test works in combination with DEBUG settings in (Legendre,Laguerre,Jacobi,GenLaguerre)OrthogPolynomial::type1_gradient()\&. 
+.PP
+References SharedOrthogPolyApproxData::get_tag(), and BasisPolynomial::type1_gradient()\&.
+.PP
+Referenced by ProjectOrthogPolyApproximation::compute_coefficients(), and RegressOrthogPolyApproximation::compute_coefficients()\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "UShort3DArray tpMultiIndex\fC [protected]\fP"
+
+.PP
+numSmolyakIndices-by-numTensorProductPts-by-numVars array for identifying the orders of the one-dimensional orthogonal polynomials contributing to each of the multivariate orthogonal polynomials\&. For nested rules (GP, CC, or GK), the integration driver's collocKey is insufficient and we must track expansion orders separately\&. 
+.PP
+Referenced by SharedRegressOrthogPolyApproxData::allocate_data(), SharedRegressOrthogPolyApproxData::clear_adapted(), ProjectOrthogPolyApproximation::compute_coefficients(), SharedOrthogPolyApproxData::decrement_trial_set(), ProjectOrthogPolyApproximation::increment_coefficients(), SharedProjectOrthogPolyApproxData::increment_data(), SharedOrthogPolyApproxData::increment_trial_set(), SharedRegressOrthogPolyApproxData::increment_trial_set(), SharedProjectOrthogPolyApproxData::pre_finalize_data(), SharedOrthogPolyApproxData::pre_push_trial_set(), SharedRegressOrthogPolyApproxData::set_restriction(), and SharedProjectOrthogPolyApproxData::sparse_grid_multi_index()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for PECOS from the source code\&.

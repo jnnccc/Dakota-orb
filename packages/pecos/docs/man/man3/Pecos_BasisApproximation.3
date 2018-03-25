@@ -1,0 +1,222 @@
+.TH "BasisApproximation" 3 "Wed Dec 27 2017" "Version Version 1.0" "PECOS" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+BasisApproximation \- Base class for multivariate basis approximations used for projection of random variables through time or space\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBPolynomialApproximation\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBBasisApproximation\fP ()"
+.br
+.RI "\fIdefault constructor \fP"
+.ti -1c
+.RI "\fBBasisApproximation\fP (const \fBSharedBasisApproxData\fP &shared_data)"
+.br
+.RI "\fIstandard constructor for envelope \fP"
+.ti -1c
+.RI "\fBBasisApproximation\fP (const \fBBasisApproximation\fP &basis_approx)"
+.br
+.RI "\fIcopy constructor \fP"
+.ti -1c
+.RI "virtual \fB~BasisApproximation\fP ()"
+.br
+.RI "\fIdestructor \fP"
+.ti -1c
+.RI "\fBBasisApproximation\fP \fBoperator=\fP (const \fBBasisApproximation\fP &basis_approx)"
+.br
+.RI "\fIassignment operator \fP"
+.ti -1c
+.RI "virtual Real \fBvalue\fP (const RealVector &x)"
+.br
+.RI "\fIretrieve the approximate function value for a given parameter vector \fP"
+.ti -1c
+.RI "virtual const RealVector & \fBgradient\fP (const RealVector &x)"
+.br
+.RI "\fIretrieve the approximate function gradient for a given parameter vector \fP"
+.ti -1c
+.RI "virtual const RealSymMatrix & \fBhessian\fP (const RealVector &x)"
+.br
+.RI "\fIretrieve the approximate function Hessian for a given parameter vector \fP"
+.ti -1c
+.RI "virtual void \fBsurrogate_data\fP (const SurrogateData &data)"
+.br
+.RI "\fIset \fBPolynomialApproximation::origSurrData\fP \fP"
+.ti -1c
+.RI "virtual const SurrogateData & \fBsurrogate_data\fP () const "
+.br
+.RI "\fIget \fBPolynomialApproximation::surrData\fP (const) \fP"
+.ti -1c
+.RI "virtual SurrogateData & \fBsurrogate_data\fP ()"
+.br
+.RI "\fIget \fBPolynomialApproximation::surrData\fP (non-const) \fP"
+.ti -1c
+.RI "virtual int \fBmin_coefficients\fP () const "
+.br
+.RI "\fIreturn the minimum number of samples (unknowns) required to build the derived class approximation type in numVars dimensions \fP"
+.ti -1c
+.RI "virtual void \fBcompute_coefficients\fP (size_t index=_NPOS)"
+.br
+.RI "\fIcalculate the approximation coefficients using a set of surrogate data \fP"
+.ti -1c
+.RI "virtual void \fBincrement_coefficients\fP (size_t index=_NPOS)"
+.br
+.RI "\fIrecalculate approximation coefficients following a surrogate data update \fP"
+.ti -1c
+.RI "virtual void \fBdecrement_coefficients\fP (bool save_data)"
+.br
+.RI "\fIrestore the approximation coefficients to the state preceding the last increment \fP"
+.ti -1c
+.RI "virtual void \fBpush_coefficients\fP ()"
+.br
+.RI "\fIrestore the approximation coefficients to a previously incremented state as identified by the current data increment \fP"
+.ti -1c
+.RI "virtual void \fBfinalize_coefficients\fP ()"
+.br
+.RI "\fIfinalize the coefficients by applying all previously evaluated increments \fP"
+.ti -1c
+.RI "virtual void \fBstore_coefficients\fP (size_t index=_NPOS)"
+.br
+.RI "\fIstore the current coefficients for later combination \fP"
+.ti -1c
+.RI "virtual void \fBrestore_coefficients\fP (size_t index=_NPOS)"
+.br
+.RI "\fIrestore a previously stored coefficient state \fP"
+.ti -1c
+.RI "virtual void \fBswap_coefficients\fP (size_t index)"
+.br
+.RI "\fIswap the current coefficients with a previously stored set \fP"
+.ti -1c
+.RI "virtual void \fBremove_stored_coefficients\fP (size_t index=_NPOS)"
+.br
+.RI "\fIremove a redundant stored entry prior to combine_coefficients (default is pop_back) \fP"
+.ti -1c
+.RI "virtual void \fBclear_stored\fP ()"
+.br
+.RI "\fIclear stored approximation data \fP"
+.ti -1c
+.RI "virtual void \fBcombine_coefficients\fP (size_t swap_index)"
+.br
+.RI "\fIcombine the current coefficients with a previously stored set \fP"
+.ti -1c
+.RI "virtual void \fBprint_coefficients\fP (std::ostream &s, bool normalized)"
+.br
+.RI "\fIprint the coefficient array computed in \fBcompute_coefficients()\fP \fP"
+.ti -1c
+.RI "virtual RealVector \fBapproximation_coefficients\fP (bool normalized) const "
+.br
+.RI "\fIreturn the coefficient array computed by \fBcompute_coefficients()\fP \fP"
+.ti -1c
+.RI "virtual void \fBapproximation_coefficients\fP (const RealVector &approx_coeffs, bool normalized)"
+.br
+.RI "\fIset the coefficient array from external sources, rather than computing with \fBcompute_coefficients()\fP \fP"
+.ti -1c
+.RI "virtual void \fBcoefficient_labels\fP (std::vector< std::string > &coeff_labels) const "
+.br
+.RI "\fIretrieve a vector of coefficient label strings, one per expansion term \fP"
+.ti -1c
+.RI "void \fBassign_rep\fP (\fBBasisApproximation\fP *\fBapprox_rep\fP, bool ref_count_incr)"
+.br
+.RI "\fIassign letter or replace existing letter with a new one \fP"
+.ti -1c
+.RI "\fBBasisApproximation\fP * \fBapprox_rep\fP () const "
+.br
+.RI "\fIreturns approxRep for access to derived class member functions that are not mapped to the top Approximation level \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBBasisApproximation\fP (\fBBaseConstructor\fP, const \fBSharedBasisApproxData\fP &shared_data)"
+.br
+.RI "\fIconstructor initializes the base class part of letter classes (\fBBaseConstructor\fP overloading avoids infinite recursion in the derived class constructors - Coplien, p\&. 139) \fP"
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBSharedBasisApproxData\fP * \fBsharedDataRep\fP"
+.br
+.RI "\fIcontains the approximation data that is shared among the response set \fP"
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBBasisApproximation\fP * \fBget_basis_approx\fP (const \fBSharedBasisApproxData\fP &shared_data)"
+.br
+.RI "\fIUsed only by the standard envelope constructor to initialize basisApproxRep to the appropriate derived type\&. \fP"
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBBasisApproximation\fP * \fBbasisApproxRep\fP"
+.br
+.RI "\fIpointer to the letter (initialized only for the envelope) \fP"
+.ti -1c
+.RI "int \fBreferenceCount\fP"
+.br
+.RI "\fInumber of objects sharing basisApproxRep \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Base class for multivariate basis approximations used for projection of random variables through time or space\&. 
+
+The base class for basis approximations defined from Fourier functions, eigenfunctions, or polynomial functions\&. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "\fBBasisApproximation\fP ()"
+
+.PP
+default constructor The default constructor: basisApproxRep is NULL in this case\&. This makes it necessary to check for NULL in the copy constructor, assignment operator, and destructor\&. 
+.SS "\fBBasisApproximation\fP (const \fBSharedBasisApproxData\fP & shared_data)"
+
+.PP
+standard constructor for envelope Envelope constructor only needs to extract enough data to properly execute get_basis_approx, since BasisApproximation(BaseConstructor) builds the actual base class data for the derived basis functions\&. 
+.PP
+References BasisApproximation::basisApproxRep, and BasisApproximation::get_basis_approx()\&.
+.SS "\fBBasisApproximation\fP (const \fBBasisApproximation\fP & basis_approx)"
+
+.PP
+copy constructor Copy constructor manages sharing of basisApproxRep and incrementing of referenceCount\&. 
+.PP
+References BasisApproximation::basisApproxRep, BasisApproximation::operator=(), and BasisApproximation::referenceCount\&.
+.SS "~\fBBasisApproximation\fP ()\fC [virtual]\fP"
+
+.PP
+destructor Destructor decrements referenceCount and only deletes basisApproxRep when referenceCount reaches zero\&. 
+.PP
+References BasisApproximation::assign_rep(), BasisApproximation::basisApproxRep, and BasisApproximation::referenceCount\&.
+.SS "\fBBasisApproximation\fP (\fBBaseConstructor\fP, const \fBSharedBasisApproxData\fP & shared_data)\fC [protected]\fP"
+
+.PP
+constructor initializes the base class part of letter classes (\fBBaseConstructor\fP overloading avoids infinite recursion in the derived class constructors - Coplien, p\&. 139) This constructor is the one which must build the base class data for all derived classes\&. \fBget_basis_approx()\fP instantiates a derived class letter and the derived constructor selects this base class constructor in its initialization list (to avoid recursion in the base class constructor calling \fBget_basis_approx()\fP again)\&. Since the letter IS the representation, its rep pointer is set to NULL (an uninitialized pointer causes problems in ~BasisApproximation)\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBBasisApproximation\fP operator= (const \fBBasisApproximation\fP & basis_approx)"
+
+.PP
+assignment operator Assignment operator decrements referenceCount for old basisApproxRep, assigns new basisApproxRep, and increments referenceCount for new basisApproxRep\&. 
+.PP
+References BasisApproximation::basisApproxRep, and BasisApproximation::referenceCount\&.
+.PP
+Referenced by BasisApproximation::BasisApproximation()\&.
+.SS "\fBBasisApproximation\fP * get_basis_approx (const \fBSharedBasisApproxData\fP & shared_data)\fC [private]\fP"
+
+.PP
+Used only by the standard envelope constructor to initialize basisApproxRep to the appropriate derived type\&. Used only by the envelope constructor to initialize basisApproxRep to the appropriate derived type\&. 
+.PP
+References SharedBasisApproxData::basisType, and SharedBasisApproxData::data_rep()\&.
+.PP
+Referenced by BasisApproximation::BasisApproximation()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for PECOS from the source code\&.

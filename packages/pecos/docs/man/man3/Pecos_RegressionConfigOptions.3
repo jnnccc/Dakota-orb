@@ -1,0 +1,90 @@
+.TH "RegressionConfigOptions" 3 "Wed Dec 27 2017" "Version Version 1.0" "PECOS" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RegressionConfigOptions \- Container class for various regression configuration options\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBRegressionConfigOptions\fP ()"
+.br
+.RI "\fIdefault constructor \fP"
+.ti -1c
+.RI "\fBRegressionConfigOptions\fP (bool cv, bool cv_noise_only, int seed, const RealVector &noise_tols, Real l2_penalty, bool normalize_cv, unsigned short init_lev, unsigned short growth_fact, unsigned short num_advance)"
+.br
+.RI "\fIconstructor \fP"
+.ti -1c
+.RI "\fBRegressionConfigOptions\fP (const \fBRegressionConfigOptions\fP &rc_options)"
+.br
+.RI "\fIcopy constructor \fP"
+.ti -1c
+.RI "\fB~RegressionConfigOptions\fP ()"
+.br
+.RI "\fIdestructor \fP"
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "bool \fBcrossValidation\fP"
+.br
+.RI "\fIflag for use of automatic cross-validation for parameter selection in regression approaches \fP"
+.ti -1c
+.RI "bool \fBcrossValidNoiseOnly\fP"
+.br
+.RI "\fIflag to restrict cross-validation to only estimate the noise tolerance in order to manage computational cost \fP"
+.ti -1c
+.RI "int \fBrandomSeed\fP"
+.br
+.RI "\fIrandom seed for data fold definition within cross validation \fP"
+.ti -1c
+.RI "RealVector \fBnoiseTols\fP"
+.br
+.RI "\fInoise tolerance(s) for compressed sensing algorithms; vector form used in cross-validation \fP"
+.ti -1c
+.RI "Real \fBl2Penalty\fP"
+.br
+.RI "\fIthe L2 penalty parameter for LASSO (elastic net variant) \fP"
+.ti -1c
+.RI "bool \fBnormalizeCV\fP"
+.br
+.RI "\fIflag indicating whether to scale the CV error estimates by the size of the candidate basis expansion within adapted basis selection \fP"
+.ti -1c
+.RI "unsigned short \fBinitSGLevel\fP"
+.br
+.RI "\fIinitial sparse grid level that provides the starting point for basis adaptation in ADAPTED_BASIS_GENERALIZED mode \fP"
+.ti -1c
+.RI "unsigned short \fBmultiIndexGrowthFactor\fP"
+.br
+.RI "\fIa scalar growth factor for defining the tpMultiIndex contribution from a particular trial index set for basis adaptation in ADAPTED_BASIS_GENERALIZED mode \fP"
+.ti -1c
+.RI "unsigned short \fBnumAdvancements\fP"
+.br
+.RI "\fInumber of front expansions per iteration for basis adaptation in ADAPTED_BASIS_EXPANDING_FRONT mode \fP"
+.ti -1c
+.RI "bool \fBadvanceByFrontier\fP"
+.br
+.RI "\fIflag indicating restriction and front expansion using a multi-index frontier \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Container class for various regression configuration options\&. 
+
+The \fBRegressionConfigOptions\fP class provides a simple container class for regression configuration options related to \&.\&.\&. 
+.SH "Member Data Documentation"
+.PP 
+.SS "bool advanceByFrontier"
+
+.PP
+flag indicating restriction and front expansion using a multi-index frontier This option reduces memory requirements somewhat, but allowing multi-index gaps in the general case results in reduced mutual coherence and better numerical performance\&. 
+.PP
+Referenced by RegressOrthogPolyApproximation::select_best_basis_expansion()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for PECOS from the source code\&.

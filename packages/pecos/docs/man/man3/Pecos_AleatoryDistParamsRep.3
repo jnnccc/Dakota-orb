@@ -1,0 +1,230 @@
+.TH "AleatoryDistParamsRep" 3 "Wed Dec 27 2017" "Version Version 1.0" "PECOS" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+AleatoryDistParamsRep \- The representation of a set of aleatory distribution parameters\&. This representation, or body, may be shared by multiple \fBAleatoryDistParams\fP handle instances\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBAleatoryDistParamsRep\fP ()"
+.br
+.RI "\fIdefault constructor \fP"
+.ti -1c
+.RI "\fBAleatoryDistParamsRep\fP (const RealVector &nuv_means, const RealVector &nuv_std_devs, const RealVector &nuv_l_bnds, const RealVector &nuv_u_bnds, const RealVector &lnuv_means, const RealVector &lnuv_std_devs, const RealVector &lnuv_lambdas, const RealVector &lnuv_zetas, const RealVector &lnuv_err_facts, const RealVector &lnuv_l_bnds, const RealVector &lnuv_u_bnds, const RealVector &uuv_l_bnds, const RealVector &uuv_u_bnds, const RealVector &luuv_l_bnds, const RealVector &luuv_u_bnds, const RealVector &tuv_modes, const RealVector &tuv_l_bnds, const RealVector &tuv_u_bnds, const RealVector &euv_betas, const RealVector &beuv_alphas, const RealVector &beuv_betas, const RealVector &beuv_l_bnds, const RealVector &beuv_u_bnds, const RealVector &gauv_alphas, const RealVector &gauv_betas, const RealVector &guuv_alphas, const RealVector &guuv_betas, const RealVector &fuv_alphas, const RealVector &fuv_betas, const RealVector &wuv_alphas, const RealVector &wuv_betas, const RealRealMapArray &hbuv_prs, const RealVector &puv_lambdas, const RealVector &biuv_p_per_tr, const IntVector &biuv_num_trials, const RealVector &nbuv_p_per_tr, const IntVector &nbuv_num_trials, const RealVector &geuv_p_per_tr, const IntVector &hguv_tot_pop, const IntVector &hguv_sel_pop, const IntVector &hguv_num_drawn, const IntRealMapArray &hpuiv_prs, const StringRealMapArray &hpusv_prs, const RealRealMapArray &hpurv_prs, const RealSymMatrix &uv_corr)"
+.br
+.RI "\fIconstructor \fP"
+.ti -1c
+.RI "\fB~AleatoryDistParamsRep\fP ()"
+.br
+.RI "\fIdestructor \fP"
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "RealVector \fBnormalMeans\fP"
+.br
+.RI "\fInormal uncertain variable means \fP"
+.ti -1c
+.RI "RealVector \fBnormalStdDevs\fP"
+.br
+.RI "\fInormal uncertain variable standard deviations \fP"
+.ti -1c
+.RI "RealVector \fBnormalLowerBnds\fP"
+.br
+.RI "\fInormal uncertain variable lower bounds \fP"
+.ti -1c
+.RI "RealVector \fBnormalUpperBnds\fP"
+.br
+.RI "\fInormal uncertain variable upper bounds \fP"
+.ti -1c
+.RI "RealVector \fBlognormalMeans\fP"
+.br
+.RI "\fIlognormal uncertain variable means \fP"
+.ti -1c
+.RI "RealVector \fBlognormalStdDevs\fP"
+.br
+.RI "\fIlognormal uncertain variable standard deviations \fP"
+.ti -1c
+.RI "RealVector \fBlognormalLambdas\fP"
+.br
+.RI "\fIlognormal uncertain variable lambdas \fP"
+.ti -1c
+.RI "RealVector \fBlognormalZetas\fP"
+.br
+.RI "\fIlognormal uncertain variable zetas \fP"
+.ti -1c
+.RI "RealVector \fBlognormalErrFacts\fP"
+.br
+.RI "\fIlognormal uncertain variable error factors \fP"
+.ti -1c
+.RI "RealVector \fBlognormalLowerBnds\fP"
+.br
+.RI "\fIlognormal uncertain variable lower bounds \fP"
+.ti -1c
+.RI "RealVector \fBlognormalUpperBnds\fP"
+.br
+.RI "\fIlognormal uncertain variable upper bounds \fP"
+.ti -1c
+.RI "RealVector \fBuniformLowerBnds\fP"
+.br
+.RI "\fIuniform uncertain variable lower bounds \fP"
+.ti -1c
+.RI "RealVector \fBuniformUpperBnds\fP"
+.br
+.RI "\fIuniform uncertain variable upper bounds \fP"
+.ti -1c
+.RI "RealVector \fBloguniformLowerBnds\fP"
+.br
+.RI "\fIloguniform uncertain variable lower bounds \fP"
+.ti -1c
+.RI "RealVector \fBloguniformUpperBnds\fP"
+.br
+.RI "\fIloguniform uncertain variable upper bounds \fP"
+.ti -1c
+.RI "RealVector \fBtriangularModes\fP"
+.br
+.RI "\fItriangular uncertain variable modes \fP"
+.ti -1c
+.RI "RealVector \fBtriangularLowerBnds\fP"
+.br
+.RI "\fItriangular uncertain variable lower bounds \fP"
+.ti -1c
+.RI "RealVector \fBtriangularUpperBnds\fP"
+.br
+.RI "\fItriangular uncertain variable upper bounds \fP"
+.ti -1c
+.RI "RealVector \fBexponentialBetas\fP"
+.br
+.RI "\fIexponential uncertain variable betas \fP"
+.ti -1c
+.RI "RealVector \fBbetaAlphas\fP"
+.br
+.RI "\fIbeta uncertain variable alphas \fP"
+.ti -1c
+.RI "RealVector \fBbetaBetas\fP"
+.br
+.RI "\fIbeta uncertain variable betas \fP"
+.ti -1c
+.RI "RealVector \fBbetaLowerBnds\fP"
+.br
+.RI "\fIbeta uncertain variable lower bounds \fP"
+.ti -1c
+.RI "RealVector \fBbetaUpperBnds\fP"
+.br
+.RI "\fIbeta uncertain variable upper bounds \fP"
+.ti -1c
+.RI "RealVector \fBgammaAlphas\fP"
+.br
+.RI "\fIgamma uncertain variable alphas \fP"
+.ti -1c
+.RI "RealVector \fBgammaBetas\fP"
+.br
+.RI "\fIgamma uncertain variable betas \fP"
+.ti -1c
+.RI "RealVector \fBgumbelAlphas\fP"
+.br
+.RI "\fIgumbel uncertain variable alphas \fP"
+.ti -1c
+.RI "RealVector \fBgumbelBetas\fP"
+.br
+.RI "\fIgumbel uncertain variable betas \fP"
+.ti -1c
+.RI "RealVector \fBfrechetAlphas\fP"
+.br
+.RI "\fIfrechet uncertain variable alphas \fP"
+.ti -1c
+.RI "RealVector \fBfrechetBetas\fP"
+.br
+.RI "\fIfrechet uncertain variable betas \fP"
+.ti -1c
+.RI "RealVector \fBweibullAlphas\fP"
+.br
+.RI "\fIweibull uncertain variable alphas \fP"
+.ti -1c
+.RI "RealVector \fBweibullBetas\fP"
+.br
+.RI "\fIweibull uncertain variable betas \fP"
+.ti -1c
+.RI "RealRealMapArray \fBhistogramBinPairs\fP"
+.br
+.RI "\fIhistogram uncertain (x,y) bin pairs (continuous linear histogram) \fP"
+.ti -1c
+.RI "RealVector \fBpoissonLambdas\fP"
+.br
+.RI "\fIpoisson uncertain variable lambdas \fP"
+.ti -1c
+.RI "RealVector \fBbinomialProbPerTrial\fP"
+.br
+.RI "\fIbinomial uncertain variable probability per trial \fP"
+.ti -1c
+.RI "IntVector \fBbinomialNumTrials\fP"
+.br
+.RI "\fIbinomial uncertain variable numbers of trials \fP"
+.ti -1c
+.RI "RealVector \fBnegBinomialProbPerTrial\fP"
+.br
+.RI "\fInegative binomial uncertain variable probability per trial \fP"
+.ti -1c
+.RI "IntVector \fBnegBinomialNumTrials\fP"
+.br
+.RI "\fInegative binomial uncertain variable numbers of trials \fP"
+.ti -1c
+.RI "RealVector \fBgeometricProbPerTrial\fP"
+.br
+.RI "\fIgeometric uncertain variable probability per trial \fP"
+.ti -1c
+.RI "IntVector \fBhyperGeomTotalPopulation\fP"
+.br
+.RI "\fIhypergeometric uncertain variable numbers in total population \fP"
+.ti -1c
+.RI "IntVector \fBhyperGeomSelectedPopulation\fP"
+.br
+.RI "\fIhypergeometric uncertain variable numbers in selected population \fP"
+.ti -1c
+.RI "IntVector \fBhyperGeomNumDrawn\fP"
+.br
+.RI "\fIhypergeometric uncertain variable numbers failed in population \fP"
+.ti -1c
+.RI "IntRealMapArray \fBhistogramPointIntPairs\fP"
+.br
+.RI "\fIhistogram uncertain (i,y) point pairs (discrete histogram) \fP"
+.ti -1c
+.RI "StringRealMapArray \fBhistogramPointStringPairs\fP"
+.br
+.RI "\fIhistogram uncertain (s,y) point pairs (discrete histogram) \fP"
+.ti -1c
+.RI "RealRealMapArray \fBhistogramPointRealPairs\fP"
+.br
+.RI "\fIhistogram uncertain (x,y) point pairs (discrete histogram) \fP"
+.ti -1c
+.RI "RealSymMatrix \fBuncertainCorrelations\fP"
+.br
+.RI "\fIuncertain variable correlation matrix (rank correlations for sampling and correlation coefficients for reliability) \fP"
+.ti -1c
+.RI "int \fBreferenceCount\fP"
+.br
+.RI "\fInumber of handle objects sharing adpRep \fP"
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBAleatoryDistParams\fP"
+.br
+.RI "\fIthe handle class can access attributes of the body class directly \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+The representation of a set of aleatory distribution parameters\&. This representation, or body, may be shared by multiple \fBAleatoryDistParams\fP handle instances\&. 
+
+The AleatoryDistParams/AleatoryDistParamsRep pairs utilize a handle-body idiom (Coplien, Advanced C++)\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for PECOS from the source code\&.

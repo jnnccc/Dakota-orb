@@ -1,0 +1,57 @@
+.TH "BoostRNG_Monostate" 3 "Wed Dec 27 2017" "Version Version 1.0" "PECOS" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+BoostRNG_Monostate \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static void \fBseed\fP (unsigned int rng_seed)"
+.br
+.RI "\fIset randomSeed \fP"
+.ti -1c
+.RI "static unsigned int \fBseed\fP ()"
+.br
+.RI "\fIreturn randomSeed \fP"
+.ti -1c
+.RI "static Real \fBmt19937\fP ()"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static Rfunc \fBrandomNum\fP = BoostRNG_Monostate::mt19937"
+.br
+.RI "\fICached function pointers\&. \fP"
+.ti -1c
+.RI "static Rfunc \fBrandomNum2\fP = BoostRNG_Monostate::mt19937"
+.br
+.in -1c
+.SS "Static Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "static unsigned int \fBrngSeed\fP"
+.br
+.ti -1c
+.RI "static boost::mt19937 \fBrnumGenerator\fP"
+.br
+.ti -1c
+.RI "static boost::uniform_real \fBuniDist\fP"
+.br
+.ti -1c
+.RI "static boost::variate_generator< boost::mt19937 &, boost::uniform_real<> > \fBuniMT\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+The monostate BoostRNG class provides static pointers randomNum and randomNum2 that at runtime will either point to BoostRNG_Monostate::mt19937, or be overridden to point to defaultnum1 / defaultrnum2\&. At construct time they point to the \fBBoostRNG_Monostate\fP generators\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for PECOS from the source code\&.

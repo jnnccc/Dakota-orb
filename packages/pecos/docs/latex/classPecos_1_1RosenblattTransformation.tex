@@ -1,0 +1,112 @@
+\section{Rosenblatt\+Transformation Class Reference}
+\label{classPecos_1_1RosenblattTransformation}\index{Rosenblatt\+Transformation@{Rosenblatt\+Transformation}}
+
+
+Class for Rosenblatt nonlinear distribution transformation.  
+
+
+Inheritance diagram for Rosenblatt\+Transformation\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classPecos_1_1RosenblattTransformation}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPecos_1_1RosenblattTransformation_aec8a0944137fe1c0d1b7315a58e50a3b}{Rosenblatt\+Transformation} ()\label{classPecos_1_1RosenblattTransformation_aec8a0944137fe1c0d1b7315a58e50a3b}
+
+\begin{DoxyCompactList}\small\item\em default constructor \end{DoxyCompactList}\item 
+virtual \hyperlink{classPecos_1_1RosenblattTransformation_ad7eed5963c7a5f9fc325692271a8d376}{$\sim$\+Rosenblatt\+Transformation} ()\label{classPecos_1_1RosenblattTransformation_ad7eed5963c7a5f9fc325692271a8d376}
+
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\item 
+void {\bfseries initialize} (\hyperlink{classPecos_1_1DensityEstimator}{Density\+Estimator} \&density)\label{classPecos_1_1RosenblattTransformation_a0a26b1c8000932b51ccd201cf71de76c}
+
+\item 
+virtual void \hyperlink{classPecos_1_1RosenblattTransformation_a22c3e4ffde57732ffe3cbb7ab5fce86b}{trans\+\_\+\+X\+\_\+to\+\_\+U} (const Real\+Vector \&x\+\_\+vars, Real\+Vector \&u\+\_\+vars)
+\begin{DoxyCompactList}\small\item\em Transformation routine from x-\/space of correlated random variables to u-\/space of uncorrelated standard normal variables. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classPecos_1_1RosenblattTransformation_a0a84860a9ed0cec52ed100edb49f209c}{trans\+\_\+\+U\+\_\+to\+\_\+X} (const Real\+Vector \&u\+\_\+vars, Real\+Vector \&x\+\_\+vars)
+\begin{DoxyCompactList}\small\item\em Transformation routine from u-\/space of uncorrelated standard normal variables to x-\/space of correlated random variables. \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1RosenblattTransformation_a5aa3ecdc3cdfc4921b0adda79ef36add}{get\+Max\+Inversion\+Error} ()\label{classPecos_1_1RosenblattTransformation_a5aa3ecdc3cdfc4921b0adda79ef36add}
+
+\begin{DoxyCompactList}\small\item\em get the maximum error made during inversion \end{DoxyCompactList}\item 
+\hyperlink{classPecos_1_1DensityEstimator}{Density\+Estimator} $\ast$ \hyperlink{classPecos_1_1RosenblattTransformation_aef489249e6eda746aed7e65a5be6a4de}{get\+Density\+Estimator} ()\label{classPecos_1_1RosenblattTransformation_aef489249e6eda746aed7e65a5be6a4de}
+
+\begin{DoxyCompactList}\small\item\em get the density estimator on which the Rosenblatt transformation is defined on \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Real \hyperlink{classPecos_1_1RosenblattTransformation_a803a519b867adc021482ed6761df60e8}{inversion\+Epsilon}\label{classPecos_1_1RosenblattTransformation_a803a519b867adc021482ed6761df60e8}
+
+\begin{DoxyCompactList}\small\item\em maximum allowed inversion error \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Real {\bfseries trans\+\_\+\+X\+\_\+to\+\_\+\+U\+\_\+1d} (const Real x, \hyperlink{classPecos_1_1DensityEstimator}{Density\+Estimator} \&cond, size\+\_\+t num\+Quad\+Intervals=100)\label{classPecos_1_1RosenblattTransformation_a9c79289baf0959bfc7cc8115d05ff6f2}
+
+\item 
+Real {\bfseries trans\+\_\+\+U\+\_\+to\+\_\+\+X\+\_\+1d} (const Real u, \hyperlink{classPecos_1_1DensityEstimator}{Density\+Estimator} \&cond, size\+\_\+t max\+Iterations=20)\label{classPecos_1_1RosenblattTransformation_a84c38f5fef6fa6fee22718d424e17d25}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPecos_1_1DensityEstimator}{Density\+Estimator} {\bfseries density\+Estimator}\label{classPecos_1_1RosenblattTransformation_a02577016988954e9d36f916ded898e4d}
+
+\item 
+std\+::vector$<$ \hyperlink{classPecos_1_1DensityEstimator}{Density\+Estimator} $\ast$ $>$ {\bfseries marginals}\label{classPecos_1_1RosenblattTransformation_a1c04ebf1a844b99737aee5d6c147959e}
+
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Class for Rosenblatt nonlinear distribution transformation. 
+
+\subsection{Member Function Documentation}
+\index{Pecos\+::\+Rosenblatt\+Transformation@{Pecos\+::\+Rosenblatt\+Transformation}!trans\+\_\+\+X\+\_\+to\+\_\+U@{trans\+\_\+\+X\+\_\+to\+\_\+U}}
+\index{trans\+\_\+\+X\+\_\+to\+\_\+U@{trans\+\_\+\+X\+\_\+to\+\_\+U}!Pecos\+::\+Rosenblatt\+Transformation@{Pecos\+::\+Rosenblatt\+Transformation}}
+\subsubsection[{\texorpdfstring{trans\+\_\+\+X\+\_\+to\+\_\+\+U(const Real\+Vector \&x\+\_\+vars, Real\+Vector \&u\+\_\+vars)}{trans_X_to_U(const RealVector &x_vars, RealVector &u_vars)}}]{\setlength{\rightskip}{0pt plus 5cm}void trans\+\_\+\+X\+\_\+to\+\_\+U (
+\begin{DoxyParamCaption}
+\item[{const Real\+Vector \&}]{x\+\_\+vars, }
+\item[{Real\+Vector \&}]{u\+\_\+vars}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classPecos_1_1RosenblattTransformation_a22c3e4ffde57732ffe3cbb7ab5fce86b}
+
+
+Transformation routine from x-\/space of correlated random variables to u-\/space of uncorrelated standard normal variables. 
+
+Transformation routine from x-\/space of correlated random variables to u-\/space of uncorrelated uniform variables. 
+
+Reimplemented from \hyperlink{classPecos_1_1ProbabilityTransformation_a22c3e4ffde57732ffe3cbb7ab5fce86b}{Probability\+Transformation}.
+
+
+
+References Density\+Estimator\+::get\+Dim(), and Density\+Estimator\+::pdf().
+
+\index{Pecos\+::\+Rosenblatt\+Transformation@{Pecos\+::\+Rosenblatt\+Transformation}!trans\+\_\+\+U\+\_\+to\+\_\+X@{trans\+\_\+\+U\+\_\+to\+\_\+X}}
+\index{trans\+\_\+\+U\+\_\+to\+\_\+X@{trans\+\_\+\+U\+\_\+to\+\_\+X}!Pecos\+::\+Rosenblatt\+Transformation@{Pecos\+::\+Rosenblatt\+Transformation}}
+\subsubsection[{\texorpdfstring{trans\+\_\+\+U\+\_\+to\+\_\+\+X(const Real\+Vector \&u\+\_\+vars, Real\+Vector \&x\+\_\+vars)}{trans_U_to_X(const RealVector &u_vars, RealVector &x_vars)}}]{\setlength{\rightskip}{0pt plus 5cm}void trans\+\_\+\+U\+\_\+to\+\_\+X (
+\begin{DoxyParamCaption}
+\item[{const Real\+Vector \&}]{u\+\_\+vars, }
+\item[{Real\+Vector \&}]{x\+\_\+vars}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classPecos_1_1RosenblattTransformation_a0a84860a9ed0cec52ed100edb49f209c}
+
+
+Transformation routine from u-\/space of uncorrelated standard normal variables to x-\/space of correlated random variables. 
+
+Transformation routine from u-\/space of uncorrelated uniform variables to x-\/space of correlated random variables. 
+
+Reimplemented from \hyperlink{classPecos_1_1ProbabilityTransformation_a0a84860a9ed0cec52ed100edb49f209c}{Probability\+Transformation}.
+
+
+
+References Density\+Estimator\+::get\+Dim(), and Rosenblatt\+Transformation\+::inversion\+Epsilon.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Rosenblatt\+Transformation.\+hpp\item 
+Rosenblatt\+Transformation.\+cpp\end{DoxyCompactItemize}

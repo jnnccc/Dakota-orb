@@ -1,0 +1,243 @@
+.TH "SparseGridDriver" 3 "Wed Dec 27 2017" "Version Version 1.0" "PECOS" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SparseGridDriver \- Derived integration driver class that generates N-dimensional Smolyak sparse grids for numerical evaluation of expectation integrals over independent standard random variables\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBIntegrationDriver\fP\&.
+.PP
+Inherited by \fBCombinedSparseGridDriver\fP, \fBHierarchSparseGridDriver\fP, and \fBLightweightSparseGridDriver\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSparseGridDriver\fP ()"
+.br
+.RI "\fIdefault constructor \fP"
+.ti -1c
+.RI "\fBSparseGridDriver\fP (unsigned short ssg_level, const RealVector &dim_pref, short \fBgrowth_rate\fP, short refine_control)"
+.br
+.RI "\fIconstructor \fP"
+.ti -1c
+.RI "\fB~SparseGridDriver\fP ()"
+.br
+.RI "\fIdestructor \fP"
+.ti -1c
+.RI "virtual void \fBinitialize_sets\fP ()=0"
+.br
+.RI "\fIinitializes old/active/evaluation sets for use within the generalized sparse grid procedure \fP"
+.ti -1c
+.RI "virtual void \fBpush_trial_set\fP (const UShortArray &set)=0"
+.br
+.RI "\fIupdate smolyakMultiIndex with a new trial set for use within the generalized sparse grid procedure \fP"
+.ti -1c
+.RI "virtual void \fBrestore_set\fP ()"
+.br
+.RI "\fIupdate collocKey, collocIndices, and uniqueIndexMapping based on restoration of previous trial to smolyakMultiIndex \fP"
+.ti -1c
+.RI "virtual void \fBcompute_trial_grid\fP (RealMatrix &var_sets)"
+.br
+.RI "\fIcomputes the tensor grid for the index set from \fBpush_trial_set()\fP \fP"
+.ti -1c
+.RI "virtual void \fBpop_trial_set\fP ()=0"
+.br
+.RI "\fIremove the previously pushed trial set from smolyakMultiIndex during the course of the generalized sparse grid procedure \fP"
+.ti -1c
+.RI "virtual void \fBmerge_set\fP ()"
+.br
+.RI "\fImerge reference sets with trial set and update reference set \fP"
+.ti -1c
+.RI "virtual void \fBfinalize_sets\fP (bool output_sets, bool converged_within_tol)"
+.br
+.RI "\fIaccept all remaining trial sets within the generalized sparse grid procedure \fP"
+.ti -1c
+.RI "virtual void \fBupdate_reference\fP ()"
+.br
+.RI "\fIupdate derived reference data, if required \fP"
+.ti -1c
+.RI "virtual const UShortArray & \fBtrial_set\fP () const =0"
+.br
+.RI "\fIreturn the trial index set from \fBpush_trial_set()\fP \fP"
+.ti -1c
+.RI "virtual int \fBunique_trial_points\fP () const "
+.br
+.RI "\fIreturn the number of unique collocation points in the trial index set \fP"
+.ti -1c
+.RI "virtual void \fBcompute_grid_increment\fP (RealMatrix &var_sets)"
+.br
+.RI "\fIcomputes tensor grids for new index sets due to an isotropic/anisotropic refinement \fP"
+.ti -1c
+.RI "virtual void \fBprint_smolyak_multi_index\fP () const =0"
+.br
+.RI "\fIprint smolyakMultiIndex \fP"
+.ti -1c
+.RI "void \fBinitialize_grid\fP (unsigned short ssg_level, const RealVector &dim_pref, const ShortArray &u_types, const \fBExpansionConfigOptions\fP &ec_options, \fBBasisConfigOptions\fP &bc_options, short \fBgrowth_rate\fP=MODERATE_RESTRICTED_GROWTH)"
+.br
+.RI "\fIinitialize all sparse grid settings except for distribution params \fP"
+.ti -1c
+.RI "void \fBprecompute_rules\fP ()"
+.br
+.RI "\fIprecompute quadrature rules to the maximum current order for each basis polynomial (efficiency optimization when rules are expensive to compute) \fP"
+.ti -1c
+.RI "void \fBassign_1d_collocation_points_weights\fP ()"
+.br
+.RI "\fIinitialize collocPts1D and type{1,2}CollocWts1D \fP"
+.ti -1c
+.RI "void \fBupdate_axis_lower_bounds\fP ()"
+.br
+.RI "\fIupdate axisLowerBounds \fP"
+.ti -1c
+.RI "void \fBupdate_sets\fP (const UShortArray &set_star)"
+.br
+.RI "\fIaccept the best of several trial sets and update old/active within the generalized sparse grid procedure \fP"
+.ti -1c
+.RI "void \fBadd_active_neighbors\fP (const UShortArray &set, bool frontier)"
+.br
+.RI "\fIupdate activeMultiIndex from the passed trial set for use within the generalized sparse grid procedure \fP"
+.ti -1c
+.RI "void \fBlevel_to_order\fP (size_t i, unsigned short \fBlevel\fP, unsigned short &order)"
+.br
+.RI "\fIconverts an array of sparse grid levels to an array of quadrature orders based on apiIntegrationRules/apiGrowthRules \fP"
+.ti -1c
+.RI "void \fBlevel_to_order\fP (const UShortArray &levels, UShortArray &orders)"
+.br
+.RI "\fIconverts an array of sparse grid levels to an array of quadrature orders based on apiIntegrationRules/apiGrowthRules \fP"
+.ti -1c
+.RI "void \fBlevel\fP (unsigned short ssg_level)"
+.br
+.RI "\fIset ssgLevel \fP"
+.ti -1c
+.RI "unsigned short \fBlevel\fP () const "
+.br
+.RI "\fIreturn ssgLevel \fP"
+.ti -1c
+.RI "void \fBdimension_preference\fP (const RealVector &dim_pref)"
+.br
+.RI "\fIset anisoLevelWts \fP"
+.ti -1c
+.RI "void \fBanisotropic_weights\fP (const RealVector &aniso_wts)"
+.br
+.RI "\fIset anisoLevelWts \fP"
+.ti -1c
+.RI "const RealVector & \fBanisotropic_weights\fP () const "
+.br
+.RI "\fIreturn anisoLevelWts \fP"
+.ti -1c
+.RI "bool \fBisotropic\fP () const "
+.br
+.RI "\fIreturn dimIsotropic \fP"
+.ti -1c
+.RI "void \fBgrowth_rate\fP (short growth_rate)"
+.br
+.RI "\fIset growthRate \fP"
+.ti -1c
+.RI "short \fBgrowth_rate\fP () const "
+.br
+.RI "\fIget growthRate \fP"
+.ti -1c
+.RI "void \fBrefinement_control\fP (short cntl)"
+.br
+.RI "\fIset refineControl \fP"
+.ti -1c
+.RI "short \fBrefinement_control\fP () const "
+.br
+.RI "\fIget refineControl \fP"
+.ti -1c
+.RI "const UShortArraySet & \fBactive_multi_index\fP () const "
+.br
+.RI "\fIreturn activeMultiIndex \fP"
+.ti -1c
+.RI "const UShortArraySet & \fBcomputed_trial_sets\fP () const "
+.br
+.RI "\fIreturn computedTrialSets \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBprint_index_set\fP (std::ostream &s, const UShortArray &mi) const "
+.br
+.RI "\fIprint an index set \fP"
+.in -1c
+.SS "Static Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static int \fBlevel_to_order_exp_hgk_interp\fP (int \fBlevel\fP, int growth)"
+.br
+.RI "\fIlevel to order mapping for interpolation with nested Genz-Keister rules \fP"
+.ti -1c
+.RI "static int \fBlevel_to_order_exp_closed_interp\fP (int \fBlevel\fP, int growth)"
+.br
+.RI "\fIlevel to order mapping for interpolation with nested closed rules \fP"
+.ti -1c
+.RI "static int \fBlevel_to_order_exp_open_interp\fP (int \fBlevel\fP, int growth)"
+.br
+.RI "\fIlevel to order mapping for interpolation with nested open rules \fP"
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "unsigned short \fBssgLevel\fP"
+.br
+.RI "\fIthe Smolyak sparse grid level \fP"
+.ti -1c
+.RI "bool \fBdimIsotropic\fP"
+.br
+.RI "\fIflag indicating a dimension isotropic grid \fP"
+.ti -1c
+.RI "RealVector \fBanisoLevelWts\fP"
+.br
+.RI "\fIweighting vector for dimension anisotropic grids \fP"
+.ti -1c
+.RI "short \fBgrowthRate\fP"
+.br
+.RI "\fIenumeration for rate of exponential growth in nested rules \fP"
+.ti -1c
+.RI "short \fBrefineControl\fP"
+.br
+.RI "\fIalgorithm control governing expansion refinement \fP"
+.ti -1c
+.RI "int \fBnumCollocPts\fP"
+.br
+.RI "\fIthe current number of unique points in the grid \fP"
+.ti -1c
+.RI "bool \fBupdateGridSize\fP"
+.br
+.RI "\fIflag indicating when numCollocPts needs to be recomputed due to an update to the sparse grid settings \fP"
+.ti -1c
+.RI "UShortArraySet \fBoldMultiIndex\fP"
+.br
+.RI "\fIold reference index sets for generalized sparse grids \fP"
+.ti -1c
+.RI "UShortArraySet \fBactiveMultiIndex\fP"
+.br
+.RI "\fIactive index sets under current consideration for inclusion in a generalized sparse grid \fP"
+.ti -1c
+.RI "UShortArraySet \fBcomputedTrialSets\fP"
+.br
+.RI "\fIsubset of active set that have been evaluated as trial sets (incremented in \fBcompute_trial_grid()\fP and decremented in \fBupdate_sets()\fP) \fP"
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "RealVector \fBaxisLowerBounds\fP"
+.br
+.RI "\fIrefinement constraints that ensure that level/anisotropic weight updates contain all previous multi-index sets \fP"
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Derived integration driver class that generates N-dimensional Smolyak sparse grids for numerical evaluation of expectation integrals over independent standard random variables\&. 
+
+This class is used by Dakota::NonDSparseGrid, but could also be used for general numerical integration of moments\&. It employs 1-D Clenshaw-Curtis, Newton-Cotes, and Gaussian quadrature rules within Smolyak sparse grids\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for PECOS from the source code\&.

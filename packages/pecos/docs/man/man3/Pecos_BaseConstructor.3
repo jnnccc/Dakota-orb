@@ -1,0 +1,26 @@
+.TH "BaseConstructor" 3 "Wed Dec 27 2017" "Version Version 1.0" "PECOS" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+BaseConstructor \- Dummy struct for overloading letter-envelope constructors\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBBaseConstructor\fP (int=0)"
+.br
+.RI "\fIC++ structs can have constructors\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Dummy struct for overloading letter-envelope constructors\&. 
+
+\fBBaseConstructor\fP is used to overload the constructor for the base class portion of letter objects\&. It avoids infinite recursion (Coplien p\&.139) in the letter-envelope idiom by preventing the letter from instantiating another envelope\&. Putting this struct here avoids circular dependencies\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for PECOS from the source code\&.

@@ -1,0 +1,138 @@
+.TH "EpistemicDistParams" 3 "Wed Dec 27 2017" "Version Version 1.0" "PECOS" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+EpistemicDistParams \- Container class encapsulating distribution parameters for epistemic random variables\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBEpistemicDistParams\fP ()"
+.br
+.RI "\fIdefault constructor \fP"
+.ti -1c
+.RI "\fBEpistemicDistParams\fP (const RealRealPairRealMapArray &ceuv_bpas, const IntIntPairRealMapArray &deuiv_bpas, const IntRealMapArray &deusiv_vals_probs, const StringRealMapArray &deussv_vals_probs, const RealRealMapArray &deusrv_vals_probs)"
+.br
+.RI "\fIstandard constructor \fP"
+.ti -1c
+.RI "\fBEpistemicDistParams\fP (const \fBEpistemicDistParams\fP &edp)"
+.br
+.RI "\fIcopy constructor \fP"
+.ti -1c
+.RI "\fB~EpistemicDistParams\fP ()"
+.br
+.RI "\fIdestructor \fP"
+.ti -1c
+.RI "\fBEpistemicDistParams\fP & \fBoperator=\fP (const \fBEpistemicDistParams\fP &edp)"
+.br
+.RI "\fIassignment operator \fP"
+.ti -1c
+.RI "size_t \fBceuv\fP () const "
+.br
+.RI "\fIreturn total number of continuous epistemic uncertain variables \fP"
+.ti -1c
+.RI "size_t \fBdeuiv\fP () const "
+.br
+.RI "\fIreturn total number of discrete epistemic uncertain integer variables \fP"
+.ti -1c
+.RI "size_t \fBdeusv\fP () const "
+.br
+.RI "\fIreturn total number of discrete epistemic uncertain string variables \fP"
+.ti -1c
+.RI "size_t \fBdeurv\fP () const "
+.br
+.RI "\fIreturn total number of discrete epistemic uncertain real variables \fP"
+.ti -1c
+.RI "size_t \fBdeuv\fP () const "
+.br
+.RI "\fIreturn total number of discrete epistemic uncertain variables \fP"
+.ti -1c
+.RI "void \fBcopy\fP (const \fBEpistemicDistParams\fP &edp)"
+.br
+.RI "\fIdeep copy (as opposed to operator= shallow copy) \fP"
+.ti -1c
+.RI "void \fBupdate\fP (const \fBEpistemicDistParams\fP &edp)"
+.br
+.RI "\fIdata update (no changes to representation (unless null)) \fP"
+.ti -1c
+.RI "const RealRealPairRealMapArray & \fBcontinuous_interval_basic_probabilities\fP () const "
+.br
+.RI "\fIreturn the interval basic probability values \fP"
+.ti -1c
+.RI "const RealRealPairRealMap & \fBcontinuous_interval_basic_probabilities\fP (size_t i) const "
+.br
+.RI "\fIreturn the ith interval basic probability value \fP"
+.ti -1c
+.RI "void \fBcontinuous_interval_basic_probabilities\fP (const RealRealPairRealMapArray &ci_probs)"
+.br
+.RI "\fIset the interval basic probability values \fP"
+.ti -1c
+.RI "void \fBcontinuous_interval_basic_probabilities\fP (const RealRealPairRealMap &ci_probs_i, size_t i)"
+.br
+.RI "\fIset the ith interval basic probability value \fP"
+.ti -1c
+.RI "const IntIntPairRealMapArray & \fBdiscrete_interval_basic_probabilities\fP () const "
+.br
+.RI "\fIreturn the interval basic probability values \fP"
+.ti -1c
+.RI "const IntIntPairRealMap & \fBdiscrete_interval_basic_probabilities\fP (size_t i) const "
+.br
+.RI "\fIreturn the ith interval basic probability value \fP"
+.ti -1c
+.RI "void \fBdiscrete_interval_basic_probabilities\fP (const IntIntPairRealMapArray &di_bpa)"
+.br
+.RI "\fIset the interval basic probability values \fP"
+.ti -1c
+.RI "void \fBdiscrete_interval_basic_probabilities\fP (const IntIntPairRealMap &di_bpa_i, size_t i)"
+.br
+.RI "\fIset the ith interval basic probability value \fP"
+.ti -1c
+.RI "const IntRealMapArray & \fBdiscrete_set_int_values_probabilities\fP () const "
+.br
+.RI "\fIget the discrete integer set values and probabilities \fP"
+.ti -1c
+.RI "void \fBdiscrete_set_int_values_probabilities\fP (const IntRealMapArray &dsi_vals_probs)"
+.br
+.RI "\fIset the discrete integer set values and probabilities \fP"
+.ti -1c
+.RI "const StringRealMapArray & \fBdiscrete_set_string_values_probabilities\fP () const "
+.br
+.RI "\fIget the discrete string set values and probabilities \fP"
+.ti -1c
+.RI "void \fBdiscrete_set_string_values_probabilities\fP (const StringRealMapArray &dss_vals_probs)"
+.br
+.RI "\fIset the discrete string set values and probabilities \fP"
+.ti -1c
+.RI "const RealRealMapArray & \fBdiscrete_set_real_values_probabilities\fP () const "
+.br
+.RI "\fIget the discrete real set values and probabilities \fP"
+.ti -1c
+.RI "void \fBdiscrete_set_real_values_probabilities\fP (const RealRealMapArray &dsr_vals_probs)"
+.br
+.RI "\fIset the discrete real set values and probabilities \fP"
+.ti -1c
+.RI "bool \fBis_null\fP () const "
+.br
+.RI "\fIfunction to check edpRep (does this handle contain a body) \fP"
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBEpistemicDistParamsRep\fP * \fBedpRep\fP"
+.br
+.RI "\fIpointer to the body (handle-body idiom) \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Container class encapsulating distribution parameters for epistemic random variables\&. 
+
+This class consolidates epistemic distribution data and simplifies the APIs that require distribution parameters\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for PECOS from the source code\&.

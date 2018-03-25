@@ -1,0 +1,176 @@
+.TH "BoundedNormalRandomVariable" 3 "Wed Dec 27 2017" "Version Version 1.0" "PECOS" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+BoundedNormalRandomVariable \- Derived random variable class for bounded normal random variables\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBNormalRandomVariable\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBBoundedNormalRandomVariable\fP ()"
+.br
+.RI "\fIdefault constructor \fP"
+.ti -1c
+.RI "\fBBoundedNormalRandomVariable\fP (Real \fBmean\fP, Real stdev, Real lwr, Real upr)"
+.br
+.RI "\fIalternate constructor \fP"
+.ti -1c
+.RI "\fB~BoundedNormalRandomVariable\fP ()"
+.br
+.RI "\fIdestructor \fP"
+.ti -1c
+.RI "Real \fBcdf\fP (Real x) const "
+.br
+.RI "\fIreturn the cumulative distribution function value of the random variable at x \fP"
+.ti -1c
+.RI "Real \fBccdf\fP (Real x) const "
+.br
+.RI "\fIreturn the complementary cumulative distribution function value of the random variable at x \fP"
+.ti -1c
+.RI "Real \fBinverse_cdf\fP (Real p_cdf) const "
+.br
+.RI "\fIreturn the x value corresponding to a cumulative probability \fP"
+.ti -1c
+.RI "Real \fBinverse_ccdf\fP (Real p_ccdf) const "
+.br
+.RI "\fIreturn the x value corresponding to a complementary cumulative probability \fP"
+.ti -1c
+.RI "Real \fBpdf\fP (Real x) const "
+.br
+.RI "\fIreturn the value of the random variable's probability density function at x \fP"
+.ti -1c
+.RI "Real \fBlog_pdf\fP (Real x) const "
+.br
+.RI "\fIreturn the value of the natural log of the random variable's probability density function at x (useful for calculations of log density in Bayesian methods) \fP"
+.ti -1c
+.RI "Real \fBlog_pdf_gradient\fP (Real x) const "
+.br
+.RI "\fIreturn the gradient of the natural log of the random variable's probability density function at x (useful for defining MCMC proposal distributions in Bayesian methods) \fP"
+.ti -1c
+.RI "Real \fBlog_pdf_hessian\fP (Real x) const "
+.br
+.RI "\fIreturn the Hessian of the natural log of the random variable's probability density function at x (useful for defining MCMC proposal distributions in Bayesian methods) \fP"
+.ti -1c
+.RI "Real \fBparameter\fP (short dist_param) const "
+.br
+.RI "\fIreturn the value of the named distribution parameter \fP"
+.ti -1c
+.RI "void \fBparameter\fP (short dist_param, Real val)"
+.br
+.RI "\fIupdate the value of the named distribution parameter \fP"
+.ti -1c
+.RI "Real \fBmean\fP () const "
+.br
+.RI "\fIreturn the distribution mean \fP"
+.ti -1c
+.RI "Real \fBmedian\fP () const "
+.br
+.RI "\fIreturn the distribution mode \fP"
+.ti -1c
+.RI "Real \fBmode\fP () const "
+.br
+.RI "\fIreturn the distribution mode \fP"
+.ti -1c
+.RI "Real \fBstandard_deviation\fP () const "
+.br
+.RI "\fIreturn the distribution variance \fP"
+.ti -1c
+.RI "Real \fBvariance\fP () const "
+.br
+.RI "\fIreturn the distribution variance \fP"
+.ti -1c
+.RI "RealRealPair \fBmoments\fP () const "
+.br
+.RI "\fIreturn the distribution mean and standard deviation as a pair \fP"
+.ti -1c
+.RI "RealRealPair \fBbounds\fP () const "
+.br
+.RI "\fIreturn the distribution lower and upper bounds as a pair \fP"
+.ti -1c
+.RI "Real \fBcoefficient_of_variation\fP () const "
+.br
+.RI "\fIcompute the coefficient of variation (used to compute selected correlation warping factors); defined for semi-infinite distributions with nonzero mean (lognormal, exponential, gamma, frechet, weibull) \fP"
+.ti -1c
+.RI "Real \fBdx_ds\fP (short dist_param, short u_type, Real x, Real z) const "
+.br
+.ti -1c
+.RI "Real \fBdz_ds_factor\fP (short u_type, Real x, Real z) const "
+.br
+.ti -1c
+.RI "void \fBupdate\fP (Real \fBmean\fP, Real stdev, Real lwr, Real upr)"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static Real \fBpdf\fP (Real x, Real \fBmean\fP, Real std_dev, Real lwr, Real upr)"
+.br
+.ti -1c
+.RI "static Real \fBcdf\fP (Real x, Real \fBmean\fP, Real std_dev, Real lwr, Real upr)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "Real \fBlowerBnd\fP"
+.br
+.RI "\fIlower bound of bounded_normal random variable \fP"
+.ti -1c
+.RI "Real \fBupperBnd\fP"
+.br
+.RI "\fIupper bound of bounded_normal random variable \fP"
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Derived random variable class for bounded normal random variables\&. 
+
+Manages lower and upper bounds\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "RealRealPair moments () const\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+return the distribution mean and standard deviation as a pair default is only overridden when more efficient to compute together 
+.PP
+Reimplemented from \fBRandomVariable\fP\&.
+.PP
+References NormalRandomVariable::gaussMean, NormalRandomVariable::gaussStdDev, BoundedNormalRandomVariable::lowerBnd, NormalRandomVariable::std_cdf(), NormalRandomVariable::std_pdf(), and BoundedNormalRandomVariable::upperBnd\&.
+.PP
+Referenced by BoundedNormalRandomVariable::coefficient_of_variation()\&.
+.SS "Real coefficient_of_variation () const\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+compute the coefficient of variation (used to compute selected correlation warping factors); defined for semi-infinite distributions with nonzero mean (lognormal, exponential, gamma, frechet, weibull) default is only overridden when more efficient to compute together 
+.PP
+Reimplemented from \fBRandomVariable\fP\&.
+.PP
+References BoundedNormalRandomVariable::dx_ds(), and BoundedNormalRandomVariable::moments()\&.
+.SS "Real dx_ds (short dist_param, short u_type, Real x, Real z) const\fC [inline]\fP, \fC [virtual]\fP"
+dx/ds is derived by differentiating \fBNatafTransformation::trans_Z_to_X()\fP with respect to distribution parameter s\&. dz/ds is zero if uncorrelated, while \fBdz_ds_factor()\fP manages contributions in the correlated case\&. 
+.PP
+Reimplemented from \fBRandomVariable\fP\&.
+.PP
+References BoundedNormalRandomVariable::dz_ds_factor(), NormalRandomVariable::gaussMean, NormalRandomVariable::gaussStdDev, BoundedNormalRandomVariable::lowerBnd, NormalRandomVariable::std_cdf(), NormalRandomVariable::std_pdf(), and BoundedNormalRandomVariable::upperBnd\&.
+.PP
+Referenced by BoundedNormalRandomVariable::coefficient_of_variation()\&.
+.SS "Real dz_ds_factor (short u_type, Real x, Real z) const\fC [inline]\fP, \fC [virtual]\fP"
+dx/ds is derived by differentiating \fBNatafTransformation::trans_Z_to_X()\fP with respect to distribution parameter s\&. For the uncorrelated case, u and z are constants\&. For the correlated case, u is a constant, but z(s) = L(s) u due to Nataf dependence on s and dz/ds = dL/ds u\&. 
+.PP
+Reimplemented from \fBRandomVariable\fP\&.
+.PP
+References NormalRandomVariable::gaussMean, NormalRandomVariable::gaussStdDev, BoundedNormalRandomVariable::lowerBnd, BoundedNormalRandomVariable::mean(), NormalRandomVariable::std_cdf(), NormalRandomVariable::std_pdf(), and BoundedNormalRandomVariable::upperBnd\&.
+.PP
+Referenced by BoundedNormalRandomVariable::dx_ds()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for PECOS from the source code\&.

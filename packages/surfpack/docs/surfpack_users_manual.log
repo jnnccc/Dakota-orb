@@ -1,0 +1,448 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.12.21)  27 DEC 2017 01:17
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**surfpack_users_manual
+(./surfpack_users_manual.tex
+LaTeX2e <2016/02/01>
+Babel <3.9q> and hyphenation patterns for 12 language(s) loaded.
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2016/01/03 v1.1b Standard LaTeX Color (DPC)
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: pdftex.def on input line 143.
+
+(/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count87
+))
+(/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty
+\bigstrutjot=\dimen103
+)
+(/usr/share/texlive/texmf-dist/tex/latex/moreverb/moreverb.sty
+Package: moreverb 2008/06/03 v2.3a `more' verbatim facilities
+
+(/usr/share/texlive/texmf-dist/tex/latex/tools/verbatim.sty
+Package: verbatim 2014/10/28 v1.5q LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks14
+\verbatim@line=\toks15
+\verbatim@in@stream=\read1
+)
+\tab@position=\count88
+\tab@size=\count89
+\listing@line=\count90
+) (./bigbox.sty
+\boxfigwidth=\dimen104
+)
+(/usr/share/texlive/texmf-dist/tex/latex/rotating/rotating.sty
+Package: rotating 2009/03/28 v2.16a rotated objects in LaTeX
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks16
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2016/01/03 v1.0q Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 95.
+)
+\Gin@req@height=\dimen105
+\Gin@req@width=\dimen106
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\c@r@tfl@t=\count91
+\rotFPtop=\skip43
+\rotFPbot=\skip44
+\rot@float@box=\box26
+\rot@mess@toks=\toks17
+)
+(/usr/share/texlive/texmf-dist/tex/latex/preprint/fullpage.sty
+Package: fullpage 1999/02/23 1.1 (PWD)
+\FP@margin=\skip45
+)
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip10
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+(./surfpack_users_manual.aux)
+\openout1 = `surfpack_users_manual.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+
+(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count92
+\scratchdimen=\dimen107
+\scratchbox=\box27
+\nofMPsegments=\count93
+\nofMParguments=\count94
+\everyMPshowfont=\toks18
+\MPscratchCnt=\count95
+\MPscratchDim=\dimen108
+\MPnumerator=\count96
+\makeMPintoPDFobject=\count97
+\everyMPtoPDFconversion=\toks19
+) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+))
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 21.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 21.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 21.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 25.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 25.
+
+[1
+
+{/home/jnc/.texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 61.
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 61.
+ [2] [3] [4]
+File: GettingStarted/create_surface.txt  (verbatim)
+ [5]
+File: GettingStarted/create_sample.txt  (verbatim)
+File: GettingStarted/evaluate.txt  (verbatim)
+File: GettingStarted/fitness.txt  (verbatim)
+
+[6]
+File: GettingStarted/save.txt  (verbatim)
+ [7]
+Underfull \hbox (badness 10000) in paragraph at lines 293--297
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 318--324
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 325--332
+
+ []
+
+[8]
+Underfull \hbox (badness 10000) in paragraph at lines 360--364
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 366--380
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 381--390
+
+ []
+
+[9]
+Underfull \hbox (badness 10000) in paragraph at lines 464--468
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 469--482
+
+ []
+
+[10]
+Underfull \hbox (badness 10000) in paragraph at lines 499--505
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 509--527
+
+ []
+
+[11]
+Underfull \hbox (badness 10000) in paragraph at lines 574--585
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 603--610
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 625--632
+
+ []
+
+[12]
+Underfull \hbox (badness 10000) in paragraph at lines 633--653
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 675--682
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 683--698
+
+ []
+
+
+Overfull \hbox (2058.67584pt too wide) in paragraph at lines 708--743
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[13] [14]
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 793.
+ [15] [16]
+<TimingMatrixOp/kriging_times_50to3000.png, id=71, 642.4pt x 481.8pt>
+File: TimingMatrixOp/kriging_times_50to3000.png Graphic file (type png)
+
+<use TimingMatrixOp/kriging_times_50to3000.png>
+Package pdftex.def Info: TimingMatrixOp/kriging_times_50to3000.png used on inpu
+t line 909.
+(pdftex.def)             Requested size: 227.62204pt x 170.71304pt.
+File: TimingMatrixOp/timing_data_extract.txt  (verbatim)
+File: TimingMatrixOp/evaluate_and_save.txt  (verbatim)
+ [17 <./TimingMatrixOp/kriging_times_50to3000.png>]
+<TimingMatrixOp/timing_poly2.png, id=76, 642.4pt x 481.8pt>
+File: TimingMatrixOp/timing_poly2.png Graphic file (type png)
+
+<use TimingMatrixOp/timing_poly2.png>
+Package pdftex.def Info: TimingMatrixOp/timing_poly2.png used on input line 966
+.
+(pdftex.def)             Requested size: 227.62204pt x 170.71304pt.
+File: TimingMatrixOp/timing_poly2_extract.txt  (verbatim)
+ [18] [19 <./TimingMatrixOp/timing_poly2.png>]
+File: TimingMatrixOp/press_rsquared_results.txt  (verbatim)
+File: TimingMatrixOp/cubic_poly.txt  (verbatim)
+File: TimingMatrixOp/timing_poly3.txt  (verbatim)
+File: TimingMatrixOp/scaled_poly3.txt  (verbatim)
+ [20]
+File: TimingMatrixOp/timing3050.txt  (verbatim)
+
+<TimingMatrixOp/timing_poly2_0to5000_estimates.png, id=88, 642.4pt x 481.8pt>
+File: TimingMatrixOp/timing_poly2_0to5000_estimates.png Graphic file (type png)
+
+
+<use TimingMatrixOp/timing_poly2_0to5000_estimates.png>
+Package pdftex.def Info: TimingMatrixOp/timing_poly2_0to5000_estimates.png used
+ on input line 1044.
+(pdftex.def)             Requested size: 227.62204pt x 170.71304pt.
+ [21 <./TimingMatrixOp/timing_poly2_0to5000_estimates.png>]
+File: ../examples/TestScores/sat_scores2.spk  (verbatim)
+ [22]
+File: ../examples/MartianTopology/mars_terrain.spk  (verbatim)
+ [23]
+No file ../examples/SamplingTechniques/sampling.spk.
+[24]
+File: ../examples/FluidDynamics/cfd.spk  (verbatim)
+ [25] [26]
+File: ../examples/MatlabPeaks/peaks.spk  (verbatim)
+
+Overfull \hbox (335.56068pt too wide) in paragraph at lines 1129--1129
+[]\OT1/cmtt/m/n/9 CreateSurface[name = kriging_peaks_global_corr, data = peaks_
+data, type = kriging, lower_bounds = (-3.0, -3.0), upper_bounds = (3.0, 3.0), o
+ptimization_method = global ][] 
+ []
+
+
+Overfull \hbox (326.1108pt too wide) in paragraph at lines 1129--1129
+[]\OT1/cmtt/m/n/9 CreateSurface[name = kriging_peaks_local_corr, data = peaks_d
+ata, type = kriging, lower_bounds = (-3.0, -3.0), upper_bounds = (3.0, 3.0), op
+timization_method = local ][] 
+ []
+
+
+Overfull \hbox (434.78453pt too wide) in paragraph at lines 1129--1129
+[]\OT1/cmtt/m/n/9 CreateSurface[name = kriging_peaks_multi_local_corr, data = p
+eaks_data, type = kriging, lower_bounds = (-3.0, -3.0), upper_bounds = (3.0, 3.
+0), optimization_method = local, num_starts = 17 ][] 
+ []
+
+
+Overfull \hbox (434.78453pt too wide) in paragraph at lines 1129--1129
+[]\OT1/cmtt/m/n/9 CreateSurface[name = kriging_peaks_sampling_corr, data = peak
+s_data, type = kriging, lower_bounds = (-3.0, -3.0), upper_bounds = (3.0, 3.0),
+ optimization_method = sampling, max_trials = 17 ][] 
+ []
+
+
+Overfull \hbox (434.78453pt too wide) in paragraph at lines 1129--1129
+[]  \OT1/cmtt/m/n/9 correlation_lengths = (0.335428, 2.68286), optimization_met
+hod = none] #these lengths are the ones found using global optimization with al
+l 20 points, a linear trend, and -3.0 <= xr <= 3.0[] 
+ []
+
+
+LaTeX Warning: Float too large for page by 1.46997pt on input line 1133.
+
+[27] [28]
+File: ../examples/Engineering4D/ccd.spk  (verbatim)
+ [29] [30]
+Overfull \hbox (11.4958pt too wide) in paragraph at lines 1268--1271
+\OT1/cmr/m/n/10 Before adding an-other re-sponse, clear ex-cluded points or cre
+-ate a new data set by us-ing the Surf-Data::copyActive
+ []
+
+[31] [32] [33]
+Underfull \hbox (badness 10000) in paragraph at lines 1467--1468
+[]\OT1/cmr/m/n/10 surface-fitting al-go-rithm: \OT1/cmtt/m/n/10 polynomial\OT1/
+cmr/m/n/10 , \OT1/cmtt/m/n/10 mars\OT1/cmr/m/n/10 ,
+ []
+
+
+Overfull \hbox (13.92438pt too wide) in paragraph at lines 1441--1516
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[34]
+Overfull \hbox (39.43341pt too wide) in paragraph at lines 1524--1552
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+(./surfpack_users_manual.bbl) [35] [36] (./surfpack_users_manual.aux) ) 
+Here is how much of TeX's memory you used:
+ 2003 strings out of 494497
+ 29670 string characters out of 6172399
+ 111170 words of memory out of 5000000
+ 5341 multiletter control sequences out of 15000+600000
+ 9494 words of font info for 34 fonts, out of 8000000 for 9000
+ 264 hyphenation exceptions out of 8191
+ 38i,10n,23p,1249b,321s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/sh
+are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmtt9.pfb>
+Output written on surfpack_users_manual.pdf (36 pages, 344675 bytes).
+PDF statistics:
+ 198 PDF objects out of 1000 (max. 8388607)
+ 134 compressed objects within 2 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+

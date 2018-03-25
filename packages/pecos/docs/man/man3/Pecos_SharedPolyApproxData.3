@@ -1,0 +1,317 @@
+.TH "SharedPolyApproxData" 3 "Wed Dec 27 2017" "Version Version 1.0" "PECOS" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SharedPolyApproxData \- Derived approximation class for global basis polynomials\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSharedBasisApproxData\fP\&.
+.PP
+Inherited by \fBSharedInterpPolyApproxData\fP, and \fBSharedOrthogPolyApproxData\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSharedPolyApproxData\fP ()"
+.br
+.RI "\fIdefault constructor \fP"
+.ti -1c
+.RI "\fBSharedPolyApproxData\fP (short basis_type, size_t num_vars)"
+.br
+.RI "\fIstandard constructor \fP"
+.ti -1c
+.RI "\fBSharedPolyApproxData\fP (short basis_type, size_t num_vars, const \fBExpansionConfigOptions\fP &ec_options, const \fBBasisConfigOptions\fP &bc_options)"
+.br
+.RI "\fIalternate constructor with full configuration options \fP"
+.ti -1c
+.RI "\fB~SharedPolyApproxData\fP ()"
+.br
+.RI "\fIdestructorboth \fP"
+.ti -1c
+.RI "virtual void \fBallocate_data\fP (size_t index=_NPOS)=0"
+.br
+.RI "\fIallocate the shared data prior to building the set of approximations \fP"
+.ti -1c
+.RI "virtual void \fBincrement_data\fP (size_t index=_NPOS)"
+.br
+.RI "\fIupdate the shared data prior to rebuilding the set of approximations \fP"
+.ti -1c
+.RI "virtual void \fBdecrement_data\fP ()"
+.br
+.RI "\fIdecrement the previous increment and store its shared data for later retrieval \fP"
+.ti -1c
+.RI "virtual void \fBpre_push_data\fP ()"
+.br
+.RI "\fIrestores previously popped approximation data \fP"
+.ti -1c
+.RI "virtual void \fBpost_push_data\fP ()"
+.br
+.RI "\fIrestores previously popped approximation data \fP"
+.ti -1c
+.RI "virtual void \fBpre_finalize_data\fP ()"
+.br
+.RI "\fIfinalizes the shared approximation data following a set of increments \fP"
+.ti -1c
+.RI "virtual void \fBpost_finalize_data\fP ()"
+.br
+.RI "\fIfinalizes the shared approximation data following a set of increments \fP"
+.ti -1c
+.RI "virtual void \fBstore_data\fP (size_t index=_NPOS)=0"
+.br
+.RI "\fIstores current approximation data for later combination \fP"
+.ti -1c
+.RI "virtual void \fBrestore_data\fP (size_t index=_NPOS)=0"
+.br
+.RI "\fIrestores previously stored approximation data \fP"
+.ti -1c
+.RI "virtual void \fBremove_stored_data\fP (size_t index=_NPOS)=0"
+.br
+.RI "\fIremoves a redundant stored approximation data prior to combination \fP"
+.ti -1c
+.RI "virtual size_t \fBpre_combine_data\fP ()"
+.br
+.RI "\fIcombines current and stored approximation data \fP"
+.ti -1c
+.RI "virtual void \fBpost_combine_data\fP ()"
+.br
+.RI "\fIcombines current and stored approximation data \fP"
+.ti -1c
+.RI "virtual void \fBclear_stored_data\fP ()"
+.br
+.RI "\fIclear stored approximation data \fP"
+.ti -1c
+.RI "bool \fBpush_available\fP ()"
+.br
+.RI "\fItest for whether current trial set requires a new approximation increment or can be restored from a previous trial \fP"
+.ti -1c
+.RI "size_t \fBretrieval_index\fP ()"
+.br
+.RI "\fIreturns index of the data set to be restored from within popped bookkeeping (e\&.g\&., PolynomialApproximation::poppedLevMultiIndex) \fP"
+.ti -1c
+.RI "size_t \fBfinalization_index\fP (size_t i)"
+.br
+.RI "\fIreturns index of the i-th data set to be restored from within popped bookkeeping (e\&.g\&., PolynomialApproximation::poppedLevMultiIndex) during finalization \fP"
+.ti -1c
+.RI "void \fBconfiguration_options\fP (const \fBExpansionConfigOptions\fP &ec_options)"
+.br
+.RI "\fIset expConfigOptions as a group (instead of per option below) \fP"
+.ti -1c
+.RI "void \fBconfiguration_options\fP (const \fBBasisConfigOptions\fP &bc_options)"
+.br
+.RI "\fIset basisConfigOptions (instead of per option below) \fP"
+.ti -1c
+.RI "const BitArrayULongMap & \fBsobol_index_map\fP () const "
+.br
+.RI "\fIreturn sobolIndexMap \fP"
+.ti -1c
+.RI "void \fBintegration_driver_rep\fP (\fBIntegrationDriver\fP *driver_rep)"
+.br
+.RI "\fIset driverRep \fP"
+.ti -1c
+.RI "void \fBrandom_variables_key\fP (const BitArray &random_vars_key)"
+.br
+.RI "\fIset randomVarsKey \fP"
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static bool \fBinitialize_orthogonal_basis_types_rules\fP (const ShortArray &u_types, const \fBBasisConfigOptions\fP &bc_options, ShortArray &basis_types, ShortArray &colloc_rules)"
+.br
+.RI "\fIallocate orthogonal polynomial basis types and integration rules based on u_types and rule options \fP"
+.ti -1c
+.RI "static bool \fBinitialize_orthogonal_basis_type_rule\fP (short u_type, const \fBBasisConfigOptions\fP &bc_options, short &basis_type, short &colloc_rule)"
+.br
+.RI "\fIassign orthogonal polynomial basis type and integration rule based on u_type and basis configuration options \fP"
+.ti -1c
+.RI "static void \fBinitialize_polynomial_basis\fP (const ShortArray &basis_types, const ShortArray &colloc_rules, std::vector< \fBBasisPolynomial\fP > &poly_basis)"
+.br
+.RI "\fIallocate poly_basis based on basis_types and colloc_rules \fP"
+.ti -1c
+.RI "static void \fBupdate_basis_distribution_parameters\fP (const ShortArray &u_types, const \fBAleatoryDistParams\fP &dp, std::vector< \fBBasisPolynomial\fP > &poly_basis)"
+.br
+.RI "\fIpass distribution parameters from dp to poly_basis \fP"
+.ti -1c
+.RI "static size_t \fBtotal_order_terms\fP (const UShortArray &upper_bound, short lower_bound_offset=\-1)"
+.br
+.RI "\fIreturn the number of expansion terms for a total order expansion with the provided (anisotropic) upper_bound array specification \fP"
+.ti -1c
+.RI "static size_t \fBtensor_product_terms\fP (const UShortArray &order, bool include_upper_bound=true)"
+.br
+.RI "\fIreturn the number of expansion terms for a tensor-product expansion with the provided (anisotropic) quadrature orders (include_upper_bound = false) or expansion orders (default) \fP"
+.ti -1c
+.RI "static void \fBtensor_product_multi_index\fP (const UShortArray &order, UShort2DArray &multi_index, bool include_upper_bound=true)"
+.br
+.RI "\fIinitialize expansion multi_index using a tensor-product expansion \fP"
+.ti -1c
+.RI "static void \fBhierarchical_tensor_product_multi_index\fP (const UShort2DArray &delta_quad, UShort2DArray &multi_index)"
+.br
+.RI "\fIinitialize multi_index using a hierarchical tensor-product expansion \fP"
+.ti -1c
+.RI "static void \fBtotal_order_multi_index\fP (unsigned short level, size_t num_vars, UShort2DArray &multi_index)"
+.br
+.RI "\fIinitialize multi_index using a total-order expansion from a scalar level \fP"
+.ti -1c
+.RI "static void \fBtotal_order_multi_index\fP (const UShortArray &upper_bound, UShort2DArray &multi_index, short lower_bound_offset=\-1, size_t max_terms=_NPOS)"
+.br
+.RI "\fIinitialize expansion multi_index using a total-order expansion from an upper_bound array specification \fP"
+.ti -1c
+.RI "static void \fBincrement_indices\fP (UShortArray &indices, const UShortArray &limits, bool include_upper_bound)"
+.br
+.RI "\fIutility function for incrementing a set of multidimensional indices \fP"
+.ti -1c
+.RI "static void \fBincrement_terms\fP (UShortArray &terms, size_t &last_index, size_t &prev_index, size_t term_limit, bool &order_complete)"
+.br
+.RI "\fIutility function for incrementing a set of multidimensional terms \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBmatch_random_key\fP (const UShortArray &key_1, const UShortArray &key_2) const "
+.br
+.RI "\fIreturn true if matching key values within random variable subset \fP"
+.ti -1c
+.RI "bool \fBmatch_nonrandom_vars\fP (const RealVector &vars_1, const RealVector &vars_2) const "
+.br
+.RI "\fIreturn true if matching variable values within nonrandom variable subset \fP"
+.ti -1c
+.RI "void \fBallocate_main_sobol\fP ()"
+.br
+.RI "\fIallocate sobolIndices and sobolIndexMap for main effects only \fP"
+.ti -1c
+.RI "void \fBmulti_index_to_sobol_index_map\fP (const UShort2DArray &mi)"
+.br
+.RI "\fIDefine the sobolIndexMap (which defines the set of Sobol' indices) from the incoming multi-index\&. sobolIndexMap values are initialized to interaction orders, prior to updating with multi-index increments in \fBassign_sobol_index_map_values()\fP\&. \fP"
+.ti -1c
+.RI "void \fBreset_sobol_index_map_values\fP ()"
+.br
+.RI "\fIreturn the sobolIndexMap values to interaction orders, prior to updating with multi-index increments in \fBassign_sobol_index_map_values()\fP\&. \fP"
+.ti -1c
+.RI "void \fBassign_sobol_index_map_values\fP ()"
+.br
+.RI "\fIDefine the mapping from sobolIndexMap into sobolIndices\&. \fP"
+.ti -1c
+.RI "bool \fBpush_available\fP (const UShortArray &trial_set)"
+.br
+.RI "\fIcheck for the presence of trial_set within poppedLevMultiIndex \fP"
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBIntegrationDriver\fP * \fBdriverRep\fP"
+.br
+.RI "\fIpointer to integration driver instance \fP"
+.ti -1c
+.RI "\fBExpansionConfigOptions\fP \fBexpConfigOptions\fP"
+.br
+.RI "\fIan encapsulation of expansion configuration options \fP"
+.ti -1c
+.RI "\fBBasisConfigOptions\fP \fBbasisConfigOptions\fP"
+.br
+.RI "\fIan encapsulation of basis configuration options \fP"
+.ti -1c
+.RI "UShortArray \fBquadOrderPrev\fP"
+.br
+.RI "\fIprevious quadrature order; used for tracking need for expansion form updates \fP"
+.ti -1c
+.RI "unsigned short \fBssgLevelPrev\fP"
+.br
+.RI "\fIprevious Smolyak sparse grid level; used for tracking need for expansion form updates \fP"
+.ti -1c
+.RI "RealVector \fBssgAnisoWtsPrev\fP"
+.br
+.RI "\fIprevious Smolyak sparse grid anisotropic weighting; used for tracking need for expansion form updates \fP"
+.ti -1c
+.RI "BitArray \fBrandomVarsKey\fP"
+.br
+.RI "\fIarray of bits identifying the random variable subset within the active variables (used in all_variables mode) \fP"
+.ti -1c
+.RI "SizetList \fBrandomIndices\fP"
+.br
+.RI "\fIlist of indices identifying the random variable subset within the active variables (used in all_variables mode; defined from randomVarsKey) \fP"
+.ti -1c
+.RI "SizetList \fBnonRandomIndices\fP"
+.br
+.RI "\fIlist of indices identifying the non-random variable subset within the active variables (used in all_variables mode; defined from randomVarsKey) \fP"
+.ti -1c
+.RI "std::deque< UShortArray > \fBpoppedLevMultiIndex\fP"
+.br
+.RI "\fIpopped trial sets that were computed but not selected \fP"
+.ti -1c
+.RI "BitArrayULongMap \fBsobolIndexMap\fP"
+.br
+.RI "\fImapping to manage different global sensitivity index options (e\&.g\&. univariate/main effects only vs all effects) \fP"
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBPolynomialApproximation\fP"
+.br
+.ti -1c
+.RI "class \fBInterpPolyApproximation\fP"
+.br
+.ti -1c
+.RI "class \fBNodalInterpPolyApproximation\fP"
+.br
+.ti -1c
+.RI "class \fBHierarchInterpPolyApproximation\fP"
+.br
+.ti -1c
+.RI "class \fBOrthogPolyApproximation\fP"
+.br
+.ti -1c
+.RI "class \fBProjectOrthogPolyApproximation\fP"
+.br
+.ti -1c
+.RI "class \fBRegressOrthogPolyApproximation\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Derived approximation class for global basis polynomials\&. 
+
+The \fBSharedPolyApproxData\fP class provides a global approximation based on basis polynomials\&. This includes orthogonal polynomials used for polynomial chaos expansions and interpolation polynomials used for stochastic collocation\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "bool initialize_orthogonal_basis_types_rules (const ShortArray & u_types, const \fBBasisConfigOptions\fP & bc_options, ShortArray & basis_types, ShortArray & colloc_rules)\fC [static]\fP"
+
+.PP
+allocate orthogonal polynomial basis types and integration rules based on u_types and rule options This version supports only orthogonal polynomial types\&. In this case, the polynomial types needed for an orthogonal basis and for computing collocation points and weights in an integration driver are the same\&. 
+.PP
+References SharedPolyApproxData::initialize_orthogonal_basis_type_rule()\&.
+.PP
+Referenced by SharedOrthogPolyApproxData::construct_basis(), and IntegrationDriver::initialize_grid()\&.
+.SS "size_t total_order_terms (const UShortArray & upper_bound, short lower_bound_offset = \fC\-1\fP)\fC [static]\fP"
+
+.PP
+return the number of expansion terms for a total order expansion with the provided (anisotropic) upper_bound array specification Return the number of terms in a total-order expansion\&. For anisotropic expansion order, no simple expression is currently available and the number of expansion terms is computed using the multiIndex recursion\&. 
+.PP
+References SharedPolyApproxData::increment_terms(), BasisPolynomial::n_choose_k(), and SharedPolyApproxData::total_order_multi_index()\&.
+.PP
+Referenced by SharedPolyApproxData::hierarchical_tensor_product_multi_index(), and SharedOrthogPolyApproxData::maximal_expansion()\&.
+.SS "size_t tensor_product_terms (const UShortArray & order, bool include_upper_bound = \fCtrue\fP)\fC [static]\fP"
+
+.PP
+return the number of expansion terms for a tensor-product expansion with the provided (anisotropic) quadrature orders (include_upper_bound = false) or expansion orders (default) Return the number of terms in a tensor-product expansion\&. For isotropic and anisotropic expansion orders, calculation of the number of expansion terms is straightforward: Prod(p_i + 1)\&. 
+.PP
+References SharedPolyApproxData::tensor_product_multi_index()\&.
+.PP
+Referenced by SharedPolyApproxData::assign_sobol_index_map_values(), HierarchSparseGridDriver::grid_size(), and SharedPolyApproxData::tensor_product_multi_index()\&.
+.SS "void total_order_multi_index (unsigned short level, size_t num_vars, UShort2DArray & multi_index)\fC [static]\fP"
+
+.PP
+initialize multi_index using a total-order expansion from a scalar level Overloaded version for defining the multi-indices for a single scalar level\&. Anisotropy is not supported, so this version is not usable as a kernel within other overloaded versions\&. 
+.PP
+References SharedPolyApproxData::increment_terms()\&.
+.PP
+Referenced by SharedProjectOrthogPolyApproxData::allocate_data(), SharedOrthogPolyApproxData::allocate_data(), SharedRegressOrthogPolyApproxData::allocate_data(), CombinedSparseGridDriver::assign_smolyak_arrays(), RegressOrthogPolyApproximation::compressed_sensing(), HierarchSparseGridDriver::grid_size(), SharedRegressOrthogPolyApproxData::increment_data(), LightweightSparseGridDriver::initialize_grid(), SharedOrthogPolyApproxData::pre_combine_data(), and SharedPolyApproxData::total_order_terms()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for PECOS from the source code\&.

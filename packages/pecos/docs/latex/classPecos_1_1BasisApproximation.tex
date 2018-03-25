@@ -1,0 +1,246 @@
+\section{Basis\+Approximation Class Reference}
+\label{classPecos_1_1BasisApproximation}\index{Basis\+Approximation@{Basis\+Approximation}}
+
+
+Base class for multivariate basis approximations used for projection of random variables through time or space.  
+
+
+Inheritance diagram for Basis\+Approximation\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.666667cm]{classPecos_1_1BasisApproximation}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPecos_1_1BasisApproximation_a0f079f90460b078cfd553c20f2c33642}{Basis\+Approximation} ()
+\begin{DoxyCompactList}\small\item\em default constructor \end{DoxyCompactList}\item 
+\hyperlink{classPecos_1_1BasisApproximation_acc50081d826259352411322c65e1c2f2}{Basis\+Approximation} (const \hyperlink{classPecos_1_1SharedBasisApproxData}{Shared\+Basis\+Approx\+Data} \&shared\+\_\+data)
+\begin{DoxyCompactList}\small\item\em standard constructor for envelope \end{DoxyCompactList}\item 
+\hyperlink{classPecos_1_1BasisApproximation_afe92f553e027ee28cbb82dfb03ae5406}{Basis\+Approximation} (const \hyperlink{classPecos_1_1BasisApproximation}{Basis\+Approximation} \&basis\+\_\+approx)
+\begin{DoxyCompactList}\small\item\em copy constructor \end{DoxyCompactList}\item 
+virtual \hyperlink{classPecos_1_1BasisApproximation_ab820bed8a6adfca8d7888b6e17320c5e}{$\sim$\+Basis\+Approximation} ()
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\item 
+\hyperlink{classPecos_1_1BasisApproximation}{Basis\+Approximation} \hyperlink{classPecos_1_1BasisApproximation_a9f1c4e77a7c75f4004fa2e9af780a20e}{operator=} (const \hyperlink{classPecos_1_1BasisApproximation}{Basis\+Approximation} \&basis\+\_\+approx)
+\begin{DoxyCompactList}\small\item\em assignment operator \end{DoxyCompactList}\item 
+virtual Real \hyperlink{classPecos_1_1BasisApproximation_a7bc9dcdf32fc46f97e286268c1ac51b0}{value} (const Real\+Vector \&x)\label{classPecos_1_1BasisApproximation_a7bc9dcdf32fc46f97e286268c1ac51b0}
+
+\begin{DoxyCompactList}\small\item\em retrieve the approximate function value for a given parameter vector \end{DoxyCompactList}\item 
+virtual const Real\+Vector \& \hyperlink{classPecos_1_1BasisApproximation_a42bf374bf23c32c941ee2acae5ad56a4}{gradient} (const Real\+Vector \&x)\label{classPecos_1_1BasisApproximation_a42bf374bf23c32c941ee2acae5ad56a4}
+
+\begin{DoxyCompactList}\small\item\em retrieve the approximate function gradient for a given parameter vector \end{DoxyCompactList}\item 
+virtual const Real\+Sym\+Matrix \& \hyperlink{classPecos_1_1BasisApproximation_ad0b8d39aa7ec7b96b8753ac84e806d42}{hessian} (const Real\+Vector \&x)\label{classPecos_1_1BasisApproximation_ad0b8d39aa7ec7b96b8753ac84e806d42}
+
+\begin{DoxyCompactList}\small\item\em retrieve the approximate function Hessian for a given parameter vector \end{DoxyCompactList}\item 
+virtual void \hyperlink{classPecos_1_1BasisApproximation_aa1896011336650ae7b14965aebd72e1e}{surrogate\+\_\+data} (const Surrogate\+Data \&data)\label{classPecos_1_1BasisApproximation_aa1896011336650ae7b14965aebd72e1e}
+
+\begin{DoxyCompactList}\small\item\em set \hyperlink{classPecos_1_1PolynomialApproximation_adea5235bed42287989f0bf6821f9bcf0}{Polynomial\+Approximation\+::orig\+Surr\+Data} \end{DoxyCompactList}\item 
+virtual const Surrogate\+Data \& \hyperlink{classPecos_1_1BasisApproximation_a8b84d7f8e6de5203f20a47fa66b38ed3}{surrogate\+\_\+data} () const \label{classPecos_1_1BasisApproximation_a8b84d7f8e6de5203f20a47fa66b38ed3}
+
+\begin{DoxyCompactList}\small\item\em get \hyperlink{classPecos_1_1PolynomialApproximation_a8e8d62a29dcb5dd55fd03bef1a2b3ea6}{Polynomial\+Approximation\+::surr\+Data} (const) \end{DoxyCompactList}\item 
+virtual Surrogate\+Data \& \hyperlink{classPecos_1_1BasisApproximation_a0acf94a33f9a66b6823627d75ce566d4}{surrogate\+\_\+data} ()\label{classPecos_1_1BasisApproximation_a0acf94a33f9a66b6823627d75ce566d4}
+
+\begin{DoxyCompactList}\small\item\em get \hyperlink{classPecos_1_1PolynomialApproximation_a8e8d62a29dcb5dd55fd03bef1a2b3ea6}{Polynomial\+Approximation\+::surr\+Data} (non-\/const) \end{DoxyCompactList}\item 
+virtual int \hyperlink{classPecos_1_1BasisApproximation_ac789358ee49633613d6c97593be06f9d}{min\+\_\+coefficients} () const \label{classPecos_1_1BasisApproximation_ac789358ee49633613d6c97593be06f9d}
+
+\begin{DoxyCompactList}\small\item\em return the minimum number of samples (unknowns) required to build the derived class approximation type in num\+Vars dimensions \end{DoxyCompactList}\item 
+virtual void \hyperlink{classPecos_1_1BasisApproximation_aef8f0c32bdeff7756a9c614607c03058}{compute\+\_\+coefficients} (size\+\_\+t index=\+\_\+\+N\+P\+OS)\label{classPecos_1_1BasisApproximation_aef8f0c32bdeff7756a9c614607c03058}
+
+\begin{DoxyCompactList}\small\item\em calculate the approximation coefficients using a set of surrogate data \end{DoxyCompactList}\item 
+virtual void \hyperlink{classPecos_1_1BasisApproximation_a8ba12605934048176c1d1c5722465523}{increment\+\_\+coefficients} (size\+\_\+t index=\+\_\+\+N\+P\+OS)\label{classPecos_1_1BasisApproximation_a8ba12605934048176c1d1c5722465523}
+
+\begin{DoxyCompactList}\small\item\em recalculate approximation coefficients following a surrogate data update \end{DoxyCompactList}\item 
+virtual void \hyperlink{classPecos_1_1BasisApproximation_a662fd880fee0ed53f1e3383c41d6b792}{decrement\+\_\+coefficients} (bool save\+\_\+data)\label{classPecos_1_1BasisApproximation_a662fd880fee0ed53f1e3383c41d6b792}
+
+\begin{DoxyCompactList}\small\item\em restore the approximation coefficients to the state preceding the last increment \end{DoxyCompactList}\item 
+virtual void \hyperlink{classPecos_1_1BasisApproximation_a150c32326f6c12d2303806005715706e}{push\+\_\+coefficients} ()\label{classPecos_1_1BasisApproximation_a150c32326f6c12d2303806005715706e}
+
+\begin{DoxyCompactList}\small\item\em restore the approximation coefficients to a previously incremented state as identified by the current data increment \end{DoxyCompactList}\item 
+virtual void \hyperlink{classPecos_1_1BasisApproximation_a742e0217d6f681e08f401409771f4f4a}{finalize\+\_\+coefficients} ()\label{classPecos_1_1BasisApproximation_a742e0217d6f681e08f401409771f4f4a}
+
+\begin{DoxyCompactList}\small\item\em finalize the coefficients by applying all previously evaluated increments \end{DoxyCompactList}\item 
+virtual void \hyperlink{classPecos_1_1BasisApproximation_abc17a7104c33d8146f4a0ee7b6c6f37a}{store\+\_\+coefficients} (size\+\_\+t index=\+\_\+\+N\+P\+OS)\label{classPecos_1_1BasisApproximation_abc17a7104c33d8146f4a0ee7b6c6f37a}
+
+\begin{DoxyCompactList}\small\item\em store the current coefficients for later combination \end{DoxyCompactList}\item 
+virtual void \hyperlink{classPecos_1_1BasisApproximation_ad05b093ee96314c9e05bad8e06c2dae7}{restore\+\_\+coefficients} (size\+\_\+t index=\+\_\+\+N\+P\+OS)\label{classPecos_1_1BasisApproximation_ad05b093ee96314c9e05bad8e06c2dae7}
+
+\begin{DoxyCompactList}\small\item\em restore a previously stored coefficient state \end{DoxyCompactList}\item 
+virtual void \hyperlink{classPecos_1_1BasisApproximation_af5c6af74d2c8c5575fefb46ce55af90d}{swap\+\_\+coefficients} (size\+\_\+t index)\label{classPecos_1_1BasisApproximation_af5c6af74d2c8c5575fefb46ce55af90d}
+
+\begin{DoxyCompactList}\small\item\em swap the current coefficients with a previously stored set \end{DoxyCompactList}\item 
+virtual void \hyperlink{classPecos_1_1BasisApproximation_a63d12cc6021fda4896b8738d72dfcc86}{remove\+\_\+stored\+\_\+coefficients} (size\+\_\+t index=\+\_\+\+N\+P\+OS)\label{classPecos_1_1BasisApproximation_a63d12cc6021fda4896b8738d72dfcc86}
+
+\begin{DoxyCompactList}\small\item\em remove a redundant stored entry prior to combine\+\_\+coefficients (default is pop\+\_\+back) \end{DoxyCompactList}\item 
+virtual void \hyperlink{classPecos_1_1BasisApproximation_ae4337960917eda26a5672e5c6afbb62a}{clear\+\_\+stored} ()\label{classPecos_1_1BasisApproximation_ae4337960917eda26a5672e5c6afbb62a}
+
+\begin{DoxyCompactList}\small\item\em clear stored approximation data \end{DoxyCompactList}\item 
+virtual void \hyperlink{classPecos_1_1BasisApproximation_a7c794213befc83c9f90137f22e4cd39d}{combine\+\_\+coefficients} (size\+\_\+t swap\+\_\+index)\label{classPecos_1_1BasisApproximation_a7c794213befc83c9f90137f22e4cd39d}
+
+\begin{DoxyCompactList}\small\item\em combine the current coefficients with a previously stored set \end{DoxyCompactList}\item 
+virtual void \hyperlink{classPecos_1_1BasisApproximation_a4beb4a3300443171ac2233e87c970e39}{print\+\_\+coefficients} (std\+::ostream \&s, bool normalized)\label{classPecos_1_1BasisApproximation_a4beb4a3300443171ac2233e87c970e39}
+
+\begin{DoxyCompactList}\small\item\em print the coefficient array computed in \hyperlink{classPecos_1_1BasisApproximation_aef8f0c32bdeff7756a9c614607c03058}{compute\+\_\+coefficients()} \end{DoxyCompactList}\item 
+virtual Real\+Vector \hyperlink{classPecos_1_1BasisApproximation_ac64f16ff9fbfb80c4bafa969b4a92e1d}{approximation\+\_\+coefficients} (bool normalized) const \label{classPecos_1_1BasisApproximation_ac64f16ff9fbfb80c4bafa969b4a92e1d}
+
+\begin{DoxyCompactList}\small\item\em return the coefficient array computed by \hyperlink{classPecos_1_1BasisApproximation_aef8f0c32bdeff7756a9c614607c03058}{compute\+\_\+coefficients()} \end{DoxyCompactList}\item 
+virtual void \hyperlink{classPecos_1_1BasisApproximation_a2e7b82322962df3fd036b9e0783d8fc9}{approximation\+\_\+coefficients} (const Real\+Vector \&approx\+\_\+coeffs, bool normalized)\label{classPecos_1_1BasisApproximation_a2e7b82322962df3fd036b9e0783d8fc9}
+
+\begin{DoxyCompactList}\small\item\em set the coefficient array from external sources, rather than computing with \hyperlink{classPecos_1_1BasisApproximation_aef8f0c32bdeff7756a9c614607c03058}{compute\+\_\+coefficients()} \end{DoxyCompactList}\item 
+virtual void \hyperlink{classPecos_1_1BasisApproximation_a36020c0cf988e1af9f0e154af745f995}{coefficient\+\_\+labels} (std\+::vector$<$ std\+::string $>$ \&coeff\+\_\+labels) const \label{classPecos_1_1BasisApproximation_a36020c0cf988e1af9f0e154af745f995}
+
+\begin{DoxyCompactList}\small\item\em retrieve a vector of coefficient label strings, one per expansion term \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1BasisApproximation_a410dc797e6d458e8dde15e90802a6409}{assign\+\_\+rep} (\hyperlink{classPecos_1_1BasisApproximation}{Basis\+Approximation} $\ast$\hyperlink{classPecos_1_1BasisApproximation_a33f0a9133acdb15491e3288d92516d3a}{approx\+\_\+rep}, bool ref\+\_\+count\+\_\+incr)\label{classPecos_1_1BasisApproximation_a410dc797e6d458e8dde15e90802a6409}
+
+\begin{DoxyCompactList}\small\item\em assign letter or replace existing letter with a new one \end{DoxyCompactList}\item 
+\hyperlink{classPecos_1_1BasisApproximation}{Basis\+Approximation} $\ast$ \hyperlink{classPecos_1_1BasisApproximation_a33f0a9133acdb15491e3288d92516d3a}{approx\+\_\+rep} () const \label{classPecos_1_1BasisApproximation_a33f0a9133acdb15491e3288d92516d3a}
+
+\begin{DoxyCompactList}\small\item\em returns approx\+Rep for access to derived class member functions that are not mapped to the top Approximation level \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPecos_1_1BasisApproximation_adbf42e184a4775a594252c18d6bd903a}{Basis\+Approximation} (\hyperlink{structPecos_1_1BaseConstructor}{Base\+Constructor}, const \hyperlink{classPecos_1_1SharedBasisApproxData}{Shared\+Basis\+Approx\+Data} \&shared\+\_\+data)
+\begin{DoxyCompactList}\small\item\em constructor initializes the base class part of letter classes (\hyperlink{structPecos_1_1BaseConstructor}{Base\+Constructor} overloading avoids infinite recursion in the derived class constructors -\/ Coplien, p. 139) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPecos_1_1SharedBasisApproxData}{Shared\+Basis\+Approx\+Data} $\ast$ \hyperlink{classPecos_1_1BasisApproximation_a7ebf937967244f0702ead351cdcbe84d}{shared\+Data\+Rep}\label{classPecos_1_1BasisApproximation_a7ebf937967244f0702ead351cdcbe84d}
+
+\begin{DoxyCompactList}\small\item\em contains the approximation data that is shared among the response set \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPecos_1_1BasisApproximation}{Basis\+Approximation} $\ast$ \hyperlink{classPecos_1_1BasisApproximation_a56018d7925e2d0d6a277bfd41c849820}{get\+\_\+basis\+\_\+approx} (const \hyperlink{classPecos_1_1SharedBasisApproxData}{Shared\+Basis\+Approx\+Data} \&shared\+\_\+data)
+\begin{DoxyCompactList}\small\item\em Used only by the standard envelope constructor to initialize basis\+Approx\+Rep to the appropriate derived type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPecos_1_1BasisApproximation}{Basis\+Approximation} $\ast$ \hyperlink{classPecos_1_1BasisApproximation_a4695a61501a689729db49ff5c498980a}{basis\+Approx\+Rep}\label{classPecos_1_1BasisApproximation_a4695a61501a689729db49ff5c498980a}
+
+\begin{DoxyCompactList}\small\item\em pointer to the letter (initialized only for the envelope) \end{DoxyCompactList}\item 
+int \hyperlink{classPecos_1_1BasisApproximation_afff0b6144883d3ca09a8d0d3f4776b0f}{reference\+Count}\label{classPecos_1_1BasisApproximation_afff0b6144883d3ca09a8d0d3f4776b0f}
+
+\begin{DoxyCompactList}\small\item\em number of objects sharing basis\+Approx\+Rep \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Base class for multivariate basis approximations used for projection of random variables through time or space. 
+
+The base class for basis approximations defined from Fourier functions, eigenfunctions, or polynomial functions. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Pecos\+::\+Basis\+Approximation@{Pecos\+::\+Basis\+Approximation}!Basis\+Approximation@{Basis\+Approximation}}
+\index{Basis\+Approximation@{Basis\+Approximation}!Pecos\+::\+Basis\+Approximation@{Pecos\+::\+Basis\+Approximation}}
+\subsubsection[{\texorpdfstring{Basis\+Approximation()}{BasisApproximation()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Basis\+Approximation} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classPecos_1_1BasisApproximation_a0f079f90460b078cfd553c20f2c33642}
+
+
+default constructor 
+
+The default constructor\+: basis\+Approx\+Rep is N\+U\+LL in this case. This makes it necessary to check for N\+U\+LL in the copy constructor, assignment operator, and destructor. \index{Pecos\+::\+Basis\+Approximation@{Pecos\+::\+Basis\+Approximation}!Basis\+Approximation@{Basis\+Approximation}}
+\index{Basis\+Approximation@{Basis\+Approximation}!Pecos\+::\+Basis\+Approximation@{Pecos\+::\+Basis\+Approximation}}
+\subsubsection[{\texorpdfstring{Basis\+Approximation(const Shared\+Basis\+Approx\+Data \&shared\+\_\+data)}{BasisApproximation(const SharedBasisApproxData &shared_data)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Basis\+Approximation} (
+\begin{DoxyParamCaption}
+\item[{const {\bf Shared\+Basis\+Approx\+Data} \&}]{shared\+\_\+data}
+\end{DoxyParamCaption}
+)}\label{classPecos_1_1BasisApproximation_acc50081d826259352411322c65e1c2f2}
+
+
+standard constructor for envelope 
+
+Envelope constructor only needs to extract enough data to properly execute get\+\_\+basis\+\_\+approx, since Basis\+Approximation(\+Base\+Constructor) builds the actual base class data for the derived basis functions. 
+
+References Basis\+Approximation\+::basis\+Approx\+Rep, and Basis\+Approximation\+::get\+\_\+basis\+\_\+approx().
+
+\index{Pecos\+::\+Basis\+Approximation@{Pecos\+::\+Basis\+Approximation}!Basis\+Approximation@{Basis\+Approximation}}
+\index{Basis\+Approximation@{Basis\+Approximation}!Pecos\+::\+Basis\+Approximation@{Pecos\+::\+Basis\+Approximation}}
+\subsubsection[{\texorpdfstring{Basis\+Approximation(const Basis\+Approximation \&basis\+\_\+approx)}{BasisApproximation(const BasisApproximation &basis_approx)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Basis\+Approximation} (
+\begin{DoxyParamCaption}
+\item[{const {\bf Basis\+Approximation} \&}]{basis\+\_\+approx}
+\end{DoxyParamCaption}
+)}\label{classPecos_1_1BasisApproximation_afe92f553e027ee28cbb82dfb03ae5406}
+
+
+copy constructor 
+
+Copy constructor manages sharing of basis\+Approx\+Rep and incrementing of reference\+Count. 
+
+References Basis\+Approximation\+::basis\+Approx\+Rep, Basis\+Approximation\+::operator=(), and Basis\+Approximation\+::reference\+Count.
+
+\index{Pecos\+::\+Basis\+Approximation@{Pecos\+::\+Basis\+Approximation}!````~Basis\+Approximation@{$\sim$\+Basis\+Approximation}}
+\index{````~Basis\+Approximation@{$\sim$\+Basis\+Approximation}!Pecos\+::\+Basis\+Approximation@{Pecos\+::\+Basis\+Approximation}}
+\subsubsection[{\texorpdfstring{$\sim$\+Basis\+Approximation()}{~BasisApproximation()}}]{\setlength{\rightskip}{0pt plus 5cm}$\sim${\bf Basis\+Approximation} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classPecos_1_1BasisApproximation_ab820bed8a6adfca8d7888b6e17320c5e}
+
+
+destructor 
+
+Destructor decrements reference\+Count and only deletes basis\+Approx\+Rep when reference\+Count reaches zero. 
+
+References Basis\+Approximation\+::assign\+\_\+rep(), Basis\+Approximation\+::basis\+Approx\+Rep, and Basis\+Approximation\+::reference\+Count.
+
+\index{Pecos\+::\+Basis\+Approximation@{Pecos\+::\+Basis\+Approximation}!Basis\+Approximation@{Basis\+Approximation}}
+\index{Basis\+Approximation@{Basis\+Approximation}!Pecos\+::\+Basis\+Approximation@{Pecos\+::\+Basis\+Approximation}}
+\subsubsection[{\texorpdfstring{Basis\+Approximation(\+Base\+Constructor, const Shared\+Basis\+Approx\+Data \&shared\+\_\+data)}{BasisApproximation(BaseConstructor, const SharedBasisApproxData &shared_data)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Basis\+Approximation} (
+\begin{DoxyParamCaption}
+\item[{{\bf Base\+Constructor}}]{, }
+\item[{const {\bf Shared\+Basis\+Approx\+Data} \&}]{shared\+\_\+data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classPecos_1_1BasisApproximation_adbf42e184a4775a594252c18d6bd903a}
+
+
+constructor initializes the base class part of letter classes (\hyperlink{structPecos_1_1BaseConstructor}{Base\+Constructor} overloading avoids infinite recursion in the derived class constructors -\/ Coplien, p. 139) 
+
+This constructor is the one which must build the base class data for all derived classes. \hyperlink{classPecos_1_1BasisApproximation_a56018d7925e2d0d6a277bfd41c849820}{get\+\_\+basis\+\_\+approx()} instantiates a derived class letter and the derived constructor selects this base class constructor in its initialization list (to avoid recursion in the base class constructor calling \hyperlink{classPecos_1_1BasisApproximation_a56018d7925e2d0d6a277bfd41c849820}{get\+\_\+basis\+\_\+approx()} again). Since the letter IS the representation, its rep pointer is set to N\+U\+LL (an uninitialized pointer causes problems in $\sim$\+Basis\+Approximation). 
+
+\subsection{Member Function Documentation}
+\index{Pecos\+::\+Basis\+Approximation@{Pecos\+::\+Basis\+Approximation}!operator=@{operator=}}
+\index{operator=@{operator=}!Pecos\+::\+Basis\+Approximation@{Pecos\+::\+Basis\+Approximation}}
+\subsubsection[{\texorpdfstring{operator=(const Basis\+Approximation \&basis\+\_\+approx)}{operator=(const BasisApproximation &basis_approx)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Basis\+Approximation} operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Basis\+Approximation} \&}]{basis\+\_\+approx}
+\end{DoxyParamCaption}
+)}\label{classPecos_1_1BasisApproximation_a9f1c4e77a7c75f4004fa2e9af780a20e}
+
+
+assignment operator 
+
+Assignment operator decrements reference\+Count for old basis\+Approx\+Rep, assigns new basis\+Approx\+Rep, and increments reference\+Count for new basis\+Approx\+Rep. 
+
+References Basis\+Approximation\+::basis\+Approx\+Rep, and Basis\+Approximation\+::reference\+Count.
+
+
+
+Referenced by Basis\+Approximation\+::\+Basis\+Approximation().
+
+\index{Pecos\+::\+Basis\+Approximation@{Pecos\+::\+Basis\+Approximation}!get\+\_\+basis\+\_\+approx@{get\+\_\+basis\+\_\+approx}}
+\index{get\+\_\+basis\+\_\+approx@{get\+\_\+basis\+\_\+approx}!Pecos\+::\+Basis\+Approximation@{Pecos\+::\+Basis\+Approximation}}
+\subsubsection[{\texorpdfstring{get\+\_\+basis\+\_\+approx(const Shared\+Basis\+Approx\+Data \&shared\+\_\+data)}{get_basis_approx(const SharedBasisApproxData &shared_data)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Basis\+Approximation} $\ast$ get\+\_\+basis\+\_\+approx (
+\begin{DoxyParamCaption}
+\item[{const {\bf Shared\+Basis\+Approx\+Data} \&}]{shared\+\_\+data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classPecos_1_1BasisApproximation_a56018d7925e2d0d6a277bfd41c849820}
+
+
+Used only by the standard envelope constructor to initialize basis\+Approx\+Rep to the appropriate derived type. 
+
+Used only by the envelope constructor to initialize basis\+Approx\+Rep to the appropriate derived type. 
+
+References Shared\+Basis\+Approx\+Data\+::basis\+Type, and Shared\+Basis\+Approx\+Data\+::data\+\_\+rep().
+
+
+
+Referenced by Basis\+Approximation\+::\+Basis\+Approximation().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Basis\+Approximation.\+hpp\item 
+Basis\+Approximation.\+cpp\end{DoxyCompactItemize}

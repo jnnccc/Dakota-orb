@@ -1,0 +1,193 @@
+.TH "BetaRandomVariable" 3 "Wed Dec 27 2017" "Version Version 1.0" "PECOS" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+BetaRandomVariable \- Derived random variable class for beta random variables\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBUniformRandomVariable\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBBetaRandomVariable\fP ()"
+.br
+.RI "\fIdefault constructor \fP"
+.ti -1c
+.RI "\fBBetaRandomVariable\fP (Real alpha, Real beta, Real lwr, Real upr)"
+.br
+.RI "\fIalternate constructor \fP"
+.ti -1c
+.RI "\fB~BetaRandomVariable\fP ()"
+.br
+.RI "\fIdestructor \fP"
+.ti -1c
+.RI "Real \fBcdf\fP (Real x) const "
+.br
+.RI "\fIreturn the cumulative distribution function value of the random variable at x \fP"
+.ti -1c
+.RI "Real \fBccdf\fP (Real x) const "
+.br
+.RI "\fIreturn the complementary cumulative distribution function value of the random variable at x \fP"
+.ti -1c
+.RI "Real \fBinverse_cdf\fP (Real p_cdf) const "
+.br
+.RI "\fIreturn the x value corresponding to a cumulative probability \fP"
+.ti -1c
+.RI "Real \fBinverse_ccdf\fP (Real p_ccdf) const "
+.br
+.RI "\fIreturn the x value corresponding to a complementary cumulative probability \fP"
+.ti -1c
+.RI "Real \fBpdf\fP (Real x) const "
+.br
+.RI "\fIreturn the value of the random variable's probability density function at x \fP"
+.ti -1c
+.RI "Real \fBpdf_gradient\fP (Real x) const "
+.br
+.RI "\fIreturn the gradient of the random variable's probability density function at x \fP"
+.ti -1c
+.RI "Real \fBpdf_hessian\fP (Real x) const "
+.br
+.RI "\fIreturn the hessian of the random variable's probability density function at x \fP"
+.ti -1c
+.RI "Real \fBlog_pdf\fP (Real x) const "
+.br
+.RI "\fIreturn the value of the natural log of the random variable's probability density function at x (useful for calculations of log density in Bayesian methods) \fP"
+.ti -1c
+.RI "Real \fBlog_pdf_gradient\fP (Real x) const "
+.br
+.RI "\fIreturn the gradient of the natural log of the random variable's probability density function at x (useful for defining MCMC proposal distributions in Bayesian methods) \fP"
+.ti -1c
+.RI "Real \fBlog_pdf_hessian\fP (Real x) const "
+.br
+.RI "\fIreturn the Hessian of the natural log of the random variable's probability density function at x (useful for defining MCMC proposal distributions in Bayesian methods) \fP"
+.ti -1c
+.RI "Real \fBinverse_standard_cdf\fP (Real p_cdf) const "
+.br
+.RI "\fIreturn the x value for a standardized probability distribution corresponding to a cumulative probability \fP"
+.ti -1c
+.RI "Real \fBstandard_pdf\fP (Real z) const "
+.br
+.RI "\fIreturn the value of a standardized random variable's probability density function at x \fP"
+.ti -1c
+.RI "Real \fBlog_standard_pdf\fP (Real z) const "
+.br
+.RI "\fIreturn the natural log of a standardized random variable's probability density function at x (useful for calculations of log density in Bayesian methods) \fP"
+.ti -1c
+.RI "Real \fBlog_standard_pdf_gradient\fP (Real z) const "
+.br
+.RI "\fIreturn the gradient of the natural log of a standardized random variable's probability density function at x (useful for calculations of log density in Bayesian methods) \fP"
+.ti -1c
+.RI "Real \fBlog_standard_pdf_hessian\fP (Real z) const "
+.br
+.RI "\fIreturn the Hessian of the natural log of a standardized random variable's probability density function at x (useful for calculations of log density in Bayesian methods) \fP"
+.ti -1c
+.RI "Real \fBparameter\fP (short dist_param) const "
+.br
+.RI "\fIreturn the value of the named distribution parameter \fP"
+.ti -1c
+.RI "void \fBparameter\fP (short dist_param, Real val)"
+.br
+.RI "\fIupdate the value of the named distribution parameter \fP"
+.ti -1c
+.RI "Real \fBmean\fP () const "
+.br
+.RI "\fIreturn the distribution mean \fP"
+.ti -1c
+.RI "Real \fBmedian\fP () const "
+.br
+.RI "\fIreturn the distribution mode \fP"
+.ti -1c
+.RI "Real \fBmode\fP () const "
+.br
+.RI "\fIreturn the distribution mode \fP"
+.ti -1c
+.RI "Real \fBstandard_deviation\fP () const "
+.br
+.RI "\fIreturn the distribution variance \fP"
+.ti -1c
+.RI "Real \fBvariance\fP () const "
+.br
+.RI "\fIreturn the distribution variance \fP"
+.ti -1c
+.RI "Real \fBdx_ds\fP (short dist_param, short u_type, Real x, Real z) const "
+.br
+.ti -1c
+.RI "Real \fBdz_ds_factor\fP (short u_type, Real x, Real z) const "
+.br
+.ti -1c
+.RI "void \fBupdate\fP (Real alpha, Real beta, Real lwr, Real upr)"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static Real \fBstd_pdf\fP (Real x, Real alpha, Real beta)"
+.br
+.ti -1c
+.RI "static Real \fBstd_cdf\fP (Real x, Real alpha, Real beta)"
+.br
+.ti -1c
+.RI "static Real \fBinverse_std_cdf\fP (Real \fBcdf\fP, Real alpha, Real beta)"
+.br
+.ti -1c
+.RI "static Real \fBpdf\fP (Real x, Real alpha, Real beta, Real lwr, Real upr)"
+.br
+.ti -1c
+.RI "static Real \fBcdf\fP (Real x, Real alpha, Real beta, Real lwr, Real upr)"
+.br
+.ti -1c
+.RI "static void \fBmoments_from_params\fP (Real alpha, Real beta, Real lwr, Real upr, Real &\fBmean\fP, Real &std_dev)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBupdate_boost\fP ()"
+.br
+.RI "\fIcreate a new betaDist instance \fP"
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "Real \fBalphaStat\fP"
+.br
+.RI "\fIalpha parameter of beta random variable (statistical PDF convention; differs from Jacobi polynomial convention) \fP"
+.ti -1c
+.RI "Real \fBbetaStat\fP"
+.br
+.RI "\fIbeta parameter of beta random variable (statistical PDF convention; differs from Jacobi polynomial convention) \fP"
+.ti -1c
+.RI "beta_dist * \fBbetaDist\fP"
+.br
+.RI "\fIpointer to the Boost beta_distribution instance \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Derived random variable class for beta random variables\&. 
+
+Manages alpha and beta and inherits bounds\&. See Haldar and Mahadevan, p\&. 72\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "Real dx_ds (short dist_param, short u_type, Real x, Real z) const\fC [inline]\fP, \fC [virtual]\fP"
+dx/ds is derived by differentiating \fBNatafTransformation::trans_Z_to_X()\fP with respect to distribution parameter s\&. dz/ds is zero if uncorrelated, while \fBdz_ds_factor()\fP manages contributions in the correlated case\&. 
+.PP
+Reimplemented from \fBRandomVariable\fP\&.
+.PP
+Referenced by BetaRandomVariable::variance()\&.
+.SS "Real dz_ds_factor (short u_type, Real x, Real z) const\fC [inline]\fP, \fC [virtual]\fP"
+dx/ds is derived by differentiating \fBNatafTransformation::trans_Z_to_X()\fP with respect to distribution parameter s\&. For the uncorrelated case, u and z are constants\&. For the correlated case, u is a constant, but z(s) = L(s) u due to Nataf dependence on s and dz/ds = dL/ds u\&. 
+.PP
+Reimplemented from \fBRandomVariable\fP\&.
+.PP
+References UniformRandomVariable::lowerBnd, and UniformRandomVariable::upperBnd\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for PECOS from the source code\&.

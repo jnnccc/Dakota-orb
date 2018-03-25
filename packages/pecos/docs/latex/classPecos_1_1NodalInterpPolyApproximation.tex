@@ -1,0 +1,588 @@
+\section{Nodal\+Interp\+Poly\+Approximation Class Reference}
+\label{classPecos_1_1NodalInterpPolyApproximation}\index{Nodal\+Interp\+Poly\+Approximation@{Nodal\+Interp\+Poly\+Approximation}}
+
+
+Derived approximation class for nodal interpolation polynomials (global approximation interpolating function values and potentially gradients at collocation points).  
+
+
+Inheritance diagram for Nodal\+Interp\+Poly\+Approximation\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classPecos_1_1NodalInterpPolyApproximation}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPecos_1_1NodalInterpPolyApproximation_ab62435d42ec6181d9184a90a9fc2032f}{Nodal\+Interp\+Poly\+Approximation} (const \hyperlink{classPecos_1_1SharedBasisApproxData}{Shared\+Basis\+Approx\+Data} \&shared\+\_\+data)\label{classPecos_1_1NodalInterpPolyApproximation_ab62435d42ec6181d9184a90a9fc2032f}
+
+\begin{DoxyCompactList}\small\item\em default constructor \end{DoxyCompactList}\item 
+\hyperlink{classPecos_1_1NodalInterpPolyApproximation_a2edcc80dff98544e7e3de4a5c35e3e97}{$\sim$\+Nodal\+Interp\+Poly\+Approximation} ()\label{classPecos_1_1NodalInterpPolyApproximation_a2edcc80dff98544e7e3de4a5c35e3e97}
+
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classPecos_1_1NodalInterpPolyApproximation_a37ef37829b412fefa40d53b395846781}{allocate\+\_\+arrays} ()\label{classPecos_1_1NodalInterpPolyApproximation_a37ef37829b412fefa40d53b395846781}
+
+\begin{DoxyCompactList}\small\item\em size expansion\+Type\{1,2\}Coeffs and expansion\+Type1\+Coeff\+Grads \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1NodalInterpPolyApproximation_aef8f0c32bdeff7756a9c614607c03058}{compute\+\_\+coefficients} (size\+\_\+t index=\+\_\+\+N\+P\+OS)\label{classPecos_1_1NodalInterpPolyApproximation_aef8f0c32bdeff7756a9c614607c03058}
+
+\begin{DoxyCompactList}\small\item\em calculate the approximation coefficients using a set of surrogate data \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1NodalInterpPolyApproximation_a8ba12605934048176c1d1c5722465523}{increment\+\_\+coefficients} (size\+\_\+t index=\+\_\+\+N\+P\+OS)\label{classPecos_1_1NodalInterpPolyApproximation_a8ba12605934048176c1d1c5722465523}
+
+\begin{DoxyCompactList}\small\item\em update the coefficients for the expansion of interpolation polynomials\+: increment expansion\{Type1\+Coeffs,Type2\+Coeffs,Type1\+Coeff\+Grads\} \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1NodalInterpPolyApproximation_a662fd880fee0ed53f1e3383c41d6b792}{decrement\+\_\+coefficients} (bool save\+\_\+data)\label{classPecos_1_1NodalInterpPolyApproximation_a662fd880fee0ed53f1e3383c41d6b792}
+
+\begin{DoxyCompactList}\small\item\em restore the coefficients to their previous state prior to last increment\+: decrement expansion\{Type1\+Coeffs,Type2\+Coeffs,Type1\+Coeff\+Grads\} \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1NodalInterpPolyApproximation_a150c32326f6c12d2303806005715706e}{push\+\_\+coefficients} ()\label{classPecos_1_1NodalInterpPolyApproximation_a150c32326f6c12d2303806005715706e}
+
+\begin{DoxyCompactList}\small\item\em restore the coefficients to a previously incremented state as identified by the current increment to the Smolyak multi index\+: push expansion\{Type1\+Coeffs,Type2\+Coeffs,Type1\+Coeff\+Grads\} \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1NodalInterpPolyApproximation_a742e0217d6f681e08f401409771f4f4a}{finalize\+\_\+coefficients} ()\label{classPecos_1_1NodalInterpPolyApproximation_a742e0217d6f681e08f401409771f4f4a}
+
+\begin{DoxyCompactList}\small\item\em finalize the coefficients by applying all previously evaluated increments\+: finalize expansion\{Type1\+Coeffs,Type2\+Coeffs,Type1\+Coeff\+Grads\} \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1NodalInterpPolyApproximation_abc17a7104c33d8146f4a0ee7b6c6f37a}{store\+\_\+coefficients} (size\+\_\+t index=\+\_\+\+N\+P\+OS)\label{classPecos_1_1NodalInterpPolyApproximation_abc17a7104c33d8146f4a0ee7b6c6f37a}
+
+\begin{DoxyCompactList}\small\item\em store current state within stored\+Exp\+Type\{1\+Coeffs,2\+Coeffs,1\+Coeff\+Grads\} \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1NodalInterpPolyApproximation_ad05b093ee96314c9e05bad8e06c2dae7}{restore\+\_\+coefficients} (size\+\_\+t index=\+\_\+\+N\+P\+OS)\label{classPecos_1_1NodalInterpPolyApproximation_ad05b093ee96314c9e05bad8e06c2dae7}
+
+\begin{DoxyCompactList}\small\item\em restore previous state from stored\+Exp\+Type\{1\+Coeffs,2\+Coeffs,1\+Coeff\+Grads\} \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1NodalInterpPolyApproximation_af5c6af74d2c8c5575fefb46ce55af90d}{swap\+\_\+coefficients} (size\+\_\+t index)\label{classPecos_1_1NodalInterpPolyApproximation_af5c6af74d2c8c5575fefb46ce55af90d}
+
+\begin{DoxyCompactList}\small\item\em swap stored\+Exp\+Type\{1\+Coeffs,2\+Coeffs,1\+Coeff\+Grads\}\mbox{[}index\mbox{]} with active current data \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1NodalInterpPolyApproximation_a63d12cc6021fda4896b8738d72dfcc86}{remove\+\_\+stored\+\_\+coefficients} (size\+\_\+t index=\+\_\+\+N\+P\+OS)\label{classPecos_1_1NodalInterpPolyApproximation_a63d12cc6021fda4896b8738d72dfcc86}
+
+\begin{DoxyCompactList}\small\item\em remove a redundant entry from stored\+Exp\+Type\{1\+Coeffs,2\+Coeffs,1\+Coeff\+Grads\} prior to combine\+\_\+coefficients (default is pop\+\_\+back) \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1NodalInterpPolyApproximation_ae4337960917eda26a5672e5c6afbb62a}{clear\+\_\+stored} ()\label{classPecos_1_1NodalInterpPolyApproximation_ae4337960917eda26a5672e5c6afbb62a}
+
+\begin{DoxyCompactList}\small\item\em clear stored\+Exp\+Type\{1\+Coeffs,2\+Coeffs,1\+Coeff\+Grads\} \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1NodalInterpPolyApproximation_a7c794213befc83c9f90137f22e4cd39d}{combine\+\_\+coefficients} (size\+\_\+t swap\+\_\+index)\label{classPecos_1_1NodalInterpPolyApproximation_a7c794213befc83c9f90137f22e4cd39d}
+
+\begin{DoxyCompactList}\small\item\em augment current interpolant using stored\+Exp\+Type\{1\+Coeffs,2\+Coeffs,1\+Coeff\+Grads\}\mbox{[}index\mbox{]} \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1NodalInterpPolyApproximation_a9e2f6de3dafca8df624fef2a132b5185}{integrate\+\_\+response\+\_\+moments} (size\+\_\+t num\+\_\+moments)\label{classPecos_1_1NodalInterpPolyApproximation_a9e2f6de3dafca8df624fef2a132b5185}
+
+\begin{DoxyCompactList}\small\item\em compute moments of response using numerical integration \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1NodalInterpPolyApproximation_a611ac6de1665bc1197922b77823250c2}{integrate\+\_\+expansion\+\_\+moments} (size\+\_\+t num\+\_\+moments)\label{classPecos_1_1NodalInterpPolyApproximation_a611ac6de1665bc1197922b77823250c2}
+
+\begin{DoxyCompactList}\small\item\em compute moments of expansion using numerical integration \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1NodalInterpPolyApproximation_a7bc9dcdf32fc46f97e286268c1ac51b0}{value} (const Real\+Vector \&x)\label{classPecos_1_1NodalInterpPolyApproximation_a7bc9dcdf32fc46f97e286268c1ac51b0}
+
+\begin{DoxyCompactList}\small\item\em retrieve the approximate function value for a given parameter vector \end{DoxyCompactList}\item 
+const Real\+Vector \& \hyperlink{classPecos_1_1NodalInterpPolyApproximation_ae3b6ea541392b74cf0cc8758e206277c}{gradient\+\_\+basis\+\_\+variables} (const Real\+Vector \&x)\label{classPecos_1_1NodalInterpPolyApproximation_ae3b6ea541392b74cf0cc8758e206277c}
+
+\begin{DoxyCompactList}\small\item\em retrieve the gradient for a response expansion with respect to all variables included in the polynomial bases using the given parameter vector and default D\+VV \end{DoxyCompactList}\item 
+const Real\+Vector \& \hyperlink{classPecos_1_1NodalInterpPolyApproximation_a3ffb563ae1658344bfc2ad882def9e7c}{gradient\+\_\+basis\+\_\+variables} (const Real\+Vector \&x, const Sizet\+Array \&dvv)
+\item 
+const Real\+Vector \& \hyperlink{classPecos_1_1NodalInterpPolyApproximation_a518e8604f973a4b161a9b5718a0aa25e}{gradient\+\_\+nonbasis\+\_\+variables} (const Real\+Vector \&x)\label{classPecos_1_1NodalInterpPolyApproximation_a518e8604f973a4b161a9b5718a0aa25e}
+
+\begin{DoxyCompactList}\small\item\em retrieve the gradient for a response expansion with respect to all variables not included in the polynomial bases (nonprobabilistic variables such as design or epistemic when not in \char`\"{}all\char`\"{} mode) using the given parameter vector and default D\+VV \end{DoxyCompactList}\item 
+const Real\+Sym\+Matrix \& \hyperlink{classPecos_1_1NodalInterpPolyApproximation_a830729654265d84af637960f8c63f2bc}{hessian\+\_\+basis\+\_\+variables} (const Real\+Vector \&x)\label{classPecos_1_1NodalInterpPolyApproximation_a830729654265d84af637960f8c63f2bc}
+
+\begin{DoxyCompactList}\small\item\em retrieve the Hessian of the response expansion with respect to all variables included in the polynomial basis (e.\+g., probabilistic variables) for a given parameter vector \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1NodalInterpPolyApproximation_a1abe918dbdc66ac0fde85f1ab3c061af}{stored\+\_\+value} (const Real\+Vector \&x, size\+\_\+t index)\label{classPecos_1_1NodalInterpPolyApproximation_a1abe918dbdc66ac0fde85f1ab3c061af}
+
+\begin{DoxyCompactList}\small\item\em retrieve the response value for a stored expansion using the given parameter vector \end{DoxyCompactList}\item 
+const Real\+Vector \& \hyperlink{classPecos_1_1NodalInterpPolyApproximation_a7689fc058e2efdde6ce4dfe898864592}{stored\+\_\+gradient\+\_\+basis\+\_\+variables} (const Real\+Vector \&x, size\+\_\+t index)\label{classPecos_1_1NodalInterpPolyApproximation_a7689fc058e2efdde6ce4dfe898864592}
+
+\begin{DoxyCompactList}\small\item\em retrieve the response gradient for a stored expansion with respect to all variables included in the polynomial bases; evaluate for the given parameter vector. \end{DoxyCompactList}\item 
+const Real\+Vector \& \hyperlink{classPecos_1_1NodalInterpPolyApproximation_af0c9184d9a0da7b0e3d0d3ecbfc8f434}{stored\+\_\+gradient\+\_\+nonbasis\+\_\+variables} (const Real\+Vector \&x, size\+\_\+t index)\label{classPecos_1_1NodalInterpPolyApproximation_af0c9184d9a0da7b0e3d0d3ecbfc8f434}
+
+\begin{DoxyCompactList}\small\item\em retrieve the response gradient for a stored expansion with respect to all variables not included in the polynomial bases; evaluate for the given parameter vector. \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1NodalInterpPolyApproximation_adc6f262952d05a33ff68cae37929cbb2}{mean} ()
+\item 
+Real \hyperlink{classPecos_1_1NodalInterpPolyApproximation_aed107df248a4555c052446fbc10a8e61}{mean} (const Real\+Vector \&x)
+\item 
+const Real\+Vector \& \hyperlink{classPecos_1_1NodalInterpPolyApproximation_a069c87a26fdb4b09af68db26abd646a0}{mean\+\_\+gradient} ()
+\item 
+const Real\+Vector \& \hyperlink{classPecos_1_1NodalInterpPolyApproximation_a24f2edc21c9887121cda78faae1c1475}{mean\+\_\+gradient} (const Real\+Vector \&x, const Sizet\+Array \&dvv)
+\item 
+Real \hyperlink{classPecos_1_1NodalInterpPolyApproximation_a38f6da77468be17e02ce38af2c0976c3}{variance} ()
+\item 
+Real \hyperlink{classPecos_1_1NodalInterpPolyApproximation_acbdcb523a161d7d3a5cc190796e84ede}{variance} (const Real\+Vector \&x)
+\item 
+const Real\+Vector \& \hyperlink{classPecos_1_1NodalInterpPolyApproximation_ae898fc2f42f1077268f89fc2e9f2c71c}{variance\+\_\+gradient} ()
+\item 
+const Real\+Vector \& \hyperlink{classPecos_1_1NodalInterpPolyApproximation_a791e127a445f8a6c9c3a7966d12c1431}{variance\+\_\+gradient} (const Real\+Vector \&x, const Sizet\+Array \&dvv)
+\item 
+Real \hyperlink{classPecos_1_1NodalInterpPolyApproximation_ac0085912d4abb9caa3f480b9c6778c0e}{covariance} (\hyperlink{classPecos_1_1PolynomialApproximation}{Polynomial\+Approximation} $\ast$poly\+\_\+approx\+\_\+2)
+\item 
+Real \hyperlink{classPecos_1_1NodalInterpPolyApproximation_afc1731a3d89818d49c03a3c20a7a2898}{covariance} (const Real\+Vector \&x, \hyperlink{classPecos_1_1PolynomialApproximation}{Polynomial\+Approximation} $\ast$poly\+\_\+approx\+\_\+2)
+\item 
+void {\bfseries compute\+\_\+total\+\_\+sobol\+\_\+indices} ()\label{classPecos_1_1NodalInterpPolyApproximation_a9b445d773d12ed85eb56bb73f6d7e540}
+
+\item 
+void \hyperlink{classPecos_1_1NodalInterpPolyApproximation_a6eb2548a8c786f48478fabb6377be779}{compute\+\_\+partial\+\_\+variance} (const Bit\+Array \&set\+\_\+value)
+\item 
+Real\+Vector \hyperlink{classPecos_1_1NodalInterpPolyApproximation_ac64f16ff9fbfb80c4bafa969b4a92e1d}{approximation\+\_\+coefficients} (bool normalized) const \label{classPecos_1_1NodalInterpPolyApproximation_ac64f16ff9fbfb80c4bafa969b4a92e1d}
+
+\begin{DoxyCompactList}\small\item\em return the coefficient array computed by \hyperlink{classPecos_1_1NodalInterpPolyApproximation_aef8f0c32bdeff7756a9c614607c03058}{compute\+\_\+coefficients()} \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1NodalInterpPolyApproximation_a2e7b82322962df3fd036b9e0783d8fc9}{approximation\+\_\+coefficients} (const Real\+Vector \&approx\+\_\+coeffs, bool normalized)\label{classPecos_1_1NodalInterpPolyApproximation_a2e7b82322962df3fd036b9e0783d8fc9}
+
+\begin{DoxyCompactList}\small\item\em set the coefficient array from external sources, rather than computing with \hyperlink{classPecos_1_1NodalInterpPolyApproximation_aef8f0c32bdeff7756a9c614607c03058}{compute\+\_\+coefficients()} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classPecos_1_1NodalInterpPolyApproximation_a462bc6aefbe884d10284098edb819534}{update\+\_\+expansion\+\_\+coefficients} ()\label{classPecos_1_1NodalInterpPolyApproximation_a462bc6aefbe884d10284098edb819534}
+
+\begin{DoxyCompactList}\small\item\em update expansion\+Type\{1\+Coeffs,2\+Coeffs,1\+Coeff\+Grads\} following changes to surr\+Data \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1NodalInterpPolyApproximation_a688440d598a119d9b059aa0199886c75}{tensor\+\_\+product\+\_\+mean} (const Real\+Vector \&x, const U\+Short\+Array \&lev\+\_\+index, const U\+Short2\+D\+Array \&key, const Sizet\+Array \&colloc\+\_\+index)
+\begin{DoxyCompactList}\small\item\em compute the mean of a tensor interpolant on a tensor grid; contributes to mean(x) \end{DoxyCompactList}\item 
+const Real\+Vector \& \hyperlink{classPecos_1_1NodalInterpPolyApproximation_ac8b724a720250bb907f8828b3d2f6979}{tensor\+\_\+product\+\_\+mean\+\_\+gradient} (const Real\+Vector \&x, const U\+Short\+Array \&lev\+\_\+index, const U\+Short2\+D\+Array \&key, const Sizet\+Array \&colloc\+\_\+index, const Sizet\+Array \&dvv)
+\begin{DoxyCompactList}\small\item\em compute the gradient of the mean of a tensor interpolant on a tensor grid; contributes to mean\+\_\+gradient(x) \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1NodalInterpPolyApproximation_ad34fcf2d6c6841648fa93e0e8e6bef78}{tensor\+\_\+product\+\_\+covariance} (const Real\+Vector \&x, const U\+Short\+Array \&lev\+\_\+index, const U\+Short2\+D\+Array \&key, const Sizet\+Array \&colloc\+\_\+index, \hyperlink{classPecos_1_1NodalInterpPolyApproximation}{Nodal\+Interp\+Poly\+Approximation} $\ast$nip\+\_\+approx\+\_\+2)
+\begin{DoxyCompactList}\small\item\em compute the covariance of two tensor interpolants on the same tensor grid using an interpolation of products or product of interpolants approach; contributes to covariance(x, poly\+\_\+approx\+\_\+2) \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1NodalInterpPolyApproximation_a4f0ee291e5061aedbbd6930aa607ead7}{tensor\+\_\+product\+\_\+covariance} (const Real\+Vector \&x, const U\+Short\+Array \&lev\+\_\+index\+\_\+1, const U\+Short2\+D\+Array \&key\+\_\+1, const Sizet\+Array \&colloc\+\_\+index\+\_\+1, const U\+Short\+Array \&lev\+\_\+index\+\_\+2, const U\+Short2\+D\+Array \&key\+\_\+2, const Sizet\+Array \&colloc\+\_\+index\+\_\+2, \hyperlink{classPecos_1_1NodalInterpPolyApproximation}{Nodal\+Interp\+Poly\+Approximation} $\ast$nip\+\_\+approx\+\_\+2)
+\begin{DoxyCompactList}\small\item\em compute the covariance of two tensor interpolants on different tensor grids using a product of interpolants approach; contributes to covariance(x, poly\+\_\+approx\+\_\+2) \end{DoxyCompactList}\item 
+const Real\+Vector \& \hyperlink{classPecos_1_1NodalInterpPolyApproximation_a2e321deaf54c63212ba2d926aa0ad08d}{tensor\+\_\+product\+\_\+variance\+\_\+gradient} (const Real\+Vector \&x, const U\+Short\+Array \&lev\+\_\+index, const U\+Short2\+D\+Array \&key, const Sizet\+Array \&colloc\+\_\+index, const Sizet\+Array \&dvv)
+\begin{DoxyCompactList}\small\item\em compute the gradient of the variance of a tensor interpolant on a tensor grid using an interpolation of products or product of interpolants approach; contributes to variance\+\_\+gradient(x) \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1NodalInterpPolyApproximation_add4c66b2a8fb14693ad22751f7526b84}{value} (const Real\+Vector \&x, const Real\+Vector\+Array \&t1\+\_\+coeffs, const Real\+Matrix\+Array \&t2\+\_\+coeffs, const U\+Short3\+D\+Array \&colloc\+\_\+key, const Sizet\+List \&subset\+\_\+indices)
+\begin{DoxyCompactList}\small\item\em compute value of reduced-\/dimension interpolant \end{DoxyCompactList}\item 
+const Real\+Vector \& \hyperlink{classPecos_1_1NodalInterpPolyApproximation_ab95fcef1d7128a740285b8a8ce9071e4}{gradient\+\_\+basis\+\_\+variables} (const Real\+Vector \&x, const Real\+Vector\+Array \&t1\+\_\+coeffs, const Real\+Matrix\+Array \&t2\+\_\+coeffs, const U\+Short3\+D\+Array \&colloc\+\_\+key, const Sizet\+List \&subset\+\_\+indices)\label{classPecos_1_1NodalInterpPolyApproximation_ab95fcef1d7128a740285b8a8ce9071e4}
+
+\begin{DoxyCompactList}\small\item\em compute gradient of reduced-\/dimension interpolant with respect to basis variables \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1NodalInterpPolyApproximation_a4057786fc84fcd04ea07744a0a928b4a}{expectation} (const Real\+Vector \&t1\+\_\+coeffs, const Real\+Matrix \&t2\+\_\+coeffs)\label{classPecos_1_1NodalInterpPolyApproximation_a4057786fc84fcd04ea07744a0a928b4a}
+
+\begin{DoxyCompactList}\small\item\em compute the expected value of the interpolant given by t\{1,2\}\+\_\+coeffs using weights from the \hyperlink{classPecos_1_1CombinedSparseGridDriver}{Combined\+Sparse\+Grid\+Driver} \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1NodalInterpPolyApproximation_ae0468e01d194de5eeecc306be0e9ab4e}{expectation} (const Real\+Vector \&t1\+\_\+coeffs, const Real\+Vector \&t1\+\_\+wts, const Real\+Matrix \&t2\+\_\+coeffs, const Real\+Matrix \&t2\+\_\+wts)\label{classPecos_1_1NodalInterpPolyApproximation_ae0468e01d194de5eeecc306be0e9ab4e}
+
+\begin{DoxyCompactList}\small\item\em compute the expected value of the interpolant given by t\{1,2\}\+\_\+coeffs using t\{1,2\}\+\_\+wts \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1NodalInterpPolyApproximation_ae4a694a92e56149b20cf5b7450d3518a}{reinterpolated\+\_\+level} (const U\+Short\+Array \&lev\+\_\+index)
+\begin{DoxyCompactList}\small\item\em computes higher-\/order grid for tensor reinterpolation of the covariance fn for non-\/integrated dimensions in all\+\_\+variables mode \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1NodalInterpPolyApproximation_acabcaa681df99b0bb8f2daed023abc1b}{member\+\_\+integral} (const Bit\+Array \&member\+\_\+bits, Real \hyperlink{classPecos_1_1NodalInterpPolyApproximation_adc6f262952d05a33ff68cae37929cbb2}{mean})
+\begin{DoxyCompactList}\small\item\em compute integral for total Sobol\textquotesingle{} index for variables in a set \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1NodalInterpPolyApproximation_a141b7db5079aa372a5f8727ea856679e}{member\+\_\+coefficients\+\_\+weights} (const Bit\+Array \&member\+\_\+bits, const U\+Short\+Array \&quad\+\_\+order, const U\+Short\+Array \&lev\+\_\+index, const U\+Short2\+D\+Array \&colloc\+\_\+key, const Sizet\+Array \&colloc\+\_\+index, Real\+Vector \&member\+\_\+t1\+\_\+coeffs, Real\+Vector \&member\+\_\+t1\+\_\+wts, Real\+Matrix \&member\+\_\+t2\+\_\+coeffs, Real\+Matrix \&member\+\_\+t2\+\_\+wts, U\+Short2\+D\+Array \&member\+\_\+colloc\+\_\+key, Sizet\+Array \&member\+\_\+colloc\+\_\+index)\label{classPecos_1_1NodalInterpPolyApproximation_a141b7db5079aa372a5f8727ea856679e}
+
+\begin{DoxyCompactList}\small\item\em defines member\+\_\+coeffs and member\+\_\+wts for a particular membership set \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1NodalInterpPolyApproximation_acc8e046d91e34a5404891d6bd48aa2d0}{update\+\_\+member\+\_\+key} (const U\+Short\+Array \&data, const Sizet\+List \&member\+\_\+indices, U\+Short\+Array \&member\+\_\+map\+\_\+key, size\+\_\+t cntr)\label{classPecos_1_1NodalInterpPolyApproximation_acc8e046d91e34a5404891d6bd48aa2d0}
+
+\begin{DoxyCompactList}\small\item\em create a unique map key for \hyperlink{classPecos_1_1NodalInterpPolyApproximation_a7bc9dcdf32fc46f97e286268c1ac51b0}{value()} and \hyperlink{classPecos_1_1PolynomialApproximation_a42bf374bf23c32c941ee2acae5ad56a4}{gradient()} calculation reuse \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Real\+Vector \hyperlink{classPecos_1_1NodalInterpPolyApproximation_ae8d5859e28682d657aecfb767cd45468}{expansion\+Type1\+Coeffs}\label{classPecos_1_1NodalInterpPolyApproximation_ae8d5859e28682d657aecfb767cd45468}
+
+\begin{DoxyCompactList}\small\item\em the type1 coefficients of the expansion for interpolating values \end{DoxyCompactList}\item 
+Real\+Matrix \hyperlink{classPecos_1_1NodalInterpPolyApproximation_a869953a9afd97641609b85ae03f016f6}{expansion\+Type2\+Coeffs}\label{classPecos_1_1NodalInterpPolyApproximation_a869953a9afd97641609b85ae03f016f6}
+
+\begin{DoxyCompactList}\small\item\em the type2 coefficients of the expansion for interpolating gradients \end{DoxyCompactList}\item 
+Real\+Matrix \hyperlink{classPecos_1_1NodalInterpPolyApproximation_af95aafb683b36750f8e24fb858cbe8b2}{expansion\+Type1\+Coeff\+Grads}
+\begin{DoxyCompactList}\small\item\em the gradients of the type1 expansion coefficients \end{DoxyCompactList}\item 
+Real\+Vector\+Array \hyperlink{classPecos_1_1NodalInterpPolyApproximation_a26b078979062892ab4016332d295d79f}{stored\+Exp\+Type1\+Coeffs}\label{classPecos_1_1NodalInterpPolyApproximation_a26b078979062892ab4016332d295d79f}
+
+\begin{DoxyCompactList}\small\item\em copies of expansion\+Type1\+Coeffs state for subsequent restoration \end{DoxyCompactList}\item 
+Real\+Matrix\+Array \hyperlink{classPecos_1_1NodalInterpPolyApproximation_ab19d3902112d6229965c9e77e1d88cca}{stored\+Exp\+Type2\+Coeffs}\label{classPecos_1_1NodalInterpPolyApproximation_ab19d3902112d6229965c9e77e1d88cca}
+
+\begin{DoxyCompactList}\small\item\em copies of expansion\+Type2\+Coeffs state for subsequent restoration \end{DoxyCompactList}\item 
+Real\+Matrix\+Array \hyperlink{classPecos_1_1NodalInterpPolyApproximation_a8dc2b2f98351f6761016c72f97a85757}{stored\+Exp\+Type1\+Coeff\+Grads}\label{classPecos_1_1NodalInterpPolyApproximation_a8dc2b2f98351f6761016c72f97a85757}
+
+\begin{DoxyCompactList}\small\item\em copies of expansion\+Type1\+Coeff\+Grads state for subsequent restoration \end{DoxyCompactList}\item 
+Real\+Vector \hyperlink{classPecos_1_1NodalInterpPolyApproximation_abe4e2e7034cc34287a55bc222635c275}{tp\+Mean\+Grad}\label{classPecos_1_1NodalInterpPolyApproximation_abe4e2e7034cc34287a55bc222635c275}
+
+\begin{DoxyCompactList}\small\item\em the gradient of the mean of a tensor-\/product interpolant; a contributor to mean\+Gradient \end{DoxyCompactList}\item 
+Real\+Vector \hyperlink{classPecos_1_1NodalInterpPolyApproximation_ae2ca11b7c6367e7601a2c3e6430fe8c0}{tp\+Variance\+Grad}\label{classPecos_1_1NodalInterpPolyApproximation_ae2ca11b7c6367e7601a2c3e6430fe8c0}
+
+\begin{DoxyCompactList}\small\item\em the gradient of the variance of a tensor-\/product interpolant; a contributor to variance\+Gradient \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Derived approximation class for nodal interpolation polynomials (global approximation interpolating function values and potentially gradients at collocation points). 
+
+The \hyperlink{classPecos_1_1NodalInterpPolyApproximation}{Nodal\+Interp\+Poly\+Approximation} class provides a global polynomial approximation based on either Lagrange or Hermite interpolation polynomials using a nodal basis approach. It is used primarily for stochastic collocation approaches to uncertainty quantification. 
+
+\subsection{Member Function Documentation}
+\index{Pecos\+::\+Nodal\+Interp\+Poly\+Approximation@{Pecos\+::\+Nodal\+Interp\+Poly\+Approximation}!gradient\+\_\+basis\+\_\+variables@{gradient\+\_\+basis\+\_\+variables}}
+\index{gradient\+\_\+basis\+\_\+variables@{gradient\+\_\+basis\+\_\+variables}!Pecos\+::\+Nodal\+Interp\+Poly\+Approximation@{Pecos\+::\+Nodal\+Interp\+Poly\+Approximation}}
+\subsubsection[{\texorpdfstring{gradient\+\_\+basis\+\_\+variables(const Real\+Vector \&x, const Sizet\+Array \&dvv)}{gradient_basis_variables(const RealVector &x, const SizetArray &dvv)}}]{\setlength{\rightskip}{0pt plus 5cm}const Real\+Vector \& gradient\+\_\+basis\+\_\+variables (
+\begin{DoxyParamCaption}
+\item[{const Real\+Vector \&}]{x, }
+\item[{const Sizet\+Array \&}]{dvv}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classPecos_1_1NodalInterpPolyApproximation_a3ffb563ae1658344bfc2ad882def9e7c}
+Special case used for sparse grid interpolation on variable sub-\/sets defined from partial integration. 
+
+Implements \hyperlink{classPecos_1_1PolynomialApproximation_acbdc4eeec56540a31e44ca2df5414ffd}{Polynomial\+Approximation}.
+
+
+
+References Polynomial\+Approximation\+::approx\+Gradient, Combined\+Sparse\+Grid\+Driver\+::collocation\+\_\+indices(), Tensor\+Product\+Driver\+::collocation\+\_\+key(), Combined\+Sparse\+Grid\+Driver\+::collocation\+\_\+key(), Shared\+Nodal\+Interp\+Poly\+Approx\+Data\+::csg\+\_\+driver(), Polynomial\+Approximation\+::expansion\+Coeff\+Flag, Nodal\+Interp\+Poly\+Approximation\+::expansion\+Type1\+Coeffs, Nodal\+Interp\+Poly\+Approximation\+::expansion\+Type2\+Coeffs, Expansion\+Config\+Options\+::exp\+Coeffs\+Soln\+Approach, Shared\+Poly\+Approx\+Data\+::exp\+Config\+Options, Nodal\+Interp\+Poly\+Approximation\+::gradient\+\_\+nonbasis\+\_\+variables(), Tensor\+Product\+Driver\+::level\+\_\+index(), Basis\+Approximation\+::shared\+Data\+Rep, Combined\+Sparse\+Grid\+Driver\+::smolyak\+\_\+coefficients(), Combined\+Sparse\+Grid\+Driver\+::smolyak\+\_\+multi\+\_\+index(), and Shared\+Nodal\+Interp\+Poly\+Approx\+Data\+::tpq\+\_\+driver().
+
+\index{Pecos\+::\+Nodal\+Interp\+Poly\+Approximation@{Pecos\+::\+Nodal\+Interp\+Poly\+Approximation}!mean@{mean}}
+\index{mean@{mean}!Pecos\+::\+Nodal\+Interp\+Poly\+Approximation@{Pecos\+::\+Nodal\+Interp\+Poly\+Approximation}}
+\subsubsection[{\texorpdfstring{mean()}{mean()}}]{\setlength{\rightskip}{0pt plus 5cm}Real mean (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classPecos_1_1NodalInterpPolyApproximation_adc6f262952d05a33ff68cae37929cbb2}
+In this case, all expansion variables are random variables and the mean of the expansion is simply the sum over i of r\+\_\+i w\+\_\+i. 
+
+Implements \hyperlink{classPecos_1_1PolynomialApproximation_ae748f0525197363b2279cd36511fb791}{Polynomial\+Approximation}.
+
+
+
+References Polynomial\+Approximation\+::computed\+Mean, Polynomial\+Approximation\+::expansion\+Coeff\+Flag, Nodal\+Interp\+Poly\+Approximation\+::expansion\+Type1\+Coeffs, Nodal\+Interp\+Poly\+Approximation\+::expansion\+Type2\+Coeffs, Nodal\+Interp\+Poly\+Approximation\+::expectation(), Shared\+Poly\+Approx\+Data\+::non\+Random\+Indices, Polynomial\+Approximation\+::numerical\+Moments, and Basis\+Approximation\+::shared\+Data\+Rep.
+
+
+
+Referenced by Nodal\+Interp\+Poly\+Approximation\+::compute\+\_\+partial\+\_\+variance(), Nodal\+Interp\+Poly\+Approximation\+::covariance(), Nodal\+Interp\+Poly\+Approximation\+::mean(), Nodal\+Interp\+Poly\+Approximation\+::member\+\_\+integral(), Nodal\+Interp\+Poly\+Approximation\+::tensor\+\_\+product\+\_\+covariance(), Nodal\+Interp\+Poly\+Approximation\+::tensor\+\_\+product\+\_\+variance\+\_\+gradient(), and Nodal\+Interp\+Poly\+Approximation\+::variance\+\_\+gradient().
+
+\index{Pecos\+::\+Nodal\+Interp\+Poly\+Approximation@{Pecos\+::\+Nodal\+Interp\+Poly\+Approximation}!mean@{mean}}
+\index{mean@{mean}!Pecos\+::\+Nodal\+Interp\+Poly\+Approximation@{Pecos\+::\+Nodal\+Interp\+Poly\+Approximation}}
+\subsubsection[{\texorpdfstring{mean(const Real\+Vector \&x)}{mean(const RealVector &x)}}]{\setlength{\rightskip}{0pt plus 5cm}Real mean (
+\begin{DoxyParamCaption}
+\item[{const Real\+Vector \&}]{x}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classPecos_1_1NodalInterpPolyApproximation_aed107df248a4555c052446fbc10a8e61}
+In this case, a subset of the expansion variables are random variables and the mean of the expansion involves integration over this subset and evaluation over the subset\textquotesingle{}s complement. For the linear sums of tensor interpolants within a sparse interpolant, the expectation can be taken inside the sum and we can simply add up the tensor mean contributions. 
+
+Implements \hyperlink{classPecos_1_1PolynomialApproximation_a69da68e2a4dd4b51439150ebfe4dc239}{Polynomial\+Approximation}.
+
+
+
+References Combined\+Sparse\+Grid\+Driver\+::collocation\+\_\+indices(), Tensor\+Product\+Driver\+::collocation\+\_\+key(), Combined\+Sparse\+Grid\+Driver\+::collocation\+\_\+key(), Polynomial\+Approximation\+::computed\+Mean, Shared\+Nodal\+Interp\+Poly\+Approx\+Data\+::csg\+\_\+driver(), Expansion\+Config\+Options\+::exp\+Coeffs\+Soln\+Approach, Shared\+Poly\+Approx\+Data\+::exp\+Config\+Options, Tensor\+Product\+Driver\+::level\+\_\+index(), Shared\+Poly\+Approx\+Data\+::match\+\_\+nonrandom\+\_\+vars(), Nodal\+Interp\+Poly\+Approximation\+::mean(), Shared\+Poly\+Approx\+Data\+::non\+Random\+Indices, Polynomial\+Approximation\+::numerical\+Moments, Basis\+Approximation\+::shared\+Data\+Rep, Combined\+Sparse\+Grid\+Driver\+::smolyak\+\_\+coefficients(), Combined\+Sparse\+Grid\+Driver\+::smolyak\+\_\+multi\+\_\+index(), Nodal\+Interp\+Poly\+Approximation\+::tensor\+\_\+product\+\_\+mean(), Shared\+Nodal\+Interp\+Poly\+Approx\+Data\+::tpq\+\_\+driver(), and Polynomial\+Approximation\+::x\+Prev\+Mean.
+
+\index{Pecos\+::\+Nodal\+Interp\+Poly\+Approximation@{Pecos\+::\+Nodal\+Interp\+Poly\+Approximation}!mean\+\_\+gradient@{mean\+\_\+gradient}}
+\index{mean\+\_\+gradient@{mean\+\_\+gradient}!Pecos\+::\+Nodal\+Interp\+Poly\+Approximation@{Pecos\+::\+Nodal\+Interp\+Poly\+Approximation}}
+\subsubsection[{\texorpdfstring{mean\+\_\+gradient()}{mean_gradient()}}]{\setlength{\rightskip}{0pt plus 5cm}const Real\+Vector \& mean\+\_\+gradient (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classPecos_1_1NodalInterpPolyApproximation_a069c87a26fdb4b09af68db26abd646a0}
+In this function, all expansion variables are random variables and any design/state variables are omitted from the expansion. In this case, the derivative of the expectation is the expectation of the derivative. The mixed derivative case (some design variables are inserted and some are augmented) requires no special treatment. 
+
+Implements \hyperlink{classPecos_1_1PolynomialApproximation_abcb01df2fc2d4c44bab6b56ad7def50c}{Polynomial\+Approximation}.
+
+
+
+References Polynomial\+Approximation\+::computed\+Mean, Shared\+Poly\+Approx\+Data\+::driver\+Rep, Polynomial\+Approximation\+::expansion\+Coeff\+Grad\+Flag, Nodal\+Interp\+Poly\+Approximation\+::expansion\+Type1\+Coeff\+Grads, Polynomial\+Approximation\+::mean\+Gradient, Shared\+Poly\+Approx\+Data\+::non\+Random\+Indices, Basis\+Approximation\+::shared\+Data\+Rep, and Integration\+Driver\+::type1\+\_\+weight\+\_\+sets().
+
+
+
+Referenced by Nodal\+Interp\+Poly\+Approximation\+::tensor\+\_\+product\+\_\+variance\+\_\+gradient().
+
+\index{Pecos\+::\+Nodal\+Interp\+Poly\+Approximation@{Pecos\+::\+Nodal\+Interp\+Poly\+Approximation}!mean\+\_\+gradient@{mean\+\_\+gradient}}
+\index{mean\+\_\+gradient@{mean\+\_\+gradient}!Pecos\+::\+Nodal\+Interp\+Poly\+Approximation@{Pecos\+::\+Nodal\+Interp\+Poly\+Approximation}}
+\subsubsection[{\texorpdfstring{mean\+\_\+gradient(const Real\+Vector \&x, const Sizet\+Array \&dvv)}{mean_gradient(const RealVector &x, const SizetArray &dvv)}}]{\setlength{\rightskip}{0pt plus 5cm}const Real\+Vector \& mean\+\_\+gradient (
+\begin{DoxyParamCaption}
+\item[{const Real\+Vector \&}]{x, }
+\item[{const Sizet\+Array \&}]{dvv}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classPecos_1_1NodalInterpPolyApproximation_a24f2edc21c9887121cda78faae1c1475}
+In this function, a subset of the expansion variables are random variables and any augmented design/state variables (i.\+e., not inserted as random variable distribution parameters) are included in the expansion. In this case, the mean of the expansion is the expectation over the random subset and the derivative of the mean is the derivative of the remaining expansion over the non-\/random subset. This function must handle the mixed case, where some design/state variables are augmented (and are part of the expansion\+: derivatives are evaluated as described above) and some are inserted (derivatives are obtained from expansion\+Type1\+Coeff\+Grads). For the linear sums of tensor interpolants within a sparse interpolant, the expectation can be taken inside the sum and we can simply add up the tensor mean gradient contributions. 
+
+Implements \hyperlink{classPecos_1_1PolynomialApproximation_a941461d09fc3c204012a12ceda5cfdde}{Polynomial\+Approximation}.
+
+
+
+References Combined\+Sparse\+Grid\+Driver\+::collocation\+\_\+indices(), Tensor\+Product\+Driver\+::collocation\+\_\+key(), Combined\+Sparse\+Grid\+Driver\+::collocation\+\_\+key(), Polynomial\+Approximation\+::computed\+Mean, Nodal\+Interp\+Poly\+Approximation\+::covariance(), Shared\+Nodal\+Interp\+Poly\+Approx\+Data\+::csg\+\_\+driver(), Expansion\+Config\+Options\+::exp\+Coeffs\+Soln\+Approach, Shared\+Poly\+Approx\+Data\+::exp\+Config\+Options, Tensor\+Product\+Driver\+::level\+\_\+index(), Shared\+Poly\+Approx\+Data\+::match\+\_\+nonrandom\+\_\+vars(), Polynomial\+Approximation\+::mean\+Gradient, Shared\+Poly\+Approx\+Data\+::non\+Random\+Indices, Basis\+Approximation\+::shared\+Data\+Rep, Combined\+Sparse\+Grid\+Driver\+::smolyak\+\_\+coefficients(), Combined\+Sparse\+Grid\+Driver\+::smolyak\+\_\+multi\+\_\+index(), Nodal\+Interp\+Poly\+Approximation\+::tensor\+\_\+product\+\_\+mean\+\_\+gradient(), Nodal\+Interp\+Poly\+Approximation\+::tp\+Mean\+Grad, Shared\+Nodal\+Interp\+Poly\+Approx\+Data\+::tpq\+\_\+driver(), and Polynomial\+Approximation\+::x\+Prev\+Mean\+Grad.
+
+\index{Pecos\+::\+Nodal\+Interp\+Poly\+Approximation@{Pecos\+::\+Nodal\+Interp\+Poly\+Approximation}!variance@{variance}}
+\index{variance@{variance}!Pecos\+::\+Nodal\+Interp\+Poly\+Approximation@{Pecos\+::\+Nodal\+Interp\+Poly\+Approximation}}
+\subsubsection[{\texorpdfstring{variance()}{variance()}}]{\setlength{\rightskip}{0pt plus 5cm}Real variance (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classPecos_1_1NodalInterpPolyApproximation_a38f6da77468be17e02ce38af2c0976c3}
+In this case, all expansion variables are random variables and the variance of the expansion uses an interpolation of response products. 
+
+Implements \hyperlink{classPecos_1_1PolynomialApproximation_ac20ad205d017d71c3c6b209c1dfafe6f}{Polynomial\+Approximation}.
+
+
+
+References Nodal\+Interp\+Poly\+Approximation\+::covariance().
+
+
+
+Referenced by Nodal\+Interp\+Poly\+Approximation\+::compute\+\_\+partial\+\_\+variance().
+
+\index{Pecos\+::\+Nodal\+Interp\+Poly\+Approximation@{Pecos\+::\+Nodal\+Interp\+Poly\+Approximation}!variance@{variance}}
+\index{variance@{variance}!Pecos\+::\+Nodal\+Interp\+Poly\+Approximation@{Pecos\+::\+Nodal\+Interp\+Poly\+Approximation}}
+\subsubsection[{\texorpdfstring{variance(const Real\+Vector \&x)}{variance(const RealVector &x)}}]{\setlength{\rightskip}{0pt plus 5cm}Real variance (
+\begin{DoxyParamCaption}
+\item[{const Real\+Vector \&}]{x}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classPecos_1_1NodalInterpPolyApproximation_acbdcb523a161d7d3a5cc190796e84ede}
+In this case, a subset of the expansion variables are random variables and the variance of the expansion involves integration over this subset and evaluation over the subset\textquotesingle{}s complement. 
+
+Implements \hyperlink{classPecos_1_1PolynomialApproximation_aa605184b6960045162f94a4f0302d95e}{Polynomial\+Approximation}.
+
+
+
+References Nodal\+Interp\+Poly\+Approximation\+::covariance(), and Nodal\+Interp\+Poly\+Approximation\+::expectation().
+
+\index{Pecos\+::\+Nodal\+Interp\+Poly\+Approximation@{Pecos\+::\+Nodal\+Interp\+Poly\+Approximation}!variance\+\_\+gradient@{variance\+\_\+gradient}}
+\index{variance\+\_\+gradient@{variance\+\_\+gradient}!Pecos\+::\+Nodal\+Interp\+Poly\+Approximation@{Pecos\+::\+Nodal\+Interp\+Poly\+Approximation}}
+\subsubsection[{\texorpdfstring{variance\+\_\+gradient()}{variance_gradient()}}]{\setlength{\rightskip}{0pt plus 5cm}const Real\+Vector \& variance\+\_\+gradient (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classPecos_1_1NodalInterpPolyApproximation_ae898fc2f42f1077268f89fc2e9f2c71c}
+In this function, all expansion variables are random variables and any design/state variables are omitted from the expansion. The mixed derivative case (some design/epistemic variables are inserted and some are augmented) requires no special treatment. Since we reinterpolate the central products (I\+N\+T\+E\+R\+P\+O\+L\+A\+T\+I\+O\+N\+\_\+\+O\+F\+\_\+\+P\+R\+O\+D\+U\+C\+TS is the only option for the standard expansion mode) such that we retain the linear sums of tensor interpolants within a sparse interpolant, the expectation gradient simply involves a summation over the sparse integration weights. 
+
+Implements \hyperlink{classPecos_1_1PolynomialApproximation_a9d096037fca9bfcc8af60186bf6e914f}{Polynomial\+Approximation}.
+
+
+
+References Polynomial\+Approximation\+::computed\+Variance, Shared\+Poly\+Approx\+Data\+::driver\+Rep, Polynomial\+Approximation\+::expansion\+Coeff\+Flag, Polynomial\+Approximation\+::expansion\+Coeff\+Grad\+Flag, Nodal\+Interp\+Poly\+Approximation\+::expansion\+Type1\+Coeff\+Grads, Nodal\+Interp\+Poly\+Approximation\+::expansion\+Type1\+Coeffs, Nodal\+Interp\+Poly\+Approximation\+::mean(), Shared\+Poly\+Approx\+Data\+::non\+Random\+Indices, Basis\+Approximation\+::shared\+Data\+Rep, Integration\+Driver\+::type1\+\_\+weight\+\_\+sets(), and Polynomial\+Approximation\+::variance\+Gradient.
+
+\index{Pecos\+::\+Nodal\+Interp\+Poly\+Approximation@{Pecos\+::\+Nodal\+Interp\+Poly\+Approximation}!variance\+\_\+gradient@{variance\+\_\+gradient}}
+\index{variance\+\_\+gradient@{variance\+\_\+gradient}!Pecos\+::\+Nodal\+Interp\+Poly\+Approximation@{Pecos\+::\+Nodal\+Interp\+Poly\+Approximation}}
+\subsubsection[{\texorpdfstring{variance\+\_\+gradient(const Real\+Vector \&x, const Sizet\+Array \&dvv)}{variance_gradient(const RealVector &x, const SizetArray &dvv)}}]{\setlength{\rightskip}{0pt plus 5cm}const Real\+Vector \& variance\+\_\+gradient (
+\begin{DoxyParamCaption}
+\item[{const Real\+Vector \&}]{x, }
+\item[{const Sizet\+Array \&}]{dvv}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classPecos_1_1NodalInterpPolyApproximation_a791e127a445f8a6c9c3a7966d12c1431}
+In this function, a subset of the expansion variables are random variables and any augmented design/state variables (i.\+e., not inserted as random variable distribution parameters) are included in the expansion. This function must handle the mixed case, where some design/state variables are augmented (and are part of the expansion) and some are inserted (derivatives are obtained from expansion\+Type1\+Coeff\+Grads). 
+
+Implements \hyperlink{classPecos_1_1PolynomialApproximation_a1222664e145d8077eea75bfff3aca15a}{Polynomial\+Approximation}.
+
+
+
+References Combined\+Sparse\+Grid\+Driver\+::collocation\+\_\+indices(), Tensor\+Product\+Driver\+::collocation\+\_\+key(), Combined\+Sparse\+Grid\+Driver\+::collocation\+\_\+key(), Polynomial\+Approximation\+::computed\+Variance, Shared\+Nodal\+Interp\+Poly\+Approx\+Data\+::csg\+\_\+driver(), Expansion\+Config\+Options\+::exp\+Coeffs\+Soln\+Approach, Shared\+Poly\+Approx\+Data\+::exp\+Config\+Options, Nodal\+Interp\+Poly\+Approximation\+::expectation(), Tensor\+Product\+Driver\+::level\+\_\+index(), Shared\+Poly\+Approx\+Data\+::match\+\_\+nonrandom\+\_\+vars(), Shared\+Nodal\+Interp\+Poly\+Approx\+Data\+::moment\+Interp\+Type, Shared\+Poly\+Approx\+Data\+::non\+Random\+Indices, Nodal\+Interp\+Poly\+Approximation\+::reinterpolated\+\_\+level(), Basis\+Approximation\+::shared\+Data\+Rep, Combined\+Sparse\+Grid\+Driver\+::smolyak\+\_\+coefficients(), Combined\+Sparse\+Grid\+Driver\+::smolyak\+\_\+multi\+\_\+index(), Nodal\+Interp\+Poly\+Approximation\+::tensor\+\_\+product\+\_\+variance\+\_\+gradient(), Shared\+Nodal\+Interp\+Poly\+Approx\+Data\+::tpq\+\_\+driver(), Nodal\+Interp\+Poly\+Approximation\+::tp\+Variance\+Grad, Polynomial\+Approximation\+::variance\+Gradient, and Polynomial\+Approximation\+::x\+Prev\+Var\+Grad.
+
+\index{Pecos\+::\+Nodal\+Interp\+Poly\+Approximation@{Pecos\+::\+Nodal\+Interp\+Poly\+Approximation}!covariance@{covariance}}
+\index{covariance@{covariance}!Pecos\+::\+Nodal\+Interp\+Poly\+Approximation@{Pecos\+::\+Nodal\+Interp\+Poly\+Approximation}}
+\subsubsection[{\texorpdfstring{covariance(\+Polynomial\+Approximation $\ast$poly\+\_\+approx\+\_\+2)}{covariance(PolynomialApproximation *poly_approx_2)}}]{\setlength{\rightskip}{0pt plus 5cm}Real covariance (
+\begin{DoxyParamCaption}
+\item[{{\bf Polynomial\+Approximation} $\ast$}]{poly\+\_\+approx\+\_\+2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classPecos_1_1NodalInterpPolyApproximation_ac0085912d4abb9caa3f480b9c6778c0e}
+In this case, all expansion variables are random variables and the variance of the expansion uses an interpolation of central products (I\+N\+T\+E\+R\+P\+O\+L\+A\+T\+I\+O\+N\+\_\+\+O\+F\+\_\+\+P\+R\+O\+D\+U\+C\+TS is the only option for the standard expansion mode). Since we reinterpolate the central products such that we retain the linear sums of tensor interpolants within a sparse interpolant, the expectation simply involves a summation over the sparse integration weights. 
+
+Implements \hyperlink{classPecos_1_1PolynomialApproximation_a7e3e8ebdd9b22e460cc4c97528b5c2e2}{Polynomial\+Approximation}.
+
+
+
+References Shared\+Poly\+Approx\+Data\+::basis\+Config\+Options, Polynomial\+Approximation\+::computed\+Variance, Shared\+Poly\+Approx\+Data\+::driver\+Rep, Polynomial\+Approximation\+::expansion\+Coeff\+Flag, Nodal\+Interp\+Poly\+Approximation\+::expansion\+Type1\+Coeffs, Nodal\+Interp\+Poly\+Approximation\+::expansion\+Type2\+Coeffs, Nodal\+Interp\+Poly\+Approximation\+::mean(), Shared\+Poly\+Approx\+Data\+::non\+Random\+Indices, Polynomial\+Approximation\+::numerical\+Moments, Shared\+Basis\+Approx\+Data\+::num\+Vars, Basis\+Approximation\+::shared\+Data\+Rep, Integration\+Driver\+::type1\+\_\+weight\+\_\+sets(), Integration\+Driver\+::type2\+\_\+weight\+\_\+sets(), and Basis\+Config\+Options\+::use\+Derivs.
+
+
+
+Referenced by Nodal\+Interp\+Poly\+Approximation\+::mean\+\_\+gradient(), and Nodal\+Interp\+Poly\+Approximation\+::variance().
+
+\index{Pecos\+::\+Nodal\+Interp\+Poly\+Approximation@{Pecos\+::\+Nodal\+Interp\+Poly\+Approximation}!covariance@{covariance}}
+\index{covariance@{covariance}!Pecos\+::\+Nodal\+Interp\+Poly\+Approximation@{Pecos\+::\+Nodal\+Interp\+Poly\+Approximation}}
+\subsubsection[{\texorpdfstring{covariance(const Real\+Vector \&x, Polynomial\+Approximation $\ast$poly\+\_\+approx\+\_\+2)}{covariance(const RealVector &x, PolynomialApproximation *poly_approx_2)}}]{\setlength{\rightskip}{0pt plus 5cm}Real covariance (
+\begin{DoxyParamCaption}
+\item[{const Real\+Vector \&}]{x, }
+\item[{{\bf Polynomial\+Approximation} $\ast$}]{poly\+\_\+approx\+\_\+2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classPecos_1_1NodalInterpPolyApproximation_afc1731a3d89818d49c03a3c20a7a2898}
+In this case, a subset of the expansion variables are random variables and the variance of the expansion involves integration over this subset. Three cases are at least partially implemented (type 2 covariance contributions are not currently implemented for P\+R\+O\+D\+U\+C\+T\+\_\+\+O\+F\+\_\+\+I\+N\+T\+E\+R\+P\+O\+L\+A\+N\+TS approaches, and \hyperlink{classPecos_1_1NodalInterpPolyApproximation_ae898fc2f42f1077268f89fc2e9f2c71c}{variance\+\_\+gradient()} is not implemented for P\+R\+O\+D\+U\+C\+T\+\_\+\+O\+F\+\_\+\+I\+N\+T\+E\+R\+P\+O\+L\+A\+N\+T\+S\+\_\+\+F\+U\+LL)\+: (1) R\+E\+I\+N\+T\+E\+R\+P\+O\+L\+A\+T\+I\+O\+N\+\_\+\+O\+F\+\_\+\+P\+R\+O\+D\+U\+C\+TS\+: (R-\/)$^\wedge$2 is (re)interpolated, allowing sparse grid covariance to use a linear sum of tensor contributions. This is most consistent with covariance for the standard variables mode. The penalty is that the reinterpolated function is higher order. (1) I\+N\+T\+E\+R\+P\+O\+L\+A\+T\+I\+O\+N\+\_\+\+O\+F\+\_\+\+P\+R\+O\+D\+U\+C\+TS\+: (R-\/)$^\wedge$2 is interpolated, allowing sparse grid covariance to use a linear sum of tensor contributions. This is most consistent with covariance for the standard variables mode. (2) P\+R\+O\+D\+U\+C\+T\+\_\+\+O\+F\+\_\+\+I\+N\+T\+E\+R\+P\+O\+L\+A\+N\+T\+S\+\_\+\+F\+A\+ST\+: the covariance of the existing sparse interpolant is computed without reinterpolation, but only the individual covariances from matching tensor grids are included. Covariance from mismatched tensor grids is neglected, and the mean reference values are individual tensor means, not the \char`\"{}total\char`\"{} mean. Due to some fortuitous cancellations in the Smolyak construction that have not been fully analyzed, this shortcut/fast approach is often quite accurate. (3) P\+R\+O\+D\+U\+C\+T\+\_\+\+O\+F\+\_\+\+I\+N\+T\+E\+R\+P\+O\+L\+A\+N\+T\+S\+\_\+\+F\+U\+LL\+: the covariance of the existing sparse interpolant is computed without reinterpolation, the sparse covariance among all tensor grid combinations is included, and the total mean is used as the reference value for all products. The covariance among mismatched tensor grids requires the evaluation of expectations of mismatched interpolation polynomials (matched order basis polynomials admit a Kronecker delta simplification). This option has been the most accurate in testing but, despite attempts at pre-\/computation and fast lookup of these products, has been too expensive for large grids. 
+
+Implements \hyperlink{classPecos_1_1PolynomialApproximation_ac510eafe010d3ae6b6d4d4c296ae3f8b}{Polynomial\+Approximation}.
+
+
+
+References Combined\+Sparse\+Grid\+Driver\+::collocation\+\_\+indices(), Tensor\+Product\+Driver\+::collocation\+\_\+key(), Combined\+Sparse\+Grid\+Driver\+::collocation\+\_\+key(), Polynomial\+Approximation\+::computed\+Variance, Shared\+Nodal\+Interp\+Poly\+Approx\+Data\+::csg\+\_\+driver(), Polynomial\+Approximation\+::expansion\+Coeff\+Flag, Expansion\+Config\+Options\+::exp\+Coeffs\+Soln\+Approach, Shared\+Poly\+Approx\+Data\+::exp\+Config\+Options, Tensor\+Product\+Driver\+::level\+\_\+index(), Shared\+Poly\+Approx\+Data\+::match\+\_\+nonrandom\+\_\+vars(), Shared\+Nodal\+Interp\+Poly\+Approx\+Data\+::moment\+Interp\+Type, Shared\+Poly\+Approx\+Data\+::non\+Random\+Indices, Polynomial\+Approximation\+::numerical\+Moments, Nodal\+Interp\+Poly\+Approximation\+::reinterpolated\+\_\+level(), Basis\+Approximation\+::shared\+Data\+Rep, Combined\+Sparse\+Grid\+Driver\+::smolyak\+\_\+coefficients(), Combined\+Sparse\+Grid\+Driver\+::smolyak\+\_\+multi\+\_\+index(), Nodal\+Interp\+Poly\+Approximation\+::tensor\+\_\+product\+\_\+covariance(), Shared\+Nodal\+Interp\+Poly\+Approx\+Data\+::tpq\+\_\+driver(), Shared\+Nodal\+Interp\+Poly\+Approx\+Data\+::update\+\_\+nonzero\+\_\+basis\+\_\+products(), and Polynomial\+Approximation\+::x\+Prev\+Var.
+
+\index{Pecos\+::\+Nodal\+Interp\+Poly\+Approximation@{Pecos\+::\+Nodal\+Interp\+Poly\+Approximation}!compute\+\_\+partial\+\_\+variance@{compute\+\_\+partial\+\_\+variance}}
+\index{compute\+\_\+partial\+\_\+variance@{compute\+\_\+partial\+\_\+variance}!Pecos\+::\+Nodal\+Interp\+Poly\+Approximation@{Pecos\+::\+Nodal\+Interp\+Poly\+Approximation}}
+\subsubsection[{\texorpdfstring{compute\+\_\+partial\+\_\+variance(const Bit\+Array \&set\+\_\+value)}{compute_partial_variance(const BitArray &set_value)}}]{\setlength{\rightskip}{0pt plus 5cm}void compute\+\_\+partial\+\_\+variance (
+\begin{DoxyParamCaption}
+\item[{const Bit\+Array \&}]{set\+\_\+value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classPecos_1_1NodalInterpPolyApproximation_a6eb2548a8c786f48478fabb6377be779}
+Computes the variance of component functions. Assumes that all subsets of set\+\_\+value have been computed in advance which will be true so long as the partial\+\_\+variance is called following appropriate enumeration of set value 
+
+Reimplemented from \hyperlink{classPecos_1_1InterpPolyApproximation_a6eb2548a8c786f48478fabb6377be779}{Interp\+Poly\+Approximation}.
+
+
+
+References Interp\+Poly\+Approximation\+::compute\+\_\+partial\+\_\+variance(), Nodal\+Interp\+Poly\+Approximation\+::mean(), Nodal\+Interp\+Poly\+Approximation\+::member\+\_\+integral(), Shared\+Basis\+Approx\+Data\+::num\+Vars, Interp\+Poly\+Approximation\+::partial\+Variance, Basis\+Approximation\+::shared\+Data\+Rep, Shared\+Poly\+Approx\+Data\+::sobol\+Index\+Map, Polynomial\+Approximation\+::total\+Sobol\+Indices, and Nodal\+Interp\+Poly\+Approximation\+::variance().
+
+
+
+Referenced by Nodal\+Interp\+Poly\+Approximation\+::integrate\+\_\+expansion\+\_\+moments().
+
+\index{Pecos\+::\+Nodal\+Interp\+Poly\+Approximation@{Pecos\+::\+Nodal\+Interp\+Poly\+Approximation}!tensor\+\_\+product\+\_\+mean@{tensor\+\_\+product\+\_\+mean}}
+\index{tensor\+\_\+product\+\_\+mean@{tensor\+\_\+product\+\_\+mean}!Pecos\+::\+Nodal\+Interp\+Poly\+Approximation@{Pecos\+::\+Nodal\+Interp\+Poly\+Approximation}}
+\subsubsection[{\texorpdfstring{tensor\+\_\+product\+\_\+mean(const Real\+Vector \&x, const U\+Short\+Array \&lev\+\_\+index, const U\+Short2\+D\+Array \&key, const Sizet\+Array \&colloc\+\_\+index)}{tensor_product_mean(const RealVector &x, const UShortArray &lev_index, const UShort2DArray &key, const SizetArray &colloc_index)}}]{\setlength{\rightskip}{0pt plus 5cm}Real tensor\+\_\+product\+\_\+mean (
+\begin{DoxyParamCaption}
+\item[{const Real\+Vector \&}]{x, }
+\item[{const U\+Short\+Array \&}]{lev\+\_\+index, }
+\item[{const U\+Short2\+D\+Array \&}]{key, }
+\item[{const Sizet\+Array \&}]{colloc\+\_\+index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classPecos_1_1NodalInterpPolyApproximation_a688440d598a119d9b059aa0199886c75}
+
+
+compute the mean of a tensor interpolant on a tensor grid; contributes to mean(x) 
+
+Overloaded all\+\_\+variables version supporting Smolyak sparse grids. 
+
+References Shared\+Nodal\+Interp\+Poly\+Approx\+Data\+::accumulate\+\_\+barycentric(), Shared\+Nodal\+Interp\+Poly\+Approx\+Data\+::accumulate\+\_\+horners(), Basis\+Polynomial\+::barycentric\+\_\+value\+\_\+factors(), Shared\+Interp\+Poly\+Approx\+Data\+::barycentric\+\_\+value\+\_\+scaling(), Shared\+Interp\+Poly\+Approx\+Data\+::barycentric\+Flag, Shared\+Poly\+Approx\+Data\+::basis\+Config\+Options, Shared\+Poly\+Approx\+Data\+::driver\+Rep, Basis\+Polynomial\+::exact\+\_\+index(), Polynomial\+Approximation\+::expansion\+Coeff\+Flag, Nodal\+Interp\+Poly\+Approximation\+::expansion\+Type1\+Coeffs, Nodal\+Interp\+Poly\+Approximation\+::expansion\+Type2\+Coeffs, Basis\+Polynomial\+::interpolation\+\_\+size(), Shared\+Poly\+Approx\+Data\+::non\+Random\+Indices, Shared\+Basis\+Approx\+Data\+::num\+Vars, Shared\+Interp\+Poly\+Approx\+Data\+::polynomial\+Basis, Shared\+Poly\+Approx\+Data\+::random\+Vars\+Key, Shared\+Nodal\+Interp\+Poly\+Approx\+Data\+::set\+\_\+new\+\_\+point(), Basis\+Approximation\+::shared\+Data\+Rep, Nodal\+Interp\+Poly\+Approximation\+::tensor\+\_\+product\+\_\+mean\+\_\+gradient(), Integration\+Driver\+::type1\+\_\+collocation\+\_\+weights\+\_\+1d(), Basis\+Polynomial\+::type1\+\_\+value(), Integration\+Driver\+::type2\+\_\+collocation\+\_\+weights\+\_\+1d(), Basis\+Polynomial\+::type2\+\_\+value(), and Basis\+Config\+Options\+::use\+Derivs.
+
+
+
+Referenced by Nodal\+Interp\+Poly\+Approximation\+::mean(), Nodal\+Interp\+Poly\+Approximation\+::tensor\+\_\+product\+\_\+covariance(), Nodal\+Interp\+Poly\+Approximation\+::tensor\+\_\+product\+\_\+variance\+\_\+gradient(), and Nodal\+Interp\+Poly\+Approximation\+::update\+\_\+expansion\+\_\+coefficients().
+
+\index{Pecos\+::\+Nodal\+Interp\+Poly\+Approximation@{Pecos\+::\+Nodal\+Interp\+Poly\+Approximation}!tensor\+\_\+product\+\_\+mean\+\_\+gradient@{tensor\+\_\+product\+\_\+mean\+\_\+gradient}}
+\index{tensor\+\_\+product\+\_\+mean\+\_\+gradient@{tensor\+\_\+product\+\_\+mean\+\_\+gradient}!Pecos\+::\+Nodal\+Interp\+Poly\+Approximation@{Pecos\+::\+Nodal\+Interp\+Poly\+Approximation}}
+\subsubsection[{\texorpdfstring{tensor\+\_\+product\+\_\+mean\+\_\+gradient(const Real\+Vector \&x, const U\+Short\+Array \&lev\+\_\+index, const U\+Short2\+D\+Array \&key, const Sizet\+Array \&colloc\+\_\+index, const Sizet\+Array \&dvv)}{tensor_product_mean_gradient(const RealVector &x, const UShortArray &lev_index, const UShort2DArray &key, const SizetArray &colloc_index, const SizetArray &dvv)}}]{\setlength{\rightskip}{0pt plus 5cm}const Real\+Vector \& tensor\+\_\+product\+\_\+mean\+\_\+gradient (
+\begin{DoxyParamCaption}
+\item[{const Real\+Vector \&}]{x, }
+\item[{const U\+Short\+Array \&}]{lev\+\_\+index, }
+\item[{const U\+Short2\+D\+Array \&}]{key, }
+\item[{const Sizet\+Array \&}]{colloc\+\_\+index, }
+\item[{const Sizet\+Array \&}]{dvv}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classPecos_1_1NodalInterpPolyApproximation_ac8b724a720250bb907f8828b3d2f6979}
+
+
+compute the gradient of the mean of a tensor interpolant on a tensor grid; contributes to mean\+\_\+gradient(x) 
+
+Overloaded all\+\_\+variables version supporting Smolyak sparse grids. 
+
+References Shared\+Nodal\+Interp\+Poly\+Approx\+Data\+::accumulate\+\_\+barycentric\+\_\+gradient(), Shared\+Nodal\+Interp\+Poly\+Approx\+Data\+::accumulate\+\_\+horners\+\_\+gradient(), Basis\+Polynomial\+::barycentric\+\_\+gradient\+\_\+factors(), Basis\+Polynomial\+::barycentric\+\_\+value\+\_\+factors(), Shared\+Interp\+Poly\+Approx\+Data\+::barycentric\+Flag, Shared\+Poly\+Approx\+Data\+::basis\+Config\+Options, Shared\+Poly\+Approx\+Data\+::driver\+Rep, Basis\+Polynomial\+::exact\+\_\+index(), Polynomial\+Approximation\+::expansion\+Coeff\+Flag, Polynomial\+Approximation\+::expansion\+Coeff\+Grad\+Flag, Nodal\+Interp\+Poly\+Approximation\+::expansion\+Type1\+Coeff\+Grads, Nodal\+Interp\+Poly\+Approximation\+::expansion\+Type1\+Coeffs, Nodal\+Interp\+Poly\+Approximation\+::expansion\+Type2\+Coeffs, Basis\+Polynomial\+::interpolation\+\_\+size(), Shared\+Poly\+Approx\+Data\+::non\+Random\+Indices, Shared\+Basis\+Approx\+Data\+::num\+Vars, Shared\+Interp\+Poly\+Approx\+Data\+::polynomial\+Basis, Shared\+Poly\+Approx\+Data\+::random\+Vars\+Key, Shared\+Nodal\+Interp\+Poly\+Approx\+Data\+::set\+\_\+new\+\_\+point(), Basis\+Approximation\+::shared\+Data\+Rep, Nodal\+Interp\+Poly\+Approximation\+::tensor\+\_\+product\+\_\+covariance(), Nodal\+Interp\+Poly\+Approximation\+::tp\+Mean\+Grad, Integration\+Driver\+::type1\+\_\+collocation\+\_\+weights\+\_\+1d(), Basis\+Polynomial\+::type1\+\_\+gradient(), Basis\+Polynomial\+::type1\+\_\+value(), Integration\+Driver\+::type2\+\_\+collocation\+\_\+weights\+\_\+1d(), Basis\+Polynomial\+::type2\+\_\+gradient(), Basis\+Polynomial\+::type2\+\_\+value(), and Basis\+Config\+Options\+::use\+Derivs.
+
+
+
+Referenced by Nodal\+Interp\+Poly\+Approximation\+::mean\+\_\+gradient(), Nodal\+Interp\+Poly\+Approximation\+::tensor\+\_\+product\+\_\+mean(), and Nodal\+Interp\+Poly\+Approximation\+::tensor\+\_\+product\+\_\+variance\+\_\+gradient().
+
+\index{Pecos\+::\+Nodal\+Interp\+Poly\+Approximation@{Pecos\+::\+Nodal\+Interp\+Poly\+Approximation}!tensor\+\_\+product\+\_\+covariance@{tensor\+\_\+product\+\_\+covariance}}
+\index{tensor\+\_\+product\+\_\+covariance@{tensor\+\_\+product\+\_\+covariance}!Pecos\+::\+Nodal\+Interp\+Poly\+Approximation@{Pecos\+::\+Nodal\+Interp\+Poly\+Approximation}}
+\subsubsection[{\texorpdfstring{tensor\+\_\+product\+\_\+covariance(const Real\+Vector \&x, const U\+Short\+Array \&lev\+\_\+index, const U\+Short2\+D\+Array \&key, const Sizet\+Array \&colloc\+\_\+index, Nodal\+Interp\+Poly\+Approximation $\ast$nip\+\_\+approx\+\_\+2)}{tensor_product_covariance(const RealVector &x, const UShortArray &lev_index, const UShort2DArray &key, const SizetArray &colloc_index, NodalInterpPolyApproximation *nip_approx_2)}}]{\setlength{\rightskip}{0pt plus 5cm}Real tensor\+\_\+product\+\_\+covariance (
+\begin{DoxyParamCaption}
+\item[{const Real\+Vector \&}]{x, }
+\item[{const U\+Short\+Array \&}]{lev\+\_\+index, }
+\item[{const U\+Short2\+D\+Array \&}]{key, }
+\item[{const Sizet\+Array \&}]{colloc\+\_\+index, }
+\item[{{\bf Nodal\+Interp\+Poly\+Approximation} $\ast$}]{nip\+\_\+approx\+\_\+2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classPecos_1_1NodalInterpPolyApproximation_ad34fcf2d6c6841648fa93e0e8e6bef78}
+
+
+compute the covariance of two tensor interpolants on the same tensor grid using an interpolation of products or product of interpolants approach; contributes to covariance(x, poly\+\_\+approx\+\_\+2) 
+
+Covariance of response functions for a matched tensor product grid. Supports all\+\_\+variables mode and either interpolation of products or product of interpolants formulations. For the latter, recursive usage only provides the \char`\"{}diagonal\char`\"{} contributions from matched tensor products (P\+R\+O\+D\+U\+C\+T\+\_\+\+O\+F\+\_\+\+I\+N\+T\+E\+R\+P\+O\+L\+A\+N\+T\+S\+\_\+\+F\+A\+ST); an exact estimation (P\+R\+O\+D\+U\+C\+T\+\_\+\+O\+F\+\_\+\+I\+N\+T\+E\+R\+P\+O\+L\+A\+N\+T\+S\+\_\+\+F\+U\+LL) requires augmentation with mixed tensor product contributions using the overloaded form of this function. 
+
+References Shared\+Nodal\+Interp\+Poly\+Approx\+Data\+::accumulate\+\_\+barycentric(), Shared\+Nodal\+Interp\+Poly\+Approx\+Data\+::accumulate\+\_\+horners(), Basis\+Polynomial\+::barycentric\+\_\+value\+\_\+factors(), Shared\+Interp\+Poly\+Approx\+Data\+::barycentric\+Flag, Shared\+Poly\+Approx\+Data\+::basis\+Config\+Options, Shared\+Poly\+Approx\+Data\+::driver\+Rep, Basis\+Polynomial\+::exact\+\_\+index(), Polynomial\+Approximation\+::expansion\+Coeff\+Flag, Nodal\+Interp\+Poly\+Approximation\+::expansion\+Type1\+Coeffs, Nodal\+Interp\+Poly\+Approximation\+::expansion\+Type2\+Coeffs, Nodal\+Interp\+Poly\+Approximation\+::gradient\+\_\+basis\+\_\+variables(), Basis\+Polynomial\+::interpolation\+\_\+size(), Shared\+Poly\+Approx\+Data\+::match\+\_\+random\+\_\+key(), Nodal\+Interp\+Poly\+Approximation\+::mean(), Shared\+Nodal\+Interp\+Poly\+Approx\+Data\+::moment\+Interp\+Type, Shared\+Poly\+Approx\+Data\+::non\+Random\+Indices, Shared\+Basis\+Approx\+Data\+::num\+Vars, Shared\+Interp\+Poly\+Approx\+Data\+::polynomial\+Basis, Shared\+Poly\+Approx\+Data\+::random\+Indices, Shared\+Poly\+Approx\+Data\+::random\+Vars\+Key, Integration\+Driver\+::reinterpolated\+\_\+collocation\+\_\+key(), Integration\+Driver\+::reinterpolated\+\_\+level\+\_\+index(), Integration\+Driver\+::reinterpolated\+\_\+variable\+\_\+sets(), Shared\+Nodal\+Interp\+Poly\+Approx\+Data\+::set\+\_\+new\+\_\+point(), Basis\+Approximation\+::shared\+Data\+Rep, Nodal\+Interp\+Poly\+Approximation\+::tensor\+\_\+product\+\_\+mean(), Integration\+Driver\+::type1\+\_\+collocation\+\_\+weights\+\_\+1d(), Shared\+Interp\+Poly\+Approx\+Data\+::type1\+\_\+interpolant\+\_\+value(), Basis\+Polynomial\+::type1\+\_\+value(), Shared\+Interp\+Poly\+Approx\+Data\+::type1\+\_\+weight(), Integration\+Driver\+::type2\+\_\+collocation\+\_\+weights\+\_\+1d(), Basis\+Polynomial\+::type2\+\_\+value(), Basis\+Config\+Options\+::use\+Derivs, and Nodal\+Interp\+Poly\+Approximation\+::value().
+
+
+
+Referenced by Nodal\+Interp\+Poly\+Approximation\+::covariance(), and Nodal\+Interp\+Poly\+Approximation\+::tensor\+\_\+product\+\_\+mean\+\_\+gradient().
+
+\index{Pecos\+::\+Nodal\+Interp\+Poly\+Approximation@{Pecos\+::\+Nodal\+Interp\+Poly\+Approximation}!tensor\+\_\+product\+\_\+covariance@{tensor\+\_\+product\+\_\+covariance}}
+\index{tensor\+\_\+product\+\_\+covariance@{tensor\+\_\+product\+\_\+covariance}!Pecos\+::\+Nodal\+Interp\+Poly\+Approximation@{Pecos\+::\+Nodal\+Interp\+Poly\+Approximation}}
+\subsubsection[{\texorpdfstring{tensor\+\_\+product\+\_\+covariance(const Real\+Vector \&x, const U\+Short\+Array \&lev\+\_\+index\+\_\+1, const U\+Short2\+D\+Array \&key\+\_\+1, const Sizet\+Array \&colloc\+\_\+index\+\_\+1, const U\+Short\+Array \&lev\+\_\+index\+\_\+2, const U\+Short2\+D\+Array \&key\+\_\+2, const Sizet\+Array \&colloc\+\_\+index\+\_\+2, Nodal\+Interp\+Poly\+Approximation $\ast$nip\+\_\+approx\+\_\+2)}{tensor_product_covariance(const RealVector &x, const UShortArray &lev_index_1, const UShort2DArray &key_1, const SizetArray &colloc_index_1, const UShortArray &lev_index_2, const UShort2DArray &key_2, const SizetArray &colloc_index_2, NodalInterpPolyApproximation *nip_approx_2)}}]{\setlength{\rightskip}{0pt plus 5cm}Real tensor\+\_\+product\+\_\+covariance (
+\begin{DoxyParamCaption}
+\item[{const Real\+Vector \&}]{x, }
+\item[{const U\+Short\+Array \&}]{lev\+\_\+index\+\_\+1, }
+\item[{const U\+Short2\+D\+Array \&}]{key\+\_\+1, }
+\item[{const Sizet\+Array \&}]{colloc\+\_\+index\+\_\+1, }
+\item[{const U\+Short\+Array \&}]{lev\+\_\+index\+\_\+2, }
+\item[{const U\+Short2\+D\+Array \&}]{key\+\_\+2, }
+\item[{const Sizet\+Array \&}]{colloc\+\_\+index\+\_\+2, }
+\item[{{\bf Nodal\+Interp\+Poly\+Approximation} $\ast$}]{nip\+\_\+approx\+\_\+2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classPecos_1_1NodalInterpPolyApproximation_a4f0ee291e5061aedbbd6930aa607ead7}
+
+
+compute the covariance of two tensor interpolants on different tensor grids using a product of interpolants approach; contributes to covariance(x, poly\+\_\+approx\+\_\+2) 
+
+Covariance of response functions for differing tensor products using a P\+R\+O\+D\+U\+C\+T\+\_\+\+O\+F\+\_\+\+I\+N\+T\+E\+R\+P\+O\+L\+A\+N\+T\+S\+\_\+\+F\+U\+LL approach. Needed for sparse interpolants in all\+\_\+variables mode. 
+
+References Shared\+Nodal\+Interp\+Poly\+Approx\+Data\+::basis\+\_\+product(), Polynomial\+Approximation\+::expansion\+Coeff\+Flag, Nodal\+Interp\+Poly\+Approximation\+::expansion\+Type1\+Coeffs, Nodal\+Interp\+Poly\+Approximation\+::expansion\+Type2\+Coeffs, Nodal\+Interp\+Poly\+Approximation\+::mean(), Shared\+Nodal\+Interp\+Poly\+Approx\+Data\+::moment\+Interp\+Type, Shared\+Poly\+Approx\+Data\+::non\+Random\+Indices, Basis\+Approximation\+::shared\+Data\+Rep, Nodal\+Interp\+Poly\+Approximation\+::tensor\+\_\+product\+\_\+variance\+\_\+gradient(), and Shared\+Interp\+Poly\+Approx\+Data\+::type1\+\_\+interpolant\+\_\+value().
+
+\index{Pecos\+::\+Nodal\+Interp\+Poly\+Approximation@{Pecos\+::\+Nodal\+Interp\+Poly\+Approximation}!tensor\+\_\+product\+\_\+variance\+\_\+gradient@{tensor\+\_\+product\+\_\+variance\+\_\+gradient}}
+\index{tensor\+\_\+product\+\_\+variance\+\_\+gradient@{tensor\+\_\+product\+\_\+variance\+\_\+gradient}!Pecos\+::\+Nodal\+Interp\+Poly\+Approximation@{Pecos\+::\+Nodal\+Interp\+Poly\+Approximation}}
+\subsubsection[{\texorpdfstring{tensor\+\_\+product\+\_\+variance\+\_\+gradient(const Real\+Vector \&x, const U\+Short\+Array \&lev\+\_\+index, const U\+Short2\+D\+Array \&key, const Sizet\+Array \&colloc\+\_\+index, const Sizet\+Array \&dvv)}{tensor_product_variance_gradient(const RealVector &x, const UShortArray &lev_index, const UShort2DArray &key, const SizetArray &colloc_index, const SizetArray &dvv)}}]{\setlength{\rightskip}{0pt plus 5cm}const Real\+Vector \& tensor\+\_\+product\+\_\+variance\+\_\+gradient (
+\begin{DoxyParamCaption}
+\item[{const Real\+Vector \&}]{x, }
+\item[{const U\+Short\+Array \&}]{lev\+\_\+index, }
+\item[{const U\+Short2\+D\+Array \&}]{key, }
+\item[{const Sizet\+Array \&}]{colloc\+\_\+index, }
+\item[{const Sizet\+Array \&}]{dvv}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classPecos_1_1NodalInterpPolyApproximation_a2e321deaf54c63212ba2d926aa0ad08d}
+
+
+compute the gradient of the variance of a tensor interpolant on a tensor grid using an interpolation of products or product of interpolants approach; contributes to variance\+\_\+gradient(x) 
+
+Overloaded all\+\_\+variables version supporting interpolation of products or product of interpolants approaches. 
+
+References Shared\+Nodal\+Interp\+Poly\+Approx\+Data\+::accumulate\+\_\+barycentric\+\_\+gradient(), Shared\+Nodal\+Interp\+Poly\+Approx\+Data\+::accumulate\+\_\+horners\+\_\+gradient(), Basis\+Polynomial\+::barycentric\+\_\+gradient\+\_\+factors(), Basis\+Polynomial\+::barycentric\+\_\+value\+\_\+factors(), Shared\+Interp\+Poly\+Approx\+Data\+::barycentric\+Flag, Shared\+Poly\+Approx\+Data\+::basis\+Config\+Options, Shared\+Poly\+Approx\+Data\+::driver\+Rep, Basis\+Polynomial\+::exact\+\_\+index(), Polynomial\+Approximation\+::expansion\+Coeff\+Flag, Polynomial\+Approximation\+::expansion\+Coeff\+Grad\+Flag, Nodal\+Interp\+Poly\+Approximation\+::expansion\+Type1\+Coeff\+Grads, Nodal\+Interp\+Poly\+Approximation\+::expansion\+Type1\+Coeffs, Nodal\+Interp\+Poly\+Approximation\+::expansion\+Type2\+Coeffs, Nodal\+Interp\+Poly\+Approximation\+::gradient\+\_\+basis\+\_\+variables(), Nodal\+Interp\+Poly\+Approximation\+::gradient\+\_\+nonbasis\+\_\+variables(), Basis\+Polynomial\+::interpolation\+\_\+size(), Shared\+Poly\+Approx\+Data\+::match\+\_\+random\+\_\+key(), Nodal\+Interp\+Poly\+Approximation\+::mean(), Nodal\+Interp\+Poly\+Approximation\+::mean\+\_\+gradient(), Shared\+Nodal\+Interp\+Poly\+Approx\+Data\+::moment\+Interp\+Type, Shared\+Poly\+Approx\+Data\+::non\+Random\+Indices, Shared\+Basis\+Approx\+Data\+::num\+Vars, Shared\+Interp\+Poly\+Approx\+Data\+::polynomial\+Basis, Shared\+Poly\+Approx\+Data\+::random\+Indices, Shared\+Poly\+Approx\+Data\+::random\+Vars\+Key, Integration\+Driver\+::reinterpolated\+\_\+collocation\+\_\+key(), Integration\+Driver\+::reinterpolated\+\_\+level\+\_\+index(), Integration\+Driver\+::reinterpolated\+\_\+variable\+\_\+sets(), Shared\+Nodal\+Interp\+Poly\+Approx\+Data\+::set\+\_\+new\+\_\+point(), Basis\+Approximation\+::shared\+Data\+Rep, Nodal\+Interp\+Poly\+Approximation\+::tensor\+\_\+product\+\_\+mean(), Nodal\+Interp\+Poly\+Approximation\+::tensor\+\_\+product\+\_\+mean\+\_\+gradient(), Nodal\+Interp\+Poly\+Approximation\+::tp\+Variance\+Grad, Integration\+Driver\+::type1\+\_\+collocation\+\_\+weights\+\_\+1d(), Basis\+Polynomial\+::type1\+\_\+gradient(), Shared\+Interp\+Poly\+Approx\+Data\+::type1\+\_\+interpolant\+\_\+gradient(), Shared\+Interp\+Poly\+Approx\+Data\+::type1\+\_\+interpolant\+\_\+value(), Basis\+Polynomial\+::type1\+\_\+value(), Shared\+Interp\+Poly\+Approx\+Data\+::type1\+\_\+weight(), Integration\+Driver\+::type2\+\_\+collocation\+\_\+weights\+\_\+1d(), Basis\+Polynomial\+::type2\+\_\+gradient(), Basis\+Polynomial\+::type2\+\_\+value(), Basis\+Config\+Options\+::use\+Derivs, and Nodal\+Interp\+Poly\+Approximation\+::value().
+
+
+
+Referenced by Nodal\+Interp\+Poly\+Approximation\+::tensor\+\_\+product\+\_\+covariance(), and Nodal\+Interp\+Poly\+Approximation\+::variance\+\_\+gradient().
+
+\index{Pecos\+::\+Nodal\+Interp\+Poly\+Approximation@{Pecos\+::\+Nodal\+Interp\+Poly\+Approximation}!value@{value}}
+\index{value@{value}!Pecos\+::\+Nodal\+Interp\+Poly\+Approximation@{Pecos\+::\+Nodal\+Interp\+Poly\+Approximation}}
+\subsubsection[{\texorpdfstring{value(const Real\+Vector \&x, const Real\+Vector\+Array \&t1\+\_\+coeffs, const Real\+Matrix\+Array \&t2\+\_\+coeffs, const U\+Short3\+D\+Array \&colloc\+\_\+key, const Sizet\+List \&subset\+\_\+indices)}{value(const RealVector &x, const RealVectorArray &t1_coeffs, const RealMatrixArray &t2_coeffs, const UShort3DArray &colloc_key, const SizetList &subset_indices)}}]{\setlength{\rightskip}{0pt plus 5cm}Real value (
+\begin{DoxyParamCaption}
+\item[{const Real\+Vector \&}]{x, }
+\item[{const Real\+Vector\+Array \&}]{t1\+\_\+coeffs, }
+\item[{const Real\+Matrix\+Array \&}]{t2\+\_\+coeffs, }
+\item[{const U\+Short3\+D\+Array \&}]{colloc\+\_\+key, }
+\item[{const Sizet\+List \&}]{subset\+\_\+indices}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classPecos_1_1NodalInterpPolyApproximation_add4c66b2a8fb14693ad22751f7526b84}
+
+
+compute value of reduced-\/dimension interpolant 
+
+Special case used for sparse grid interpolation on variable sub-\/sets defined from partial integration. 
+
+References Shared\+Nodal\+Interp\+Poly\+Approx\+Data\+::csg\+\_\+driver(), Polynomial\+Approximation\+::expansion\+Coeff\+Flag, Nodal\+Interp\+Poly\+Approximation\+::gradient\+\_\+basis\+\_\+variables(), Basis\+Approximation\+::shared\+Data\+Rep, Combined\+Sparse\+Grid\+Driver\+::smolyak\+\_\+coefficients(), and Combined\+Sparse\+Grid\+Driver\+::smolyak\+\_\+multi\+\_\+index().
+
+\index{Pecos\+::\+Nodal\+Interp\+Poly\+Approximation@{Pecos\+::\+Nodal\+Interp\+Poly\+Approximation}!reinterpolated\+\_\+level@{reinterpolated\+\_\+level}}
+\index{reinterpolated\+\_\+level@{reinterpolated\+\_\+level}!Pecos\+::\+Nodal\+Interp\+Poly\+Approximation@{Pecos\+::\+Nodal\+Interp\+Poly\+Approximation}}
+\subsubsection[{\texorpdfstring{reinterpolated\+\_\+level(const U\+Short\+Array \&lev\+\_\+index)}{reinterpolated_level(const UShortArray &lev_index)}}]{\setlength{\rightskip}{0pt plus 5cm}void reinterpolated\+\_\+level (
+\begin{DoxyParamCaption}
+\item[{const U\+Short\+Array \&}]{lev\+\_\+index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classPecos_1_1NodalInterpPolyApproximation_ae4a694a92e56149b20cf5b7450d3518a}
+
+
+computes higher-\/order grid for tensor reinterpolation of the covariance fn for non-\/integrated dimensions in all\+\_\+variables mode 
+
+Computes the specifics of a higher order grid for reinterpolating covariance over dimensions that will not be integrated. 
+
+References Shared\+Poly\+Approx\+Data\+::driver\+Rep, Nodal\+Interp\+Poly\+Approximation\+::integrate\+\_\+response\+\_\+moments(), Shared\+Poly\+Approx\+Data\+::non\+Random\+Indices, Integration\+Driver\+::reinterpolated\+\_\+level\+\_\+index(), Integration\+Driver\+::reinterpolated\+\_\+tensor\+\_\+grid(), and Basis\+Approximation\+::shared\+Data\+Rep.
+
+
+
+Referenced by Nodal\+Interp\+Poly\+Approximation\+::covariance(), Nodal\+Interp\+Poly\+Approximation\+::expectation(), and Nodal\+Interp\+Poly\+Approximation\+::variance\+\_\+gradient().
+
+\index{Pecos\+::\+Nodal\+Interp\+Poly\+Approximation@{Pecos\+::\+Nodal\+Interp\+Poly\+Approximation}!member\+\_\+integral@{member\+\_\+integral}}
+\index{member\+\_\+integral@{member\+\_\+integral}!Pecos\+::\+Nodal\+Interp\+Poly\+Approximation@{Pecos\+::\+Nodal\+Interp\+Poly\+Approximation}}
+\subsubsection[{\texorpdfstring{member\+\_\+integral(const Bit\+Array \&member\+\_\+bits, Real mean)}{member_integral(const BitArray &member_bits, Real mean)}}]{\setlength{\rightskip}{0pt plus 5cm}Real member\+\_\+integral (
+\begin{DoxyParamCaption}
+\item[{const Bit\+Array \&}]{member\+\_\+bits, }
+\item[{Real}]{mean}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classPecos_1_1NodalInterpPolyApproximation_acabcaa681df99b0bb8f2daed023abc1b}
+
+
+compute integral for total Sobol\textquotesingle{} index for variables in a set 
+
+Forms a new interpolant h over member variables after integrating out the non-\/member variables. Then finds the variance by integrating (h-\/mean)$^\wedge$2 over the member variables, where the mean can be zero for non-\/central/raw moment cases. 
+
+References Shared\+Poly\+Approx\+Data\+::basis\+Config\+Options, Combined\+Sparse\+Grid\+Driver\+::collocation\+\_\+indices(), Tensor\+Product\+Driver\+::collocation\+\_\+key(), Combined\+Sparse\+Grid\+Driver\+::collocation\+\_\+key(), Shared\+Nodal\+Interp\+Poly\+Approx\+Data\+::csg\+\_\+driver(), Expansion\+Config\+Options\+::exp\+Coeffs\+Soln\+Approach, Shared\+Poly\+Approx\+Data\+::exp\+Config\+Options, Nodal\+Interp\+Poly\+Approximation\+::gradient\+\_\+basis\+\_\+variables(), Tensor\+Product\+Driver\+::level\+\_\+index(), Sparse\+Grid\+Driver\+::level\+\_\+to\+\_\+order(), Nodal\+Interp\+Poly\+Approximation\+::mean(), Nodal\+Interp\+Poly\+Approximation\+::member\+\_\+coefficients\+\_\+weights(), Shared\+Basis\+Approx\+Data\+::num\+Vars, Tensor\+Product\+Driver\+::quadrature\+\_\+order(), Basis\+Approximation\+::shared\+Data\+Rep, Combined\+Sparse\+Grid\+Driver\+::smolyak\+\_\+coefficients(), Combined\+Sparse\+Grid\+Driver\+::smolyak\+\_\+multi\+\_\+index(), Polynomial\+Approximation\+::surr\+Data, Shared\+Nodal\+Interp\+Poly\+Approx\+Data\+::tpq\+\_\+driver(), Nodal\+Interp\+Poly\+Approximation\+::update\+\_\+member\+\_\+key(), Basis\+Config\+Options\+::use\+Derivs, and Nodal\+Interp\+Poly\+Approximation\+::value().
+
+
+
+Referenced by Nodal\+Interp\+Poly\+Approximation\+::compute\+\_\+partial\+\_\+variance().
+
+
+
+\subsection{Member Data Documentation}
+\index{Pecos\+::\+Nodal\+Interp\+Poly\+Approximation@{Pecos\+::\+Nodal\+Interp\+Poly\+Approximation}!expansion\+Type1\+Coeff\+Grads@{expansion\+Type1\+Coeff\+Grads}}
+\index{expansion\+Type1\+Coeff\+Grads@{expansion\+Type1\+Coeff\+Grads}!Pecos\+::\+Nodal\+Interp\+Poly\+Approximation@{Pecos\+::\+Nodal\+Interp\+Poly\+Approximation}}
+\subsubsection[{\texorpdfstring{expansion\+Type1\+Coeff\+Grads}{expansionType1CoeffGrads}}]{\setlength{\rightskip}{0pt plus 5cm}Real\+Matrix expansion\+Type1\+Coeff\+Grads\hspace{0.3cm}{\ttfamily [private]}}\label{classPecos_1_1NodalInterpPolyApproximation_af95aafb683b36750f8e24fb858cbe8b2}
+
+
+the gradients of the type1 expansion coefficients 
+
+may be interpreted as either the gradients of the expansion coefficients or the coefficients of expansions for the response gradients. This array is used when sensitivities of moments are needed with respect to variables that do not appear in the expansion (e.\+g., with respect to design variables for an expansion only over the random variables). 
+
+Referenced by Nodal\+Interp\+Poly\+Approximation\+::allocate\+\_\+arrays(), Nodal\+Interp\+Poly\+Approximation\+::combine\+\_\+coefficients(), Nodal\+Interp\+Poly\+Approximation\+::compute\+\_\+coefficients(), Nodal\+Interp\+Poly\+Approximation\+::decrement\+\_\+coefficients(), Nodal\+Interp\+Poly\+Approximation\+::gradient\+\_\+nonbasis\+\_\+variables(), Nodal\+Interp\+Poly\+Approximation\+::mean\+\_\+gradient(), Nodal\+Interp\+Poly\+Approximation\+::restore\+\_\+coefficients(), Nodal\+Interp\+Poly\+Approximation\+::store\+\_\+coefficients(), Nodal\+Interp\+Poly\+Approximation\+::swap\+\_\+coefficients(), Nodal\+Interp\+Poly\+Approximation\+::tensor\+\_\+product\+\_\+mean\+\_\+gradient(), Nodal\+Interp\+Poly\+Approximation\+::tensor\+\_\+product\+\_\+variance\+\_\+gradient(), Nodal\+Interp\+Poly\+Approximation\+::update\+\_\+expansion\+\_\+coefficients(), and Nodal\+Interp\+Poly\+Approximation\+::variance\+\_\+gradient().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Nodal\+Interp\+Poly\+Approximation.\+hpp\item 
+Nodal\+Interp\+Poly\+Approximation.\+cpp\end{DoxyCompactItemize}

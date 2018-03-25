@@ -1,0 +1,263 @@
+\section{Shared\+Basis\+Approx\+Data Class Reference}
+\label{classPecos_1_1SharedBasisApproxData}\index{Shared\+Basis\+Approx\+Data@{Shared\+Basis\+Approx\+Data}}
+
+
+Base class for multivariate basis approximations used for projection of random variables through time or space.  
+
+
+Inheritance diagram for Shared\+Basis\+Approx\+Data\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.352941cm]{classPecos_1_1SharedBasisApproxData}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPecos_1_1SharedBasisApproxData_a2810f392a8f5e07c7d163e3a63dbc842}{Shared\+Basis\+Approx\+Data} ()
+\begin{DoxyCompactList}\small\item\em default constructor \end{DoxyCompactList}\item 
+\hyperlink{classPecos_1_1SharedBasisApproxData_a2560e30cc6375ea283da16e0098f21fc}{Shared\+Basis\+Approx\+Data} (short basis\+\_\+type, const U\+Short\+Array \&approx\+\_\+order, size\+\_\+t num\+\_\+vars)
+\begin{DoxyCompactList}\small\item\em standard constructor for envelope \end{DoxyCompactList}\item 
+\hyperlink{classPecos_1_1SharedBasisApproxData_affb150743bae8de01873504c4e925cc1}{Shared\+Basis\+Approx\+Data} (short basis\+\_\+type, const U\+Short\+Array \&approx\+\_\+order, size\+\_\+t num\+\_\+vars, const \hyperlink{classPecos_1_1ExpansionConfigOptions}{Expansion\+Config\+Options} \&ec\+\_\+options, const \hyperlink{classPecos_1_1BasisConfigOptions}{Basis\+Config\+Options} \&bc\+\_\+options, const \hyperlink{classPecos_1_1RegressionConfigOptions}{Regression\+Config\+Options} \&rc\+\_\+options)
+\begin{DoxyCompactList}\small\item\em alternate constructor for envelope \end{DoxyCompactList}\item 
+\hyperlink{classPecos_1_1SharedBasisApproxData_aa860c6fdd67a7b1aa8a691f71c1d53db}{Shared\+Basis\+Approx\+Data} (const \hyperlink{classPecos_1_1SharedBasisApproxData}{Shared\+Basis\+Approx\+Data} \&shared\+\_\+data)
+\begin{DoxyCompactList}\small\item\em copy constructor \end{DoxyCompactList}\item 
+virtual \hyperlink{classPecos_1_1SharedBasisApproxData_aa327dbd55bffbb72910a1f7d336c8a6d}{$\sim$\+Shared\+Basis\+Approx\+Data} ()
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\item 
+\hyperlink{classPecos_1_1SharedBasisApproxData}{Shared\+Basis\+Approx\+Data} \hyperlink{classPecos_1_1SharedBasisApproxData_ab1446b60a1373dcff4117710b2e89252}{operator=} (const \hyperlink{classPecos_1_1SharedBasisApproxData}{Shared\+Basis\+Approx\+Data} \&shared\+\_\+data)
+\begin{DoxyCompactList}\small\item\em assignment operator \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1SharedBasisApproxData_ac00233a5ad75006391d658d0d3dfa87d}{assign\+\_\+rep} (\hyperlink{classPecos_1_1SharedBasisApproxData}{Shared\+Basis\+Approx\+Data} $\ast$\hyperlink{classPecos_1_1SharedBasisApproxData_a16b5577b2cccfb22d7d8de3479d180f1}{data\+\_\+rep}, bool ref\+\_\+count\+\_\+incr)\label{classPecos_1_1SharedBasisApproxData_ac00233a5ad75006391d658d0d3dfa87d}
+
+\begin{DoxyCompactList}\small\item\em assign letter or replace existing letter with a new one \end{DoxyCompactList}\item 
+\hyperlink{classPecos_1_1SharedBasisApproxData}{Shared\+Basis\+Approx\+Data} $\ast$ \hyperlink{classPecos_1_1SharedBasisApproxData_a16b5577b2cccfb22d7d8de3479d180f1}{data\+\_\+rep} () const \label{classPecos_1_1SharedBasisApproxData_a16b5577b2cccfb22d7d8de3479d180f1}
+
+\begin{DoxyCompactList}\small\item\em returns data\+Rep for access to derived class member functions that are not mapped to the top Approximation level \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPecos_1_1SharedBasisApproxData_af1c4e2cada2f5eb8410ede62ebeb27d7}{Shared\+Basis\+Approx\+Data} (\hyperlink{structPecos_1_1BaseConstructor}{Base\+Constructor}, short basis\+\_\+type, size\+\_\+t num\+\_\+vars)
+\begin{DoxyCompactList}\small\item\em constructor initializes the base class part of letter classes (\hyperlink{structPecos_1_1BaseConstructor}{Base\+Constructor} overloading avoids infinite recursion in the derived class constructors -\/ Coplien, p. 139) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+short \hyperlink{classPecos_1_1SharedBasisApproxData_af11c7ab2afc3a4bce7edbddb91ee7ae4}{basis\+Type}\label{classPecos_1_1SharedBasisApproxData_af11c7ab2afc3a4bce7edbddb91ee7ae4}
+
+\begin{DoxyCompactList}\small\item\em type of derived instance as well as sub-\/type for interpolation \end{DoxyCompactList}\item 
+size\+\_\+t \hyperlink{classPecos_1_1SharedBasisApproxData_ab9ee2ca7227d7347a1ddba107ffb039c}{num\+Vars}\label{classPecos_1_1SharedBasisApproxData_ab9ee2ca7227d7347a1ddba107ffb039c}
+
+\begin{DoxyCompactList}\small\item\em number of variables used in the approximation \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPecos_1_1SharedBasisApproxData}{Shared\+Basis\+Approx\+Data} $\ast$ \hyperlink{classPecos_1_1SharedBasisApproxData_abd1905e4b592f326e5d4b6053b8e8ab2}{get\+\_\+shared\+\_\+data} (short basis\+\_\+type, const U\+Short\+Array \&approx\+\_\+order, size\+\_\+t num\+\_\+vars)
+\begin{DoxyCompactList}\small\item\em used by the standard envelope constructor to initialize data\+Rep to the appropriate derived type \end{DoxyCompactList}\item 
+\hyperlink{classPecos_1_1SharedBasisApproxData}{Shared\+Basis\+Approx\+Data} $\ast$ \hyperlink{classPecos_1_1SharedBasisApproxData_a328149090d0b6fc7425687c2932ed639}{get\+\_\+shared\+\_\+data} (short basis\+\_\+type, const U\+Short\+Array \&approx\+\_\+order, size\+\_\+t num\+\_\+vars, const \hyperlink{classPecos_1_1ExpansionConfigOptions}{Expansion\+Config\+Options} \&ec\+\_\+options, const \hyperlink{classPecos_1_1BasisConfigOptions}{Basis\+Config\+Options} \&bc\+\_\+options, const \hyperlink{classPecos_1_1RegressionConfigOptions}{Regression\+Config\+Options} \&rc\+\_\+options)
+\begin{DoxyCompactList}\small\item\em used by the alternate envelope constructor to initialize data\+Rep to the appropriate derived type \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPecos_1_1SharedBasisApproxData}{Shared\+Basis\+Approx\+Data} $\ast$ \hyperlink{classPecos_1_1SharedBasisApproxData_a2c1d81e571da5911b44f78ed161c69b0}{data\+Rep}\label{classPecos_1_1SharedBasisApproxData_a2c1d81e571da5911b44f78ed161c69b0}
+
+\begin{DoxyCompactList}\small\item\em pointer to the letter (initialized only for the envelope) \end{DoxyCompactList}\item 
+int \hyperlink{classPecos_1_1SharedBasisApproxData_afff0b6144883d3ca09a8d0d3f4776b0f}{reference\+Count}\label{classPecos_1_1SharedBasisApproxData_afff0b6144883d3ca09a8d0d3f4776b0f}
+
+\begin{DoxyCompactList}\small\item\em number of objects sharing data\+Rep \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bfseries Basis\+Approximation}\label{classPecos_1_1SharedBasisApproxData_a7e352b0aeef940589ce8267bd75085e9}
+
+\item 
+class {\bfseries Polynomial\+Approximation}\label{classPecos_1_1SharedBasisApproxData_aa778674dbdc525b64e1dbd7e9d30e42b}
+
+\item 
+class {\bfseries Interp\+Poly\+Approximation}\label{classPecos_1_1SharedBasisApproxData_aafe9d45ff8baa100e0ebb9b2692540c7}
+
+\item 
+class {\bfseries Nodal\+Interp\+Poly\+Approximation}\label{classPecos_1_1SharedBasisApproxData_a99c7b13c38f494e387170b138587e3fb}
+
+\item 
+class {\bfseries Hierarch\+Interp\+Poly\+Approximation}\label{classPecos_1_1SharedBasisApproxData_ac5be928f91f05e9db6cfd416fb6abdb4}
+
+\item 
+class {\bfseries Orthog\+Poly\+Approximation}\label{classPecos_1_1SharedBasisApproxData_ad950e19c243902dbc8e6c49ca6ab5d2b}
+
+\item 
+class {\bfseries Project\+Orthog\+Poly\+Approximation}\label{classPecos_1_1SharedBasisApproxData_a9f89a24cc1d6d15a8e1a9a460171f142}
+
+\item 
+class {\bfseries Regress\+Orthog\+Poly\+Approximation}\label{classPecos_1_1SharedBasisApproxData_a7acecaa6278f4c25fb2eea8c89e541d9}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Base class for multivariate basis approximations used for projection of random variables through time or space. 
+
+The base class for basis approximations defined from Fourier functions, eigenfunctions, or polynomial functions. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Pecos\+::\+Shared\+Basis\+Approx\+Data@{Pecos\+::\+Shared\+Basis\+Approx\+Data}!Shared\+Basis\+Approx\+Data@{Shared\+Basis\+Approx\+Data}}
+\index{Shared\+Basis\+Approx\+Data@{Shared\+Basis\+Approx\+Data}!Pecos\+::\+Shared\+Basis\+Approx\+Data@{Pecos\+::\+Shared\+Basis\+Approx\+Data}}
+\subsubsection[{\texorpdfstring{Shared\+Basis\+Approx\+Data()}{SharedBasisApproxData()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Shared\+Basis\+Approx\+Data} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classPecos_1_1SharedBasisApproxData_a2810f392a8f5e07c7d163e3a63dbc842}
+
+
+default constructor 
+
+The default constructor\+: data\+Rep is N\+U\+LL in this case. This makes it necessary to check for N\+U\+LL in the copy constructor, assignment operator, and destructor. 
+
+Referenced by Shared\+Basis\+Approx\+Data\+::get\+\_\+shared\+\_\+data().
+
+\index{Pecos\+::\+Shared\+Basis\+Approx\+Data@{Pecos\+::\+Shared\+Basis\+Approx\+Data}!Shared\+Basis\+Approx\+Data@{Shared\+Basis\+Approx\+Data}}
+\index{Shared\+Basis\+Approx\+Data@{Shared\+Basis\+Approx\+Data}!Pecos\+::\+Shared\+Basis\+Approx\+Data@{Pecos\+::\+Shared\+Basis\+Approx\+Data}}
+\subsubsection[{\texorpdfstring{Shared\+Basis\+Approx\+Data(short basis\+\_\+type, const U\+Short\+Array \&approx\+\_\+order, size\+\_\+t num\+\_\+vars)}{SharedBasisApproxData(short basis_type, const UShortArray &approx_order, size_t num_vars)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Shared\+Basis\+Approx\+Data} (
+\begin{DoxyParamCaption}
+\item[{short}]{basis\+\_\+type, }
+\item[{const U\+Short\+Array \&}]{approx\+\_\+order, }
+\item[{size\+\_\+t}]{num\+\_\+vars}
+\end{DoxyParamCaption}
+)}\label{classPecos_1_1SharedBasisApproxData_a2560e30cc6375ea283da16e0098f21fc}
+
+
+standard constructor for envelope 
+
+Envelope constructor only needs to extract enough data to properly execute get\+\_\+shared\+\_\+data, since Shared\+Basis\+Approx\+Data(\+Base\+Constructor) builds the actual base class data for the derived basis functions. 
+
+References Shared\+Basis\+Approx\+Data\+::data\+Rep, and Shared\+Basis\+Approx\+Data\+::get\+\_\+shared\+\_\+data().
+
+\index{Pecos\+::\+Shared\+Basis\+Approx\+Data@{Pecos\+::\+Shared\+Basis\+Approx\+Data}!Shared\+Basis\+Approx\+Data@{Shared\+Basis\+Approx\+Data}}
+\index{Shared\+Basis\+Approx\+Data@{Shared\+Basis\+Approx\+Data}!Pecos\+::\+Shared\+Basis\+Approx\+Data@{Pecos\+::\+Shared\+Basis\+Approx\+Data}}
+\subsubsection[{\texorpdfstring{Shared\+Basis\+Approx\+Data(short basis\+\_\+type, const U\+Short\+Array \&approx\+\_\+order, size\+\_\+t num\+\_\+vars, const Expansion\+Config\+Options \&ec\+\_\+options, const Basis\+Config\+Options \&bc\+\_\+options, const Regression\+Config\+Options \&rc\+\_\+options)}{SharedBasisApproxData(short basis_type, const UShortArray &approx_order, size_t num_vars, const ExpansionConfigOptions &ec_options, const BasisConfigOptions &bc_options, const RegressionConfigOptions &rc_options)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Shared\+Basis\+Approx\+Data} (
+\begin{DoxyParamCaption}
+\item[{short}]{basis\+\_\+type, }
+\item[{const U\+Short\+Array \&}]{approx\+\_\+order, }
+\item[{size\+\_\+t}]{num\+\_\+vars, }
+\item[{const {\bf Expansion\+Config\+Options} \&}]{ec\+\_\+options, }
+\item[{const {\bf Basis\+Config\+Options} \&}]{bc\+\_\+options, }
+\item[{const {\bf Regression\+Config\+Options} \&}]{rc\+\_\+options}
+\end{DoxyParamCaption}
+)}\label{classPecos_1_1SharedBasisApproxData_affb150743bae8de01873504c4e925cc1}
+
+
+alternate constructor for envelope 
+
+Envelope constructor only needs to extract enough data to properly execute get\+\_\+shared\+\_\+data, since Shared\+Basis\+Approx\+Data(\+Base\+Constructor) builds the actual base class data for the derived basis functions. 
+
+References Shared\+Basis\+Approx\+Data\+::data\+Rep, and Shared\+Basis\+Approx\+Data\+::get\+\_\+shared\+\_\+data().
+
+\index{Pecos\+::\+Shared\+Basis\+Approx\+Data@{Pecos\+::\+Shared\+Basis\+Approx\+Data}!Shared\+Basis\+Approx\+Data@{Shared\+Basis\+Approx\+Data}}
+\index{Shared\+Basis\+Approx\+Data@{Shared\+Basis\+Approx\+Data}!Pecos\+::\+Shared\+Basis\+Approx\+Data@{Pecos\+::\+Shared\+Basis\+Approx\+Data}}
+\subsubsection[{\texorpdfstring{Shared\+Basis\+Approx\+Data(const Shared\+Basis\+Approx\+Data \&shared\+\_\+data)}{SharedBasisApproxData(const SharedBasisApproxData &shared_data)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Shared\+Basis\+Approx\+Data} (
+\begin{DoxyParamCaption}
+\item[{const {\bf Shared\+Basis\+Approx\+Data} \&}]{shared\+\_\+data}
+\end{DoxyParamCaption}
+)}\label{classPecos_1_1SharedBasisApproxData_aa860c6fdd67a7b1aa8a691f71c1d53db}
+
+
+copy constructor 
+
+Copy constructor manages sharing of data\+Rep and incrementing of reference\+Count. 
+
+References Shared\+Basis\+Approx\+Data\+::data\+Rep, Shared\+Basis\+Approx\+Data\+::operator=(), and Shared\+Basis\+Approx\+Data\+::reference\+Count.
+
+\index{Pecos\+::\+Shared\+Basis\+Approx\+Data@{Pecos\+::\+Shared\+Basis\+Approx\+Data}!````~Shared\+Basis\+Approx\+Data@{$\sim$\+Shared\+Basis\+Approx\+Data}}
+\index{````~Shared\+Basis\+Approx\+Data@{$\sim$\+Shared\+Basis\+Approx\+Data}!Pecos\+::\+Shared\+Basis\+Approx\+Data@{Pecos\+::\+Shared\+Basis\+Approx\+Data}}
+\subsubsection[{\texorpdfstring{$\sim$\+Shared\+Basis\+Approx\+Data()}{~SharedBasisApproxData()}}]{\setlength{\rightskip}{0pt plus 5cm}$\sim${\bf Shared\+Basis\+Approx\+Data} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classPecos_1_1SharedBasisApproxData_aa327dbd55bffbb72910a1f7d336c8a6d}
+
+
+destructor 
+
+Destructor decrements reference\+Count and only deletes data\+Rep when reference\+Count reaches zero. 
+
+References Shared\+Basis\+Approx\+Data\+::assign\+\_\+rep(), Shared\+Basis\+Approx\+Data\+::data\+Rep, and Shared\+Basis\+Approx\+Data\+::reference\+Count.
+
+\index{Pecos\+::\+Shared\+Basis\+Approx\+Data@{Pecos\+::\+Shared\+Basis\+Approx\+Data}!Shared\+Basis\+Approx\+Data@{Shared\+Basis\+Approx\+Data}}
+\index{Shared\+Basis\+Approx\+Data@{Shared\+Basis\+Approx\+Data}!Pecos\+::\+Shared\+Basis\+Approx\+Data@{Pecos\+::\+Shared\+Basis\+Approx\+Data}}
+\subsubsection[{\texorpdfstring{Shared\+Basis\+Approx\+Data(\+Base\+Constructor, short basis\+\_\+type, size\+\_\+t num\+\_\+vars)}{SharedBasisApproxData(BaseConstructor, short basis_type, size_t num_vars)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Shared\+Basis\+Approx\+Data} (
+\begin{DoxyParamCaption}
+\item[{{\bf Base\+Constructor}}]{, }
+\item[{short}]{basis\+\_\+type, }
+\item[{size\+\_\+t}]{num\+\_\+vars}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classPecos_1_1SharedBasisApproxData_af1c4e2cada2f5eb8410ede62ebeb27d7}
+
+
+constructor initializes the base class part of letter classes (\hyperlink{structPecos_1_1BaseConstructor}{Base\+Constructor} overloading avoids infinite recursion in the derived class constructors -\/ Coplien, p. 139) 
+
+This constructor is the one which must build the base class data for all derived classes. \hyperlink{classPecos_1_1SharedBasisApproxData_abd1905e4b592f326e5d4b6053b8e8ab2}{get\+\_\+shared\+\_\+data()} instantiates a derived class letter and the derived constructor selects this base class constructor in its initialization list (to avoid recursion in the base class constructor calling \hyperlink{classPecos_1_1SharedBasisApproxData_abd1905e4b592f326e5d4b6053b8e8ab2}{get\+\_\+shared\+\_\+data()} again). Since the letter IS the representation, its rep pointer is set to N\+U\+LL (an uninitialized pointer causes problems in $\sim$\+Shared\+Basis\+Approx\+Data). 
+
+\subsection{Member Function Documentation}
+\index{Pecos\+::\+Shared\+Basis\+Approx\+Data@{Pecos\+::\+Shared\+Basis\+Approx\+Data}!operator=@{operator=}}
+\index{operator=@{operator=}!Pecos\+::\+Shared\+Basis\+Approx\+Data@{Pecos\+::\+Shared\+Basis\+Approx\+Data}}
+\subsubsection[{\texorpdfstring{operator=(const Shared\+Basis\+Approx\+Data \&shared\+\_\+data)}{operator=(const SharedBasisApproxData &shared_data)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Shared\+Basis\+Approx\+Data} operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Shared\+Basis\+Approx\+Data} \&}]{shared\+\_\+data}
+\end{DoxyParamCaption}
+)}\label{classPecos_1_1SharedBasisApproxData_ab1446b60a1373dcff4117710b2e89252}
+
+
+assignment operator 
+
+Assignment operator decrements reference\+Count for old data\+Rep, assigns new data\+Rep, and increments reference\+Count for new data\+Rep. 
+
+References Shared\+Basis\+Approx\+Data\+::data\+Rep, and Shared\+Basis\+Approx\+Data\+::reference\+Count.
+
+
+
+Referenced by Shared\+Basis\+Approx\+Data\+::\+Shared\+Basis\+Approx\+Data().
+
+\index{Pecos\+::\+Shared\+Basis\+Approx\+Data@{Pecos\+::\+Shared\+Basis\+Approx\+Data}!get\+\_\+shared\+\_\+data@{get\+\_\+shared\+\_\+data}}
+\index{get\+\_\+shared\+\_\+data@{get\+\_\+shared\+\_\+data}!Pecos\+::\+Shared\+Basis\+Approx\+Data@{Pecos\+::\+Shared\+Basis\+Approx\+Data}}
+\subsubsection[{\texorpdfstring{get\+\_\+shared\+\_\+data(short basis\+\_\+type, const U\+Short\+Array \&approx\+\_\+order, size\+\_\+t num\+\_\+vars)}{get_shared_data(short basis_type, const UShortArray &approx_order, size_t num_vars)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Shared\+Basis\+Approx\+Data} $\ast$ get\+\_\+shared\+\_\+data (
+\begin{DoxyParamCaption}
+\item[{short}]{basis\+\_\+type, }
+\item[{const U\+Short\+Array \&}]{approx\+\_\+order, }
+\item[{size\+\_\+t}]{num\+\_\+vars}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classPecos_1_1SharedBasisApproxData_abd1905e4b592f326e5d4b6053b8e8ab2}
+
+
+used by the standard envelope constructor to initialize data\+Rep to the appropriate derived type 
+
+Used only by the envelope constructor to initialize data\+Rep to the appropriate derived type. 
+
+References Shared\+Basis\+Approx\+Data\+::\+Shared\+Basis\+Approx\+Data().
+
+
+
+Referenced by Shared\+Basis\+Approx\+Data\+::\+Shared\+Basis\+Approx\+Data().
+
+\index{Pecos\+::\+Shared\+Basis\+Approx\+Data@{Pecos\+::\+Shared\+Basis\+Approx\+Data}!get\+\_\+shared\+\_\+data@{get\+\_\+shared\+\_\+data}}
+\index{get\+\_\+shared\+\_\+data@{get\+\_\+shared\+\_\+data}!Pecos\+::\+Shared\+Basis\+Approx\+Data@{Pecos\+::\+Shared\+Basis\+Approx\+Data}}
+\subsubsection[{\texorpdfstring{get\+\_\+shared\+\_\+data(short basis\+\_\+type, const U\+Short\+Array \&approx\+\_\+order, size\+\_\+t num\+\_\+vars, const Expansion\+Config\+Options \&ec\+\_\+options, const Basis\+Config\+Options \&bc\+\_\+options, const Regression\+Config\+Options \&rc\+\_\+options)}{get_shared_data(short basis_type, const UShortArray &approx_order, size_t num_vars, const ExpansionConfigOptions &ec_options, const BasisConfigOptions &bc_options, const RegressionConfigOptions &rc_options)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Shared\+Basis\+Approx\+Data} $\ast$ get\+\_\+shared\+\_\+data (
+\begin{DoxyParamCaption}
+\item[{short}]{basis\+\_\+type, }
+\item[{const U\+Short\+Array \&}]{approx\+\_\+order, }
+\item[{size\+\_\+t}]{num\+\_\+vars, }
+\item[{const {\bf Expansion\+Config\+Options} \&}]{ec\+\_\+options, }
+\item[{const {\bf Basis\+Config\+Options} \&}]{bc\+\_\+options, }
+\item[{const {\bf Regression\+Config\+Options} \&}]{rc\+\_\+options}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classPecos_1_1SharedBasisApproxData_a328149090d0b6fc7425687c2932ed639}
+
+
+used by the alternate envelope constructor to initialize data\+Rep to the appropriate derived type 
+
+Used only by the envelope constructor to initialize data\+Rep to the appropriate derived type. 
+
+References Shared\+Basis\+Approx\+Data\+::\+Shared\+Basis\+Approx\+Data().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Shared\+Basis\+Approx\+Data.\+hpp\item 
+Shared\+Basis\+Approx\+Data.\+cpp\end{DoxyCompactItemize}

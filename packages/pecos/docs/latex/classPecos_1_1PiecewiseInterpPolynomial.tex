@@ -1,0 +1,222 @@
+\section{Piecewise\+Interp\+Polynomial Class Reference}
+\label{classPecos_1_1PiecewiseInterpPolynomial}\index{Piecewise\+Interp\+Polynomial@{Piecewise\+Interp\+Polynomial}}
+
+
+Derived basis polynomial class for 1-\/D piecewise interpolation polynomials.  
+
+
+Inheritance diagram for Piecewise\+Interp\+Polynomial\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classPecos_1_1PiecewiseInterpPolynomial}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPecos_1_1PiecewiseInterpPolynomial_a8782271ac72317a451529f0577c097d4}{Piecewise\+Interp\+Polynomial} (short poly\+\_\+type, short rule=N\+E\+W\+T\+O\+N\+\_\+\+C\+O\+T\+ES)\label{classPecos_1_1PiecewiseInterpPolynomial_a8782271ac72317a451529f0577c097d4}
+
+\begin{DoxyCompactList}\small\item\em constructor with poly\+\_\+type and rule arguments \end{DoxyCompactList}\item 
+\hyperlink{classPecos_1_1PiecewiseInterpPolynomial_aba22147e7b8e49acdeafebe04b13fc43}{Piecewise\+Interp\+Polynomial} (const Real\+Array \&interp\+\_\+pts, short poly\+\_\+type, short rule=N\+E\+W\+T\+O\+N\+\_\+\+C\+O\+T\+ES)\label{classPecos_1_1PiecewiseInterpPolynomial_aba22147e7b8e49acdeafebe04b13fc43}
+
+\begin{DoxyCompactList}\small\item\em constructor with poly\+\_\+type, rule, and set of points to interpolate \end{DoxyCompactList}\item 
+\hyperlink{classPecos_1_1PiecewiseInterpPolynomial_aeeaccc5fd15abd34d002a4e5278bc20e}{$\sim$\+Piecewise\+Interp\+Polynomial} ()\label{classPecos_1_1PiecewiseInterpPolynomial_aeeaccc5fd15abd34d002a4e5278bc20e}
+
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classPecos_1_1PiecewiseInterpPolynomial_a9a5fd3dc945d15c8423dc66dcd137b4f}{precompute\+\_\+data} ()\label{classPecos_1_1PiecewiseInterpPolynomial_a9a5fd3dc945d15c8423dc66dcd137b4f}
+
+\begin{DoxyCompactList}\small\item\em precompute data that is reused repeatedly within interpolation \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1PiecewiseInterpPolynomial_abb79c6ea3bd58a7ca9c4b3bfdd85be9c}{type1\+\_\+value} (Real x, unsigned short i)
+\item 
+Real \hyperlink{classPecos_1_1PiecewiseInterpPolynomial_a49797f1037329fbe0a40f13dc23149e1}{type2\+\_\+value} (Real x, unsigned short i)
+\begin{DoxyCompactList}\small\item\em retrieve the value of the n\+\_\+th type 2 polynomial for a given parameter x \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1PiecewiseInterpPolynomial_a005465761c081a210eef9879ec5686f8}{type1\+\_\+gradient} (Real x, unsigned short i)
+\item 
+Real \hyperlink{classPecos_1_1PiecewiseInterpPolynomial_a069b51a84ab3c4a6e635e07b3c8dcfe7}{type2\+\_\+gradient} (Real x, unsigned short i)
+\begin{DoxyCompactList}\small\item\em retrieve the gradient of the n\+\_\+th type 2 polynomial for a given parameter x \end{DoxyCompactList}\item 
+const Real\+Array \& \hyperlink{classPecos_1_1PiecewiseInterpPolynomial_a10873b28f1284aff4ea214e00c4f86dd}{collocation\+\_\+points} (unsigned short order)
+\begin{DoxyCompactList}\small\item\em return collocation points corresponding to orthogonal polynomial order n \end{DoxyCompactList}\item 
+const Real\+Array \& \hyperlink{classPecos_1_1PiecewiseInterpPolynomial_aa010321cf47465dca5725fa15ba58bf6}{type1\+\_\+collocation\+\_\+weights} (unsigned short order)
+\begin{DoxyCompactList}\small\item\em return the type 1 collocation weights corresponding to a point set of size order \end{DoxyCompactList}\item 
+const Real\+Array \& \hyperlink{classPecos_1_1PiecewiseInterpPolynomial_a8bc6cc516ab2bccbbdca6e904dc5a10f}{type2\+\_\+collocation\+\_\+weights} (unsigned short order)
+\begin{DoxyCompactList}\small\item\em return the type 2 collocation weights corresponding to a point set of size order \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1PiecewiseInterpPolynomial_addd13d4093ce8cbf2d22c47a47aff610}{collocation\+\_\+rule} (short rule)\label{classPecos_1_1PiecewiseInterpPolynomial_addd13d4093ce8cbf2d22c47a47aff610}
+
+\begin{DoxyCompactList}\small\item\em set \hyperlink{classPecos_1_1OrthogonalPolynomial_abcc1d84cc8e8c8b5a66f720067039f2e}{Orthogonal\+Polynomial\+::colloc\+Rule} \end{DoxyCompactList}\item 
+short \hyperlink{classPecos_1_1PiecewiseInterpPolynomial_a2e390f265fcc800348dc816d6cc37f86}{collocation\+\_\+rule} () const \label{classPecos_1_1PiecewiseInterpPolynomial_a2e390f265fcc800348dc816d6cc37f86}
+
+\begin{DoxyCompactList}\small\item\em get \hyperlink{classPecos_1_1OrthogonalPolynomial_abcc1d84cc8e8c8b5a66f720067039f2e}{Orthogonal\+Polynomial\+::colloc\+Rule} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+short \hyperlink{classPecos_1_1PiecewiseInterpPolynomial_abcc1d84cc8e8c8b5a66f720067039f2e}{colloc\+Rule}\label{classPecos_1_1PiecewiseInterpPolynomial_abcc1d84cc8e8c8b5a66f720067039f2e}
+
+\begin{DoxyCompactList}\small\item\em name of closed nested rule\+: N\+E\+W\+T\+O\+N\+\_\+\+C\+O\+T\+ES (equidistant) or C\+L\+E\+N\+S\+H\+A\+W\+\_\+\+C\+U\+R\+T\+IS (non-\/equidistant) \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1PiecewiseInterpPolynomial_a2d507685a12fe5fcb99384f9fb14c638}{interp\+Interval}\label{classPecos_1_1PiecewiseInterpPolynomial_a2d507685a12fe5fcb99384f9fb14c638}
+
+\begin{DoxyCompactList}\small\item\em the constant interval between points for an equidistant colloc\+Rule \end{DoxyCompactList}\item 
+Real\+Array \hyperlink{classPecos_1_1PiecewiseInterpPolynomial_a142635e1a0334e06cc17969f45121833}{type1\+Interp\+Wts}\label{classPecos_1_1PiecewiseInterpPolynomial_a142635e1a0334e06cc17969f45121833}
+
+\begin{DoxyCompactList}\small\item\em set of 1-\/D weights for interpolation of values \end{DoxyCompactList}\item 
+Real\+Array \hyperlink{classPecos_1_1PiecewiseInterpPolynomial_ae041c3717fb8258280964d7a37b2378c}{type2\+Interp\+Wts}\label{classPecos_1_1PiecewiseInterpPolynomial_ae041c3717fb8258280964d7a37b2378c}
+
+\begin{DoxyCompactList}\small\item\em set of 1-\/D\mbox{]} weights for interpolation of gradients \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Derived basis polynomial class for 1-\/D piecewise interpolation polynomials. 
+
+The \hyperlink{classPecos_1_1PiecewiseInterpPolynomial}{Piecewise\+Interp\+Polynomial} class evaluates a univariate interpolation polynomial with local support. The order of the polynomial may be linear, based only on interpolated values, or cubic, based on interpolated values and gradients. It enables multidimensional interpolants within \hyperlink{classPecos_1_1InterpPolyApproximation}{Interp\+Poly\+Approximation}. 
+
+\subsection{Member Function Documentation}
+\index{Pecos\+::\+Piecewise\+Interp\+Polynomial@{Pecos\+::\+Piecewise\+Interp\+Polynomial}!type1\+\_\+value@{type1\+\_\+value}}
+\index{type1\+\_\+value@{type1\+\_\+value}!Pecos\+::\+Piecewise\+Interp\+Polynomial@{Pecos\+::\+Piecewise\+Interp\+Polynomial}}
+\subsubsection[{\texorpdfstring{type1\+\_\+value(\+Real x, unsigned short i)}{type1_value(Real x, unsigned short i)}}]{\setlength{\rightskip}{0pt plus 5cm}Real type1\+\_\+value (
+\begin{DoxyParamCaption}
+\item[{Real}]{x, }
+\item[{unsigned short}]{i}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classPecos_1_1PiecewiseInterpPolynomial_abb79c6ea3bd58a7ca9c4b3bfdd85be9c}
+Compute value of the piecewise interpolation polynomial corresponding to interpolation point i. 
+
+Reimplemented from \hyperlink{classPecos_1_1BasisPolynomial_a1fab871e99cec3a1933a2b1e9ed8a625}{Basis\+Polynomial}.
+
+
+
+References Basis\+Polynomial\+::basis\+Poly\+Type, Piecewise\+Interp\+Polynomial\+::colloc\+Rule, Piecewise\+Interp\+Polynomial\+::interp\+Interval, and Interpolation\+Polynomial\+::interp\+Pts.
+
+\index{Pecos\+::\+Piecewise\+Interp\+Polynomial@{Pecos\+::\+Piecewise\+Interp\+Polynomial}!type2\+\_\+value@{type2\+\_\+value}}
+\index{type2\+\_\+value@{type2\+\_\+value}!Pecos\+::\+Piecewise\+Interp\+Polynomial@{Pecos\+::\+Piecewise\+Interp\+Polynomial}}
+\subsubsection[{\texorpdfstring{type2\+\_\+value(\+Real x, unsigned short i)}{type2_value(Real x, unsigned short i)}}]{\setlength{\rightskip}{0pt plus 5cm}Real type2\+\_\+value (
+\begin{DoxyParamCaption}
+\item[{Real}]{x, }
+\item[{unsigned short}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classPecos_1_1PiecewiseInterpPolynomial_a49797f1037329fbe0a40f13dc23149e1}
+
+
+retrieve the value of the n\+\_\+th type 2 polynomial for a given parameter x 
+
+For orthogonal polynomials, n specifies the order of the polynomial, whereas for interpolation polynomials, it identifies the interpolant for the n-\/th point. 
+
+Reimplemented from \hyperlink{classPecos_1_1BasisPolynomial_aecd19f4bde44ba0cc371340405d81a18}{Basis\+Polynomial}.
+
+
+
+References Basis\+Polynomial\+::basis\+Poly\+Type, and Interpolation\+Polynomial\+::interp\+Pts.
+
+\index{Pecos\+::\+Piecewise\+Interp\+Polynomial@{Pecos\+::\+Piecewise\+Interp\+Polynomial}!type1\+\_\+gradient@{type1\+\_\+gradient}}
+\index{type1\+\_\+gradient@{type1\+\_\+gradient}!Pecos\+::\+Piecewise\+Interp\+Polynomial@{Pecos\+::\+Piecewise\+Interp\+Polynomial}}
+\subsubsection[{\texorpdfstring{type1\+\_\+gradient(\+Real x, unsigned short i)}{type1_gradient(Real x, unsigned short i)}}]{\setlength{\rightskip}{0pt plus 5cm}Real type1\+\_\+gradient (
+\begin{DoxyParamCaption}
+\item[{Real}]{x, }
+\item[{unsigned short}]{i}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classPecos_1_1PiecewiseInterpPolynomial_a005465761c081a210eef9879ec5686f8}
+Compute derivative with respect to x of the piecewise interpolation polynomial corresponding to interpolation point i. 
+
+Reimplemented from \hyperlink{classPecos_1_1BasisPolynomial_a6f69ec84983f551e7e0e4a18b78b4498}{Basis\+Polynomial}.
+
+
+
+References Basis\+Polynomial\+::basis\+Poly\+Type, Piecewise\+Interp\+Polynomial\+::colloc\+Rule, Piecewise\+Interp\+Polynomial\+::interp\+Interval, and Interpolation\+Polynomial\+::interp\+Pts.
+
+\index{Pecos\+::\+Piecewise\+Interp\+Polynomial@{Pecos\+::\+Piecewise\+Interp\+Polynomial}!type2\+\_\+gradient@{type2\+\_\+gradient}}
+\index{type2\+\_\+gradient@{type2\+\_\+gradient}!Pecos\+::\+Piecewise\+Interp\+Polynomial@{Pecos\+::\+Piecewise\+Interp\+Polynomial}}
+\subsubsection[{\texorpdfstring{type2\+\_\+gradient(\+Real x, unsigned short i)}{type2_gradient(Real x, unsigned short i)}}]{\setlength{\rightskip}{0pt plus 5cm}Real type2\+\_\+gradient (
+\begin{DoxyParamCaption}
+\item[{Real}]{x, }
+\item[{unsigned short}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classPecos_1_1PiecewiseInterpPolynomial_a069b51a84ab3c4a6e635e07b3c8dcfe7}
+
+
+retrieve the gradient of the n\+\_\+th type 2 polynomial for a given parameter x 
+
+For orthogonal polynomials, n specifies the order of the polynomial, whereas for interpolation polynomials, it identifies the interpolant for the n-\/th point. 
+
+Reimplemented from \hyperlink{classPecos_1_1BasisPolynomial_a3a6b82f9baaa857ff03ea5a63ff48cc8}{Basis\+Polynomial}.
+
+
+
+References Basis\+Polynomial\+::basis\+Poly\+Type, Piecewise\+Interp\+Polynomial\+::collocation\+\_\+points(), and Interpolation\+Polynomial\+::interp\+Pts.
+
+\index{Pecos\+::\+Piecewise\+Interp\+Polynomial@{Pecos\+::\+Piecewise\+Interp\+Polynomial}!collocation\+\_\+points@{collocation\+\_\+points}}
+\index{collocation\+\_\+points@{collocation\+\_\+points}!Pecos\+::\+Piecewise\+Interp\+Polynomial@{Pecos\+::\+Piecewise\+Interp\+Polynomial}}
+\subsubsection[{\texorpdfstring{collocation\+\_\+points(unsigned short order)}{collocation_points(unsigned short order)}}]{\setlength{\rightskip}{0pt plus 5cm}const Real\+Array \& collocation\+\_\+points (
+\begin{DoxyParamCaption}
+\item[{unsigned short}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classPecos_1_1PiecewiseInterpPolynomial_a10873b28f1284aff4ea214e00c4f86dd}
+
+
+return collocation points corresponding to orthogonal polynomial order n 
+
+This is defined for orthogonal and piecewise interpolation polynomials. 
+
+Reimplemented from \hyperlink{classPecos_1_1BasisPolynomial_a0f96bd4e27ddc5c44117e7b68744b5a4}{Basis\+Polynomial}.
+
+
+
+References Piecewise\+Interp\+Polynomial\+::colloc\+Rule, Piecewise\+Interp\+Polynomial\+::interp\+Interval, Interpolation\+Polynomial\+::interp\+Pts, and Piecewise\+Interp\+Polynomial\+::type1\+\_\+collocation\+\_\+weights().
+
+
+
+Referenced by Piecewise\+Interp\+Polynomial\+::type1\+\_\+collocation\+\_\+weights(), Piecewise\+Interp\+Polynomial\+::type2\+\_\+collocation\+\_\+weights(), and Piecewise\+Interp\+Polynomial\+::type2\+\_\+gradient().
+
+\index{Pecos\+::\+Piecewise\+Interp\+Polynomial@{Pecos\+::\+Piecewise\+Interp\+Polynomial}!type1\+\_\+collocation\+\_\+weights@{type1\+\_\+collocation\+\_\+weights}}
+\index{type1\+\_\+collocation\+\_\+weights@{type1\+\_\+collocation\+\_\+weights}!Pecos\+::\+Piecewise\+Interp\+Polynomial@{Pecos\+::\+Piecewise\+Interp\+Polynomial}}
+\subsubsection[{\texorpdfstring{type1\+\_\+collocation\+\_\+weights(unsigned short order)}{type1_collocation_weights(unsigned short order)}}]{\setlength{\rightskip}{0pt plus 5cm}const Real\+Array \& type1\+\_\+collocation\+\_\+weights (
+\begin{DoxyParamCaption}
+\item[{unsigned short}]{order}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classPecos_1_1PiecewiseInterpPolynomial_aa010321cf47465dca5725fa15ba58bf6}
+
+
+return the type 1 collocation weights corresponding to a point set of size order 
+
+This is defined for orthogonal and piecewise interpolation polynomials. 
+
+Reimplemented from \hyperlink{classPecos_1_1BasisPolynomial_aa010321cf47465dca5725fa15ba58bf6}{Basis\+Polynomial}.
+
+
+
+References Basis\+Polynomial\+::basis\+Poly\+Type, Piecewise\+Interp\+Polynomial\+::collocation\+\_\+points(), Piecewise\+Interp\+Polynomial\+::colloc\+Rule, Piecewise\+Interp\+Polynomial\+::interp\+Interval, Interpolation\+Polynomial\+::interp\+Pts, Piecewise\+Interp\+Polynomial\+::type1\+Interp\+Wts, and Piecewise\+Interp\+Polynomial\+::type2\+\_\+collocation\+\_\+weights().
+
+
+
+Referenced by Piecewise\+Interp\+Polynomial\+::collocation\+\_\+points().
+
+\index{Pecos\+::\+Piecewise\+Interp\+Polynomial@{Pecos\+::\+Piecewise\+Interp\+Polynomial}!type2\+\_\+collocation\+\_\+weights@{type2\+\_\+collocation\+\_\+weights}}
+\index{type2\+\_\+collocation\+\_\+weights@{type2\+\_\+collocation\+\_\+weights}!Pecos\+::\+Piecewise\+Interp\+Polynomial@{Pecos\+::\+Piecewise\+Interp\+Polynomial}}
+\subsubsection[{\texorpdfstring{type2\+\_\+collocation\+\_\+weights(unsigned short order)}{type2_collocation_weights(unsigned short order)}}]{\setlength{\rightskip}{0pt plus 5cm}const Real\+Array \& type2\+\_\+collocation\+\_\+weights (
+\begin{DoxyParamCaption}
+\item[{unsigned short}]{order}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classPecos_1_1PiecewiseInterpPolynomial_a8bc6cc516ab2bccbbdca6e904dc5a10f}
+
+
+return the type 2 collocation weights corresponding to a point set of size order 
+
+This is defined for piecewise interpolation polynomials. 
+
+Reimplemented from \hyperlink{classPecos_1_1BasisPolynomial_a8bc6cc516ab2bccbbdca6e904dc5a10f}{Basis\+Polynomial}.
+
+
+
+References Basis\+Polynomial\+::basis\+Poly\+Type, Piecewise\+Interp\+Polynomial\+::collocation\+\_\+points(), Piecewise\+Interp\+Polynomial\+::colloc\+Rule, Piecewise\+Interp\+Polynomial\+::interp\+Interval, Interpolation\+Polynomial\+::interp\+Pts, and Piecewise\+Interp\+Polynomial\+::type2\+Interp\+Wts.
+
+
+
+Referenced by Piecewise\+Interp\+Polynomial\+::type1\+\_\+collocation\+\_\+weights().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Piecewise\+Interp\+Polynomial.\+hpp\item 
+Piecewise\+Interp\+Polynomial.\+cpp\end{DoxyCompactItemize}

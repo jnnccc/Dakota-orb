@@ -1,0 +1,361 @@
+.TH "NatafTransformation" 3 "Wed Dec 27 2017" "Version Version 1.0" "PECOS" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+NatafTransformation \- Class for Nataf nonlinear distribution transformation\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBProbabilityTransformation\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBNatafTransformation\fP ()"
+.br
+.RI "\fIconstructor \fP"
+.ti -1c
+.RI "\fB~NatafTransformation\fP ()"
+.br
+.RI "\fIdestructor \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBtrans_U_to_X\fP (const RealVector &u_vars, RealVector &x_vars)"
+.br
+.RI "\fITransformation routine from u-space of uncorrelated standard normal variables to x-space of correlated random variables\&. \fP"
+.ti -1c
+.RI "void \fBtrans_X_to_U\fP (const RealVector &x_vars, RealVector &u_vars)"
+.br
+.RI "\fITransformation routine from x-space of correlated random variables to u-space of uncorrelated standard normal variables\&. \fP"
+.ti -1c
+.RI "void \fBtransform_correlations\fP ()"
+.br
+.RI "\fIAs part of the Nataf distribution model (Der Kiureghian & Liu, 1986), this procedure modifies the user-specified correlation matrix (corrMatrixX) to account for correlation warping from the nonlinear X->Z transformation and performs a Cholesky factorization to create corrCholeskyFactorZ\&. \fP"
+.ti -1c
+.RI "void \fBtrans_grad_X_to_U\fP (const RealVector &fn_grad_x, RealVector &fn_grad_u, const RealVector &x_vars, const SizetArray &x_dvv, SizetMultiArrayConstView cv_ids)"
+.br
+.RI "\fITransformation routine for gradient vector from x-space to u-space\&. \fP"
+.ti -1c
+.RI "void \fBtrans_grad_X_to_U\fP (const RealVector &fn_grad_x, RealVector &fn_grad_u, const RealMatrix &jacobian_xu, const SizetArray &x_dvv, SizetMultiArrayConstView cv_ids)"
+.br
+.RI "\fITransformation routine for gradient vector from x-space to u-space\&. \fP"
+.ti -1c
+.RI "void \fBtrans_grad_X_to_S\fP (const RealVector &fn_grad_x, RealVector &fn_grad_s, const RealVector &x_vars, const SizetArray &x_dvv, SizetMultiArrayConstView cv_ids, SizetMultiArrayConstView acv_ids, const SizetArray &acv_map1_indices, const ShortArray &acv_map2_targets)"
+.br
+.RI "\fITransformation routine from x-space gradient vector to design space\&. \fP"
+.ti -1c
+.RI "void \fBtrans_grad_X_to_S\fP (const RealVector &fn_grad_x, RealVector &fn_grad_s, const RealMatrix &jacobian_xs, const SizetArray &x_dvv, SizetMultiArrayConstView cv_ids, SizetMultiArrayConstView acv_ids, const SizetArray &acv_map1_indices, const ShortArray &acv_map2_targets)"
+.br
+.RI "\fITransformation routine from x-space gradient vector to design space\&. \fP"
+.ti -1c
+.RI "void \fBtrans_grad_U_to_X\fP (const RealVector &fn_grad_u, RealVector &fn_grad_x, const RealVector &x_vars, const SizetArray &x_dvv, SizetMultiArrayConstView cv_ids)"
+.br
+.RI "\fITransformation routine for gradient vector from u-space to x-space\&. \fP"
+.ti -1c
+.RI "void \fBtrans_grad_U_to_X\fP (const RealVector &fn_grad_u, RealVector &fn_grad_x, const RealMatrix &jacobian_ux, const SizetArray &x_dvv, SizetMultiArrayConstView cv_ids)"
+.br
+.RI "\fITransformation routine for gradient vector from u-space to x-space\&. \fP"
+.ti -1c
+.RI "void \fBtrans_hess_X_to_U\fP (const RealSymMatrix &fn_hess_x, RealSymMatrix &fn_hess_u, const RealVector &x_vars, const RealVector &fn_grad_x, const SizetArray &x_dvv, SizetMultiArrayConstView cv_ids)"
+.br
+.RI "\fITransformation routine for Hessian matrix from x-space to u-space\&. \fP"
+.ti -1c
+.RI "void \fBtrans_hess_X_to_U\fP (const RealSymMatrix &fn_hess_x, RealSymMatrix &fn_hess_u, const RealMatrix &jacobian_xu, const RealSymMatrixArray &hessian_xu, const RealVector &fn_grad_x, const SizetArray &x_dvv, SizetMultiArrayConstView cv_ids)"
+.br
+.RI "\fITransformation routine for Hessian matrix from x-space to u-space\&. \fP"
+.ti -1c
+.RI "void \fBjacobian_dX_dU\fP (const RealVector &x_vars, RealMatrix &jacobian_xu)"
+.br
+.RI "\fIJacobian of x(u) mapping obtained from dX/dZ dZ/dU\&. \fP"
+.ti -1c
+.RI "void \fBjacobian_dU_dX\fP (const RealVector &x_vars, RealMatrix &jacobian_ux)"
+.br
+.RI "\fIJacobian of u(x) mapping obtained from dU/dZ dZ/dX\&. \fP"
+.ti -1c
+.RI "void \fBjacobian_dX_dS\fP (const RealVector &x_vars, RealMatrix &jacobian_xs, SizetMultiArrayConstView cv_ids, SizetMultiArrayConstView acv_ids, const SizetArray &acv_map1_indices, const ShortArray &acv_map2_targets)"
+.br
+.RI "\fIDesign Jacobian of x(u,s) mapping obtained from differentiation of \fBtrans_U_to_X()\fP with respect to distribution parameters S\&. \fP"
+.ti -1c
+.RI "void \fBhessian_d2X_dU2\fP (const RealVector &x_vars, RealSymMatrixArray &hessian_xu)"
+.br
+.RI "\fIHessian of x(u) mapping obtained from dZ/dU^T d^2X/dZ^2 dZ/dU\&. \fP"
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBtrans_U_to_Z\fP (const RealVector &u_vars, RealVector &z_vars)"
+.br
+.RI "\fITransformation routine from u-space of uncorrelated standard normal variables to z-space of correlated standard normal variables\&. \fP"
+.ti -1c
+.RI "void \fBtrans_Z_to_X\fP (const RealVector &z_vars, RealVector &x_vars)"
+.br
+.RI "\fITransformation routine from z-space of correlated standard normal variables to x-space of correlated random variables\&. \fP"
+.ti -1c
+.RI "void \fBtrans_Z_to_X\fP (Real z, Real &x, size_t i)"
+.br
+.RI "\fITransformation routine from a single z-space variable to a corresponding x-space variable\&. \fP"
+.ti -1c
+.RI "void \fBtrans_X_to_Z\fP (const RealVector &x_vars, RealVector &z_vars)"
+.br
+.RI "\fITransformation routine from x-space of correlated random variables to z-space of correlated standard normal variables\&. \fP"
+.ti -1c
+.RI "void \fBtrans_X_to_Z\fP (Real x, Real &z, size_t i)"
+.br
+.RI "\fITransformation routine from a single x-space random variable to a corresponding z-space variable\&. \fP"
+.ti -1c
+.RI "void \fBtrans_Z_to_U\fP (RealVector &z_vars, RealVector &u_vars)"
+.br
+.RI "\fITransformation routine from z-space of correlated standard normal variables to u-space of uncorrelated standard normal variables\&. \fP"
+.ti -1c
+.RI "void \fBjacobian_dX_dZ\fP (const RealVector &x_vars, RealMatrix &jacobian_xz)"
+.br
+.RI "\fIJacobian of x(z) mapping obtained from differentiation of \fBtrans_Z_to_X()\fP \fP"
+.ti -1c
+.RI "void \fBjacobian_dZ_dX\fP (const RealVector &x_vars, RealMatrix &jacobian_zx)"
+.br
+.RI "\fIJacobian of z(x) mapping obtained from differentiation of \fBtrans_X_to_Z()\fP \fP"
+.ti -1c
+.RI "void \fBhessian_d2X_dZ2\fP (const RealVector &x_vars, RealSymMatrixArray &hessian_xz)"
+.br
+.RI "\fIHessian of x(z) mapping obtained from differentiation of \fBjacobian_dX_dZ()\fP \fP"
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Class for Nataf nonlinear distribution transformation\&. 
+
+The Nataf transformation occurs in two steps: (1) transformation from the original correlated distributions (x-space) to correlated standard normals (z-space) using CDF matching and from correlated standard normals to uncorrelated standard normals (u-space) using the inverse Cholesky factor of a modified correlation matrix\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "void trans_U_to_X (const RealVector & u_vars, RealVector & x_vars)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Transformation routine from u-space of uncorrelated standard normal variables to x-space of correlated random variables\&. This procedure performs the transformation from u to x space\&. u_vars is the vector of random variables in uncorrelated standard normal space (u-space)\&. x_vars is the vector of random variables in the original user-defined x-space\&. 
+.PP
+Reimplemented from \fBProbabilityTransformation\fP\&.
+.PP
+References ProbabilityTransformation::correlationFlagX, NatafTransformation::trans_U_to_Z(), and NatafTransformation::trans_Z_to_X()\&.
+.SS "void trans_X_to_U (const RealVector & x_vars, RealVector & u_vars)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Transformation routine from x-space of correlated random variables to u-space of uncorrelated standard normal variables\&. This procedure performs the transformation from x to u space u_vars is the vector of random variables in uncorrelated standard normal space (u-space)\&. x_vars is the vector of random variables in the original user-defined x-space\&. 
+.PP
+Reimplemented from \fBProbabilityTransformation\fP\&.
+.PP
+References ProbabilityTransformation::correlationFlagX, NatafTransformation::trans_X_to_Z(), and NatafTransformation::trans_Z_to_U()\&.
+.PP
+Referenced by NatafTransformation::trans_Z_to_X()\&.
+.SS "void transform_correlations ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+As part of the Nataf distribution model (Der Kiureghian & Liu, 1986), this procedure modifies the user-specified correlation matrix (corrMatrixX) to account for correlation warping from the nonlinear X->Z transformation and performs a Cholesky factorization to create corrCholeskyFactorZ\&. This procedure modifies the correlation matrix input by the user for use in the Nataf distribution model (Der Kiureghian and Liu, ASCE JEM 112:1, 1986)\&. It uses empirical expressionss derived from least-squares polynomial fits to numerical integration data\&.
+.PP
+.PD 0
+.IP "\(bu" 2
+corrMatrixX: the correlation coefficient matrix of the random variables provided by the user
+.PP
+.PD 0
+.IP "\(bu" 2
+mod_corr_matrix: modified correlation matrix
+.PP
+.PD 0
+.IP "\(bu" 2
+corrCholeskyFactorZ: Cholesky factor of the modified correlation matrix for use in Z_to_U and U_to_Z transformations\&.
+.PP
+.PD 0
+.IP "\(bu" 2
+cf_var_{i,j}: coefficient of variation of Xi,Xj
+.PP
+Note: The modification is exact for normal-normal, lognormal-lognormal, and normal-lognormal tranformations\&. All other cases are approximations with some error as noted below\&. 
+.PP
+Reimplemented from \fBProbabilityTransformation\fP\&.
+.PP
+References ProbabilityTransformation::corrCholeskyFactorZ, ProbabilityTransformation::correlationFlagX, ProbabilityTransformation::corrMatrixX, ProbabilityTransformation::randomVarsX, ProbabilityTransformation::ranVarTypesU, and NatafTransformation::trans_grad_X_to_U()\&.
+.SS "void trans_grad_X_to_U (const RealVector & fn_grad_x, RealVector & fn_grad_u, const RealVector & x_vars, const SizetArray & x_dvv, SizetMultiArrayConstView cv_ids)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Transformation routine for gradient vector from x-space to u-space\&. This procedure tranforms a gradient vector dg/dx from the original user-defined x-space (where evaluations are performed) to uncorrelated standard normal space (u-space) through application of the Jacobian dx/du\&. x_vars is the vector of random variables in x-space\&. 
+.PP
+Reimplemented from \fBProbabilityTransformation\fP\&.
+.PP
+References NatafTransformation::jacobian_dX_dU()\&.
+.PP
+Referenced by NatafTransformation::transform_correlations()\&.
+.SS "void trans_grad_X_to_U (const RealVector & fn_grad_x, RealVector & fn_grad_u, const RealMatrix & jacobian_xu, const SizetArray & x_dvv, SizetMultiArrayConstView cv_ids)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Transformation routine for gradient vector from x-space to u-space\&. This procedure tranforms a gradient vector dg/dx from the original user-defined x-space (where evaluations are performed) to uncorrelated standard normal space (u-space) through application of the Jacobian dx/du\&. This overloaded form allows for the separate calculation of jacobian_xu, as this matrix is independent of the response function index and can be pulled outside response function loops\&. 
+.PP
+Reimplemented from \fBProbabilityTransformation\fP\&.
+.PP
+References NatafTransformation::trans_grad_U_to_X()\&.
+.SS "void trans_grad_X_to_S (const RealVector & fn_grad_x, RealVector & fn_grad_s, const RealVector & x_vars, const SizetArray & x_dvv, SizetMultiArrayConstView cv_ids, SizetMultiArrayConstView acv_ids, const SizetArray & acv_map1_indices, const ShortArray & acv_map2_targets)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Transformation routine from x-space gradient vector to design space\&. This procedure multiplies a gradient vector dg/dx from the original user-defined x-space (where evaluations are performed) with the design Jacobian dx/ds of the transformation x = x(u,s) to form the design gradient dg/ds\&. x_vars is the vector of random variables in x-space\&. 
+.PP
+Reimplemented from \fBProbabilityTransformation\fP\&.
+.PP
+References NatafTransformation::jacobian_dX_dS()\&.
+.PP
+Referenced by NatafTransformation::trans_grad_U_to_X()\&.
+.SS "void trans_grad_X_to_S (const RealVector & fn_grad_x, RealVector & fn_grad_s, const RealMatrix & jacobian_xs, const SizetArray & x_dvv, SizetMultiArrayConstView cv_ids, SizetMultiArrayConstView acv_ids, const SizetArray & acv_map1_indices, const ShortArray & acv_map2_targets)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Transformation routine from x-space gradient vector to design space\&. This procedure multiplies a gradient vector dg/dx from the original user-defined x-space (where evaluations are performed) with the design Jacobian dx/ds of the transformation x = x(u,s) to form the design gradient dg/ds\&. This overloaded form allows for the separate calculation of jacobian_xs, as this matrix is independent of the response function index and can be pulled outside response function loops\&. 
+.PP
+Reimplemented from \fBProbabilityTransformation\fP\&.
+.PP
+References NatafTransformation::trans_hess_X_to_U()\&.
+.SS "void trans_grad_U_to_X (const RealVector & fn_grad_u, RealVector & fn_grad_x, const RealVector & x_vars, const SizetArray & x_dvv, SizetMultiArrayConstView cv_ids)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Transformation routine for gradient vector from u-space to x-space\&. This procedure tranforms a gradient vector dg/du from uncorrelated standard space (u-space) to the original user-defined x-space through application of the Jacobian du/dx\&. x_vars is the vector of random variables in x-space\&. 
+.PP
+Reimplemented from \fBProbabilityTransformation\fP\&.
+.PP
+References NatafTransformation::jacobian_dU_dX()\&.
+.PP
+Referenced by NatafTransformation::trans_grad_X_to_U()\&.
+.SS "void trans_grad_U_to_X (const RealVector & fn_grad_u, RealVector & fn_grad_x, const RealMatrix & jacobian_ux, const SizetArray & x_dvv, SizetMultiArrayConstView cv_ids)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Transformation routine for gradient vector from u-space to x-space\&. This procedure tranforms a gradient vector dg/du from uncorrelated standard space (u-space) to the original user-defined x-space through application of the Jacobian du/dx\&. This overloaded form allows for the separate calculation of jacobian_ux, as this matrix is independent of the response function index and can be pulled outside response function loops\&. 
+.PP
+Reimplemented from \fBProbabilityTransformation\fP\&.
+.PP
+References NatafTransformation::trans_grad_X_to_S()\&.
+.SS "void trans_hess_X_to_U (const RealSymMatrix & fn_hess_x, RealSymMatrix & fn_hess_u, const RealVector & x_vars, const RealVector & fn_grad_x, const SizetArray & x_dvv, SizetMultiArrayConstView cv_ids)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Transformation routine for Hessian matrix from x-space to u-space\&. This procedure tranforms a Hessian matrix from the original user-defined x-space (where evaluations are performed) to uncorrelated standard normal space (u-space)\&. x_vars is the vector of the random variables in x-space\&. 
+.PP
+Reimplemented from \fBProbabilityTransformation\fP\&.
+.PP
+References NatafTransformation::hessian_d2X_dU2(), NatafTransformation::jacobian_dX_dU(), ProbabilityTransformation::randomVarsX, ProbabilityTransformation::ranVarTypesU, and ProbabilityTransformation::u_type()\&.
+.PP
+Referenced by NatafTransformation::trans_grad_X_to_S()\&.
+.SS "void trans_hess_X_to_U (const RealSymMatrix & fn_hess_x, RealSymMatrix & fn_hess_u, const RealMatrix & jacobian_xu, const RealSymMatrixArray & hessian_xu, const RealVector & fn_grad_x, const SizetArray & x_dvv, SizetMultiArrayConstView cv_ids)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Transformation routine for Hessian matrix from x-space to u-space\&. This procedure tranforms a Hessian matrix from the original user-defined x-space (where evaluations are performed) to uncorrelated standard normal space (u-space)\&. This overloaded form allows for the separate calculation of jacobian_xu and hessian_xu, since these are independent of the response function index and can be pulled outside response function loops\&. 
+.PP
+Reimplemented from \fBProbabilityTransformation\fP\&.
+.PP
+References NatafTransformation::jacobian_dX_dU()\&.
+.SS "void jacobian_dX_dU (const RealVector & x_vars, RealMatrix & jacobian_xu)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Jacobian of x(u) mapping obtained from dX/dZ dZ/dU\&. This procedure computes the Jacobian of the transformation x(u)\&. x_vars is the vector of random variables in the original user-defined x-space\&. 
+.PP
+Reimplemented from \fBProbabilityTransformation\fP\&.
+.PP
+References ProbabilityTransformation::corrCholeskyFactorZ, ProbabilityTransformation::correlationFlagX, and NatafTransformation::jacobian_dX_dZ()\&.
+.PP
+Referenced by NatafTransformation::trans_grad_X_to_U(), and NatafTransformation::trans_hess_X_to_U()\&.
+.SS "void jacobian_dU_dX (const RealVector & x_vars, RealMatrix & jacobian_ux)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Jacobian of u(x) mapping obtained from dU/dZ dZ/dX\&. This procedure computes the Jacobian of the transformation u(x)\&. x_vars is the vector of random variables in the original user-defined x-space\&. 
+.PP
+Reimplemented from \fBProbabilityTransformation\fP\&.
+.PP
+References ProbabilityTransformation::corrCholeskyFactorZ, ProbabilityTransformation::correlationFlagX, and NatafTransformation::jacobian_dZ_dX()\&.
+.PP
+Referenced by NatafTransformation::jacobian_dX_dZ(), and NatafTransformation::trans_grad_U_to_X()\&.
+.SS "void jacobian_dX_dS (const RealVector & x_vars, RealMatrix & jacobian_xs, SizetMultiArrayConstView cv_ids, SizetMultiArrayConstView acv_ids, const SizetArray & acv_map1_indices, const ShortArray & acv_map2_targets)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Design Jacobian of x(u,s) mapping obtained from differentiation of \fBtrans_U_to_X()\fP with respect to distribution parameters S\&. This procedure computes the derivative of the original variables x with respect to the random variable distribution parameters s\&. This provides the design Jacobian of the transformation for use in computing statistical design sensitivities for OUU\&.
+.PP
+dX/dS is derived by differentiating trans_Z_to_X with respect to S\&. For the uncorrelated case, u and z are constants\&. For the correlated case, u is a constant, but z(s) = L(s) u due to Nataf dependence on s and dz/ds = dL/ds u\&. 
+.PP
+Reimplemented from \fBProbabilityTransformation\fP\&.
+.PP
+References ProbabilityTransformation::correlationFlagX, ProbabilityTransformation::corrMatrixX, RandomVariable::dx_ds(), RandomVariable::dz_ds_factor(), NatafTransformation::hessian_d2X_dU2(), ProbabilityTransformation::numerical_design_jacobian(), ProbabilityTransformation::randomVarsX, ProbabilityTransformation::ranVarTypesU, NatafTransformation::trans_X_to_Z(), RandomVariable::type(), and ProbabilityTransformation::u_type()\&.
+.PP
+Referenced by NatafTransformation::jacobian_dZ_dX(), and NatafTransformation::trans_grad_X_to_S()\&.
+.SS "void hessian_d2X_dU2 (const RealVector & x_vars, RealSymMatrixArray & hessian_xu)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Hessian of x(u) mapping obtained from dZ/dU^T d^2X/dZ^2 dZ/dU\&. This procedure computes the Hessian of the transformation x(u)\&. hessian_xu is a 3D tensor modeled as an array of matrices, where the i_th matrix is d^2X_i/dU^2\&. x_vars is the vector of random variables in the original user-defined x-space\&. 
+.PP
+Reimplemented from \fBProbabilityTransformation\fP\&.
+.PP
+References ProbabilityTransformation::corrCholeskyFactorZ, ProbabilityTransformation::correlationFlagX, and NatafTransformation::hessian_d2X_dZ2()\&.
+.PP
+Referenced by NatafTransformation::jacobian_dX_dS(), and NatafTransformation::trans_hess_X_to_U()\&.
+.SS "void trans_U_to_Z (const RealVector & u_vars, RealVector & z_vars)\fC [private]\fP"
+
+.PP
+Transformation routine from u-space of uncorrelated standard normal variables to z-space of correlated standard normal variables\&. This procedure computes the transformation from u to z space\&. u_vars is the vector of random variables in uncorrelated standard normal space (u-space)\&. z_vars is the vector of random variables in normal space with proper correlations (z-space)\&. 
+.PP
+References ProbabilityTransformation::corrCholeskyFactorZ, and NatafTransformation::trans_Z_to_X()\&.
+.PP
+Referenced by NatafTransformation::trans_U_to_X()\&.
+.SS "void trans_Z_to_X (const RealVector & z_vars, RealVector & x_vars)\fC [private]\fP"
+
+.PP
+Transformation routine from z-space of correlated standard normal variables to x-space of correlated random variables\&. This procedure computes the transformation from z to x space\&. z_vars is the vector of random variables in normal space with proper correlations (z-space)\&. x_vars is the vector of random variables in the original user-defined x-space 
+.PP
+Referenced by NatafTransformation::trans_U_to_X(), and NatafTransformation::trans_U_to_Z()\&.
+.SS "void trans_Z_to_X (Real z, Real & x, size_t i)\fC [private]\fP"
+
+.PP
+Transformation routine from a single z-space variable to a corresponding x-space variable\&. This procedure computes the transformation from z to x space\&. z_var is the random variable in standardized space with proper correlations (z-space)\&. x_var is the random variable in the original user-defined x-space 
+.PP
+References RandomVariable::from_standard(), RandomVariable::inverse_ccdf(), RandomVariable::inverse_cdf(), RandomVariable::parameter(), ProbabilityTransformation::randomVarsX, ProbabilityTransformation::ranVarTypesU, NormalRandomVariable::std_cdf(), NatafTransformation::trans_X_to_U(), RandomVariable::type(), and ProbabilityTransformation::u_type()\&.
+.SS "void trans_X_to_Z (const RealVector & x_vars, RealVector & z_vars)\fC [private]\fP"
+
+.PP
+Transformation routine from x-space of correlated random variables to z-space of correlated standard normal variables\&. This procedure performs the transformation from x to z space: z_vars is the vector of random variables in normal space with proper correlations (z-space)\&. x_vars is the vector of random variables in the original user-defined x-space\&. 
+.PP
+Referenced by NatafTransformation::hessian_d2X_dZ2(), NatafTransformation::jacobian_dX_dS(), NatafTransformation::jacobian_dX_dZ(), NatafTransformation::jacobian_dZ_dX(), and NatafTransformation::trans_X_to_U()\&.
+.SS "void trans_X_to_Z (Real x, Real & z, size_t i)\fC [private]\fP"
+
+.PP
+Transformation routine from a single x-space random variable to a corresponding z-space variable\&. This procedure performs the transformation from x to z space: z_var is the random variable in standardized space with proper correlations (z-space)\&. x_var is the random variable in the original user-defined x-space\&. 
+.PP
+References RandomVariable::ccdf(), RandomVariable::cdf(), RandomVariable::parameter(), ProbabilityTransformation::randomVarsX, ProbabilityTransformation::ranVarTypesU, RandomVariable::to_standard(), RandomVariable::type(), and ProbabilityTransformation::u_type()\&.
+.SS "void trans_Z_to_U (RealVector & z_vars, RealVector & u_vars)\fC [private]\fP"
+
+.PP
+Transformation routine from z-space of correlated standard normal variables to u-space of uncorrelated standard normal variables\&. This procedure computes the transformation from z to u space\&. u_vars is the vector of random variables in uncorrelated standard normal space (u-space)\&. z_vars is the vector of random variables in normal space with proper correlations (z-space)\&. 
+.PP
+References ProbabilityTransformation::corrCholeskyFactorZ\&.
+.PP
+Referenced by NatafTransformation::trans_X_to_U()\&.
+.SS "void jacobian_dX_dZ (const RealVector & x_vars, RealMatrix & jacobian_xz)\fC [private]\fP"
+
+.PP
+Jacobian of x(z) mapping obtained from differentiation of \fBtrans_Z_to_X()\fP This procedure computes the Jacobian of the transformation x(z)\&. x_vars is the vector of random variables in the original user-defined x-space\&. 
+.PP
+References NatafTransformation::jacobian_dU_dX(), RandomVariable::parameter(), RandomVariable::pdf(), ProbabilityTransformation::randomVarsX, ProbabilityTransformation::ranVarTypesU, NormalRandomVariable::std_pdf(), NatafTransformation::trans_X_to_Z(), RandomVariable::type(), and ProbabilityTransformation::u_type()\&.
+.PP
+Referenced by NatafTransformation::jacobian_dX_dU()\&.
+.SS "void jacobian_dZ_dX (const RealVector & x_vars, RealMatrix & jacobian_zx)\fC [private]\fP"
+
+.PP
+Jacobian of z(x) mapping obtained from differentiation of \fBtrans_X_to_Z()\fP This procedure computes the Jacobian of the transformation z(x)\&. x_vars is the vector of random variables in the original user-defined x-space\&. 
+.PP
+References NatafTransformation::jacobian_dX_dS(), RandomVariable::parameter(), RandomVariable::pdf(), ProbabilityTransformation::randomVarsX, ProbabilityTransformation::ranVarTypesU, NormalRandomVariable::std_pdf(), NatafTransformation::trans_X_to_Z(), RandomVariable::type(), and ProbabilityTransformation::u_type()\&.
+.PP
+Referenced by NatafTransformation::jacobian_dU_dX()\&.
+.SS "void hessian_d2X_dZ2 (const RealVector & x_vars, RealSymMatrixArray & hessian_xz)\fC [private]\fP"
+
+.PP
+Hessian of x(z) mapping obtained from differentiation of \fBjacobian_dX_dZ()\fP This procedure computes the Hessian of the transformation x(z)\&. hessian_xz is a 3D tensor modeled as an array of matrices, where the i_th matrix is d^2X_i/dZ^2\&. x_vars is the vector of random variables in the original user-defined x-space\&. 
+.PP
+References RandomVariable::parameter(), RandomVariable::pdf(), RandomVariable::pdf_gradient(), ProbabilityTransformation::randomVarsX, ProbabilityTransformation::ranVarTypesU, NormalRandomVariable::std_pdf(), NatafTransformation::trans_X_to_Z(), RandomVariable::type(), and ProbabilityTransformation::u_type()\&.
+.PP
+Referenced by NatafTransformation::hessian_d2X_dU2()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for PECOS from the source code\&.

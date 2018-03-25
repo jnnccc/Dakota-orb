@@ -1,0 +1,128 @@
+.TH "BinomialRandomVariable" 3 "Wed Dec 27 2017" "Version Version 1.0" "PECOS" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+BinomialRandomVariable \- Derived random variable class for binomial random variables\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBRandomVariable\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBBinomialRandomVariable\fP ()"
+.br
+.RI "\fIdefault constructor \fP"
+.ti -1c
+.RI "\fBBinomialRandomVariable\fP (unsigned int num_trials, Real prob_per_trial)"
+.br
+.RI "\fIalternate constructor \fP"
+.ti -1c
+.RI "\fB~BinomialRandomVariable\fP ()"
+.br
+.RI "\fIdestructor \fP"
+.ti -1c
+.RI "Real \fBcdf\fP (Real x) const "
+.br
+.RI "\fIreturn the cumulative distribution function value of the random variable at x \fP"
+.ti -1c
+.RI "Real \fBccdf\fP (Real x) const "
+.br
+.RI "\fIreturn the complementary cumulative distribution function value of the random variable at x \fP"
+.ti -1c
+.RI "Real \fBinverse_cdf\fP (Real p_cdf) const "
+.br
+.RI "\fIreturn the x value corresponding to a cumulative probability \fP"
+.ti -1c
+.RI "Real \fBinverse_ccdf\fP (Real p_ccdf) const "
+.br
+.RI "\fIreturn the x value corresponding to a complementary cumulative probability \fP"
+.ti -1c
+.RI "Real \fBpdf\fP (Real x) const "
+.br
+.RI "\fIreturn the value of the random variable's probability density function at x \fP"
+.ti -1c
+.RI "Real \fBparameter\fP (short dist_param) const "
+.br
+.RI "\fIreturn the value of the named distribution parameter \fP"
+.ti -1c
+.RI "void \fBparameter\fP (short dist_param, Real val)"
+.br
+.RI "\fIupdate the value of the named distribution parameter \fP"
+.ti -1c
+.RI "Real \fBmean\fP () const "
+.br
+.RI "\fIreturn the distribution mean \fP"
+.ti -1c
+.RI "Real \fBmedian\fP () const "
+.br
+.RI "\fIreturn the distribution mode \fP"
+.ti -1c
+.RI "Real \fBmode\fP () const "
+.br
+.RI "\fIreturn the distribution mode \fP"
+.ti -1c
+.RI "Real \fBstandard_deviation\fP () const "
+.br
+.RI "\fIreturn the distribution variance \fP"
+.ti -1c
+.RI "Real \fBvariance\fP () const "
+.br
+.RI "\fIreturn the distribution variance \fP"
+.ti -1c
+.RI "RealRealPair \fBbounds\fP () const "
+.br
+.RI "\fIreturn the distribution lower and upper bounds as a pair \fP"
+.ti -1c
+.RI "void \fBupdate\fP (unsigned int num_trials, Real prob_per_trial)"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static Real \fBpdf\fP (Real x, unsigned int num_trials, Real prob_per_trial)"
+.br
+.ti -1c
+.RI "static Real \fBcdf\fP (Real x, unsigned int num_trials, Real prob_per_trial)"
+.br
+.ti -1c
+.RI "static void \fBmoments_from_params\fP (unsigned int num_trials, Real prob_per_trial, Real &\fBmean\fP, Real &std_dev)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBupdate_boost\fP ()"
+.br
+.RI "\fIcreate a new binomialDist instance \fP"
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "unsigned int \fBnumTrials\fP"
+.br
+.RI "\fIn parameter of binomial random variable \fP"
+.ti -1c
+.RI "Real \fBprobPerTrial\fP"
+.br
+.RI "\fIp parameter of binomial random variable \fP"
+.ti -1c
+.RI "binomial_dist * \fBbinomialDist\fP"
+.br
+.RI "\fIpointer to the Boost binomial_distribution instance \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Derived random variable class for binomial random variables\&. 
+
+Manages numTrials and probPerTrial parameters\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for PECOS from the source code\&.

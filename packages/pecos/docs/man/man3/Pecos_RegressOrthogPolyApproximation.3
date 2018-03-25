@@ -1,0 +1,444 @@
+.TH "RegressOrthogPolyApproximation" 3 "Wed Dec 27 2017" "Version Version 1.0" "PECOS" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RegressOrthogPolyApproximation \- Derived approximation class for multivariate orthogonal polynomial approximation with coefficient estimation via regression\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBOrthogPolyApproximation\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBRegressOrthogPolyApproximation\fP (const \fBSharedBasisApproxData\fP &shared_data)"
+.br
+.RI "\fIdefault constructor \fP"
+.ti -1c
+.RI "\fB~RegressOrthogPolyApproximation\fP ()"
+.br
+.RI "\fIdestructor \fP"
+.ti -1c
+.RI "void \fBbuild_linear_system\fP (RealMatrix &A, RealMatrix &B, RealMatrix &points)"
+.br
+.RI "\fIBuild the pce vandermonde matrix A and extract the function (and gradient) data b so that we can solve (possible approximately) Ax=b; also populate the matrix of points corresponding to the random variable sample set\&. \fP"
+.ti -1c
+.RI "void \fBbuild_linear_system\fP (RealMatrix &A, RealMatrix &B, RealMatrix &points, const UShort2DArray &multi_index)"
+.br
+.RI "\fIBuild the pce vandermonde matrix A and extract the function (and gradient) data b so that we can solve (possible approximately) Ax=b using the provided multi-index; also populate the matrix of points corresponding to the random variable sample set\&. \fP"
+.ti -1c
+.RI "void \fBbuild_linear_system\fP (RealMatrix &A, RealMatrix &B)"
+.br
+.RI "\fIBuild the pce vandermonde matrix A and extract the function (and gradient) data b so that we can solve (possible approximately) Ax=b\&. \fP"
+.ti -1c
+.RI "void \fBbuild_linear_system\fP (RealMatrix &A, RealMatrix &B, const UShort2DArray &multi_index)"
+.br
+.RI "\fIBuild the pce vandermonde matrix A and extract the function (and gradient) data b so that we can solve (possible approximately) Ax=b using the provided multi-index\&. \fP"
+.ti -1c
+.RI "void \fBbuild_linear_system\fP (RealMatrix &A)"
+.br
+.RI "\fIBuild the pce vandermonde matrix A used in solving the system Ax=b\&. \fP"
+.ti -1c
+.RI "void \fBbuild_linear_system\fP (RealMatrix &A, const UShort2DArray &multi_index)"
+.br
+.RI "\fIBuild the pce vandermonde matrix A used in solving the system Ax=b using the provided multi-index\&. \fP"
+.ti -1c
+.RI "void \fBaugment_linear_system\fP (const RealVectorArray &samples, RealMatrix &A, const UShort2DArray &multi_index)"
+.br
+.RI "\fIaugment a Vandermonde matrix with additional sample points for a fixed multi-index \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBmin_coefficients\fP () const "
+.br
+.RI "\fIreturn the minimum number of samples (unknowns) required to build the derived class approximation type in numVars dimensions \fP"
+.ti -1c
+.RI "void \fBcompute_coefficients\fP (size_t index=_NPOS)"
+.br
+.RI "\fIcalculate the approximation coefficients using a set of surrogate data \fP"
+.ti -1c
+.RI "void \fBincrement_coefficients\fP (size_t index=_NPOS)"
+.br
+.RI "\fIrecalculate approximation coefficients following a surrogate data update \fP"
+.ti -1c
+.RI "void \fBstore_coefficients\fP (size_t index=_NPOS)"
+.br
+.RI "\fIstore the current coefficients for later combination \fP"
+.ti -1c
+.RI "void \fBrestore_coefficients\fP (size_t index=_NPOS)"
+.br
+.RI "\fIrestore a previously stored coefficient state \fP"
+.ti -1c
+.RI "void \fBswap_coefficients\fP (size_t index)"
+.br
+.RI "\fIswap the current coefficients with a previously stored set \fP"
+.ti -1c
+.RI "void \fBremove_stored_coefficients\fP (size_t index=_NPOS)"
+.br
+.RI "\fIremove a redundant stored entry prior to combine_coefficients (default is pop_back) \fP"
+.ti -1c
+.RI "void \fBcombine_coefficients\fP (size_t swap_index)"
+.br
+.RI "\fIcombine the current coefficients with a previously stored set \fP"
+.ti -1c
+.RI "void \fBallocate_arrays\fP ()"
+.br
+.RI "\fIinitialize multiIndex, expansionCoeffs, et al\&. \fP"
+.ti -1c
+.RI "size_t \fBexpansion_terms\fP () const "
+.br
+.RI "\fIretrieve number of terms in the orthogonal polynomial expansion \fP"
+.ti -1c
+.RI "const RealVector & \fBdimension_decay_rates\fP ()"
+.br
+.RI "\fIestimate chaos expansion coefficient decay rates for each random variable dimension using linear least squares in semilog space \fP"
+.ti -1c
+.RI "Real \fBvalue\fP (const RealVector &x)"
+.br
+.RI "\fIretrieve the approximate function value for a given parameter vector \fP"
+.ti -1c
+.RI "const RealVector & \fBgradient_basis_variables\fP (const RealVector &x)"
+.br
+.RI "\fIretrieve the gradient for a response expansion with respect to all variables included in the polynomial bases using the given parameter vector and default DVV \fP"
+.ti -1c
+.RI "const RealVector & \fBgradient_basis_variables\fP (const RealVector &x, const SizetArray &dvv)"
+.br
+.RI "\fIretrieve the gradient for a response expansion with respect to variables included in the polynomial basis for a given parameter vector and a given DVV subset \fP"
+.ti -1c
+.RI "const RealVector & \fBgradient_nonbasis_variables\fP (const RealVector &x)"
+.br
+.RI "\fIretrieve the gradient for a response expansion with respect to all variables not included in the polynomial bases (nonprobabilistic variables such as design or epistemic when not in 'all' mode) using the given parameter vector and default DVV \fP"
+.ti -1c
+.RI "const RealSymMatrix & \fBhessian_basis_variables\fP (const RealVector &x)"
+.br
+.RI "\fIretrieve the Hessian of the response expansion with respect to all variables included in the polynomial basis (e\&.g\&., probabilistic variables) for a given parameter vector \fP"
+.ti -1c
+.RI "Real \fBstored_value\fP (const RealVector &x, size_t index)"
+.br
+.RI "\fIretrieve the response value for a stored expansion using the given parameter vector \fP"
+.ti -1c
+.RI "const RealVector & \fBstored_gradient_basis_variables\fP (const RealVector &x, size_t index)"
+.br
+.RI "\fIretrieve the response gradient for a stored expansion with respect to all variables included in the polynomial bases; evaluate for the given parameter vector\&. \fP"
+.ti -1c
+.RI "const RealVector & \fBstored_gradient_nonbasis_variables\fP (const RealVector &x, size_t index)"
+.br
+.RI "\fIretrieve the response gradient for a stored expansion with respect to all variables not included in the polynomial bases; evaluate for the given parameter vector\&. \fP"
+.ti -1c
+.RI "Real \fBmean\fP (const RealVector &x)"
+.br
+.ti -1c
+.RI "const RealVector & \fBmean_gradient\fP (const RealVector &x, const SizetArray &dvv)"
+.br
+.ti -1c
+.RI "Real \fBcovariance\fP (\fBPolynomialApproximation\fP *poly_approx_2)"
+.br
+.RI "\fIreturn the covariance between two response expansions, treating all variables as random \fP"
+.ti -1c
+.RI "Real \fBcovariance\fP (const RealVector &x, \fBPolynomialApproximation\fP *poly_approx_2)"
+.br
+.RI "\fIreturn the covariance between two response expansions for a given parameter vector, treating a subset of the variables as random \fP"
+.ti -1c
+.RI "const RealVector & \fBvariance_gradient\fP ()"
+.br
+.ti -1c
+.RI "const RealVector & \fBvariance_gradient\fP (const RealVector &x, const SizetArray &dvv)"
+.br
+.ti -1c
+.RI "void \fBcompute_component_sobol\fP ()"
+.br
+.RI "\fIPerforms global sensitivity analysis via variance-based decomposition; computes component (main and interaction) Sobol' indices\&. \fP"
+.ti -1c
+.RI "void \fBcompute_total_sobol\fP ()"
+.br
+.RI "\fIPerforms global sensitivity analysis via variance-based decomposition; computes total Sobol' indices\&. \fP"
+.ti -1c
+.RI "ULongULongMap \fBsparse_sobol_index_map\fP () const "
+.br
+.RI "\fIreturn \fBRegressOrthogPolyApproximation::sparseSobolIndexMap\fP \fP"
+.ti -1c
+.RI "RealVector \fBapproximation_coefficients\fP (bool normalized) const "
+.br
+.RI "\fIretrieve or form a set of dense coefficients that correspond to \fBSharedOrthogPolyApproxData::multiIndex\fP \fP"
+.ti -1c
+.RI "void \fBapproximation_coefficients\fP (const RealVector &approx_coeffs, bool normalized)"
+.br
+.RI "\fIset an array of dense coefficients corresponding to \fBSharedOrthogPolyApproxData::multiIndex\fP \fP"
+.ti -1c
+.RI "void \fBprint_coefficients\fP (std::ostream &s, bool normalized)"
+.br
+.RI "\fIprint the coefficient array computed in \fBcompute_coefficients()\fP \fP"
+.ti -1c
+.RI "void \fBcoefficient_labels\fP (std::vector< std::string > &all_coeff_tags) const "
+.br
+.RI "\fIretrieve a vector of coefficient label strings, one per expansion term \fP"
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBset_fault_info\fP ()"
+.br
+.RI "\fIset the information needed to ensure fault tolerance \fP"
+.ti -1c
+.RI "void \fBselect_solver\fP (bool cv_active)"
+.br
+.RI "\fIselects the solver for L1 or L2 minimization based on user input \fP"
+.ti -1c
+.RI "void \fBrun_regression\fP ()"
+.br
+.RI "\fIRun the regression method set in \fBselect_solver()\fP to compute the expansion coefficients using L1 or L2 minimization\&. \fP"
+.ti -1c
+.RI "void \fBadapt_regression\fP ()"
+.br
+.RI "\fIperform an adaptive selection of candidate basis for fixed data, employing a generalized sparse grid to define the candidate basis index sets \fP"
+.ti -1c
+.RI "Real \fBselect_best_active_multi_index\fP ()"
+.br
+.RI "\fIfrom among the active index sets, select the candidate refinement that provides the greatest reduction in cross-validation error \fP"
+.ti -1c
+.RI "Real \fBselect_best_basis_expansion\fP ()"
+.br
+.RI "\fIfrom among the candidate basis expansions, select the option that provides the greatest reduction in cross-validation error \fP"
+.ti -1c
+.RI "Real \fBrun_cross_validation_solver\fP (const UShort2DArray &multi_index, RealVector &exp_coeffs, SizetSet &sparse_indices)"
+.br
+.RI "\fIUse cross validation to choose solver hyper-parameters when solving the linear system Ax=b\&. e\&.g\&. if the linear solver has an epsilon tolerance internally select the best epsilon and return the corresponding solution\&. \fP"
+.ti -1c
+.RI "Real \fBrun_cross_validation_expansion\fP ()"
+.br
+.RI "\fIUse cross validation to find the hyper-parameters of the polynomial chaos expansion\&. e\&.g\&. find the 'best' total degree basis\&. \fP"
+.ti -1c
+.RI "void \fBcompressed_sensing\fP (RealMatrix &A, RealMatrix &B)"
+.br
+.RI "\fIencapsulate usage of CSTool\&.solve() and bookkeeping of its sparse solution \fP"
+.ti -1c
+.RI "void \fBestimate_compressed_sensing_options_via_cross_validation\fP (RealMatrix &vandermonde_matrix, RealMatrix &rhs, std::vector< \fBCompressedSensingOptions\fP > &best_cs_opts, RealVector &best_predictor_indicators, RealMatrixArray &predictor_options_history, RealMatrixArray &predictor_indicators_history, RealMatrixArray &predictor_partition_indicators_history, size_t num_data_pts_fn)"
+.br
+.RI "\fIFor a specific vandermonde matrix find the compressed sennsing\&. \fP"
+.ti -1c
+.RI "void \fBupdate_sparse\fP (Real *dense_coeffs, size_t num_dense_terms)"
+.br
+.RI "\fIdefine multiIndex and expansionCoeffs from nonzero dense_coeffs \fP"
+.ti -1c
+.RI "void \fBupdate_sparse_indices\fP (Real *dense_coeffs, size_t num_dense_terms, SizetSet &sparse_indices)"
+.br
+.RI "\fIaugment sparse_indices based on nonzero dense_coeffs \fP"
+.ti -1c
+.RI "void \fBupdate_sparse_coeffs\fP (Real *dense_coeffs, RealVector &exp_coeffs, const SizetSet &sparse_indices)"
+.br
+.RI "\fIdefine sparse expansionCoeffs from dense_coeffs and sparse_indices \fP"
+.ti -1c
+.RI "void \fBupdate_sparse_coeff_grads\fP (Real *dense_coeffs, int row, RealMatrix &exp_coeff_grads, const SizetSet &sparse_indices)"
+.br
+.RI "\fIdefine a row of sparse expansionCoeffGrads from dense_coeffs and sparse_indices \fP"
+.ti -1c
+.RI "void \fBupdate_sparse_sobol\fP (const SizetSet &sparse_indices, const UShort2DArray &shared_multi_index, const BitArrayULongMap &shared_sobol_map)"
+.br
+.RI "\fIdefine sparseSobolIndexMap from sparseIndices, shared multi_index, and shared sobolIndexMap \fP"
+.ti -1c
+.RI "void \fBsparse_restriction\fP (UShort2DArray &multi_index, SizetSet &sparse_indices)"
+.br
+.RI "\fIPerform restriction from dense arrays + sparse_indices key into packed arrays without key\&. \fP"
+.ti -1c
+.RI "void \fBfrontier_restriction\fP (UShort2DArray &multi_index, SizetSet &sparse_indices)"
+.br
+.RI "\fIPerform restriction from original multi_index by defining a Pareto frontier of recovered terms and then pruning multi_index back to a complete set (no gaps) within this Pareto frontier\&. \fP"
+.ti -1c
+.RI "void \fBadvance_multi_index\fP (const UShort2DArray &multi_index, UShortArraySetArray &mi_advancements)"
+.br
+.RI "\fIperform SharedOrthogPolyApproxData::numAdvancements expansions of multi_index to create the candidates array \fP"
+.ti -1c
+.RI "void \fBadvance_multi_index_front\fP (const UShort2DArray &multi_index, UShortArraySetArray &mi_advancements)"
+.br
+.RI "\fIperform SharedOrthogPolyApproxData::numAdvancements expansions of multi_index to create the candidates array \fP"
+.ti -1c
+.RI "void \fBadd_admissible_forward_neighbors\fP (const UShort2DArray &reference_mi, UShortArraySet &fwd_neighbors)"
+.br
+.RI "\fIgenerate a set of admissible forward neighbors from a reference multi-index (non-frontier version) \fP"
+.ti -1c
+.RI "void \fBadd_admissible_forward_neighbors\fP (const UShortArraySet &reference_mi, UShortArraySet &fwd_neighbors)"
+.br
+.RI "\fIgenerate a set of admissible forward neighbors from a reference multi-index (frontier version) \fP"
+.ti -1c
+.RI "void \fBdefine_frontier\fP (const UShort2DArray &multi_index, UShortArraySet &combined_pareto)"
+.br
+.RI "\fIdefine a multi-index frontier from the incoming multi_index\&. This differs from a Pareto frontier in that the definition of dominated is relaxed (must not be < another term in all dimensions, but can be equal)\&. \fP"
+.ti -1c
+.RI "void \fBdefine_frontier\fP (const UShortArray &mi_i, UShortArraySet &combined_pareto)"
+.br
+.RI "\fIupdate a multi-index frontier from an incoming multi_index term\&. This differs from a Pareto frontier in that the definition of dominated is relaxed (must not be < another term in all dimensions, but can be equal)\&. \fP"
+.ti -1c
+.RI "void \fBinflate\fP (SizetSet &sparse_ind, size_t num_terms)"
+.br
+.RI "\fIdefine a default definition for sparse_ind: 0 to num_terms-1 \fP"
+.ti -1c
+.RI "void \fBoverlay_expansion\fP (const SizetSet &sparse_ind_2, const SizetArray &append_mi_map, const RealVector &exp_coeffs_2, const RealMatrix &exp_grads_2, int coeff_2)"
+.br
+.RI "\fIoverlay the passed expansion with the aggregate expansion{Coeffs,CoeffGrads} as managed by the multi_index_map \fP"
+.ti -1c
+.RI "void \fBmultiply_expansion\fP (const SizetSet &sparse_ind_b, const UShort2DArray &multi_index_b, const RealVector &exp_coeffs_b, const RealMatrix &exp_grads_b, const UShort2DArray &multi_index_c)"
+.br
+.RI "\fImultiply current expansion ('a') with incoming expansion ('b') and store in product expansion ('c') \fP"
+.ti -1c
+.RI "void \fBgridSearchFunction\fP (RealMatrix &opts, int M, int N, int num_function_samples)"
+.br
+.RI "\fIDefine the set of options used in the cross validation grid search\&. \fP"
+.ti -1c
+.RI "void \fBleast_interpolation\fP (RealMatrix &pts, RealMatrix &vals)"
+.br
+.ti -1c
+.RI "void \fBtransform_least_interpolant\fP (RealMatrix &L, RealMatrix &U, RealMatrix &H, IntVector &p, RealMatrix &vals)"
+.br
+.ti -1c
+.RI "void \fBleast_factorization\fP (RealMatrix &x, UShort2DArray &basis_indices, RealMatrix &l, RealMatrix &u, RealMatrix &H, IntVector &p, IntVector &k)"
+.br
+.ti -1c
+.RI "void \fBget_least_polynomial_coefficients\fP (RealVector &v, IntVector &k, UShort2DArray &basis_indices, int num_dims, int num_pts, RealMatrix &H)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "IntVector \fBbestApproxOrder\fP"
+.br
+.RI "\fIorder of orthogonal best polynomial expansion found using cross validation \fP"
+.ti -1c
+.RI "\fBCompressedSensingOptions\fP \fBCSOpts\fP"
+.br
+.RI "\fIStuct use to define the options of a compressed sensing solve\&. \fP"
+.ti -1c
+.RI "FaultInfo \fBfaultInfo\fP"
+.br
+.RI "\fIstore the fault info about the response data \fP"
+.ti -1c
+.RI "bool \fBsparseSoln\fP"
+.br
+.RI "\fItracks use of sparse solvers, indicated the need to employ sparseIndices and sparseSobolIndexMap \fP"
+.ti -1c
+.RI "SizetSet \fBsparseIndices\fP"
+.br
+.RI "\fItracks sparse terms within multiIndex and expansion{Coeffs,CoeffGrads} that are retained from an original candidate set \fP"
+.ti -1c
+.RI "SizetSetArray \fBstoredSparseIndices\fP"
+.br
+.RI "\fIcopy of sparseIndices stored in \fBstore_coefficients()\fP for use in \fBcombine_coefficients()\fP \fP"
+.ti -1c
+.RI "ULongULongMap \fBsparseSobolIndexMap\fP"
+.br
+.RI "\fImaps shared index from sobolIndexMap values to sparse index into sparse sobolIndices \fP"
+.ti -1c
+.RI "UShort2DArray \fBadaptedMultiIndex\fP"
+.br
+.RI "\fIPCE multi-index during the basis adaptation process\&. Once complete, the shared multiIndex and sparseIndices are updated\&. \fP"
+.ti -1c
+.RI "SizetSet \fBadaptedSparseIndices\fP"
+.br
+.RI "\fIsparse indices identifying recovered expansion coefficients within adaptedMultiIndex during the basis adaptation process\&. Once complete, the shared multiIndex and sparseIndices are updated\&. \fP"
+.ti -1c
+.RI "UShort2DArray \fBbestAdaptedMultiIndex\fP"
+.br
+.RI "\fIthe adapted multi-index that corresponds to the best solution identified Due to frontier/sparse restriction operations, bestAdaptedMultiIndex cannot be assumed to be a subset of adaptedMultiIndex\&. \fP"
+.ti -1c
+.RI "Real \fBcvErrorRef\fP"
+.br
+.RI "\fIthe cross validation error reference point for adapting a CS candidate basis; it's state is reset for each response QoI \fP"
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Derived approximation class for multivariate orthogonal polynomial approximation with coefficient estimation via regression\&. 
+
+The \fBRegressOrthogPolyApproximation\fP class provides a global approximation based on multivariate orthogonal polynomials, where the coefficients are computed using regression approaches such as least squares (L2) or compressed sensing (L1)\&. It is used primarily for polynomial chaos expansion aproaches to UQ\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "size_t expansion_terms () const\fC [inline]\fP, \fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+retrieve number of terms in the orthogonal polynomial expansion default implementation if no sparsity (overridden in \fBRegressOrthogPolyApproximation\fP for CS) 
+.PP
+Reimplemented from \fBOrthogPolyApproximation\fP\&.
+.PP
+References OrthogPolyApproximation::expansion_terms(), and RegressOrthogPolyApproximation::sparseIndices\&.
+.SS "Real mean (const RealVector & x)\fC [protected]\fP, \fC [virtual]\fP"
+In this case, a subset of the expansion variables are random variables and the mean of the expansion involves evaluating the expectation over this subset\&. 
+.PP
+Reimplemented from \fBOrthogPolyApproximation\fP\&.
+.PP
+References PolynomialApproximation::computedMean, PolynomialApproximation::expansionCoeffFlag, OrthogPolyApproximation::expansionCoeffs, PolynomialApproximation::expansionMoments, SharedPolyApproxData::match_nonrandom_vars(), OrthogPolyApproximation::mean(), OrthogPolyApproximation::mean_gradient(), SharedOrthogPolyApproxData::multiIndex, SharedOrthogPolyApproxData::multivariate_polynomial(), SharedPolyApproxData::nonRandomIndices, BasisApproximation::sharedDataRep, RegressOrthogPolyApproximation::sparseIndices, PolynomialApproximation::xPrevMean, and SharedOrthogPolyApproxData::zero_random()\&.
+.SS "const RealVector & mean_gradient (const RealVector & x, const SizetArray & dvv)\fC [protected]\fP, \fC [virtual]\fP"
+In this function, a subset of the expansion variables are random variables and any augmented design/state variables (i\&.e\&., not inserted as random variable distribution parameters) are included in the expansion\&. In this case, the mean of the expansion is the expectation over the random subset and the derivative of the mean is the derivative of the remaining expansion over the non-random subset\&. This function must handle the mixed case, where some design/state variables are augmented (and are part of the expansion: derivatives are evaluated as described above) and some are inserted (derivatives are obtained from expansionCoeffGrads)\&. 
+.PP
+Reimplemented from \fBOrthogPolyApproximation\fP\&.
+.PP
+References PolynomialApproximation::computedMean, RegressOrthogPolyApproximation::covariance(), PolynomialApproximation::expansionCoeffFlag, PolynomialApproximation::expansionCoeffGradFlag, OrthogPolyApproximation::expansionCoeffGrads, OrthogPolyApproximation::expansionCoeffs, SharedPolyApproxData::match_nonrandom_vars(), OrthogPolyApproximation::mean_gradient(), PolynomialApproximation::meanGradient, SharedOrthogPolyApproxData::multiIndex, SharedPolyApproxData::nonRandomIndices, SharedPolyApproxData::randomVarsKey, BasisApproximation::sharedDataRep, RegressOrthogPolyApproximation::sparseIndices, PolynomialApproximation::xPrevMeanGrad, and SharedOrthogPolyApproxData::zero_random()\&.
+.SS "const RealVector & variance_gradient ()\fC [protected]\fP, \fC [virtual]\fP"
+In this function, all expansion variables are random variables and any design/state variables are omitted from the expansion\&. The mixed derivative case (some design variables are inserted and some are augmented) requires no special treatment\&. 
+.PP
+Reimplemented from \fBOrthogPolyApproximation\fP\&.
+.PP
+References PolynomialApproximation::computedVariance, PolynomialApproximation::expansionCoeffFlag, PolynomialApproximation::expansionCoeffGradFlag, OrthogPolyApproximation::expansionCoeffGrads, OrthogPolyApproximation::expansionCoeffs, SharedOrthogPolyApproxData::multiIndex, SharedPolyApproxData::nonRandomIndices, SharedOrthogPolyApproxData::norm_squared(), BasisApproximation::sharedDataRep, RegressOrthogPolyApproximation::sparseIndices, OrthogPolyApproximation::variance_gradient(), and PolynomialApproximation::varianceGradient\&.
+.SS "const RealVector & variance_gradient (const RealVector & x, const SizetArray & dvv)\fC [protected]\fP, \fC [virtual]\fP"
+In this function, a subset of the expansion variables are random variables and any augmented design/state variables (i\&.e\&., not inserted as random variable distribution parameters) are included in the expansion\&. This function must handle the mixed case, where some design/state variables are augmented (and are part of the expansion) and some are inserted (derivatives are obtained from expansionCoeffGrads)\&. 
+.PP
+Reimplemented from \fBOrthogPolyApproximation\fP\&.
+.PP
+References PolynomialApproximation::computedVariance, PolynomialApproximation::expansionCoeffFlag, PolynomialApproximation::expansionCoeffGradFlag, OrthogPolyApproximation::expansionCoeffGrads, OrthogPolyApproximation::expansionCoeffs, SharedPolyApproxData::match_nonrandom_vars(), SharedPolyApproxData::match_random_key(), SharedOrthogPolyApproxData::multiIndex, SharedOrthogPolyApproxData::multivariate_polynomial(), SharedOrthogPolyApproxData::multivariate_polynomial_gradient(), SharedPolyApproxData::nonRandomIndices, SharedOrthogPolyApproxData::norm_squared(), SharedPolyApproxData::randomIndices, SharedPolyApproxData::randomVarsKey, BasisApproximation::sharedDataRep, RegressOrthogPolyApproximation::sparseIndices, OrthogPolyApproximation::variance_gradient(), PolynomialApproximation::varianceGradient, PolynomialApproximation::xPrevVarGrad, and SharedOrthogPolyApproxData::zero_random()\&.
+.SS "void select_solver (bool cv_active)\fC [private]\fP"
+
+.PP
+selects the solver for L1 or L2 minimization based on user input In this case, regression is used in place of spectral projection\&. That is, instead of calculating the PCE coefficients using inner products, linear least squares is used to estimate the PCE coefficients which best match a set of response samples\&. The least squares estimation is performed using DGELSS (SVD) or DGGLSE (equality-constrained) from LAPACK, based on anchor point and derivative data availability\&. 
+.PP
+References SharedPolyApproxData::basisConfigOptions, ExpansionConfigOptions::convergenceTol, RegressOrthogPolyApproximation::CSOpts, CompressedSensingOptions::delta, CompressedSensingOptions::epsilon, ExpansionConfigOptions::expCoeffsSolnApproach, SharedPolyApproxData::expConfigOptions, RegressOrthogPolyApproximation::faultInfo, RegressionConfigOptions::l2Penalty, CompressedSensingOptions::maxNumIterations, ExpansionConfigOptions::maxSolverIterations, SharedOrthogPolyApproxData::multiIndex, RegressionConfigOptions::noiseTols, CompressedSensingOptions::numFunctionSamples, ExpansionConfigOptions::outputLevel, SharedRegressOrthogPolyApproxData::regressConfigOptions, BasisApproximation::sharedDataRep, CompressedSensingOptions::solver, CompressedSensingOptions::solverTolerance, RegressOrthogPolyApproximation::sparseSoln, PolynomialApproximation::surrData, BasisConfigOptions::useDerivs, and CompressedSensingOptions::verbosity\&.
+.PP
+Referenced by RegressOrthogPolyApproximation::compute_coefficients(), RegressOrthogPolyApproximation::run_cross_validation_expansion(), and RegressOrthogPolyApproximation::run_cross_validation_solver()\&.
+.SS "void sparse_restriction (UShort2DArray & multi_index, SizetSet & sparse_indices)\fC [private]\fP"
+
+.PP
+Perform restriction from dense arrays + sparse_indices key into packed arrays without key\&. This version clears out all terms not recovered in CS and may leave multi-index gaps\&. 
+.PP
+References RegressOrthogPolyApproximation::frontier_restriction()\&.
+.PP
+Referenced by RegressOrthogPolyApproximation::select_best_basis_expansion(), and RegressOrthogPolyApproximation::update_sparse_sobol()\&.
+.SS "void frontier_restriction (UShort2DArray & multi_index, SizetSet & sparse_indices)\fC [private]\fP"
+
+.PP
+Perform restriction from original multi_index by defining a Pareto frontier of recovered terms and then pruning multi_index back to a complete set (no gaps) within this Pareto frontier\&. This version clears out only the dominated multi-index terms not recovered in CS to avoid multi-index gaps; it provides a frontier with all supporting terms\&. 
+.PP
+References RegressOrthogPolyApproximation::advance_multi_index(), SharedOrthogPolyApproxData::assess_dominance(), BasisApproximation::sharedDataRep, and SharedOrthogPolyApproxData::update_pareto_set()\&.
+.PP
+Referenced by RegressOrthogPolyApproximation::select_best_basis_expansion(), and RegressOrthogPolyApproximation::sparse_restriction()\&.
+.SS "void gridSearchFunction (RealMatrix & opts, int M, int N, int num_function_samples)\fC [private]\fP"
+
+.PP
+Define the set of options used in the cross validation grid search\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIopts\fP (output) the options to be used in the grid search 
+.br
+\fIM\fP The number of rows of the vandermonde matrix 
+.br
+\fIN\fP The number of columns of the vandermonde matrix 
+.RE
+.PP
+
+.PP
+References Pecos::cartesian_product(), RegressOrthogPolyApproximation::CSOpts, CompressedSensingOptions::delta, RegressOrthogPolyApproximation::estimate_compressed_sensing_options_via_cross_validation(), SharedPolyApproxData::expConfigOptions, CompressedSensingOptions::maxNumIterations, RegressionConfigOptions::noiseTols, ExpansionConfigOptions::outputLevel, SharedRegressOrthogPolyApproxData::regressConfigOptions, BasisApproximation::sharedDataRep, CompressedSensingOptions::solver, and CompressedSensingOptions::solverTolerance\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "SizetSet sparseIndices\fC [private]\fP"
+
+.PP
+tracks sparse terms within multiIndex and expansion{Coeffs,CoeffGrads} that are retained from an original candidate set a set is used to manage unique indices among expansionCoeff{s,Grads}\&. Sorting also simplifies covariance calculations, but care must be exercised to retain synchronization with expansionCoeff{s,Grads} ordering when merging sparse multi-indices\&. 
+.PP
+Referenced by RegressOrthogPolyApproximation::adapt_regression(), RegressOrthogPolyApproximation::approximation_coefficients(), RegressOrthogPolyApproximation::coefficient_labels(), RegressOrthogPolyApproximation::combine_coefficients(), RegressOrthogPolyApproximation::compressed_sensing(), RegressOrthogPolyApproximation::compute_component_sobol(), RegressOrthogPolyApproximation::compute_total_sobol(), RegressOrthogPolyApproximation::covariance(), RegressOrthogPolyApproximation::dimension_decay_rates(), RegressOrthogPolyApproximation::expansion_terms(), RegressOrthogPolyApproximation::gradient_basis_variables(), RegressOrthogPolyApproximation::gradient_nonbasis_variables(), RegressOrthogPolyApproximation::hessian_basis_variables(), RegressOrthogPolyApproximation::mean(), RegressOrthogPolyApproximation::mean_gradient(), RegressOrthogPolyApproximation::multiply_expansion(), RegressOrthogPolyApproximation::overlay_expansion(), RegressOrthogPolyApproximation::print_coefficients(), RegressOrthogPolyApproximation::restore_coefficients(), RegressOrthogPolyApproximation::run_cross_validation_expansion(), RegressOrthogPolyApproximation::select_best_active_multi_index(), RegressOrthogPolyApproximation::select_best_basis_expansion(), RegressOrthogPolyApproximation::store_coefficients(), RegressOrthogPolyApproximation::swap_coefficients(), RegressOrthogPolyApproximation::update_sparse(), RegressOrthogPolyApproximation::value(), and RegressOrthogPolyApproximation::variance_gradient()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for PECOS from the source code\&.

@@ -1,0 +1,656 @@
+.TH "MathTools.hpp" 3 "Wed Dec 27 2017" "Version Version 1.0" "PECOS" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MathTools.hpp \- Miscelaneous math functions\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBlp_norm\fP { \fBmt_l1_norm\fP, \fBmt_l2_norm\fP, \fBmt_linf_norm\fP }"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBind2sub\fP (const IntVector &sizes, int index, int num_elems, IntVector &result)"
+.br
+.RI "\fIMap a scalar index of a flat 1D array to the equivalent d-dimensional index\&. \fP"
+.ti -1c
+.RI "int \fBsub2ind\fP (const IntVector &sizes, const IntVector &multi_index)"
+.br
+.RI "\fIMap a d-dimensional index to the scalar index of the equivalent flat 1D array\&. \fP"
+.ti -1c
+.RI "template<typename O , typename T > void \fBcartesian_product\fP (const std::vector< Teuchos::SerialDenseVector< O, T > > &input_sets, Teuchos::SerialDenseMatrix< O, T > &result, int elem_size)"
+.br
+.RI "\fICompute the cartesian product of an arbitray number of sets\&. \fP"
+.ti -1c
+.RI "template<typename O , typename T > void \fBouter_product\fP (const std::vector< Teuchos::SerialDenseVector< O, T > > &input_sets, Teuchos::SerialDenseVector< O, T > &result)"
+.br
+.RI "\fIConstruct the outer product of an arbitray number of sets\&. \fP"
+.ti -1c
+.RI "template<typename O , typename T > void \fBrange\fP (Teuchos::SerialDenseVector< O, T > &result, T m, T n, T incr=1)"
+.br
+.RI "\fIBuild a vector containing all integers in [m,n) seperated by incr\&. \fP"
+.ti -1c
+.RI "void \fBlinspace\fP (RealVector &result, Real a, Real b, int n)"
+.br
+.RI "\fIGenerate a vector whose n elements are equidistantly spaced in the interval [a,b]\&. \fP"
+.ti -1c
+.RI "Real \fBround\fP (Real r)"
+.br
+.RI "\fIRound a Real to the nearest integer\&. \fP"
+.ti -1c
+.RI "bool \fBabs_compare\fP (Real a, Real b)"
+.br
+.ti -1c
+.RI "int \fBnearest_integer\fP (Real x)"
+.br
+.RI "\fIReturn the nearest integer to x\&. \fP"
+.ti -1c
+.RI "Real \fBfactorial\fP (int n)"
+.br
+.RI "\fICalulate n! \fP"
+.ti -1c
+.RI "int \fBnchoosek\fP (int n, int k)"
+.br
+.RI "\fIReturn the number of possible combinations of k elements that can be chosen from n elements\&. \fP"
+.ti -1c
+.RI "Real \fBrescale\fP (Real x, Real a, Real b, int dir)"
+.br
+.RI "\fITransform a point x in the interval [a,b] onto the interval [0,1] and vice versa\&. \fP"
+.ti -1c
+.RI "void \fBrescale\fP (RealMatrix &x, const RealVector &domain, int dir)"
+.br
+.RI "\fITransform a point x in the interval $[a_1,b_1] \times \cdots \times [a_d,b_d] $ onto the hypercube interval $[0,1]^d$ and vice versa\&. \fP"
+.ti -1c
+.RI "void \fBhypercube_map\fP (RealMatrix &x, const RealVector &domain_in, const RealVector &domain_out, RealMatrix &result)"
+.br
+.RI "\fItransform points in domain_in to points in domain_out \fP"
+.ti -1c
+.RI "void \fBmesh_grid\fP (const IntVector &num_pts_1d, const RealVector &domain, RealMatrix &result)"
+.br
+.RI "\fIConstruct a d-dimensional mesh on a hyper-rectangle\&. The meshes are equidistant with respect to each coordinate direction\&. \fP"
+.ti -1c
+.RI "void \fBget_multi_dimensional_polynomial_subspace_indices\fP (IntMatrix &B, int *elems, int len_elems, int *pos, int len_pos, int choices_made, int first_pos, int order, int &col)"
+.br
+.ti -1c
+.RI "void \fBget_multi_dimensional_polynomial_indices\fP (int num_dims, int degree, IntMatrix &result)"
+.br
+.RI "\fIGet all the multi-dimensional indices of a multi-dimensional polynomial basis with a specified degree sum\&. \fP"
+.ti -1c
+.RI "int \fBget_total_degree_from_num_samples\fP (int num_dims, int num_samples)"
+.br
+.RI "\fIGet the smallest degree of the total degree polynomial such that the number of terms in the basis is larger than or equal to num_samples\&. \fP"
+.ti -1c
+.RI "void \fBset_hypercube_domain\fP (RealVector &result, int num_dims, Real a, Real b)"
+.br
+.RI "\fIGet the multi-dimensional hypercube $[a,b]^d$\&. \fP"
+.ti -1c
+.RI "void \fBget_permutations\fP (IntMatrix &permutations, int M, int N, unsigned int seed)"
+.br
+.RI "\fIPerturb the columns of a matrix\&. \fP"
+.ti -1c
+.RI "void \fBcompute_hyperbolic_level_subdim_indices\fP (int num_dims, int level, int num_active_dims, Real p, IntMatrix &indices)"
+.br
+.ti -1c
+.RI "void \fBcompute_hyperbolic_level_indices\fP (int num_dims, int level, Real p, IntMatrix &indices)"
+.br
+.ti -1c
+.RI "void \fBcompute_hyperbolic_indices\fP (int num_dims, int level, Real p, IntMatrix &indices)"
+.br
+.ti -1c
+.RI "void \fBcompute_anisotropic_hyperbolic_indices\fP (int num_dims, int level, Real p, RealVector &weights, IntMatrix &indices)"
+.br
+.ti -1c
+.RI "template<typename T > int \fBargmin\fP (int n, T *x)"
+.br
+.RI "\fIReturn the index of the element of x with the minimum value\&. \fP"
+.ti -1c
+.RI "template<typename T > int \fBargmax\fP (int n, T *x)"
+.br
+.RI "\fIReturn the index of the element of x with the maximum value\&. \fP"
+.ti -1c
+.RI "template<typename T > int \fBmagnitude_argmax\fP (int n, T *x)"
+.br
+.ti -1c
+.RI "template<typename T > T \fBsum\fP (int n, T *x)"
+.br
+.RI "\fIReturn the sum of the elements in the array x\&. \fP"
+.ti -1c
+.RI "template<typename O , typename T > T \fBsum\fP (Teuchos::SerialDenseVector< O, T > &v)"
+.br
+.RI "\fIReturn the sum of the elements in the vector x\&. \fP"
+.ti -1c
+.RI "Real \fBmean\fP (int n, Real *x)"
+.br
+.RI "\fIReturn the mean of the array x\&. \fP"
+.ti -1c
+.RI "Real \fBvariance\fP (int n, Real *x, int ddof=1)"
+.br
+.RI "\fIReturn the sample variance of the array x\&. \fP"
+.ti -1c
+.RI "void \fBlp_error\fP (RealMatrix &reference_values, RealMatrix &approximate_values, std::vector< lp_norm > error_norms, RealMatrix &error, IntVector &active_columns, bool normalise=false)"
+.br
+.RI "\fICalculate one of several different types of $\ell_p$ error norms of a set of vectors\&. \fP"
+.ti -1c
+.RI "void \fBlatin_hypercube_design\fP (int num_pts, int num_dims, RealMatrix &result, int seed)"
+.br
+.RI "\fIConstruct a Latin Hyperube Design (LHD) \fP"
+.ti -1c
+.RI "void \fBcompute_next_combination\fP (int num_dims, int level, IntVector &index, bool &extend, int &h, int &t)"
+.br
+.ti -1c
+.RI "void \fBcompute_combinations\fP (int num_dims, int level, IntMatrix &indices)"
+.br
+.ti -1c
+.RI "template<typename T > int \fBsgn\fP (T x)"
+.br
+.ti -1c
+.RI "template<typename T > int \fBnum_non_zeros\fP (T *data, int n)"
+.br
+.ti -1c
+.RI "template<typename T > double \fBmedian\fP (std::vector< T > &v)"
+.br
+.RI "\fIreturn the median of a std::vector \fP"
+.ti -1c
+.RI "template<typename O , typename T > double \fBmedian\fP (Teuchos::SerialDenseVector< O, T > &v)"
+.br
+.RI "\fIreturn the median of a RealVector\&. \fP"
+.ti -1c
+.RI "template<typename O , typename T > double \fBpnorm\fP (Teuchos::SerialDenseVector< O, T > &v, double p)"
+.br
+.ti -1c
+.RI "template<typename O , typename T > O \fBnum_nonzeros\fP (Teuchos::SerialDenseVector< O, T > &v)"
+.br
+.ti -1c
+.RI "template<typename O , typename T > void \fBnonzero\fP (Teuchos::SerialDenseVector< O, T > &v, IntVector &result)"
+.br
+.ti -1c
+.RI "void \fBlhs_indices\fP (int num_dims, int num_pts, int duplication, int seed, IntMatrix &result)"
+.br
+.ti -1c
+.RI "void \fBilhs\fP (int num_dims, int num_pts, int duplication, int seed, RealMatrix &result)"
+.br
+.RI "\fIConstruct the improved distributed hypercube sample\&. \fP"
+.ti -1c
+.RI "void \fBlhs\fP (int num_dims, int num_pts, int seed, RealMatrix &result)"
+.br
+.RI "\fIConstruct basic random hypercube sample\&. \fP"
+.ti -1c
+.RI "template<typename O , typename T > void \fBargsort\fP (const Teuchos::SerialDenseVector< O, T > &values, IntVector &result)"
+.br
+.ti -1c
+.RI "template<typename O , typename T > void \fBargsort\fP (Teuchos::SerialDenseVector< O, T > &v, Teuchos::SerialDenseVector< O, T > &result_0, IntVector &result_1)"
+.br
+.ti -1c
+.RI "template<typename O , typename T > void \fBmagnitude_argsort\fP (const Teuchos::SerialDenseVector< O, T > &values, IntVector &result)"
+.br
+.ti -1c
+.RI "template<typename O , typename T > int \fBbinary_search\fP (T target, Teuchos::SerialDenseVector< O, T > &data)"
+.br
+.RI "\fIfind the interval containing a target value\&. Assumes data is in ascending order \fP"
+.ti -1c
+.RI "template<typename O , typename T > void \fBreverse\fP (Teuchos::SerialDenseVector< O, T > &v)"
+.br
+.RI "\fIReverse the contents of a vector\&. \fP"
+.ti -1c
+.RI "template<typename O , typename T > void \fBset_difference_matrix_columns\fP (const Teuchos::SerialDenseMatrix< O, T > &A, const Teuchos::SerialDenseMatrix< O, T > &B, IntVector &result)"
+.br
+.ti -1c
+.RI "template<typename MatrixType > void \fBextract_submatrix_from_column_indices\fP (const MatrixType &A, const IntVector &column_indices, MatrixType &submatrix)"
+.br
+.ti -1c
+.RI "template<typename MatrixType > void \fBcopy_matrix\fP (const MatrixType &source, MatrixType &dest, int num_rows, int num_cols, int start_row=0, int start_col=0)"
+.br
+.ti -1c
+.RI "template<typename VectorType > void \fBcopy_vector\fP (const VectorType &source, VectorType &dest, int num_rows, int start_row=0)"
+.br
+.ti -1c
+.RI "template<typename MatrixType > void \fBhstack\fP (const MatrixType &source1, const MatrixType &source2, MatrixType &dest)"
+.br
+.ti -1c
+.RI "template<typename O , typename T > void \fBconvert\fP (T a[], int m, int n, std::vector< Teuchos::SerialDenseVector< O, T > > &v)"
+.br
+.ti -1c
+.RI "template<typename O , typename T > void \fBconvert\fP (T a[], int m, int n, std::set< Teuchos::SerialDenseVector< O, T > > &s)"
+.br
+.ti -1c
+.RI "template<typename O , typename T > void \fBconvert\fP (const std::vector< Teuchos::SerialDenseVector< O, T > > &V, Teuchos::SerialDenseMatrix< O, T > &M)"
+.br
+.RI "\fIConvert a std::vector of vectors to a matrix\&. \fP"
+.ti -1c
+.RI "template<typename T , typename Operator > void \fBaccumulate\fP (const std::vector< std::vector< T > > &vectors, std::vector< T > &result, Operator op)"
+.br
+.ti -1c
+.RI "template<typename T > bool \fBis_nan_or_inf\fP (T x)"
+.br
+.ti -1c
+.RI "template<typename O , typename T > bool \fBhas_nan_or_inf\fP (const Teuchos::SerialDenseMatrix< O, T > &matrix)"
+.br
+.ti -1c
+.RI "void \fBget_column_norms\fP (RealMatrix &A, RealVector &result)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Miscelaneous math functions\&. 
+
+
+.PP
+\fBAuthor:\fP
+.RS 4
+John D\&. Jakeman 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+31 October 2011 
+.RE
+.PP
+
+.SH "Function Documentation"
+.PP 
+.SS "void ind2sub (const IntVector & sizes, int index, int num_elems, IntVector & result)"
+
+.PP
+Map a scalar index of a flat 1D array to the equivalent d-dimensional index\&. Example: \[ \begin{bmatrix} 1 & 4 & 7\\ 2 & 5 & 8\\ 3 & 6 & 9 \end{bmatrix} \rightarrow \begin{bmatrix} 1,1 & 1,2 & 1,3\\ 2,1 & 2,2 & 2,3\\ 3,1 & 3,2 & 3,3 \end{bmatrix} \]
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsizes\fP the number of elems in each dimension\&. For a 2D index sizes = [numRows, numCols] 
+.br
+\fIindex\fP the scalar index 
+.br
+\fInum_elems\fP the total number of elements in the d-dimensional matrix 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+result the d-dimensional index 
+.RE
+.PP
+
+.SS "int sub2ind (const IntVector & sizes, const IntVector & multi_index)"
+
+.PP
+Map a d-dimensional index to the scalar index of the equivalent flat 1D array\&. Example: \[ \begin{bmatrix} 1,1 & 1,2 & 1,3\\ 2,1 & 2,2 & 2,3\\ 3,1 & 3,2 & 3,3 \end{bmatrix} \rightarrow \begin{bmatrix} 1 & 4 & 7\\ 2 & 5 & 8\\ 3 & 6 & 9 \end{bmatrix} \]
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsizes\fP the number of elems in each dimension\&. For a 2D index sizes = [numRows, numCols] 
+.br
+\fImulti_index\fP the d-dimensional index 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+scalar_index the scalar index of the flat array 
+.RE
+.PP
+
+.SS "void Pecos::cartesian_product (const std::vector< Teuchos::SerialDenseVector< O, T > > & input_sets, Teuchos::SerialDenseMatrix< O, T > & result, int elem_size)"
+
+.PP
+Compute the cartesian product of an arbitray number of sets\&. These sets can consist of numbers of be themselves sets of vectors 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIinputSets\fP the sets to be used in the cartesian product 
+.br
+\fIelem_size\fP the size of the vectors within each set\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the cartesian product 
+.RE
+.PP
+
+.PP
+References Pecos::cartesian_product()\&.
+.PP
+Referenced by Pecos::cartesian_product(), and RegressOrthogPolyApproximation::gridSearchFunction()\&.
+.SS "void Pecos::outer_product (const std::vector< Teuchos::SerialDenseVector< O, T > > & input_sets, Teuchos::SerialDenseVector< O, T > & result)"
+
+.PP
+Construct the outer product of an arbitray number of sets\&. Example: \[ \{1,2\}\times\{3,4\}=\{1\times3, 2\times3, 1\times4, 2\times4\} = \{3, 6, 4, 8\} \] 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIinput_sets\fP 'Vector\&.hpp' of sets to be used in the outer product 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+result the outer product 
+.RE
+.PP
+
+.PP
+References Pecos::outer_product()\&.
+.PP
+Referenced by Pecos::outer_product()\&.
+.SS "void Pecos::range (Teuchos::SerialDenseVector< O, T > & result, T m, T n, T incr = \fC1\fP)"
+
+.PP
+Build a vector containing all integers in [m,n) seperated by incr\&. E\&.g Range( 1, 10, 2 ) -> [1,3,5,7,9] 
+.PP
+References Pecos::range()\&.
+.PP
+Referenced by RegressOrthogPolyApproximation::compressed_sensing(), LoguniformRandomVariable::dz_ds_factor(), BetaRandomVariable::pdf(), TriangularRandomVariable::pdf_gradient(), Pecos::range(), Pecos::reverse(), LoguniformRandomVariable::standard_deviation(), BetaRandomVariable::update_boost(), LoguniformRandomVariable::variance(), UniformRandomVariable::variance(), and BetaRandomVariable::variance()\&.
+.SS "void linspace (RealVector & result, Real a, Real b, int n)"
+
+.PP
+Generate a vector whose n elements are equidistantly spaced in the interval [a,b]\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fI[a,b]\fP the range 
+.br
+\fIn\fP the number of times the interval [a,b] is divided 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+vec n numbers equidistant is [a,b] 
+.RE
+.PP
+
+.SS "int nearest_integer (Real x)"
+
+.PP
+Return the nearest integer to x\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIx\fP the value return int the neartest integer to x 
+.RE
+.PP
+
+.SS "Real factorial (int n)"
+
+.PP
+Calulate n! 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIn\fP the factorial of interest 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+n! 
+.RE
+.PP
+
+.SS "int nchoosek (int n, int k)"
+
+.PP
+Return the number of possible combinations of k elements that can be chosen from n elements\&. \[ { n \choose k} = \frac{n!}{k!(n-k)!}\] 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIn\fP number of elements 
+.br
+\fIk\fP the number of elements to be chosen\&. k<=n\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the total number of combinations\&. 
+.RE
+.PP
+
+.SS "Real rescale (Real x, Real a, Real b, int dir)"
+
+.PP
+Transform a point x in the interval [a,b] onto the interval [0,1] and vice versa\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIx\fP the value to be transformed 
+.br
+\fI[a,b]\fP the new/old interval 
+.br
+\fIdir\fP specifies whether to map to [a,b] or from [a,b]\&. That is dir=0 returns [0,1] -> [a,b] dir!=0 returns [a,b] -> [0,1] 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the rescaled value 
+.RE
+.PP
+
+.SS "void rescale (RealMatrix & x, const RealVector & domain, int dir)"
+
+.PP
+Transform a point x in the interval $[a_1,b_1] \times \cdots \times [a_d,b_d] $ onto the hypercube interval $[0,1]^d$ and vice versa\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIx\fP the value to be transformed 
+.br
+\fI[a,b]\fP the new/old interval 
+.br
+\fIdir\fP specifies whether to map to [a,b] or from [a,b]\&. That is dir=0 returns [0,1] -> [a,b] dir!=0 returns [a,b] -> [0,1] 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the rescaled value 
+.RE
+.PP
+
+.SS "void mesh_grid (const IntVector & num_pts_1d, const RealVector & domain, RealMatrix & result)"
+
+.PP
+Construct a d-dimensional mesh on a hyper-rectangle\&. The meshes are equidistant with respect to each coordinate direction\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fInum_pts_1d\fP array specifying the number of meshpoints for each dimension 
+.br
+\fIdomain\fP the min and max value of each dimension\&. That is $ [a_1,b_1,...,a_d,b_d]$ 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the multi-dimensional mesh coordinates\&. ( num_dims x num_pts ) array\&. num_pts = num_pts_1d[0]*\&.\&.\&.*num_pts_1d[d-1] 
+.RE
+.PP
+
+.SS "void get_multi_dimensional_polynomial_subspace_indices (IntMatrix & B, int * elems, int len_elems, int * pos, int len_pos, int choices_made, int first_pos, int order, int & row)"
+Get all the multi-dimensional indices of a multi-dimensional polynomial basis with a specified degree sum\&. A cleaner interface is provided by GetMultiDimensionalPolynomial_indices() 
+.PP
+\fBReturns:\fP
+.RS 4
+B the multi-dimensional indices 
+.RE
+.PP
+
+.SS "void get_multi_dimensional_polynomial_indices (int num_dims, int degree, IntMatrix & result)"
+
+.PP
+Get all the multi-dimensional indices of a multi-dimensional polynomial basis with a specified degree sum\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fInum_dims\fP the dimensionailty 
+.br
+\fIdegree\fP the degree sum of the polynomial indices wanted 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+B the multi-dimensional polynomial_indices 
+.RE
+.PP
+
+.SS "void set_hypercube_domain (RealVector & result, int num_dims, Real a, Real b)"
+
+.PP
+Get the multi-dimensional hypercube $[a,b]^d$\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fInum_dims\fP the dimension of the computational domain\&. 
+.br
+\fI\fP 
+.RE
+.PP
+
+.SS "int Pecos::argmin (int n, T * x)"
+
+.PP
+Return the index of the element of x with the minimum value\&. \[ \arg \! \min_i x_i\quad i=1,\ldots,n \] 
+.PP
+References Pecos::argmin()\&.
+.PP
+Referenced by Pecos::argmin()\&.
+.SS "int Pecos::argmax (int n, T * x)"
+
+.PP
+Return the index of the element of x with the maximum value\&. \[ \arg \! \max_i x_i \quad i=1,\ldots,n \] 
+.PP
+References Pecos::argmax()\&.
+.PP
+Referenced by Pecos::argmax()\&.
+.SS "T Pecos::sum (int n, T * x)"
+
+.PP
+Return the sum of the elements in the array x\&. \[ \sum_{i=1}^N x_i \] 
+.PP
+References Pecos::sum()\&.
+.PP
+Referenced by NumericGenOrthogPolynomial::cc_bounded_integral(), NumericGenOrthogPolynomial::fejer_semibounded_integral(), NumericGenOrthogPolynomial::fejer_unbounded_integral(), OrthogonalPolynomial::gauss_check(), NumericGenOrthogPolynomial::hermite_unbounded_integral(), NumericGenOrthogPolynomial::inner_product(), NumericGenOrthogPolynomial::laguerre_semibounded_integral(), NumericGenOrthogPolynomial::legendre_bounded_integral(), HistogramBinRandomVariable::mean(), Pecos::median(), Pecos::sum(), and LagrangeInterpPolynomial::type1_gradient()\&.
+.SS "T Pecos::sum (Teuchos::SerialDenseVector< O, T > & v)"
+
+.PP
+Return the sum of the elements in the vector x\&. \[ \sum_{i=1}^N x_i \]
+.PP
+This will not return the same result as sum( int n, T* x ) if the vector is a subvector of another vector\&. That is stride does not equal the number of rows\&. 
+.PP
+References Pecos::sum()\&.
+.SS "Real mean (int n, Real * x)"
+
+.PP
+Return the mean of the array x\&. \[ \bar{x} = \frac{1}{N}\sum_{i=1}^N x_i \] 
+.SS "Real variance (int n, Real * x, int ddof = \fC1\fP)"
+
+.PP
+Return the sample variance of the array x\&. \[ \sigma^2 = \frac{1}{N-\text{ddof}}\sum_{i=1}^N ( x_i-\bar{x} )^2 \]
+.PP
+\fBParameters:\fP
+.RS 4
+\fIddof\fP Delta Degrees of Freedom (ddof)\&. The divisor used in calculations is $N - \text{ddof}$, where $fN$f represents the number of elements\&. By default ddof is one\&. 
+.RE
+.PP
+
+.SS "void lp_error (RealMatrix & reference_values, RealMatrix & approximate_values, std::vector< lp_norm > error_norms, RealMatrix & error, IntVector & active_columns, bool normalise = \fCfalse\fP)"
+
+.PP
+Calculate one of several different types of $\ell_p$ error norms of a set of vectors\&. Each column of the reference_values matrix is considered independently with the correpsonding column in the approximation_values\&. The error between the each set of two columns tested is returned\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIreference_values\fP a matrix containing the reference values 
+.br
+\fIapproximate_values\fP a matrix containig the approximate values 
+.br
+\fIactive_columns\fP specifies which set of columns to consider\&. If empty all columns are considered  normalise if true the error norms are normalised\&. The l_inf norm is normalised by the half the range of the data in the reference_values column\&. The L_2 norm is normalised by the standard deviation of the data in the reference values column\&. 
+.RE
+.PP
+
+.SS "int Pecos::sgn (T x)"
+Return the sign of x\&.
+.PP
+\fBReturns:\fP
+.RS 4
+1 if the corresponding element of x is greater than zero; 0 if the corresponding element of X equals zero; -1 if the corresponding element of X is less than zero 
+.RE
+.PP
+
+.PP
+References Pecos::sgn()\&.
+.PP
+Referenced by Pecos::sgn()\&.
+.SS "void Pecos::reverse (Teuchos::SerialDenseVector< O, T > & v)"
+
+.PP
+Reverse the contents of a vector\&. Useful for changing an ordered array to/from ascending/descending order 
+.PP
+References Pecos::range(), Pecos::reshape(), Pecos::resize(), and Pecos::reverse()\&.
+.PP
+Referenced by Pecos::reverse()\&.
+.SS "void Pecos::convert (T a[], int m, int n, std::vector< Teuchos::SerialDenseVector< O, T > > & v)"
+Convert a static array to a 'Vector\&.hpp' of vectors\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIa\fP array to be converted 
+.br
+\fIn\fP the number of vectors 
+.br
+\fIm\fP the size of each 'Vector\&.hpp' 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+v the 'Vector\&.hpp' of vectors 
+.RE
+.PP
+
+.PP
+References Pecos::convert()\&.
+.PP
+Referenced by Pecos::convert()\&.
+.SS "void Pecos::convert (T a[], int m, int n, std::set< Teuchos::SerialDenseVector< O, T > > & s)"
+Convert a static array to a weakly ordered multiset of vectors\&. Set allows for multiple keys with the same value\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIa\fP array to be converted 
+.br
+\fIn\fP the number of vectors 
+.br
+\fIm\fP the size of each 'Vector\&.hpp' 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+s the set 
+.RE
+.PP
+
+.PP
+References Pecos::convert()\&.
+.SS "void Pecos::convert (const std::vector< Teuchos::SerialDenseVector< O, T > > & V, Teuchos::SerialDenseMatrix< O, T > & M)"
+
+.PP
+Convert a std::vector of vectors to a matrix\&. Each element of the std::vector becomes a column of the matrix 
+.PP
+References Pecos::convert()\&.
+.SS "void Pecos::accumulate (const std::vector< std::vector< T > > & vectors, std::vector< T > & result, Operator op)"
+Add a set of vectors together\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIvectors\fP set of vectors to be added 
+.br
+\fIresult\fP the accumualted values 
+.RE
+.PP
+
+.PP
+References Pecos::accumulate()\&.
+.PP
+Referenced by Pecos::accumulate()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for PECOS from the source code\&.

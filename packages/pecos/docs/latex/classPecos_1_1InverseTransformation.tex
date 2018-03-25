@@ -1,0 +1,87 @@
+\section{Inverse\+Transformation Class Reference}
+\label{classPecos_1_1InverseTransformation}\index{Inverse\+Transformation@{Inverse\+Transformation}}
+
+
+Class for inverse data transformation.  
+
+
+Inheritance diagram for Inverse\+Transformation\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.372881cm]{classPecos_1_1InverseTransformation}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPecos_1_1InverseTransformation_a2f26b12650822873ec0fd05d7fdcd53c}{Inverse\+Transformation} ()\label{classPecos_1_1InverseTransformation_a2f26b12650822873ec0fd05d7fdcd53c}
+
+\begin{DoxyCompactList}\small\item\em constructor \end{DoxyCompactList}\item 
+\hyperlink{classPecos_1_1InverseTransformation_af364ba2a4996b223d946a4e19cd7bc4f}{$\sim$\+Inverse\+Transformation} ()\label{classPecos_1_1InverseTransformation_af364ba2a4996b223d946a4e19cd7bc4f}
+
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classPecos_1_1InverseTransformation_aff7310eaa8322a3eccf9815cc7da4a8e}{initialize} (const Real \&total\+\_\+t, const Real \&w\+\_\+bar, size\+\_\+t seed)\label{classPecos_1_1InverseTransformation_aff7310eaa8322a3eccf9815cc7da4a8e}
+
+\begin{DoxyCompactList}\small\item\em set scalar data \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1InverseTransformation_a2f54b6bae76157d4a964cd3ff73e4947}{power\+\_\+spectral\+\_\+density} (const String \&psd\+\_\+name, const Real \&param=0.)\label{classPecos_1_1InverseTransformation_a2f54b6bae76157d4a964cd3ff73e4947}
+
+\begin{DoxyCompactList}\small\item\em set P\+SD to standard embedded function \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1InverseTransformation_a97ff15b18230b747c64cde3596a1d6f3}{power\+\_\+spectral\+\_\+density} (const Real\+Real\+Pair\+Array \&psd)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Real \hyperlink{classPecos_1_1InverseTransformation_a0b7e8700325688780b8907292cfc581d}{total\+Time}\label{classPecos_1_1InverseTransformation_a0b7e8700325688780b8907292cfc581d}
+
+\begin{DoxyCompactList}\small\item\em total time window \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1InverseTransformation_a76b36c18f595ebb232d960272004e2cf}{delta\+Time}\label{classPecos_1_1InverseTransformation_a76b36c18f595ebb232d960272004e2cf}
+
+\begin{DoxyCompactList}\small\item\em time increment \end{DoxyCompactList}\item 
+Real\+Vector \hyperlink{classPecos_1_1InverseTransformation_a2d9d6c6e9be9cbe8504e5193a2bfb44f}{time\+Sequence}\label{classPecos_1_1InverseTransformation_a2d9d6c6e9be9cbe8504e5193a2bfb44f}
+
+\begin{DoxyCompactList}\small\item\em discretized time sequence \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1InverseTransformation_ae58b738711bb39b110ee92f41852a088}{omega\+Bar}\label{classPecos_1_1InverseTransformation_ae58b738711bb39b110ee92f41852a088}
+
+\begin{DoxyCompactList}\small\item\em cut-\/off frequency (rad/s) \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1InverseTransformation_a4733a45fbc8d43aa632eca62dfa11694}{delta\+Omega}\label{classPecos_1_1InverseTransformation_a4733a45fbc8d43aa632eca62dfa11694}
+
+\begin{DoxyCompactList}\small\item\em frequency increment (rad/s) \end{DoxyCompactList}\item 
+Real\+Vector \hyperlink{classPecos_1_1InverseTransformation_a0b7820a4e99c52ee3a7243174371bef2}{omega\+Sequence}\label{classPecos_1_1InverseTransformation_a0b7820a4e99c52ee3a7243174371bef2}
+
+\begin{DoxyCompactList}\small\item\em discretized frequency sequence \end{DoxyCompactList}\item 
+Real\+Vector \hyperlink{classPecos_1_1InverseTransformation_a6581c2dbbad535c9fc176635dfbbf709}{psd\+Sequence}\label{classPecos_1_1InverseTransformation_a6581c2dbbad535c9fc176635dfbbf709}
+
+\begin{DoxyCompactList}\small\item\em P\+SD sequence (frequency domain) \end{DoxyCompactList}\item 
+\hyperlink{classPecos_1_1LHSDriver}{L\+H\+S\+Driver} \hyperlink{classPecos_1_1InverseTransformation_a00989baaeba2eacae4fb147c47d04f1f}{lhs\+Sampler}\label{classPecos_1_1InverseTransformation_a00989baaeba2eacae4fb147c47d04f1f}
+
+\begin{DoxyCompactList}\small\item\em L\+HS wrapper for generating normal or uniform sample sets. \end{DoxyCompactList}\item 
+Real\+Vector \hyperlink{classPecos_1_1InverseTransformation_a17018c54acd67607b74c8783997d43a9}{inverse\+Sample}\label{classPecos_1_1InverseTransformation_a17018c54acd67607b74c8783997d43a9}
+
+\begin{DoxyCompactList}\small\item\em a single computed inverse sample (time domain) \end{DoxyCompactList}\item 
+Real\+Matrix \hyperlink{classPecos_1_1InverseTransformation_ab9922b4f4d5024622225f70ea343f9ee}{inverse\+Samples}\label{classPecos_1_1InverseTransformation_ab9922b4f4d5024622225f70ea343f9ee}
+
+\begin{DoxyCompactList}\small\item\em a computed set of inverse samples (time domain) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class for inverse data transformation. 
+
+The \hyperlink{classPecos_1_1InverseTransformation}{Inverse\+Transformation} employs an inverse transform to map from the frequency domain to the time domain. 
+
+\subsection{Member Function Documentation}
+\index{Pecos\+::\+Inverse\+Transformation@{Pecos\+::\+Inverse\+Transformation}!power\+\_\+spectral\+\_\+density@{power\+\_\+spectral\+\_\+density}}
+\index{power\+\_\+spectral\+\_\+density@{power\+\_\+spectral\+\_\+density}!Pecos\+::\+Inverse\+Transformation@{Pecos\+::\+Inverse\+Transformation}}
+\subsubsection[{\texorpdfstring{power\+\_\+spectral\+\_\+density(const Real\+Real\+Pair\+Array \&psd)}{power_spectral_density(const RealRealPairArray &psd)}}]{\setlength{\rightskip}{0pt plus 5cm}void power\+\_\+spectral\+\_\+density (
+\begin{DoxyParamCaption}
+\item[{const Real\+Real\+Pair\+Array \&}]{psd}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classPecos_1_1InverseTransformation_a97ff15b18230b747c64cde3596a1d6f3}
+Incoming psd if a set of (x,y) pairs that define a P\+SD curve (w, g(w)). The incoming discretization cannot be assumed to match that selected for psd\+Sequence; therefore, linear interpolation is performed in any combination of log or linear scales for the two axes. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Inverse\+Transformation.\+hpp\item 
+Inverse\+Transformation.\+cpp\end{DoxyCompactItemize}

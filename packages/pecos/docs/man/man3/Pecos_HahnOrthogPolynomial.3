@@ -1,0 +1,95 @@
+.TH "HahnOrthogPolynomial" 3 "Wed Dec 27 2017" "Version Version 1.0" "PECOS" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+HahnOrthogPolynomial \- Derived orthogonal polynomial class for Hahn polynomials\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBOrthogonalPolynomial\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBHahnOrthogPolynomial\fP ()"
+.br
+.RI "\fIdefault constructor \fP"
+.ti -1c
+.RI "\fB~HahnOrthogPolynomial\fP ()"
+.br
+.RI "\fIdestructor \fP"
+.ti -1c
+.RI "Real \fBgamma_polynomial\fP () const "
+.br
+.RI "\fIreturn gammaPoly \fP"
+.ti -1c
+.RI "void \fBgamma_stat\fP (Real gamma)"
+.br
+.RI "\fIset gammaStat (total population) \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "Real \fBtype1_value\fP (Real x, unsigned short order)"
+.br
+.RI "\fIretrieve the value of the n_th type 1 polynomial for a given parameter x using traditional characteristic polynomial formulation \fP"
+.ti -1c
+.RI "Real \fBalpha_polynomial\fP () const "
+.br
+.RI "\fIreturn alphaPoly \fP"
+.ti -1c
+.RI "Real \fBbeta_polynomial\fP () const "
+.br
+.RI "\fIreturn betaPoly \fP"
+.ti -1c
+.RI "void \fBalpha_stat\fP (Real alpha)"
+.br
+.RI "\fIset alphaStat (selected population) \fP"
+.ti -1c
+.RI "void \fBbeta_stat\fP (Real beta)"
+.br
+.RI "\fIset betaStat (num draws) \fP"
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "Real \fBalphaPoly\fP"
+.br
+.RI "\fIthe hypergeometric alpha parameter \fP"
+.ti -1c
+.RI "Real \fBbetaPoly\fP"
+.br
+.RI "\fIthe hypergeometric beta parameter \fP"
+.ti -1c
+.RI "Real \fBgammaPoly\fP"
+.br
+.RI "\fIthe number of discrete points on which to base the polynomial \fP"
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Derived orthogonal polynomial class for Hahn polynomials\&. 
+
+The \fBHahnOrthogPolynomial\fP class evaluates a univariate Hahn polynomial Q^(alpha,beta,N)_n of a particular order\&. These polynomials are orthogonal with respect to the weight function
+.PP
+(K choose k)(N-K choose n-k)/( N choose n)\&.
+.PP
+This corresponds to the hypergeometric probability mass function, which describes the probability of k successes in n draws, without replacement, from a finite population of size N that contains exactly K successes\&. See appendix in Xiu & Karniadakis, Siam J\&. Sci\&. Comp\&., v24, n2, pp\&. 619-644, 2002 for more details\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "Real type1_value (Real x, unsigned short n)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+retrieve the value of the n_th type 1 polynomial for a given parameter x using traditional characteristic polynomial formulation For orthogonal polynomials, n specifies the order of the polynomial, whereas for interpolation polynomials, it identifies the interpolant for the n-th point\&. 
+.PP
+Reimplemented from \fBBasisPolynomial\fP\&.
+.PP
+References HahnOrthogPolynomial::alphaPoly, HahnOrthogPolynomial::betaPoly, and HahnOrthogPolynomial::gammaPoly\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for PECOS from the source code\&.

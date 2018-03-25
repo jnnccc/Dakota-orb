@@ -1,0 +1,334 @@
+.TH "NumericGenOrthogPolynomial" 3 "Wed Dec 27 2017" "Version Version 1.0" "PECOS" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+NumericGenOrthogPolynomial \- Derived orthogonal polynomial class for numerically-generated orthogonal polynomials\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBOrthogonalPolynomial\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBNumericGenOrthogPolynomial\fP ()"
+.br
+.RI "\fIdefault constructor \fP"
+.ti -1c
+.RI "\fB~NumericGenOrthogPolynomial\fP ()"
+.br
+.RI "\fIdestructor \fP"
+.ti -1c
+.RI "Real \fBalpha_recursion\fP (unsigned short order)"
+.br
+.RI "\fIcalculate and return alpha3TR[order] \fP"
+.ti -1c
+.RI "Real \fBbeta_recursion\fP (unsigned short order)"
+.br
+.RI "\fIcalculate and return beta3TR[order] \fP"
+.ti -1c
+.RI "void \fBbounded_normal_distribution\fP (Real mean, Real std_dev, Real l_bnd, Real u_bnd)"
+.br
+.RI "\fIset distribution type and parameters for a BOUNDED_NORMAL distribution \fP"
+.ti -1c
+.RI "void \fBlognormal_distribution\fP (Real lambda, Real zeta)"
+.br
+.RI "\fIset distribution type and parameters for a LOGNORMAL distribution \fP"
+.ti -1c
+.RI "void \fBbounded_lognormal_distribution\fP (Real lambda, Real zeta, Real l_bnd, Real u_bnd)"
+.br
+.RI "\fIset distribution type and parameters for a BOUNDED_LOGNORMAL distribution \fP"
+.ti -1c
+.RI "void \fBloguniform_distribution\fP (Real l_bnd, Real u_bnd)"
+.br
+.RI "\fIset distribution type and parameters for a LOGUNIFORM distribution \fP"
+.ti -1c
+.RI "void \fBtriangular_distribution\fP (Real l_bnd, Real mode, Real u_bnd)"
+.br
+.RI "\fIset distribution type and parameters for a TRIANGULAR distribution \fP"
+.ti -1c
+.RI "void \fBgumbel_distribution\fP (Real alpha, Real beta)"
+.br
+.RI "\fIset distribution type and parameters for a GUMBEL distribution \fP"
+.ti -1c
+.RI "void \fBfrechet_distribution\fP (Real alpha, Real beta)"
+.br
+.RI "\fIset distribution type and parameters for a FRECHET distribution \fP"
+.ti -1c
+.RI "void \fBweibull_distribution\fP (Real alpha, Real beta)"
+.br
+.RI "\fIset distribution type and parameters for a WEIBULL distribution \fP"
+.ti -1c
+.RI "void \fBhistogram_bin_distribution\fP (const RealRealMap &bin_pairs)"
+.br
+.RI "\fIset distribution type and parameters for a HISTOGRAM_BIN distribution \fP"
+.ti -1c
+.RI "void \fBhistogram_pt_distribution\fP (const IntRealMap &bin_pairs)"
+.br
+.RI "\fIset distribution type and parameters for a HISTOGRAM_PT_INT distribution \fP"
+.ti -1c
+.RI "void \fBhistogram_pt_distribution\fP (const StringRealMap &bin_pairs)"
+.br
+.RI "\fIset distribution type and parameters for a HISTOGRAM_PT_STRING distribution \fP"
+.ti -1c
+.RI "void \fBhistogram_pt_distribution\fP (const RealRealMap &bin_pairs)"
+.br
+.RI "\fIset distribution type and parameters for a HISTOGRAM_PT_REAL distribution \fP"
+.ti -1c
+.RI "void \fBcoefficients_norms_flag\fP (bool flag)"
+.br
+.RI "\fIset coeffsNormsFlag \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "Real \fBtype1_value\fP (Real x, unsigned short order)"
+.br
+.RI "\fIretrieve the value of the n_th type 1 polynomial for a given parameter x using traditional characteristic polynomial formulation \fP"
+.ti -1c
+.RI "Real \fBtype1_gradient\fP (Real x, unsigned short order)"
+.br
+.RI "\fIretrieve the gradient of the n_th type 1 polynomial for a given parameter x using traditional characteristic polynomial formulation \fP"
+.ti -1c
+.RI "Real \fBtype1_hessian\fP (Real x, unsigned short order)"
+.br
+.RI "\fIretrieve the Hessian of the n_th type 1 polynomial for a given parameter x using traditional characteristic polynomial formulation \fP"
+.ti -1c
+.RI "Real \fBnorm_squared\fP (unsigned short order)"
+.br
+.RI "\fIreturns the norm-squared of the n_th order polynomial defined by the inner product <Poly_n, Poly_n> = ||Poly_n||^2 \fP"
+.ti -1c
+.RI "const RealArray & \fBcollocation_points\fP (unsigned short order)"
+.br
+.RI "\fIreturn collocation points corresponding to orthogonal polynomial order n \fP"
+.ti -1c
+.RI "const RealArray & \fBtype1_collocation_weights\fP (unsigned short order)"
+.br
+.RI "\fIreturn the type 1 collocation weights corresponding to a point set of size order \fP"
+.ti -1c
+.RI "bool \fBparameterized\fP () const "
+.br
+.RI "\fIreturn whether a derived \fBBasisPolynomial\fP type supports parameterization \fP"
+.ti -1c
+.RI "Real \fBlength_scale\fP () const "
+.br
+.ti -1c
+.RI "void \fBprecompute_rules\fP (unsigned short order)"
+.br
+.RI "\fIprecompute quadrature rules up to specified order \fP"
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBsolve_eigenproblem\fP (unsigned short m)"
+.br
+.RI "\fIsolve a symmetric tridiagonal eigenvalue problem for the Gauss points and weights for an orthogonal polynomial of order m \fP"
+.ti -1c
+.RI "void \fBpolynomial_recursion\fP (RealVector &poly_coeffs_ip1, Real alpha_i, const RealVector &poly_coeffs_i, Real beta_i, const RealVector &poly_coeffs_im1)"
+.br
+.RI "\fIcompute three point recursion for polyCoeffs[i+1] \fP"
+.ti -1c
+.RI "void \fBpolynomial_recursion\fP (RealVector &poly_coeffs_ip1, Real alpha_i, const RealVector &poly_coeffs_i)"
+.br
+.RI "\fIcompute truncated three point recursion for polyCoeffs[i+1] \fP"
+.ti -1c
+.RI "Real \fBinner_product\fP (const RealVector &poly_coeffs1, const RealVector &poly_coeffs2)"
+.br
+.RI "\fIcompute inner product of specified polynomial orders \fP"
+.ti -1c
+.RI "Real \fBhermite_unbounded_integral\fP (const RealVector &poly_coeffs1, const RealVector &poly_coeffs2, NGFPType weight_fn)"
+.br
+.RI "\fIcompute an unbounded integral using Gauss-Hermite integration \fP"
+.ti -1c
+.RI "Real \fBfejer_unbounded_integral\fP (const RealVector &poly_coeffs1, const RealVector &poly_coeffs2, NGFPType weight_fn, unsigned short quad_order)"
+.br
+.RI "\fIcompute an unbounded integral using Fejer integration and a change of variables \fP"
+.ti -1c
+.RI "Real \fBlaguerre_semibounded_integral\fP (const RealVector &poly_coeffs1, const RealVector &poly_coeffs2, NGFPType weight_fn)"
+.br
+.RI "\fIcompute a semibounded integral using Gauss-Laguerre integration \fP"
+.ti -1c
+.RI "Real \fBfejer_semibounded_integral\fP (const RealVector &poly_coeffs1, const RealVector &poly_coeffs2, NGFPType weight_fn, unsigned short quad_order)"
+.br
+.RI "\fIcompute a semibounded integral using Fejer integration and a change of variables \fP"
+.ti -1c
+.RI "Real \fBlegendre_bounded_integral\fP (const RealVector &poly_coeffs1, const RealVector &poly_coeffs2, NGFPType weight_fn, Real start, Real end)"
+.br
+.RI "\fIcompute a bounded integral over the specified range using Gauss-Legendre integration \fP"
+.ti -1c
+.RI "Real \fBcc_bounded_integral\fP (const RealVector &poly_coeffs1, const RealVector &poly_coeffs2, NGFPType weight_fn, Real start, Real end, unsigned short quad_order)"
+.br
+.RI "\fIcompute a bounded integral over the specified range using Clenshaw-Curtis integration \fP"
+.ti -1c
+.RI "Real \fBriemann_bounded_integral\fP (const RealVector &poly_coeffs1, const RealVector &poly_coeffs2, NGFPType weight_fn, Real start, Real end)"
+.br
+.RI "\fIcompute a bounded integral over the specified range using Riemann sums \fP"
+.ti -1c
+.RI "Real \fBnative_quadrature_integral\fP (const RealVector &poly_coeffs1, const RealVector &poly_coeffs2)"
+.br
+.RI "\fIcompute an integral using the native Gaussian quadrature rule (up to order 2m-1 based on collocPoints and collocWeights of order m) \fP"
+.ti -1c
+.RI "Real \fBtype1_value\fP (Real x, const RealVector &poly_coeffs)"
+.br
+.RI "\fIretrieve the value of the 1-D generated polynomial (of given coefficients) for a given parameter value \fP"
+.ti -1c
+.RI "Real \fBtype1_gradient\fP (Real x, const RealVector &poly_coeffs)"
+.br
+.RI "\fIretrieve the gradient of the 1-D generated polynomial (of given coefficients) with respect to its dimension for a given parameter value \fP"
+.ti -1c
+.RI "Real \fBtype1_hessian\fP (Real x, const RealVector &poly_coeffs)"
+.br
+.RI "\fIretrieve the Hessian of the 1-D generated polynomial (of given coefficients) with respect to its dimension for a given parameter value \fP"
+.in -1c
+.SS "Static Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static Real \fBbounded_normal_pdf\fP (Real x, const RealVector &params)"
+.br
+.RI "\fIthin wrapper for bounded_normal_pdf for NGFPType API \fP"
+.ti -1c
+.RI "static Real \fBlognormal_pdf\fP (Real x, const RealVector &params)"
+.br
+.RI "\fIthin wrapper for lognormal_pdf for NGFPType API \fP"
+.ti -1c
+.RI "static Real \fBbounded_lognormal_pdf\fP (Real x, const RealVector &params)"
+.br
+.RI "\fIthin wrapper for bounded_lognormal_pdf for NGFPType API \fP"
+.ti -1c
+.RI "static Real \fBloguniform_pdf\fP (Real x, const RealVector &params)"
+.br
+.RI "\fIthin wrapper for loguniform_pdf for NGFPType API \fP"
+.ti -1c
+.RI "static Real \fBtriangular_pdf\fP (Real x, const RealVector &params)"
+.br
+.RI "\fIthin wrapper for triangular_pdf for NGFPType API \fP"
+.ti -1c
+.RI "static Real \fBgumbel_pdf\fP (Real x, const RealVector &params)"
+.br
+.RI "\fIthin wrapper for gumbel_pdf for NGFPType API \fP"
+.ti -1c
+.RI "static Real \fBfrechet_pdf\fP (Real x, const RealVector &params)"
+.br
+.RI "\fIthin wrapper for frechet_pdf for NGFPType API \fP"
+.ti -1c
+.RI "static Real \fBweibull_pdf\fP (Real x, const RealVector &params)"
+.br
+.RI "\fIthin wrapper for weibull_pdf for NGFPType API \fP"
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "short \fBdistributionType\fP"
+.br
+.RI "\fIthe type of non-Askey distribution: BOUNDED_NORMAL, LOGNORMAL, BOUNDED_LOGNORMAL, LOGUNIFORM, TRIANGULAR, GUMBEL, FRECHET, WEIBULL, HISTOGRAM_BIN, or STOCHASTIC_EXPANSION \fP"
+.ti -1c
+.RI "RealVector \fBdistParams\fP"
+.br
+.RI "\fIdistribution parameters (e\&.g\&., mean, std_dev, alpha, beta) \fP"
+.ti -1c
+.RI "bool \fBcoeffsNormsFlag\fP"
+.br
+.RI "\fIflag identifying the need to compute polyCoeffs and orthogPolyNormsSq (if false, only collocPoints and collocWeights are computed) \fP"
+.ti -1c
+.RI "RealVectorArray \fBpolyCoeffs\fP"
+.br
+.RI "\fIcoefficients of the orthogonal polynomials, from order 0 to m \fP"
+.ti -1c
+.RI "RealVector \fBalpha3TR\fP"
+.br
+.RI "\fIalpha three-term recurrence parameters: alpha3TR[i] multiplied by polyCoeffs[i] contributes to polyCoeffs[i+1] \fP"
+.ti -1c
+.RI "RealVector \fBbeta3TR\fP"
+.br
+.RI "\fIbeta three-term recurrence parameters: beta3TR[i] multiplied by polyCoeffs[i-1] contributes to polyCoeffs[i+1] \fP"
+.ti -1c
+.RI "RealVector \fBorthogPolyNormsSq\fP"
+.br
+.RI "\fInorm-squared of all orthogonal polynomials, from order 0 to m, as defined by the inner product <Poly_i, Poly_i> = ||Poly_i||^2 \fP"
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Derived orthogonal polynomial class for numerically-generated orthogonal polynomials\&. 
+
+The \fBNumericGenOrthogPolynomial\fP class numerically generates a univariate orthogonal polynomial of a particular order, along with its Gauss points, Gauss weights, and norms\&. It uses a variety of algorithms due to Chebyshev and Stieltjes as reported by Golub and Welsch (Mathematics of Computation, Vol\&. 23, No\&. 106, 1969) and Gautschi (SIAM J\&. Sci\&. Stat\&. Comput\&., Vol\&. 3, No\&. 3, 1982)\&. It enables (mixed) multidimensional orthogonal polynomial basis functions within \fBOrthogPolyApproximation\fP\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "Real type1_value (Real x, unsigned short n)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+retrieve the value of the n_th type 1 polynomial for a given parameter x using traditional characteristic polynomial formulation For orthogonal polynomials, n specifies the order of the polynomial, whereas for interpolation polynomials, it identifies the interpolant for the n-th point\&. 
+.PP
+Reimplemented from \fBBasisPolynomial\fP\&.
+.PP
+References NumericGenOrthogPolynomial::polyCoeffs, and NumericGenOrthogPolynomial::solve_eigenproblem()\&.
+.PP
+Referenced by NumericGenOrthogPolynomial::cc_bounded_integral(), NumericGenOrthogPolynomial::fejer_semibounded_integral(), NumericGenOrthogPolynomial::fejer_unbounded_integral(), NumericGenOrthogPolynomial::hermite_unbounded_integral(), NumericGenOrthogPolynomial::inner_product(), NumericGenOrthogPolynomial::laguerre_semibounded_integral(), NumericGenOrthogPolynomial::legendre_bounded_integral(), NumericGenOrthogPolynomial::native_quadrature_integral(), and NumericGenOrthogPolynomial::riemann_bounded_integral()\&.
+.SS "Real type1_gradient (Real x, unsigned short n)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+retrieve the gradient of the n_th type 1 polynomial for a given parameter x using traditional characteristic polynomial formulation For orthogonal polynomials, n specifies the order of the polynomial, whereas for interpolation polynomials, it identifies the interpolant for the n-th point\&. 
+.PP
+Reimplemented from \fBBasisPolynomial\fP\&.
+.PP
+References NumericGenOrthogPolynomial::polyCoeffs, and NumericGenOrthogPolynomial::solve_eigenproblem()\&.
+.SS "Real type1_hessian (Real x, unsigned short n)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+retrieve the Hessian of the n_th type 1 polynomial for a given parameter x using traditional characteristic polynomial formulation For orthogonal polynomials, n specifies the order of the polynomial, whereas for interpolation polynomials, it identifies the interpolant for the n-th point\&. 
+.PP
+Reimplemented from \fBBasisPolynomial\fP\&.
+.PP
+References NumericGenOrthogPolynomial::polyCoeffs, and NumericGenOrthogPolynomial::solve_eigenproblem()\&.
+.SS "Real norm_squared (unsigned short n)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+returns the norm-squared of the n_th order polynomial defined by the inner product <Poly_n, Poly_n> = ||Poly_n||^2 This is defined only for orthogonal polynomials\&. 
+.PP
+Reimplemented from \fBBasisPolynomial\fP\&.
+.PP
+References NumericGenOrthogPolynomial::collocation_points(), NumericGenOrthogPolynomial::orthogPolyNormsSq, and NumericGenOrthogPolynomial::solve_eigenproblem()\&.
+.SS "const RealArray & collocation_points (unsigned short n)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+return collocation points corresponding to orthogonal polynomial order n This is defined for orthogonal and piecewise interpolation polynomials\&. 
+.PP
+Reimplemented from \fBBasisPolynomial\fP\&.
+.PP
+References OrthogonalPolynomial::collocPoints, NumericGenOrthogPolynomial::solve_eigenproblem(), and NumericGenOrthogPolynomial::type1_collocation_weights()\&.
+.PP
+Referenced by NumericGenOrthogPolynomial::norm_squared()\&.
+.SS "const RealArray & type1_collocation_weights (unsigned short order)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+return the type 1 collocation weights corresponding to a point set of size order This is defined for orthogonal and piecewise interpolation polynomials\&. 
+.PP
+Reimplemented from \fBBasisPolynomial\fP\&.
+.PP
+References OrthogonalPolynomial::collocWeights, and NumericGenOrthogPolynomial::solve_eigenproblem()\&.
+.PP
+Referenced by NumericGenOrthogPolynomial::collocation_points()\&.
+.SS "Real length_scale () const\fC [inline]\fP, \fC [protected]\fP, \fC [virtual]\fP"
+return max(mean,stdev) 
+.PP
+Reimplemented from \fBBasisPolynomial\fP\&.
+.PP
+References NumericGenOrthogPolynomial::distParams, and NumericGenOrthogPolynomial::distributionType\&.
+.SS "void solve_eigenproblem (unsigned short m)\fC [private]\fP"
+
+.PP
+solve a symmetric tridiagonal eigenvalue problem for the Gauss points and weights for an orthogonal polynomial of order m Numbering conventions follow Gautschi\&. 
+.PP
+References NumericGenOrthogPolynomial::alpha3TR, NumericGenOrthogPolynomial::beta3TR, NumericGenOrthogPolynomial::coeffsNormsFlag, OrthogonalPolynomial::collocPoints, OrthogonalPolynomial::collocWeights, NumericGenOrthogPolynomial::distParams, NumericGenOrthogPolynomial::distributionType, NumericGenOrthogPolynomial::inner_product(), NumericGenOrthogPolynomial::native_quadrature_integral(), NumericGenOrthogPolynomial::orthogPolyNormsSq, NumericGenOrthogPolynomial::polyCoeffs, and NumericGenOrthogPolynomial::polynomial_recursion()\&.
+.PP
+Referenced by NumericGenOrthogPolynomial::alpha_recursion(), NumericGenOrthogPolynomial::beta_recursion(), NumericGenOrthogPolynomial::collocation_points(), NumericGenOrthogPolynomial::norm_squared(), NumericGenOrthogPolynomial::precompute_rules(), NumericGenOrthogPolynomial::type1_collocation_weights(), NumericGenOrthogPolynomial::type1_gradient(), NumericGenOrthogPolynomial::type1_hessian(), and NumericGenOrthogPolynomial::type1_value()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for PECOS from the source code\&.

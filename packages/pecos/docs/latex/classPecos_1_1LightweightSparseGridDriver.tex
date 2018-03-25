@@ -1,0 +1,124 @@
+\section{Lightweight\+Sparse\+Grid\+Driver Class Reference}
+\label{classPecos_1_1LightweightSparseGridDriver}\index{Lightweight\+Sparse\+Grid\+Driver@{Lightweight\+Sparse\+Grid\+Driver}}
+
+
+Lighweight sparse grid driver class that generates index sets for N-\/dimensional Smolyak sparse grids.  
+
+
+Inheritance diagram for Lightweight\+Sparse\+Grid\+Driver\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classPecos_1_1LightweightSparseGridDriver}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPecos_1_1LightweightSparseGridDriver_a258a4f02a1442f1580ae51823b28e7b9}{Lightweight\+Sparse\+Grid\+Driver} ()\label{classPecos_1_1LightweightSparseGridDriver_a258a4f02a1442f1580ae51823b28e7b9}
+
+\begin{DoxyCompactList}\small\item\em default constructor \end{DoxyCompactList}\item 
+\hyperlink{classPecos_1_1LightweightSparseGridDriver_aeb28d870b34f91c2e9b935d68466b731}{Lightweight\+Sparse\+Grid\+Driver} (unsigned short ssg\+\_\+level, const Real\+Vector \&dim\+\_\+pref=Real\+Vector(), short \hyperlink{classPecos_1_1SparseGridDriver_a6f9061513ba25c62ee7a49b0d5da42cc}{growth\+\_\+rate}=M\+O\+D\+E\+R\+A\+T\+E\+\_\+\+R\+E\+S\+T\+R\+I\+C\+T\+E\+D\+\_\+\+G\+R\+O\+W\+TH, short refine\+\_\+control=N\+O\+\_\+\+C\+O\+N\+T\+R\+OL)\label{classPecos_1_1LightweightSparseGridDriver_aeb28d870b34f91c2e9b935d68466b731}
+
+\begin{DoxyCompactList}\small\item\em constructor \end{DoxyCompactList}\item 
+\hyperlink{classPecos_1_1LightweightSparseGridDriver_a27a8fed45f7f78fdbdbbb2c041de7b4c}{$\sim$\+Lightweight\+Sparse\+Grid\+Driver} ()\label{classPecos_1_1LightweightSparseGridDriver_a27a8fed45f7f78fdbdbbb2c041de7b4c}
+
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1LightweightSparseGridDriver_a059e9e1e03a5cd29771d369b76311261}{initialize\+\_\+sets} ()
+\begin{DoxyCompactList}\small\item\em initializes old/active/evaluation sets for use within the generalized sparse grid procedure \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1LightweightSparseGridDriver_a99c17efb3a8e873b7708652cc1787370}{push\+\_\+trial\+\_\+set} (const U\+Short\+Array \&set)\label{classPecos_1_1LightweightSparseGridDriver_a99c17efb3a8e873b7708652cc1787370}
+
+\begin{DoxyCompactList}\small\item\em update smolyak\+Multi\+Index with a new trial set for use within the generalized sparse grid procedure \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1LightweightSparseGridDriver_a92b2604a79028bec35c176aee27e56bb}{pop\+\_\+trial\+\_\+set} ()\label{classPecos_1_1LightweightSparseGridDriver_a92b2604a79028bec35c176aee27e56bb}
+
+\begin{DoxyCompactList}\small\item\em remove the previously pushed trial set from smolyak\+Multi\+Index during the course of the generalized sparse grid procedure \end{DoxyCompactList}\item 
+const U\+Short\+Array \& \hyperlink{classPecos_1_1LightweightSparseGridDriver_a5c92e49dbfbcfa5b0d1523ed254b4d76}{trial\+\_\+set} () const \label{classPecos_1_1LightweightSparseGridDriver_a5c92e49dbfbcfa5b0d1523ed254b4d76}
+
+\begin{DoxyCompactList}\small\item\em return the trial index set from \hyperlink{classPecos_1_1LightweightSparseGridDriver_a99c17efb3a8e873b7708652cc1787370}{push\+\_\+trial\+\_\+set()} \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1LightweightSparseGridDriver_ae5bcc14a0e7bb726d5280c3dd10e6c98}{print\+\_\+smolyak\+\_\+multi\+\_\+index} () const \label{classPecos_1_1LightweightSparseGridDriver_ae5bcc14a0e7bb726d5280c3dd10e6c98}
+
+\begin{DoxyCompactList}\small\item\em print smolyak\+Multi\+Index \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1LightweightSparseGridDriver_ac6105d921fa39880b9ffddaab414bb3f}{initialize\+\_\+grid} (size\+\_\+t num\+\_\+v, unsigned short ssg\+\_\+level)
+\begin{DoxyCompactList}\small\item\em initialize a lightweight instance that only generates index sets \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1LightweightSparseGridDriver_a3b5cd6bd45cb1321335605bca233c971}{prune\+\_\+sets} (const Sizet\+Set \&save\+\_\+tp)\label{classPecos_1_1LightweightSparseGridDriver_a3b5cd6bd45cb1321335605bca233c971}
+
+\begin{DoxyCompactList}\small\item\em prune sets from old\+Multi\+Index and redefine active\+Multi\+Index \end{DoxyCompactList}\item 
+const U\+Short2\+D\+Array \& \hyperlink{classPecos_1_1LightweightSparseGridDriver_ac2a92a30d8aedcaf8bcae6097915948d}{smolyak\+\_\+multi\+\_\+index} () const \label{classPecos_1_1LightweightSparseGridDriver_ac2a92a30d8aedcaf8bcae6097915948d}
+
+\begin{DoxyCompactList}\small\item\em return smolyak\+Multi\+Index \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+U\+Short2\+D\+Array \hyperlink{classPecos_1_1LightweightSparseGridDriver_a189de9f4451d4da64b46cff2b4b1ba0d}{smolyak\+Multi\+Index}
+\begin{DoxyCompactList}\small\item\em num\+Smolyak\+Indices-\/by-\/num\+Vars array for identifying the index to use within the polynomial\+Basis for a particular variable \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Lighweight sparse grid driver class that generates index sets for N-\/dimensional Smolyak sparse grids. 
+
+This class is used for basis adaptation using sparse grid index sets and omits many of the details needed for computing expectation integrals. 
+
+\subsection{Member Function Documentation}
+\index{Pecos\+::\+Lightweight\+Sparse\+Grid\+Driver@{Pecos\+::\+Lightweight\+Sparse\+Grid\+Driver}!initialize\+\_\+sets@{initialize\+\_\+sets}}
+\index{initialize\+\_\+sets@{initialize\+\_\+sets}!Pecos\+::\+Lightweight\+Sparse\+Grid\+Driver@{Pecos\+::\+Lightweight\+Sparse\+Grid\+Driver}}
+\subsubsection[{\texorpdfstring{initialize\+\_\+sets()}{initialize_sets()}}]{\setlength{\rightskip}{0pt plus 5cm}void initialize\+\_\+sets (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classPecos_1_1LightweightSparseGridDriver_a059e9e1e03a5cd29771d369b76311261}
+
+
+initializes old/active/evaluation sets for use within the generalized sparse grid procedure 
+
+dim\+Isotropic $\vert$$\vert$ 
+
+Implements \hyperlink{classPecos_1_1SparseGridDriver_a6a15c211b631e3a8f865a03dd8926f56}{Sparse\+Grid\+Driver}.
+
+
+
+References Sparse\+Grid\+Driver\+::active\+Multi\+Index, Sparse\+Grid\+Driver\+::add\+\_\+active\+\_\+neighbors(), Sparse\+Grid\+Driver\+::old\+Multi\+Index, Lightweight\+Sparse\+Grid\+Driver\+::smolyak\+Multi\+Index, and Sparse\+Grid\+Driver\+::ssg\+Level.
+
+
+
+Referenced by Regress\+Orthog\+Poly\+Approximation\+::adapt\+\_\+regression().
+
+\index{Pecos\+::\+Lightweight\+Sparse\+Grid\+Driver@{Pecos\+::\+Lightweight\+Sparse\+Grid\+Driver}!initialize\+\_\+grid@{initialize\+\_\+grid}}
+\index{initialize\+\_\+grid@{initialize\+\_\+grid}!Pecos\+::\+Lightweight\+Sparse\+Grid\+Driver@{Pecos\+::\+Lightweight\+Sparse\+Grid\+Driver}}
+\subsubsection[{\texorpdfstring{initialize\+\_\+grid(size\+\_\+t num\+\_\+v, unsigned short ssg\+\_\+level)}{initialize_grid(size_t num_v, unsigned short ssg_level)}}]{\setlength{\rightskip}{0pt plus 5cm}void initialize\+\_\+grid (
+\begin{DoxyParamCaption}
+\item[{size\+\_\+t}]{num\+\_\+v, }
+\item[{unsigned short}]{ssg\+\_\+level}
+\end{DoxyParamCaption}
+)}\label{classPecos_1_1LightweightSparseGridDriver_ac6105d921fa39880b9ffddaab414bb3f}
+
+
+initialize a lightweight instance that only generates index sets 
+
+this lightweight sparse grid mode only generates index sets without points, weights, or collocation bookkeeping. 
+
+References Integration\+Driver\+::num\+Vars, Lightweight\+Sparse\+Grid\+Driver\+::smolyak\+Multi\+Index, Sparse\+Grid\+Driver\+::ssg\+Level, and Shared\+Poly\+Approx\+Data\+::total\+\_\+order\+\_\+multi\+\_\+index().
+
+
+
+Referenced by Shared\+Regress\+Orthog\+Poly\+Approx\+Data\+::allocate\+\_\+data().
+
+
+
+\subsection{Member Data Documentation}
+\index{Pecos\+::\+Lightweight\+Sparse\+Grid\+Driver@{Pecos\+::\+Lightweight\+Sparse\+Grid\+Driver}!smolyak\+Multi\+Index@{smolyak\+Multi\+Index}}
+\index{smolyak\+Multi\+Index@{smolyak\+Multi\+Index}!Pecos\+::\+Lightweight\+Sparse\+Grid\+Driver@{Pecos\+::\+Lightweight\+Sparse\+Grid\+Driver}}
+\subsubsection[{\texorpdfstring{smolyak\+Multi\+Index}{smolyakMultiIndex}}]{\setlength{\rightskip}{0pt plus 5cm}U\+Short2\+D\+Array smolyak\+Multi\+Index\hspace{0.3cm}{\ttfamily [private]}}\label{classPecos_1_1LightweightSparseGridDriver_a189de9f4451d4da64b46cff2b4b1ba0d}
+
+
+num\+Smolyak\+Indices-\/by-\/num\+Vars array for identifying the index to use within the polynomial\+Basis for a particular variable 
+
+The index sets correspond to j (0-\/based) for use as indices, which are offset from the i indices (1-\/based) normally used in the Smolyak expressions. The indices correspond to levels, one for each anisotropic tensor-\/product grid within a Smolyak recursion. 
+
+Referenced by Lightweight\+Sparse\+Grid\+Driver\+::initialize\+\_\+grid(), Lightweight\+Sparse\+Grid\+Driver\+::initialize\+\_\+sets(), Lightweight\+Sparse\+Grid\+Driver\+::pop\+\_\+trial\+\_\+set(), Lightweight\+Sparse\+Grid\+Driver\+::print\+\_\+smolyak\+\_\+multi\+\_\+index(), Lightweight\+Sparse\+Grid\+Driver\+::prune\+\_\+sets(), Lightweight\+Sparse\+Grid\+Driver\+::push\+\_\+trial\+\_\+set(), Lightweight\+Sparse\+Grid\+Driver\+::smolyak\+\_\+multi\+\_\+index(), and Lightweight\+Sparse\+Grid\+Driver\+::trial\+\_\+set().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Lightweight\+Sparse\+Grid\+Driver.\+hpp\item 
+Lightweight\+Sparse\+Grid\+Driver.\+cpp\end{DoxyCompactItemize}

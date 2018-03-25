@@ -1,0 +1,3 @@
+#! /bin/bash
+export LD_LIBRARY_PATH=./:$LD_LIBRARY_PATH
+dakota -i dakota_rosenbrock_python.in|grep getstate

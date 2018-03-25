@@ -1,0 +1,79 @@
+.TH "KrawtchoukOrthogPolynomial" 3 "Wed Dec 27 2017" "Version Version 1.0" "PECOS" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+KrawtchoukOrthogPolynomial \- Derived orthogonal polynomial class for Krawtchouk polynomials\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBOrthogonalPolynomial\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBKrawtchoukOrthogPolynomial\fP ()"
+.br
+.RI "\fIdefault constructor \fP"
+.ti -1c
+.RI "\fB~KrawtchoukOrthogPolynomial\fP ()"
+.br
+.RI "\fIdestructor \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "Real \fBtype1_value\fP (Real x, unsigned short order)"
+.br
+.RI "\fIretrieve the value of the n_th type 1 polynomial for a given parameter x using traditional characteristic polynomial formulation \fP"
+.ti -1c
+.RI "Real \fBalpha_polynomial\fP () const "
+.br
+.RI "\fIreturn alphaPoly \fP"
+.ti -1c
+.RI "Real \fBbeta_polynomial\fP () const "
+.br
+.RI "\fIreturn betaPoly \fP"
+.ti -1c
+.RI "void \fBalpha_stat\fP (Real alpha)"
+.br
+.RI "\fIset alphaStat (probability per trial) \fP"
+.ti -1c
+.RI "void \fBbeta_stat\fP (Real beta)"
+.br
+.RI "\fIset betaStat (num_trials) \fP"
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "Real \fBalphaPoly\fP"
+.br
+.RI "\fIthe probability of a 'success' for each experiment \fP"
+.ti -1c
+.RI "short \fBbetaPoly\fP"
+.br
+.RI "\fIthe number of discrete points on which to base the polynomial \fP"
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Derived orthogonal polynomial class for Krawtchouk polynomials\&. 
+
+The \fBKrawtchoukOrthogPolynomial\fP class evaluates a univariate Krawtchouk polynomial K^(p,N)_n of a particular order\&. These polynomials are orthogonal with respect to the weight function (N choose k)*p^k*(1-p)^(n-k)\&. This corresponds to the binomial probability mass function, which is the probability of k successes from N trials\&. See appendix in Xiu & Karniadakis, Siam J\&. Sci\&. Comp\&., v24, n2, pp\&. 619-644, 2002 for more details\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "Real type1_value (Real x, unsigned short n)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+retrieve the value of the n_th type 1 polynomial for a given parameter x using traditional characteristic polynomial formulation For orthogonal polynomials, n specifies the order of the polynomial, whereas for interpolation polynomials, it identifies the interpolant for the n-th point\&. 
+.PP
+Reimplemented from \fBBasisPolynomial\fP\&.
+.PP
+References KrawtchoukOrthogPolynomial::alphaPoly, and KrawtchoukOrthogPolynomial::betaPoly\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for PECOS from the source code\&.

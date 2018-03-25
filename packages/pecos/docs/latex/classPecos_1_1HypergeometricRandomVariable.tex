@@ -1,0 +1,110 @@
+\section{Hypergeometric\+Random\+Variable Class Reference}
+\label{classPecos_1_1HypergeometricRandomVariable}\index{Hypergeometric\+Random\+Variable@{Hypergeometric\+Random\+Variable}}
+
+
+Derived random variable class for hypergeometric random variables.  
+
+
+Inheritance diagram for Hypergeometric\+Random\+Variable\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classPecos_1_1HypergeometricRandomVariable}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPecos_1_1HypergeometricRandomVariable_a134b5b3f9ccb8a93e07c5c62083001bd}{Hypergeometric\+Random\+Variable} ()\label{classPecos_1_1HypergeometricRandomVariable_a134b5b3f9ccb8a93e07c5c62083001bd}
+
+\begin{DoxyCompactList}\small\item\em default constructor \end{DoxyCompactList}\item 
+\hyperlink{classPecos_1_1HypergeometricRandomVariable_aa375499baa668f2f762ec824b1d8a978}{Hypergeometric\+Random\+Variable} (unsigned int num\+\_\+total\+\_\+pop, unsigned int num\+\_\+sel\+\_\+pop, unsigned int num\+\_\+fail)\label{classPecos_1_1HypergeometricRandomVariable_aa375499baa668f2f762ec824b1d8a978}
+
+\begin{DoxyCompactList}\small\item\em alternate constructor \end{DoxyCompactList}\item 
+\hyperlink{classPecos_1_1HypergeometricRandomVariable_a899daf62a239bccfe0eb02eac9057b8a}{$\sim$\+Hypergeometric\+Random\+Variable} ()\label{classPecos_1_1HypergeometricRandomVariable_a899daf62a239bccfe0eb02eac9057b8a}
+
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1HypergeometricRandomVariable_addd564e7f4f314e12d38df74d845f0d8}{cdf} (Real x) const \label{classPecos_1_1HypergeometricRandomVariable_addd564e7f4f314e12d38df74d845f0d8}
+
+\begin{DoxyCompactList}\small\item\em return the cumulative distribution function value of the random variable at x \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1HypergeometricRandomVariable_a23c3b599e7e4788a9a5e9e93c3dbaf4d}{ccdf} (Real x) const \label{classPecos_1_1HypergeometricRandomVariable_a23c3b599e7e4788a9a5e9e93c3dbaf4d}
+
+\begin{DoxyCompactList}\small\item\em return the complementary cumulative distribution function value of the random variable at x \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1HypergeometricRandomVariable_a918a1aac05ca349ea5313eebcba46c3e}{inverse\+\_\+cdf} (Real p\+\_\+cdf) const \label{classPecos_1_1HypergeometricRandomVariable_a918a1aac05ca349ea5313eebcba46c3e}
+
+\begin{DoxyCompactList}\small\item\em return the x value corresponding to a cumulative probability \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1HypergeometricRandomVariable_afda003a1f59ff6930902cd5c8601f49b}{inverse\+\_\+ccdf} (Real p\+\_\+ccdf) const \label{classPecos_1_1HypergeometricRandomVariable_afda003a1f59ff6930902cd5c8601f49b}
+
+\begin{DoxyCompactList}\small\item\em return the x value corresponding to a complementary cumulative probability \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1HypergeometricRandomVariable_a8ec69265f428e17c1707133cb137a819}{pdf} (Real x) const \label{classPecos_1_1HypergeometricRandomVariable_a8ec69265f428e17c1707133cb137a819}
+
+\begin{DoxyCompactList}\small\item\em return the value of the random variable\textquotesingle{}s probability density function at x \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1HypergeometricRandomVariable_aa891dab1ae9a225f493e3a0e5032b778}{parameter} (short dist\+\_\+param) const \label{classPecos_1_1HypergeometricRandomVariable_aa891dab1ae9a225f493e3a0e5032b778}
+
+\begin{DoxyCompactList}\small\item\em return the value of the named distribution parameter \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1HypergeometricRandomVariable_ae8e123224f588aee676d5d56d5ca900d}{parameter} (short dist\+\_\+param, Real val)\label{classPecos_1_1HypergeometricRandomVariable_ae8e123224f588aee676d5d56d5ca900d}
+
+\begin{DoxyCompactList}\small\item\em update the value of the named distribution parameter \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1HypergeometricRandomVariable_a962ffe5a3593be370d5c883365c060f4}{mean} () const \label{classPecos_1_1HypergeometricRandomVariable_a962ffe5a3593be370d5c883365c060f4}
+
+\begin{DoxyCompactList}\small\item\em return the distribution mean \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1HypergeometricRandomVariable_ae1fff19ce29a79d657043a598523635d}{median} () const \label{classPecos_1_1HypergeometricRandomVariable_ae1fff19ce29a79d657043a598523635d}
+
+\begin{DoxyCompactList}\small\item\em return the distribution mode \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1HypergeometricRandomVariable_a72d3d6926edd929cb3f8e12baa655f70}{mode} () const \label{classPecos_1_1HypergeometricRandomVariable_a72d3d6926edd929cb3f8e12baa655f70}
+
+\begin{DoxyCompactList}\small\item\em return the distribution mode \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1HypergeometricRandomVariable_a6a4ed9624d511f8a4e4f509c82cb0706}{standard\+\_\+deviation} () const \label{classPecos_1_1HypergeometricRandomVariable_a6a4ed9624d511f8a4e4f509c82cb0706}
+
+\begin{DoxyCompactList}\small\item\em return the distribution variance \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1HypergeometricRandomVariable_a4b8b05b2a9af92dad9cc304c2925a4eb}{variance} () const \label{classPecos_1_1HypergeometricRandomVariable_a4b8b05b2a9af92dad9cc304c2925a4eb}
+
+\begin{DoxyCompactList}\small\item\em return the distribution variance \end{DoxyCompactList}\item 
+Real\+Real\+Pair \hyperlink{classPecos_1_1HypergeometricRandomVariable_a4bdb95a8fa5fffaa0de5102f56963cf2}{bounds} () const \label{classPecos_1_1HypergeometricRandomVariable_a4bdb95a8fa5fffaa0de5102f56963cf2}
+
+\begin{DoxyCompactList}\small\item\em return the distribution lower and upper bounds as a pair \end{DoxyCompactList}\item 
+void {\bfseries update} (unsigned int num\+\_\+total\+\_\+pop, unsigned int num\+\_\+sel\+\_\+pop, unsigned int num\+\_\+fail)\label{classPecos_1_1HypergeometricRandomVariable_aac16771ac4604936c4ec99a1d665681b}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Real {\bfseries pdf} (Real x, unsigned int num\+\_\+total\+\_\+pop, unsigned int num\+\_\+sel\+\_\+pop, unsigned int num\+\_\+fail)\label{classPecos_1_1HypergeometricRandomVariable_ad536f2435516578fc4c52f0ebb38d118}
+
+\item 
+static Real {\bfseries cdf} (Real x, unsigned int num\+\_\+total\+\_\+pop, unsigned int num\+\_\+sel\+\_\+pop, unsigned int num\+\_\+fail)\label{classPecos_1_1HypergeometricRandomVariable_a449e63e2051ca3d9edb98cf6818b11eb}
+
+\item 
+static void {\bfseries moments\+\_\+from\+\_\+params} (unsigned int num\+\_\+total\+\_\+pop, unsigned int num\+\_\+sel\+\_\+pop, unsigned int num\+\_\+fail, Real \&\hyperlink{classPecos_1_1HypergeometricRandomVariable_a962ffe5a3593be370d5c883365c060f4}{mean}, Real \&std\+\_\+dev)\label{classPecos_1_1HypergeometricRandomVariable_adcb597703487a69778a15aed04d8ebc0}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classPecos_1_1HypergeometricRandomVariable_aaa6750cbee2245416a6eeeac58d4405a}{update\+\_\+boost} ()\label{classPecos_1_1HypergeometricRandomVariable_aaa6750cbee2245416a6eeeac58d4405a}
+
+\begin{DoxyCompactList}\small\item\em create a new hypergeom\+Dist instance \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \hyperlink{classPecos_1_1HypergeometricRandomVariable_a248689a7f4ef45f8be7d47d6e3fe142f}{num\+Total\+Pop}\label{classPecos_1_1HypergeometricRandomVariable_a248689a7f4ef45f8be7d47d6e3fe142f}
+
+\begin{DoxyCompactList}\small\item\em N parameter of hypergeometric random variable. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classPecos_1_1HypergeometricRandomVariable_ab382104add8d274e7e7d27561f38a33a}{num\+Select\+Pop}\label{classPecos_1_1HypergeometricRandomVariable_ab382104add8d274e7e7d27561f38a33a}
+
+\begin{DoxyCompactList}\small\item\em n parameter of hypergeometric random variable \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classPecos_1_1HypergeometricRandomVariable_a03eaaa9ed47767dd148b221ca4d72b76}{num\+Fail}\label{classPecos_1_1HypergeometricRandomVariable_a03eaaa9ed47767dd148b221ca4d72b76}
+
+\begin{DoxyCompactList}\small\item\em r parameter of hypergeometric random variable \end{DoxyCompactList}\item 
+hypergeometric\+\_\+dist $\ast$ \hyperlink{classPecos_1_1HypergeometricRandomVariable_a7a89ee348e50ca9eb7545b5c9fe9f441}{hypergeom\+Dist}\label{classPecos_1_1HypergeometricRandomVariable_a7a89ee348e50ca9eb7545b5c9fe9f441}
+
+\begin{DoxyCompactList}\small\item\em pointer to the Boost hypergeometric\+\_\+distribution instance \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Derived random variable class for hypergeometric random variables. 
+
+Manages num\+Total\+Pop, num\+Select\+Pop, and num\+Fail parameters. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Hypergeometric\+Random\+Variable.\+hpp\end{DoxyCompactItemize}

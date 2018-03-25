@@ -1,0 +1,91 @@
+\begin{thebibliography}{10}
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{\texttt{#1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+
+\bibitem{anderson}
+E.~Anderson, Z.~Bai, C.~Bischof, S.~Blackford, J.~Demmel, J.~Dongarra, J.~D.
+  Croz, A.~Greenbaum, S.~Hammarling, A.~McKenney, D.~Sorenson, Lapack user's
+  guide (1999).
+
+\bibitem{giunta}
+A.~A. Giunta, L.~Watson, A comparison of approximation modeling techniques:
+  polynomial versus interpolating models, in: Proceedings of the 7th
+  AIAA/USAF/NASA/ISSMO Symposium on Multidisciplinary Analysis and
+  Optimization, St. Louis, MO, 1998, pp. 392--404.
+
+\bibitem{romero}
+V.~J. Romero, L.~P. Swiler, A.~A. Giunta, Construction of response surfaces
+  based on progressiv-lattice-sampling experimental designs, Structural Safety
+  26~(2) (2004) 201--219.
+
+\bibitem{koehler}
+J.~R. Koehler, A.~B. Owen, Computer experiments, Handbook of Statistics 13
+  (1996) 261--308.
+
+\bibitem{cressie}
+N.~A. Cressie, Statistics for Spatial Data, John Wiley and Sons, New York,
+  1993.
+
+\bibitem{matheron1971theory}
+G.~Matheron, The theory of regionalized variables and its applications, Les
+  Cahiers du Centre de morphologie math{\'e}matique de Fontainebleau, {\'E}cole
+  national sup{\'e}rieure des mines, 1971.
+\newline\urlprefix\url{http://books.google.com/books?id=TGhGAAAAYAAJ}
+
+\bibitem{gneiting2007geostatistical}
+T.~Gneiting, M.~Genton, P.~Guttorp, Geostatistical space-time models,
+  stationarity, separability and full symmetry, in: B.~Finkenstadt, L.~Held,
+  V.~Isham (Eds.), Statistical Methods for Spatio-Temporal Systems, Boca Raton:
+  Chapman \& Hall/CRC, 2007, Ch.~4, pp. 151--172.
+
+\bibitem{berg2008dagum}
+C.~Berg, J.~Mateu, E.~Porcu, The dagum family of isotropic correlation
+  functions, Bernoulli 14~(4) (2008) 1134--1149.
+
+\bibitem{davis1997six}
+G.~Davis, M.~Morris, Six factors which affect the condition number of matrices
+  associated with kriging, Mathematical geology 29~(5) (1997) 669--683.
+
+\bibitem{martin2009computational}
+J.~Martin, Computational improvements to estimating kriging metamodel
+  parameters, Journal of Mechanical Design 131 (2009) 084501.
+
+\bibitem{rennen2009subset}
+G.~Rennen, Subset selection from large datasets for kriging modeling,
+  Structural and Multidisciplinary Optimization 38~(6) (2009) 545--569.
+
+\bibitem{eldred2007dakota}
+M.~Eldred, B.~Adams, D.~Gay, L.~Swiler, K.~Haskell, W.~Bohnhoff, J.~Eddy,
+  W.~Hart, J.~Watson, J.~Griffin, P.~Hough, T.~Kolda, P.~Williams,
+  M.~Martinez-Canales, Dakota version 4.1 users manual, Sandia Technical Report
+  SAND2006-6337, Sandia National Laboratories, Albuquerque, NM (2007).
+\newline\urlprefix\url{http://dakota.sandia.gov/licensing/release/Users4.1.pdf}
+
+\bibitem{zimmerman}
+D.~C. Zimmerman, Genetic algorithms for navigating expensive and complex design
+  spaces, Tech. Rep. AO-7736 CA 02, Sandia National Laboratories (1996).
+
+\bibitem{friedman}
+J.~Friedman, Multivariate adaptive regression splines, Annals of Statistics
+  19~(1) (1991) 1--141.
+
+\bibitem{orr}
+M.~J.~L. Orr, Introduction to radial basis function networks, Tech. rep.,
+  University of Edinburgh, Edinburgh, Scotland (1996).
+
+\bibitem{nealen}
+A.~Nealen, A short-as-possible introduction to the least squares, weighted
+  least squares, and moving least squares methods for scattered data
+  approximation and interpolation, Tech. rep., Discrete Geometric Modeling
+  Group, Technishe Universitaet, Berlin, Germany (2004).
+
+\bibitem{powell}
+B.~Powell, L.~C. Steelman, Variations in state sat performance: Meaningful or
+  misleading?, Harvard Educational Review 54~(4) (1984) 389--412.
+
+\bibitem{ramsey}
+F.~L. Ramsey, D.~W. Schafer, The Statistical Sleuth: A Course in Methods of
+  Data Analysis, Duxbury, Pacific Grove, CA, 2002.
+
+\end{thebibliography}

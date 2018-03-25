@@ -1,0 +1,66 @@
+.TH "BasisConfigOptions" 3 "Wed Dec 27 2017" "Version Version 1.0" "PECOS" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+BasisConfigOptions \- Container class for various basis configuration options\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBBasisConfigOptions\fP ()"
+.br
+.RI "\fIdefault constructor \fP"
+.ti -1c
+.RI "\fBBasisConfigOptions\fP (bool nested_rules, bool piecewise_basis, bool equidistant_rules, bool use_derivs)"
+.br
+.RI "\fIconstructor \fP"
+.ti -1c
+.RI "\fBBasisConfigOptions\fP (const \fBBasisConfigOptions\fP &bc_options)"
+.br
+.RI "\fIcopy constructor \fP"
+.ti -1c
+.RI "\fB~BasisConfigOptions\fP ()"
+.br
+.RI "\fIdestructor \fP"
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "bool \fBpiecewiseBasis\fP"
+.br
+.RI "\fIflag for use of piecewise basis polynomials \fP"
+.ti -1c
+.RI "bool \fBuseDerivs\fP"
+.br
+.RI "\fIflag for utilizing derivatives during formation/calculation of expansions \fP"
+.ti -1c
+.RI "bool \fBnestedRules\fP"
+.br
+.RI "\fIflag for use of nested integration rules \fP"
+.ti -1c
+.RI "bool \fBequidistantRules\fP"
+.br
+.RI "\fIflag for use of equidistant points for forming piecewise basis polynomials \fP"
+.ti -1c
+.RI "bool \fBgaussRuleOverride\fP"
+.br
+.RI "\fIoverride interpolation rules to employ Gaussian quadrature \fP"
+.ti -1c
+.RI "bool \fBopenRuleOverride\fP"
+.br
+.RI "\fIoverride interpolation rules to employ open rules (e\&.g\&., Fejer2) \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Container class for various basis configuration options\&. 
+
+The \fBBasisConfigOptions\fP class provides a simple container class for basis configuration options related to rule nesting, piecewise basis polynomials, and derivative enhancement\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for PECOS from the source code\&.

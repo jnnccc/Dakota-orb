@@ -1,0 +1,161 @@
+\section{Frechet\+Random\+Variable Class Reference}
+\label{classPecos_1_1FrechetRandomVariable}\index{Frechet\+Random\+Variable@{Frechet\+Random\+Variable}}
+
+
+Derived random variable class for frechet random variables.  
+
+
+Inheritance diagram for Frechet\+Random\+Variable\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classPecos_1_1FrechetRandomVariable}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPecos_1_1FrechetRandomVariable_ae4779be11834d22e5aabb3d4c8a4f9ca}{Frechet\+Random\+Variable} ()\label{classPecos_1_1FrechetRandomVariable_ae4779be11834d22e5aabb3d4c8a4f9ca}
+
+\begin{DoxyCompactList}\small\item\em default constructor \end{DoxyCompactList}\item 
+\hyperlink{classPecos_1_1FrechetRandomVariable_a80a163a727244db9fd1a5eae1bc2137d}{Frechet\+Random\+Variable} (Real alpha, Real beta)\label{classPecos_1_1FrechetRandomVariable_a80a163a727244db9fd1a5eae1bc2137d}
+
+\begin{DoxyCompactList}\small\item\em alternate constructor \end{DoxyCompactList}\item 
+\hyperlink{classPecos_1_1FrechetRandomVariable_a06711dd01877399b0637eb2fde1a13f2}{$\sim$\+Frechet\+Random\+Variable} ()\label{classPecos_1_1FrechetRandomVariable_a06711dd01877399b0637eb2fde1a13f2}
+
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1FrechetRandomVariable_addd564e7f4f314e12d38df74d845f0d8}{cdf} (Real x) const \label{classPecos_1_1FrechetRandomVariable_addd564e7f4f314e12d38df74d845f0d8}
+
+\begin{DoxyCompactList}\small\item\em return the cumulative distribution function value of the random variable at x \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1FrechetRandomVariable_a23c3b599e7e4788a9a5e9e93c3dbaf4d}{ccdf} (Real x) const \label{classPecos_1_1FrechetRandomVariable_a23c3b599e7e4788a9a5e9e93c3dbaf4d}
+
+\begin{DoxyCompactList}\small\item\em return the complementary cumulative distribution function value of the random variable at x \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1FrechetRandomVariable_a918a1aac05ca349ea5313eebcba46c3e}{inverse\+\_\+cdf} (Real p\+\_\+cdf) const \label{classPecos_1_1FrechetRandomVariable_a918a1aac05ca349ea5313eebcba46c3e}
+
+\begin{DoxyCompactList}\small\item\em return the x value corresponding to a cumulative probability \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1FrechetRandomVariable_afda003a1f59ff6930902cd5c8601f49b}{inverse\+\_\+ccdf} (Real p\+\_\+ccdf) const \label{classPecos_1_1FrechetRandomVariable_afda003a1f59ff6930902cd5c8601f49b}
+
+\begin{DoxyCompactList}\small\item\em return the x value corresponding to a complementary cumulative probability \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1FrechetRandomVariable_a8ec69265f428e17c1707133cb137a819}{pdf} (Real x) const \label{classPecos_1_1FrechetRandomVariable_a8ec69265f428e17c1707133cb137a819}
+
+\begin{DoxyCompactList}\small\item\em return the value of the random variable\textquotesingle{}s probability density function at x \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1FrechetRandomVariable_aaa7ca3718abc034be7629af5594efca0}{pdf\+\_\+gradient} (Real x) const \label{classPecos_1_1FrechetRandomVariable_aaa7ca3718abc034be7629af5594efca0}
+
+\begin{DoxyCompactList}\small\item\em return the gradient of the random variable\textquotesingle{}s probability density function at x \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1FrechetRandomVariable_a6e2b6b6f13eedb2eb1ef3bc455a06392}{log\+\_\+pdf} (Real x) const \label{classPecos_1_1FrechetRandomVariable_a6e2b6b6f13eedb2eb1ef3bc455a06392}
+
+\begin{DoxyCompactList}\small\item\em return the value of the natural log of the random variable\textquotesingle{}s probability density function at x (useful for calculations of log density in Bayesian methods) \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1FrechetRandomVariable_aa891dab1ae9a225f493e3a0e5032b778}{parameter} (short dist\+\_\+param) const \label{classPecos_1_1FrechetRandomVariable_aa891dab1ae9a225f493e3a0e5032b778}
+
+\begin{DoxyCompactList}\small\item\em return the value of the named distribution parameter \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1FrechetRandomVariable_ae8e123224f588aee676d5d56d5ca900d}{parameter} (short dist\+\_\+param, Real val)\label{classPecos_1_1FrechetRandomVariable_ae8e123224f588aee676d5d56d5ca900d}
+
+\begin{DoxyCompactList}\small\item\em update the value of the named distribution parameter \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1FrechetRandomVariable_a962ffe5a3593be370d5c883365c060f4}{mean} () const \label{classPecos_1_1FrechetRandomVariable_a962ffe5a3593be370d5c883365c060f4}
+
+\begin{DoxyCompactList}\small\item\em return the distribution mean \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1FrechetRandomVariable_ae1fff19ce29a79d657043a598523635d}{median} () const \label{classPecos_1_1FrechetRandomVariable_ae1fff19ce29a79d657043a598523635d}
+
+\begin{DoxyCompactList}\small\item\em return the distribution mode \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1FrechetRandomVariable_a72d3d6926edd929cb3f8e12baa655f70}{mode} () const \label{classPecos_1_1FrechetRandomVariable_a72d3d6926edd929cb3f8e12baa655f70}
+
+\begin{DoxyCompactList}\small\item\em return the distribution mode \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1FrechetRandomVariable_a6a4ed9624d511f8a4e4f509c82cb0706}{standard\+\_\+deviation} () const \label{classPecos_1_1FrechetRandomVariable_a6a4ed9624d511f8a4e4f509c82cb0706}
+
+\begin{DoxyCompactList}\small\item\em return the distribution variance \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1FrechetRandomVariable_a4b8b05b2a9af92dad9cc304c2925a4eb}{variance} () const \label{classPecos_1_1FrechetRandomVariable_a4b8b05b2a9af92dad9cc304c2925a4eb}
+
+\begin{DoxyCompactList}\small\item\em return the distribution variance \end{DoxyCompactList}\item 
+Real\+Real\+Pair \hyperlink{classPecos_1_1FrechetRandomVariable_a4bdb95a8fa5fffaa0de5102f56963cf2}{bounds} () const \label{classPecos_1_1FrechetRandomVariable_a4bdb95a8fa5fffaa0de5102f56963cf2}
+
+\begin{DoxyCompactList}\small\item\em return the distribution lower and upper bounds as a pair \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1FrechetRandomVariable_a9ee48b3ca93459136b2e73f77873c4aa}{correlation\+\_\+warping\+\_\+factor} (const \hyperlink{classPecos_1_1RandomVariable}{Random\+Variable} \&rv, Real corr) const \label{classPecos_1_1FrechetRandomVariable_a9ee48b3ca93459136b2e73f77873c4aa}
+
+\begin{DoxyCompactList}\small\item\em compute the warping factor for correlation between the current variable and the one passed in (used in \hyperlink{classPecos_1_1NatafTransformation}{Nataf\+Transformation}) \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1FrechetRandomVariable_af889af8adfb262c9b74f573b2a9ffc99}{dx\+\_\+ds} (short dist\+\_\+param, short u\+\_\+type, Real x, Real z) const 
+\item 
+Real \hyperlink{classPecos_1_1FrechetRandomVariable_af6b5fc528523180bed5fc3008dcea205}{dz\+\_\+ds\+\_\+factor} (short u\+\_\+type, Real x, Real z) const 
+\item 
+void {\bfseries update} (Real alpha, Real beta)\label{classPecos_1_1FrechetRandomVariable_aaa82eccfdca4d440a4e2d4a890b0d9ed}
+
+\item 
+Real \hyperlink{classPecos_1_1FrechetRandomVariable_a065b031fb613138ede20895562efc61f}{inverse\+\_\+log\+\_\+cdf} (Real log\+\_\+p) const \label{classPecos_1_1FrechetRandomVariable_a065b031fb613138ede20895562efc61f}
+
+\begin{DoxyCompactList}\small\item\em inactive Z\+\_\+to\+\_\+X mapping option in \hyperlink{classPecos_1_1NatafTransformation}{Nataf\+Transformation} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Real {\bfseries pdf} (Real x, Real alpha, Real beta)\label{classPecos_1_1FrechetRandomVariable_a739d94cef9ee188f00056e229ca3fd95}
+
+\item 
+static Real {\bfseries cdf} (Real x, Real alpha, Real beta)\label{classPecos_1_1FrechetRandomVariable_a6ccc276bca2bfdfd6f320c65a6c8aaf7}
+
+\item 
+static void {\bfseries moments\+\_\+from\+\_\+params} (Real alpha, Real beta, Real \&\hyperlink{classPecos_1_1FrechetRandomVariable_a962ffe5a3593be370d5c883365c060f4}{mean}, Real \&std\+\_\+dev)\label{classPecos_1_1FrechetRandomVariable_af6459b831a8e62a41f7eab34d06edad8}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Real \hyperlink{classPecos_1_1FrechetRandomVariable_aa48da95b9214d9cf933e1d4625e32e84}{alpha\+Stat}\label{classPecos_1_1FrechetRandomVariable_aa48da95b9214d9cf933e1d4625e32e84}
+
+\begin{DoxyCompactList}\small\item\em alpha parameter of frechet random variable (shape) \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1FrechetRandomVariable_a838d220373c3360feec45e853b0daaac}{beta\+Stat}\label{classPecos_1_1FrechetRandomVariable_a838d220373c3360feec45e853b0daaac}
+
+\begin{DoxyCompactList}\small\item\em beta parameter of frechet random variable (scale) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Derived random variable class for frechet random variables. 
+
+Manages alpha and beta parameters. 
+
+\subsection{Member Function Documentation}
+\index{Pecos\+::\+Frechet\+Random\+Variable@{Pecos\+::\+Frechet\+Random\+Variable}!dx\+\_\+ds@{dx\+\_\+ds}}
+\index{dx\+\_\+ds@{dx\+\_\+ds}!Pecos\+::\+Frechet\+Random\+Variable@{Pecos\+::\+Frechet\+Random\+Variable}}
+\subsubsection[{\texorpdfstring{dx\+\_\+ds(short dist\+\_\+param, short u\+\_\+type, Real x, Real z) const }{dx_ds(short dist_param, short u_type, Real x, Real z) const }}]{\setlength{\rightskip}{0pt plus 5cm}Real dx\+\_\+ds (
+\begin{DoxyParamCaption}
+\item[{short}]{dist\+\_\+param, }
+\item[{short}]{u\+\_\+type, }
+\item[{Real}]{x, }
+\item[{Real}]{z}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classPecos_1_1FrechetRandomVariable_af889af8adfb262c9b74f573b2a9ffc99}
+dx/ds is derived by differentiating \hyperlink{classPecos_1_1NatafTransformation_a5feeecf846fc017c5a28eccb4e955dc1}{Nataf\+Transformation\+::trans\+\_\+\+Z\+\_\+to\+\_\+\+X()} with respect to distribution parameter s. dz/ds is zero if uncorrelated, while \hyperlink{classPecos_1_1FrechetRandomVariable_af6b5fc528523180bed5fc3008dcea205}{dz\+\_\+ds\+\_\+factor()} manages contributions in the correlated case. 
+
+Reimplemented from \hyperlink{classPecos_1_1RandomVariable_af889af8adfb262c9b74f573b2a9ffc99}{Random\+Variable}.
+
+
+
+References Frechet\+Random\+Variable\+::alpha\+Stat, Frechet\+Random\+Variable\+::beta\+Stat, and Frechet\+Random\+Variable\+::dz\+\_\+ds\+\_\+factor().
+
+
+
+Referenced by Frechet\+Random\+Variable\+::correlation\+\_\+warping\+\_\+factor().
+
+\index{Pecos\+::\+Frechet\+Random\+Variable@{Pecos\+::\+Frechet\+Random\+Variable}!dz\+\_\+ds\+\_\+factor@{dz\+\_\+ds\+\_\+factor}}
+\index{dz\+\_\+ds\+\_\+factor@{dz\+\_\+ds\+\_\+factor}!Pecos\+::\+Frechet\+Random\+Variable@{Pecos\+::\+Frechet\+Random\+Variable}}
+\subsubsection[{\texorpdfstring{dz\+\_\+ds\+\_\+factor(short u\+\_\+type, Real x, Real z) const }{dz_ds_factor(short u_type, Real x, Real z) const }}]{\setlength{\rightskip}{0pt plus 5cm}Real dz\+\_\+ds\+\_\+factor (
+\begin{DoxyParamCaption}
+\item[{short}]{u\+\_\+type, }
+\item[{Real}]{x, }
+\item[{Real}]{z}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classPecos_1_1FrechetRandomVariable_af6b5fc528523180bed5fc3008dcea205}
+dx/ds is derived by differentiating \hyperlink{classPecos_1_1NatafTransformation_a5feeecf846fc017c5a28eccb4e955dc1}{Nataf\+Transformation\+::trans\+\_\+\+Z\+\_\+to\+\_\+\+X()} with respect to distribution parameter s. For the uncorrelated case, u and z are constants. For the correlated case, u is a constant, but z(s) = L(s) u due to Nataf dependence on s and dz/ds = d\+L/ds u. 
+
+Reimplemented from \hyperlink{classPecos_1_1RandomVariable_af6b5fc528523180bed5fc3008dcea205}{Random\+Variable}.
+
+
+
+References Frechet\+Random\+Variable\+::alpha\+Stat, Frechet\+Random\+Variable\+::beta\+Stat, Frechet\+Random\+Variable\+::cdf(), Frechet\+Random\+Variable\+::mean(), Frechet\+Random\+Variable\+::pdf(), Normal\+Random\+Variable\+::std\+\_\+cdf(), and Normal\+Random\+Variable\+::std\+\_\+pdf().
+
+
+
+Referenced by Frechet\+Random\+Variable\+::dx\+\_\+ds().
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Frechet\+Random\+Variable.\+hpp\end{DoxyCompactItemize}

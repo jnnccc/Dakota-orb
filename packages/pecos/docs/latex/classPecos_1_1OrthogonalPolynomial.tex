@@ -1,0 +1,132 @@
+\section{Orthogonal\+Polynomial Class Reference}
+\label{classPecos_1_1OrthogonalPolynomial}\index{Orthogonal\+Polynomial@{Orthogonal\+Polynomial}}
+
+
+Base class for the orthogonal polynomial class hierarchy.  
+
+
+Inheritance diagram for Orthogonal\+Polynomial\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=12.000000cm]{classPecos_1_1OrthogonalPolynomial}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPecos_1_1OrthogonalPolynomial_a0547c9de695c718852fbac1852550226}{$\sim$\+Orthogonal\+Polynomial} ()\label{classPecos_1_1OrthogonalPolynomial_a0547c9de695c718852fbac1852550226}
+
+\begin{DoxyCompactList}\small\item\em default constructor \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1OrthogonalPolynomial_ad6115367af3811a5c75acbe340f04e58}{reset\+\_\+gauss} ()
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1OrthogonalPolynomial_ae0a12f67636f1a11987ed07e52d894b4}{precompute\+\_\+triple\+\_\+products} (const U\+Short\+Multi\+Set \&max\+\_\+ijk)
+\begin{DoxyCompactList}\small\item\em precompute triple\+Product\+Map \end{DoxyCompactList}\item 
+bool \hyperlink{classPecos_1_1OrthogonalPolynomial_ac922291ee984b86b16e4eba2109d7f03}{triple\+\_\+product} (const U\+Short\+Multi\+Set \&ijk\+\_\+key, Real \&trip\+\_\+prod) const \label{classPecos_1_1OrthogonalPolynomial_ac922291ee984b86b16e4eba2109d7f03}
+
+\begin{DoxyCompactList}\small\item\em lookup value based on U\+Short\+Multi\+Set key within triple\+Product\+Map; returns false if not stored \end{DoxyCompactList}\item 
+bool \hyperlink{classPecos_1_1OrthogonalPolynomial_acdf9ef648b8655a19be44b125e87a92f}{triple\+\_\+product} (size\+\_\+t i, size\+\_\+t j, size\+\_\+t k, Real \&trip\+\_\+prod) const \label{classPecos_1_1OrthogonalPolynomial_acdf9ef648b8655a19be44b125e87a92f}
+
+\begin{DoxyCompactList}\small\item\em lookup value based on three size\+\_\+t keys within triple\+Product\+Map; returns false if not stored \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1OrthogonalPolynomial_acef82563bd01f76a8c564664840de3fa}{gauss\+\_\+check} (unsigned short order)\label{classPecos_1_1OrthogonalPolynomial_acef82563bd01f76a8c564664840de3fa}
+
+\begin{DoxyCompactList}\small\item\em perform unit testing on Gauss points/weights \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classPecos_1_1OrthogonalPolynomial_addd13d4093ce8cbf2d22c47a47aff610}{collocation\+\_\+rule} (short rule)\label{classPecos_1_1OrthogonalPolynomial_addd13d4093ce8cbf2d22c47a47aff610}
+
+\begin{DoxyCompactList}\small\item\em set colloc\+Rule \end{DoxyCompactList}\item 
+short \hyperlink{classPecos_1_1OrthogonalPolynomial_a2e390f265fcc800348dc816d6cc37f86}{collocation\+\_\+rule} () const \label{classPecos_1_1OrthogonalPolynomial_a2e390f265fcc800348dc816d6cc37f86}
+
+\begin{DoxyCompactList}\small\item\em get colloc\+Rule \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Real\+Array \hyperlink{classPecos_1_1OrthogonalPolynomial_abaca893e4d013e2d17107a007af07de0}{colloc\+Points}\label{classPecos_1_1OrthogonalPolynomial_abaca893e4d013e2d17107a007af07de0}
+
+\begin{DoxyCompactList}\small\item\em collocation points for one-\/dimensional quadrature (x parameter values for which Poly\+\_\+n(x) = 0) \end{DoxyCompactList}\item 
+Real\+Array \hyperlink{classPecos_1_1OrthogonalPolynomial_aa06828ef22dc2a16825fcdf6a873e0c9}{colloc\+Weights}\label{classPecos_1_1OrthogonalPolynomial_aa06828ef22dc2a16825fcdf6a873e0c9}
+
+\begin{DoxyCompactList}\small\item\em collocation weights for one-\/dimensional quadrature \end{DoxyCompactList}\item 
+short \hyperlink{classPecos_1_1OrthogonalPolynomial_abcc1d84cc8e8c8b5a66f720067039f2e}{colloc\+Rule}
+\begin{DoxyCompactList}\small\item\em the type of integration rule associated with the orthogonal polynomial \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+U\+Short\+Multi\+Set\+Real\+Map \hyperlink{classPecos_1_1OrthogonalPolynomial_aece1e68316cdaf6be06745c62046c6ec}{triple\+Product\+Map}\label{classPecos_1_1OrthogonalPolynomial_aece1e68316cdaf6be06745c62046c6ec}
+
+\begin{DoxyCompactList}\small\item\em mapping from an ijk sorted index set into $<$\+Psi\+\_\+i psi\+\_\+j=\char`\"{}\char`\"{} psi\+\_\+k$>$=\char`\"{}\char`\"{}$>$. These are precomputed with precompute\+\_\+triple\+\_\+products(order) and retrieved with triple\+\_\+product(key) \end{DoxyCompactList}\item 
+U\+Short\+Multi\+Set \hyperlink{classPecos_1_1OrthogonalPolynomial_a22ebc8368302d88c43e62e9075f429d0}{triple\+Product\+Order}\label{classPecos_1_1OrthogonalPolynomial_a22ebc8368302d88c43e62e9075f429d0}
+
+\begin{DoxyCompactList}\small\item\em tracks precomputations to prevent redundancy \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Base class for the orthogonal polynomial class hierarchy. 
+
+The \hyperlink{classPecos_1_1OrthogonalPolynomial}{Orthogonal\+Polynomial} class is the base class for the univariate orthogonal polynomial class hierarchy in P\+E\+C\+OS. One instance of an \hyperlink{classPecos_1_1OrthogonalPolynomial}{Orthogonal\+Polynomial} is created for each variable within a multidimensional orthogonal polynomial basis function (a vector of Orthogonal\+Polynomials is contained in \hyperlink{classPecos_1_1OrthogPolyApproximation}{Orthog\+Poly\+Approximation}, which may be mixed and matched in, e.\+g., the Wiener-\/\+Askey scheme for polynomial chaos). 
+
+\subsection{Member Function Documentation}
+\index{Pecos\+::\+Orthogonal\+Polynomial@{Pecos\+::\+Orthogonal\+Polynomial}!reset\+\_\+gauss@{reset\+\_\+gauss}}
+\index{reset\+\_\+gauss@{reset\+\_\+gauss}!Pecos\+::\+Orthogonal\+Polynomial@{Pecos\+::\+Orthogonal\+Polynomial}}
+\subsubsection[{\texorpdfstring{reset\+\_\+gauss()}{reset_gauss()}}]{\setlength{\rightskip}{0pt plus 5cm}void reset\+\_\+gauss (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classPecos_1_1OrthogonalPolynomial_ad6115367af3811a5c75acbe340f04e58}
+
+
+destructor 
+
+destroy history of Gauss pts/wts due to change in distribution parameters 
+
+Reimplemented from \hyperlink{classPecos_1_1BasisPolynomial_ad6115367af3811a5c75acbe340f04e58}{Basis\+Polynomial}.
+
+
+
+References Orthogonal\+Polynomial\+::colloc\+Points, Orthogonal\+Polynomial\+::colloc\+Weights, and Orthogonal\+Polynomial\+::triple\+\_\+product().
+
+
+
+Referenced by Charlier\+Orthog\+Polynomial\+::alpha\+\_\+stat(), Krawtchouk\+Orthog\+Polynomial\+::alpha\+\_\+stat(), Meixner\+Orthog\+Polynomial\+::alpha\+\_\+stat(), Hahn\+Orthog\+Polynomial\+::alpha\+\_\+stat(), Gen\+Laguerre\+Orthog\+Polynomial\+::alpha\+\_\+stat(), Jacobi\+Orthog\+Polynomial\+::alpha\+\_\+stat(), Krawtchouk\+Orthog\+Polynomial\+::beta\+\_\+stat(), Meixner\+Orthog\+Polynomial\+::beta\+\_\+stat(), Hahn\+Orthog\+Polynomial\+::beta\+\_\+stat(), Jacobi\+Orthog\+Polynomial\+::beta\+\_\+stat(), Numeric\+Gen\+Orthog\+Polynomial\+::bounded\+\_\+lognormal\+\_\+distribution(), Numeric\+Gen\+Orthog\+Polynomial\+::bounded\+\_\+normal\+\_\+distribution(), Numeric\+Gen\+Orthog\+Polynomial\+::frechet\+\_\+distribution(), Hahn\+Orthog\+Polynomial\+::gamma\+\_\+stat(), Numeric\+Gen\+Orthog\+Polynomial\+::gumbel\+\_\+distribution(), Numeric\+Gen\+Orthog\+Polynomial\+::histogram\+\_\+bin\+\_\+distribution(), Numeric\+Gen\+Orthog\+Polynomial\+::histogram\+\_\+pt\+\_\+distribution(), Numeric\+Gen\+Orthog\+Polynomial\+::lognormal\+\_\+distribution(), Numeric\+Gen\+Orthog\+Polynomial\+::loguniform\+\_\+distribution(), Numeric\+Gen\+Orthog\+Polynomial\+::triangular\+\_\+distribution(), and Numeric\+Gen\+Orthog\+Polynomial\+::weibull\+\_\+distribution().
+
+\index{Pecos\+::\+Orthogonal\+Polynomial@{Pecos\+::\+Orthogonal\+Polynomial}!precompute\+\_\+triple\+\_\+products@{precompute\+\_\+triple\+\_\+products}}
+\index{precompute\+\_\+triple\+\_\+products@{precompute\+\_\+triple\+\_\+products}!Pecos\+::\+Orthogonal\+Polynomial@{Pecos\+::\+Orthogonal\+Polynomial}}
+\subsubsection[{\texorpdfstring{precompute\+\_\+triple\+\_\+products(const U\+Short\+Multi\+Set \&max\+\_\+ijk)}{precompute_triple_products(const UShortMultiSet &max_ijk)}}]{\setlength{\rightskip}{0pt plus 5cm}void precompute\+\_\+triple\+\_\+products (
+\begin{DoxyParamCaption}
+\item[{const U\+Short\+Multi\+Set \&}]{max\+\_\+ijk}
+\end{DoxyParamCaption}
+)}\label{classPecos_1_1OrthogonalPolynomial_ae0a12f67636f1a11987ed07e52d894b4}
+
+
+precompute triple\+Product\+Map 
+
+There are a number of ways to do this precomputation. The P\+E\+C\+OS approach favors memory over flops by storing nonzero Cijk only for unique index sets. This approach requires a lookup of index sets rather than direct iteration over non-\/zeros. An alternative approach (used by Stokhos) that favors flops would store all non-\/zeros and return iterators to allow efficient iteration over these non-\/zeros. 
+
+References Basis\+Polynomial\+::collocation\+\_\+points(), Orthogonal\+Polynomial\+::colloc\+Rule, Basis\+Polynomial\+::norm\+\_\+squared(), Orthogonal\+Polynomial\+::triple\+Product\+Map, Orthogonal\+Polynomial\+::triple\+Product\+Order, Basis\+Polynomial\+::type1\+\_\+collocation\+\_\+weights(), and Basis\+Polynomial\+::type1\+\_\+value().
+
+
+
+Referenced by Orthogonal\+Polynomial\+::gauss\+\_\+check(), Orthog\+Poly\+Approximation\+::multiply\+\_\+expansion(), and Regress\+Orthog\+Poly\+Approximation\+::multiply\+\_\+expansion().
+
+
+
+\subsection{Member Data Documentation}
+\index{Pecos\+::\+Orthogonal\+Polynomial@{Pecos\+::\+Orthogonal\+Polynomial}!colloc\+Rule@{colloc\+Rule}}
+\index{colloc\+Rule@{colloc\+Rule}!Pecos\+::\+Orthogonal\+Polynomial@{Pecos\+::\+Orthogonal\+Polynomial}}
+\subsubsection[{\texorpdfstring{colloc\+Rule}{collocRule}}]{\setlength{\rightskip}{0pt plus 5cm}short colloc\+Rule\hspace{0.3cm}{\ttfamily [protected]}}\label{classPecos_1_1OrthogonalPolynomial_abcc1d84cc8e8c8b5a66f720067039f2e}
+
+
+the type of integration rule associated with the orthogonal polynomial 
+
+In most cases, this is just the corresponding Gauss quadrature rule. However, for Legendre, colloc\+Rule manages the option of G\+A\+U\+S\+S\+\_\+\+L\+E\+G\+E\+N\+D\+RE or G\+A\+U\+S\+S\+\_\+\+P\+A\+T\+T\+E\+R\+S\+ON, for Chebyshev, it manages the option of C\+L\+E\+N\+S\+H\+A\+W\+\_\+\+C\+U\+R\+T\+IS or F\+E\+J\+E\+R2, and for Hermite, it manages the option of G\+A\+U\+S\+S\+\_\+\+H\+E\+R\+M\+I\+TE or G\+E\+N\+Z\+\_\+\+K\+E\+I\+S\+T\+ER. 
+
+Referenced by Chebyshev\+Orthog\+Polynomial\+::\+Chebyshev\+Orthog\+Polynomial(), Hermite\+Orthog\+Polynomial\+::collocation\+\_\+points(), Chebyshev\+Orthog\+Polynomial\+::collocation\+\_\+points(), Legendre\+Orthog\+Polynomial\+::collocation\+\_\+points(), Orthogonal\+Polynomial\+::collocation\+\_\+rule(), Gen\+Laguerre\+Orthog\+Polynomial\+::\+Gen\+Laguerre\+Orthog\+Polynomial(), Hermite\+Orthog\+Polynomial\+::\+Hermite\+Orthog\+Polynomial(), Jacobi\+Orthog\+Polynomial\+::\+Jacobi\+Orthog\+Polynomial(), Laguerre\+Orthog\+Polynomial\+::\+Laguerre\+Orthog\+Polynomial(), Legendre\+Orthog\+Polynomial\+::\+Legendre\+Orthog\+Polynomial(), Numeric\+Gen\+Orthog\+Polynomial\+::\+Numeric\+Gen\+Orthog\+Polynomial(), Orthogonal\+Polynomial\+::precompute\+\_\+triple\+\_\+products(), Chebyshev\+Orthog\+Polynomial\+::type1\+\_\+collocation\+\_\+weights(), Hermite\+Orthog\+Polynomial\+::type1\+\_\+collocation\+\_\+weights(), and Legendre\+Orthog\+Polynomial\+::type1\+\_\+collocation\+\_\+weights().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Orthogonal\+Polynomial.\+hpp\item 
+Orthogonal\+Polynomial.\+cpp\end{DoxyCompactItemize}

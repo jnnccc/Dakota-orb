@@ -1,0 +1,105 @@
+.TH "CharlierOrthogPolynomial" 3 "Wed Dec 27 2017" "Version Version 1.0" "PECOS" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+CharlierOrthogPolynomial \- One-dimensional Charlier polynomial\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBOrthogonalPolynomial\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCharlierOrthogPolynomial\fP ()"
+.br
+.RI "\fIdefault constructor \fP"
+.ti -1c
+.RI "\fB~CharlierOrthogPolynomial\fP ()"
+.br
+.RI "\fIdestructor \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "Real \fBtype1_value\fP (Real x, unsigned short order)"
+.br
+.RI "\fIretrieve the value of the n_th type 1 polynomial for a given parameter x using traditional characteristic polynomial formulation \fP"
+.ti -1c
+.RI "Real \fBtype1_gradient\fP (Real x, unsigned short order)"
+.br
+.RI "\fIretrieve the gradient of the n_th type 1 polynomial for a given parameter x using traditional characteristic polynomial formulation \fP"
+.ti -1c
+.RI "Real \fBtype1_hessian\fP (Real x, unsigned short order)"
+.br
+.RI "\fIretrieve the Hessian of the n_th type 1 polynomial for a given parameter x using traditional characteristic polynomial formulation \fP"
+.ti -1c
+.RI "Real \fBnorm_squared\fP (unsigned short order)"
+.br
+.RI "\fIreturns the norm-squared of the n_th order polynomial defined by the inner product <Poly_n, Poly_n> = ||Poly_n||^2 \fP"
+.ti -1c
+.RI "Real \fBalpha_polynomial\fP () const "
+.br
+.RI "\fIreturn alphaPoly \fP"
+.ti -1c
+.RI "void \fBalpha_stat\fP (Real alpha)"
+.br
+.RI "\fIset betaPoly \fP"
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "Real \fBalphaPoly\fP"
+.br
+.RI "\fIPoisson distributioon is the probability that a realziations of a random variable X with mean alpha_stat occurring k times in a fixed interval\&. expected value of the random variable X\&. \fP"
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+One-dimensional Charlier polynomial\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "Real type1_value (Real x, unsigned short n)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+retrieve the value of the n_th type 1 polynomial for a given parameter x using traditional characteristic polynomial formulation For orthogonal polynomials, n specifies the order of the polynomial, whereas for interpolation polynomials, it identifies the interpolant for the n-th point\&. 
+.PP
+Reimplemented from \fBBasisPolynomial\fP\&.
+.PP
+References CharlierOrthogPolynomial::alphaPoly\&.
+.PP
+Referenced by CharlierOrthogPolynomial::type1_gradient()\&.
+.SS "Real type1_gradient (Real x, unsigned short n)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+retrieve the gradient of the n_th type 1 polynomial for a given parameter x using traditional characteristic polynomial formulation For orthogonal polynomials, n specifies the order of the polynomial, whereas for interpolation polynomials, it identifies the interpolant for the n-th point\&. 
+.PP
+Reimplemented from \fBBasisPolynomial\fP\&.
+.PP
+References CharlierOrthogPolynomial::alphaPoly, and CharlierOrthogPolynomial::type1_value()\&.
+.PP
+Referenced by CharlierOrthogPolynomial::type1_hessian()\&.
+.SS "Real type1_hessian (Real x, unsigned short n)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+retrieve the Hessian of the n_th type 1 polynomial for a given parameter x using traditional characteristic polynomial formulation For orthogonal polynomials, n specifies the order of the polynomial, whereas for interpolation polynomials, it identifies the interpolant for the n-th point\&. 
+.PP
+Reimplemented from \fBBasisPolynomial\fP\&.
+.PP
+References CharlierOrthogPolynomial::alphaPoly, and CharlierOrthogPolynomial::type1_gradient()\&.
+.SS "Real norm_squared (unsigned short n)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+returns the norm-squared of the n_th order polynomial defined by the inner product <Poly_n, Poly_n> = ||Poly_n||^2 This is defined only for orthogonal polynomials\&. 
+.PP
+Reimplemented from \fBBasisPolynomial\fP\&.
+.PP
+References CharlierOrthogPolynomial::alphaPoly\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for PECOS from the source code\&.

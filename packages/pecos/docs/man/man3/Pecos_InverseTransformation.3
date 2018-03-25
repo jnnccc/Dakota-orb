@@ -1,0 +1,97 @@
+.TH "InverseTransformation" 3 "Wed Dec 27 2017" "Version Version 1.0" "PECOS" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+InverseTransformation \- Class for inverse data transformation\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBDataTransformation\fP\&.
+.PP
+Inherited by \fBFourierInverseTransformation\fP, \fBKarhunenLoeveInverseTransformation\fP, and \fBSamplingInverseTransformation\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBInverseTransformation\fP ()"
+.br
+.RI "\fIconstructor \fP"
+.ti -1c
+.RI "\fB~InverseTransformation\fP ()"
+.br
+.RI "\fIdestructor \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBinitialize\fP (const Real &total_t, const Real &w_bar, size_t seed)"
+.br
+.RI "\fIset scalar data \fP"
+.ti -1c
+.RI "void \fBpower_spectral_density\fP (const String &psd_name, const Real &param=0\&.)"
+.br
+.RI "\fIset PSD to standard embedded function \fP"
+.ti -1c
+.RI "void \fBpower_spectral_density\fP (const RealRealPairArray &psd)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "Real \fBtotalTime\fP"
+.br
+.RI "\fItotal time window \fP"
+.ti -1c
+.RI "Real \fBdeltaTime\fP"
+.br
+.RI "\fItime increment \fP"
+.ti -1c
+.RI "RealVector \fBtimeSequence\fP"
+.br
+.RI "\fIdiscretized time sequence \fP"
+.ti -1c
+.RI "Real \fBomegaBar\fP"
+.br
+.RI "\fIcut-off frequency (rad/s) \fP"
+.ti -1c
+.RI "Real \fBdeltaOmega\fP"
+.br
+.RI "\fIfrequency increment (rad/s) \fP"
+.ti -1c
+.RI "RealVector \fBomegaSequence\fP"
+.br
+.RI "\fIdiscretized frequency sequence \fP"
+.ti -1c
+.RI "RealVector \fBpsdSequence\fP"
+.br
+.RI "\fIPSD sequence (frequency domain) \fP"
+.ti -1c
+.RI "\fBLHSDriver\fP \fBlhsSampler\fP"
+.br
+.RI "\fILHS wrapper for generating normal or uniform sample sets\&. \fP"
+.ti -1c
+.RI "RealVector \fBinverseSample\fP"
+.br
+.RI "\fIa single computed inverse sample (time domain) \fP"
+.ti -1c
+.RI "RealMatrix \fBinverseSamples\fP"
+.br
+.RI "\fIa computed set of inverse samples (time domain) \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Class for inverse data transformation\&. 
+
+The \fBInverseTransformation\fP employs an inverse transform to map from the frequency domain to the time domain\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "void power_spectral_density (const RealRealPairArray & psd)\fC [protected]\fP"
+Incoming psd if a set of (x,y) pairs that define a PSD curve (w, g(w))\&. The incoming discretization cannot be assumed to match that selected for psdSequence; therefore, linear interpolation is performed in any combination of log or linear scales for the two axes\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for PECOS from the source code\&.

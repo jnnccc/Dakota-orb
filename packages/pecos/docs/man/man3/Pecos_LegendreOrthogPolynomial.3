@@ -1,0 +1,128 @@
+.TH "LegendreOrthogPolynomial" 3 "Wed Dec 27 2017" "Version Version 1.0" "PECOS" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+LegendreOrthogPolynomial \- Derived orthogonal polynomial class for Legendre polynomials\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBOrthogonalPolynomial\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBLegendreOrthogPolynomial\fP (short colloc_rule)"
+.br
+.RI "\fIextended constructor \fP"
+.ti -1c
+.RI "\fBLegendreOrthogPolynomial\fP ()"
+.br
+.RI "\fIdefault constructor \fP"
+.ti -1c
+.RI "\fB~LegendreOrthogPolynomial\fP ()"
+.br
+.RI "\fIdestructor \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "Real \fBtype1_value\fP (Real x, unsigned short order)"
+.br
+.RI "\fIretrieve the value of the n_th type 1 polynomial for a given parameter x using traditional characteristic polynomial formulation \fP"
+.ti -1c
+.RI "Real \fBtype1_gradient\fP (Real x, unsigned short order)"
+.br
+.RI "\fIretrieve the gradient of the n_th type 1 polynomial for a given parameter x using traditional characteristic polynomial formulation \fP"
+.ti -1c
+.RI "Real \fBtype1_hessian\fP (Real x, unsigned short order)"
+.br
+.RI "\fIretrieve the Hessian of the n_th type 1 polynomial for a given parameter x using traditional characteristic polynomial formulation \fP"
+.ti -1c
+.RI "Real \fBnorm_squared\fP (unsigned short order)"
+.br
+.RI "\fIreturns the norm-squared of the n_th order polynomial defined by the inner product <Poly_n, Poly_n> = ||Poly_n||^2 \fP"
+.ti -1c
+.RI "const RealArray & \fBcollocation_points\fP (unsigned short order)"
+.br
+.RI "\fIreturn collocation points corresponding to orthogonal polynomial order n \fP"
+.ti -1c
+.RI "const RealArray & \fBtype1_collocation_weights\fP (unsigned short order)"
+.br
+.RI "\fIreturn the type 1 collocation weights corresponding to a point set of size order \fP"
+.ti -1c
+.RI "Real \fBlength_scale\fP () const "
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Derived orthogonal polynomial class for Legendre polynomials\&. 
+
+The \fBLegendreOrthogPolynomial\fP class evaluates a univariate Legendre polynomial of a particular order\&. These polynomials are orthogonal with respect to the weight function 1 when integrated over the support range of [-1,+1]\&. This corresponds to the probability density function f(x) = 1/(U-L) = 1/2 for the uniform distribution for [L,U]=[-1,1]\&. It enables (mixed) multidimensional orthogonal polynomial basis functions within \fBOrthogPolyApproximation\fP\&. Legendre polynomials are a special case (alpha = beta = 0) of the more general Jacobi polynomials (implemented separately) which correspond to the beta distribution\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "Real type1_value (Real x, unsigned short n)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+retrieve the value of the n_th type 1 polynomial for a given parameter x using traditional characteristic polynomial formulation For orthogonal polynomials, n specifies the order of the polynomial, whereas for interpolation polynomials, it identifies the interpolant for the n-th point\&. 
+.PP
+Reimplemented from \fBBasisPolynomial\fP\&.
+.PP
+Referenced by LegendreOrthogPolynomial::type1_collocation_weights(), and LegendreOrthogPolynomial::type1_gradient()\&.
+.SS "Real type1_gradient (Real x, unsigned short n)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+retrieve the gradient of the n_th type 1 polynomial for a given parameter x using traditional characteristic polynomial formulation For orthogonal polynomials, n specifies the order of the polynomial, whereas for interpolation polynomials, it identifies the interpolant for the n-th point\&. 
+.PP
+Reimplemented from \fBBasisPolynomial\fP\&.
+.PP
+References LegendreOrthogPolynomial::type1_value()\&.
+.PP
+Referenced by LegendreOrthogPolynomial::type1_hessian()\&.
+.SS "Real type1_hessian (Real x, unsigned short n)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+retrieve the Hessian of the n_th type 1 polynomial for a given parameter x using traditional characteristic polynomial formulation For orthogonal polynomials, n specifies the order of the polynomial, whereas for interpolation polynomials, it identifies the interpolant for the n-th point\&. 
+.PP
+Reimplemented from \fBBasisPolynomial\fP\&.
+.PP
+References LegendreOrthogPolynomial::type1_gradient()\&.
+.SS "Real norm_squared (unsigned short n)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+returns the norm-squared of the n_th order polynomial defined by the inner product <Poly_n, Poly_n> = ||Poly_n||^2 This is defined only for orthogonal polynomials\&. 
+.PP
+Reimplemented from \fBBasisPolynomial\fP\&.
+.PP
+References LegendreOrthogPolynomial::collocation_points()\&.
+.SS "const RealArray & collocation_points (unsigned short n)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+return collocation points corresponding to orthogonal polynomial order n This is defined for orthogonal and piecewise interpolation polynomials\&. 
+.PP
+Reimplemented from \fBBasisPolynomial\fP\&.
+.PP
+References OrthogonalPolynomial::collocPoints, OrthogonalPolynomial::collocRule, OrthogonalPolynomial::collocWeights, LegendreOrthogPolynomial::type1_collocation_weights(), and BasisPolynomial::wtFactor\&.
+.PP
+Referenced by LegendreOrthogPolynomial::norm_squared(), and LegendreOrthogPolynomial::type1_collocation_weights()\&.
+.SS "const RealArray & type1_collocation_weights (unsigned short order)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+return the type 1 collocation weights corresponding to a point set of size order This is defined for orthogonal and piecewise interpolation polynomials\&. 
+.PP
+Reimplemented from \fBBasisPolynomial\fP\&.
+.PP
+References LegendreOrthogPolynomial::collocation_points(), OrthogonalPolynomial::collocPoints, OrthogonalPolynomial::collocRule, OrthogonalPolynomial::collocWeights, LegendreOrthogPolynomial::type1_value(), and BasisPolynomial::wtFactor\&.
+.PP
+Referenced by LegendreOrthogPolynomial::collocation_points()\&.
+.SS "Real length_scale () const\fC [inline]\fP, \fC [protected]\fP, \fC [virtual]\fP"
+[-1,1]: mean is zero; return std deviation = 2/sqrt(12)\&. 
+.PP
+Reimplemented from \fBBasisPolynomial\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for PECOS from the source code\&.

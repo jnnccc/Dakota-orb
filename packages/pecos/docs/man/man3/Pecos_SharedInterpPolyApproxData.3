@@ -1,0 +1,489 @@
+.TH "SharedInterpPolyApproxData" 3 "Wed Dec 27 2017" "Version Version 1.0" "PECOS" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SharedInterpPolyApproxData \- Derived approximation class for interpolation polynomials (global approximation)\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSharedPolyApproxData\fP\&.
+.PP
+Inherited by \fBSharedHierarchInterpPolyApproxData\fP, and \fBSharedNodalInterpPolyApproxData\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSharedInterpPolyApproxData\fP (short basis_type, size_t num_vars)"
+.br
+.RI "\fIstandard constructor \fP"
+.ti -1c
+.RI "\fBSharedInterpPolyApproxData\fP (short basis_type, size_t num_vars, const \fBExpansionConfigOptions\fP &ec_options, const \fBBasisConfigOptions\fP &bc_options)"
+.br
+.RI "\fIalternate constructor \fP"
+.ti -1c
+.RI "\fB~SharedInterpPolyApproxData\fP ()"
+.br
+.RI "\fIdestructor \fP"
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static bool \fBinitialize_driver_types_rules\fP (const ShortArray &u_types, const \fBBasisConfigOptions\fP &bc_options, ShortArray &basis_types, ShortArray &colloc_rules)"
+.br
+.RI "\fIdefine n-D basis types and collocation rules based on u_types and basis configuration options for use in configuring integration drivers \fP"
+.ti -1c
+.RI "static void \fBconstruct_basis\fP (const ShortArray &u_types, const \fBAleatoryDistParams\fP &adp, const \fBBasisConfigOptions\fP &bc_options, std::vector< \fBBasisPolynomial\fP > &poly_basis)"
+.br
+.RI "\fIinitialize basis types and collocation rules, construct a vector of basis polynomials for driver usage (not the vector<vector<BasisPolynomial> > used herein), and initialize distribution parameters within this basis \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBallocate_data\fP (size_t index=_NPOS)"
+.br
+.RI "\fIallocate the shared data prior to building the set of approximations \fP"
+.ti -1c
+.RI "void \fBincrement_data\fP (size_t index=_NPOS)"
+.br
+.RI "\fIupdate the shared data prior to rebuilding the set of approximations \fP"
+.ti -1c
+.RI "void \fBdecrement_data\fP ()"
+.br
+.RI "\fIdecrement the previous increment and store its shared data for later retrieval \fP"
+.ti -1c
+.RI "void \fBpost_push_data\fP ()"
+.br
+.RI "\fIrestores previously popped approximation data \fP"
+.ti -1c
+.RI "void \fBpost_finalize_data\fP ()"
+.br
+.RI "\fIfinalizes the shared approximation data following a set of increments \fP"
+.ti -1c
+.RI "size_t \fBpre_combine_data\fP ()"
+.br
+.RI "\fIcombines current and stored approximation data \fP"
+.ti -1c
+.RI "void \fBstore_data\fP (size_t index=_NPOS)"
+.br
+.RI "\fIstores current approximation data for later combination \fP"
+.ti -1c
+.RI "void \fBrestore_data\fP (size_t index=_NPOS)"
+.br
+.RI "\fIrestores previously stored approximation data \fP"
+.ti -1c
+.RI "void \fBremove_stored_data\fP (size_t index=_NPOS)"
+.br
+.RI "\fIremoves a redundant stored approximation data prior to combination \fP"
+.ti -1c
+.RI "void \fBclear_stored_data\fP ()"
+.br
+.RI "\fIclear stored approximation data \fP"
+.ti -1c
+.RI "virtual void \fBallocate_component_sobol\fP ()=0"
+.br
+.RI "\fIallocate sobolIndexMap based on collocation keys \fP"
+.ti -1c
+.RI "virtual void \fBincrement_component_sobol\fP ()=0"
+.br
+.RI "\fIupdate sobolIndexMap based on a refinement increment \fP"
+.ti -1c
+.RI "virtual void \fBset_new_point\fP (const RealVector &x, const UShortArray &basis_index, short order)=0"
+.br
+.RI "\fIset point values within 1D basis polynomials for purposes of barycentric precomputation \fP"
+.ti -1c
+.RI "virtual void \fBset_new_point\fP (const RealVector &x, const UShortArray &basis_index, const SizetList &subset_indices, short order)=0"
+.br
+.RI "\fIset point values within subset of 1D basis polynomials for purposes of barycentric precomputation \fP"
+.ti -1c
+.RI "virtual size_t \fBbarycentric_exact_index\fP (const UShortArray &basis_index)=0"
+.br
+.RI "\fIfor an exact point match in all dimensions, return the tensor-product index of the matching point \fP"
+.ti -1c
+.RI "virtual size_t \fBbarycentric_exact_index\fP (const UShortArray &basis_index, const SizetList &subset_indices)=0"
+.br
+.RI "\fIfor an exact point match in all dimensions within subset_indices, return the tensor-product index of the matching point \fP"
+.ti -1c
+.RI "virtual void \fBprecompute_keys\fP (const UShortArray &basis_index)"
+.br
+.RI "\fIif needed for efficiency, precompute the count and max values for the collocation keys \fP"
+.ti -1c
+.RI "virtual void \fBprecompute_keys\fP (const UShortArray &basis_index, const SizetList &subset_indices)"
+.br
+.RI "\fIif needed for efficiency, precompute the count and max values for the collocation keys within the subset \fP"
+.ti -1c
+.RI "virtual void \fBprecompute_max_keys\fP (const UShortArray &basis_index)"
+.br
+.RI "\fIif needed for efficiency, precompute the max values for the collocation keys \fP"
+.ti -1c
+.RI "virtual void \fBprecompute_max_keys\fP (const UShortArray &basis_index, const SizetList &subset_indices)"
+.br
+.RI "\fIif needed for efficiency, precompute the max values for the collocation keys within the subset \fP"
+.ti -1c
+.RI "virtual unsigned short \fBtensor_product_num_key\fP (size_t i, unsigned short level_i)"
+.br
+.RI "\fIreturn the number of collocation keys for i^{th} variable and level_i index set \fP"
+.ti -1c
+.RI "virtual unsigned short \fBtensor_product_max_key\fP (size_t i, unsigned short level_i)"
+.br
+.RI "\fIreturn the maximum collocation key value for i^{th} variable and level_i index set \fP"
+.ti -1c
+.RI "Real \fBtype1_interpolant_value\fP (const RealVector &x, const UShortArray &key, const UShortArray &basis_index)"
+.br
+.RI "\fIreturn value of type 1 interpolation polynomial using all dimensions \fP"
+.ti -1c
+.RI "Real \fBtype1_interpolant_value\fP (const RealVector &x, const UShortArray &key, const UShortArray &basis_index, const SizetList &subset_indices)"
+.br
+.RI "\fIreturn value of type 1 interpolation polynomial using interpolated (non-integrated) dimension subset \fP"
+.ti -1c
+.RI "Real \fBtype1_interpolant_gradient\fP (const RealVector &x, size_t deriv_index, const UShortArray &key, const UShortArray &basis_index)"
+.br
+.RI "\fIreturn gradient of type 1 interpolation polynomial using all dimensions \fP"
+.ti -1c
+.RI "Real \fBtype1_interpolant_gradient\fP (const RealVector &x, size_t deriv_index, const UShortArray &key, const UShortArray &basis_index, const SizetList &subset_indices)"
+.br
+.RI "\fIreturn gradient of type 1 interpolation polynomial using interpolated (non-integrated) dimension subset \fP"
+.ti -1c
+.RI "Real \fBtype2_interpolant_value\fP (const RealVector &x, size_t interp_index, const UShortArray &key, const UShortArray &basis_index)"
+.br
+.RI "\fIreturn value of type 2 interpolation polynomial using all dimensions \fP"
+.ti -1c
+.RI "Real \fBtype2_interpolant_value\fP (const RealVector &x, size_t interp_index, const UShortArray &key, const UShortArray &basis_index, const SizetList &subset_indices)"
+.br
+.RI "\fIreturn value of type 2 interpolation polynomial using interpolated (non-integrated) dimension subset \fP"
+.ti -1c
+.RI "Real \fBtype2_interpolant_gradient\fP (const RealVector &x, size_t deriv_index, size_t interp_index, const UShortArray &key, const UShortArray &basis_index)"
+.br
+.RI "\fIreturn gradient of type 2 interpolation polynomial using all dimensions \fP"
+.ti -1c
+.RI "Real \fBtype2_interpolant_gradient\fP (const RealVector &x, size_t deriv_index, size_t interp_index, const UShortArray &key, const UShortArray &basis_index, const SizetList &subset_indices)"
+.br
+.RI "\fIreturn gradient of type 2 interpolation polynomial using interpolated (non-integrated) dimension subset \fP"
+.ti -1c
+.RI "size_t \fBbarycentric_active_variables\fP (const UShortArray &basis_index)"
+.br
+.RI "\fIcompute the number of variables that are active for barycentric interpolation \fP"
+.ti -1c
+.RI "size_t \fBbarycentric_active_variables\fP (const UShortArray &basis_index, const SizetList &subset_indices)"
+.br
+.RI "\fIcompute the number of variables within subset_indices that are active for barycentric interpolation \fP"
+.ti -1c
+.RI "Real \fBbarycentric_value_factor\fP (const UShortArray &key, const UShortArray &basis_index)"
+.br
+.RI "\fIcompute the product of 1D barycentric value factors \fP"
+.ti -1c
+.RI "Real \fBbarycentric_value_factor\fP (const UShortArray &key, const UShortArray &basis_index, const SizetList &subset_indices)"
+.br
+.RI "\fIcompute the product of a subset of 1D barycentric value factors \fP"
+.ti -1c
+.RI "Real \fBbarycentric_value_scaling\fP (const UShortArray &basis_index)"
+.br
+.RI "\fIcompute the product of 1D barycentric weight factor sums for use in the denominator of the barycentric interpolation formula (second form) \fP"
+.ti -1c
+.RI "Real \fBbarycentric_value_scaling\fP (const UShortArray &basis_index, const SizetList &subset_indices)"
+.br
+.RI "\fIcompute the product of a subset of 1D barycentric weight factor sums for use in the denominator of the barycentric interpolation formula (second form) \fP"
+.ti -1c
+.RI "Real \fBbarycentric_gradient_factor\fP (size_t deriv_index, const UShortArray &key, const UShortArray &basis_index)"
+.br
+.RI "\fIcompute the product of 1D barycentric gradient factors \fP"
+.ti -1c
+.RI "Real \fBbarycentric_gradient_factor\fP (size_t deriv_index, const UShortArray &key, const UShortArray &basis_index, const SizetList &subset_indices)"
+.br
+.RI "\fIcompute the product of a subset of 1D barycentric gradient factors \fP"
+.ti -1c
+.RI "Real \fBbarycentric_gradient_scaling\fP (const UShortArray &basis_index)"
+.br
+.RI "\fIcompute the product of 1D barycentric gradient scalings \fP"
+.ti -1c
+.RI "Real \fBbarycentric_gradient_scaling\fP (const UShortArray &basis_index, const SizetList &subset_indices)"
+.br
+.RI "\fIcompute the product of a subset of 1D barycentric gradient scalings \fP"
+.ti -1c
+.RI "Real \fBtype1_weight\fP (const UShortArray &key, const UShortArray &basis_index, const SizetList &subset_indices)"
+.br
+.RI "\fIreturn type 1 product weight from integration of type 1 interpolation polynomials using integrated dimension subset \fP"
+.ti -1c
+.RI "void \fBtype1_weight\fP (const UShortArray &key, const UShortArray &basis_index, const BitArray &member_bits, Real &member_t1_wt_prod, Real &nonmember_t1_wt_prod)"
+.br
+.RI "\fIreturn type 1 product weights from integration of type 1 interpolation polynomials for both member and nonmember sets \fP"
+.ti -1c
+.RI "Real \fBtype2_weight\fP (size_t interp_index, const UShortArray &key, const UShortArray &basis_index, const SizetList &subset_indices)"
+.br
+.RI "\fIreturn type 2 product weight from integration of type 1/2 interpolation polynomials using integrated dimension subset \fP"
+.ti -1c
+.RI "void \fBtype2_weight\fP (size_t interp_index, const UShortArray &key, const UShortArray &basis_index, const BitArray &member_bits, Real &member_t2_wt_prod, Real &nonmember_t2_wt_prod)"
+.br
+.RI "\fIreturn type 2 product weight from integration of type 1/2 interpolation polynomials for both member and nonmember sets \fP"
+.ti -1c
+.RI "Real \fBtensor_product_value\fP (const RealVector &x, const RealVector &exp_t1_coeffs, const RealMatrix &exp_t2_coeffs, const UShortArray &basis_index, const UShort2DArray &key, const SizetArray &colloc_index)"
+.br
+.RI "\fIcompute the value of a tensor interpolant on a tensor grid; contributes to value(x) \fP"
+.ti -1c
+.RI "Real \fBtensor_product_value\fP (const RealVector &x, const RealVector &subset_t1_coeffs, const RealMatrix &subset_t2_coeffs, const UShortArray &basis_index, const UShort2DArray &subset_key, const SizetArray &subset_colloc_index, const SizetList &subset_indices)"
+.br
+.RI "\fIcompute the value of a tensor interpolant on a tensor grid over a subset of the variables; contributes to value(x) \fP"
+.ti -1c
+.RI "const RealVector & \fBtensor_product_gradient_basis_variables\fP (const RealVector &x, const RealVector &exp_t1_coeffs, const RealMatrix &exp_t2_coeffs, const UShortArray &basis_index, const UShort2DArray &key, const SizetArray &colloc_index)"
+.br
+.RI "\fIcompute the gradient of a tensor interpolant on a tensor grid with respect to variables that are included in the polynomial basis; contributes to gradient_basis_variables(x) \fP"
+.ti -1c
+.RI "const RealVector & \fBtensor_product_gradient_basis_variables\fP (const RealVector &x, const RealVector &subset_t1_coeffs, const RealMatrix &subset_t2_coeffs, const UShortArray &basis_index, const UShort2DArray &subset_key, const SizetArray &subset_colloc_index, const SizetList &subset_indices)"
+.br
+.RI "\fIcompute the gradient of a tensor interpolant on a tensor grid with respect to variables that are included in the polynomial basis; contributes to gradient_basis_variables(x) \fP"
+.ti -1c
+.RI "const RealVector & \fBtensor_product_gradient_basis_variables\fP (const RealVector &x, const RealVector &exp_t1_coeffs, const RealMatrix &exp_t2_coeffs, const UShortArray &basis_index, const UShort2DArray &key, const SizetArray &colloc_index, const SizetArray &dvv)"
+.br
+.RI "\fIcompute the gradient of a tensor interpolant on a tensor grid with respect to variables that are included in the polynomial basis for given DVV; contributes to gradient_basis_variables(x, dvv) \fP"
+.ti -1c
+.RI "const RealVector & \fBtensor_product_gradient_nonbasis_variables\fP (const RealVector &x, const RealMatrix &exp_t1_coeff_grads, const UShortArray &basis_index, const UShort2DArray &key, const SizetArray &colloc_index)"
+.br
+.RI "\fIcompute the gradient of a tensor interpolant on a tensor grid with respect to variables that are not included in the polynomial basis; contributes to gradient_nonbasis_variables(x) \fP"
+.ti -1c
+.RI "void \fBresize_polynomial_basis\fP (unsigned short max_level)"
+.br
+.RI "\fIresize polynomialBasis to accomodate an update in max interpolation level \fP"
+.ti -1c
+.RI "void \fBresize_polynomial_basis\fP (const UShortArray &lev_index)"
+.br
+.RI "\fIresize polynomialBasis to accomodate an update in interpolation levels \fP"
+.ti -1c
+.RI "void \fBupdate_tensor_interpolation_basis\fP (const UShortArray &lev_index, const SizetList &subset_indices)"
+.br
+.RI "\fIupdate polynomialBasis for a subset of variables after a change in quadrature order \fP"
+.ti -1c
+.RI "bool \fBsame_basis\fP (unsigned short level, size_t v1, size_t v2)"
+.br
+.RI "\fIfor a particular level, test for equality between basis v2 and basis v1 \fP"
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::vector< std::vector< \fBBasisPolynomial\fP > > \fBpolynomialBasis\fP"
+.br
+.RI "\fI2D array of one-dimensional basis polynomial objects used in constructing the multivariate orthogonal/interpolation polynomials\&. \fP"
+.ti -1c
+.RI "bool \fBbarycentricFlag\fP"
+.br
+.RI "\fIflag indicating use of barycentric interpolation for global value-based Lagrange interpolation \fP"
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBinitialize_polynomial_basis_type\fP (short &poly_type_1d, short &rule)"
+.br
+.RI "\fIdefine the 1D basis type and collocation rule \fP"
+.ti -1c
+.RI "void \fBupdate_tensor_interpolation_basis\fP (const UShortArray &lev_index)"
+.br
+.RI "\fIupdate polynomialBasis after a change in quadrature order \fP"
+.ti -1c
+.RI "void \fBupdate_sparse_interpolation_basis\fP (unsigned short max_level)"
+.br
+.RI "\fIupdate polynomialBasis after a change in sparse grid level \fP"
+.ti -1c
+.RI "void \fBupdate_interpolation_basis\fP (unsigned short lev_index, size_t var_index)"
+.br
+.RI "\fIupdate polynomialBasis for a variable index after an update in level \fP"
+.ti -1c
+.RI "bool \fBfind_basis\fP (unsigned short level, size_t v1, size_t &v2)"
+.br
+.RI "\fIfor a particular level, find index of basis v2 that matches basis v1 \fP"
+.ti -1c
+.RI "bool \fBbarycentric_value_factor\fP (\fBBasisPolynomial\fP &pb_lv, unsigned short key_lv, Real &prod)"
+.br
+.RI "\fIcompute the product of 1D barycentric value factors \fP"
+.ti -1c
+.RI "void \fBbarycentric_partial_indexing\fP (const UShortArray &basis_index, SizetList &pt_factors, SizetList &act_v_set, size_t &num_act_pts, size_t &pt_index)"
+.br
+.RI "\fIshared utility for barycentric interpolation over a partial variable subset: define pt_factors, act_v_set, num_act_pts, and return pt_index \fP"
+.ti -1c
+.RI "void \fBbarycentric_partial_indexing\fP (const UShortArray &basis_index, const SizetList &subset_indices, SizetList &pt_factors, SizetList &act_v_set, size_t &num_act_pts, size_t &pt_index)"
+.br
+.RI "\fIshared utility for barycentric interpolation over a partial variable subset: define pt_factors, act_v_set, num_act_pts, and return pt_index \fP"
+.ti -1c
+.RI "void \fBaccumulate_barycentric_partial\fP (const RealVector &t1_coeffs, const UShortArray &basis_index, const UShort2DArray &key, const SizetArray &colloc_index, const SizetList &pt_factors, const SizetList &act_v_set, size_t num_act_pts, size_t pt_index, RealVector &accumulator)"
+.br
+.RI "\fIshared code for barycentric interpolation over an active variable subset \fP"
+.ti -1c
+.RI "void \fBaccumulate_barycentric_gradient\fP (unsigned short bi0, unsigned short key_i0, size_t ei_0, Real *accum_0, Real t1_coeff, const RealVector &bc_vf_0, const RealVector &bc_gf_0)"
+.br
+.RI "\fIshared code for barycentric gradient evaluation for active variable 0 \fP"
+.ti -1c
+.RI "void \fBaccumulate_barycentric_gradient\fP (size_t j, unsigned short bij, unsigned short key_ij, \fBBasisPolynomial\fP &poly_j, RealMatrix &accumulator)"
+.br
+.RI "\fIshared code for barycentric gradient evaluation for active variables 1:n \fP"
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "RealVector \fBtpGradient\fP"
+.br
+.RI "\fIthe gradient of a tensor-product interpolant; a contributor to approxGradient \fP"
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBInterpPolyApproximation\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Derived approximation class for interpolation polynomials (global approximation)\&. 
+
+The \fBSharedInterpPolyApproxData\fP class provides a global approximation based on interpolation polynomials\&. It is used primarily for stochastic collocation approaches to uncertainty quantification\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "bool initialize_driver_types_rules (const ShortArray & u_types, const \fBBasisConfigOptions\fP & bc_options, ShortArray & basis_types, ShortArray & colloc_rules)\fC [static]\fP"
+
+.PP
+define n-D basis types and collocation rules based on u_types and basis configuration options for use in configuring integration drivers These basis types may include orthogonal polynomials for purposes of computing their Gauss points and weights within integration drivers; thus they differ in general from the interpolation polynomial basis used for approximation\&.
+.PP
+This version provides the polynomial types needed to retrieve collocation points and weights by an integration driver\&. These may involve orthogonal polynomials which will differ from the interpolation polynomial types used in the basis\&. 
+.PP
+References BasisConfigOptions::equidistantRules, BasisConfigOptions::gaussRuleOverride, SharedPolyApproxData::initialize_orthogonal_basis_type_rule(), SharedInterpPolyApproxData::initialize_polynomial_basis_type(), BasisConfigOptions::nestedRules, BasisConfigOptions::openRuleOverride, BasisConfigOptions::piecewiseBasis, and BasisConfigOptions::useDerivs\&.
+.PP
+Referenced by SharedInterpPolyApproxData::construct_basis(), and IntegrationDriver::initialize_grid()\&.
+.SS "void precompute_keys (const UShortArray & basis_index)\fC [inline]\fP, \fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+if needed for efficiency, precompute the count and max values for the collocation keys Default implementation; overridden by HierarchInterpPolyApproxData\&. 
+.PP
+Reimplemented in \fBSharedHierarchInterpPolyApproxData\fP\&.
+.PP
+Referenced by SharedInterpPolyApproxData::barycentric_active_variables(), and SharedInterpPolyApproxData::barycentric_partial_indexing()\&.
+.SS "void precompute_keys (const UShortArray & basis_index, const SizetList & subset_indices)\fC [inline]\fP, \fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+if needed for efficiency, precompute the count and max values for the collocation keys within the subset Default implementation; overridden by HierarchInterpPolyApproxData\&. 
+.PP
+Reimplemented in \fBSharedHierarchInterpPolyApproxData\fP\&.
+.PP
+References SharedInterpPolyApproxData::precompute_max_keys()\&.
+.SS "void precompute_max_keys (const UShortArray & basis_index)\fC [inline]\fP, \fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+if needed for efficiency, precompute the max values for the collocation keys Default implementation; overridden by HierarchInterpPolyApproxData\&. 
+.PP
+Reimplemented in \fBSharedHierarchInterpPolyApproxData\fP\&.
+.PP
+Referenced by SharedInterpPolyApproxData::precompute_keys(), SharedInterpPolyApproxData::tensor_product_gradient_basis_variables(), SharedInterpPolyApproxData::tensor_product_gradient_nonbasis_variables(), and SharedInterpPolyApproxData::tensor_product_value()\&.
+.SS "void precompute_max_keys (const UShortArray & basis_index, const SizetList & subset_indices)\fC [inline]\fP, \fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+if needed for efficiency, precompute the max values for the collocation keys within the subset Default implementation; overridden by HierarchInterpPolyApproxData\&. 
+.PP
+Reimplemented in \fBSharedHierarchInterpPolyApproxData\fP\&.
+.PP
+References SharedInterpPolyApproxData::tensor_product_num_key()\&.
+.SS "unsigned short tensor_product_num_key (size_t i, unsigned short level_i)\fC [inline]\fP, \fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+return the number of collocation keys for i^{th} variable and level_i index set Default implementation; overridden by HierarchInterpPolyApproxData\&. 
+.PP
+Reimplemented in \fBSharedHierarchInterpPolyApproxData\fP\&.
+.PP
+References SharedInterpPolyApproxData::polynomialBasis, and SharedInterpPolyApproxData::tensor_product_max_key()\&.
+.PP
+Referenced by SharedInterpPolyApproxData::accumulate_barycentric_partial(), SharedInterpPolyApproxData::barycentric_partial_indexing(), SharedInterpPolyApproxData::precompute_max_keys(), and SharedInterpPolyApproxData::tensor_product_gradient_nonbasis_variables()\&.
+.SS "unsigned short tensor_product_max_key (size_t i, unsigned short level_i)\fC [inline]\fP, \fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+return the maximum collocation key value for i^{th} variable and level_i index set Default implementation; overridden by HierarchInterpPolyApproxData\&. 
+.PP
+Reimplemented in \fBSharedHierarchInterpPolyApproxData\fP\&.
+.PP
+References SharedInterpPolyApproxData::barycentric_partial_indexing(), and SharedInterpPolyApproxData::polynomialBasis\&.
+.PP
+Referenced by SharedInterpPolyApproxData::accumulate_barycentric_partial(), SharedInterpPolyApproxData::tensor_product_gradient_basis_variables(), SharedInterpPolyApproxData::tensor_product_gradient_nonbasis_variables(), SharedInterpPolyApproxData::tensor_product_num_key(), and SharedInterpPolyApproxData::tensor_product_value()\&.
+.SS "Real type1_interpolant_value (const RealVector & x, const UShortArray & key, const UShortArray & basis_index, const SizetList & subset_indices)\fC [inline]\fP, \fC [protected]\fP"
+
+.PP
+return value of type 1 interpolation polynomial using interpolated (non-integrated) dimension subset Combined expansion version\&. 
+.PP
+References SharedInterpPolyApproxData::polynomialBasis, and SharedInterpPolyApproxData::type1_interpolant_gradient()\&.
+.SS "Real type1_interpolant_gradient (const RealVector & x, size_t deriv_index, const UShortArray & key, const UShortArray & basis_index, const SizetList & subset_indices)\fC [inline]\fP, \fC [protected]\fP"
+
+.PP
+return gradient of type 1 interpolation polynomial using interpolated (non-integrated) dimension subset Combined expansion version\&. 
+.PP
+References SharedInterpPolyApproxData::polynomialBasis, and SharedInterpPolyApproxData::type2_interpolant_value()\&.
+.SS "Real type2_interpolant_value (const RealVector & x, size_t interp_index, const UShortArray & key, const UShortArray & basis_index, const SizetList & subset_indices)\fC [inline]\fP, \fC [protected]\fP"
+
+.PP
+return value of type 2 interpolation polynomial using interpolated (non-integrated) dimension subset Combined expansion version\&. 
+.PP
+References SharedInterpPolyApproxData::polynomialBasis, and SharedInterpPolyApproxData::type2_interpolant_gradient()\&.
+.SS "Real type2_interpolant_gradient (const RealVector & x, size_t deriv_index, size_t interp_index, const UShortArray & key, const UShortArray & basis_index, const SizetList & subset_indices)\fC [inline]\fP, \fC [protected]\fP"
+
+.PP
+return gradient of type 2 interpolation polynomial using interpolated (non-integrated) dimension subset Combined expansion version\&. 
+.PP
+References SharedInterpPolyApproxData::barycentric_active_variables(), and SharedInterpPolyApproxData::polynomialBasis\&.
+.SS "Real barycentric_gradient_factor (size_t deriv_index, const UShortArray & key, const UShortArray & basis_index, const SizetList & subset_indices)\fC [inline]\fP, \fC [protected]\fP"
+
+.PP
+compute the product of a subset of 1D barycentric gradient factors Combined expansion version\&. 
+.PP
+References BasisPolynomial::barycentric_gradient_factor(), SharedInterpPolyApproxData::barycentric_gradient_scaling(), BasisPolynomial::barycentric_value_factor(), and SharedInterpPolyApproxData::polynomialBasis\&.
+.SS "Real type1_weight (const UShortArray & key, const UShortArray & basis_index, const SizetList & subset_indices)\fC [inline]\fP, \fC [protected]\fP"
+
+.PP
+return type 1 product weight from integration of type 1 interpolation polynomials using integrated dimension subset Combined expansion partial weight\&. 
+.PP
+References SharedPolyApproxData::driverRep, and IntegrationDriver::type1_collocation_weights_1d()\&.
+.PP
+Referenced by SharedInterpPolyApproxData::barycentric_gradient_scaling(), HierarchInterpPolyApproximation::expectation(), HierarchInterpPolyApproximation::expectation_gradient(), HierarchInterpPolyApproximation::member_coefficients_weights(), NodalInterpPolyApproximation::tensor_product_covariance(), and NodalInterpPolyApproximation::tensor_product_variance_gradient()\&.
+.SS "void type1_weight (const UShortArray & key, const UShortArray & basis_index, const BitArray & member_bits, Real & member_t1_wt_prod, Real & nonmember_t1_wt_prod)\fC [inline]\fP, \fC [protected]\fP"
+
+.PP
+return type 1 product weights from integration of type 1 interpolation polynomials for both member and nonmember sets VBD member and non-member partial weights\&. 
+.PP
+References SharedPolyApproxData::driverRep, IntegrationDriver::type1_collocation_weights_1d(), and SharedInterpPolyApproxData::type2_weight()\&.
+.SS "Real type2_weight (size_t interp_index, const UShortArray & key, const UShortArray & basis_index, const SizetList & subset_indices)\fC [inline]\fP, \fC [protected]\fP"
+
+.PP
+return type 2 product weight from integration of type 1/2 interpolation polynomials using integrated dimension subset Combined expansion partial weight\&. 
+.PP
+References SharedPolyApproxData::driverRep, IntegrationDriver::type1_collocation_weights_1d(), and IntegrationDriver::type2_collocation_weights_1d()\&.
+.PP
+Referenced by HierarchInterpPolyApproximation::expectation(), HierarchInterpPolyApproximation::expectation_gradient(), NodalInterpPolyApproximation::member_coefficients_weights(), HierarchInterpPolyApproximation::member_coefficients_weights(), and SharedInterpPolyApproxData::type1_weight()\&.
+.SS "void type2_weight (size_t interp_index, const UShortArray & key, const UShortArray & basis_index, const BitArray & member_bits, Real & member_t2_wt_prod, Real & nonmember_t2_wt_prod)\fC [inline]\fP, \fC [protected]\fP"
+
+.PP
+return type 2 product weight from integration of type 1/2 interpolation polynomials for both member and nonmember sets Combined expansion partial weight\&. 
+.PP
+References SharedPolyApproxData::driverRep, IntegrationDriver::type1_collocation_weights_1d(), and IntegrationDriver::type2_collocation_weights_1d()\&.
+.SS "Real tensor_product_value (const RealVector & x, const RealVector & exp_t1_coeffs, const RealMatrix & exp_t2_coeffs, const UShortArray & basis_index, const UShort2DArray & key, const SizetArray & colloc_index)\fC [protected]\fP"
+
+.PP
+compute the value of a tensor interpolant on a tensor grid; contributes to value(x) Barycentric approach is only valid for value-based global Lagrange interpolation, either nodal or hierarchical\&. General approach is valid for value-based or gradient-enhanced, local or global, and nodal or hierarchical\&. 
+.PP
+References SharedInterpPolyApproxData::accumulate_barycentric_partial(), SharedInterpPolyApproxData::barycentric_active_variables(), SharedInterpPolyApproxData::barycentric_exact_index(), SharedInterpPolyApproxData::barycentric_partial_indexing(), SharedInterpPolyApproxData::barycentric_value_scaling(), SharedInterpPolyApproxData::barycentricFlag, SharedBasisApproxData::numVars, SharedInterpPolyApproxData::polynomialBasis, SharedInterpPolyApproxData::precompute_max_keys(), SharedInterpPolyApproxData::set_new_point(), SharedInterpPolyApproxData::tensor_product_max_key(), BasisPolynomial::type1_value(), and BasisPolynomial::type2_value()\&.
+.PP
+Referenced by SharedInterpPolyApproxData::same_basis(), and HierarchInterpPolyApproximation::value()\&.
+.SS "Real tensor_product_value (const RealVector & x, const RealVector & subset_t1_coeffs, const RealMatrix & subset_t2_coeffs, const UShortArray & basis_index, const UShort2DArray & subset_key, const SizetArray & subset_colloc_index, const SizetList & subset_indices)\fC [protected]\fP"
+
+.PP
+compute the value of a tensor interpolant on a tensor grid over a subset of the variables; contributes to value(x) All variables version\&. 
+.PP
+References SharedInterpPolyApproxData::accumulate_barycentric_partial(), SharedInterpPolyApproxData::barycentric_active_variables(), SharedInterpPolyApproxData::barycentric_exact_index(), SharedInterpPolyApproxData::barycentric_partial_indexing(), SharedInterpPolyApproxData::barycentric_value_scaling(), SharedInterpPolyApproxData::barycentricFlag, SharedBasisApproxData::numVars, SharedInterpPolyApproxData::polynomialBasis, SharedInterpPolyApproxData::precompute_max_keys(), SharedInterpPolyApproxData::set_new_point(), SharedInterpPolyApproxData::tensor_product_gradient_basis_variables(), SharedInterpPolyApproxData::tensor_product_max_key(), SharedInterpPolyApproxData::type1_interpolant_value(), and SharedInterpPolyApproxData::type2_interpolant_value()\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "std::vector<std::vector<\fBBasisPolynomial\fP> > polynomialBasis\fC [protected]\fP"
+
+.PP
+2D array of one-dimensional basis polynomial objects used in constructing the multivariate orthogonal/interpolation polynomials\&. Each variable (inner array size = numVars) has multiple integration orders associated with it (outer array size)\&. 
+.PP
+Referenced by SharedNodalInterpPolyApproxData::accumulate_barycentric(), SharedNodalInterpPolyApproxData::accumulate_barycentric_gradient(), SharedInterpPolyApproxData::accumulate_barycentric_partial(), SharedNodalInterpPolyApproxData::accumulate_horners(), SharedNodalInterpPolyApproxData::accumulate_horners_gradient(), SharedInterpPolyApproxData::barycentric_active_variables(), SharedHierarchInterpPolyApproxData::barycentric_exact_index(), SharedNodalInterpPolyApproxData::barycentric_exact_index(), SharedInterpPolyApproxData::barycentric_gradient_factor(), SharedInterpPolyApproxData::barycentric_gradient_scaling(), SharedInterpPolyApproxData::barycentric_partial_indexing(), SharedInterpPolyApproxData::barycentric_value_factor(), SharedInterpPolyApproxData::barycentric_value_scaling(), SharedNodalInterpPolyApproxData::basis_product(), SharedInterpPolyApproxData::find_basis(), SharedInterpPolyApproxData::resize_polynomial_basis(), SharedHierarchInterpPolyApproxData::set_new_point(), SharedNodalInterpPolyApproxData::set_new_point(), NodalInterpPolyApproximation::tensor_product_covariance(), SharedInterpPolyApproxData::tensor_product_gradient_basis_variables(), SharedInterpPolyApproxData::tensor_product_gradient_nonbasis_variables(), SharedInterpPolyApproxData::tensor_product_max_key(), NodalInterpPolyApproximation::tensor_product_mean(), NodalInterpPolyApproximation::tensor_product_mean_gradient(), SharedInterpPolyApproxData::tensor_product_num_key(), SharedInterpPolyApproxData::tensor_product_value(), NodalInterpPolyApproximation::tensor_product_variance_gradient(), SharedInterpPolyApproxData::type1_interpolant_gradient(), SharedInterpPolyApproxData::type1_interpolant_value(), SharedInterpPolyApproxData::type2_interpolant_gradient(), SharedInterpPolyApproxData::type2_interpolant_value(), SharedInterpPolyApproxData::update_interpolation_basis(), and SharedNodalInterpPolyApproxData::update_nonzero_basis_products()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for PECOS from the source code\&.

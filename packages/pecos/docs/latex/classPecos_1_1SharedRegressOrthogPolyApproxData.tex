@@ -1,0 +1,100 @@
+\section{Shared\+Regress\+Orthog\+Poly\+Approx\+Data Class Reference}
+\label{classPecos_1_1SharedRegressOrthogPolyApproxData}\index{Shared\+Regress\+Orthog\+Poly\+Approx\+Data@{Shared\+Regress\+Orthog\+Poly\+Approx\+Data}}
+
+
+Derived approximation class for multivariate orthogonal polynomial approximation with coefficient estimation via regression.  
+
+
+Inheritance diagram for Shared\+Regress\+Orthog\+Poly\+Approx\+Data\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classPecos_1_1SharedRegressOrthogPolyApproxData}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPecos_1_1SharedRegressOrthogPolyApproxData_a8bf7d25eb0be43dfa5a56191fa17b9d6}{Shared\+Regress\+Orthog\+Poly\+Approx\+Data} (short basis\+\_\+type, const U\+Short\+Array \&approx\+\_\+order, size\+\_\+t num\+\_\+vars)\label{classPecos_1_1SharedRegressOrthogPolyApproxData_a8bf7d25eb0be43dfa5a56191fa17b9d6}
+
+\begin{DoxyCompactList}\small\item\em lightweight constructor \end{DoxyCompactList}\item 
+\hyperlink{classPecos_1_1SharedRegressOrthogPolyApproxData_afe703c90715dd911fc3f2408e28507db}{Shared\+Regress\+Orthog\+Poly\+Approx\+Data} (short basis\+\_\+type, const U\+Short\+Array \&approx\+\_\+order, size\+\_\+t num\+\_\+vars, const \hyperlink{classPecos_1_1ExpansionConfigOptions}{Expansion\+Config\+Options} \&ec\+\_\+options, const \hyperlink{classPecos_1_1BasisConfigOptions}{Basis\+Config\+Options} \&bc\+\_\+options, const \hyperlink{classPecos_1_1RegressionConfigOptions}{Regression\+Config\+Options} \&rc\+\_\+options)\label{classPecos_1_1SharedRegressOrthogPolyApproxData_afe703c90715dd911fc3f2408e28507db}
+
+\begin{DoxyCompactList}\small\item\em full constructor \end{DoxyCompactList}\item 
+\hyperlink{classPecos_1_1SharedRegressOrthogPolyApproxData_a308182f7c1330999b43850fa809cda7c}{$\sim$\+Shared\+Regress\+Orthog\+Poly\+Approx\+Data} ()\label{classPecos_1_1SharedRegressOrthogPolyApproxData_a308182f7c1330999b43850fa809cda7c}
+
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1SharedRegressOrthogPolyApproxData_a8da3d668120e0f50487ccaacec22fba5}{increment\+\_\+trial\+\_\+set} (const U\+Short\+Array \&trial\+\_\+set, U\+Short2\+D\+Array \&aggregated\+\_\+mi)\label{classPecos_1_1SharedRegressOrthogPolyApproxData_a8da3d668120e0f50487ccaacec22fba5}
+
+\begin{DoxyCompactList}\small\item\em helper function for incrementing that is modular on trial set and multi-\/index \end{DoxyCompactList}\item 
+bool \hyperlink{classPecos_1_1SharedRegressOrthogPolyApproxData_a64eba58daf7b9c3366053d96b4101e3c}{set\+\_\+restriction} (U\+Short2\+D\+Array \&aggregated\+\_\+mi, Sizet\+Set \&sparse\+\_\+indices, Sizet\+Set \&save\+\_\+tp)\label{classPecos_1_1SharedRegressOrthogPolyApproxData_a64eba58daf7b9c3366053d96b4101e3c}
+
+\begin{DoxyCompactList}\small\item\em define the TP index sets that can be removed from a generalized sparse grid based on the recovered sparse\+\_\+indices; used for the restriction operation within basis adaptation \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1SharedRegressOrthogPolyApproxData_a52ad6e9a0c72b622483a4753d0a9cc14}{clear\+\_\+adapted} ()\label{classPecos_1_1SharedRegressOrthogPolyApproxData_a52ad6e9a0c72b622483a4753d0a9cc14}
+
+\begin{DoxyCompactList}\small\item\em clear adapted basis bookkeeping \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1SharedRegressOrthogPolyApproxData_a3f8c171f5c53cdfa6cacf367934de117}{configuration\+\_\+options} (const \hyperlink{classPecos_1_1RegressionConfigOptions}{Regression\+Config\+Options} \&rc\+\_\+options)\label{classPecos_1_1SharedRegressOrthogPolyApproxData_a3f8c171f5c53cdfa6cacf367934de117}
+
+\begin{DoxyCompactList}\small\item\em set regress\+Config\+Options \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classPecos_1_1SharedRegressOrthogPolyApproxData_af8c5dd497976d775d2c600c9950f6b2e}{allocate\+\_\+data} (size\+\_\+t index=\+\_\+\+N\+P\+OS)\label{classPecos_1_1SharedRegressOrthogPolyApproxData_af8c5dd497976d775d2c600c9950f6b2e}
+
+\begin{DoxyCompactList}\small\item\em allocate the shared data prior to building the set of approximations \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1SharedRegressOrthogPolyApproxData_a4890d7d6305c020f7b6885b46760bc1f}{increment\+\_\+data} (size\+\_\+t index=\+\_\+\+N\+P\+OS)\label{classPecos_1_1SharedRegressOrthogPolyApproxData_a4890d7d6305c020f7b6885b46760bc1f}
+
+\begin{DoxyCompactList}\small\item\em update the shared data prior to rebuilding the set of approximations \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classPecos_1_1SharedRegressOrthogPolyApproxData_af832d8d1737ee25aab2bcf43bb118bad}{update\+\_\+approx\+\_\+order} (unsigned short new\+\_\+order)\label{classPecos_1_1SharedRegressOrthogPolyApproxData_af832d8d1737ee25aab2bcf43bb118bad}
+
+\begin{DoxyCompactList}\small\item\em update shared approx\+Order based on settings computed for one of the QoI \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1SharedRegressOrthogPolyApproxData_aa0ea4856f4fb129a10c9f46f9b703e43}{pack\+\_\+polynomial\+\_\+data} (const Real\+Vector \&c\+\_\+vars, const U\+Short\+Array \&mi, bool add\+\_\+val, double $\ast$pack\+\_\+val, size\+\_\+t \&pv\+\_\+cntr, bool add\+\_\+grad, double $\ast$pack\+\_\+grad, size\+\_\+t \&pg\+\_\+cntr)\label{classPecos_1_1SharedRegressOrthogPolyApproxData_aa0ea4856f4fb129a10c9f46f9b703e43}
+
+\begin{DoxyCompactList}\small\item\em pack polynomial contributions to Psi matrix for regression \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1SharedRegressOrthogPolyApproxData_a3ff730d25db57edaded2ddabc79e4137}{pack\+\_\+response\+\_\+data} (const Surrogate\+Data\+Resp \&sdr, bool add\+\_\+val, double $\ast$pack\+\_\+val, size\+\_\+t \&pv\+\_\+cntr, bool add\+\_\+grad, double $\ast$pack\+\_\+grad, size\+\_\+t \&pg\+\_\+cntr)\label{classPecos_1_1SharedRegressOrthogPolyApproxData_a3ff730d25db57edaded2ddabc79e4137}
+
+\begin{DoxyCompactList}\small\item\em pack response contributions to R\+HS for regression \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPecos_1_1RegressionConfigOptions}{Regression\+Config\+Options} \hyperlink{classPecos_1_1SharedRegressOrthogPolyApproxData_ab646839046eac941bd9cedcab25fa4fe}{regress\+Config\+Options}\label{classPecos_1_1SharedRegressOrthogPolyApproxData_ab646839046eac941bd9cedcab25fa4fe}
+
+\begin{DoxyCompactList}\small\item\em container for regression configuration options \end{DoxyCompactList}\item 
+\hyperlink{classPecos_1_1CompressedSensingTool}{Compressed\+Sensing\+Tool} \hyperlink{classPecos_1_1SharedRegressOrthogPolyApproxData_a0690bb1d9927c8a1de322b0bb230f163}{C\+S\+Tool}\label{classPecos_1_1SharedRegressOrthogPolyApproxData_a0690bb1d9927c8a1de322b0bb230f163}
+
+\begin{DoxyCompactList}\small\item\em Wrapper class that is used to solve regression problems. \end{DoxyCompactList}\item 
+Real\+Matrix \hyperlink{classPecos_1_1SharedRegressOrthogPolyApproxData_a01f8d3746f0c97337f566034011bb8df}{lower\+Factor}\label{classPecos_1_1SharedRegressOrthogPolyApproxData_a01f8d3746f0c97337f566034011bb8df}
+
+\begin{DoxyCompactList}\small\item\em lower matrix factor in factorization \end{DoxyCompactList}\item 
+Real\+Matrix \hyperlink{classPecos_1_1SharedRegressOrthogPolyApproxData_a2e65c47608334767a4257e1d4c8bf8ab}{upper\+Factor}\label{classPecos_1_1SharedRegressOrthogPolyApproxData_a2e65c47608334767a4257e1d4c8bf8ab}
+
+\begin{DoxyCompactList}\small\item\em upper matrix factor in factorization \end{DoxyCompactList}\item 
+Real\+Matrix \hyperlink{classPecos_1_1SharedRegressOrthogPolyApproxData_a2385691af90de846f94f98c72e9dd1a2}{pivot\+History}\label{classPecos_1_1SharedRegressOrthogPolyApproxData_a2385691af90de846f94f98c72e9dd1a2}
+
+\begin{DoxyCompactList}\small\item\em pivoting history of block-\/\+LU factorization \end{DoxyCompactList}\item 
+Int\+Vector \hyperlink{classPecos_1_1SharedRegressOrthogPolyApproxData_ac8b7e8ad73e976368c1ba13f4c03b658}{pivot\+Vect}\label{classPecos_1_1SharedRegressOrthogPolyApproxData_ac8b7e8ad73e976368c1ba13f4c03b658}
+
+\begin{DoxyCompactList}\small\item\em pivoting vector \end{DoxyCompactList}\item 
+\hyperlink{classPecos_1_1LightweightSparseGridDriver}{Lightweight\+Sparse\+Grid\+Driver} \hyperlink{classPecos_1_1SharedRegressOrthogPolyApproxData_a009f9c4be07adea9652a24086cd85b6a}{lsg\+Driver}\label{classPecos_1_1SharedRegressOrthogPolyApproxData_a009f9c4be07adea9652a24086cd85b6a}
+
+\begin{DoxyCompactList}\small\item\em sparse grid driver for adapting a CS candidate basis using greedy adaptation via the generalized sparse grid algorithm; it\textquotesingle{}s state is reset for each response QoI \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bfseries Regress\+Orthog\+Poly\+Approximation}\label{classPecos_1_1SharedRegressOrthogPolyApproxData_a7acecaa6278f4c25fb2eea8c89e541d9}
+
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Derived approximation class for multivariate orthogonal polynomial approximation with coefficient estimation via regression. 
+
+The \hyperlink{classPecos_1_1SharedRegressOrthogPolyApproxData}{Shared\+Regress\+Orthog\+Poly\+Approx\+Data} class provides a global approximation based on multivariate orthogonal polynomials, where the coefficients are computed using regression approaches such as least squares (L2) or compressed sensing (L1). It is used primarily for polynomial chaos expansion aproaches to UQ. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Shared\+Regress\+Orthog\+Poly\+Approx\+Data.\+hpp\item 
+Shared\+Regress\+Orthog\+Poly\+Approx\+Data.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,289 @@
+.TH "HierarchSparseGridDriver" 3 "Wed Dec 27 2017" "Version Version 1.0" "PECOS" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+HierarchSparseGridDriver \- Derived integration driver class that generates N-dimensional Smolyak sparse grids for numerical evaluation of expectation integrals over independent standard random variables\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSparseGridDriver\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBHierarchSparseGridDriver\fP ()"
+.br
+.RI "\fIdefault constructor \fP"
+.ti -1c
+.RI "\fBHierarchSparseGridDriver\fP (unsigned short ssg_level, const RealVector &dim_pref=RealVector(), short \fBgrowth_rate\fP=MODERATE_RESTRICTED_GROWTH, short refine_control=NO_CONTROL)"
+.br
+.RI "\fIconstructor \fP"
+.ti -1c
+.RI "\fB~HierarchSparseGridDriver\fP ()"
+.br
+.RI "\fIdestructor \fP"
+.ti -1c
+.RI "void \fBcompute_grid\fP (RealMatrix &var_sets)"
+.br
+.RI "\fIcompute scaled variable and weight sets for the TPQ grid \fP"
+.ti -1c
+.RI "int \fBgrid_size\fP ()"
+.br
+.RI "\fIcompute number of collocation points \fP"
+.ti -1c
+.RI "void \fBstore_grid\fP (size_t index=_NPOS)"
+.br
+.RI "\fIstore configuration settings for the current grid before advancing to the next settings within a prescribed grid sequence (default is push_back) \fP"
+.ti -1c
+.RI "void \fBrestore_grid\fP (size_t index=_NPOS)"
+.br
+.RI "\fIrestore configuration settings from a previously stored grid \fP"
+.ti -1c
+.RI "void \fBremove_stored_grid\fP (size_t index=_NPOS)"
+.br
+.RI "\fIremove configuration settings for a stored grid (default is pop_back) \fP"
+.ti -1c
+.RI "void \fBclear_stored\fP ()"
+.br
+.RI "\fIclear stored grid settings following their usage/combination \fP"
+.ti -1c
+.RI "size_t \fBmaximal_grid\fP () const "
+.br
+.RI "\fIreturn the index of the maximal stored grid state (_NPOS if the current unstored grid state) \fP"
+.ti -1c
+.RI "void \fBswap_grid\fP (size_t index)"
+.br
+.RI "\fIswap settings between the current grid and the stored grid identified by index \fP"
+.ti -1c
+.RI "void \fBinitialize_sets\fP ()"
+.br
+.RI "\fIinitializes old/active/evaluation sets for use within the generalized sparse grid procedure \fP"
+.ti -1c
+.RI "void \fBpush_trial_set\fP (const UShortArray &set)"
+.br
+.RI "\fIupdate smolyakMultiIndex with a new trial set for use within the generalized sparse grid procedure \fP"
+.ti -1c
+.RI "void \fBrestore_set\fP ()"
+.br
+.RI "\fIupdate collocKey, collocIndices, and uniqueIndexMapping based on restoration of previous trial to smolyakMultiIndex \fP"
+.ti -1c
+.RI "void \fBcompute_trial_grid\fP (RealMatrix &var_sets)"
+.br
+.RI "\fIcomputes the tensor grid for the index set from \fBpush_trial_set()\fP \fP"
+.ti -1c
+.RI "void \fBpop_trial_set\fP ()"
+.br
+.RI "\fIremove the previously pushed trial set from smolyakMultiIndex during the course of the generalized sparse grid procedure \fP"
+.ti -1c
+.RI "void \fBfinalize_sets\fP (bool output_sets, bool converged_within_tol)"
+.br
+.RI "\fIaccept all remaining trial sets within the generalized sparse grid procedure \fP"
+.ti -1c
+.RI "const UShortArray & \fBtrial_set\fP () const "
+.br
+.RI "\fIreturn the trial index set from \fBpush_trial_set()\fP \fP"
+.ti -1c
+.RI "int \fBunique_trial_points\fP () const "
+.br
+.RI "\fIreturn the number of unique collocation points in the trial index set \fP"
+.ti -1c
+.RI "void \fBcompute_grid_increment\fP (RealMatrix &var_sets)"
+.br
+.RI "\fIcomputes tensor grids for new index sets due to an isotropic/anisotropic refinement \fP"
+.ti -1c
+.RI "void \fBprint_smolyak_multi_index\fP () const "
+.br
+.RI "\fIprint smolyakMultiIndex \fP"
+.ti -1c
+.RI "UShortUShortPair \fBlevel_to_delta_pair\fP (size_t i, unsigned short lev_i)"
+.br
+.ti -1c
+.RI "unsigned short \fBlevel_to_delta_size\fP (size_t i, unsigned short lev_i)"
+.br
+.ti -1c
+.RI "void \fBlevel_to_delta_key\fP (size_t i, unsigned short lev_i, UShortArray &delta_key_i)"
+.br
+.ti -1c
+.RI "void \fBlevels_to_delta_keys\fP (const UShortArray &levels, UShort2DArray &delta_keys)"
+.br
+.RI "\fIconvert a Smolyak index set into hierarchical quadrature keys \fP"
+.ti -1c
+.RI "void \fBlevels_to_delta_sizes\fP (const UShortArray &levels, UShortArray &delta_sizes)"
+.br
+.RI "\fIconvert a Smolyak index set into the sizes of hierarchical quadrature increments \fP"
+.ti -1c
+.RI "void \fBinitialize_grid\fP (unsigned short ssg_level, const RealVector &dim_pref, const ShortArray &u_types, const \fBExpansionConfigOptions\fP &ec_options, \fBBasisConfigOptions\fP &bc_options, short \fBgrowth_rate\fP=MODERATE_RESTRICTED_GROWTH, bool track_colloc_indices=true)"
+.br
+.RI "\fIinitialize all sparse grid settings except for distribution params \fP"
+.ti -1c
+.RI "const UShortArray & \fBincrement_sets\fP () const "
+.br
+.RI "\fIreturn incrementSets \fP"
+.ti -1c
+.RI "const UShort3DArray & \fBsmolyak_multi_index\fP () const "
+.br
+.RI "\fIreturn smolyakMultiIndex \fP"
+.ti -1c
+.RI "void \fBtrack_collocation_indices\fP (bool track_colloc_indices)"
+.br
+.RI "\fIset trackCollocIndices \fP"
+.ti -1c
+.RI "bool \fBtrack_collocation_indices\fP () const "
+.br
+.RI "\fIget trackCollocIndices \fP"
+.ti -1c
+.RI "const UShort4DArray & \fBcollocation_key\fP () const "
+.br
+.RI "\fIreturn collocKey \fP"
+.ti -1c
+.RI "const Sizet3DArray & \fBcollocation_indices\fP () const "
+.br
+.RI "\fIreturn collocIndices \fP"
+.ti -1c
+.RI "const UShort3DArray & \fBstored_smolyak_multi_index\fP (size_t index) const "
+.br
+.RI "\fIreturn storedLevMultiIndex \fP"
+.ti -1c
+.RI "const UShort4DArray & \fBstored_collocation_key\fP (size_t index) const "
+.br
+.RI "\fIreturn storedCollocKey \fP"
+.ti -1c
+.RI "void \fBpartition_keys\fP (UShort2DArray &reference_set_range, UShort2DArray &increment_set_range) const "
+.br
+.RI "\fIdiscriminate portions of the level-set hierarchy that are reference sets from those in the current increment \fP"
+.ti -1c
+.RI "void \fBpartition_keys\fP (UShort3DArray &reference_pt_range, UShort3DArray &increment_pt_range) const "
+.br
+.RI "\fIdiscriminate portions of the level-set-point hierarchy that are in the reference grid from those in the current increment \fP"
+.ti -1c
+.RI "const RealVector2DArray & \fBtype1_weight_set_arrays\fP () const "
+.br
+.RI "\fIreturn type1WeightSets for use in hierarchical integration functions \fP"
+.ti -1c
+.RI "const RealMatrix2DArray & \fBtype2_weight_set_arrays\fP () const "
+.br
+.RI "\fIreturn type2WeightSets for use in hierarchical integration functions \fP"
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBupdate_smolyak_multi_index\fP (bool clear_sm_mi=false)"
+.br
+.ti -1c
+.RI "void \fBassign_collocation_key\fP ()"
+.br
+.ti -1c
+.RI "void \fBupdate_collocation_key\fP ()"
+.br
+.ti -1c
+.RI "void \fBassign_collocation_indices\fP ()"
+.br
+.ti -1c
+.RI "void \fBupdate_collocation_indices\fP ()"
+.br
+.ti -1c
+.RI "void \fBcompute_points_weights\fP (RealMatrix &pts, RealVector &t1_wts, RealMatrix &t2_wts, const UShortArray &sm_index, const UShort2DArray &colloc_key)"
+.br
+.RI "\fIkernel routine used for trial set and full sparse grid computations \fP"
+.ti -1c
+.RI "void \fBcompute_points_weights\fP (RealMatrix &pts, RealVector &t1_wts, RealMatrix &t2_wts)"
+.br
+.RI "\fIcompute points and weights for a trial set \fP"
+.ti -1c
+.RI "void \fBcompute_points_weights\fP (RealMatrix &pts, RealVector2DArray &t1_wts, RealMatrix2DArray &t2_wts)"
+.br
+.RI "\fIcompute points and weights for all levels of the (initial) sparse grid \fP"
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "bool \fBnestedGrid\fP"
+.br
+.RI "\fIflag for use of fully nested 1D rules, allowing formulation using collocation point increments \fP"
+.ti -1c
+.RI "UShort3DArray \fBsmolyakMultiIndex\fP"
+.br
+.RI "\fIinterpolation depth by index set by numVars array for identifying the index to use within the polynomialBasis for a particular variable \fP"
+.ti -1c
+.RI "unsigned short \fBtrialLevel\fP"
+.br
+.RI "\fIlevel of trial evaluation set from \fBpush_trial_set()\fP; trial set corresponds to smolyakMultiIndex[trialLevel]\&.back() \fP"
+.ti -1c
+.RI "UShortArray \fBincrementSets\fP"
+.br
+.RI "\fIidentifies the trailing index set increments within smolyakMultiIndex due to an isotropic/anistropic grid refinement \fP"
+.ti -1c
+.RI "bool \fBtrackCollocIndices\fP"
+.br
+.RI "\fIdue to the hierarchical structure, collocation indices only need to be defined in special cases (e\&.g\&., generalized sparse grids for which index sets can appear in different orders)\&. \fP"
+.ti -1c
+.RI "UShort4DArray \fBcollocKey\fP"
+.br
+.RI "\fIlevels-by-index sets-by-numDeltaPts-by-numVars array for identifying the 1-D point indices for sets of tensor-product collocation points \fP"
+.ti -1c
+.RI "Sizet3DArray \fBcollocIndices\fP"
+.br
+.RI "\fIlevels-by-index sets-by-numTensorProductPts array for linking the set of tensor products to the unique collocation points evaluated \fP"
+.ti -1c
+.RI "UShort4DArray \fBstoredLevMultiIndex\fP"
+.br
+.RI "\fIstored driver states: copies of smolyakMultiIndex \fP"
+.ti -1c
+.RI "UShort5DArray \fBstoredCollocKey\fP"
+.br
+.RI "\fIstored driver states: copies of collocKey \fP"
+.ti -1c
+.RI "RealVector2DArray \fBtype1WeightSets\fP"
+.br
+.RI "\fIthe set of type1 weights (for integration of value interpolants) associated with each point in the sparse grid \fP"
+.ti -1c
+.RI "RealMatrix2DArray \fBtype2WeightSets\fP"
+.br
+.RI "\fIthe set of type2 weights (for integration of gradient interpolants) for each derivative component and for each point in the sparse grid \fP"
+.ti -1c
+.RI "RealVector3DArray \fBstoredType1WeightSets\fP"
+.br
+.RI "\fIstored driver state: copy of type1WeightSets \fP"
+.ti -1c
+.RI "RealMatrix3DArray \fBstoredType2WeightSets\fP"
+.br
+.RI "\fIstored driver state: copy of type2WeightSets \fP"
+.ti -1c
+.RI "std::map< UShortArray, RealVector > \fBpoppedT1WtSets\fP"
+.br
+.RI "\fItype 1 weight sets popped during decrement for later restoration to type1WeightSets \fP"
+.ti -1c
+.RI "std::map< UShortArray, RealMatrix > \fBpoppedT2WtSets\fP"
+.br
+.RI "\fItype 2 weight sets popped during decrement for later restoration to type2WeightSets \fP"
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Derived integration driver class that generates N-dimensional Smolyak sparse grids for numerical evaluation of expectation integrals over independent standard random variables\&. 
+
+This class is used by Dakota::NonDSparseGrid, but could also be used for general numerical integration of moments\&. It employs 1-D Clenshaw-Curtis, Newton-Cotes, and Gaussian quadrature rules within Smolyak sparse grids\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "void compute_points_weights (RealMatrix & pts, RealVector2DArray & t1_wts, RealMatrix2DArray & t2_wts)\fC [private]\fP"
+
+.PP
+compute points and weights for all levels of the (initial) sparse grid Points are collapsed as required for compute_grid(var_sets), but t1/t2 weights are hierarchical 2D arrays\&. 
+.PP
+References HierarchSparseGridDriver::collocKey, HierarchSparseGridDriver::compute_points_weights(), IntegrationDriver::numVars, and HierarchSparseGridDriver::smolyakMultiIndex\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "UShort3DArray smolyakMultiIndex\fC [private]\fP"
+
+.PP
+interpolation depth by index set by numVars array for identifying the index to use within the polynomialBasis for a particular variable The index sets correspond to j (0-based) for use as indices, which are offset from the i indices (1-based) normally used in the Smolyak expressions\&. The indices correspond to levels, one within each anisotropic tensor-product integration of a Smolyak recursion\&. 
+.PP
+Referenced by HierarchSparseGridDriver::compute_grid_increment(), HierarchSparseGridDriver::compute_points_weights(), HierarchSparseGridDriver::finalize_sets(), HierarchSparseGridDriver::grid_size(), HierarchSparseGridDriver::initialize_sets(), HierarchSparseGridDriver::partition_keys(), HierarchSparseGridDriver::pop_trial_set(), HierarchSparseGridDriver::print_smolyak_multi_index(), HierarchSparseGridDriver::push_trial_set(), HierarchSparseGridDriver::restore_grid(), HierarchSparseGridDriver::smolyak_multi_index(), HierarchSparseGridDriver::store_grid(), HierarchSparseGridDriver::swap_grid(), and HierarchSparseGridDriver::trial_set()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for PECOS from the source code\&.

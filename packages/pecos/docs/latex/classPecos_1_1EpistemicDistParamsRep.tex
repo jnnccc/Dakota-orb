@@ -1,0 +1,56 @@
+\section{Epistemic\+Dist\+Params\+Rep Class Reference}
+\label{classPecos_1_1EpistemicDistParamsRep}\index{Epistemic\+Dist\+Params\+Rep@{Epistemic\+Dist\+Params\+Rep}}
+
+
+The representation of a set of epistemic distribution parameters. This representation, or body, may be shared by multiple \hyperlink{classPecos_1_1EpistemicDistParams}{Epistemic\+Dist\+Params} handle instances.  
+
+
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPecos_1_1EpistemicDistParamsRep_aa0540ab459e27f052ac00aaa0b8d45c7}{Epistemic\+Dist\+Params\+Rep} ()\label{classPecos_1_1EpistemicDistParamsRep_aa0540ab459e27f052ac00aaa0b8d45c7}
+
+\begin{DoxyCompactList}\small\item\em default constructor \end{DoxyCompactList}\item 
+\hyperlink{classPecos_1_1EpistemicDistParamsRep_acb29b99dae9cfb57eba028d27a7de0ab}{Epistemic\+Dist\+Params\+Rep} (const Real\+Real\+Pair\+Real\+Map\+Array \&ceuv\+\_\+bpas, const Int\+Int\+Pair\+Real\+Map\+Array \&deuiv\+\_\+bpas, const Int\+Real\+Map\+Array \&deusiv\+\_\+vals\+\_\+probs, const String\+Real\+Map\+Array \&deussv\+\_\+vals\+\_\+probs, const Real\+Real\+Map\+Array \&deusrv\+\_\+vals\+\_\+probs)\label{classPecos_1_1EpistemicDistParamsRep_acb29b99dae9cfb57eba028d27a7de0ab}
+
+\begin{DoxyCompactList}\small\item\em constructor \end{DoxyCompactList}\item 
+\hyperlink{classPecos_1_1EpistemicDistParamsRep_a69939dd1df7f5cf6dc996f723026ac99}{$\sim$\+Epistemic\+Dist\+Params\+Rep} ()\label{classPecos_1_1EpistemicDistParamsRep_a69939dd1df7f5cf6dc996f723026ac99}
+
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Real\+Real\+Pair\+Real\+Map\+Array \hyperlink{classPecos_1_1EpistemicDistParamsRep_a9eaf4bb36ecab2682ba05d44b6619f14}{cont\+Interval\+B\+PA}\label{classPecos_1_1EpistemicDistParamsRep_a9eaf4bb36ecab2682ba05d44b6619f14}
+
+\begin{DoxyCompactList}\small\item\em basic probability assignments (continuous interval bounds + probability) for continuous interval uncertain variables \end{DoxyCompactList}\item 
+Int\+Int\+Pair\+Real\+Map\+Array \hyperlink{classPecos_1_1EpistemicDistParamsRep_a1f3f8a098c4bb51d2920395c0e29b7aa}{disc\+Interval\+B\+PA}\label{classPecos_1_1EpistemicDistParamsRep_a1f3f8a098c4bb51d2920395c0e29b7aa}
+
+\begin{DoxyCompactList}\small\item\em basic probability assignments (discrete range bounds + probability) for discrete interval uncertain variables \end{DoxyCompactList}\item 
+Int\+Real\+Map\+Array \hyperlink{classPecos_1_1EpistemicDistParamsRep_a60e7f972e185361ba1ca7bd9feff219f}{disc\+Set\+Int\+Vals\+Probs}\label{classPecos_1_1EpistemicDistParamsRep_a60e7f972e185361ba1ca7bd9feff219f}
+
+\begin{DoxyCompactList}\small\item\em admissible values and basic probability assignments for discrete uncertain set integer variables \end{DoxyCompactList}\item 
+String\+Real\+Map\+Array \hyperlink{classPecos_1_1EpistemicDistParamsRep_aa46741d9f0a8f10cc40138ebaefdb834}{disc\+Set\+String\+Vals\+Probs}\label{classPecos_1_1EpistemicDistParamsRep_aa46741d9f0a8f10cc40138ebaefdb834}
+
+\begin{DoxyCompactList}\small\item\em admissible values and basic probability assignments for discrete uncertain set string variables \end{DoxyCompactList}\item 
+Real\+Real\+Map\+Array \hyperlink{classPecos_1_1EpistemicDistParamsRep_aaf3880a0b86a8f541bb48793662785e8}{disc\+Set\+Real\+Vals\+Probs}\label{classPecos_1_1EpistemicDistParamsRep_aaf3880a0b86a8f541bb48793662785e8}
+
+\begin{DoxyCompactList}\small\item\em admissible values and basic probability assignments for discrete uncertain set real variables \end{DoxyCompactList}\item 
+int \hyperlink{classPecos_1_1EpistemicDistParamsRep_afff0b6144883d3ca09a8d0d3f4776b0f}{reference\+Count}\label{classPecos_1_1EpistemicDistParamsRep_afff0b6144883d3ca09a8d0d3f4776b0f}
+
+\begin{DoxyCompactList}\small\item\em number of handle objects sharing edp\+Rep \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classPecos_1_1EpistemicDistParamsRep_a2a3370b29dbf1ac16f49b525603d2e96}{Epistemic\+Dist\+Params}\label{classPecos_1_1EpistemicDistParamsRep_a2a3370b29dbf1ac16f49b525603d2e96}
+
+\begin{DoxyCompactList}\small\item\em the handle class can access attributes of the body class directly \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The representation of a set of epistemic distribution parameters. This representation, or body, may be shared by multiple \hyperlink{classPecos_1_1EpistemicDistParams}{Epistemic\+Dist\+Params} handle instances. 
+
+The Epistemic\+Dist\+Params/\+Epistemic\+Dist\+Params\+Rep pairs utilize a handle-\/body idiom (Coplien, Advanced C++). 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Distribution\+Params.\+hpp\end{DoxyCompactItemize}

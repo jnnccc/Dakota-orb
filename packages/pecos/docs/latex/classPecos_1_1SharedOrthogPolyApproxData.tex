@@ -1,0 +1,652 @@
+\section{Shared\+Orthog\+Poly\+Approx\+Data Class Reference}
+\label{classPecos_1_1SharedOrthogPolyApproxData}\index{Shared\+Orthog\+Poly\+Approx\+Data@{Shared\+Orthog\+Poly\+Approx\+Data}}
+
+
+Derived approximation class for orthogonal polynomials (global approximation).  
+
+
+Inheritance diagram for Shared\+Orthog\+Poly\+Approx\+Data\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classPecos_1_1SharedOrthogPolyApproxData}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPecos_1_1SharedOrthogPolyApproxData_aae77fa8d7dacf98e787ce8029b430316}{Shared\+Orthog\+Poly\+Approx\+Data} (short basis\+\_\+type, const U\+Short\+Array \&approx\+\_\+order, size\+\_\+t num\+\_\+vars)\label{classPecos_1_1SharedOrthogPolyApproxData_aae77fa8d7dacf98e787ce8029b430316}
+
+\begin{DoxyCompactList}\small\item\em standard constructor \end{DoxyCompactList}\item 
+\hyperlink{classPecos_1_1SharedOrthogPolyApproxData_a9aa8344331531afb838e4b5a752a8949}{Shared\+Orthog\+Poly\+Approx\+Data} (short basis\+\_\+type, const U\+Short\+Array \&approx\+\_\+order, size\+\_\+t num\+\_\+vars, const \hyperlink{classPecos_1_1ExpansionConfigOptions}{Expansion\+Config\+Options} \&ec\+\_\+options, const \hyperlink{classPecos_1_1BasisConfigOptions}{Basis\+Config\+Options} \&bc\+\_\+options)\label{classPecos_1_1SharedOrthogPolyApproxData_a9aa8344331531afb838e4b5a752a8949}
+
+\begin{DoxyCompactList}\small\item\em alternate constructor \end{DoxyCompactList}\item 
+\hyperlink{classPecos_1_1SharedOrthogPolyApproxData_a9d6afaa7741b8c1004514aa65a832fd9}{$\sim$\+Shared\+Orthog\+Poly\+Approx\+Data} ()\label{classPecos_1_1SharedOrthogPolyApproxData_a9d6afaa7741b8c1004514aa65a832fd9}
+
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1SharedOrthogPolyApproxData_a4427c0ca8e114481f357064c17d6bb7a}{allocate\+\_\+data} (const U\+Short2\+D\+Array \&mi)\label{classPecos_1_1SharedOrthogPolyApproxData_a4427c0ca8e114481f357064c17d6bb7a}
+
+\begin{DoxyCompactList}\small\item\em alternative form for setting multi\+Index (expansion import) and allocating related arrays \end{DoxyCompactList}\item 
+const U\+Short2\+D\+Array \& \hyperlink{classPecos_1_1SharedOrthogPolyApproxData_ad93cb921a0df31fce4696f0051fe6a33}{multi\+\_\+index} () const \label{classPecos_1_1SharedOrthogPolyApproxData_ad93cb921a0df31fce4696f0051fe6a33}
+
+\begin{DoxyCompactList}\small\item\em get multi\+Index \end{DoxyCompactList}\item 
+size\+\_\+t \hyperlink{classPecos_1_1SharedOrthogPolyApproxData_a1472574cce875722141b69b4eb629572}{expansion\+\_\+terms} () const \label{classPecos_1_1SharedOrthogPolyApproxData_a1472574cce875722141b69b4eb629572}
+
+\begin{DoxyCompactList}\small\item\em retrieve size of multi\+Index \end{DoxyCompactList}\item 
+const U\+Short\+Array \& \hyperlink{classPecos_1_1SharedOrthogPolyApproxData_abc949acf051db1e5e72b4a149a437b5c}{expansion\+\_\+order} () const \label{classPecos_1_1SharedOrthogPolyApproxData_abc949acf051db1e5e72b4a149a437b5c}
+
+\begin{DoxyCompactList}\small\item\em get approx\+Order \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1SharedOrthogPolyApproxData_a9309d2ffa3c6269251397210894e5f0f}{expansion\+\_\+order} (const U\+Short\+Array \&order)\label{classPecos_1_1SharedOrthogPolyApproxData_a9309d2ffa3c6269251397210894e5f0f}
+
+\begin{DoxyCompactList}\small\item\em set approx\+Order \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1SharedOrthogPolyApproxData_aa7513b7e266f32dbcf966a244fd4c89a}{increment\+\_\+order} ()\label{classPecos_1_1SharedOrthogPolyApproxData_aa7513b7e266f32dbcf966a244fd4c89a}
+
+\begin{DoxyCompactList}\small\item\em uniformly increment approx\+Order \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1SharedOrthogPolyApproxData_a402d2fb8bc3072b9a776c318f4b17876}{construct\+\_\+basis} (const Short\+Array \&u\+\_\+types, const \hyperlink{classPecos_1_1AleatoryDistParams}{Aleatory\+Dist\+Params} \&adp)
+\begin{DoxyCompactList}\small\item\em invoke \hyperlink{classPecos_1_1SharedPolyApproxData_a5c55db28633dec7b4247ae239a8667fc}{initialize\+\_\+orthogonal\+\_\+basis\+\_\+types\+\_\+rules()}, \hyperlink{classPecos_1_1SharedPolyApproxData_a9761a3bbd8c1737710737752432b533a}{initialize\+\_\+polynomial\+\_\+basis()}, and, if needed, \hyperlink{classPecos_1_1SharedPolyApproxData_a97e10bdee50a60499d893502e8294409}{update\+\_\+basis\+\_\+distribution\+\_\+parameters()} using class member data \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1SharedOrthogPolyApproxData_a83698dfb63484a5597628520af248a3c}{orthogonal\+\_\+basis\+\_\+types} (const Short\+Array \&opb\+\_\+types)\label{classPecos_1_1SharedOrthogPolyApproxData_a83698dfb63484a5597628520af248a3c}
+
+\begin{DoxyCompactList}\small\item\em set orthog\+Poly\+Types \end{DoxyCompactList}\item 
+const Short\+Array \& \hyperlink{classPecos_1_1SharedOrthogPolyApproxData_aa1eeaf0ce77b0256fdf4029c5af524c9}{orthogonal\+\_\+basis\+\_\+types} () const \label{classPecos_1_1SharedOrthogPolyApproxData_aa1eeaf0ce77b0256fdf4029c5af524c9}
+
+\begin{DoxyCompactList}\small\item\em get orthog\+Poly\+Types \end{DoxyCompactList}\item 
+const std\+::vector$<$ \hyperlink{classPecos_1_1BasisPolynomial}{Basis\+Polynomial} $>$ \& \hyperlink{classPecos_1_1SharedOrthogPolyApproxData_a7282b8c27142b1b15cd79922c3f55e19}{polynomial\+\_\+basis} () const \label{classPecos_1_1SharedOrthogPolyApproxData_a7282b8c27142b1b15cd79922c3f55e19}
+
+\begin{DoxyCompactList}\small\item\em get polynomial\+Basis \end{DoxyCompactList}\item 
+std\+::vector$<$ \hyperlink{classPecos_1_1BasisPolynomial}{Basis\+Polynomial} $>$ \& {\bfseries polynomial\+\_\+basis} ()\label{classPecos_1_1SharedOrthogPolyApproxData_a0958a377f681f87abc3960133952ea67}
+
+\item 
+void \hyperlink{classPecos_1_1SharedOrthogPolyApproxData_a1aef6c62d150194806312cbd7f2b5544}{polynomial\+\_\+basis} (const std\+::vector$<$ \hyperlink{classPecos_1_1BasisPolynomial}{Basis\+Polynomial} $>$ \&poly\+\_\+basis)\label{classPecos_1_1SharedOrthogPolyApproxData_a1aef6c62d150194806312cbd7f2b5544}
+
+\begin{DoxyCompactList}\small\item\em set polynomial\+Basis \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1SharedOrthogPolyApproxData_a738108531d8a83dd1a9c6021c76e6bee}{coefficients\+\_\+norms\+\_\+flag} (bool flag)\label{classPecos_1_1SharedOrthogPolyApproxData_a738108531d8a83dd1a9c6021c76e6bee}
+
+\begin{DoxyCompactList}\small\item\em set \hyperlink{classPecos_1_1NumericGenOrthogPolynomial_a216f184d63de7370a1a674f4b1b7728d}{Numeric\+Gen\+Orthog\+Polynomial\+::coeffs\+Norms\+Flag} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{classPecos_1_1SharedOrthogPolyApproxData_aa89044de171121ba6852986b1e308dc7}{construct\+\_\+basis} (const Short\+Array \&u\+\_\+types, const \hyperlink{classPecos_1_1AleatoryDistParams}{Aleatory\+Dist\+Params} \&adp, const \hyperlink{classPecos_1_1BasisConfigOptions}{Basis\+Config\+Options} \&bc\+\_\+options, std\+::vector$<$ \hyperlink{classPecos_1_1BasisPolynomial}{Basis\+Polynomial} $>$ \&poly\+\_\+basis)
+\begin{DoxyCompactList}\small\item\em invoke \hyperlink{classPecos_1_1SharedPolyApproxData_a5c55db28633dec7b4247ae239a8667fc}{initialize\+\_\+orthogonal\+\_\+basis\+\_\+types\+\_\+rules()}, \hyperlink{classPecos_1_1SharedPolyApproxData_a9761a3bbd8c1737710737752432b533a}{initialize\+\_\+polynomial\+\_\+basis()}, and, if needed, \hyperlink{classPecos_1_1SharedPolyApproxData_a97e10bdee50a60499d893502e8294409}{update\+\_\+basis\+\_\+distribution\+\_\+parameters()} using passed data \end{DoxyCompactList}\item 
+static void \hyperlink{classPecos_1_1SharedOrthogPolyApproxData_a99c558e3430c0c4d712e5512fef72954}{construct\+\_\+basis} (const Short\+Array \&u\+\_\+types, const \hyperlink{classPecos_1_1AleatoryDistParams}{Aleatory\+Dist\+Params} \&adp, const \hyperlink{classPecos_1_1BasisConfigOptions}{Basis\+Config\+Options} \&bc\+\_\+options, std\+::vector$<$ \hyperlink{classPecos_1_1BasisPolynomial}{Basis\+Polynomial} $>$ \&poly\+\_\+basis, Short\+Array \&basis\+\_\+types, Short\+Array \&colloc\+\_\+rules)
+\begin{DoxyCompactList}\small\item\em invoke \hyperlink{classPecos_1_1SharedPolyApproxData_a5c55db28633dec7b4247ae239a8667fc}{initialize\+\_\+orthogonal\+\_\+basis\+\_\+types\+\_\+rules()}, \hyperlink{classPecos_1_1SharedPolyApproxData_a9761a3bbd8c1737710737752432b533a}{initialize\+\_\+polynomial\+\_\+basis()}, and, if needed, \hyperlink{classPecos_1_1SharedPolyApproxData_a97e10bdee50a60499d893502e8294409}{update\+\_\+basis\+\_\+distribution\+\_\+parameters()} using passed data \end{DoxyCompactList}\item 
+static void \hyperlink{classPecos_1_1SharedOrthogPolyApproxData_addb932d873c18e78f747a02a1cccb3ac}{coefficients\+\_\+norms\+\_\+flag} (bool flag, Short\+Array \&poly\+\_\+types, std\+::vector$<$ \hyperlink{classPecos_1_1BasisPolynomial}{Basis\+Polynomial} $>$ \&poly\+\_\+basis)\label{classPecos_1_1SharedOrthogPolyApproxData_addb932d873c18e78f747a02a1cccb3ac}
+
+\begin{DoxyCompactList}\small\item\em set \hyperlink{classPecos_1_1NumericGenOrthogPolynomial_a216f184d63de7370a1a674f4b1b7728d}{Numeric\+Gen\+Orthog\+Polynomial\+::coeffs\+Norms\+Flag} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classPecos_1_1SharedOrthogPolyApproxData_af8c5dd497976d775d2c600c9950f6b2e}{allocate\+\_\+data} (size\+\_\+t index=\+\_\+\+N\+P\+OS)\label{classPecos_1_1SharedOrthogPolyApproxData_af8c5dd497976d775d2c600c9950f6b2e}
+
+\begin{DoxyCompactList}\small\item\em allocate the shared data prior to building the set of approximations \end{DoxyCompactList}\item 
+size\+\_\+t \hyperlink{classPecos_1_1SharedOrthogPolyApproxData_a9eb4d06b29a49d454be12741309d8a2b}{pre\+\_\+combine\+\_\+data} ()\label{classPecos_1_1SharedOrthogPolyApproxData_a9eb4d06b29a49d454be12741309d8a2b}
+
+\begin{DoxyCompactList}\small\item\em combines current and stored approximation data \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1SharedOrthogPolyApproxData_a1fc086359221b123564e92c4ccee5a20}{post\+\_\+combine\+\_\+data} ()\label{classPecos_1_1SharedOrthogPolyApproxData_a1fc086359221b123564e92c4ccee5a20}
+
+\begin{DoxyCompactList}\small\item\em combines current and stored approximation data \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1SharedOrthogPolyApproxData_a3cc1fd74564bd6f83a59ac8ddc1fc264}{store\+\_\+data} (size\+\_\+t index=\+\_\+\+N\+P\+OS)
+\item 
+void \hyperlink{classPecos_1_1SharedOrthogPolyApproxData_a6e88613d26c8cf89c7d8365016ee67c2}{restore\+\_\+data} (size\+\_\+t index=\+\_\+\+N\+P\+OS)\label{classPecos_1_1SharedOrthogPolyApproxData_a6e88613d26c8cf89c7d8365016ee67c2}
+
+\begin{DoxyCompactList}\small\item\em restores previously stored approximation data \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1SharedOrthogPolyApproxData_ab48a802281615eb09255d0a8acd06987}{remove\+\_\+stored\+\_\+data} (size\+\_\+t index=\+\_\+\+N\+P\+OS)\label{classPecos_1_1SharedOrthogPolyApproxData_ab48a802281615eb09255d0a8acd06987}
+
+\begin{DoxyCompactList}\small\item\em removes a redundant stored approximation data prior to combination \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1SharedOrthogPolyApproxData_a263397cd08813d707b4084cf13cad679}{clear\+\_\+stored\+\_\+data} ()\label{classPecos_1_1SharedOrthogPolyApproxData_a263397cd08813d707b4084cf13cad679}
+
+\begin{DoxyCompactList}\small\item\em clear stored approximation data \end{DoxyCompactList}\item 
+size\+\_\+t \hyperlink{classPecos_1_1SharedOrthogPolyApproxData_a4c762dba27115d6fe5759c69f4cdb15b}{maximal\+\_\+expansion} ()\label{classPecos_1_1SharedOrthogPolyApproxData_a4c762dba27115d6fe5759c69f4cdb15b}
+
+\begin{DoxyCompactList}\small\item\em detect whether current expansion settings are the most refined \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1SharedOrthogPolyApproxData_ab71ff088de1226483e8c252e483d80fe}{swap\+\_\+shared\+\_\+data} (size\+\_\+t index)\label{classPecos_1_1SharedOrthogPolyApproxData_ab71ff088de1226483e8c252e483d80fe}
+
+\begin{DoxyCompactList}\small\item\em swap current shared data with a stored shared data set, as identified by stored index \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1SharedOrthogPolyApproxData_a774f7ff2f3b6679f3781ab4527e454d6}{sparse\+\_\+grid\+\_\+level\+\_\+to\+\_\+expansion\+\_\+order} (\hyperlink{classPecos_1_1CombinedSparseGridDriver}{Combined\+Sparse\+Grid\+Driver} $\ast$csg\+\_\+driver, const U\+Short\+Array \&levels, U\+Short\+Array \&exp\+\_\+order)
+\begin{DoxyCompactList}\small\item\em convert a sparse grid index set and a growth setting to an integrand\+\_\+order \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1SharedOrthogPolyApproxData_a0fb3bbf72d95413bb1fc92d5a203f085}{quadrature\+\_\+order\+\_\+to\+\_\+integrand\+\_\+order} (\hyperlink{classPecos_1_1IntegrationDriver}{Integration\+Driver} $\ast$int\+\_\+driver, const U\+Short\+Array \&quad\+\_\+order, U\+Short\+Array \&int\+\_\+order)\label{classPecos_1_1SharedOrthogPolyApproxData_a0fb3bbf72d95413bb1fc92d5a203f085}
+
+\begin{DoxyCompactList}\small\item\em convert quadrature orders to integrand orders using rigorous mappings \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1SharedOrthogPolyApproxData_a47a34a4c98da9a11022fba195ff38ccf}{integrand\+\_\+order\+\_\+to\+\_\+expansion\+\_\+order} (const U\+Short\+Array \&int\+\_\+order, U\+Short\+Array \&exp\+\_\+order)\label{classPecos_1_1SharedOrthogPolyApproxData_a47a34a4c98da9a11022fba195ff38ccf}
+
+\begin{DoxyCompactList}\small\item\em convert integrand orders to expansion orders using rigorous mappings \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1SharedOrthogPolyApproxData_a85942574b8b40ace2394169985cbfe74}{increment\+\_\+trial\+\_\+set} (\hyperlink{classPecos_1_1CombinedSparseGridDriver}{Combined\+Sparse\+Grid\+Driver} $\ast$csg\+\_\+driver, U\+Short2\+D\+Array \&aggregated\+\_\+mi)\label{classPecos_1_1SharedOrthogPolyApproxData_a85942574b8b40ace2394169985cbfe74}
+
+\begin{DoxyCompactList}\small\item\em helper function for incrementing that is modular on sparse grid driver and multi-\/index \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1SharedOrthogPolyApproxData_abf459d5d127a0ced60150bcf3e6cddc2}{decrement\+\_\+trial\+\_\+set} (const U\+Short\+Array \&trial\+\_\+set, U\+Short2\+D\+Array \&aggregated\+\_\+mi, bool save\+\_\+map=true)\label{classPecos_1_1SharedOrthogPolyApproxData_abf459d5d127a0ced60150bcf3e6cddc2}
+
+\begin{DoxyCompactList}\small\item\em helper function for decrementing that is modular on trial set and multi-\/index \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1SharedOrthogPolyApproxData_aa48b1769554aaee6d8ecc3b4efcbb12f}{pre\+\_\+push\+\_\+trial\+\_\+set} (const U\+Short\+Array \&trial\+\_\+set, U\+Short2\+D\+Array \&aggregated\+\_\+mi, bool monotonic=true)\label{classPecos_1_1SharedOrthogPolyApproxData_aa48b1769554aaee6d8ecc3b4efcbb12f}
+
+\begin{DoxyCompactList}\small\item\em helper function for restoring that is modular on trial set and multi-\/index \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1SharedOrthogPolyApproxData_a36fcbb2649d7a9ac4d065b17c789a1cc}{post\+\_\+push\+\_\+trial\+\_\+set} (const U\+Short\+Array \&trial\+\_\+set, U\+Short2\+D\+Array \&aggregated\+\_\+mi, bool save\+\_\+map=true)\label{classPecos_1_1SharedOrthogPolyApproxData_a36fcbb2649d7a9ac4d065b17c789a1cc}
+
+\begin{DoxyCompactList}\small\item\em helper function for restoring that is modular on trial set and multi-\/index \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1SharedOrthogPolyApproxData_af36b81f3f0211c860b4875de23d062cf}{push\+\_\+trial\+\_\+set} (const U\+Short\+Array \&trial\+\_\+set, U\+Short2\+D\+Array \&aggregated\+\_\+mi, bool monotonic=true, bool save\+\_\+map=true)\label{classPecos_1_1SharedOrthogPolyApproxData_af36b81f3f0211c860b4875de23d062cf}
+
+\begin{DoxyCompactList}\small\item\em helper function for restoring that is modular on trial set and multi-\/index \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1SharedOrthogPolyApproxData_afaf6090379bf5cbeb97e99004e460476}{precompute\+\_\+maximal\+\_\+rules} (const U\+Short2\+D\+Array \&\hyperlink{classPecos_1_1SharedOrthogPolyApproxData_ad93cb921a0df31fce4696f0051fe6a33}{multi\+\_\+index})\label{classPecos_1_1SharedOrthogPolyApproxData_afaf6090379bf5cbeb97e99004e460476}
+
+\begin{DoxyCompactList}\small\item\em Precompute a maximal order of quadrature rules (based on a multi\+Index) when too expensive to compute on demand. \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1SharedOrthogPolyApproxData_a9bc5e7748ec5da42a7e2b90b2074fd54}{precompute\+\_\+maximal\+\_\+rules} (const U\+Short\+Array \&approx\+\_\+order)\label{classPecos_1_1SharedOrthogPolyApproxData_a9bc5e7748ec5da42a7e2b90b2074fd54}
+
+\begin{DoxyCompactList}\small\item\em Precompute a maximal order of quadrature rules (based on an approx\+Order) when too expensive to compute on demand. \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1SharedOrthogPolyApproxData_a8f69cf7256f6caaabcbbd10667ca378b}{allocate\+\_\+component\+\_\+sobol} (const U\+Short2\+D\+Array \&\hyperlink{classPecos_1_1SharedOrthogPolyApproxData_ad93cb921a0df31fce4696f0051fe6a33}{multi\+\_\+index})\label{classPecos_1_1SharedOrthogPolyApproxData_a8f69cf7256f6caaabcbbd10667ca378b}
+
+\begin{DoxyCompactList}\small\item\em allocate sobol\+Index\+Map from multi\+\_\+index \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1SharedOrthogPolyApproxData_a3b449e2db15850e64a07ec45fee45e77}{update\+\_\+component\+\_\+sobol} (const U\+Short2\+D\+Array \&\hyperlink{classPecos_1_1SharedOrthogPolyApproxData_ad93cb921a0df31fce4696f0051fe6a33}{multi\+\_\+index})\label{classPecos_1_1SharedOrthogPolyApproxData_a3b449e2db15850e64a07ec45fee45e77}
+
+\begin{DoxyCompactList}\small\item\em update sobol\+Index\+Map using new multi\+\_\+index terms (from multifidelity overlay or a new QoI in orthogonal least interpolation) \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1SharedOrthogPolyApproxData_a0ee0bf875553fe6a252e52a15e1f45c7}{append\+\_\+multi\+\_\+index} (const U\+Short2\+D\+Array \&append\+\_\+mi, U\+Short2\+D\+Array \&combined\+\_\+mi)
+\begin{DoxyCompactList}\small\item\em append multi-\/indices from append\+\_\+mi that do not already appear in combined\+\_\+mi \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1SharedOrthogPolyApproxData_ad4251303923381e36766cad6445536fe}{append\+\_\+multi\+\_\+index} (const U\+Short\+Array\+Set \&append\+\_\+mi, U\+Short2\+D\+Array \&combined\+\_\+mi)
+\begin{DoxyCompactList}\small\item\em append multi-\/indices from append\+\_\+mi that do not already appear in combined\+\_\+mi \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1SharedOrthogPolyApproxData_a70a7a0374c65a96d7bb709ad8bacdf77}{append\+\_\+multi\+\_\+index} (const U\+Short2\+D\+Array \&append\+\_\+mi, U\+Short2\+D\+Array \&combined\+\_\+mi, Sizet\+Array \&append\+\_\+mi\+\_\+map, size\+\_\+t \&append\+\_\+mi\+\_\+map\+\_\+ref)
+\begin{DoxyCompactList}\small\item\em append multi-\/indices from append\+\_\+mi that do not already appear in combined\+\_\+mi; define append\+\_\+mi\+\_\+map and append\+\_\+mi\+\_\+map\+\_\+ref \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1SharedOrthogPolyApproxData_a0cfa6210c23b848fe07c8618e6e800be}{append\+\_\+multi\+\_\+index} (const U\+Short2\+D\+Array \&append\+\_\+mi, U\+Short2\+D\+Array \&combined\+\_\+mi, Sizet\+Set \&append\+\_\+mi\+\_\+map, size\+\_\+t \&append\+\_\+mi\+\_\+map\+\_\+ref)
+\begin{DoxyCompactList}\small\item\em append multi-\/indices from append\+\_\+mi that do not already appear in combined\+\_\+mi; define append\+\_\+mi\+\_\+map and append\+\_\+mi\+\_\+map\+\_\+ref \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1SharedOrthogPolyApproxData_a964cfc01b4cb371008236c42e240a7f8}{append\+\_\+leading\+\_\+multi\+\_\+index} (const U\+Short2\+D\+Array \&append\+\_\+mi, U\+Short2\+D\+Array \&combined\+\_\+mi, Sizet\+Set \&append\+\_\+mi\+\_\+map, size\+\_\+t \&append\+\_\+mi\+\_\+map\+\_\+ref)
+\begin{DoxyCompactList}\small\item\em append multi-\/indices from append\+\_\+mi that do not already appear in combined\+\_\+mi (consistent ordering assumed); define append\+\_\+mi\+\_\+map and append\+\_\+mi\+\_\+map\+\_\+ref \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1SharedOrthogPolyApproxData_add60899f51ee8d6d7d67c3bd5a55822b}{append\+\_\+multi\+\_\+index} (const U\+Short2\+D\+Array \&append\+\_\+mi, Sizet\+Array \&append\+\_\+mi\+\_\+map, size\+\_\+t \&append\+\_\+mi\+\_\+map\+\_\+ref, U\+Short2\+D\+Array \&combined\+\_\+mi)
+\begin{DoxyCompactList}\small\item\em append multi-\/indices from append\+\_\+mi that do not already appear in combined\+\_\+mi, using previously defined append\+\_\+mi\+\_\+map and append\+\_\+mi\+\_\+map\+\_\+ref for mapping \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1SharedOrthogPolyApproxData_ae8082d000d8fa616ff217762875d21f6}{append\+\_\+multi\+\_\+index} (Sizet\+Set \&sparse\+\_\+indices, const U\+Short2\+D\+Array \&append\+\_\+mi, U\+Short2\+D\+Array \&combined\+\_\+mi, Real\+Vector \&exp\+\_\+coeffs, Real\+Matrix \&exp\+\_\+coeff\+\_\+grads)
+\begin{DoxyCompactList}\small\item\em append multi-\/indices from append\+\_\+mi that do not already appear in combined\+\_\+mi, updating sparse\+\_\+indices, exp\+\_\+coeffs, and exp\+\_\+coeff\+\_\+grads \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1SharedOrthogPolyApproxData_ae73f764fee87689e8be7b7095e51c298}{norm\+\_\+squared} (const U\+Short\+Array \&indices)\label{classPecos_1_1SharedOrthogPolyApproxData_ae73f764fee87689e8be7b7095e51c298}
+
+\begin{DoxyCompactList}\small\item\em returns the norm-\/squared of a particular multivariate polynomial, treating all variables as probabilistic \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1SharedOrthogPolyApproxData_a93b96870a5d834bf8152cb027ca6f83e}{norm\+\_\+squared} (const U\+Short\+Array \&indices, const Sizet\+List \&rand\+\_\+indices)
+\begin{DoxyCompactList}\small\item\em returns the norm-\/squared of a particular multivariate polynomial, treating a subset of the variables as probabilistic \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1SharedOrthogPolyApproxData_a2de07217be9ed3d72ae5c67f96c18773}{multivariate\+\_\+polynomial} (const Real\+Vector \&x, const U\+Short\+Array \&indices)\label{classPecos_1_1SharedOrthogPolyApproxData_a2de07217be9ed3d72ae5c67f96c18773}
+
+\begin{DoxyCompactList}\small\item\em calculate a particular multivariate orthogonal polynomial value evaluated at a particular parameter set \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1SharedOrthogPolyApproxData_a82c66952c58967e65f08cd04f8a9865e}{multivariate\+\_\+polynomial} (const Real\+Vector \&x, const U\+Short\+Array \&indices, const Sizet\+List \&non\+\_\+rand\+\_\+indices)
+\begin{DoxyCompactList}\small\item\em calculate a particular multivariate orthogonal polynomial value over the nonrandom variable subset evaluated at a particular parameter set \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1SharedOrthogPolyApproxData_aaf8df35d279fb8bf2cfbd523ac688d75}{multivariate\+\_\+polynomial\+\_\+gradient} (const Real\+Vector \&x, size\+\_\+t deriv\+\_\+index, const U\+Short\+Array \&indices)\label{classPecos_1_1SharedOrthogPolyApproxData_aaf8df35d279fb8bf2cfbd523ac688d75}
+
+\begin{DoxyCompactList}\small\item\em compute multivariate orthogonal polynomial gradient evaluated at x for term corresponding to indices and derivative variable deriv\+\_\+index \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1SharedOrthogPolyApproxData_a6ca056d626fe196f86c6e3e83ce6e59f}{multivariate\+\_\+polynomial\+\_\+gradient} (const Real\+Vector \&x, size\+\_\+t deriv\+\_\+index, const U\+Short\+Array \&indices, const Sizet\+List \&non\+\_\+rand\+\_\+indices)
+\begin{DoxyCompactList}\small\item\em compute multivariate orthogonal polynomial gradient evaluated at x for term corresponding to indices, for derivative variable deriv\+\_\+index, and for a nonrandom variable subset \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1SharedOrthogPolyApproxData_a3bdb695c8bd2207a8fac05b345960f18}{multivariate\+\_\+polynomial\+\_\+hessian} (const Real\+Vector \&x, size\+\_\+t deriv\+\_\+index\+\_\+i, size\+\_\+t deriv\+\_\+index\+\_\+j, const U\+Short\+Array \&indices)\label{classPecos_1_1SharedOrthogPolyApproxData_a3bdb695c8bd2207a8fac05b345960f18}
+
+\begin{DoxyCompactList}\small\item\em compute multivariate orthogonal polynomial Hessian for term corresponding to deriv\+\_\+index, evaluated at x \end{DoxyCompactList}\item 
+const Real\+Vector \& \hyperlink{classPecos_1_1SharedOrthogPolyApproxData_a3f1d99f04ecf6f8d8bec6163bc83b657}{multivariate\+\_\+polynomial\+\_\+gradient\+\_\+vector} (const Real\+Vector \&x, const U\+Short\+Array \&indices)\label{classPecos_1_1SharedOrthogPolyApproxData_a3f1d99f04ecf6f8d8bec6163bc83b657}
+
+\begin{DoxyCompactList}\small\item\em calculate multivariate orthogonal polynomial gradient vector evaluated at a particular parameter set \end{DoxyCompactList}\item 
+const Real\+Vector \& \hyperlink{classPecos_1_1SharedOrthogPolyApproxData_af31e66c016dda59ca47b3c24f5e97793}{multivariate\+\_\+polynomial\+\_\+gradient\+\_\+vector} (const Real\+Vector \&x, const U\+Short\+Array \&indices, const Sizet\+Array \&dvv)\label{classPecos_1_1SharedOrthogPolyApproxData_af31e66c016dda59ca47b3c24f5e97793}
+
+\begin{DoxyCompactList}\small\item\em calculate multivariate orthogonal polynomial gradient vector with respect to specified dvv and evaluated at a particular parameter set \end{DoxyCompactList}\item 
+const Real\+Sym\+Matrix \& \hyperlink{classPecos_1_1SharedOrthogPolyApproxData_a5b9320bbcac875653a205a019c4cd18a}{multivariate\+\_\+polynomial\+\_\+hessian\+\_\+matrix} (const Real\+Vector \&x, const U\+Short\+Array \&indices)\label{classPecos_1_1SharedOrthogPolyApproxData_a5b9320bbcac875653a205a019c4cd18a}
+
+\begin{DoxyCompactList}\small\item\em calculate multivariate orthogonal polynomial gradient vector evaluated at a particular parameter set \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1SharedOrthogPolyApproxData_a7891e8555a3ba3a61f789f770a1c5793}{update\+\_\+pareto\+\_\+set} (const U\+Short2\+D\+Array \&\hyperlink{classPecos_1_1SharedOrthogPolyApproxData_ad93cb921a0df31fce4696f0051fe6a33}{multi\+\_\+index}, U\+Short2\+D\+Array \&combined\+\_\+pareto)\label{classPecos_1_1SharedOrthogPolyApproxData_a7891e8555a3ba3a61f789f770a1c5793}
+
+\begin{DoxyCompactList}\small\item\em define/update a combined Pareto set with a new multi\+\_\+index by omitting terms that are weakly Pareto dominated (more omissions = smaller resulting set) \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1SharedOrthogPolyApproxData_a00ebe33cb903007f55709cf1b73073be}{update\+\_\+pareto\+\_\+set} (const U\+Short\+Array \&mi\+\_\+i, U\+Short2\+D\+Array \&combined\+\_\+pareto)\label{classPecos_1_1SharedOrthogPolyApproxData_a00ebe33cb903007f55709cf1b73073be}
+
+\begin{DoxyCompactList}\small\item\em define/update a combined Pareto set for a new multi\+\_\+index term \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1SharedOrthogPolyApproxData_ab8493c41a298acac761d46a2e74c5cf2}{update\+\_\+frontier} (const U\+Short\+Array\+Set \&\hyperlink{classPecos_1_1SharedOrthogPolyApproxData_ad93cb921a0df31fce4696f0051fe6a33}{multi\+\_\+index}, U\+Short\+Array\+Set \&mi\+\_\+frontier)\label{classPecos_1_1SharedOrthogPolyApproxData_ab8493c41a298acac761d46a2e74c5cf2}
+
+\begin{DoxyCompactList}\small\item\em define/update a leading multi\+\_\+index frontier omitting points that are strongly Pareto dominated (fewer omissions = larger resulting set) \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1SharedOrthogPolyApproxData_a133e0886ef37cddfd5236be9e89248ca}{update\+\_\+frontier} (const U\+Short2\+D\+Array \&\hyperlink{classPecos_1_1SharedOrthogPolyApproxData_ad93cb921a0df31fce4696f0051fe6a33}{multi\+\_\+index}, U\+Short\+Array\+Set \&mi\+\_\+frontier)\label{classPecos_1_1SharedOrthogPolyApproxData_a133e0886ef37cddfd5236be9e89248ca}
+
+\begin{DoxyCompactList}\small\item\em define/update a leading multi\+\_\+index frontier omitting points that are strongly Pareto dominated (fewer omissions = larger resulting set) \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1SharedOrthogPolyApproxData_aac256db072ad293acc50eed9f21bb2b3}{update\+\_\+frontier} (const U\+Short\+Array \&mi\+\_\+i, U\+Short\+Array\+Set \&mi\+\_\+frontier)\label{classPecos_1_1SharedOrthogPolyApproxData_aac256db072ad293acc50eed9f21bb2b3}
+
+\begin{DoxyCompactList}\small\item\em update/update a leading multi\+\_\+index frontier for a new multi\+\_\+index term \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1SharedOrthogPolyApproxData_a7b76d1a54906815bfdd2de208f7f0cc2}{assess\+\_\+dominance} (const U\+Short\+Array \&new\+\_\+order, const U\+Short\+Array \&existing\+\_\+order, bool \&new\+\_\+dominated, bool \&existing\+\_\+dominated)
+\begin{DoxyCompactList}\small\item\em assess bi-\/directional weak dominance for a \char`\"{}challenger\char`\"{} polynomial index set against an \char`\"{}incumbent\char`\"{} polynomial index set \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1SharedOrthogPolyApproxData_a1d206c4e650831c15ed5d59a4ecb3ae7}{assess\+\_\+strong\+\_\+dominance} (const U\+Short\+Array \&order\+\_\+a, const U\+Short\+Array \&order\+\_\+b, bool \&a\+\_\+dominated, bool \&b\+\_\+dominated)
+\begin{DoxyCompactList}\small\item\em assess bi-\/directional strong dominance between two polynomial index sets \end{DoxyCompactList}\item 
+bool \hyperlink{classPecos_1_1SharedOrthogPolyApproxData_acde7b33e8905ee78af8b29389c527712}{zero\+\_\+random} (const U\+Short\+Array \&indices) const \label{classPecos_1_1SharedOrthogPolyApproxData_acde7b33e8905ee78af8b29389c527712}
+
+\begin{DoxyCompactList}\small\item\em test for nonzero indices in random variable subset \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1SharedOrthogPolyApproxData_aa171b2364ff0d1f957f1df15739553c4}{get\+\_\+tag} (char $\ast$tag, size\+\_\+t j, unsigned short order) const \label{classPecos_1_1SharedOrthogPolyApproxData_aa171b2364ff0d1f957f1df15739553c4}
+
+\begin{DoxyCompactList}\small\item\em Generate the coefficient tag for variable j of given expansion term order. \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1SharedOrthogPolyApproxData_aa8fb8d2ab861defc076706d1fabe98d4}{gradient\+\_\+check} ()
+\begin{DoxyCompactList}\small\item\em tests 1D gradient computations (active in D\+E\+B\+UG compile mode) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Real \hyperlink{classPecos_1_1SharedOrthogPolyApproxData_a81471d428f2c81abb5d7965e32bc5e80}{multivariate\+\_\+polynomial} (const Real\+Vector \&x, const U\+Short\+Array \&indices, std\+::vector$<$ \hyperlink{classPecos_1_1BasisPolynomial}{Basis\+Polynomial} $>$ \&\hyperlink{classPecos_1_1SharedOrthogPolyApproxData_a7282b8c27142b1b15cd79922c3f55e19}{polynomial\+\_\+basis})\label{classPecos_1_1SharedOrthogPolyApproxData_a81471d428f2c81abb5d7965e32bc5e80}
+
+\begin{DoxyCompactList}\small\item\em calculate a particular multivariate orthogonal polynomial value evaluated at a particular parameter set \end{DoxyCompactList}\item 
+static Real \hyperlink{classPecos_1_1SharedOrthogPolyApproxData_a9af296d5989954405a060f1506e6957d}{multivariate\+\_\+polynomial} (const Real\+Vector \&x, const U\+Short\+Array \&indices, const Sizet\+List \&non\+\_\+rand\+\_\+indices, std\+::vector$<$ \hyperlink{classPecos_1_1BasisPolynomial}{Basis\+Polynomial} $>$ \&\hyperlink{classPecos_1_1SharedOrthogPolyApproxData_a7282b8c27142b1b15cd79922c3f55e19}{polynomial\+\_\+basis})
+\begin{DoxyCompactList}\small\item\em calculate a particular multivariate orthogonal polynomial value over the nonrandom variable subset evaluated at a particular parameter set \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Short\+Array \hyperlink{classPecos_1_1SharedOrthogPolyApproxData_aa9641c919d4da3793dbdbbc4480564a0}{orthog\+Poly\+Types}\label{classPecos_1_1SharedOrthogPolyApproxData_aa9641c919d4da3793dbdbbc4480564a0}
+
+\begin{DoxyCompactList}\small\item\em array of basis types for each one-\/dimensional orthogonal polynomial\+: H\+E\+R\+M\+I\+T\+E\+\_\+\+O\+R\+T\+H\+OG, L\+E\+G\+E\+N\+D\+R\+E\+\_\+\+O\+R\+T\+H\+OG, L\+A\+G\+U\+E\+R\+R\+E\+\_\+\+O\+R\+T\+H\+OG, J\+A\+C\+O\+B\+I\+\_\+\+O\+R\+T\+H\+OG, G\+E\+N\+\_\+\+L\+A\+G\+U\+E\+R\+R\+E\+\_\+\+O\+R\+T\+H\+OG, C\+H\+E\+B\+Y\+S\+H\+E\+V\+\_\+\+O\+R\+T\+H\+OG, or N\+U\+M\+\_\+\+G\+E\+N\+\_\+\+O\+R\+T\+H\+OG \end{DoxyCompactList}\item 
+std\+::vector$<$ \hyperlink{classPecos_1_1BasisPolynomial}{Basis\+Polynomial} $>$ \hyperlink{classPecos_1_1SharedOrthogPolyApproxData_a9b1c6d91c0a7c0dcf1c392e5f2481eec}{polynomial\+Basis}\label{classPecos_1_1SharedOrthogPolyApproxData_a9b1c6d91c0a7c0dcf1c392e5f2481eec}
+
+\begin{DoxyCompactList}\small\item\em array of one-\/dimensional basis polynomial objects which are used in constructing the multivariate orthogonal/interpolation polynomials \end{DoxyCompactList}\item 
+U\+Short\+Array \hyperlink{classPecos_1_1SharedOrthogPolyApproxData_a73cfe58f0e35ea62e369fc419d48e670}{approx\+Order}\label{classPecos_1_1SharedOrthogPolyApproxData_a73cfe58f0e35ea62e369fc419d48e670}
+
+\begin{DoxyCompactList}\small\item\em order of orthogonal polynomial expansion \end{DoxyCompactList}\item 
+U\+Short\+Array \hyperlink{classPecos_1_1SharedOrthogPolyApproxData_a25d4b3e9181f42c892320992157f275a}{approx\+Order\+Prev}\label{classPecos_1_1SharedOrthogPolyApproxData_a25d4b3e9181f42c892320992157f275a}
+
+\begin{DoxyCompactList}\small\item\em previous value of approx\+Order; used for detecting when a multi\+Index update is needed \end{DoxyCompactList}\item 
+U\+Short2\+D\+Array \hyperlink{classPecos_1_1SharedOrthogPolyApproxData_a0fbdd5817bc6dd026f6d42269ca8e703}{multi\+Index}\label{classPecos_1_1SharedOrthogPolyApproxData_a0fbdd5817bc6dd026f6d42269ca8e703}
+
+\begin{DoxyCompactList}\small\item\em number of exp terms-\/by-\/number of vars array for identifying the orders of the one-\/dimensional orthogonal polynomials contributing to each of the multivariate orthogonal polynomials \end{DoxyCompactList}\item 
+U\+Short2\+D\+Array \hyperlink{classPecos_1_1SharedOrthogPolyApproxData_aadaab08e6fa9077251a246bfbbbf7c62}{combined\+Multi\+Index}\label{classPecos_1_1SharedOrthogPolyApproxData_aadaab08e6fa9077251a246bfbbbf7c62}
+
+\begin{DoxyCompactList}\small\item\em multi-\/index that is the result of expansion combination \end{DoxyCompactList}\item 
+U\+Short2\+D\+Array \hyperlink{classPecos_1_1SharedOrthogPolyApproxData_a8d60d6cbbbaccb054fbef719fc888541}{stored\+Approx\+Order}\label{classPecos_1_1SharedOrthogPolyApproxData_a8d60d6cbbbaccb054fbef719fc888541}
+
+\begin{DoxyCompactList}\small\item\em array of stored approx\+Order\textquotesingle{}s cached in store\+\_\+coefficients() for use in combine\+\_\+coefficients() \end{DoxyCompactList}\item 
+U\+Short3\+D\+Array \hyperlink{classPecos_1_1SharedOrthogPolyApproxData_a626cd89b67ee81f1dc1fc0f3eaf094d2}{stored\+Multi\+Index}\label{classPecos_1_1SharedOrthogPolyApproxData_a626cd89b67ee81f1dc1fc0f3eaf094d2}
+
+\begin{DoxyCompactList}\small\item\em array of stored multi\+Index\textquotesingle{}s cached in store\+\_\+coefficients() for use in combine\+\_\+coefficients() \end{DoxyCompactList}\item 
+Sizet2\+D\+Array \hyperlink{classPecos_1_1SharedOrthogPolyApproxData_ad37f78c9e690a8ef5543619add66d951}{stored\+Multi\+Index\+Map}\label{classPecos_1_1SharedOrthogPolyApproxData_ad37f78c9e690a8ef5543619add66d951}
+
+\begin{DoxyCompactList}\small\item\em mapping of terms when aggregating stored\+Multi\+Index with multi\+Index in \hyperlink{classPecos_1_1SharedOrthogPolyApproxData_a9eb4d06b29a49d454be12741309d8a2b}{pre\+\_\+combine\+\_\+data()} \end{DoxyCompactList}\item 
+U\+Short3\+D\+Array \hyperlink{classPecos_1_1SharedOrthogPolyApproxData_a0d72fce3d7a8d4b547ba6c49e9a121c4}{tp\+Multi\+Index}
+\begin{DoxyCompactList}\small\item\em num\+Smolyak\+Indices-\/by-\/num\+Tensor\+Product\+Pts-\/by-\/num\+Vars array for identifying the orders of the one-\/dimensional orthogonal polynomials contributing to each of the multivariate orthogonal polynomials. \end{DoxyCompactList}\item 
+Sizet2\+D\+Array \hyperlink{classPecos_1_1SharedOrthogPolyApproxData_a6c6c00366f3f3b52d766e0b520ec13b8}{tp\+Multi\+Index\+Map}\label{classPecos_1_1SharedOrthogPolyApproxData_a6c6c00366f3f3b52d766e0b520ec13b8}
+
+\begin{DoxyCompactList}\small\item\em sparse grid bookkeeping\+: mapping from num tensor-\/products by tensor-\/product multi-\/indices into aggregated multi\+Index \end{DoxyCompactList}\item 
+Sizet\+Array \hyperlink{classPecos_1_1SharedOrthogPolyApproxData_a3f1dac68dfd3c18f07d6b4455e8ab112}{tp\+Multi\+Index\+Map\+Ref}\label{classPecos_1_1SharedOrthogPolyApproxData_a3f1dac68dfd3c18f07d6b4455e8ab112}
+
+\begin{DoxyCompactList}\small\item\em sparse grid bookkeeping\+: reference points for tp\+Multi\+Index\+Map \end{DoxyCompactList}\item 
+std\+::deque$<$ U\+Short2\+D\+Array $>$ \hyperlink{classPecos_1_1SharedOrthogPolyApproxData_a5dfac1fa1c4482e70c72826daa33c16e}{popped\+T\+P\+Multi\+Index}\label{classPecos_1_1SharedOrthogPolyApproxData_a5dfac1fa1c4482e70c72826daa33c16e}
+
+\begin{DoxyCompactList}\small\item\em popped instances of tp\+Multi\+Index that were computed but not selected \end{DoxyCompactList}\item 
+std\+::deque$<$ Sizet\+Array $>$ \hyperlink{classPecos_1_1SharedOrthogPolyApproxData_af52316f46f8364c999cc08d821a48dcc}{popped\+T\+P\+Multi\+Index\+Map}\label{classPecos_1_1SharedOrthogPolyApproxData_af52316f46f8364c999cc08d821a48dcc}
+
+\begin{DoxyCompactList}\small\item\em popped instances of tp\+Multi\+Index\+Map that were computed but not selected \end{DoxyCompactList}\item 
+std\+::deque$<$ size\+\_\+t $>$ \hyperlink{classPecos_1_1SharedOrthogPolyApproxData_a177be9ac834e3c3103e5d1eab51bd173}{popped\+T\+P\+Multi\+Index\+Map\+Ref}\label{classPecos_1_1SharedOrthogPolyApproxData_a177be9ac834e3c3103e5d1eab51bd173}
+
+\begin{DoxyCompactList}\small\item\em popped instances of tp\+Multi\+Index\+Map\+Ref that were computed but not selected \end{DoxyCompactList}\item 
+size\+\_\+t \hyperlink{classPecos_1_1SharedOrthogPolyApproxData_aed737882b65bc8536b4aa19e071cef74}{push\+Index}\label{classPecos_1_1SharedOrthogPolyApproxData_aed737882b65bc8536b4aa19e071cef74}
+
+\begin{DoxyCompactList}\small\item\em index into popped sets of data to be restored (stored in this class for used by each \hyperlink{classPecos_1_1ProjectOrthogPolyApproximation}{Project\+Orthog\+Poly\+Approximation}) \end{DoxyCompactList}\item 
+Real\+Vector \hyperlink{classPecos_1_1SharedOrthogPolyApproxData_aa80b829d479c23093079c205a4be1308}{mvp\+Gradient}\label{classPecos_1_1SharedOrthogPolyApproxData_aa80b829d479c23093079c205a4be1308}
+
+\begin{DoxyCompactList}\small\item\em Data vector for storing the gradients of individual expansion term polynomials (see \hyperlink{classPecos_1_1SharedOrthogPolyApproxData_a3f1d99f04ecf6f8d8bec6163bc83b657}{multivariate\+\_\+polynomial\+\_\+gradient\+\_\+vector()}) \end{DoxyCompactList}\item 
+Real\+Sym\+Matrix \hyperlink{classPecos_1_1SharedOrthogPolyApproxData_ae6e4cbe9425f39cfe1dd453bfecdb27f}{mvp\+Hessian}\label{classPecos_1_1SharedOrthogPolyApproxData_ae6e4cbe9425f39cfe1dd453bfecdb27f}
+
+\begin{DoxyCompactList}\small\item\em Data matrix for storing the Hessians of individual expansion term polynomials (see \hyperlink{classPecos_1_1SharedOrthogPolyApproxData_a5b9320bbcac875653a205a019c4cd18a}{multivariate\+\_\+polynomial\+\_\+hessian\+\_\+matrix()}) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bfseries Orthog\+Poly\+Approximation}\label{classPecos_1_1SharedOrthogPolyApproxData_ad950e19c243902dbc8e6c49ca6ab5d2b}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Derived approximation class for orthogonal polynomials (global approximation). 
+
+The \hyperlink{classPecos_1_1SharedOrthogPolyApproxData}{Shared\+Orthog\+Poly\+Approx\+Data} class provides a global approximation based on orthogonal polynomials. It is used primarily for polynomial chaos expansions (for stochastic finite element approaches to uncertainty quantification). 
+
+\subsection{Member Function Documentation}
+\index{Pecos\+::\+Shared\+Orthog\+Poly\+Approx\+Data@{Pecos\+::\+Shared\+Orthog\+Poly\+Approx\+Data}!construct\+\_\+basis@{construct\+\_\+basis}}
+\index{construct\+\_\+basis@{construct\+\_\+basis}!Pecos\+::\+Shared\+Orthog\+Poly\+Approx\+Data@{Pecos\+::\+Shared\+Orthog\+Poly\+Approx\+Data}}
+\subsubsection[{\texorpdfstring{construct\+\_\+basis(const Short\+Array \&u\+\_\+types, const Aleatory\+Dist\+Params \&adp)}{construct_basis(const ShortArray &u_types, const AleatoryDistParams &adp)}}]{\setlength{\rightskip}{0pt plus 5cm}void construct\+\_\+basis (
+\begin{DoxyParamCaption}
+\item[{const Short\+Array \&}]{u\+\_\+types, }
+\item[{const {\bf Aleatory\+Dist\+Params} \&}]{adp}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classPecos_1_1SharedOrthogPolyApproxData_a402d2fb8bc3072b9a776c318f4b17876}
+
+
+invoke \hyperlink{classPecos_1_1SharedPolyApproxData_a5c55db28633dec7b4247ae239a8667fc}{initialize\+\_\+orthogonal\+\_\+basis\+\_\+types\+\_\+rules()}, \hyperlink{classPecos_1_1SharedPolyApproxData_a9761a3bbd8c1737710737752432b533a}{initialize\+\_\+polynomial\+\_\+basis()}, and, if needed, \hyperlink{classPecos_1_1SharedPolyApproxData_a97e10bdee50a60499d893502e8294409}{update\+\_\+basis\+\_\+distribution\+\_\+parameters()} using class member data 
+
+This function is invoked to create orthog\+Poly\+Types and polynomial\+Basis for cases where they have not already been created by an \hyperlink{classPecos_1_1IntegrationDriver}{Integration\+Driver} (i.\+e., expansion\+\_\+samples or regression). 
+
+References Shared\+Poly\+Approx\+Data\+::basis\+Config\+Options, Shared\+Orthog\+Poly\+Approx\+Data\+::orthog\+Poly\+Types, and Shared\+Orthog\+Poly\+Approx\+Data\+::polynomial\+Basis.
+
+
+
+Referenced by Shared\+Orthog\+Poly\+Approx\+Data\+::construct\+\_\+basis(), and Shared\+Orthog\+Poly\+Approx\+Data\+::increment\+\_\+order().
+
+\index{Pecos\+::\+Shared\+Orthog\+Poly\+Approx\+Data@{Pecos\+::\+Shared\+Orthog\+Poly\+Approx\+Data}!construct\+\_\+basis@{construct\+\_\+basis}}
+\index{construct\+\_\+basis@{construct\+\_\+basis}!Pecos\+::\+Shared\+Orthog\+Poly\+Approx\+Data@{Pecos\+::\+Shared\+Orthog\+Poly\+Approx\+Data}}
+\subsubsection[{\texorpdfstring{construct\+\_\+basis(const Short\+Array \&u\+\_\+types, const Aleatory\+Dist\+Params \&adp, const Basis\+Config\+Options \&bc\+\_\+options, std\+::vector$<$ Basis\+Polynomial $>$ \&poly\+\_\+basis)}{construct_basis(const ShortArray &u_types, const AleatoryDistParams &adp, const BasisConfigOptions &bc_options, std::vector< BasisPolynomial > &poly_basis)}}]{\setlength{\rightskip}{0pt plus 5cm}void construct\+\_\+basis (
+\begin{DoxyParamCaption}
+\item[{const Short\+Array \&}]{u\+\_\+types, }
+\item[{const {\bf Aleatory\+Dist\+Params} \&}]{adp, }
+\item[{const {\bf Basis\+Config\+Options} \&}]{bc\+\_\+options, }
+\item[{std\+::vector$<$ {\bf Basis\+Polynomial} $>$ \&}]{poly\+\_\+basis}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{classPecos_1_1SharedOrthogPolyApproxData_aa89044de171121ba6852986b1e308dc7}
+
+
+invoke \hyperlink{classPecos_1_1SharedPolyApproxData_a5c55db28633dec7b4247ae239a8667fc}{initialize\+\_\+orthogonal\+\_\+basis\+\_\+types\+\_\+rules()}, \hyperlink{classPecos_1_1SharedPolyApproxData_a9761a3bbd8c1737710737752432b533a}{initialize\+\_\+polynomial\+\_\+basis()}, and, if needed, \hyperlink{classPecos_1_1SharedPolyApproxData_a97e10bdee50a60499d893502e8294409}{update\+\_\+basis\+\_\+distribution\+\_\+parameters()} using passed data 
+
+This function is invoked to create orthog\+Poly\+Types and polynomial\+Basis for cases where they have not already been created by an \hyperlink{classPecos_1_1IntegrationDriver}{Integration\+Driver} (i.\+e., expansion\+\_\+samples or regression). 
+
+References Shared\+Orthog\+Poly\+Approx\+Data\+::construct\+\_\+basis().
+
+\index{Pecos\+::\+Shared\+Orthog\+Poly\+Approx\+Data@{Pecos\+::\+Shared\+Orthog\+Poly\+Approx\+Data}!construct\+\_\+basis@{construct\+\_\+basis}}
+\index{construct\+\_\+basis@{construct\+\_\+basis}!Pecos\+::\+Shared\+Orthog\+Poly\+Approx\+Data@{Pecos\+::\+Shared\+Orthog\+Poly\+Approx\+Data}}
+\subsubsection[{\texorpdfstring{construct\+\_\+basis(const Short\+Array \&u\+\_\+types, const Aleatory\+Dist\+Params \&adp, const Basis\+Config\+Options \&bc\+\_\+options, std\+::vector$<$ Basis\+Polynomial $>$ \&poly\+\_\+basis, Short\+Array \&basis\+\_\+types, Short\+Array \&colloc\+\_\+rules)}{construct_basis(const ShortArray &u_types, const AleatoryDistParams &adp, const BasisConfigOptions &bc_options, std::vector< BasisPolynomial > &poly_basis, ShortArray &basis_types, ShortArray &colloc_rules)}}]{\setlength{\rightskip}{0pt plus 5cm}void construct\+\_\+basis (
+\begin{DoxyParamCaption}
+\item[{const Short\+Array \&}]{u\+\_\+types, }
+\item[{const {\bf Aleatory\+Dist\+Params} \&}]{adp, }
+\item[{const {\bf Basis\+Config\+Options} \&}]{bc\+\_\+options, }
+\item[{std\+::vector$<$ {\bf Basis\+Polynomial} $>$ \&}]{poly\+\_\+basis, }
+\item[{Short\+Array \&}]{basis\+\_\+types, }
+\item[{Short\+Array \&}]{colloc\+\_\+rules}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{classPecos_1_1SharedOrthogPolyApproxData_a99c558e3430c0c4d712e5512fef72954}
+
+
+invoke \hyperlink{classPecos_1_1SharedPolyApproxData_a5c55db28633dec7b4247ae239a8667fc}{initialize\+\_\+orthogonal\+\_\+basis\+\_\+types\+\_\+rules()}, \hyperlink{classPecos_1_1SharedPolyApproxData_a9761a3bbd8c1737710737752432b533a}{initialize\+\_\+polynomial\+\_\+basis()}, and, if needed, \hyperlink{classPecos_1_1SharedPolyApproxData_a97e10bdee50a60499d893502e8294409}{update\+\_\+basis\+\_\+distribution\+\_\+parameters()} using passed data 
+
+This function is invoked to create orthog\+Poly\+Types and polynomial\+Basis for cases where they have not already been created by an \hyperlink{classPecos_1_1IntegrationDriver}{Integration\+Driver} (i.\+e., expansion\+\_\+samples or regression). 
+
+References Shared\+Poly\+Approx\+Data\+::initialize\+\_\+orthogonal\+\_\+basis\+\_\+types\+\_\+rules(), Shared\+Poly\+Approx\+Data\+::initialize\+\_\+polynomial\+\_\+basis(), Shared\+Orthog\+Poly\+Approx\+Data\+::orthogonal\+\_\+basis\+\_\+types(), and Shared\+Poly\+Approx\+Data\+::update\+\_\+basis\+\_\+distribution\+\_\+parameters().
+
+\index{Pecos\+::\+Shared\+Orthog\+Poly\+Approx\+Data@{Pecos\+::\+Shared\+Orthog\+Poly\+Approx\+Data}!store\+\_\+data@{store\+\_\+data}}
+\index{store\+\_\+data@{store\+\_\+data}!Pecos\+::\+Shared\+Orthog\+Poly\+Approx\+Data@{Pecos\+::\+Shared\+Orthog\+Poly\+Approx\+Data}}
+\subsubsection[{\texorpdfstring{store\+\_\+data(size\+\_\+t index=\+\_\+\+N\+P\+O\+S)}{store_data(size_t index=_NPOS)}}]{\setlength{\rightskip}{0pt plus 5cm}void store\+\_\+data (
+\begin{DoxyParamCaption}
+\item[{size\+\_\+t}]{index = {\ttfamily \+\_\+NPOS}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classPecos_1_1SharedOrthogPolyApproxData_a3cc1fd74564bd6f83a59ac8ddc1fc264}
+Default storage, specialized in derived classes. 
+
+Implements \hyperlink{classPecos_1_1SharedPolyApproxData_a9a5bd0d9072d9cf3355f788247197a43}{Shared\+Poly\+Approx\+Data}.
+
+
+
+References Shared\+Orthog\+Poly\+Approx\+Data\+::approx\+Order, Shared\+Poly\+Approx\+Data\+::driver\+Rep, Expansion\+Config\+Options\+::exp\+Coeffs\+Soln\+Approach, Shared\+Poly\+Approx\+Data\+::exp\+Config\+Options, Shared\+Orthog\+Poly\+Approx\+Data\+::multi\+Index, Integration\+Driver\+::store\+\_\+grid(), Shared\+Orthog\+Poly\+Approx\+Data\+::stored\+Approx\+Order, and Shared\+Orthog\+Poly\+Approx\+Data\+::stored\+Multi\+Index.
+
+\index{Pecos\+::\+Shared\+Orthog\+Poly\+Approx\+Data@{Pecos\+::\+Shared\+Orthog\+Poly\+Approx\+Data}!sparse\+\_\+grid\+\_\+level\+\_\+to\+\_\+expansion\+\_\+order@{sparse\+\_\+grid\+\_\+level\+\_\+to\+\_\+expansion\+\_\+order}}
+\index{sparse\+\_\+grid\+\_\+level\+\_\+to\+\_\+expansion\+\_\+order@{sparse\+\_\+grid\+\_\+level\+\_\+to\+\_\+expansion\+\_\+order}!Pecos\+::\+Shared\+Orthog\+Poly\+Approx\+Data@{Pecos\+::\+Shared\+Orthog\+Poly\+Approx\+Data}}
+\subsubsection[{\texorpdfstring{sparse\+\_\+grid\+\_\+level\+\_\+to\+\_\+expansion\+\_\+order(\+Combined\+Sparse\+Grid\+Driver $\ast$csg\+\_\+driver, const U\+Short\+Array \&levels, U\+Short\+Array \&exp\+\_\+order)}{sparse_grid_level_to_expansion_order(CombinedSparseGridDriver *csg_driver, const UShortArray &levels, UShortArray &exp_order)}}]{\setlength{\rightskip}{0pt plus 5cm}void sparse\+\_\+grid\+\_\+level\+\_\+to\+\_\+expansion\+\_\+order (
+\begin{DoxyParamCaption}
+\item[{{\bf Combined\+Sparse\+Grid\+Driver} $\ast$}]{csg\+\_\+driver, }
+\item[{const U\+Short\+Array \&}]{level, }
+\item[{U\+Short\+Array \&}]{exp\+\_\+order}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classPecos_1_1SharedOrthogPolyApproxData_a774f7ff2f3b6679f3781ab4527e454d6}
+
+
+convert a sparse grid index set and a growth setting to an integrand\+\_\+order 
+
+The optional growth\+\_\+rate supports the option of forcing the computed integrand order to be conservative in the presence of exponential growth due to nested quadrature rules. This avoids aggressive formulation of P\+CE expansion orders when an exponential rule takes a large jump that is not balanced by the other index set component mappings. Note that restricting the expansion growth directly from the level ($\ast$\+\_\+\+R\+E\+S\+T\+R\+I\+C\+T\+E\+D\+\_\+\+G\+R\+O\+W\+TH cases below used by S\+P\+A\+R\+S\+E\+\_\+\+I\+N\+T\+\_\+\+R\+E\+S\+T\+R\+\_\+\+T\+E\+N\+S\+O\+R\+\_\+\+S\+U\+M\+\_\+\+E\+XP) is similar but not identical to restricting the quadrature order growth from the level and then computing the integrand and expansion orders from the restricted quadrature order (default U\+N\+R\+E\+S\+T\+R\+I\+C\+T\+E\+D\+\_\+\+G\+R\+O\+W\+TH case below used by S\+P\+A\+R\+S\+E\+\_\+\+I\+N\+T\+\_\+\+T\+E\+N\+S\+O\+R\+\_\+\+S\+U\+M\+\_\+\+E\+XP and T\+E\+N\+S\+O\+R\+\_\+\+I\+N\+T\+\_\+\+T\+E\+N\+S\+O\+R\+\_\+\+S\+U\+M\+\_\+\+E\+XP, where quadrature rule restriction happens elsewhere). In particular, these approaches differ in granularity of control, since the former approach grows linearly and the latter approach selects the minimal quadrature order (from nonlinear growth or lookup) that meets a linear target. 
+
+References Shared\+Orthog\+Poly\+Approx\+Data\+::integrand\+\_\+order\+\_\+to\+\_\+expansion\+\_\+order(), Sparse\+Grid\+Driver\+::level\+\_\+to\+\_\+order(), and Shared\+Orthog\+Poly\+Approx\+Data\+::quadrature\+\_\+order\+\_\+to\+\_\+integrand\+\_\+order().
+
+
+
+Referenced by Shared\+Orthog\+Poly\+Approx\+Data\+::clear\+\_\+stored\+\_\+data(), Shared\+Orthog\+Poly\+Approx\+Data\+::increment\+\_\+trial\+\_\+set(), Shared\+Project\+Orthog\+Poly\+Approx\+Data\+::pre\+\_\+combine\+\_\+data(), and Shared\+Project\+Orthog\+Poly\+Approx\+Data\+::sparse\+\_\+grid\+\_\+multi\+\_\+index().
+
+\index{Pecos\+::\+Shared\+Orthog\+Poly\+Approx\+Data@{Pecos\+::\+Shared\+Orthog\+Poly\+Approx\+Data}!append\+\_\+multi\+\_\+index@{append\+\_\+multi\+\_\+index}}
+\index{append\+\_\+multi\+\_\+index@{append\+\_\+multi\+\_\+index}!Pecos\+::\+Shared\+Orthog\+Poly\+Approx\+Data@{Pecos\+::\+Shared\+Orthog\+Poly\+Approx\+Data}}
+\subsubsection[{\texorpdfstring{append\+\_\+multi\+\_\+index(const U\+Short2\+D\+Array \&append\+\_\+mi, U\+Short2\+D\+Array \&combined\+\_\+mi)}{append_multi_index(const UShort2DArray &append_mi, UShort2DArray &combined_mi)}}]{\setlength{\rightskip}{0pt plus 5cm}void append\+\_\+multi\+\_\+index (
+\begin{DoxyParamCaption}
+\item[{const U\+Short2\+D\+Array \&}]{append\+\_\+mi, }
+\item[{U\+Short2\+D\+Array \&}]{combined\+\_\+mi}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classPecos_1_1SharedOrthogPolyApproxData_a0ee0bf875553fe6a252e52a15e1f45c7}
+
+
+append multi-\/indices from append\+\_\+mi that do not already appear in combined\+\_\+mi 
+
+Append to combined\+\_\+mi based on append\+\_\+mi. 
+
+Referenced by Regress\+Orthog\+Poly\+Approximation\+::adapt\+\_\+regression(), Regress\+Orthog\+Poly\+Approximation\+::advance\+\_\+multi\+\_\+index(), Shared\+Orthog\+Poly\+Approx\+Data\+::append\+\_\+leading\+\_\+multi\+\_\+index(), Shared\+Orthog\+Poly\+Approx\+Data\+::append\+\_\+multi\+\_\+index(), Shared\+Orthog\+Poly\+Approx\+Data\+::increment\+\_\+trial\+\_\+set(), Shared\+Regress\+Orthog\+Poly\+Approx\+Data\+::increment\+\_\+trial\+\_\+set(), Shared\+Orthog\+Poly\+Approx\+Data\+::integrand\+\_\+order\+\_\+to\+\_\+expansion\+\_\+order(), Shared\+Project\+Orthog\+Poly\+Approx\+Data\+::pre\+\_\+combine\+\_\+data(), Shared\+Orthog\+Poly\+Approx\+Data\+::pre\+\_\+combine\+\_\+data(), Shared\+Project\+Orthog\+Poly\+Approx\+Data\+::pre\+\_\+finalize\+\_\+data(), Shared\+Orthog\+Poly\+Approx\+Data\+::pre\+\_\+push\+\_\+trial\+\_\+set(), Shared\+Regress\+Orthog\+Poly\+Approx\+Data\+::set\+\_\+restriction(), and Shared\+Project\+Orthog\+Poly\+Approx\+Data\+::sparse\+\_\+grid\+\_\+multi\+\_\+index().
+
+\index{Pecos\+::\+Shared\+Orthog\+Poly\+Approx\+Data@{Pecos\+::\+Shared\+Orthog\+Poly\+Approx\+Data}!append\+\_\+multi\+\_\+index@{append\+\_\+multi\+\_\+index}}
+\index{append\+\_\+multi\+\_\+index@{append\+\_\+multi\+\_\+index}!Pecos\+::\+Shared\+Orthog\+Poly\+Approx\+Data@{Pecos\+::\+Shared\+Orthog\+Poly\+Approx\+Data}}
+\subsubsection[{\texorpdfstring{append\+\_\+multi\+\_\+index(const U\+Short\+Array\+Set \&append\+\_\+mi, U\+Short2\+D\+Array \&combined\+\_\+mi)}{append_multi_index(const UShortArraySet &append_mi, UShort2DArray &combined_mi)}}]{\setlength{\rightskip}{0pt plus 5cm}void append\+\_\+multi\+\_\+index (
+\begin{DoxyParamCaption}
+\item[{const U\+Short\+Array\+Set \&}]{append\+\_\+mi, }
+\item[{U\+Short2\+D\+Array \&}]{combined\+\_\+mi}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classPecos_1_1SharedOrthogPolyApproxData_ad4251303923381e36766cad6445536fe}
+
+
+append multi-\/indices from append\+\_\+mi that do not already appear in combined\+\_\+mi 
+
+Append to combined\+\_\+mi based on append\+\_\+mi. 
+
+References Shared\+Orthog\+Poly\+Approx\+Data\+::append\+\_\+multi\+\_\+index().
+
+\index{Pecos\+::\+Shared\+Orthog\+Poly\+Approx\+Data@{Pecos\+::\+Shared\+Orthog\+Poly\+Approx\+Data}!append\+\_\+multi\+\_\+index@{append\+\_\+multi\+\_\+index}}
+\index{append\+\_\+multi\+\_\+index@{append\+\_\+multi\+\_\+index}!Pecos\+::\+Shared\+Orthog\+Poly\+Approx\+Data@{Pecos\+::\+Shared\+Orthog\+Poly\+Approx\+Data}}
+\subsubsection[{\texorpdfstring{append\+\_\+multi\+\_\+index(const U\+Short2\+D\+Array \&append\+\_\+mi, U\+Short2\+D\+Array \&combined\+\_\+mi, Sizet\+Array \&append\+\_\+mi\+\_\+map, size\+\_\+t \&append\+\_\+mi\+\_\+map\+\_\+ref)}{append_multi_index(const UShort2DArray &append_mi, UShort2DArray &combined_mi, SizetArray &append_mi_map, size_t &append_mi_map_ref)}}]{\setlength{\rightskip}{0pt plus 5cm}void append\+\_\+multi\+\_\+index (
+\begin{DoxyParamCaption}
+\item[{const U\+Short2\+D\+Array \&}]{append\+\_\+mi, }
+\item[{U\+Short2\+D\+Array \&}]{combined\+\_\+mi, }
+\item[{Sizet\+Array \&}]{append\+\_\+mi\+\_\+map, }
+\item[{size\+\_\+t \&}]{append\+\_\+mi\+\_\+map\+\_\+ref}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classPecos_1_1SharedOrthogPolyApproxData_a70a7a0374c65a96d7bb709ad8bacdf77}
+
+
+append multi-\/indices from append\+\_\+mi that do not already appear in combined\+\_\+mi; define append\+\_\+mi\+\_\+map and append\+\_\+mi\+\_\+map\+\_\+ref 
+
+Append append\+\_\+mi to combined\+\_\+mi, and update append\+\_\+mi\+\_\+map (Sizet\+Array) and append\+\_\+mi\+\_\+map\+\_\+ref to facilitate related aggregations without repeated searching. 
+
+References Shared\+Orthog\+Poly\+Approx\+Data\+::append\+\_\+multi\+\_\+index().
+
+\index{Pecos\+::\+Shared\+Orthog\+Poly\+Approx\+Data@{Pecos\+::\+Shared\+Orthog\+Poly\+Approx\+Data}!append\+\_\+multi\+\_\+index@{append\+\_\+multi\+\_\+index}}
+\index{append\+\_\+multi\+\_\+index@{append\+\_\+multi\+\_\+index}!Pecos\+::\+Shared\+Orthog\+Poly\+Approx\+Data@{Pecos\+::\+Shared\+Orthog\+Poly\+Approx\+Data}}
+\subsubsection[{\texorpdfstring{append\+\_\+multi\+\_\+index(const U\+Short2\+D\+Array \&append\+\_\+mi, U\+Short2\+D\+Array \&combined\+\_\+mi, Sizet\+Set \&append\+\_\+mi\+\_\+map, size\+\_\+t \&append\+\_\+mi\+\_\+map\+\_\+ref)}{append_multi_index(const UShort2DArray &append_mi, UShort2DArray &combined_mi, SizetSet &append_mi_map, size_t &append_mi_map_ref)}}]{\setlength{\rightskip}{0pt plus 5cm}void append\+\_\+multi\+\_\+index (
+\begin{DoxyParamCaption}
+\item[{const U\+Short2\+D\+Array \&}]{append\+\_\+mi, }
+\item[{U\+Short2\+D\+Array \&}]{combined\+\_\+mi, }
+\item[{Sizet\+Set \&}]{append\+\_\+mi\+\_\+map, }
+\item[{size\+\_\+t \&}]{append\+\_\+mi\+\_\+map\+\_\+ref}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classPecos_1_1SharedOrthogPolyApproxData_a0cfa6210c23b848fe07c8618e6e800be}
+
+
+append multi-\/indices from append\+\_\+mi that do not already appear in combined\+\_\+mi; define append\+\_\+mi\+\_\+map and append\+\_\+mi\+\_\+map\+\_\+ref 
+
+Append append\+\_\+mi to combined\+\_\+mi, and update append\+\_\+mi\+\_\+map (Sizet\+Set) and append\+\_\+mi\+\_\+map\+\_\+ref to facilitate related aggregations without repeated searching. 
+
+References Shared\+Orthog\+Poly\+Approx\+Data\+::append\+\_\+leading\+\_\+multi\+\_\+index().
+
+\index{Pecos\+::\+Shared\+Orthog\+Poly\+Approx\+Data@{Pecos\+::\+Shared\+Orthog\+Poly\+Approx\+Data}!append\+\_\+leading\+\_\+multi\+\_\+index@{append\+\_\+leading\+\_\+multi\+\_\+index}}
+\index{append\+\_\+leading\+\_\+multi\+\_\+index@{append\+\_\+leading\+\_\+multi\+\_\+index}!Pecos\+::\+Shared\+Orthog\+Poly\+Approx\+Data@{Pecos\+::\+Shared\+Orthog\+Poly\+Approx\+Data}}
+\subsubsection[{\texorpdfstring{append\+\_\+leading\+\_\+multi\+\_\+index(const U\+Short2\+D\+Array \&append\+\_\+mi, U\+Short2\+D\+Array \&combined\+\_\+mi, Sizet\+Set \&append\+\_\+mi\+\_\+map, size\+\_\+t \&append\+\_\+mi\+\_\+map\+\_\+ref)}{append_leading_multi_index(const UShort2DArray &append_mi, UShort2DArray &combined_mi, SizetSet &append_mi_map, size_t &append_mi_map_ref)}}]{\setlength{\rightskip}{0pt plus 5cm}void append\+\_\+leading\+\_\+multi\+\_\+index (
+\begin{DoxyParamCaption}
+\item[{const U\+Short2\+D\+Array \&}]{append\+\_\+mi, }
+\item[{U\+Short2\+D\+Array \&}]{combined\+\_\+mi, }
+\item[{Sizet\+Set \&}]{append\+\_\+mi\+\_\+map, }
+\item[{size\+\_\+t \&}]{append\+\_\+mi\+\_\+map\+\_\+ref}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classPecos_1_1SharedOrthogPolyApproxData_a964cfc01b4cb371008236c42e240a7f8}
+
+
+append multi-\/indices from append\+\_\+mi that do not already appear in combined\+\_\+mi (consistent ordering assumed); define append\+\_\+mi\+\_\+map and append\+\_\+mi\+\_\+map\+\_\+ref 
+
+Append append\+\_\+mi to combined\+\_\+mi, and update append\+\_\+mi\+\_\+map (Sizet\+Set) and append\+\_\+mi\+\_\+map\+\_\+ref to facilitate related aggregations without repeated searching. This case is used when append\+\_\+mi and combined\+\_\+mi follow a consistent order without gaps. 
+
+References Shared\+Orthog\+Poly\+Approx\+Data\+::append\+\_\+multi\+\_\+index().
+
+
+
+Referenced by Shared\+Orthog\+Poly\+Approx\+Data\+::append\+\_\+multi\+\_\+index(), and Regress\+Orthog\+Poly\+Approximation\+::compressed\+\_\+sensing().
+
+\index{Pecos\+::\+Shared\+Orthog\+Poly\+Approx\+Data@{Pecos\+::\+Shared\+Orthog\+Poly\+Approx\+Data}!append\+\_\+multi\+\_\+index@{append\+\_\+multi\+\_\+index}}
+\index{append\+\_\+multi\+\_\+index@{append\+\_\+multi\+\_\+index}!Pecos\+::\+Shared\+Orthog\+Poly\+Approx\+Data@{Pecos\+::\+Shared\+Orthog\+Poly\+Approx\+Data}}
+\subsubsection[{\texorpdfstring{append\+\_\+multi\+\_\+index(const U\+Short2\+D\+Array \&append\+\_\+mi, Sizet\+Array \&append\+\_\+mi\+\_\+map, size\+\_\+t \&append\+\_\+mi\+\_\+map\+\_\+ref, U\+Short2\+D\+Array \&combined\+\_\+mi)}{append_multi_index(const UShort2DArray &append_mi, SizetArray &append_mi_map, size_t &append_mi_map_ref, UShort2DArray &combined_mi)}}]{\setlength{\rightskip}{0pt plus 5cm}void append\+\_\+multi\+\_\+index (
+\begin{DoxyParamCaption}
+\item[{const U\+Short2\+D\+Array \&}]{append\+\_\+mi, }
+\item[{Sizet\+Array \&}]{append\+\_\+mi\+\_\+map, }
+\item[{size\+\_\+t \&}]{append\+\_\+mi\+\_\+map\+\_\+ref, }
+\item[{U\+Short2\+D\+Array \&}]{combined\+\_\+mi}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classPecos_1_1SharedOrthogPolyApproxData_add60899f51ee8d6d7d67c3bd5a55822b}
+
+
+append multi-\/indices from append\+\_\+mi that do not already appear in combined\+\_\+mi, using previously defined append\+\_\+mi\+\_\+map and append\+\_\+mi\+\_\+map\+\_\+ref for mapping 
+
+Append to combined\+\_\+mi based on append\+\_\+mi and previously defined append\+\_\+mi\+\_\+map and append\+\_\+mi\+\_\+map\+\_\+ref. If necessary, update append\+\_\+mi\+\_\+map and append\+\_\+mi\+\_\+map\+\_\+ref. 
+
+References Shared\+Orthog\+Poly\+Approx\+Data\+::append\+\_\+multi\+\_\+index().
+
+\index{Pecos\+::\+Shared\+Orthog\+Poly\+Approx\+Data@{Pecos\+::\+Shared\+Orthog\+Poly\+Approx\+Data}!append\+\_\+multi\+\_\+index@{append\+\_\+multi\+\_\+index}}
+\index{append\+\_\+multi\+\_\+index@{append\+\_\+multi\+\_\+index}!Pecos\+::\+Shared\+Orthog\+Poly\+Approx\+Data@{Pecos\+::\+Shared\+Orthog\+Poly\+Approx\+Data}}
+\subsubsection[{\texorpdfstring{append\+\_\+multi\+\_\+index(\+Sizet\+Set \&sparse\+\_\+indices, const U\+Short2\+D\+Array \&append\+\_\+mi, U\+Short2\+D\+Array \&combined\+\_\+mi, Real\+Vector \&exp\+\_\+coeffs, Real\+Matrix \&exp\+\_\+coeff\+\_\+grads)}{append_multi_index(SizetSet &sparse_indices, const UShort2DArray &append_mi, UShort2DArray &combined_mi, RealVector &exp_coeffs, RealMatrix &exp_coeff_grads)}}]{\setlength{\rightskip}{0pt plus 5cm}void append\+\_\+multi\+\_\+index (
+\begin{DoxyParamCaption}
+\item[{Sizet\+Set \&}]{sparse\+\_\+indices, }
+\item[{const U\+Short2\+D\+Array \&}]{append\+\_\+mi, }
+\item[{U\+Short2\+D\+Array \&}]{combined\+\_\+mi, }
+\item[{Real\+Vector \&}]{exp\+\_\+coeffs, }
+\item[{Real\+Matrix \&}]{exp\+\_\+coeff\+\_\+grads}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classPecos_1_1SharedOrthogPolyApproxData_ae8082d000d8fa616ff217762875d21f6}
+
+
+append multi-\/indices from append\+\_\+mi that do not already appear in combined\+\_\+mi, updating sparse\+\_\+indices, exp\+\_\+coeffs, and exp\+\_\+coeff\+\_\+grads 
+
+Append to combined\+\_\+mi based on append\+\_\+mi and previously defined append\+\_\+mi\+\_\+map and append\+\_\+mi\+\_\+map\+\_\+ref. If necessary, update append\+\_\+mi\+\_\+map and append\+\_\+mi\+\_\+map\+\_\+ref. 
+
+References Shared\+Basis\+Approx\+Data\+::num\+Vars, and Shared\+Orthog\+Poly\+Approx\+Data\+::update\+\_\+pareto\+\_\+set().
+
+\index{Pecos\+::\+Shared\+Orthog\+Poly\+Approx\+Data@{Pecos\+::\+Shared\+Orthog\+Poly\+Approx\+Data}!norm\+\_\+squared@{norm\+\_\+squared}}
+\index{norm\+\_\+squared@{norm\+\_\+squared}!Pecos\+::\+Shared\+Orthog\+Poly\+Approx\+Data@{Pecos\+::\+Shared\+Orthog\+Poly\+Approx\+Data}}
+\subsubsection[{\texorpdfstring{norm\+\_\+squared(const U\+Short\+Array \&indices, const Sizet\+List \&rand\+\_\+indices)}{norm_squared(const UShortArray &indices, const SizetList &rand_indices)}}]{\setlength{\rightskip}{0pt plus 5cm}Real norm\+\_\+squared (
+\begin{DoxyParamCaption}
+\item[{const U\+Short\+Array \&}]{indices, }
+\item[{const Sizet\+List \&}]{rand\+\_\+indices}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\label{classPecos_1_1SharedOrthogPolyApproxData_a93b96870a5d834bf8152cb027ca6f83e}
+
+
+returns the norm-\/squared of a particular multivariate polynomial, treating a subset of the variables as probabilistic 
+
+All variables version. 
+
+References Shared\+Orthog\+Poly\+Approx\+Data\+::polynomial\+Basis.
+
+\index{Pecos\+::\+Shared\+Orthog\+Poly\+Approx\+Data@{Pecos\+::\+Shared\+Orthog\+Poly\+Approx\+Data}!multivariate\+\_\+polynomial@{multivariate\+\_\+polynomial}}
+\index{multivariate\+\_\+polynomial@{multivariate\+\_\+polynomial}!Pecos\+::\+Shared\+Orthog\+Poly\+Approx\+Data@{Pecos\+::\+Shared\+Orthog\+Poly\+Approx\+Data}}
+\subsubsection[{\texorpdfstring{multivariate\+\_\+polynomial(const Real\+Vector \&x, const U\+Short\+Array \&indices, const Sizet\+List \&non\+\_\+rand\+\_\+indices)}{multivariate_polynomial(const RealVector &x, const UShortArray &indices, const SizetList &non_rand_indices)}}]{\setlength{\rightskip}{0pt plus 5cm}Real multivariate\+\_\+polynomial (
+\begin{DoxyParamCaption}
+\item[{const Real\+Vector \&}]{x, }
+\item[{const U\+Short\+Array \&}]{indices, }
+\item[{const Sizet\+List \&}]{non\+\_\+rand\+\_\+indices}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\label{classPecos_1_1SharedOrthogPolyApproxData_a82c66952c58967e65f08cd04f8a9865e}
+
+
+calculate a particular multivariate orthogonal polynomial value over the nonrandom variable subset evaluated at a particular parameter set 
+
+All variables version. 
+
+References Shared\+Orthog\+Poly\+Approx\+Data\+::multivariate\+\_\+polynomial(), and Shared\+Orthog\+Poly\+Approx\+Data\+::polynomial\+Basis.
+
+\index{Pecos\+::\+Shared\+Orthog\+Poly\+Approx\+Data@{Pecos\+::\+Shared\+Orthog\+Poly\+Approx\+Data}!multivariate\+\_\+polynomial@{multivariate\+\_\+polynomial}}
+\index{multivariate\+\_\+polynomial@{multivariate\+\_\+polynomial}!Pecos\+::\+Shared\+Orthog\+Poly\+Approx\+Data@{Pecos\+::\+Shared\+Orthog\+Poly\+Approx\+Data}}
+\subsubsection[{\texorpdfstring{multivariate\+\_\+polynomial(const Real\+Vector \&x, const U\+Short\+Array \&indices, const Sizet\+List \&non\+\_\+rand\+\_\+indices, std\+::vector$<$ Basis\+Polynomial $>$ \&polynomial\+\_\+basis)}{multivariate_polynomial(const RealVector &x, const UShortArray &indices, const SizetList &non_rand_indices, std::vector< BasisPolynomial > &polynomial_basis)}}]{\setlength{\rightskip}{0pt plus 5cm}Real multivariate\+\_\+polynomial (
+\begin{DoxyParamCaption}
+\item[{const Real\+Vector \&}]{x, }
+\item[{const U\+Short\+Array \&}]{indices, }
+\item[{const Sizet\+List \&}]{non\+\_\+rand\+\_\+indices, }
+\item[{std\+::vector$<$ {\bf Basis\+Polynomial} $>$ \&}]{polynomial\+\_\+basis}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [protected]}}\label{classPecos_1_1SharedOrthogPolyApproxData_a9af296d5989954405a060f1506e6957d}
+
+
+calculate a particular multivariate orthogonal polynomial value over the nonrandom variable subset evaluated at a particular parameter set 
+
+All variables version. 
+
+References Shared\+Orthog\+Poly\+Approx\+Data\+::multivariate\+\_\+polynomial\+\_\+gradient().
+
+\index{Pecos\+::\+Shared\+Orthog\+Poly\+Approx\+Data@{Pecos\+::\+Shared\+Orthog\+Poly\+Approx\+Data}!multivariate\+\_\+polynomial\+\_\+gradient@{multivariate\+\_\+polynomial\+\_\+gradient}}
+\index{multivariate\+\_\+polynomial\+\_\+gradient@{multivariate\+\_\+polynomial\+\_\+gradient}!Pecos\+::\+Shared\+Orthog\+Poly\+Approx\+Data@{Pecos\+::\+Shared\+Orthog\+Poly\+Approx\+Data}}
+\subsubsection[{\texorpdfstring{multivariate\+\_\+polynomial\+\_\+gradient(const Real\+Vector \&x, size\+\_\+t deriv\+\_\+index, const U\+Short\+Array \&indices, const Sizet\+List \&non\+\_\+rand\+\_\+indices)}{multivariate_polynomial_gradient(const RealVector &x, size_t deriv_index, const UShortArray &indices, const SizetList &non_rand_indices)}}]{\setlength{\rightskip}{0pt plus 5cm}Real multivariate\+\_\+polynomial\+\_\+gradient (
+\begin{DoxyParamCaption}
+\item[{const Real\+Vector \&}]{x, }
+\item[{size\+\_\+t}]{deriv\+\_\+index, }
+\item[{const U\+Short\+Array \&}]{indices, }
+\item[{const Sizet\+List \&}]{non\+\_\+rand\+\_\+indices}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\label{classPecos_1_1SharedOrthogPolyApproxData_a6ca056d626fe196f86c6e3e83ce6e59f}
+
+
+compute multivariate orthogonal polynomial gradient evaluated at x for term corresponding to indices, for derivative variable deriv\+\_\+index, and for a nonrandom variable subset 
+
+All variables version. 
+
+References Shared\+Orthog\+Poly\+Approx\+Data\+::multivariate\+\_\+polynomial\+\_\+gradient\+\_\+vector(), and Shared\+Orthog\+Poly\+Approx\+Data\+::polynomial\+Basis.
+
+\index{Pecos\+::\+Shared\+Orthog\+Poly\+Approx\+Data@{Pecos\+::\+Shared\+Orthog\+Poly\+Approx\+Data}!assess\+\_\+dominance@{assess\+\_\+dominance}}
+\index{assess\+\_\+dominance@{assess\+\_\+dominance}!Pecos\+::\+Shared\+Orthog\+Poly\+Approx\+Data@{Pecos\+::\+Shared\+Orthog\+Poly\+Approx\+Data}}
+\subsubsection[{\texorpdfstring{assess\+\_\+dominance(const U\+Short\+Array \&new\+\_\+order, const U\+Short\+Array \&existing\+\_\+order, bool \&new\+\_\+dominated, bool \&existing\+\_\+dominated)}{assess_dominance(const UShortArray &new_order, const UShortArray &existing_order, bool &new_dominated, bool &existing_dominated)}}]{\setlength{\rightskip}{0pt plus 5cm}void assess\+\_\+dominance (
+\begin{DoxyParamCaption}
+\item[{const U\+Short\+Array \&}]{new\+\_\+order, }
+\item[{const U\+Short\+Array \&}]{existing\+\_\+order, }
+\item[{bool \&}]{new\+\_\+dominated, }
+\item[{bool \&}]{existing\+\_\+dominated}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classPecos_1_1SharedOrthogPolyApproxData_a7b76d1a54906815bfdd2de208f7f0cc2}
+
+
+assess bi-\/directional weak dominance for a \char`\"{}challenger\char`\"{} polynomial index set against an \char`\"{}incumbent\char`\"{} polynomial index set 
+
+Weak Pareto dominance\+: multi\+\_\+index a weakly dominates multi\+\_\+index b iff a\+\_\+i $>$= b\+\_\+i for all i and a\+\_\+i $>$ b\+\_\+i for at least one dimension. Here we add the additional distinction of a challenger versus an incumbent\+: tie goes to the incumbent (the challenger is dominated and is not added redundantly to the Pareto set). 
+
+References Shared\+Orthog\+Poly\+Approx\+Data\+::assess\+\_\+strong\+\_\+dominance().
+
+
+
+Referenced by Regress\+Orthog\+Poly\+Approximation\+::frontier\+\_\+restriction(), Shared\+Orthog\+Poly\+Approx\+Data\+::update\+\_\+frontier(), and Shared\+Orthog\+Poly\+Approx\+Data\+::update\+\_\+pareto\+\_\+set().
+
+\index{Pecos\+::\+Shared\+Orthog\+Poly\+Approx\+Data@{Pecos\+::\+Shared\+Orthog\+Poly\+Approx\+Data}!assess\+\_\+strong\+\_\+dominance@{assess\+\_\+strong\+\_\+dominance}}
+\index{assess\+\_\+strong\+\_\+dominance@{assess\+\_\+strong\+\_\+dominance}!Pecos\+::\+Shared\+Orthog\+Poly\+Approx\+Data@{Pecos\+::\+Shared\+Orthog\+Poly\+Approx\+Data}}
+\subsubsection[{\texorpdfstring{assess\+\_\+strong\+\_\+dominance(const U\+Short\+Array \&order\+\_\+a, const U\+Short\+Array \&order\+\_\+b, bool \&a\+\_\+dominated, bool \&b\+\_\+dominated)}{assess_strong_dominance(const UShortArray &order_a, const UShortArray &order_b, bool &a_dominated, bool &b_dominated)}}]{\setlength{\rightskip}{0pt plus 5cm}void assess\+\_\+strong\+\_\+dominance (
+\begin{DoxyParamCaption}
+\item[{const U\+Short\+Array \&}]{order\+\_\+a, }
+\item[{const U\+Short\+Array \&}]{order\+\_\+b, }
+\item[{bool \&}]{a\+\_\+dominated, }
+\item[{bool \&}]{b\+\_\+dominated}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classPecos_1_1SharedOrthogPolyApproxData_a1d206c4e650831c15ed5d59a4ecb3ae7}
+
+
+assess bi-\/directional strong dominance between two polynomial index sets 
+
+Strong Pareto dominance\+: multi\+\_\+index a strongly dominates multi\+\_\+index b iff a\+\_\+i $>$ b\+\_\+i for all i. This case needs no notion of challenger versus incumbent. 
+
+Referenced by Shared\+Orthog\+Poly\+Approx\+Data\+::assess\+\_\+dominance(), and Shared\+Orthog\+Poly\+Approx\+Data\+::update\+\_\+frontier().
+
+\index{Pecos\+::\+Shared\+Orthog\+Poly\+Approx\+Data@{Pecos\+::\+Shared\+Orthog\+Poly\+Approx\+Data}!gradient\+\_\+check@{gradient\+\_\+check}}
+\index{gradient\+\_\+check@{gradient\+\_\+check}!Pecos\+::\+Shared\+Orthog\+Poly\+Approx\+Data@{Pecos\+::\+Shared\+Orthog\+Poly\+Approx\+Data}}
+\subsubsection[{\texorpdfstring{gradient\+\_\+check()}{gradient_check()}}]{\setlength{\rightskip}{0pt plus 5cm}void gradient\+\_\+check (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classPecos_1_1SharedOrthogPolyApproxData_aa8fb8d2ab861defc076706d1fabe98d4}
+
+
+tests 1D gradient computations (active in D\+E\+B\+UG compile mode) 
+
+This test works in combination with D\+E\+B\+UG settings in (Legendre,Laguerre,Jacobi,Gen\+Laguerre)Orthog\+Polynomial\+::type1\+\_\+gradient(). 
+
+References Shared\+Orthog\+Poly\+Approx\+Data\+::get\+\_\+tag(), and Basis\+Polynomial\+::type1\+\_\+gradient().
+
+
+
+Referenced by Project\+Orthog\+Poly\+Approximation\+::compute\+\_\+coefficients(), and Regress\+Orthog\+Poly\+Approximation\+::compute\+\_\+coefficients().
+
+
+
+\subsection{Member Data Documentation}
+\index{Pecos\+::\+Shared\+Orthog\+Poly\+Approx\+Data@{Pecos\+::\+Shared\+Orthog\+Poly\+Approx\+Data}!tp\+Multi\+Index@{tp\+Multi\+Index}}
+\index{tp\+Multi\+Index@{tp\+Multi\+Index}!Pecos\+::\+Shared\+Orthog\+Poly\+Approx\+Data@{Pecos\+::\+Shared\+Orthog\+Poly\+Approx\+Data}}
+\subsubsection[{\texorpdfstring{tp\+Multi\+Index}{tpMultiIndex}}]{\setlength{\rightskip}{0pt plus 5cm}U\+Short3\+D\+Array tp\+Multi\+Index\hspace{0.3cm}{\ttfamily [protected]}}\label{classPecos_1_1SharedOrthogPolyApproxData_a0d72fce3d7a8d4b547ba6c49e9a121c4}
+
+
+num\+Smolyak\+Indices-\/by-\/num\+Tensor\+Product\+Pts-\/by-\/num\+Vars array for identifying the orders of the one-\/dimensional orthogonal polynomials contributing to each of the multivariate orthogonal polynomials. 
+
+For nested rules (GP, CC, or GK), the integration driver\textquotesingle{}s colloc\+Key is insufficient and we must track expansion orders separately. 
+
+Referenced by Shared\+Regress\+Orthog\+Poly\+Approx\+Data\+::allocate\+\_\+data(), Shared\+Regress\+Orthog\+Poly\+Approx\+Data\+::clear\+\_\+adapted(), Project\+Orthog\+Poly\+Approximation\+::compute\+\_\+coefficients(), Shared\+Orthog\+Poly\+Approx\+Data\+::decrement\+\_\+trial\+\_\+set(), Project\+Orthog\+Poly\+Approximation\+::increment\+\_\+coefficients(), Shared\+Project\+Orthog\+Poly\+Approx\+Data\+::increment\+\_\+data(), Shared\+Orthog\+Poly\+Approx\+Data\+::increment\+\_\+trial\+\_\+set(), Shared\+Regress\+Orthog\+Poly\+Approx\+Data\+::increment\+\_\+trial\+\_\+set(), Shared\+Project\+Orthog\+Poly\+Approx\+Data\+::pre\+\_\+finalize\+\_\+data(), Shared\+Orthog\+Poly\+Approx\+Data\+::pre\+\_\+push\+\_\+trial\+\_\+set(), Shared\+Regress\+Orthog\+Poly\+Approx\+Data\+::set\+\_\+restriction(), and Shared\+Project\+Orthog\+Poly\+Approx\+Data\+::sparse\+\_\+grid\+\_\+multi\+\_\+index().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Shared\+Orthog\+Poly\+Approx\+Data.\+hpp\item 
+Shared\+Orthog\+Poly\+Approx\+Data.\+cpp\end{DoxyCompactItemize}

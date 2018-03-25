@@ -1,0 +1,174 @@
+.TH "SharedNodalInterpPolyApproxData" 3 "Wed Dec 27 2017" "Version Version 1.0" "PECOS" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SharedNodalInterpPolyApproxData \- Derived approximation class for nodal interpolation polynomials (global approximation interpolating function values and potentially gradients at collocation points)\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSharedInterpPolyApproxData\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSharedNodalInterpPolyApproxData\fP (short basis_type, size_t num_vars)"
+.br
+.RI "\fIlightweight constructor \fP"
+.ti -1c
+.RI "\fBSharedNodalInterpPolyApproxData\fP (short basis_type, size_t num_vars, const \fBExpansionConfigOptions\fP &ec_options, const \fBBasisConfigOptions\fP &bc_options)"
+.br
+.RI "\fIfull constructor \fP"
+.ti -1c
+.RI "\fB~SharedNodalInterpPolyApproxData\fP ()"
+.br
+.RI "\fIdestructor \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBallocate_data\fP (size_t index=_NPOS)"
+.br
+.RI "\fIallocate the shared data prior to building the set of approximations \fP"
+.ti -1c
+.RI "void \fBallocate_component_sobol\fP ()"
+.br
+.RI "\fIallocate sobolIndexMap based on collocation keys \fP"
+.ti -1c
+.RI "void \fBincrement_component_sobol\fP ()"
+.br
+.RI "\fIupdate sobolIndexMap based on a refinement increment \fP"
+.ti -1c
+.RI "void \fBset_new_point\fP (const RealVector &x, const UShortArray &basis_index, short order)"
+.br
+.RI "\fIset point values within 1D basis polynomials for purposes of barycentric precomputation \fP"
+.ti -1c
+.RI "void \fBset_new_point\fP (const RealVector &x, const UShortArray &basis_index, const SizetList &subset_indices, short order)"
+.br
+.RI "\fIset point values within subset of 1D basis polynomials for purposes of barycentric precomputation \fP"
+.ti -1c
+.RI "size_t \fBbarycentric_exact_index\fP (const UShortArray &basis_index)"
+.br
+.RI "\fIfor an exact point match in all dimensions, return the tensor-product index of the matching point \fP"
+.ti -1c
+.RI "size_t \fBbarycentric_exact_index\fP (const UShortArray &basis_index, const SizetList &subset_indices)"
+.br
+.RI "\fIfor an exact point match in all dimensions within subset_indices, return the tensor-product index of the matching point \fP"
+.ti -1c
+.RI "\fBTensorProductDriver\fP * \fBtpq_driver\fP ()"
+.br
+.RI "\fIreturn driverRep cast to requested derived type \fP"
+.ti -1c
+.RI "\fBCombinedSparseGridDriver\fP * \fBcsg_driver\fP ()"
+.br
+.RI "\fIreturn driverRep cast to requested derived type \fP"
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBaccumulate_barycentric\fP (RealVector &t1_accumulator, const UShortArray &lev_index, const UShortArray &key_p)"
+.br
+.RI "\fIupdate accumulators for barycentric type1 contributions to moment value \fP"
+.ti -1c
+.RI "void \fBaccumulate_horners\fP (RealVector &t1_accumulator, const UShortArray &lev_index, const UShortArray &key_p, const RealVector &x)"
+.br
+.RI "\fIupdate accumulators for type1 contributions to moment value \fP"
+.ti -1c
+.RI "void \fBaccumulate_horners\fP (RealVector &t1_accumulator, RealMatrix &t2_accumulator, const UShortArray &lev_index, const UShortArray &key_p, const RealVector &x)"
+.br
+.RI "\fIupdate accumulators for type1 + type2 contributions to moment value \fP"
+.ti -1c
+.RI "void \fBaccumulate_barycentric_gradient\fP (RealMatrix &t1_accumulator, const UShortArray &lev_index, const UShortArray &key_p, const SizetArray &dvv)"
+.br
+.RI "\fIupdate accumulators for barycentric type1 contributions to moment gradient \fP"
+.ti -1c
+.RI "void \fBaccumulate_horners_gradient\fP (RealMatrix &t1_accumulator, const UShortArray &lev_index, const UShortArray &key_p, const SizetArray &dvv, const RealVector &x)"
+.br
+.RI "\fIupdate accumulators for type1 contributions to moment gradient \fP"
+.ti -1c
+.RI "void \fBaccumulate_horners_gradient\fP (RealMatrix &t1_accumulator, RealMatrixArray &t2_accumulators, const UShortArray &lev_index, const UShortArray &key_p, const SizetArray &dvv, const RealVector &x)"
+.br
+.RI "\fIupdate accumulators for type1 + type2 contributions to moment gradient \fP"
+.ti -1c
+.RI "void \fBupdate_nonzero_basis_products\fP (const UShort2DArray &sm_multi_index)"
+.br
+.RI "\fIupdate precomputation of nonzero multidimensional integrals of products of interpolation polynomials \fP"
+.ti -1c
+.RI "bool \fBbasis_product_1d\fP (\fBInterpolationPolynomial\fP *poly_rep_1, \fBInterpolationPolynomial\fP *poly_rep_2, unsigned short key_1, unsigned short key_2, const RealArray &pts, const RealArray &wts, Real &prod)"
+.br
+.RI "\fIevaluate 1D integral of product of interpolation polynomials \fP"
+.ti -1c
+.RI "bool \fBbasis_product\fP (const UShortArray &lev_index_1, const UShortArray &key_1, const UShortArray &lev_index_2, const UShortArray &key_2, Real &prod)"
+.br
+.RI "\fIlookup multidimensional integral of products of interpolation polynomials \fP"
+.ti -1c
+.RI "void \fBreinterpolated_level\fP (const UShortArray &lev_index)"
+.br
+.RI "\fIcomputes higher-order grid for tensor reinterpolation of the covariance fn for non-integrated dimensions in all_variables mode \fP"
+.ti -1c
+.RI "void \fBupdate_member_key\fP (const UShortArray &data, const SizetList &member_indices, UShortArray &member_map_key, size_t cntr)"
+.br
+.RI "\fIcreate a unique map key for value() and gradient() calculation reuse \fP"
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "short \fBmomentInterpType\fP"
+.br
+.RI "\fItype of interpolation for all-variables covariance and variance gradient \fP"
+.ti -1c
+.RI "\fBIntegrationDriver\fP \fBexpMomentIntDriver\fP"
+.br
+.RI "\fIspecial tensor/sparse integration driver for (exactly) computing expansion moments using sufficiently high-order Gaussian quadrature rules on the interpolant \fP"
+.ti -1c
+.RI "SizetArray \fBnonZerosMapIndices\fP"
+.br
+.RI "\fImap from random index to unique nonZerosMapArray \fP"
+.ti -1c
+.RI "UShortArray \fBnonZerosMapMaxLevels\fP"
+.br
+.RI "\fItracks level maxima already populated within nonZerosMap \fP"
+.ti -1c
+.RI "std::vector< UShort2DMultiSetRealMap > \fBnonZerosMapArray\fP"
+.br
+.RI "\fIexpectations of products of interpolation polynomials, precomputed in \fBupdate_nonzero_basis_products()\fP for efficiency \fP"
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBNodalInterpPolyApproximation\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Derived approximation class for nodal interpolation polynomials (global approximation interpolating function values and potentially gradients at collocation points)\&. 
+
+The \fBSharedNodalInterpPolyApproxData\fP class provides a global polynomial approximation based on either Lagrange or Hermite interpolation polynomials using a nodal basis approach\&. It is used primarily for stochastic collocation approaches to uncertainty quantification\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "void update_nonzero_basis_products (const UShort2DArray & sm_multi_index)\fC [private]\fP"
+
+.PP
+update precomputation of nonzero multidimensional integrals of products of interpolation polynomials Used for pre-computing the expected values of basis polynomial products within the PRODUCT_OF_INTERPOLANTS_FULL option for all_variables covariance\&. 
+.PP
+References SharedNodalInterpPolyApproxData::basis_product(), SharedNodalInterpPolyApproxData::basis_product_1d(), IntegrationDriver::collocation_points_1d(), SharedPolyApproxData::driverRep, InterpolationPolynomial::interpolation_size(), SharedNodalInterpPolyApproxData::nonZerosMapArray, SharedNodalInterpPolyApproxData::nonZerosMapIndices, SharedNodalInterpPolyApproxData::nonZerosMapMaxLevels, SharedBasisApproxData::numVars, SharedInterpPolyApproxData::polynomialBasis, SharedPolyApproxData::randomIndices, SharedInterpPolyApproxData::same_basis(), and IntegrationDriver::type1_collocation_weights_1d()\&.
+.PP
+Referenced by NodalInterpPolyApproximation::covariance(), and SharedNodalInterpPolyApproxData::reinterpolated_level()\&.
+.SS "void reinterpolated_level (const UShortArray & lev_index)\fC [private]\fP"
+
+.PP
+computes higher-order grid for tensor reinterpolation of the covariance fn for non-integrated dimensions in all_variables mode Computes the specifics of a higher order grid for reinterpolating covariance over dimensions that will not be integrated\&. 
+.PP
+References SharedPolyApproxData::driverRep, SharedPolyApproxData::nonRandomIndices, IntegrationDriver::reinterpolated_level_index(), IntegrationDriver::reinterpolated_tensor_grid(), SharedNodalInterpPolyApproxData::update_nonzero_basis_products(), and SharedInterpPolyApproxData::update_tensor_interpolation_basis()\&.
+.PP
+Referenced by SharedNodalInterpPolyApproxData::accumulate_horners_gradient()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for PECOS from the source code\&.

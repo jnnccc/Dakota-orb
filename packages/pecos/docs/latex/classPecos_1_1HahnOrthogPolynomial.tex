@@ -1,0 +1,96 @@
+\section{Hahn\+Orthog\+Polynomial Class Reference}
+\label{classPecos_1_1HahnOrthogPolynomial}\index{Hahn\+Orthog\+Polynomial@{Hahn\+Orthog\+Polynomial}}
+
+
+Derived orthogonal polynomial class for Hahn polynomials.  
+
+
+Inheritance diagram for Hahn\+Orthog\+Polynomial\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classPecos_1_1HahnOrthogPolynomial}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPecos_1_1HahnOrthogPolynomial_a4c8c514febcc0b10dbc35aff617217b7}{Hahn\+Orthog\+Polynomial} ()\label{classPecos_1_1HahnOrthogPolynomial_a4c8c514febcc0b10dbc35aff617217b7}
+
+\begin{DoxyCompactList}\small\item\em default constructor \end{DoxyCompactList}\item 
+\hyperlink{classPecos_1_1HahnOrthogPolynomial_a165697a95cb62aba335fcae04c1bd5b8}{$\sim$\+Hahn\+Orthog\+Polynomial} ()\label{classPecos_1_1HahnOrthogPolynomial_a165697a95cb62aba335fcae04c1bd5b8}
+
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1HahnOrthogPolynomial_a09f97f3d11434d8e62f63068ca8ce93f}{gamma\+\_\+polynomial} () const \label{classPecos_1_1HahnOrthogPolynomial_a09f97f3d11434d8e62f63068ca8ce93f}
+
+\begin{DoxyCompactList}\small\item\em return gamma\+Poly \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1HahnOrthogPolynomial_ad8e1174347b31063f1cc138be5da3199}{gamma\+\_\+stat} (Real gamma)\label{classPecos_1_1HahnOrthogPolynomial_ad8e1174347b31063f1cc138be5da3199}
+
+\begin{DoxyCompactList}\small\item\em set gamma\+Stat (total population) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Real \hyperlink{classPecos_1_1HahnOrthogPolynomial_a8792a858ac05a2158880e876f9da2019}{type1\+\_\+value} (Real x, unsigned short order)
+\begin{DoxyCompactList}\small\item\em retrieve the value of the n\+\_\+th type 1 polynomial for a given parameter x using traditional characteristic polynomial formulation \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1HahnOrthogPolynomial_a997bdeddf670667c476513fcacc779ca}{alpha\+\_\+polynomial} () const \label{classPecos_1_1HahnOrthogPolynomial_a997bdeddf670667c476513fcacc779ca}
+
+\begin{DoxyCompactList}\small\item\em return alpha\+Poly \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1HahnOrthogPolynomial_a22bfc4209dec76716ef51648e945469a}{beta\+\_\+polynomial} () const \label{classPecos_1_1HahnOrthogPolynomial_a22bfc4209dec76716ef51648e945469a}
+
+\begin{DoxyCompactList}\small\item\em return beta\+Poly \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1HahnOrthogPolynomial_aeeb4ce11a8d413209be1ec08eced8728}{alpha\+\_\+stat} (Real alpha)\label{classPecos_1_1HahnOrthogPolynomial_aeeb4ce11a8d413209be1ec08eced8728}
+
+\begin{DoxyCompactList}\small\item\em set alpha\+Stat (selected population) \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1HahnOrthogPolynomial_a7f9584e538ee1574bd4d8d1afb622ed6}{beta\+\_\+stat} (Real beta)\label{classPecos_1_1HahnOrthogPolynomial_a7f9584e538ee1574bd4d8d1afb622ed6}
+
+\begin{DoxyCompactList}\small\item\em set beta\+Stat (num draws) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Real \hyperlink{classPecos_1_1HahnOrthogPolynomial_a11666846719189915a02ac6f1f96e393}{alpha\+Poly}\label{classPecos_1_1HahnOrthogPolynomial_a11666846719189915a02ac6f1f96e393}
+
+\begin{DoxyCompactList}\small\item\em the hypergeometric alpha parameter \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1HahnOrthogPolynomial_a96c0b0201ca445f95be14ec035b595cb}{beta\+Poly}\label{classPecos_1_1HahnOrthogPolynomial_a96c0b0201ca445f95be14ec035b595cb}
+
+\begin{DoxyCompactList}\small\item\em the hypergeometric beta parameter \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1HahnOrthogPolynomial_aab2965f5a9b7c56742b552acb9f458b0}{gamma\+Poly}\label{classPecos_1_1HahnOrthogPolynomial_aab2965f5a9b7c56742b552acb9f458b0}
+
+\begin{DoxyCompactList}\small\item\em the number of discrete points on which to base the polynomial \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Derived orthogonal polynomial class for Hahn polynomials. 
+
+The \hyperlink{classPecos_1_1HahnOrthogPolynomial}{Hahn\+Orthog\+Polynomial} class evaluates a univariate Hahn polynomial Q$^\wedge$(alpha,beta,N)\+\_\+n of a particular order. These polynomials are orthogonal with respect to the weight function
+
+(K choose k)(N-\/K choose n-\/k)/( N choose n).
+
+This corresponds to the hypergeometric probability mass function, which describes the probability of k successes in n draws, without replacement, from a finite population of size N that contains exactly K successes. See appendix in Xiu \& Karniadakis, Siam J. Sci. Comp., v24, n2, pp. 619-\/644, 2002 for more details. 
+
+\subsection{Member Function Documentation}
+\index{Pecos\+::\+Hahn\+Orthog\+Polynomial@{Pecos\+::\+Hahn\+Orthog\+Polynomial}!type1\+\_\+value@{type1\+\_\+value}}
+\index{type1\+\_\+value@{type1\+\_\+value}!Pecos\+::\+Hahn\+Orthog\+Polynomial@{Pecos\+::\+Hahn\+Orthog\+Polynomial}}
+\subsubsection[{\texorpdfstring{type1\+\_\+value(\+Real x, unsigned short order)}{type1_value(Real x, unsigned short order)}}]{\setlength{\rightskip}{0pt plus 5cm}Real type1\+\_\+value (
+\begin{DoxyParamCaption}
+\item[{Real}]{x, }
+\item[{unsigned short}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classPecos_1_1HahnOrthogPolynomial_a8792a858ac05a2158880e876f9da2019}
+
+
+retrieve the value of the n\+\_\+th type 1 polynomial for a given parameter x using traditional characteristic polynomial formulation 
+
+For orthogonal polynomials, n specifies the order of the polynomial, whereas for interpolation polynomials, it identifies the interpolant for the n-\/th point. 
+
+Reimplemented from \hyperlink{classPecos_1_1BasisPolynomial_a1fab871e99cec3a1933a2b1e9ed8a625}{Basis\+Polynomial}.
+
+
+
+References Hahn\+Orthog\+Polynomial\+::alpha\+Poly, Hahn\+Orthog\+Polynomial\+::beta\+Poly, and Hahn\+Orthog\+Polynomial\+::gamma\+Poly.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Hahn\+Orthog\+Polynomial.\+hpp\item 
+Hahn\+Orthog\+Polynomial.\+cpp\end{DoxyCompactItemize}

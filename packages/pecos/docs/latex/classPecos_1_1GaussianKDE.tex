@@ -1,0 +1,133 @@
+\section{Gaussian\+K\+DE Class Reference}
+\label{classPecos_1_1GaussianKDE}\index{Gaussian\+K\+DE@{Gaussian\+K\+DE}}
+
+
+Class for kernel density estimation with gaussian kernels.  
+
+
+Inheritance diagram for Gaussian\+K\+DE\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classPecos_1_1GaussianKDE}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPecos_1_1GaussianKDE_a9c2a04bf8270c1ffa8dae1f04cc80b61}{Gaussian\+K\+DE} ()\label{classPecos_1_1GaussianKDE_a9c2a04bf8270c1ffa8dae1f04cc80b61}
+
+\begin{DoxyCompactList}\small\item\em default constructor \end{DoxyCompactList}\item 
+\hyperlink{classPecos_1_1GaussianKDE_a976d463a5f7d52ad04814a44228a0751}{$\sim$\+Gaussian\+K\+DE} ()\label{classPecos_1_1GaussianKDE_a976d463a5f7d52ad04814a44228a0751}
+
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1GaussianKDE_a6c7e188a789efc33dbeb356f6e200c33}{initialize} (Real\+Matrix \&samples, Teuchos\+::\+E\+Transp trans=Teuchos\+::\+N\+O\+\_\+\+T\+R\+A\+NS)\label{classPecos_1_1GaussianKDE_a6c7e188a789efc33dbeb356f6e200c33}
+
+\begin{DoxyCompactList}\small\item\em initialize the density estimator \end{DoxyCompactList}\item 
+void {\bfseries initialize} (Real\+Vector\+Array \&samples)\label{classPecos_1_1GaussianKDE_a50fd0e9c6addf748bf7ae040ec0d91f9}
+
+\item 
+size\+\_\+t \hyperlink{classPecos_1_1GaussianKDE_a890ccac161f0becd266252b4cd3b9584}{get\+Dim} ()\label{classPecos_1_1GaussianKDE_a890ccac161f0becd266252b4cd3b9584}
+
+\begin{DoxyCompactList}\small\item\em get the dimensionality \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1GaussianKDE_adc6f262952d05a33ff68cae37929cbb2}{mean} ()\label{classPecos_1_1GaussianKDE_adc6f262952d05a33ff68cae37929cbb2}
+
+\begin{DoxyCompactList}\small\item\em computes the sample mean \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1GaussianKDE_a38f6da77468be17e02ce38af2c0976c3}{variance} ()\label{classPecos_1_1GaussianKDE_a38f6da77468be17e02ce38af2c0976c3}
+
+\begin{DoxyCompactList}\small\item\em computed according to \mbox{[}Goodman, 1962\mbox{]} \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1GaussianKDE_a3e3c923ec6be63011f72bb65b08789ed}{std\+\_\+deviation} ()\label{classPecos_1_1GaussianKDE_a3e3c923ec6be63011f72bb65b08789ed}
+
+\begin{DoxyCompactList}\small\item\em computes the standard deviation \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1GaussianKDE_a8cf84ab65e0bccb16f5cdbccc9790dc9}{cov} (Real\+Matrix \&cov)\label{classPecos_1_1GaussianKDE_a8cf84ab65e0bccb16f5cdbccc9790dc9}
+
+\begin{DoxyCompactList}\small\item\em computes the covariance matrix \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1GaussianKDE_ae49fd0166d0cedd899f933e3e2b713aa}{pdf} (const Real\+Vector \&x) const \label{classPecos_1_1GaussianKDE_ae49fd0166d0cedd899f933e3e2b713aa}
+
+\begin{DoxyCompactList}\small\item\em operations for single samples \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1GaussianKDE_a83ef7a2b0cf786922fbdfb17d284d2e0}{pdf} (const Real\+Matrix \&data, Real\+Vector \&res, Teuchos\+::\+E\+Transp trans=Teuchos\+::\+N\+O\+\_\+\+T\+R\+A\+NS) const \label{classPecos_1_1GaussianKDE_a83ef7a2b0cf786922fbdfb17d284d2e0}
+
+\begin{DoxyCompactList}\small\item\em operations for a set of samples \end{DoxyCompactList}\item 
+virtual void \hyperlink{classPecos_1_1GaussianKDE_a5aa525959e7bee8034a26a77e00f12ef}{marginalize} (size\+\_\+t dim, \hyperlink{classPecos_1_1DensityEstimator}{Density\+Estimator} \&estimator)\label{classPecos_1_1GaussianKDE_a5aa525959e7bee8034a26a77e00f12ef}
+
+\begin{DoxyCompactList}\small\item\em marginalization operations \end{DoxyCompactList}\item 
+virtual void \hyperlink{classPecos_1_1GaussianKDE_a50f735eabae41f8948d792ac84749095}{marg\+To\+Dim\+Xs} (const Int\+Vector \&dims, \hyperlink{classPecos_1_1DensityEstimator}{Density\+Estimator} \&estimator)\label{classPecos_1_1GaussianKDE_a50f735eabae41f8948d792ac84749095}
+
+\begin{DoxyCompactList}\small\item\em creates a maginalized density with remaining dims \end{DoxyCompactList}\item 
+virtual void \hyperlink{classPecos_1_1GaussianKDE_ab1e735a6e2e62abfaa78e44d3a6bd9ec}{marg\+To\+DimX} (size\+\_\+t dim, \hyperlink{classPecos_1_1DensityEstimator}{Density\+Estimator} \&estimator)\label{classPecos_1_1GaussianKDE_ab1e735a6e2e62abfaa78e44d3a6bd9ec}
+
+\begin{DoxyCompactList}\small\item\em creates a maginalized density with one remaining dimension \end{DoxyCompactList}\item 
+virtual void \hyperlink{classPecos_1_1GaussianKDE_a48a43dfe8975d003c2c7cff695046414}{conditionalize} (const Real\+Vector \&x, const Int\+Vector \&dims, \hyperlink{classPecos_1_1DensityEstimator}{Density\+Estimator} \&estimator)\label{classPecos_1_1GaussianKDE_a48a43dfe8975d003c2c7cff695046414}
+
+\begin{DoxyCompactList}\small\item\em conditionalization operations \end{DoxyCompactList}\item 
+virtual void {\bfseries cond\+To\+DimX} (const Real\+Vector \&x, size\+\_\+t dim, \hyperlink{classPecos_1_1DensityEstimator}{Density\+Estimator} \&estimator)\label{classPecos_1_1GaussianKDE_aa4b4c620def1d4611d3e10dcd4b3a073}
+
+\item 
+void \hyperlink{classPecos_1_1GaussianKDE_a795359a100b6b2113637ae2d0c6cd148}{get\+Conditionalization\+Factor} (Real\+Vector \&pcond)\label{classPecos_1_1GaussianKDE_a795359a100b6b2113637ae2d0c6cd148}
+
+\begin{DoxyCompactList}\small\item\em getter and setter functions \end{DoxyCompactList}\item 
+void {\bfseries set\+Conditionalization\+Factor} (const Real\+Vector \&pcond)\label{classPecos_1_1GaussianKDE_a680bc5e5333d94f3c342d99c501a43eb}
+
+\item 
+void {\bfseries get\+Bandwidths} (Real\+Vector \&\hyperlink{classPecos_1_1GaussianKDE_ae303fb49034fb553ad86c64be017915f}{bandwidths})\label{classPecos_1_1GaussianKDE_a1435857a2e0f422a4fc6db89d74c9d76}
+
+\item 
+const Real\+Vector\+Array \& \hyperlink{classPecos_1_1GaussianKDE_a718ebb2fbd090629dfe8ff9377f5dd55}{get\+Samples} () const \label{classPecos_1_1GaussianKDE_a718ebb2fbd090629dfe8ff9377f5dd55}
+
+\begin{DoxyCompactList}\small\item\em get samples \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Real\+Vector\+Array \hyperlink{classPecos_1_1GaussianKDE_a754976b55aff35a5cfd425a357b7cff8}{samples\+Vec}\label{classPecos_1_1GaussianKDE_a754976b55aff35a5cfd425a357b7cff8}
+
+\begin{DoxyCompactList}\small\item\em samples \end{DoxyCompactList}\item 
+size\+\_\+t {\bfseries nsamples}\label{classPecos_1_1GaussianKDE_a606ae00fa0b8a27e73f62403411f5162}
+
+\item 
+size\+\_\+t {\bfseries ndim}\label{classPecos_1_1GaussianKDE_a7cff664dfb347e3967c24b7c4ebe0fa9}
+
+\item 
+Real\+Vector \hyperlink{classPecos_1_1GaussianKDE_ae303fb49034fb553ad86c64be017915f}{bandwidths}\label{classPecos_1_1GaussianKDE_ae303fb49034fb553ad86c64be017915f}
+
+\begin{DoxyCompactList}\small\item\em standard deviations for the kernels in 1d \end{DoxyCompactList}\item 
+Real\+Vector \hyperlink{classPecos_1_1GaussianKDE_a7bb1668e0ba69304c3aba2e0aa26f6ad}{norm}\label{classPecos_1_1GaussianKDE_a7bb1668e0ba69304c3aba2e0aa26f6ad}
+
+\begin{DoxyCompactList}\small\item\em normalization factor for 1d kernels \end{DoxyCompactList}\item 
+Real\+Vector \hyperlink{classPecos_1_1GaussianKDE_acbd955dd6b64ad6b463d823e3f97d2ae}{cond}\label{classPecos_1_1GaussianKDE_acbd955dd6b64ad6b463d823e3f97d2ae}
+
+\begin{DoxyCompactList}\small\item\em conditionalization factors \end{DoxyCompactList}\item 
+Real {\bfseries sum\+Cond}\label{classPecos_1_1GaussianKDE_a83d2e9f1cad4454f0605fcbb57099ff5}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries compute\+Opt\+K\+D\+Ebdwth} ()\label{classPecos_1_1GaussianKDE_a27334457001c0b2ba4f58f1929283c45}
+
+\item 
+Real {\bfseries get\+Sample\+Mean} (Real\+Vector \&data)\label{classPecos_1_1GaussianKDE_aadbe1281c7c72f3bba5f5aed94af15cb}
+
+\item 
+Real {\bfseries get\+Sample\+Variance} (Real\+Vector \&data)\label{classPecos_1_1GaussianKDE_a38336a67976bfe7d1a742980c0f4fd43}
+
+\item 
+Real {\bfseries get\+Sample\+Std} (Real\+Vector \&data)\label{classPecos_1_1GaussianKDE_a4ba0ba01844d6d2658e2dcf05163e055}
+
+\item 
+void {\bfseries update\+Conditionalization\+Factors} (const Real\+Vector \&x, const Int\+Vector \&dims, Real\+Vector \&\hyperlink{classPecos_1_1GaussianKDE_acbd955dd6b64ad6b463d823e3f97d2ae}{cond})\label{classPecos_1_1GaussianKDE_ad2ff8fa62b5e017a72d2cef1f51c2b37}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class for kernel density estimation with gaussian kernels. 
+
+The kernel density estimation method estimates an unknown density based on realizations of it. The estimated probability density function is defined as \begin{DoxyVerb}   f(x) = 1/n \sum_{i=1}^n K((x - \mu_i) / \sigma)
+\end{DoxyVerb}
+
+
+where  are the realizations and  is the bandwidth of the gaussian kernels K. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Gaussian\+K\+D\+E.\+hpp\item 
+Gaussian\+K\+D\+E.\+cpp\end{DoxyCompactItemize}

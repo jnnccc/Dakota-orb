@@ -1,0 +1,220 @@
+\section{Density\+Estimator Class Reference}
+\label{classPecos_1_1DensityEstimator}\index{Density\+Estimator@{Density\+Estimator}}
+
+
+Base class for density estimation strategies.  
+
+
+Inheritance diagram for Density\+Estimator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classPecos_1_1DensityEstimator}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPecos_1_1DensityEstimator_a61d0043dfffa80f94cd77081f32be52d}{Density\+Estimator} ()
+\begin{DoxyCompactList}\small\item\em default constructor \end{DoxyCompactList}\item 
+\hyperlink{classPecos_1_1DensityEstimator_a0e6d09871df9b3ababad33371d95cefb}{Density\+Estimator} (const String \&density\+\_\+estimator\+\_\+type)
+\begin{DoxyCompactList}\small\item\em standard constructor for envelope \end{DoxyCompactList}\item 
+\hyperlink{classPecos_1_1DensityEstimator_acc375bcd034112a7c9b2e6b745ef8137}{Density\+Estimator} (const \hyperlink{classPecos_1_1DensityEstimator}{Density\+Estimator} \&density\+\_\+estimator)
+\begin{DoxyCompactList}\small\item\em copy constructor \end{DoxyCompactList}\item 
+virtual \hyperlink{classPecos_1_1DensityEstimator_a18e1bc50e0cf55f28ee89cd99a455798}{$\sim$\+Density\+Estimator} ()
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\item 
+\hyperlink{classPecos_1_1DensityEstimator}{Density\+Estimator} \hyperlink{classPecos_1_1DensityEstimator_a3f5714fb35670202d9f015a31a85138d}{operator=} (const \hyperlink{classPecos_1_1DensityEstimator}{Density\+Estimator} \&density\+\_\+estimator)
+\begin{DoxyCompactList}\small\item\em assignment operator \end{DoxyCompactList}\item 
+virtual void \hyperlink{classPecos_1_1DensityEstimator_a6c7e188a789efc33dbeb356f6e200c33}{initialize} (Real\+Matrix \&samples, Teuchos\+::\+E\+Transp trans=Teuchos\+::\+N\+O\+\_\+\+T\+R\+A\+NS)\label{classPecos_1_1DensityEstimator_a6c7e188a789efc33dbeb356f6e200c33}
+
+\begin{DoxyCompactList}\small\item\em initialize the densities \end{DoxyCompactList}\item 
+virtual void {\bfseries initialize} (Real\+Vector\+Array \&samples)\label{classPecos_1_1DensityEstimator_a50fd0e9c6addf748bf7ae040ec0d91f9}
+
+\item 
+virtual size\+\_\+t \hyperlink{classPecos_1_1DensityEstimator_a890ccac161f0becd266252b4cd3b9584}{get\+Dim} ()\label{classPecos_1_1DensityEstimator_a890ccac161f0becd266252b4cd3b9584}
+
+\begin{DoxyCompactList}\small\item\em get the dimensionality \end{DoxyCompactList}\item 
+virtual Real \hyperlink{classPecos_1_1DensityEstimator_adc6f262952d05a33ff68cae37929cbb2}{mean} ()\label{classPecos_1_1DensityEstimator_adc6f262952d05a33ff68cae37929cbb2}
+
+\begin{DoxyCompactList}\small\item\em mean \end{DoxyCompactList}\item 
+virtual Real \hyperlink{classPecos_1_1DensityEstimator_a38f6da77468be17e02ce38af2c0976c3}{variance} ()\label{classPecos_1_1DensityEstimator_a38f6da77468be17e02ce38af2c0976c3}
+
+\begin{DoxyCompactList}\small\item\em variance \end{DoxyCompactList}\item 
+virtual Real \hyperlink{classPecos_1_1DensityEstimator_a3e3c923ec6be63011f72bb65b08789ed}{std\+\_\+deviation} ()\label{classPecos_1_1DensityEstimator_a3e3c923ec6be63011f72bb65b08789ed}
+
+\begin{DoxyCompactList}\small\item\em standard deviation \end{DoxyCompactList}\item 
+virtual void \hyperlink{classPecos_1_1DensityEstimator_a8cf84ab65e0bccb16f5cdbccc9790dc9}{cov} (Real\+Matrix \&cov)\label{classPecos_1_1DensityEstimator_a8cf84ab65e0bccb16f5cdbccc9790dc9}
+
+\begin{DoxyCompactList}\small\item\em computes the covariance matrix \end{DoxyCompactList}\item 
+virtual void \hyperlink{classPecos_1_1DensityEstimator_a277fd59fe80b41f6ed6f5ff12e19f921}{corrcoeff} (Real\+Matrix \&corr)\label{classPecos_1_1DensityEstimator_a277fd59fe80b41f6ed6f5ff12e19f921}
+
+\begin{DoxyCompactList}\small\item\em computes the correlation matrix \end{DoxyCompactList}\item 
+virtual Real \hyperlink{classPecos_1_1DensityEstimator_ae49fd0166d0cedd899f933e3e2b713aa}{pdf} (const Real\+Vector \&x) const \label{classPecos_1_1DensityEstimator_ae49fd0166d0cedd899f933e3e2b713aa}
+
+\begin{DoxyCompactList}\small\item\em operations for one sample \end{DoxyCompactList}\item 
+virtual void \hyperlink{classPecos_1_1DensityEstimator_a83ef7a2b0cf786922fbdfb17d284d2e0}{pdf} (const Real\+Matrix \&data, Real\+Vector \&res, Teuchos\+::\+E\+Transp trans=Teuchos\+::\+N\+O\+\_\+\+T\+R\+A\+NS) const \label{classPecos_1_1DensityEstimator_a83ef7a2b0cf786922fbdfb17d284d2e0}
+
+\begin{DoxyCompactList}\small\item\em operations for a set of samples \end{DoxyCompactList}\item 
+virtual void \hyperlink{classPecos_1_1DensityEstimator_a5aa525959e7bee8034a26a77e00f12ef}{marginalize} (size\+\_\+t dim, \hyperlink{classPecos_1_1DensityEstimator}{Density\+Estimator} \&estimator)
+\begin{DoxyCompactList}\small\item\em marginalization operations \end{DoxyCompactList}\item 
+virtual void \hyperlink{classPecos_1_1DensityEstimator_a50f735eabae41f8948d792ac84749095}{marg\+To\+Dim\+Xs} (const Int\+Vector \&dims, \hyperlink{classPecos_1_1DensityEstimator}{Density\+Estimator} \&estimator)\label{classPecos_1_1DensityEstimator_a50f735eabae41f8948d792ac84749095}
+
+\begin{DoxyCompactList}\small\item\em creates a maginalized density with remaining dims \end{DoxyCompactList}\item 
+virtual void \hyperlink{classPecos_1_1DensityEstimator_ab1e735a6e2e62abfaa78e44d3a6bd9ec}{marg\+To\+DimX} (size\+\_\+t dim, \hyperlink{classPecos_1_1DensityEstimator}{Density\+Estimator} \&estimator)\label{classPecos_1_1DensityEstimator_ab1e735a6e2e62abfaa78e44d3a6bd9ec}
+
+\begin{DoxyCompactList}\small\item\em creates a maginalized density with one remaining dimension \end{DoxyCompactList}\item 
+virtual void \hyperlink{classPecos_1_1DensityEstimator_a48a43dfe8975d003c2c7cff695046414}{conditionalize} (const Real\+Vector \&x, const Int\+Vector \&dims, \hyperlink{classPecos_1_1DensityEstimator}{Density\+Estimator} \&estimator)\label{classPecos_1_1DensityEstimator_a48a43dfe8975d003c2c7cff695046414}
+
+\begin{DoxyCompactList}\small\item\em conditionalization operations \end{DoxyCompactList}\item 
+virtual void {\bfseries cond\+To\+DimX} (const Real\+Vector \&x, size\+\_\+t dim, \hyperlink{classPecos_1_1DensityEstimator}{Density\+Estimator} \&estimator)\label{classPecos_1_1DensityEstimator_aa4b4c620def1d4611d3e10dcd4b3a073}
+
+\item 
+String {\bfseries get\+Type} ()\label{classPecos_1_1DensityEstimator_a68adac94351807681f1b2828b9c68734}
+
+\item 
+\hyperlink{classPecos_1_1DensityEstimator}{Density\+Estimator} $\ast$ {\bfseries get\+Envelope} ()\label{classPecos_1_1DensityEstimator_a3b6f140849ddd8d260b08912f0ddde32}
+
+\item 
+bool {\bfseries is\+\_\+null} ()\label{classPecos_1_1DensityEstimator_a20a65eada5e4846ec27c12dd7166adec}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+String {\bfseries density\+\_\+estimator\+\_\+type}\label{classPecos_1_1DensityEstimator_ab95f5d8568c1ff1e0a02a408fedb00eb}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classPecos_1_1DensityEstimator}{Density\+Estimator} $\ast$ \hyperlink{classPecos_1_1DensityEstimator_a531bb898be601c8a9e061574b536b1a4}{get\+\_\+density\+\_\+estimator} (const String \&density\+\_\+estimator\+\_\+type)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPecos_1_1DensityEstimator}{Density\+Estimator} $\ast$ {\bfseries density\+Estimator}\label{classPecos_1_1DensityEstimator_ab9655a797c32d29656770a8044f38fff}
+
+\item 
+int \hyperlink{classPecos_1_1DensityEstimator_afff0b6144883d3ca09a8d0d3f4776b0f}{reference\+Count}\label{classPecos_1_1DensityEstimator_afff0b6144883d3ca09a8d0d3f4776b0f}
+
+\begin{DoxyCompactList}\small\item\em number of objects sharing samples \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Base class for density estimation strategies. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Pecos\+::\+Density\+Estimator@{Pecos\+::\+Density\+Estimator}!Density\+Estimator@{Density\+Estimator}}
+\index{Density\+Estimator@{Density\+Estimator}!Pecos\+::\+Density\+Estimator@{Pecos\+::\+Density\+Estimator}}
+\subsubsection[{\texorpdfstring{Density\+Estimator()}{DensityEstimator()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Density\+Estimator} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classPecos_1_1DensityEstimator_a61d0043dfffa80f94cd77081f32be52d}
+
+
+default constructor 
+
+The default constructor\+: samples is N\+U\+LL in this case. This makes it necessary to check for N\+U\+LL in the copy constructor, assignment operator, and destructor. \index{Pecos\+::\+Density\+Estimator@{Pecos\+::\+Density\+Estimator}!Density\+Estimator@{Density\+Estimator}}
+\index{Density\+Estimator@{Density\+Estimator}!Pecos\+::\+Density\+Estimator@{Pecos\+::\+Density\+Estimator}}
+\subsubsection[{\texorpdfstring{Density\+Estimator(const String \&density\+\_\+estimator\+\_\+type)}{DensityEstimator(const String &density_estimator_type)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Density\+Estimator} (
+\begin{DoxyParamCaption}
+\item[{const String \&}]{density\+\_\+estimator}
+\end{DoxyParamCaption}
+)}\label{classPecos_1_1DensityEstimator_a0e6d09871df9b3ababad33371d95cefb}
+
+
+standard constructor for envelope 
+
+Envelope constructor only needs to extract enough data to properly execute get\+\_\+density\+\_\+estimator, since Density\+Estimator(\+Base\+Constructor) builds the actual base class data for the derived transformations. 
+
+References Density\+Estimator\+::get\+\_\+density\+\_\+estimator().
+
+\index{Pecos\+::\+Density\+Estimator@{Pecos\+::\+Density\+Estimator}!Density\+Estimator@{Density\+Estimator}}
+\index{Density\+Estimator@{Density\+Estimator}!Pecos\+::\+Density\+Estimator@{Pecos\+::\+Density\+Estimator}}
+\subsubsection[{\texorpdfstring{Density\+Estimator(const Density\+Estimator \&density\+\_\+estimator)}{DensityEstimator(const DensityEstimator &density_estimator)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Density\+Estimator} (
+\begin{DoxyParamCaption}
+\item[{const {\bf Density\+Estimator} \&}]{density\+\_\+estimator}
+\end{DoxyParamCaption}
+)}\label{classPecos_1_1DensityEstimator_acc375bcd034112a7c9b2e6b745ef8137}
+
+
+copy constructor 
+
+Copy constructor manages sharing of density\+Estimatorand incrementing of reference\+Count. 
+
+References Density\+Estimator\+::reference\+Count.
+
+\index{Pecos\+::\+Density\+Estimator@{Pecos\+::\+Density\+Estimator}!````~Density\+Estimator@{$\sim$\+Density\+Estimator}}
+\index{````~Density\+Estimator@{$\sim$\+Density\+Estimator}!Pecos\+::\+Density\+Estimator@{Pecos\+::\+Density\+Estimator}}
+\subsubsection[{\texorpdfstring{$\sim$\+Density\+Estimator()}{~DensityEstimator()}}]{\setlength{\rightskip}{0pt plus 5cm}$\sim${\bf Density\+Estimator} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classPecos_1_1DensityEstimator_a18e1bc50e0cf55f28ee89cd99a455798}
+
+
+destructor 
+
+Destructor decrements reference\+Count and only deletes data\+Trans\+Rep when reference\+Count reaches zero. 
+
+References Density\+Estimator\+::reference\+Count.
+
+
+
+\subsection{Member Function Documentation}
+\index{Pecos\+::\+Density\+Estimator@{Pecos\+::\+Density\+Estimator}!operator=@{operator=}}
+\index{operator=@{operator=}!Pecos\+::\+Density\+Estimator@{Pecos\+::\+Density\+Estimator}}
+\subsubsection[{\texorpdfstring{operator=(const Density\+Estimator \&density\+\_\+estimator)}{operator=(const DensityEstimator &density_estimator)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Density\+Estimator} operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Density\+Estimator} \&}]{density\+\_\+estimator}
+\end{DoxyParamCaption}
+)}\label{classPecos_1_1DensityEstimator_a3f5714fb35670202d9f015a31a85138d}
+
+
+assignment operator 
+
+Assignment operator decrements reference\+Count for old data\+Trans\+Rep, assigns new data\+Trans\+Rep, and increments reference\+Count for new data\+Trans\+Rep. 
+
+References Density\+Estimator\+::reference\+Count.
+
+\index{Pecos\+::\+Density\+Estimator@{Pecos\+::\+Density\+Estimator}!marginalize@{marginalize}}
+\index{marginalize@{marginalize}!Pecos\+::\+Density\+Estimator@{Pecos\+::\+Density\+Estimator}}
+\subsubsection[{\texorpdfstring{marginalize(size\+\_\+t dim, Density\+Estimator \&estimator)}{marginalize(size_t dim, DensityEstimator &estimator)}}]{\setlength{\rightskip}{0pt plus 5cm}void marginalize (
+\begin{DoxyParamCaption}
+\item[{size\+\_\+t}]{dim, }
+\item[{{\bf Density\+Estimator} \&}]{estimator}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classPecos_1_1DensityEstimator_a5aa525959e7bee8034a26a77e00f12ef}
+
+
+marginalization operations 
+
+marginalizes over dim 
+
+Reimplemented in \hyperlink{classPecos_1_1GaussianKDE_a5aa525959e7bee8034a26a77e00f12ef}{Gaussian\+K\+DE}.
+
+
+
+References Density\+Estimator\+::marginalize().
+
+
+
+Referenced by Density\+Estimator\+::marginalize().
+
+\index{Pecos\+::\+Density\+Estimator@{Pecos\+::\+Density\+Estimator}!get\+\_\+density\+\_\+estimator@{get\+\_\+density\+\_\+estimator}}
+\index{get\+\_\+density\+\_\+estimator@{get\+\_\+density\+\_\+estimator}!Pecos\+::\+Density\+Estimator@{Pecos\+::\+Density\+Estimator}}
+\subsubsection[{\texorpdfstring{get\+\_\+density\+\_\+estimator(const String \&density\+\_\+estimator\+\_\+type)}{get_density_estimator(const String &density_estimator_type)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Density\+Estimator} $\ast$ get\+\_\+density\+\_\+estimator (
+\begin{DoxyParamCaption}
+\item[{const String \&}]{density\+\_\+estimator\+\_\+type}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}\label{classPecos_1_1DensityEstimator_a531bb898be601c8a9e061574b536b1a4}
+Used only by the envelope constructor to initialize density\+Estimator to the appropriate derived type. 
+
+Referenced by Density\+Estimator\+::\+Density\+Estimator().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Density\+Estimator.\+hpp\item 
+Density\+Estimator.\+cpp\end{DoxyCompactItemize}

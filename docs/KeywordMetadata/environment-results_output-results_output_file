@@ -1,0 +1,10 @@
+Blurb:: The base file name of the results file
+
+Description::
+Default file basename is \c dakota_results
+
+Topics::	dakota_output
+Examples::
+Theory::
+Faq::
+See_Also::	

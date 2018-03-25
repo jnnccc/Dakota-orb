@@ -1,0 +1,180 @@
+.TH "DensityEstimator" 3 "Wed Dec 27 2017" "Version Version 1.0" "PECOS" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DensityEstimator \- Base class for density estimation strategies\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBGaussianKDE\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDensityEstimator\fP ()"
+.br
+.RI "\fIdefault constructor \fP"
+.ti -1c
+.RI "\fBDensityEstimator\fP (const String &density_estimator_type)"
+.br
+.RI "\fIstandard constructor for envelope \fP"
+.ti -1c
+.RI "\fBDensityEstimator\fP (const \fBDensityEstimator\fP &density_estimator)"
+.br
+.RI "\fIcopy constructor \fP"
+.ti -1c
+.RI "virtual \fB~DensityEstimator\fP ()"
+.br
+.RI "\fIdestructor \fP"
+.ti -1c
+.RI "\fBDensityEstimator\fP \fBoperator=\fP (const \fBDensityEstimator\fP &density_estimator)"
+.br
+.RI "\fIassignment operator \fP"
+.ti -1c
+.RI "virtual void \fBinitialize\fP (RealMatrix &samples, Teuchos::ETransp trans=Teuchos::NO_TRANS)"
+.br
+.RI "\fIinitialize the densities \fP"
+.ti -1c
+.RI "virtual void \fBinitialize\fP (RealVectorArray &samples)"
+.br
+.ti -1c
+.RI "virtual size_t \fBgetDim\fP ()"
+.br
+.RI "\fIget the dimensionality \fP"
+.ti -1c
+.RI "virtual Real \fBmean\fP ()"
+.br
+.RI "\fImean \fP"
+.ti -1c
+.RI "virtual Real \fBvariance\fP ()"
+.br
+.RI "\fIvariance \fP"
+.ti -1c
+.RI "virtual Real \fBstd_deviation\fP ()"
+.br
+.RI "\fIstandard deviation \fP"
+.ti -1c
+.RI "virtual void \fBcov\fP (RealMatrix &cov)"
+.br
+.RI "\fIcomputes the covariance matrix \fP"
+.ti -1c
+.RI "virtual void \fBcorrcoeff\fP (RealMatrix &corr)"
+.br
+.RI "\fIcomputes the correlation matrix \fP"
+.ti -1c
+.RI "virtual Real \fBpdf\fP (const RealVector &x) const "
+.br
+.RI "\fIoperations for one sample \fP"
+.ti -1c
+.RI "virtual void \fBpdf\fP (const RealMatrix &data, RealVector &res, Teuchos::ETransp trans=Teuchos::NO_TRANS) const "
+.br
+.RI "\fIoperations for a set of samples \fP"
+.ti -1c
+.RI "virtual void \fBmarginalize\fP (size_t dim, \fBDensityEstimator\fP &estimator)"
+.br
+.RI "\fImarginalization operations \fP"
+.ti -1c
+.RI "virtual void \fBmargToDimXs\fP (const IntVector &dims, \fBDensityEstimator\fP &estimator)"
+.br
+.RI "\fIcreates a maginalized density with remaining dims \fP"
+.ti -1c
+.RI "virtual void \fBmargToDimX\fP (size_t dim, \fBDensityEstimator\fP &estimator)"
+.br
+.RI "\fIcreates a maginalized density with one remaining dimension \fP"
+.ti -1c
+.RI "virtual void \fBconditionalize\fP (const RealVector &x, const IntVector &dims, \fBDensityEstimator\fP &estimator)"
+.br
+.RI "\fIconditionalization operations \fP"
+.ti -1c
+.RI "virtual void \fBcondToDimX\fP (const RealVector &x, size_t dim, \fBDensityEstimator\fP &estimator)"
+.br
+.ti -1c
+.RI "String \fBgetType\fP ()"
+.br
+.ti -1c
+.RI "\fBDensityEstimator\fP * \fBgetEnvelope\fP ()"
+.br
+.ti -1c
+.RI "bool \fBis_null\fP ()"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "String \fBdensity_estimator_type\fP"
+.br
+.in -1c
+.SS "Static Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBDensityEstimator\fP * \fBget_density_estimator\fP (const String &density_estimator_type)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBDensityEstimator\fP * \fBdensityEstimator\fP"
+.br
+.ti -1c
+.RI "int \fBreferenceCount\fP"
+.br
+.RI "\fInumber of objects sharing samples \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Base class for density estimation strategies\&. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "\fBDensityEstimator\fP ()"
+
+.PP
+default constructor The default constructor: samples is NULL in this case\&. This makes it necessary to check for NULL in the copy constructor, assignment operator, and destructor\&. 
+.SS "\fBDensityEstimator\fP (const String & density_estimator)"
+
+.PP
+standard constructor for envelope Envelope constructor only needs to extract enough data to properly execute get_density_estimator, since DensityEstimator(BaseConstructor) builds the actual base class data for the derived transformations\&. 
+.PP
+References DensityEstimator::get_density_estimator()\&.
+.SS "\fBDensityEstimator\fP (const \fBDensityEstimator\fP & density_estimator)"
+
+.PP
+copy constructor Copy constructor manages sharing of densityEstimatorand incrementing of referenceCount\&. 
+.PP
+References DensityEstimator::referenceCount\&.
+.SS "~\fBDensityEstimator\fP ()\fC [virtual]\fP"
+
+.PP
+destructor Destructor decrements referenceCount and only deletes dataTransRep when referenceCount reaches zero\&. 
+.PP
+References DensityEstimator::referenceCount\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBDensityEstimator\fP operator= (const \fBDensityEstimator\fP & density_estimator)"
+
+.PP
+assignment operator Assignment operator decrements referenceCount for old dataTransRep, assigns new dataTransRep, and increments referenceCount for new dataTransRep\&. 
+.PP
+References DensityEstimator::referenceCount\&.
+.SS "void marginalize (size_t dim, \fBDensityEstimator\fP & estimator)\fC [virtual]\fP"
+
+.PP
+marginalization operations marginalizes over dim 
+.PP
+Reimplemented in \fBGaussianKDE\fP\&.
+.PP
+References DensityEstimator::marginalize()\&.
+.PP
+Referenced by DensityEstimator::marginalize()\&.
+.SS "\fBDensityEstimator\fP * get_density_estimator (const String & density_estimator_type)\fC [static]\fP, \fC [private]\fP"
+Used only by the envelope constructor to initialize densityEstimator to the appropriate derived type\&. 
+.PP
+Referenced by DensityEstimator::DensityEstimator()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for PECOS from the source code\&.

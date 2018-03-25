@@ -1,0 +1,23 @@
+\form#0:\[ \arg \! \min \|x\|_1\quad\text{subject to}\quad Ax=b\]
+\form#1:\[ \arg \! \min \|x\|_1\quad\text{subject to}\quad\|Ax-b\|_2\le \varepsilon\]
+\form#2:\[ \arg \! \min \|Ax-b\|^2_2 \quad\text{subject to}\quad \|x\|_1\le \tau \]
+\form#3:$ \tau $
+\form#4:$ \|Ax-b\|_2<\varepsilon $
+\form#5:$O(N^3)$
+\form#6:$O(N^2)$
+\form#7:\[ \begin{bmatrix} 1 & 4 & 7\\ 2 & 5 & 8\\ 3 & 6 & 9 \end{bmatrix} \rightarrow \begin{bmatrix} 1,1 & 1,2 & 1,3\\ 2,1 & 2,2 & 2,3\\ 3,1 & 3,2 & 3,3 \end{bmatrix} \]
+\form#8:\[ \begin{bmatrix} 1,1 & 1,2 & 1,3\\ 2,1 & 2,2 & 2,3\\ 3,1 & 3,2 & 3,3 \end{bmatrix} \rightarrow \begin{bmatrix} 1 & 4 & 7\\ 2 & 5 & 8\\ 3 & 6 & 9 \end{bmatrix} \]
+\form#9:\[ \{1,2\}\times\{3,4\}=\{1\times3, 2\times3, 1\times4, 2\times4\} = \{3, 6, 4, 8\} \]
+\form#10:\[ { n \choose k} = \frac{n!}{k!(n-k)!}\]
+\form#11:$[a_1,b_1] \times \cdots \times [a_d,b_d] $
+\form#12:$[0,1]^d$
+\form#13:$ [a_1,b_1,...,a_d,b_d]$
+\form#14:$[a,b]^d$
+\form#15:$[a,b]$
+\form#16:\[ \arg \! \min_i x_i\quad i=1,\ldots,n \]
+\form#17:\[ \arg \! \max_i x_i \quad i=1,\ldots,n \]
+\form#18:\[ \sum_{i=1}^N x_i \]
+\form#19:\[ \bar{x} = \frac{1}{N}\sum_{i=1}^N x_i \]
+\form#20:\[ \sigma^2 = \frac{1}{N-\text{ddof}}\sum_{i=1}^N ( x_i-\bar{x} )^2 \]
+\form#21:$N - \text{ddof}$
+\form#22:$\ell_p$

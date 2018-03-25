@@ -1,0 +1,559 @@
+.TH "HierarchInterpPolyApproximation" 3 "Wed Dec 27 2017" "Version Version 1.0" "PECOS" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+HierarchInterpPolyApproximation \- Derived approximation class for hierarchical interpolation polynomials (interpolating values and potentially gradients at collocation points)\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBInterpPolyApproximation\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBHierarchInterpPolyApproximation\fP (const \fBSharedBasisApproxData\fP &shared_data)"
+.br
+.RI "\fIDefault constructor\&. \fP"
+.ti -1c
+.RI "\fB~HierarchInterpPolyApproximation\fP ()"
+.br
+.RI "\fIdestructor \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBallocate_arrays\fP ()"
+.br
+.RI "\fIsize expansionType{1,2}Coeffs and expansionType1CoeffGrads \fP"
+.ti -1c
+.RI "void \fBcompute_coefficients\fP (size_t index=_NPOS)"
+.br
+.RI "\fIcalculate the approximation coefficients using a set of surrogate data \fP"
+.ti -1c
+.RI "void \fBincrement_coefficients\fP (size_t index=_NPOS)"
+.br
+.RI "\fIupdate the coefficients for the expansion of interpolation polynomials: increment expansion{Type1Coeffs,Type2Coeffs,Type1CoeffGrads} \fP"
+.ti -1c
+.RI "void \fBdecrement_coefficients\fP (bool save_data)"
+.br
+.RI "\fIrestore the coefficients to their previous state prior to last increment: decrement expansion{Type1Coeffs,Type2Coeffs,Type1CoeffGrads} \fP"
+.ti -1c
+.RI "void \fBpush_coefficients\fP ()"
+.br
+.RI "\fIrestore the coefficients to a previously incremented state as identified by the current increment to the Smolyak multi index: push expansion{Type1Coeffs,Type2Coeffs,Type1CoeffGrads} \fP"
+.ti -1c
+.RI "void \fBfinalize_coefficients\fP ()"
+.br
+.RI "\fIfinalize the coefficients by applying all previously evaluated increments: finalize expansion{Type1Coeffs,Type2Coeffs,Type1CoeffGrads} \fP"
+.ti -1c
+.RI "void \fBstore_coefficients\fP (size_t index=_NPOS)"
+.br
+.RI "\fIstore current state within storedExpType{1Coeffs,2Coeffs,1CoeffGrads} \fP"
+.ti -1c
+.RI "void \fBrestore_coefficients\fP (size_t index=_NPOS)"
+.br
+.RI "\fIrestore previous state from storedExpType{1Coeffs,2Coeffs,1CoeffGrads} \fP"
+.ti -1c
+.RI "void \fBswap_coefficients\fP (size_t index)"
+.br
+.RI "\fIswap storedExpType{1Coeffs,2Coeffs,1CoeffGrads}[index] with active current data \fP"
+.ti -1c
+.RI "void \fBremove_stored_coefficients\fP (size_t index=_NPOS)"
+.br
+.RI "\fIremove a redundant entry from storedExpType{1Coeffs,2Coeffs,1CoeffGrads} prior to combine_coefficients (default is pop_back) \fP"
+.ti -1c
+.RI "void \fBclear_stored\fP ()"
+.br
+.RI "\fIclear storedExpType{1Coeffs,2Coeffs,1CoeffGrads} \fP"
+.ti -1c
+.RI "void \fBcombine_coefficients\fP (size_t swap_index)"
+.br
+.RI "\fIaugment current interpolant using storedExpType{1Coeffs,2Coeffs,1CoeffGrads} \fP"
+.ti -1c
+.RI "void \fBintegrate_response_moments\fP (size_t num_moments)"
+.br
+.RI "\fIcompute moments of response using numerical integration \fP"
+.ti -1c
+.RI "void \fBintegrate_expansion_moments\fP (size_t num_moments)"
+.br
+.RI "\fIcompute moments of expansion using numerical integration \fP"
+.ti -1c
+.RI "Real \fBvalue\fP (const RealVector &x)"
+.br
+.RI "\fIretrieve the approximate function value for a given parameter vector \fP"
+.ti -1c
+.RI "const RealVector & \fBgradient_basis_variables\fP (const RealVector &x)"
+.br
+.RI "\fIretrieve the gradient for a response expansion with respect to all variables included in the polynomial bases using the given parameter vector and default DVV \fP"
+.ti -1c
+.RI "const RealVector & \fBgradient_basis_variables\fP (const RealVector &x, const SizetArray &dvv)"
+.br
+.RI "\fIretrieve the gradient for a response expansion with respect to variables included in the polynomial basis for a given parameter vector and a given DVV subset \fP"
+.ti -1c
+.RI "const RealVector & \fBgradient_nonbasis_variables\fP (const RealVector &x)"
+.br
+.RI "\fIretrieve the gradient for a response expansion with respect to all variables not included in the polynomial bases (nonprobabilistic variables such as design or epistemic when not in 'all' mode) using the given parameter vector and default DVV \fP"
+.ti -1c
+.RI "const RealSymMatrix & \fBhessian_basis_variables\fP (const RealVector &x)"
+.br
+.RI "\fIretrieve the Hessian of the response expansion with respect to all variables included in the polynomial basis (e\&.g\&., probabilistic variables) for a given parameter vector \fP"
+.ti -1c
+.RI "Real \fBstored_value\fP (const RealVector &x, size_t index)"
+.br
+.RI "\fIretrieve the response value for a stored expansion using the given parameter vector \fP"
+.ti -1c
+.RI "const RealVector & \fBstored_gradient_basis_variables\fP (const RealVector &x, size_t index)"
+.br
+.RI "\fIretrieve the response gradient for a stored expansion with respect to all variables included in the polynomial bases; evaluate for the given parameter vector\&. \fP"
+.ti -1c
+.RI "const RealVector & \fBstored_gradient_nonbasis_variables\fP (const RealVector &x, size_t index)"
+.br
+.RI "\fIretrieve the response gradient for a stored expansion with respect to all variables not included in the polynomial bases; evaluate for the given parameter vector\&. \fP"
+.ti -1c
+.RI "Real \fBmean\fP ()"
+.br
+.RI "\fIreturn the mean of the expansion, treating all variables as random \fP"
+.ti -1c
+.RI "Real \fBmean\fP (const RealVector &x)"
+.br
+.RI "\fIreturn the mean of the expansion for a given parameter vector, treating a subset of the variables as random \fP"
+.ti -1c
+.RI "const RealVector & \fBmean_gradient\fP ()"
+.br
+.ti -1c
+.RI "const RealVector & \fBmean_gradient\fP (const RealVector &x, const SizetArray &dvv)"
+.br
+.ti -1c
+.RI "Real \fBvariance\fP ()"
+.br
+.RI "\fIreturn the variance of the expansion, treating all variables as random \fP"
+.ti -1c
+.RI "Real \fBvariance\fP (const RealVector &x)"
+.br
+.RI "\fIreturn the variance of the expansion for a given parameter vector, treating a subset of the variables as random \fP"
+.ti -1c
+.RI "const RealVector & \fBvariance_gradient\fP ()"
+.br
+.ti -1c
+.RI "const RealVector & \fBvariance_gradient\fP (const RealVector &x, const SizetArray &dvv)"
+.br
+.ti -1c
+.RI "Real \fBcovariance\fP (\fBPolynomialApproximation\fP *poly_approx_2)"
+.br
+.RI "\fIreturn the covariance between two response expansions, treating all variables as random \fP"
+.ti -1c
+.RI "Real \fBcovariance\fP (const RealVector &x, \fBPolynomialApproximation\fP *poly_approx_2)"
+.br
+.RI "\fIreturn the covariance between two response expansions for a given parameter vector, treating a subset of the variables as random \fP"
+.ti -1c
+.RI "Real \fBdelta_covariance\fP (\fBPolynomialApproximation\fP *poly_approx_2)"
+.br
+.RI "\fIreturn the change in covariance between two response expansions, treating all variables as random \fP"
+.ti -1c
+.RI "Real \fBdelta_covariance\fP (const RealVector &x, \fBPolynomialApproximation\fP *poly_approx_2)"
+.br
+.RI "\fIreturn the change in covariance between two response expansions for a given parameter vector, treating a subset of the variables as random \fP"
+.ti -1c
+.RI "Real \fBdelta_mean\fP ()"
+.br
+.RI "\fIreturn the change in mean between two response expansions, treating all variables as random \fP"
+.ti -1c
+.RI "Real \fBdelta_mean\fP (const RealVector &x)"
+.br
+.RI "\fIreturn the change in mean between two response expansions, treating a subset of the variables as random \fP"
+.ti -1c
+.RI "Real \fBdelta_std_deviation\fP ()"
+.br
+.RI "\fIreturn the change in standard deviation between two response expansions, treating all variables as random \fP"
+.ti -1c
+.RI "Real \fBdelta_std_deviation\fP (const RealVector &x)"
+.br
+.RI "\fIreturn the change in standard deviation between two response expansions, treating a subset of the variables as random \fP"
+.ti -1c
+.RI "Real \fBdelta_beta\fP (bool cdf_flag, Real z_bar)"
+.br
+.RI "\fIreturn the change in reliability index (mapped from z_bar) between two response expansions, treating all variables as random \fP"
+.ti -1c
+.RI "Real \fBdelta_beta\fP (const RealVector &x, bool cdf_flag, Real z_bar)"
+.br
+.RI "\fIreturn the change in reliability index (mapped from z_bar) between two response expansions, treating a subset of the variables as random \fP"
+.ti -1c
+.RI "Real \fBdelta_z\fP (bool cdf_flag, Real beta_bar)"
+.br
+.RI "\fIreturn the change in response level (mapped from beta_bar) between two response expansions, treating all variables as random \fP"
+.ti -1c
+.RI "Real \fBdelta_z\fP (const RealVector &x, bool cdf_flag, Real beta_bar)"
+.br
+.RI "\fIreturn the change in response level (mapped from beta_bar) between two response expansions, treating a subset of the variables as random \fP"
+.ti -1c
+.RI "void \fBcompute_total_sobol_indices\fP ()"
+.br
+.ti -1c
+.RI "void \fBcompute_partial_variance\fP (const BitArray &set_value)"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "Real \fBvalue\fP (const RealVector &x, const UShort3DArray &sm_mi, const UShort4DArray &key, const RealVector2DArray &t1_coeffs, const RealMatrix2DArray &t2_coeffs, unsigned short level)"
+.br
+.RI "\fIcompute the value at a point for a particular interpolation level \fP"
+.ti -1c
+.RI "Real \fBvalue\fP (const RealVector &x, const UShort3DArray &sm_mi, const UShort4DArray &key, const RealVector2DArray &t1_coeffs, const RealMatrix2DArray &t2_coeffs, unsigned short level, const SizetList &subset_indices)"
+.br
+.RI "\fIcompute the value at a point for a particular interpolation level and for a specified subset of the variables \fP"
+.ti -1c
+.RI "const RealVector & \fBgradient_basis_variables\fP (const RealVector &x, const UShort3DArray &sm_mi, const UShort4DArray &key, const RealVector2DArray &t1_coeffs, const RealMatrix2DArray &t2_coeffs, unsigned short level)"
+.br
+.RI "\fIcompute the approximate gradient with respect to the basis variables at a particular point for a particular interpolation level \fP"
+.ti -1c
+.RI "const RealVector & \fBgradient_basis_variables\fP (const RealVector &x, const UShort3DArray &sm_mi, const UShort4DArray &key, const RealVector2DArray &t1_coeffs, const RealMatrix2DArray &t2_coeffs, unsigned short level, const SizetList &subset_indices)"
+.br
+.RI "\fIcompute the approximate gradient with respect to the basis variables at a particular point for a particular interpolation level \fP"
+.ti -1c
+.RI "const RealVector & \fBgradient_basis_variables\fP (const RealVector &x, const UShort3DArray &sm_mi, const UShort4DArray &key, const RealVector2DArray &t1_coeffs, const RealMatrix2DArray &t2_coeffs, const SizetArray &dvv, unsigned short level)"
+.br
+.RI "\fIcompute the approximate gradient with respect to the basis variables for a particular point, interpolation level, and DVV \fP"
+.ti -1c
+.RI "const RealVector & \fBgradient_nonbasis_variables\fP (const RealVector &x, const UShort3DArray &sm_mi, const UShort4DArray &key, const RealMatrix2DArray &t1_coeff_grads, unsigned short level)"
+.br
+.RI "\fIcompute the approximate gradient with respect to the nonbasis variables at a particular point for a particular interpolation level \fP"
+.ti -1c
+.RI "void \fBincrement_current_from_reference\fP ()"
+.br
+.RI "\fIupdate bookkeeping when adding a grid increment relative to the grid reference \fP"
+.ti -1c
+.RI "void \fBdecrement_current_to_reference\fP ()"
+.br
+.RI "\fIupdate bookkeeping when removing a grid increment and returning to the grid reference \fP"
+.ti -1c
+.RI "Real \fBreference_mean\fP (const UShort2DArray &ref_key)"
+.br
+.RI "\fIcompute the reference mean, excluding the current grid increment, using ref_key \fP"
+.ti -1c
+.RI "Real \fBreference_mean\fP (const RealVector &x, const UShort2DArray &ref_key)"
+.br
+.RI "\fIcompute the reference mean, excluding the current grid increment, using ref_key \fP"
+.ti -1c
+.RI "Real \fBreference_variance\fP (const UShort2DArray &ref_key)"
+.br
+.RI "\fIcompute the reference variance, excluding the current grid increment, using ref_key \fP"
+.ti -1c
+.RI "Real \fBreference_variance\fP (const RealVector &x, const UShort2DArray &ref_key)"
+.br
+.RI "\fIcompute the reference variance, excluding the current grid increment, using ref_key \fP"
+.ti -1c
+.RI "Real \fBdelta_covariance\fP (\fBPolynomialApproximation\fP *poly_approx_2, const UShort2DArray &ref_key, const UShort2DArray &incr_key)"
+.br
+.RI "\fIcompute the covariance increment due to the current grid increment \fP"
+.ti -1c
+.RI "Real \fBdelta_covariance\fP (const RealVector &x, \fBPolynomialApproximation\fP *poly_approx_2, const UShort2DArray &ref_key, const UShort2DArray &incr_key)"
+.br
+.RI "\fIcompute the covariance increment due to the current grid increment \fP"
+.ti -1c
+.RI "Real \fBdelta_mean\fP (const UShort2DArray &incr_key)"
+.br
+.RI "\fIcompute the mean increment due to the current grid increment \fP"
+.ti -1c
+.RI "Real \fBdelta_mean\fP (const RealVector &x, const UShort2DArray &incr_key)"
+.br
+.RI "\fIcompute the mean increment due to the current grid increment \fP"
+.ti -1c
+.RI "Real \fBdelta_variance\fP (const UShort2DArray &ref_key, const UShort2DArray &incr_key)"
+.br
+.RI "\fIcompute the variance increment due to the current grid increment \fP"
+.ti -1c
+.RI "Real \fBdelta_variance\fP (const RealVector &x, const UShort2DArray &ref_key, const UShort2DArray &incr_key)"
+.br
+.RI "\fIcompute the variance increment due to the current grid increment \fP"
+.ti -1c
+.RI "Real \fBdelta_std_deviation\fP (const UShort2DArray &ref_key, const UShort2DArray &incr_key)"
+.br
+.RI "\fIcompute the standard deviation increment due to the current grid increment \fP"
+.ti -1c
+.RI "Real \fBdelta_std_deviation\fP (const RealVector &x, const UShort2DArray &ref_key, const UShort2DArray &incr_key)"
+.br
+.RI "\fIcompute the standard deviation increment due to the current grid increment \fP"
+.ti -1c
+.RI "Real \fBdelta_beta\fP (bool cdf_flag, Real z_bar, const UShort2DArray &ref_key, const UShort2DArray &incr_key)"
+.br
+.RI "\fIcompute the reliability index increment due to the current grid increment \fP"
+.ti -1c
+.RI "Real \fBdelta_beta\fP (const RealVector &x, bool cdf_flag, Real z_bar, const UShort2DArray &ref_key, const UShort2DArray &incr_key)"
+.br
+.RI "\fIcompute the reliability index increment due to the current grid increment \fP"
+.ti -1c
+.RI "Real \fBdelta_beta_map\fP (Real mu0, Real delta_mu, Real var0, Real delta_sigma, bool cdf_flag, Real z_bar)"
+.br
+.RI "\fIshared logic for handling exceptional cases \fP"
+.ti -1c
+.RI "Real \fBdelta_z\fP (bool cdf_flag, Real beta_bar, const UShort2DArray &ref_key, const UShort2DArray &incr_key)"
+.br
+.RI "\fIcompute the response level increment due to the current grid increment \fP"
+.ti -1c
+.RI "Real \fBdelta_z\fP (const RealVector &x, bool cdf_flag, Real beta_bar, const UShort2DArray &ref_key, const UShort2DArray &incr_key)"
+.br
+.RI "\fIcompute the response level increment due to the current grid increment \fP"
+.ti -1c
+.RI "void \fBproduct_interpolant\fP (\fBHierarchInterpPolyApproximation\fP *hip_approx_2, RealVector2DArray &r1r2_t1_coeffs, RealMatrix2DArray &r1r2_t2_coeffs, const UShort2DArray &reference_key=UShort2DArray())"
+.br
+.RI "\fIform type 1/2 coefficients for interpolation of R_1 R_2 \fP"
+.ti -1c
+.RI "void \fBcentral_product_interpolant\fP (\fBHierarchInterpPolyApproximation\fP *hip_approx_2, Real mean_1, Real mean_2, RealVector2DArray &cov_t1_coeffs, RealMatrix2DArray &cov_t2_coeffs, const UShort2DArray &reference_key=UShort2DArray())"
+.br
+.RI "\fIform type 1/2 coefficients for interpolation of (R_1 - mu_1)(R_2 - mu_2) \fP"
+.ti -1c
+.RI "void \fBcentral_product_gradient_interpolant\fP (\fBHierarchInterpPolyApproximation\fP *hip_approx_2, Real mean_1, Real mean_2, const RealVector &mean1_grad, const RealVector &mean2_grad, RealMatrix2DArray &cov_t1_coeff_grads, const UShort2DArray &reference_key=UShort2DArray())"
+.br
+.RI "\fIform type1 coefficient gradients for interpolation of d/ds [(R_1 - mu_1)(R_2 - mu_2)] \fP"
+.ti -1c
+.RI "Real \fBexpectation\fP (const RealVector2DArray &t1_coeffs, const RealMatrix2DArray &t2_coeffs, const UShort2DArray &set_partition=UShort2DArray())"
+.br
+.RI "\fIcompute the expected value of the interpolant given by t{1,2}_coeffs using weights from the \fBHierarchSparseGridDriver\fP \fP"
+.ti -1c
+.RI "Real \fBexpectation\fP (const RealVector2DArray &t1_coeffs, const RealVector2DArray &t1_wts, const RealMatrix2DArray &t2_coeffs, const RealMatrix2DArray &t2_wts, const UShort2DArray &set_partition=UShort2DArray())"
+.br
+.RI "\fIcompute the expected value of the interpolant given by t{1,2}_coeffs using t{1,2}_wts \fP"
+.ti -1c
+.RI "Real \fBexpectation\fP (const RealVector &x, const RealVector2DArray &t1_coeffs, const RealMatrix2DArray &t2_coeffs, const UShort2DArray &set_partition=UShort2DArray())"
+.br
+.RI "\fIcompute the expected value of the interpolant given by t{1,2}_coeffs using weights from the \fBHierarchSparseGridDriver\fP \fP"
+.ti -1c
+.RI "const RealVector & \fBexpectation_gradient\fP (const RealMatrix2DArray &t1_coeff_grads)"
+.br
+.RI "\fIcompute the expected value of the gradient interpolant given by t1_coeff_grads using weights from the \fBHierarchSparseGridDriver\fP \fP"
+.ti -1c
+.RI "const RealVector & \fBexpectation_gradient\fP (const RealMatrix2DArray &t1_coeff_grads, const RealVector2DArray &t1_wts)"
+.br
+.RI "\fIcompute the expected value of the gradient interpolant given by t1_coeff_grads using t1_wts \fP"
+.ti -1c
+.RI "Real \fBexpectation_gradient\fP (const RealVector &x, const RealMatrix2DArray &t1_coeff_grads, size_t t1cg_index)"
+.br
+.RI "\fIcompute the expectation of t1_coeff_grads for index t1cg_index \fP"
+.ti -1c
+.RI "Real \fBexpectation_gradient\fP (const RealVector &x, const RealVector2DArray &t1_coeffs, const RealMatrix2DArray &t2_coeffs, size_t deriv_index)"
+.br
+.RI "\fIcompute the expectation of the gradient of {t1,t2}_coeffs for index deriv_index \fP"
+.ti -1c
+.RI "void \fBincrement_coefficients\fP (const UShortArray &index_set)"
+.br
+.RI "\fIincrement expansion{Type1Coeffs,Type2Coeffs,Type1CoeffGrads} for a single index_set \fP"
+.ti -1c
+.RI "void \fBpush_coefficients\fP (const UShortArray &push_set)"
+.br
+.RI "\fImove the expansion coefficients for push_set from poppedExp{T1Coeffs,T2Coeffs,T1CoeffGrads} to expansion{Type1Coeffs,Type2Coeffs,Type1CoeffGrads} \fP"
+.ti -1c
+.RI "void \fBmember_coefficients_weights\fP (const BitArray &member_bits, RealVector2DArray &member_t1_coeffs, RealVector2DArray &member_t1_wts, RealMatrix2DArray &member_t2_coeffs, RealMatrix2DArray &member_t2_wts, UShort4DArray &member_colloc_key, Sizet3DArray &member_colloc_index)"
+.br
+.RI "\fIcompute member expansion for Sobol' index integration \fP"
+.ti -1c
+.RI "void \fBcentral_product_member_coefficients\fP (const BitArray &m_bits, const RealVector2DArray &m_t1_coeffs, const RealMatrix2DArray &m_t2_coeffs, const UShort4DArray &m_colloc_key, const Sizet3DArray &m_colloc_index, Real \fBmean\fP, RealVector2DArray &cprod_m_t1_coeffs, RealMatrix2DArray &cprod_m_t2_coeffs)"
+.br
+.RI "\fIform hierarchical interpolant of (h-mean)^2 from member-variable expansion of h \fP"
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "short \fBcomputedRefMean\fP"
+.br
+.RI "\fIbookkeeping to track computation of reference mean to avoid unnecessary recomputation \fP"
+.ti -1c
+.RI "short \fBcomputedDeltaMean\fP"
+.br
+.RI "\fIbookkeeping to track computation of mean increment to avoid unnecessary recomputation \fP"
+.ti -1c
+.RI "short \fBcomputedRefVariance\fP"
+.br
+.RI "\fIbookkeeping to track computation of reference variance to avoid unnecessary recomputation \fP"
+.ti -1c
+.RI "short \fBcomputedDeltaVariance\fP"
+.br
+.RI "\fIbookkeeping to track computation of variance increment to avoid unnecessary recomputation \fP"
+.ti -1c
+.RI "RealVector \fBxPrevRefMean\fP"
+.br
+.RI "\fItrack previous evaluation point for all_variables reference mean to avoid unnecessary recomputation \fP"
+.ti -1c
+.RI "RealVector \fBxPrevDeltaMean\fP"
+.br
+.RI "\fItrack previous evaluation point for all_variables mean increment to avoid unnecessary recomputation \fP"
+.ti -1c
+.RI "RealVector \fBxPrevRefVar\fP"
+.br
+.RI "\fItrack previous evaluation point for all_variables reference variance to avoid unnecessary recomputation \fP"
+.ti -1c
+.RI "RealVector \fBxPrevDeltaVar\fP"
+.br
+.RI "\fItrack previous evaluation point for all_variables variance increment to avoid unnecessary recomputation \fP"
+.ti -1c
+.RI "RealVector \fBreferenceMoments\fP"
+.br
+.RI "\fIstorage for reference mean and variance \fP"
+.ti -1c
+.RI "RealVector \fBdeltaMoments\fP"
+.br
+.RI "\fIstorage for mean and variance increments \fP"
+.ti -1c
+.RI "RealVector \fBmeanRefGradient\fP"
+.br
+.RI "\fIstorage for reference mean gradient \fP"
+.ti -1c
+.RI "RealVector \fBvarianceRefGradient\fP"
+.br
+.RI "\fIstorage for reference variance gradient \fP"
+.ti -1c
+.RI "RealVector2DArray \fBexpansionType1Coeffs\fP"
+.br
+.RI "\fIthe type1 coefficients of the expansion for interpolating values \fP"
+.ti -1c
+.RI "RealMatrix2DArray \fBexpansionType2Coeffs\fP"
+.br
+.RI "\fIthe type2 coefficients of the expansion for interpolating gradients \fP"
+.ti -1c
+.RI "RealMatrix2DArray \fBexpansionType1CoeffGrads\fP"
+.br
+.RI "\fIthe gradients of the type1 expansion coefficients \fP"
+.ti -1c
+.RI "std::map< UShortArray, RealVector > \fBpoppedExpT1Coeffs\fP"
+.br
+.RI "\fItype 1 expansion coefficients popped during decrement for later restoration to expansionType1Coeffs \fP"
+.ti -1c
+.RI "std::map< UShortArray, RealMatrix > \fBpoppedExpT2Coeffs\fP"
+.br
+.RI "\fItype 2 expansion coefficients popped during decrement for later restoration to expansionType2Coeffs \fP"
+.ti -1c
+.RI "std::map< UShortArray, RealMatrix > \fBpoppedExpT1CoeffGrads\fP"
+.br
+.RI "\fItype 1 expansion coefficient gradients popped during decrement for later restoration to expansionType1CoeffGrads \fP"
+.ti -1c
+.RI "RealVector3DArray \fBstoredExpType1Coeffs\fP"
+.br
+.RI "\fIstorage of expansionType1Coeffs state for subsequent restoration/combination \fP"
+.ti -1c
+.RI "RealMatrix3DArray \fBstoredExpType2Coeffs\fP"
+.br
+.RI "\fIstorage of expansionType2Coeffs state for subsequent restoration/combination \fP"
+.ti -1c
+.RI "RealMatrix3DArray \fBstoredExpType1CoeffGrads\fP"
+.br
+.RI "\fIstorage of expansionType1CoeffGrads state for subsequent restoration/combination \fP"
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Derived approximation class for hierarchical interpolation polynomials (interpolating values and potentially gradients at collocation points)\&. 
+
+The \fBHierarchInterpPolyApproximation\fP class provides a polynomial approximation based on hierarchical interpolation\&. Both local and global hierarchical basis functions are available\&. It is used primarily for stochastic collocation approaches to uncertainty quantification\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "const RealVector & mean_gradient ()\fC [protected]\fP, \fC [virtual]\fP"
+In this function, all expansion variables are random variables and any design/state variables are omitted from the expansion\&. In this case, the derivative of the expectation is the expectation of the derivative\&. The mixed derivative case (some design variables are inserted and some are augmented) requires no special treatment\&. 
+.PP
+Implements \fBPolynomialApproximation\fP\&.
+.PP
+References PolynomialApproximation::computedMean, PolynomialApproximation::expansionCoeffGradFlag, HierarchInterpPolyApproximation::expansionType1CoeffGrads, HierarchInterpPolyApproximation::expectation_gradient(), PolynomialApproximation::meanGradient, SharedPolyApproxData::nonRandomIndices, and BasisApproximation::sharedDataRep\&.
+.PP
+Referenced by HierarchInterpPolyApproximation::variance_gradient()\&.
+.SS "const RealVector & mean_gradient (const RealVector & x, const SizetArray & dvv)\fC [protected]\fP, \fC [virtual]\fP"
+In this function, a subset of the expansion variables are random variables and any augmented design/state variables (i\&.e\&., not inserted as random variable distribution parameters) are included in the expansion\&. In this case, the mean of the expansion is the expectation over the random subset and the derivative of the mean is the derivative of the remaining expansion over the non-random subset\&. This function must handle the mixed case, where some design/state variables are augmented (and are part of the expansion: derivatives are evaluated as described above) and some are inserted (derivatives are obtained from expansionType1CoeffGrads)\&. 
+.PP
+Implements \fBPolynomialApproximation\fP\&.
+.PP
+References SharedPolyApproxData::basisConfigOptions, PolynomialApproximation::computedMean, HierarchInterpPolyApproximation::covariance(), PolynomialApproximation::expansionCoeffFlag, PolynomialApproximation::expansionCoeffGradFlag, HierarchInterpPolyApproximation::expansionType1CoeffGrads, HierarchInterpPolyApproximation::expansionType1Coeffs, HierarchInterpPolyApproximation::expansionType2Coeffs, HierarchInterpPolyApproximation::expectation_gradient(), SharedPolyApproxData::match_nonrandom_vars(), PolynomialApproximation::meanGradient, SharedPolyApproxData::nonRandomIndices, SharedPolyApproxData::randomVarsKey, BasisApproximation::sharedDataRep, BasisConfigOptions::useDerivs, and PolynomialApproximation::xPrevMeanGrad\&.
+.SS "const RealVector & variance_gradient ()\fC [protected]\fP, \fC [virtual]\fP"
+In this function, all expansion variables are random variables and any design/state variables are omitted from the expansion\&. The mixed derivative case (some design variables are inserted and some are augmented) requires no special treatment\&. 
+.PP
+Implements \fBPolynomialApproximation\fP\&.
+.PP
+References HierarchInterpPolyApproximation::central_product_gradient_interpolant(), PolynomialApproximation::computedVariance, PolynomialApproximation::expansionCoeffFlag, PolynomialApproximation::expansionCoeffGradFlag, HierarchInterpPolyApproximation::expectation_gradient(), HierarchInterpPolyApproximation::mean(), HierarchInterpPolyApproximation::mean_gradient(), SharedPolyApproxData::nonRandomIndices, BasisApproximation::sharedDataRep, and PolynomialApproximation::varianceGradient\&.
+.SS "const RealVector & variance_gradient (const RealVector & x, const SizetArray & dvv)\fC [protected]\fP, \fC [virtual]\fP"
+In this function, a subset of the expansion variables are random variables and any augmented design/state variables (i\&.e\&., not inserted as random variable distribution parameters) are included in the expansion\&. This function must handle the mixed case, where some design/state variables are augmented (and are part of the expansion) and some are inserted (derivatives are obtained from expansionType1CoeffGrads)\&. 
+.PP
+Implements \fBPolynomialApproximation\fP\&.
+.PP
+References SharedPolyApproxData::basisConfigOptions, HierarchInterpPolyApproximation::central_product_gradient_interpolant(), HierarchInterpPolyApproximation::central_product_interpolant(), PolynomialApproximation::computedVariance, PolynomialApproximation::expansionCoeffFlag, PolynomialApproximation::expansionCoeffGradFlag, HierarchInterpPolyApproximation::expectation_gradient(), SharedPolyApproxData::match_nonrandom_vars(), HierarchInterpPolyApproximation::mean(), HierarchInterpPolyApproximation::mean_gradient(), SharedPolyApproxData::nonRandomIndices, SharedPolyApproxData::randomVarsKey, HierarchInterpPolyApproximation::reference_mean(), BasisApproximation::sharedDataRep, BasisConfigOptions::useDerivs, PolynomialApproximation::varianceGradient, and PolynomialApproximation::xPrevVarGrad\&.
+.SS "void compute_partial_variance (const BitArray & set_value)\fC [protected]\fP, \fC [virtual]\fP"
+Computes the variance of component functions\&. Assumes that all subsets of set_value have been computed in advance which will be true so long as the partial_variance is called following appropriate enumeration of set value\&. 
+.PP
+Reimplemented from \fBInterpPolyApproximation\fP\&.
+.PP
+References HierarchInterpPolyApproximation::central_product_member_coefficients(), InterpPolyApproximation::compute_partial_variance(), HierarchInterpPolyApproximation::expectation(), HierarchInterpPolyApproximation::mean(), HierarchInterpPolyApproximation::member_coefficients_weights(), SharedBasisApproxData::numVars, InterpPolyApproximation::partialVariance, BasisApproximation::sharedDataRep, SharedPolyApproxData::sobolIndexMap, PolynomialApproximation::totalSobolIndices, and HierarchInterpPolyApproximation::variance()\&.
+.PP
+Referenced by HierarchInterpPolyApproximation::integrate_expansion_moments()\&.
+.SS "Real value (const RealVector & x, const UShort3DArray & sm_mi, const UShort4DArray & key, const RealVector2DArray & t1_coeffs, const RealMatrix2DArray & t2_coeffs, unsigned short level, const SizetList & subset_indices)\fC [private]\fP"
+
+.PP
+compute the value at a point for a particular interpolation level and for a specified subset of the variables All variables version\&. 
+.PP
+References PolynomialApproximation::expansionCoeffFlag, HierarchInterpPolyApproximation::gradient_basis_variables(), BasisApproximation::sharedDataRep, and SharedInterpPolyApproxData::tensor_product_value()\&.
+.SS "void product_interpolant (\fBHierarchInterpPolyApproximation\fP * hip_approx_2, RealVector2DArray & r1r2_t1_coeffs, RealMatrix2DArray & r1r2_t2_coeffs, const UShort2DArray & reference_key = \fCUShort2DArray()\fP)\fC [private]\fP"
+
+.PP
+form type 1/2 coefficients for interpolation of R_1 R_2 Whereas \fBexpectation()\fP supports either a reference or increment key (passed as generic set_partition), functions forming hierarchical interpolant coefficients support only a reference key (starting point must be set 0; end point can be controlled)\&. 
+.PP
+References SharedPolyApproxData::basisConfigOptions, HierarchInterpPolyApproximation::central_product_interpolant(), HierarchSparseGridDriver::collocation_indices(), HierarchSparseGridDriver::collocation_key(), HierarchInterpPolyApproximation::expansionType1Coeffs, HierarchInterpPolyApproximation::gradient_basis_variables(), SharedHierarchInterpPolyApproxData::hsg_driver(), SharedBasisApproxData::numVars, BasisApproximation::sharedDataRep, HierarchSparseGridDriver::smolyak_multi_index(), PolynomialApproximation::surrData, BasisConfigOptions::useDerivs, and HierarchInterpPolyApproximation::value()\&.
+.PP
+Referenced by HierarchInterpPolyApproximation::delta_covariance(), and HierarchInterpPolyApproximation::expectation_gradient()\&.
+.SS "void central_product_interpolant (\fBHierarchInterpPolyApproximation\fP * hip_approx_2, Real mean_1, Real mean_2, RealVector2DArray & cov_t1_coeffs, RealMatrix2DArray & cov_t2_coeffs, const UShort2DArray & reference_key = \fCUShort2DArray()\fP)\fC [private]\fP"
+
+.PP
+form type 1/2 coefficients for interpolation of (R_1 - mu_1)(R_2 - mu_2) Whereas \fBexpectation()\fP supports either a reference or increment key (passed as generic set_partition), functions forming hierarchical interpolant coefficients support only a reference key (starting point must be set 0; end point can be controlled)\&. 
+.PP
+References SharedPolyApproxData::basisConfigOptions, HierarchInterpPolyApproximation::central_product_gradient_interpolant(), HierarchSparseGridDriver::collocation_indices(), HierarchSparseGridDriver::collocation_key(), HierarchInterpPolyApproximation::expansionType1Coeffs, HierarchInterpPolyApproximation::gradient_basis_variables(), SharedHierarchInterpPolyApproxData::hsg_driver(), SharedBasisApproxData::numVars, BasisApproximation::sharedDataRep, HierarchSparseGridDriver::smolyak_multi_index(), PolynomialApproximation::surrData, BasisConfigOptions::useDerivs, and HierarchInterpPolyApproximation::value()\&.
+.PP
+Referenced by HierarchInterpPolyApproximation::covariance(), HierarchInterpPolyApproximation::product_interpolant(), HierarchInterpPolyApproximation::reference_variance(), and HierarchInterpPolyApproximation::variance_gradient()\&.
+.SS "const RealVector & expectation_gradient (const RealMatrix2DArray & t1_coeff_grads, const RealVector2DArray & t1_wts)\fC [private]\fP"
+
+.PP
+compute the expected value of the gradient interpolant given by t1_coeff_grads using t1_wts For inserted/augmented design/epistemic variables in standard mode\&. 
+.PP
+References PolynomialApproximation::approxGradient, and HierarchInterpPolyApproximation::expectation_gradient()\&.
+.SS "Real expectation_gradient (const RealVector & x, const RealMatrix2DArray & t1_coeff_grads, size_t t1cg_index)\fC [private]\fP"
+
+.PP
+compute the expectation of t1_coeff_grads for index t1cg_index For inserted design/epistemic variables in all_variables mode\&. 
+.PP
+References HierarchSparseGridDriver::collocation_key(), HierarchInterpPolyApproximation::expectation_gradient(), SharedHierarchInterpPolyApproxData::hsg_driver(), SharedPolyApproxData::nonRandomIndices, SharedPolyApproxData::randomIndices, BasisApproximation::sharedDataRep, HierarchSparseGridDriver::smolyak_multi_index(), SharedInterpPolyApproxData::type1_interpolant_value(), and SharedInterpPolyApproxData::type1_weight()\&.
+.SS "Real expectation_gradient (const RealVector & x, const RealVector2DArray & t1_coeffs, const RealMatrix2DArray & t2_coeffs, size_t deriv_index)\fC [private]\fP"
+
+.PP
+compute the expectation of the gradient of {t1,t2}_coeffs for index deriv_index For augmented design/epistemic variables in all_variables mode\&. 
+.PP
+References SharedPolyApproxData::basisConfigOptions, HierarchSparseGridDriver::collocation_key(), SharedHierarchInterpPolyApproxData::hsg_driver(), SharedPolyApproxData::nonRandomIndices, SharedBasisApproxData::numVars, HierarchInterpPolyApproximation::product_interpolant(), SharedPolyApproxData::randomIndices, BasisApproximation::sharedDataRep, HierarchSparseGridDriver::smolyak_multi_index(), SharedInterpPolyApproxData::type1_interpolant_gradient(), SharedInterpPolyApproxData::type1_weight(), SharedInterpPolyApproxData::type2_interpolant_gradient(), SharedInterpPolyApproxData::type2_weight(), and BasisConfigOptions::useDerivs\&.
+.SS "void increment_coefficients (const UShortArray & index_set)\fC [private]\fP"
+
+.PP
+increment expansion{Type1Coeffs,Type2Coeffs,Type1CoeffGrads} for a single index_set Lower level helper function to process a single index set\&. 
+.PP
+References SharedPolyApproxData::basisConfigOptions, HierarchSparseGridDriver::collocation_key(), PolynomialApproximation::expansionCoeffFlag, PolynomialApproximation::expansionCoeffGradFlag, HierarchInterpPolyApproximation::expansionType1CoeffGrads, HierarchInterpPolyApproximation::expansionType1Coeffs, HierarchInterpPolyApproximation::expansionType2Coeffs, HierarchInterpPolyApproximation::gradient_basis_variables(), HierarchInterpPolyApproximation::gradient_nonbasis_variables(), SharedHierarchInterpPolyApproxData::hsg_driver(), HierarchInterpPolyApproximation::push_coefficients(), BasisApproximation::sharedDataRep, HierarchSparseGridDriver::smolyak_multi_index(), PolynomialApproximation::surrData, BasisConfigOptions::useDerivs, and HierarchInterpPolyApproximation::value()\&.
+.SS "void push_coefficients (const UShortArray & push_set)\fC [private]\fP"
+
+.PP
+move the expansion coefficients for push_set from poppedExp{T1Coeffs,T2Coeffs,T1CoeffGrads} to expansion{Type1Coeffs,Type2Coeffs,Type1CoeffGrads} Lower level helper function to process a single index set\&. 
+.PP
+References SharedPolyApproxData::basisConfigOptions, PolynomialApproximation::expansionCoeffFlag, PolynomialApproximation::expansionCoeffGradFlag, HierarchInterpPolyApproximation::expansionType1CoeffGrads, HierarchInterpPolyApproximation::expansionType1Coeffs, HierarchInterpPolyApproximation::expansionType2Coeffs, HierarchInterpPolyApproximation::poppedExpT1CoeffGrads, HierarchInterpPolyApproximation::poppedExpT1Coeffs, HierarchInterpPolyApproximation::poppedExpT2Coeffs, BasisApproximation::sharedDataRep, and BasisConfigOptions::useDerivs\&.
+.SS "void member_coefficients_weights (const BitArray & member_bits, RealVector2DArray & member_t1_coeffs, RealVector2DArray & member_t1_wts, RealMatrix2DArray & member_t2_coeffs, RealMatrix2DArray & member_t2_wts, UShort4DArray & member_colloc_key, Sizet3DArray & member_colloc_index)\fC [private]\fP"
+
+.PP
+compute member expansion for Sobol' index integration Forms a lower dimensional interpolant over variables that are members of the given set\&. 
+.PP
+References SharedPolyApproxData::basisConfigOptions, HierarchInterpPolyApproximation::central_product_member_coefficients(), HierarchSparseGridDriver::collocation_indices(), HierarchSparseGridDriver::collocation_key(), HierarchInterpPolyApproximation::expansionType1Coeffs, HierarchInterpPolyApproximation::expansionType2Coeffs, SharedHierarchInterpPolyApproxData::hsg_driver(), HierarchSparseGridDriver::levels_to_delta_keys(), HierarchSparseGridDriver::levels_to_delta_sizes(), SharedBasisApproxData::numVars, BasisApproximation::sharedDataRep, HierarchSparseGridDriver::smolyak_multi_index(), SharedInterpPolyApproxData::type1_weight(), SharedInterpPolyApproxData::type2_weight(), and BasisConfigOptions::useDerivs\&.
+.PP
+Referenced by HierarchInterpPolyApproximation::compute_partial_variance()\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "RealMatrix2DArray expansionType1CoeffGrads\fC [private]\fP"
+
+.PP
+the gradients of the type1 expansion coefficients may be interpreted as either the gradients of the expansion coefficients or the coefficients of expansions for the response gradients\&. This array is used when sensitivities of moments are needed with respect to variables that do not appear in the expansion (e\&.g\&., with respect to design variables for an expansion only over the random variables)\&. 
+.PP
+Referenced by HierarchInterpPolyApproximation::allocate_arrays(), HierarchInterpPolyApproximation::central_product_gradient_interpolant(), HierarchInterpPolyApproximation::compute_coefficients(), HierarchInterpPolyApproximation::decrement_coefficients(), HierarchInterpPolyApproximation::finalize_coefficients(), HierarchInterpPolyApproximation::gradient_nonbasis_variables(), HierarchInterpPolyApproximation::increment_coefficients(), HierarchInterpPolyApproximation::mean_gradient(), HierarchInterpPolyApproximation::push_coefficients(), HierarchInterpPolyApproximation::restore_coefficients(), HierarchInterpPolyApproximation::store_coefficients(), and HierarchInterpPolyApproximation::swap_coefficients()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for PECOS from the source code\&.

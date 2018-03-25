@@ -1,0 +1,119 @@
+.TH "OrthogonalPolynomial" 3 "Wed Dec 27 2017" "Version Version 1.0" "PECOS" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+OrthogonalPolynomial \- Base class for the orthogonal polynomial class hierarchy\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBBasisPolynomial\fP\&.
+.PP
+Inherited by \fBCharlierOrthogPolynomial\fP, \fBChebyshevOrthogPolynomial\fP, \fBGenLaguerreOrthogPolynomial\fP, \fBHahnOrthogPolynomial\fP, \fBHermiteOrthogPolynomial\fP, \fBJacobiOrthogPolynomial\fP, \fBKrawtchoukOrthogPolynomial\fP, \fBLaguerreOrthogPolynomial\fP, \fBLegendreOrthogPolynomial\fP, \fBMeixnerOrthogPolynomial\fP, and \fBNumericGenOrthogPolynomial\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB~OrthogonalPolynomial\fP ()"
+.br
+.RI "\fIdefault constructor \fP"
+.ti -1c
+.RI "void \fBreset_gauss\fP ()"
+.br
+.RI "\fIdestructor \fP"
+.ti -1c
+.RI "void \fBprecompute_triple_products\fP (const UShortMultiSet &max_ijk)"
+.br
+.RI "\fIprecompute tripleProductMap \fP"
+.ti -1c
+.RI "bool \fBtriple_product\fP (const UShortMultiSet &ijk_key, Real &trip_prod) const "
+.br
+.RI "\fIlookup value based on UShortMultiSet key within tripleProductMap; returns false if not stored \fP"
+.ti -1c
+.RI "bool \fBtriple_product\fP (size_t i, size_t j, size_t k, Real &trip_prod) const "
+.br
+.RI "\fIlookup value based on three size_t keys within tripleProductMap; returns false if not stored \fP"
+.ti -1c
+.RI "void \fBgauss_check\fP (unsigned short order)"
+.br
+.RI "\fIperform unit testing on Gauss points/weights \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBcollocation_rule\fP (short rule)"
+.br
+.RI "\fIset collocRule \fP"
+.ti -1c
+.RI "short \fBcollocation_rule\fP () const "
+.br
+.RI "\fIget collocRule \fP"
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "RealArray \fBcollocPoints\fP"
+.br
+.RI "\fIcollocation points for one-dimensional quadrature (x parameter values for which Poly_n(x) = 0) \fP"
+.ti -1c
+.RI "RealArray \fBcollocWeights\fP"
+.br
+.RI "\fIcollocation weights for one-dimensional quadrature \fP"
+.ti -1c
+.RI "short \fBcollocRule\fP"
+.br
+.RI "\fIthe type of integration rule associated with the orthogonal polynomial \fP"
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "UShortMultiSetRealMap \fBtripleProductMap\fP"
+.br
+.RI "\fImapping from an ijk sorted index set into <Psi_i psi_j='' psi_k>=''>\&. These are precomputed with precompute_triple_products(order) and retrieved with triple_product(key) \fP"
+.ti -1c
+.RI "UShortMultiSet \fBtripleProductOrder\fP"
+.br
+.RI "\fItracks precomputations to prevent redundancy \fP"
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Base class for the orthogonal polynomial class hierarchy\&. 
+
+The \fBOrthogonalPolynomial\fP class is the base class for the univariate orthogonal polynomial class hierarchy in PECOS\&. One instance of an \fBOrthogonalPolynomial\fP is created for each variable within a multidimensional orthogonal polynomial basis function (a vector of OrthogonalPolynomials is contained in \fBOrthogPolyApproximation\fP, which may be mixed and matched in, e\&.g\&., the Wiener-Askey scheme for polynomial chaos)\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "void reset_gauss ()\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+destructor destroy history of Gauss pts/wts due to change in distribution parameters 
+.PP
+Reimplemented from \fBBasisPolynomial\fP\&.
+.PP
+References OrthogonalPolynomial::collocPoints, OrthogonalPolynomial::collocWeights, and OrthogonalPolynomial::triple_product()\&.
+.PP
+Referenced by CharlierOrthogPolynomial::alpha_stat(), KrawtchoukOrthogPolynomial::alpha_stat(), MeixnerOrthogPolynomial::alpha_stat(), HahnOrthogPolynomial::alpha_stat(), GenLaguerreOrthogPolynomial::alpha_stat(), JacobiOrthogPolynomial::alpha_stat(), KrawtchoukOrthogPolynomial::beta_stat(), MeixnerOrthogPolynomial::beta_stat(), HahnOrthogPolynomial::beta_stat(), JacobiOrthogPolynomial::beta_stat(), NumericGenOrthogPolynomial::bounded_lognormal_distribution(), NumericGenOrthogPolynomial::bounded_normal_distribution(), NumericGenOrthogPolynomial::frechet_distribution(), HahnOrthogPolynomial::gamma_stat(), NumericGenOrthogPolynomial::gumbel_distribution(), NumericGenOrthogPolynomial::histogram_bin_distribution(), NumericGenOrthogPolynomial::histogram_pt_distribution(), NumericGenOrthogPolynomial::lognormal_distribution(), NumericGenOrthogPolynomial::loguniform_distribution(), NumericGenOrthogPolynomial::triangular_distribution(), and NumericGenOrthogPolynomial::weibull_distribution()\&.
+.SS "void precompute_triple_products (const UShortMultiSet & max_ijk)"
+
+.PP
+precompute tripleProductMap There are a number of ways to do this precomputation\&. The PECOS approach favors memory over flops by storing nonzero Cijk only for unique index sets\&. This approach requires a lookup of index sets rather than direct iteration over non-zeros\&. An alternative approach (used by Stokhos) that favors flops would store all non-zeros and return iterators to allow efficient iteration over these non-zeros\&. 
+.PP
+References BasisPolynomial::collocation_points(), OrthogonalPolynomial::collocRule, BasisPolynomial::norm_squared(), OrthogonalPolynomial::tripleProductMap, OrthogonalPolynomial::tripleProductOrder, BasisPolynomial::type1_collocation_weights(), and BasisPolynomial::type1_value()\&.
+.PP
+Referenced by OrthogonalPolynomial::gauss_check(), OrthogPolyApproximation::multiply_expansion(), and RegressOrthogPolyApproximation::multiply_expansion()\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "short collocRule\fC [protected]\fP"
+
+.PP
+the type of integration rule associated with the orthogonal polynomial In most cases, this is just the corresponding Gauss quadrature rule\&. However, for Legendre, collocRule manages the option of GAUSS_LEGENDRE or GAUSS_PATTERSON, for Chebyshev, it manages the option of CLENSHAW_CURTIS or FEJER2, and for Hermite, it manages the option of GAUSS_HERMITE or GENZ_KEISTER\&. 
+.PP
+Referenced by ChebyshevOrthogPolynomial::ChebyshevOrthogPolynomial(), HermiteOrthogPolynomial::collocation_points(), ChebyshevOrthogPolynomial::collocation_points(), LegendreOrthogPolynomial::collocation_points(), OrthogonalPolynomial::collocation_rule(), GenLaguerreOrthogPolynomial::GenLaguerreOrthogPolynomial(), HermiteOrthogPolynomial::HermiteOrthogPolynomial(), JacobiOrthogPolynomial::JacobiOrthogPolynomial(), LaguerreOrthogPolynomial::LaguerreOrthogPolynomial(), LegendreOrthogPolynomial::LegendreOrthogPolynomial(), NumericGenOrthogPolynomial::NumericGenOrthogPolynomial(), OrthogonalPolynomial::precompute_triple_products(), ChebyshevOrthogPolynomial::type1_collocation_weights(), HermiteOrthogPolynomial::type1_collocation_weights(), and LegendreOrthogPolynomial::type1_collocation_weights()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for PECOS from the source code\&.

@@ -1,0 +1,114 @@
+.TH "InterpPolyApproximation" 3 "Wed Dec 27 2017" "Version Version 1.0" "PECOS" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+InterpPolyApproximation \- Derived approximation class for interpolation polynomials (global approximation)\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBPolynomialApproximation\fP\&.
+.PP
+Inherited by \fBHierarchInterpPolyApproximation\fP, and \fBNodalInterpPolyApproximation\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBInterpPolyApproximation\fP (const \fBSharedBasisApproxData\fP &shared_data)"
+.br
+.RI "\fIdefault constructor \fP"
+.ti -1c
+.RI "\fB~InterpPolyApproximation\fP ()"
+.br
+.RI "\fIdestructor \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBmin_coefficients\fP () const "
+.br
+.RI "\fIreturn the minimum number of samples (unknowns) required to build the derived class approximation type in numVars dimensions \fP"
+.ti -1c
+.RI "void \fBallocate_arrays\fP ()"
+.br
+.RI "\fIsize derived class data attributes \fP"
+.ti -1c
+.RI "void \fBcompute_component_sobol\fP ()"
+.br
+.RI "\fIcomputes component (main and interaction) Sobol' indices \fP"
+.ti -1c
+.RI "void \fBcompute_total_sobol\fP ()"
+.br
+.RI "\fIcomputes total Sobol' indices \fP"
+.ti -1c
+.RI "void \fBcompute_moments\fP (bool full_stats=true)"
+.br
+.RI "\fIcompute numerical moments to order 4 \fP"
+.ti -1c
+.RI "void \fBcompute_moments\fP (const RealVector &x, bool full_stats=true)"
+.br
+.RI "\fIcompute numerical moments in all-variables mode to order 2 \fP"
+.ti -1c
+.RI "virtual void \fBintegrate_response_moments\fP (size_t num_moments)=0"
+.br
+.RI "\fIcompute moments of response using numerical integration \fP"
+.ti -1c
+.RI "virtual void \fBintegrate_expansion_moments\fP (size_t num_moments)=0"
+.br
+.RI "\fIcompute moments of expansion using numerical integration \fP"
+.ti -1c
+.RI "virtual void \fBcompute_total_sobol_indices\fP ()=0"
+.br
+.ti -1c
+.RI "virtual void \fBcompute_partial_variance\fP (const BitArray &set_value)"
+.br
+.ti -1c
+.RI "void \fBtest_interpolation\fP ()"
+.br
+.RI "\fItest accuracy of the interpolants \fP"
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "RealVector \fBpartialVariance\fP"
+.br
+.RI "\fIthe partialVariances of subset functions f_alpha \fP"
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBproper_subsets\fP (const BitArray &parent_set, BitArraySet &children)"
+.br
+.RI "\fIrecursively identifies constituent subsets that are children of a parent set \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Derived approximation class for interpolation polynomials (global approximation)\&. 
+
+The \fBInterpPolyApproximation\fP class provides a global approximation based on interpolation polynomials\&. It is used primarily for stochastic collocation approaches to uncertainty quantification\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "void compute_partial_variance (const BitArray & set_value)\fC [protected]\fP, \fC [virtual]\fP"
+Computes the variance of component functions\&. Assumes that partial variances of all subsets of set_value have been computed in advance: \fBcompute_component_sobol()\fP calls \fBcompute_partial_variance()\fP using the ordered set_value's in sobolIndexMap\&. 
+.PP
+Reimplemented in \fBHierarchInterpPolyApproximation\fP, and \fBNodalInterpPolyApproximation\fP\&.
+.PP
+References InterpPolyApproximation::partialVariance, InterpPolyApproximation::proper_subsets(), BasisApproximation::sharedDataRep, and SharedPolyApproxData::sobolIndexMap\&.
+.PP
+Referenced by InterpPolyApproximation::compute_component_sobol(), NodalInterpPolyApproximation::compute_partial_variance(), HierarchInterpPolyApproximation::compute_partial_variance(), and InterpPolyApproximation::compute_total_sobol()\&.
+.SS "void proper_subsets (const BitArray & parent_set, BitArraySet & children)\fC [private]\fP"
+
+.PP
+recursively identifies constituent subsets that are children of a parent set For input parent set, recursively finds constituent child subsets with one fewer element 
+.PP
+References SharedBasisApproxData::numVars, and BasisApproximation::sharedDataRep\&.
+.PP
+Referenced by InterpPolyApproximation::compute_partial_variance()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for PECOS from the source code\&.

@@ -1,0 +1,78 @@
+\section{Regression\+Config\+Options Class Reference}
+\label{classPecos_1_1RegressionConfigOptions}\index{Regression\+Config\+Options@{Regression\+Config\+Options}}
+
+
+Container class for various regression configuration options.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPecos_1_1RegressionConfigOptions_ac7dbcf08baa6a5ecc6ec65ba2fc86cad}{Regression\+Config\+Options} ()\label{classPecos_1_1RegressionConfigOptions_ac7dbcf08baa6a5ecc6ec65ba2fc86cad}
+
+\begin{DoxyCompactList}\small\item\em default constructor \end{DoxyCompactList}\item 
+\hyperlink{classPecos_1_1RegressionConfigOptions_a26d7cd26a502c03aea371a152a6ca978}{Regression\+Config\+Options} (bool cv, bool cv\+\_\+noise\+\_\+only, int seed, const Real\+Vector \&noise\+\_\+tols, Real l2\+\_\+penalty, bool normalize\+\_\+cv, unsigned short init\+\_\+lev, unsigned short growth\+\_\+fact, unsigned short num\+\_\+advance)\label{classPecos_1_1RegressionConfigOptions_a26d7cd26a502c03aea371a152a6ca978}
+
+\begin{DoxyCompactList}\small\item\em constructor \end{DoxyCompactList}\item 
+\hyperlink{classPecos_1_1RegressionConfigOptions_a81c3d4db99e8b29c215093344c00a204}{Regression\+Config\+Options} (const \hyperlink{classPecos_1_1RegressionConfigOptions}{Regression\+Config\+Options} \&rc\+\_\+options)\label{classPecos_1_1RegressionConfigOptions_a81c3d4db99e8b29c215093344c00a204}
+
+\begin{DoxyCompactList}\small\item\em copy constructor \end{DoxyCompactList}\item 
+\hyperlink{classPecos_1_1RegressionConfigOptions_afa9dd19c9f06f01d6fbd4a102772ecae}{$\sim$\+Regression\+Config\+Options} ()\label{classPecos_1_1RegressionConfigOptions_afa9dd19c9f06f01d6fbd4a102772ecae}
+
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classPecos_1_1RegressionConfigOptions_a0ba5c334e2daf8be3edc89f827ea125c}{cross\+Validation}\label{classPecos_1_1RegressionConfigOptions_a0ba5c334e2daf8be3edc89f827ea125c}
+
+\begin{DoxyCompactList}\small\item\em flag for use of automatic cross-\/validation for parameter selection in regression approaches \end{DoxyCompactList}\item 
+bool \hyperlink{classPecos_1_1RegressionConfigOptions_a752c167c63d9374fe0d8fdadca28cb8e}{cross\+Valid\+Noise\+Only}\label{classPecos_1_1RegressionConfigOptions_a752c167c63d9374fe0d8fdadca28cb8e}
+
+\begin{DoxyCompactList}\small\item\em flag to restrict cross-\/validation to only estimate the noise tolerance in order to manage computational cost \end{DoxyCompactList}\item 
+int \hyperlink{classPecos_1_1RegressionConfigOptions_a81ab89411a148610c9749af8e95cd453}{random\+Seed}\label{classPecos_1_1RegressionConfigOptions_a81ab89411a148610c9749af8e95cd453}
+
+\begin{DoxyCompactList}\small\item\em random seed for data fold definition within cross validation \end{DoxyCompactList}\item 
+Real\+Vector \hyperlink{classPecos_1_1RegressionConfigOptions_abec255ef7568470cde3f5a4bf91c5f80}{noise\+Tols}\label{classPecos_1_1RegressionConfigOptions_abec255ef7568470cde3f5a4bf91c5f80}
+
+\begin{DoxyCompactList}\small\item\em noise tolerance(s) for compressed sensing algorithms; vector form used in cross-\/validation \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1RegressionConfigOptions_a0639ce5a6380e9d257d0bc8d428df9cd}{l2\+Penalty}\label{classPecos_1_1RegressionConfigOptions_a0639ce5a6380e9d257d0bc8d428df9cd}
+
+\begin{DoxyCompactList}\small\item\em the L2 penalty parameter for L\+A\+S\+SO (elastic net variant) \end{DoxyCompactList}\item 
+bool \hyperlink{classPecos_1_1RegressionConfigOptions_ab63ee1bf81e8165cb29a2cbc08731264}{normalize\+CV}\label{classPecos_1_1RegressionConfigOptions_ab63ee1bf81e8165cb29a2cbc08731264}
+
+\begin{DoxyCompactList}\small\item\em flag indicating whether to scale the CV error estimates by the size of the candidate basis expansion within adapted basis selection \end{DoxyCompactList}\item 
+unsigned short \hyperlink{classPecos_1_1RegressionConfigOptions_af305a2000b4ce11833f574c8bb2915c1}{init\+S\+G\+Level}\label{classPecos_1_1RegressionConfigOptions_af305a2000b4ce11833f574c8bb2915c1}
+
+\begin{DoxyCompactList}\small\item\em initial sparse grid level that provides the starting point for basis adaptation in A\+D\+A\+P\+T\+E\+D\+\_\+\+B\+A\+S\+I\+S\+\_\+\+G\+E\+N\+E\+R\+A\+L\+I\+Z\+ED mode \end{DoxyCompactList}\item 
+unsigned short \hyperlink{classPecos_1_1RegressionConfigOptions_aad280c2e9cb5470be87abb9d76939d6b}{multi\+Index\+Growth\+Factor}\label{classPecos_1_1RegressionConfigOptions_aad280c2e9cb5470be87abb9d76939d6b}
+
+\begin{DoxyCompactList}\small\item\em a scalar growth factor for defining the tp\+Multi\+Index contribution from a particular trial index set for basis adaptation in A\+D\+A\+P\+T\+E\+D\+\_\+\+B\+A\+S\+I\+S\+\_\+\+G\+E\+N\+E\+R\+A\+L\+I\+Z\+ED mode \end{DoxyCompactList}\item 
+unsigned short \hyperlink{classPecos_1_1RegressionConfigOptions_a7d67fa925ce6ba8e6e772b2fc0047862}{num\+Advancements}\label{classPecos_1_1RegressionConfigOptions_a7d67fa925ce6ba8e6e772b2fc0047862}
+
+\begin{DoxyCompactList}\small\item\em number of front expansions per iteration for basis adaptation in A\+D\+A\+P\+T\+E\+D\+\_\+\+B\+A\+S\+I\+S\+\_\+\+E\+X\+P\+A\+N\+D\+I\+N\+G\+\_\+\+F\+R\+O\+NT mode \end{DoxyCompactList}\item 
+bool \hyperlink{classPecos_1_1RegressionConfigOptions_a1b02775f3f1fe2fc66366285325491ea}{advance\+By\+Frontier}
+\begin{DoxyCompactList}\small\item\em flag indicating restriction and front expansion using a multi-\/index frontier \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Container class for various regression configuration options. 
+
+The \hyperlink{classPecos_1_1RegressionConfigOptions}{Regression\+Config\+Options} class provides a simple container class for regression configuration options related to ... 
+
+\subsection{Member Data Documentation}
+\index{Pecos\+::\+Regression\+Config\+Options@{Pecos\+::\+Regression\+Config\+Options}!advance\+By\+Frontier@{advance\+By\+Frontier}}
+\index{advance\+By\+Frontier@{advance\+By\+Frontier}!Pecos\+::\+Regression\+Config\+Options@{Pecos\+::\+Regression\+Config\+Options}}
+\subsubsection[{\texorpdfstring{advance\+By\+Frontier}{advanceByFrontier}}]{\setlength{\rightskip}{0pt plus 5cm}bool advance\+By\+Frontier}\label{classPecos_1_1RegressionConfigOptions_a1b02775f3f1fe2fc66366285325491ea}
+
+
+flag indicating restriction and front expansion using a multi-\/index frontier 
+
+This option reduces memory requirements somewhat, but allowing multi-\/index gaps in the general case results in reduced mutual coherence and better numerical performance. 
+
+Referenced by Regress\+Orthog\+Poly\+Approximation\+::select\+\_\+best\+\_\+basis\+\_\+expansion().
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Shared\+Regress\+Orthog\+Poly\+Approx\+Data.\+hpp\end{DoxyCompactItemize}

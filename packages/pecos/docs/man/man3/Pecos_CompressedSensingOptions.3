@@ -1,0 +1,71 @@
+.TH "CompressedSensingOptions" 3 "Wed Dec 27 2017" "Version Version 1.0" "PECOS" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+CompressedSensingOptions \- Specify a set of options for using the \fBCompressedSensingTool\fP\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBprint\fP ()"
+.br
+.ti -1c
+.RI "\fBCompressedSensingOptions\fP & \fBoperator=\fP (const \fBCompressedSensingOptions\fP &source)"
+.br
+.ti -1c
+.RI "\fBCompressedSensingOptions\fP (const \fBCompressedSensingOptions\fP &source)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "short \fBsolver\fP"
+.br
+.RI "\fISpecify which regression solver to use: see pecos_global_defs\&. \fP"
+.ti -1c
+.RI "Real \fBsolverTolerance\fP"
+.br
+.RI "\fISpecify the internal tolerance of the solver\&. \fP"
+.ti -1c
+.RI "Real \fBepsilon\fP"
+.br
+.RI "\fISpecify the residual tolerance of the solver\&. \fP"
+.ti -1c
+.RI "Real \fBdelta\fP"
+.br
+.RI "\fISpecify the regularization parameter value\&. \fP"
+.ti -1c
+.RI "int \fBmaxNumIterations\fP"
+.br
+.RI "\fISpecify the maximum number of solver iterations\&. \fP"
+.ti -1c
+.RI "bool \fBstandardizeInputs\fP"
+.br
+.RI "\fISpecify if the inputs need to be standardized\&. \fP"
+.ti -1c
+.RI "bool \fBstoreHistory\fP"
+.br
+.ti -1c
+.RI "Real \fBconjugateGradientsTolerance\fP"
+.br
+.ti -1c
+.RI "int \fBverbosity\fP"
+.br
+.RI "\fIThe verbosity level\&. 0: off, 1: warnings on, 2: all print statements on\&. \fP"
+.ti -1c
+.RI "int \fBnumFunctionSamples\fP"
+.br
+.RI "\fIThe number of function samples used to construct A and B\&. Used when A contains gradient information\&. If zero then numFunctionSamples = A\&.numRows() \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Specify a set of options for using the \fBCompressedSensingTool\fP\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for PECOS from the source code\&.

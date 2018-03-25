@@ -1,0 +1,85 @@
+\section{Meixner\+Orthog\+Polynomial Class Reference}
+\label{classPecos_1_1MeixnerOrthogPolynomial}\index{Meixner\+Orthog\+Polynomial@{Meixner\+Orthog\+Polynomial}}
+
+
+Derived orthogonal polynomial class for Meixner polynomials.  
+
+
+Inheritance diagram for Meixner\+Orthog\+Polynomial\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classPecos_1_1MeixnerOrthogPolynomial}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPecos_1_1MeixnerOrthogPolynomial_a625f09ddd19a12e148fbee78be7bc642}{Meixner\+Orthog\+Polynomial} ()\label{classPecos_1_1MeixnerOrthogPolynomial_a625f09ddd19a12e148fbee78be7bc642}
+
+\begin{DoxyCompactList}\small\item\em default constructor \end{DoxyCompactList}\item 
+\hyperlink{classPecos_1_1MeixnerOrthogPolynomial_ae93759041d0eda3b1a696969097ab2b8}{$\sim$\+Meixner\+Orthog\+Polynomial} ()\label{classPecos_1_1MeixnerOrthogPolynomial_ae93759041d0eda3b1a696969097ab2b8}
+
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Real \hyperlink{classPecos_1_1MeixnerOrthogPolynomial_a8792a858ac05a2158880e876f9da2019}{type1\+\_\+value} (Real x, unsigned short order)
+\begin{DoxyCompactList}\small\item\em retrieve the value of the n\+\_\+th type 1 polynomial for a given parameter x using traditional characteristic polynomial formulation \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1MeixnerOrthogPolynomial_a997bdeddf670667c476513fcacc779ca}{alpha\+\_\+polynomial} () const \label{classPecos_1_1MeixnerOrthogPolynomial_a997bdeddf670667c476513fcacc779ca}
+
+\begin{DoxyCompactList}\small\item\em return alpha\+Poly \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1MeixnerOrthogPolynomial_a22bfc4209dec76716ef51648e945469a}{beta\+\_\+polynomial} () const \label{classPecos_1_1MeixnerOrthogPolynomial_a22bfc4209dec76716ef51648e945469a}
+
+\begin{DoxyCompactList}\small\item\em return beta\+Poly \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1MeixnerOrthogPolynomial_aeeb4ce11a8d413209be1ec08eced8728}{alpha\+\_\+stat} (Real alpha)\label{classPecos_1_1MeixnerOrthogPolynomial_aeeb4ce11a8d413209be1ec08eced8728}
+
+\begin{DoxyCompactList}\small\item\em set alpha\+Stat (probability per trial) \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1MeixnerOrthogPolynomial_a7f9584e538ee1574bd4d8d1afb622ed6}{beta\+\_\+stat} (Real beta)\label{classPecos_1_1MeixnerOrthogPolynomial_a7f9584e538ee1574bd4d8d1afb622ed6}
+
+\begin{DoxyCompactList}\small\item\em set beta\+Stat (num trials) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Real \hyperlink{classPecos_1_1MeixnerOrthogPolynomial_a11666846719189915a02ac6f1f96e393}{alpha\+Poly}\label{classPecos_1_1MeixnerOrthogPolynomial_a11666846719189915a02ac6f1f96e393}
+
+\begin{DoxyCompactList}\small\item\em the probability of a \char`\"{}success\char`\"{} for each experiment \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1MeixnerOrthogPolynomial_a96c0b0201ca445f95be14ec035b595cb}{beta\+Poly}\label{classPecos_1_1MeixnerOrthogPolynomial_a96c0b0201ca445f95be14ec035b595cb}
+
+\begin{DoxyCompactList}\small\item\em the number of failures allowed \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Derived orthogonal polynomial class for Meixner polynomials. 
+
+The \hyperlink{classPecos_1_1MeixnerOrthogPolynomial}{Meixner\+Orthog\+Polynomial} class evaluates a univariate Meixner polynomial M$^\wedge$(c,Beta)\+\_\+n of a particular order. These polynomials are orthogonal with respect to the weight function
+
+(k+r-\/1 choose k)$\ast$p$^\wedge$k$\ast$(1-\/p)$^\wedge$n, where p is the the probability of success of a trial, n is the number of total successes and k is the trial number. The geometric distribution (n==1) is a special case of the negative binomial distribution. This corresponds to the negative binomial probability mass function. See appendix in Xiu \& Karniadakis, Siam J. Sci. Comp., v24, n2, pp. 619-\/644, 2002 for more details. 
+
+\subsection{Member Function Documentation}
+\index{Pecos\+::\+Meixner\+Orthog\+Polynomial@{Pecos\+::\+Meixner\+Orthog\+Polynomial}!type1\+\_\+value@{type1\+\_\+value}}
+\index{type1\+\_\+value@{type1\+\_\+value}!Pecos\+::\+Meixner\+Orthog\+Polynomial@{Pecos\+::\+Meixner\+Orthog\+Polynomial}}
+\subsubsection[{\texorpdfstring{type1\+\_\+value(\+Real x, unsigned short order)}{type1_value(Real x, unsigned short order)}}]{\setlength{\rightskip}{0pt plus 5cm}Real type1\+\_\+value (
+\begin{DoxyParamCaption}
+\item[{Real}]{x, }
+\item[{unsigned short}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classPecos_1_1MeixnerOrthogPolynomial_a8792a858ac05a2158880e876f9da2019}
+
+
+retrieve the value of the n\+\_\+th type 1 polynomial for a given parameter x using traditional characteristic polynomial formulation 
+
+For orthogonal polynomials, n specifies the order of the polynomial, whereas for interpolation polynomials, it identifies the interpolant for the n-\/th point. 
+
+Reimplemented from \hyperlink{classPecos_1_1BasisPolynomial_a1fab871e99cec3a1933a2b1e9ed8a625}{Basis\+Polynomial}.
+
+
+
+References Meixner\+Orthog\+Polynomial\+::alpha\+Poly, and Meixner\+Orthog\+Polynomial\+::beta\+Poly.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Meixner\+Orthog\+Polynomial.\+hpp\item 
+Meixner\+Orthog\+Polynomial.\+cpp\end{DoxyCompactItemize}

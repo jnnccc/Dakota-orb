@@ -1,0 +1,25 @@
+#! /bin/bash 
+archome=/home/jnc/soft/dakota-6.7.0-dev
+#FC=ifort
+mkdir -p ../local/packages/NPSOL
+touch    ../local/packages/NPSOL/npsolsubs.f
+echo "cmake_minimum_required(VERSION 2.6)" > ../local/packages/NPSOL/CMakeLists.txt
+echo "project("NPSOL" C)" >> ../local/packages/NPSOL/CMakeLists.txt
+rm -rf *
+
+cmake	-DDAKOTA_PYTHON:BOOL=ON\
+		-DDAKOTA_PYTHON_NUMPY:BOOL=ON\
+		-DCMAKE_Fortran_COMPILER:FILEPATH=/opt/intel/composerxe-2011.4.191/bin/intel64/ifort\
+        -DDAKOTA_HAVE_GSL:BOOL=ON \
+		-DHAVE_QUESO:BOOL=ON \
+		-DHAVE_X_GRAPHICS:BOOL=ON ../ || exit 1
+
+find . -type f -exec ls  {} \; 2> /dev/null | sort -t' ' -k +6,6 -k +7,7|grep link.txt >/tmp/filename
+libpath=/home/jnc/work/notouch/lib/
+for i in $(cat /tmp/filename|tr " " "?")             
+  do
+  	sed -i "s!-lnpsol!-lnpsol -lgfortran ${libpath}/libusrdefine.so ${libpath}/libspice.so !g"  "$i"
+  done
+ln -s src bin
+make -j24 && ../compile/release
+#

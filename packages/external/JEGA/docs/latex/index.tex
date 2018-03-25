@@ -1,0 +1,67 @@
+{\bfseries \hyperlink{namespaceJEGA}{J\+E\+GA} Version Release Changes}
+
+{\bfseries v2.\+1}
+\begin{DoxyItemize}
+\item Change of the algorithm progression to pass the initial population directly to the fitness assessor bypassing the variational operators.
+\item Introduction of the Post Processor operator for filtering final solutions.
+\begin{DoxyItemize}
+\item Creation of the Null\+Post\+Processor to serve as the null objects of post processors.
+\end{DoxyItemize}
+\item Addition of much source code documentation.
+\item Addition of new \char`\"{}distance\char`\"{} niche pressure applicator.
+\item Introduction of \char`\"{}region of space\char`\"{} concept and constructs for potential use in the future whereby algorithms can be confined to sub-\/regions of the design space.
+\item Addition of new \char`\"{}double matrix\char`\"{} initializer that reads initial designs from a supplied matrix of values.
+\item Multiple bug fixes.
+\item Multiple improvements to the logging output.
+\end{DoxyItemize}
+
+{\bfseries v2.\+0}
+
+
+\begin{DoxyItemize}
+\item Namespace Updates\+:
+\begin{DoxyItemize}
+\item Introduction of \hyperlink{namespaceJEGA}{J\+E\+GA} namespace.
+\item namespace Utilities became namespace \hyperlink{namespaceJEGA_1_1Utilities}{J\+E\+G\+A\+::\+Utilities}.
+\item namespace Genetic\+Algorithms became namespace \hyperlink{namespaceJEGA_1_1Algorithms}{J\+E\+G\+A\+::\+Algorithms}.
+\item Introduction of namespace \hyperlink{namespaceJEGA_1_1FrontEnd}{J\+E\+G\+A\+::\+Front\+End}
+\item Introduction of namespace \hyperlink{namespaceJEGA_1_1Logging}{J\+E\+G\+A\+::\+Logging} to house the \hyperlink{namespaceJEGA}{J\+E\+GA} specific front end to the eddy logging project.
+\end{DoxyItemize}
+\item Introduction of eddy projects including\+:
+\begin{DoxyItemize}
+\item Threads project for thread safety (this is not used in Dakota but is available when using \hyperlink{namespaceJEGA}{J\+E\+GA} independently of Dakota).
+\item Logging project for all reporting to the user during execution with the exception of writing data files.
+\item Utilities project for various data structures, utility classes, and data types such as fixed size integers.
+\end{DoxyItemize}
+\item Addition of many logging points where information can now be presented to the user.
+\item Introduction of new class of operators for niche pressure.
+\item Introduction of radial niche pressure applicator.
+\item Modification of Domination\+Count\+Selector into Domination\+Count\+Fitness\+Assessor for use with various selectors.
+\item Introduction of Below\+Limit\+Selector for selecting designs within a limiting value of fitness.
+\item Creation of Front End project to ease the use of \hyperlink{namespaceJEGA}{J\+E\+GA} as a third party library in other applications.
+\item Movement of fitness tracker convergers out of the S\+O\+GA directory into the top level GA directory for shared use.
+\item Introduction of M\+O\+GA convergence operator.
+\item Overhaul of core data structures including elimination of P\+O\+D\+Deque, H\+Sort\+Deque, etc. in favor of S\+TL multiset class with specialized predicates. The new implementation is safer, faster, more robust, and more portable.
+\item Overhaul of Statistician classes for increased flexibility with data structures.
+\item Intrduction of Parameter\+Database interface and associated Basic Impl to avoid the need for \char`\"{}two-\/way\char`\"{} dependencies when using \hyperlink{namespaceJEGA}{J\+E\+GA} as a third party library.
+\item Introduction of the Parameter\+Extractor class to ease the use of obtaining values from Parameter\+Database class objects.
+\item Elimination of \char`\"{}\+Plug-\/in\char`\"{} design style for Designs and Design Groups in favor of returning sepecialized data structures with relevant information. This results in short-\/lived value storage which is safer than attempting to keep such information up-\/to-\/date during the course of an algorithm especially when it is usually only needed immediately after it is calculated.
+\item Introduction of data structures to support the previous bullet.
+\item Separation of Design\+Target into pure interface and associated Basic Impl.
+\item Separation of Design\+::\+Get\+Variable method into Design\+::\+Get\+Variable\+Value and Design\+::\+Get\+Variable\+Rep to ease retrieval of variable values in the desired form.
+\item Introduction of Design\+File\+Reader class to aid in retrieving designs from files. Currently only flat files are supported.
+\item Addition of much code documentation.
+\item Overhauled J\+E\+G\+A\+Optimizer class to make use of \hyperlink{namespaceJEGA}{J\+E\+GA} front end project.
+\item Fixed bug in multi-\/point parameterized crossover routine whereby it was using the bitwise or operator where it should have been using the xor.
+\item Overhauled multi-\/point crossover routine for correct operation.
+\item Numerous other bug fixes.
+\item Changed all convergers to respect max gens and max evals.
+\item Change to the way constraints are handled by the multi-\/objective statistician. Now tracks violations to get idea of how much violation is \char`\"{}a lot\char`\"{} and compares designs based on that.
+\end{DoxyItemize}
+
+{\bfseries v1.\+0}
+
+
+\begin{DoxyItemize}
+\item Initial Release. 
+\end{DoxyItemize}

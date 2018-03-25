@@ -1,0 +1,156 @@
+\section{Project\+Orthog\+Poly\+Approximation Class Reference}
+\label{classPecos_1_1ProjectOrthogPolyApproximation}\index{Project\+Orthog\+Poly\+Approximation@{Project\+Orthog\+Poly\+Approximation}}
+
+
+Derived approximation class for multivariate orthogonal polynomial approximation with coefficient estimation via numerical integration.  
+
+
+Inheritance diagram for Project\+Orthog\+Poly\+Approximation\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classPecos_1_1ProjectOrthogPolyApproximation}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPecos_1_1ProjectOrthogPolyApproximation_a25356986e1e97db9a693bab27f8fd97b}{Project\+Orthog\+Poly\+Approximation} (const \hyperlink{classPecos_1_1SharedBasisApproxData}{Shared\+Basis\+Approx\+Data} \&shared\+\_\+data)\label{classPecos_1_1ProjectOrthogPolyApproximation_a25356986e1e97db9a693bab27f8fd97b}
+
+\begin{DoxyCompactList}\small\item\em default constructor \end{DoxyCompactList}\item 
+\hyperlink{classPecos_1_1ProjectOrthogPolyApproximation_acb0c923e1bb0946f9f652d1ed6597f27}{$\sim$\+Project\+Orthog\+Poly\+Approximation} ()\label{classPecos_1_1ProjectOrthogPolyApproximation_acb0c923e1bb0946f9f652d1ed6597f27}
+
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1ProjectOrthogPolyApproximation_aef8f0c32bdeff7756a9c614607c03058}{compute\+\_\+coefficients} (size\+\_\+t index=\+\_\+\+N\+P\+OS)\label{classPecos_1_1ProjectOrthogPolyApproximation_aef8f0c32bdeff7756a9c614607c03058}
+
+\begin{DoxyCompactList}\small\item\em calculate the approximation coefficients using a set of surrogate data \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1ProjectOrthogPolyApproximation_a150c32326f6c12d2303806005715706e}{push\+\_\+coefficients} ()\label{classPecos_1_1ProjectOrthogPolyApproximation_a150c32326f6c12d2303806005715706e}
+
+\begin{DoxyCompactList}\small\item\em restore the approximation coefficients to a previously incremented state as identified by the current data increment \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1ProjectOrthogPolyApproximation_a8ba12605934048176c1d1c5722465523}{increment\+\_\+coefficients} (size\+\_\+t index=\+\_\+\+N\+P\+OS)\label{classPecos_1_1ProjectOrthogPolyApproximation_a8ba12605934048176c1d1c5722465523}
+
+\begin{DoxyCompactList}\small\item\em recalculate approximation coefficients following a surrogate data update \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1ProjectOrthogPolyApproximation_a662fd880fee0ed53f1e3383c41d6b792}{decrement\+\_\+coefficients} (bool save\+\_\+data)\label{classPecos_1_1ProjectOrthogPolyApproximation_a662fd880fee0ed53f1e3383c41d6b792}
+
+\begin{DoxyCompactList}\small\item\em restore the approximation coefficients to the state preceding the last increment \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1ProjectOrthogPolyApproximation_a742e0217d6f681e08f401409771f4f4a}{finalize\+\_\+coefficients} ()\label{classPecos_1_1ProjectOrthogPolyApproximation_a742e0217d6f681e08f401409771f4f4a}
+
+\begin{DoxyCompactList}\small\item\em finalize the coefficients by applying all previously evaluated increments \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classPecos_1_1ProjectOrthogPolyApproximation_ac789358ee49633613d6c97593be06f9d}{min\+\_\+coefficients} () const \label{classPecos_1_1ProjectOrthogPolyApproximation_ac789358ee49633613d6c97593be06f9d}
+
+\begin{DoxyCompactList}\small\item\em return the minimum number of samples (unknowns) required to build the derived class approximation type in num\+Vars dimensions \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1ProjectOrthogPolyApproximation_a37ef37829b412fefa40d53b395846781}{allocate\+\_\+arrays} ()\label{classPecos_1_1ProjectOrthogPolyApproximation_a37ef37829b412fefa40d53b395846781}
+
+\begin{DoxyCompactList}\small\item\em initialize polynomial\+Basis, multi\+Index, et al. \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1ProjectOrthogPolyApproximation_a7bc9dcdf32fc46f97e286268c1ac51b0}{value} (const Real\+Vector \&x)\label{classPecos_1_1ProjectOrthogPolyApproximation_a7bc9dcdf32fc46f97e286268c1ac51b0}
+
+\begin{DoxyCompactList}\small\item\em retrieve the approximate function value for a given parameter vector \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1ProjectOrthogPolyApproximation_a1abe918dbdc66ac0fde85f1ab3c061af}{stored\+\_\+value} (const Real\+Vector \&x, size\+\_\+t index)\label{classPecos_1_1ProjectOrthogPolyApproximation_a1abe918dbdc66ac0fde85f1ab3c061af}
+
+\begin{DoxyCompactList}\small\item\em retrieve the response value for a stored expansion using the given parameter vector \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1ProjectOrthogPolyApproximation_a5926c67431b0fc223fcfa6c11cb9de14}{compute\+\_\+moments} (bool full\+\_\+stats=true)\label{classPecos_1_1ProjectOrthogPolyApproximation_a5926c67431b0fc223fcfa6c11cb9de14}
+
+\begin{DoxyCompactList}\small\item\em compute numerical moments to order 4 and expansion moments to order 2 \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1ProjectOrthogPolyApproximation_a2a6098ab4416bdcfdeadea5d46aa5f52}{compute\+\_\+moments} (const Real\+Vector \&x, bool full\+\_\+stats=true)\label{classPecos_1_1ProjectOrthogPolyApproximation_a2a6098ab4416bdcfdeadea5d46aa5f52}
+
+\begin{DoxyCompactList}\small\item\em compute expansion moments in all-\/variables mode to order 2 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classPecos_1_1ProjectOrthogPolyApproximation_af8b9dd9938e91785988cc1a6886d87a9}{sparse\+\_\+grid\+\_\+multi\+\_\+index} (U\+Short2\+D\+Array \&multi\+\_\+index)\label{classPecos_1_1ProjectOrthogPolyApproximation_af8b9dd9938e91785988cc1a6886d87a9}
+
+\begin{DoxyCompactList}\small\item\em initialize multi\+\_\+index using a sparse grid expansion \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1ProjectOrthogPolyApproximation_a97c9838f5a9fcce6e448d47f21c77d2f}{integration\+\_\+data} (size\+\_\+t tp\+\_\+index, S\+D\+V\+Array \&tp\+\_\+data\+\_\+vars, S\+D\+R\+Array \&tp\+\_\+data\+\_\+resp, Real\+Vector \&tp\+\_\+weights)\label{classPecos_1_1ProjectOrthogPolyApproximation_a97c9838f5a9fcce6e448d47f21c77d2f}
+
+\begin{DoxyCompactList}\small\item\em extract tp\+\_\+data\+\_\+points from surr\+Data and tp\+\_\+weights from driver\+Rep-\/$>$type1\+Colloc\+Wts1D \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1ProjectOrthogPolyApproximation_aead9a68c85feba994da85a179d32f474}{integrate\+\_\+expansion} (const U\+Short2\+D\+Array \&multi\+\_\+index, const S\+D\+V\+Array \&data\+\_\+vars, const S\+D\+R\+Array \&data\+\_\+resp, const Real\+Vector \&wt\+\_\+sets, Real\+Vector \&exp\+\_\+coeffs, Real\+Matrix \&exp\+\_\+coeff\+\_\+grads)
+\begin{DoxyCompactList}\small\item\em computes the chaos\+Coeffs via numerical integration (exp\+Coeffs\+Soln\+Approach can be Q\+U\+A\+D\+R\+A\+T\+U\+RE, C\+U\+B\+A\+T\+U\+RE, or C\+O\+M\+B\+I\+N\+E\+D\+\_\+\+S\+P\+A\+R\+S\+E\+\_\+\+G\+R\+ID) \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1ProjectOrthogPolyApproximation_ab2c39d08bc874d872b0c910dc72d05dc}{expectation} ()
+\begin{DoxyCompactList}\small\item\em computes the chaos\+Coeffs via averaging of samples (exp\+Coeffs\+Soln\+Approach is S\+A\+M\+P\+L\+I\+NG) \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1ProjectOrthogPolyApproximation_a284a7cf7352dcc2efef9aed24ea4c654}{append\+\_\+tensor\+\_\+expansions} (size\+\_\+t start\+\_\+index)\label{classPecos_1_1ProjectOrthogPolyApproximation_a284a7cf7352dcc2efef9aed24ea4c654}
+
+\begin{DoxyCompactList}\small\item\em update expansion\{Coeffs,Coeff\+Grads\} by adding one or more tensor-\/product expansions and updating all Smolyak coefficients \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1ProjectOrthogPolyApproximation_a9e2f6de3dafca8df624fef2a132b5185}{integrate\+\_\+response\+\_\+moments} (size\+\_\+t num\+\_\+moments)\label{classPecos_1_1ProjectOrthogPolyApproximation_a9e2f6de3dafca8df624fef2a132b5185}
+
+\begin{DoxyCompactList}\small\item\em update numerical\+Moments using numerical integration applied directly to surr\+Data \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Real\+Vector \hyperlink{classPecos_1_1ProjectOrthogPolyApproximation_a1faf1c22abf8e2e00ec23047a3561504}{prev\+Exp\+Coeffs}\label{classPecos_1_1ProjectOrthogPolyApproximation_a1faf1c22abf8e2e00ec23047a3561504}
+
+\begin{DoxyCompactList}\small\item\em previous expansion\+Coeffs (aggregated total, not tensor-\/product contributions) prior to \hyperlink{classPecos_1_1ProjectOrthogPolyApproximation_a284a7cf7352dcc2efef9aed24ea4c654}{append\+\_\+tensor\+\_\+expansions()} \end{DoxyCompactList}\item 
+Real\+Matrix \hyperlink{classPecos_1_1ProjectOrthogPolyApproximation_af0ebc5c5c5d1da634d1025fd0c4ad534}{prev\+Exp\+Coeff\+Grads}\label{classPecos_1_1ProjectOrthogPolyApproximation_af0ebc5c5c5d1da634d1025fd0c4ad534}
+
+\begin{DoxyCompactList}\small\item\em previous expansion\+Coeff\+Grads (aggregated total, not tensor-\/product contributions) prior to \hyperlink{classPecos_1_1ProjectOrthogPolyApproximation_a284a7cf7352dcc2efef9aed24ea4c654}{append\+\_\+tensor\+\_\+expansions()} \end{DoxyCompactList}\item 
+Real\+Vector\+Array \hyperlink{classPecos_1_1ProjectOrthogPolyApproximation_a5257b357e1cbe2bc036541a357a01352}{tp\+Expansion\+Coeffs}\label{classPecos_1_1ProjectOrthogPolyApproximation_a5257b357e1cbe2bc036541a357a01352}
+
+\begin{DoxyCompactList}\small\item\em the set of tensor-\/product contributions to expansion\+Coeffs \end{DoxyCompactList}\item 
+Real\+Matrix\+Array \hyperlink{classPecos_1_1ProjectOrthogPolyApproximation_acc8697cb313aac233293874619c0eda7}{tp\+Expansion\+Coeff\+Grads}\label{classPecos_1_1ProjectOrthogPolyApproximation_acc8697cb313aac233293874619c0eda7}
+
+\begin{DoxyCompactList}\small\item\em the set of tensor-\/product contributions to expansion\+Coeff\+Grads \end{DoxyCompactList}\item 
+std\+::deque$<$ Real\+Vector $>$ \hyperlink{classPecos_1_1ProjectOrthogPolyApproximation_a252c0b8bb4226755ad14864be1bbc7e2}{popped\+T\+P\+Exp\+Coeffs}\label{classPecos_1_1ProjectOrthogPolyApproximation_a252c0b8bb4226755ad14864be1bbc7e2}
+
+\begin{DoxyCompactList}\small\item\em popped instances of tp\+Expansion\+Coeffs that were computed but not selected \end{DoxyCompactList}\item 
+std\+::deque$<$ Real\+Matrix $>$ \hyperlink{classPecos_1_1ProjectOrthogPolyApproximation_a4b603cc9a41c6961d1eac56c3d86918d}{popped\+T\+P\+Exp\+Coeff\+Grads}\label{classPecos_1_1ProjectOrthogPolyApproximation_a4b603cc9a41c6961d1eac56c3d86918d}
+
+\begin{DoxyCompactList}\small\item\em popped tp\+Expansion\+Coeff\+Grads instances that were computed but not selected \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Derived approximation class for multivariate orthogonal polynomial approximation with coefficient estimation via numerical integration. 
+
+The \hyperlink{classPecos_1_1ProjectOrthogPolyApproximation}{Project\+Orthog\+Poly\+Approximation} class provides a global approximation based on multivariate orthogonal polynomials, where the coefficients are computed using numerical integration approaches such as quadrature, cubature, sparse grids, and random sampling. It is used primarily for polynomial chaos expansion aproaches to UQ. 
+
+\subsection{Member Function Documentation}
+\index{Pecos\+::\+Project\+Orthog\+Poly\+Approximation@{Pecos\+::\+Project\+Orthog\+Poly\+Approximation}!integrate\+\_\+expansion@{integrate\+\_\+expansion}}
+\index{integrate\+\_\+expansion@{integrate\+\_\+expansion}!Pecos\+::\+Project\+Orthog\+Poly\+Approximation@{Pecos\+::\+Project\+Orthog\+Poly\+Approximation}}
+\subsubsection[{\texorpdfstring{integrate\+\_\+expansion(const U\+Short2\+D\+Array \&multi\+\_\+index, const S\+D\+V\+Array \&data\+\_\+vars, const S\+D\+R\+Array \&data\+\_\+resp, const Real\+Vector \&wt\+\_\+sets, Real\+Vector \&exp\+\_\+coeffs, Real\+Matrix \&exp\+\_\+coeff\+\_\+grads)}{integrate_expansion(const UShort2DArray &multi_index, const SDVArray &data_vars, const SDRArray &data_resp, const RealVector &wt_sets, RealVector &exp_coeffs, RealMatrix &exp_coeff_grads)}}]{\setlength{\rightskip}{0pt plus 5cm}void integrate\+\_\+expansion (
+\begin{DoxyParamCaption}
+\item[{const U\+Short2\+D\+Array \&}]{multi\+\_\+index, }
+\item[{const S\+D\+V\+Array \&}]{data\+\_\+vars, }
+\item[{const S\+D\+R\+Array \&}]{data\+\_\+resp, }
+\item[{const Real\+Vector \&}]{wt\+\_\+sets, }
+\item[{Real\+Vector \&}]{exp\+\_\+coeffs, }
+\item[{Real\+Matrix \&}]{exp\+\_\+coeff\+\_\+grads}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classPecos_1_1ProjectOrthogPolyApproximation_aead9a68c85feba994da85a179d32f474}
+
+
+computes the chaos\+Coeffs via numerical integration (exp\+Coeffs\+Soln\+Approach can be Q\+U\+A\+D\+R\+A\+T\+U\+RE, C\+U\+B\+A\+T\+U\+RE, or C\+O\+M\+B\+I\+N\+E\+D\+\_\+\+S\+P\+A\+R\+S\+E\+\_\+\+G\+R\+ID) 
+
+The coefficients of the P\+CE for the response are calculated using a spectral projection of the response against each multivariate orthogonal polynomial basis fn using the inner product ratio $<$f,Psi$>$/$<$Psi$^\wedge$2$>$, where inner product $<$a,b$>$ is the n-\/dimensional integral of a$\ast$b$\ast$weighting over the support range of the n-\/dimensional (composite) weighting function. 1-\/D quadrature rules are defined for specific 1-\/D weighting functions and support ranges and approximate the integral of f$\ast$weighting as the Sum\+\_\+i of w\+\_\+i f\+\_\+i. To extend this to n-\/dimensions, a tensor product quadrature rule, cubature, or Smolyak sparse grid rule is applied. It is not necessary to approximate the integral for the denominator numerically, since this is available analytically. 
+
+References Polynomial\+Approximation\+::expansion\+Coeff\+Flag, Polynomial\+Approximation\+::expansion\+Coeff\+Grad\+Flag, Shared\+Orthog\+Poly\+Approx\+Data\+::multivariate\+\_\+polynomial(), Shared\+Orthog\+Poly\+Approx\+Data\+::norm\+\_\+squared(), and Basis\+Approximation\+::shared\+Data\+Rep.
+
+
+
+Referenced by Project\+Orthog\+Poly\+Approximation\+::compute\+\_\+coefficients(), Project\+Orthog\+Poly\+Approximation\+::increment\+\_\+coefficients(), and Project\+Orthog\+Poly\+Approximation\+::integration\+\_\+data().
+
+\index{Pecos\+::\+Project\+Orthog\+Poly\+Approximation@{Pecos\+::\+Project\+Orthog\+Poly\+Approximation}!expectation@{expectation}}
+\index{expectation@{expectation}!Pecos\+::\+Project\+Orthog\+Poly\+Approximation@{Pecos\+::\+Project\+Orthog\+Poly\+Approximation}}
+\subsubsection[{\texorpdfstring{expectation()}{expectation()}}]{\setlength{\rightskip}{0pt plus 5cm}void expectation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classPecos_1_1ProjectOrthogPolyApproximation_ab2c39d08bc874d872b0c910dc72d05dc}
+
+
+computes the chaos\+Coeffs via averaging of samples (exp\+Coeffs\+Soln\+Approach is S\+A\+M\+P\+L\+I\+NG) 
+
+The coefficients of the P\+CE for the response are calculated using a spectral projection of the response against each multivariate orthogonal polynomial basis fn using the inner product ratio $<$f,Psi$>$/$<$Psi$^\wedge$2$>$, where inner product $<$a,b$>$ is the n-\/dimensional integral of a$\ast$b$\ast$weighting over the support range of the n-\/dimensional (composite) weighting function. When interpreting the weighting function as a probability density function, $<$a,b$>$ = expected value of a$\ast$b, which can be evaluated by sampling from the probability density function and computing the mean statistic. It is not necessary to compute the mean statistic for the denominator, since this is available analytically. 
+
+References Polynomial\+Approximation\+::expansion\+Coeff\+Flag, Polynomial\+Approximation\+::expansion\+Coeff\+Grad\+Flag, Orthog\+Poly\+Approximation\+::expansion\+Coeff\+Grads, Orthog\+Poly\+Approximation\+::expansion\+Coeffs, Orthog\+Poly\+Approximation\+::fail\+\_\+booleans(), Project\+Orthog\+Poly\+Approximation\+::integrate\+\_\+response\+\_\+moments(), Orthog\+Poly\+Approximation\+::mean(), Shared\+Orthog\+Poly\+Approx\+Data\+::multi\+Index, Shared\+Orthog\+Poly\+Approx\+Data\+::multivariate\+\_\+polynomial(), Shared\+Orthog\+Poly\+Approx\+Data\+::norm\+\_\+squared(), Basis\+Approximation\+::shared\+Data\+Rep, and Polynomial\+Approximation\+::surr\+Data.
+
+
+
+Referenced by Project\+Orthog\+Poly\+Approximation\+::compute\+\_\+coefficients().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Project\+Orthog\+Poly\+Approximation.\+hpp\item 
+Project\+Orthog\+Poly\+Approximation.\+cpp\end{DoxyCompactItemize}

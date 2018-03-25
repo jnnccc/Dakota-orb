@@ -1,0 +1,615 @@
+\section{Hierarch\+Interp\+Poly\+Approximation Class Reference}
+\label{classPecos_1_1HierarchInterpPolyApproximation}\index{Hierarch\+Interp\+Poly\+Approximation@{Hierarch\+Interp\+Poly\+Approximation}}
+
+
+Derived approximation class for hierarchical interpolation polynomials (interpolating values and potentially gradients at collocation points).  
+
+
+Inheritance diagram for Hierarch\+Interp\+Poly\+Approximation\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classPecos_1_1HierarchInterpPolyApproximation}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPecos_1_1HierarchInterpPolyApproximation_a7a8667f6bece197e5c58ffa0a65bbbf0}{Hierarch\+Interp\+Poly\+Approximation} (const \hyperlink{classPecos_1_1SharedBasisApproxData}{Shared\+Basis\+Approx\+Data} \&shared\+\_\+data)\label{classPecos_1_1HierarchInterpPolyApproximation_a7a8667f6bece197e5c58ffa0a65bbbf0}
+
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\hyperlink{classPecos_1_1HierarchInterpPolyApproximation_a8a74e4730090c782a9d0973a02f003ea}{$\sim$\+Hierarch\+Interp\+Poly\+Approximation} ()\label{classPecos_1_1HierarchInterpPolyApproximation_a8a74e4730090c782a9d0973a02f003ea}
+
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_a37ef37829b412fefa40d53b395846781}{allocate\+\_\+arrays} ()\label{classPecos_1_1HierarchInterpPolyApproximation_a37ef37829b412fefa40d53b395846781}
+
+\begin{DoxyCompactList}\small\item\em size expansion\+Type\{1,2\}Coeffs and expansion\+Type1\+Coeff\+Grads \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_aef8f0c32bdeff7756a9c614607c03058}{compute\+\_\+coefficients} (size\+\_\+t index=\+\_\+\+N\+P\+OS)\label{classPecos_1_1HierarchInterpPolyApproximation_aef8f0c32bdeff7756a9c614607c03058}
+
+\begin{DoxyCompactList}\small\item\em calculate the approximation coefficients using a set of surrogate data \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_a8ba12605934048176c1d1c5722465523}{increment\+\_\+coefficients} (size\+\_\+t index=\+\_\+\+N\+P\+OS)\label{classPecos_1_1HierarchInterpPolyApproximation_a8ba12605934048176c1d1c5722465523}
+
+\begin{DoxyCompactList}\small\item\em update the coefficients for the expansion of interpolation polynomials\+: increment expansion\{Type1\+Coeffs,Type2\+Coeffs,Type1\+Coeff\+Grads\} \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_a662fd880fee0ed53f1e3383c41d6b792}{decrement\+\_\+coefficients} (bool save\+\_\+data)\label{classPecos_1_1HierarchInterpPolyApproximation_a662fd880fee0ed53f1e3383c41d6b792}
+
+\begin{DoxyCompactList}\small\item\em restore the coefficients to their previous state prior to last increment\+: decrement expansion\{Type1\+Coeffs,Type2\+Coeffs,Type1\+Coeff\+Grads\} \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_a150c32326f6c12d2303806005715706e}{push\+\_\+coefficients} ()\label{classPecos_1_1HierarchInterpPolyApproximation_a150c32326f6c12d2303806005715706e}
+
+\begin{DoxyCompactList}\small\item\em restore the coefficients to a previously incremented state as identified by the current increment to the Smolyak multi index\+: push expansion\{Type1\+Coeffs,Type2\+Coeffs,Type1\+Coeff\+Grads\} \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_a742e0217d6f681e08f401409771f4f4a}{finalize\+\_\+coefficients} ()\label{classPecos_1_1HierarchInterpPolyApproximation_a742e0217d6f681e08f401409771f4f4a}
+
+\begin{DoxyCompactList}\small\item\em finalize the coefficients by applying all previously evaluated increments\+: finalize expansion\{Type1\+Coeffs,Type2\+Coeffs,Type1\+Coeff\+Grads\} \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_abc17a7104c33d8146f4a0ee7b6c6f37a}{store\+\_\+coefficients} (size\+\_\+t index=\+\_\+\+N\+P\+OS)\label{classPecos_1_1HierarchInterpPolyApproximation_abc17a7104c33d8146f4a0ee7b6c6f37a}
+
+\begin{DoxyCompactList}\small\item\em store current state within stored\+Exp\+Type\{1\+Coeffs,2\+Coeffs,1\+Coeff\+Grads\} \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_ad05b093ee96314c9e05bad8e06c2dae7}{restore\+\_\+coefficients} (size\+\_\+t index=\+\_\+\+N\+P\+OS)\label{classPecos_1_1HierarchInterpPolyApproximation_ad05b093ee96314c9e05bad8e06c2dae7}
+
+\begin{DoxyCompactList}\small\item\em restore previous state from stored\+Exp\+Type\{1\+Coeffs,2\+Coeffs,1\+Coeff\+Grads\} \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_af5c6af74d2c8c5575fefb46ce55af90d}{swap\+\_\+coefficients} (size\+\_\+t index)\label{classPecos_1_1HierarchInterpPolyApproximation_af5c6af74d2c8c5575fefb46ce55af90d}
+
+\begin{DoxyCompactList}\small\item\em swap stored\+Exp\+Type\{1\+Coeffs,2\+Coeffs,1\+Coeff\+Grads\}\mbox{[}index\mbox{]} with active current data \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_a63d12cc6021fda4896b8738d72dfcc86}{remove\+\_\+stored\+\_\+coefficients} (size\+\_\+t index=\+\_\+\+N\+P\+OS)\label{classPecos_1_1HierarchInterpPolyApproximation_a63d12cc6021fda4896b8738d72dfcc86}
+
+\begin{DoxyCompactList}\small\item\em remove a redundant entry from stored\+Exp\+Type\{1\+Coeffs,2\+Coeffs,1\+Coeff\+Grads\} prior to combine\+\_\+coefficients (default is pop\+\_\+back) \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_ae4337960917eda26a5672e5c6afbb62a}{clear\+\_\+stored} ()\label{classPecos_1_1HierarchInterpPolyApproximation_ae4337960917eda26a5672e5c6afbb62a}
+
+\begin{DoxyCompactList}\small\item\em clear stored\+Exp\+Type\{1\+Coeffs,2\+Coeffs,1\+Coeff\+Grads\} \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_a7c794213befc83c9f90137f22e4cd39d}{combine\+\_\+coefficients} (size\+\_\+t swap\+\_\+index)\label{classPecos_1_1HierarchInterpPolyApproximation_a7c794213befc83c9f90137f22e4cd39d}
+
+\begin{DoxyCompactList}\small\item\em augment current interpolant using stored\+Exp\+Type\{1\+Coeffs,2\+Coeffs,1\+Coeff\+Grads\} \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_a9e2f6de3dafca8df624fef2a132b5185}{integrate\+\_\+response\+\_\+moments} (size\+\_\+t num\+\_\+moments)\label{classPecos_1_1HierarchInterpPolyApproximation_a9e2f6de3dafca8df624fef2a132b5185}
+
+\begin{DoxyCompactList}\small\item\em compute moments of response using numerical integration \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_a611ac6de1665bc1197922b77823250c2}{integrate\+\_\+expansion\+\_\+moments} (size\+\_\+t num\+\_\+moments)\label{classPecos_1_1HierarchInterpPolyApproximation_a611ac6de1665bc1197922b77823250c2}
+
+\begin{DoxyCompactList}\small\item\em compute moments of expansion using numerical integration \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_a7bc9dcdf32fc46f97e286268c1ac51b0}{value} (const Real\+Vector \&x)\label{classPecos_1_1HierarchInterpPolyApproximation_a7bc9dcdf32fc46f97e286268c1ac51b0}
+
+\begin{DoxyCompactList}\small\item\em retrieve the approximate function value for a given parameter vector \end{DoxyCompactList}\item 
+const Real\+Vector \& \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_ae3b6ea541392b74cf0cc8758e206277c}{gradient\+\_\+basis\+\_\+variables} (const Real\+Vector \&x)\label{classPecos_1_1HierarchInterpPolyApproximation_ae3b6ea541392b74cf0cc8758e206277c}
+
+\begin{DoxyCompactList}\small\item\em retrieve the gradient for a response expansion with respect to all variables included in the polynomial bases using the given parameter vector and default D\+VV \end{DoxyCompactList}\item 
+const Real\+Vector \& \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_a3ffb563ae1658344bfc2ad882def9e7c}{gradient\+\_\+basis\+\_\+variables} (const Real\+Vector \&x, const Sizet\+Array \&dvv)\label{classPecos_1_1HierarchInterpPolyApproximation_a3ffb563ae1658344bfc2ad882def9e7c}
+
+\begin{DoxyCompactList}\small\item\em retrieve the gradient for a response expansion with respect to variables included in the polynomial basis for a given parameter vector and a given D\+VV subset \end{DoxyCompactList}\item 
+const Real\+Vector \& \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_a518e8604f973a4b161a9b5718a0aa25e}{gradient\+\_\+nonbasis\+\_\+variables} (const Real\+Vector \&x)\label{classPecos_1_1HierarchInterpPolyApproximation_a518e8604f973a4b161a9b5718a0aa25e}
+
+\begin{DoxyCompactList}\small\item\em retrieve the gradient for a response expansion with respect to all variables not included in the polynomial bases (nonprobabilistic variables such as design or epistemic when not in \char`\"{}all\char`\"{} mode) using the given parameter vector and default D\+VV \end{DoxyCompactList}\item 
+const Real\+Sym\+Matrix \& \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_a830729654265d84af637960f8c63f2bc}{hessian\+\_\+basis\+\_\+variables} (const Real\+Vector \&x)\label{classPecos_1_1HierarchInterpPolyApproximation_a830729654265d84af637960f8c63f2bc}
+
+\begin{DoxyCompactList}\small\item\em retrieve the Hessian of the response expansion with respect to all variables included in the polynomial basis (e.\+g., probabilistic variables) for a given parameter vector \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_a1abe918dbdc66ac0fde85f1ab3c061af}{stored\+\_\+value} (const Real\+Vector \&x, size\+\_\+t index)\label{classPecos_1_1HierarchInterpPolyApproximation_a1abe918dbdc66ac0fde85f1ab3c061af}
+
+\begin{DoxyCompactList}\small\item\em retrieve the response value for a stored expansion using the given parameter vector \end{DoxyCompactList}\item 
+const Real\+Vector \& \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_a7689fc058e2efdde6ce4dfe898864592}{stored\+\_\+gradient\+\_\+basis\+\_\+variables} (const Real\+Vector \&x, size\+\_\+t index)\label{classPecos_1_1HierarchInterpPolyApproximation_a7689fc058e2efdde6ce4dfe898864592}
+
+\begin{DoxyCompactList}\small\item\em retrieve the response gradient for a stored expansion with respect to all variables included in the polynomial bases; evaluate for the given parameter vector. \end{DoxyCompactList}\item 
+const Real\+Vector \& \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_af0c9184d9a0da7b0e3d0d3ecbfc8f434}{stored\+\_\+gradient\+\_\+nonbasis\+\_\+variables} (const Real\+Vector \&x, size\+\_\+t index)\label{classPecos_1_1HierarchInterpPolyApproximation_af0c9184d9a0da7b0e3d0d3ecbfc8f434}
+
+\begin{DoxyCompactList}\small\item\em retrieve the response gradient for a stored expansion with respect to all variables not included in the polynomial bases; evaluate for the given parameter vector. \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_adc6f262952d05a33ff68cae37929cbb2}{mean} ()\label{classPecos_1_1HierarchInterpPolyApproximation_adc6f262952d05a33ff68cae37929cbb2}
+
+\begin{DoxyCompactList}\small\item\em return the mean of the expansion, treating all variables as random \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_aed107df248a4555c052446fbc10a8e61}{mean} (const Real\+Vector \&x)\label{classPecos_1_1HierarchInterpPolyApproximation_aed107df248a4555c052446fbc10a8e61}
+
+\begin{DoxyCompactList}\small\item\em return the mean of the expansion for a given parameter vector, treating a subset of the variables as random \end{DoxyCompactList}\item 
+const Real\+Vector \& \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_a069c87a26fdb4b09af68db26abd646a0}{mean\+\_\+gradient} ()
+\item 
+const Real\+Vector \& \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_a24f2edc21c9887121cda78faae1c1475}{mean\+\_\+gradient} (const Real\+Vector \&x, const Sizet\+Array \&dvv)
+\item 
+Real \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_a38f6da77468be17e02ce38af2c0976c3}{variance} ()\label{classPecos_1_1HierarchInterpPolyApproximation_a38f6da77468be17e02ce38af2c0976c3}
+
+\begin{DoxyCompactList}\small\item\em return the variance of the expansion, treating all variables as random \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_acbdcb523a161d7d3a5cc190796e84ede}{variance} (const Real\+Vector \&x)\label{classPecos_1_1HierarchInterpPolyApproximation_acbdcb523a161d7d3a5cc190796e84ede}
+
+\begin{DoxyCompactList}\small\item\em return the variance of the expansion for a given parameter vector, treating a subset of the variables as random \end{DoxyCompactList}\item 
+const Real\+Vector \& \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_ae898fc2f42f1077268f89fc2e9f2c71c}{variance\+\_\+gradient} ()
+\item 
+const Real\+Vector \& \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_a791e127a445f8a6c9c3a7966d12c1431}{variance\+\_\+gradient} (const Real\+Vector \&x, const Sizet\+Array \&dvv)
+\item 
+Real \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_ac0085912d4abb9caa3f480b9c6778c0e}{covariance} (\hyperlink{classPecos_1_1PolynomialApproximation}{Polynomial\+Approximation} $\ast$poly\+\_\+approx\+\_\+2)\label{classPecos_1_1HierarchInterpPolyApproximation_ac0085912d4abb9caa3f480b9c6778c0e}
+
+\begin{DoxyCompactList}\small\item\em return the covariance between two response expansions, treating all variables as random \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_afc1731a3d89818d49c03a3c20a7a2898}{covariance} (const Real\+Vector \&x, \hyperlink{classPecos_1_1PolynomialApproximation}{Polynomial\+Approximation} $\ast$poly\+\_\+approx\+\_\+2)\label{classPecos_1_1HierarchInterpPolyApproximation_afc1731a3d89818d49c03a3c20a7a2898}
+
+\begin{DoxyCompactList}\small\item\em return the covariance between two response expansions for a given parameter vector, treating a subset of the variables as random \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_ae3f6a8d87917102636d171f5c86a2fb5}{delta\+\_\+covariance} (\hyperlink{classPecos_1_1PolynomialApproximation}{Polynomial\+Approximation} $\ast$poly\+\_\+approx\+\_\+2)\label{classPecos_1_1HierarchInterpPolyApproximation_ae3f6a8d87917102636d171f5c86a2fb5}
+
+\begin{DoxyCompactList}\small\item\em return the change in covariance between two response expansions, treating all variables as random \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_a5a89afe07fb520282fa35dfc9ca2b0a1}{delta\+\_\+covariance} (const Real\+Vector \&x, \hyperlink{classPecos_1_1PolynomialApproximation}{Polynomial\+Approximation} $\ast$poly\+\_\+approx\+\_\+2)\label{classPecos_1_1HierarchInterpPolyApproximation_a5a89afe07fb520282fa35dfc9ca2b0a1}
+
+\begin{DoxyCompactList}\small\item\em return the change in covariance between two response expansions for a given parameter vector, treating a subset of the variables as random \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_aa276ec09d706b03780f9bc01af40514e}{delta\+\_\+mean} ()\label{classPecos_1_1HierarchInterpPolyApproximation_aa276ec09d706b03780f9bc01af40514e}
+
+\begin{DoxyCompactList}\small\item\em return the change in mean between two response expansions, treating all variables as random \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_a47a27e963aa71bb3dfc2aa623f7f3e92}{delta\+\_\+mean} (const Real\+Vector \&x)\label{classPecos_1_1HierarchInterpPolyApproximation_a47a27e963aa71bb3dfc2aa623f7f3e92}
+
+\begin{DoxyCompactList}\small\item\em return the change in mean between two response expansions, treating a subset of the variables as random \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_a91067291a8c8ca1f582e24706aac5ea7}{delta\+\_\+std\+\_\+deviation} ()\label{classPecos_1_1HierarchInterpPolyApproximation_a91067291a8c8ca1f582e24706aac5ea7}
+
+\begin{DoxyCompactList}\small\item\em return the change in standard deviation between two response expansions, treating all variables as random \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_a4755135ffbf0475a447f71d7b782afa8}{delta\+\_\+std\+\_\+deviation} (const Real\+Vector \&x)\label{classPecos_1_1HierarchInterpPolyApproximation_a4755135ffbf0475a447f71d7b782afa8}
+
+\begin{DoxyCompactList}\small\item\em return the change in standard deviation between two response expansions, treating a subset of the variables as random \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_af4a1a73ea647b8989096db81a7e36278}{delta\+\_\+beta} (bool cdf\+\_\+flag, Real z\+\_\+bar)\label{classPecos_1_1HierarchInterpPolyApproximation_af4a1a73ea647b8989096db81a7e36278}
+
+\begin{DoxyCompactList}\small\item\em return the change in reliability index (mapped from z\+\_\+bar) between two response expansions, treating all variables as random \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_ad878382953dfa3146f4862f6195ea351}{delta\+\_\+beta} (const Real\+Vector \&x, bool cdf\+\_\+flag, Real z\+\_\+bar)\label{classPecos_1_1HierarchInterpPolyApproximation_ad878382953dfa3146f4862f6195ea351}
+
+\begin{DoxyCompactList}\small\item\em return the change in reliability index (mapped from z\+\_\+bar) between two response expansions, treating a subset of the variables as random \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_a677b7ca69b5b17169b3f6e3ccb972ce6}{delta\+\_\+z} (bool cdf\+\_\+flag, Real beta\+\_\+bar)\label{classPecos_1_1HierarchInterpPolyApproximation_a677b7ca69b5b17169b3f6e3ccb972ce6}
+
+\begin{DoxyCompactList}\small\item\em return the change in response level (mapped from beta\+\_\+bar) between two response expansions, treating all variables as random \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_a3280b1f280ca2af6d965d5562fc42770}{delta\+\_\+z} (const Real\+Vector \&x, bool cdf\+\_\+flag, Real beta\+\_\+bar)\label{classPecos_1_1HierarchInterpPolyApproximation_a3280b1f280ca2af6d965d5562fc42770}
+
+\begin{DoxyCompactList}\small\item\em return the change in response level (mapped from beta\+\_\+bar) between two response expansions, treating a subset of the variables as random \end{DoxyCompactList}\item 
+void {\bfseries compute\+\_\+total\+\_\+sobol\+\_\+indices} ()\label{classPecos_1_1HierarchInterpPolyApproximation_a9b445d773d12ed85eb56bb73f6d7e540}
+
+\item 
+void \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_a6eb2548a8c786f48478fabb6377be779}{compute\+\_\+partial\+\_\+variance} (const Bit\+Array \&set\+\_\+value)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Real \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_a74a9d557c508cd043c0c444dc722ed6d}{value} (const Real\+Vector \&x, const U\+Short3\+D\+Array \&sm\+\_\+mi, const U\+Short4\+D\+Array \&key, const Real\+Vector2\+D\+Array \&t1\+\_\+coeffs, const Real\+Matrix2\+D\+Array \&t2\+\_\+coeffs, unsigned short level)\label{classPecos_1_1HierarchInterpPolyApproximation_a74a9d557c508cd043c0c444dc722ed6d}
+
+\begin{DoxyCompactList}\small\item\em compute the value at a point for a particular interpolation level \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_a814452cf28de0138f1095f9cbe1d5471}{value} (const Real\+Vector \&x, const U\+Short3\+D\+Array \&sm\+\_\+mi, const U\+Short4\+D\+Array \&key, const Real\+Vector2\+D\+Array \&t1\+\_\+coeffs, const Real\+Matrix2\+D\+Array \&t2\+\_\+coeffs, unsigned short level, const Sizet\+List \&subset\+\_\+indices)
+\begin{DoxyCompactList}\small\item\em compute the value at a point for a particular interpolation level and for a specified subset of the variables \end{DoxyCompactList}\item 
+const Real\+Vector \& \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_a143aad43c78dbe10aec18749a4de4dc0}{gradient\+\_\+basis\+\_\+variables} (const Real\+Vector \&x, const U\+Short3\+D\+Array \&sm\+\_\+mi, const U\+Short4\+D\+Array \&key, const Real\+Vector2\+D\+Array \&t1\+\_\+coeffs, const Real\+Matrix2\+D\+Array \&t2\+\_\+coeffs, unsigned short level)\label{classPecos_1_1HierarchInterpPolyApproximation_a143aad43c78dbe10aec18749a4de4dc0}
+
+\begin{DoxyCompactList}\small\item\em compute the approximate gradient with respect to the basis variables at a particular point for a particular interpolation level \end{DoxyCompactList}\item 
+const Real\+Vector \& \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_afaffbe62512edfaee23db02601ef43c6}{gradient\+\_\+basis\+\_\+variables} (const Real\+Vector \&x, const U\+Short3\+D\+Array \&sm\+\_\+mi, const U\+Short4\+D\+Array \&key, const Real\+Vector2\+D\+Array \&t1\+\_\+coeffs, const Real\+Matrix2\+D\+Array \&t2\+\_\+coeffs, unsigned short level, const Sizet\+List \&subset\+\_\+indices)\label{classPecos_1_1HierarchInterpPolyApproximation_afaffbe62512edfaee23db02601ef43c6}
+
+\begin{DoxyCompactList}\small\item\em compute the approximate gradient with respect to the basis variables at a particular point for a particular interpolation level \end{DoxyCompactList}\item 
+const Real\+Vector \& \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_a9139778c2ccb10bbab1e39350d83723f}{gradient\+\_\+basis\+\_\+variables} (const Real\+Vector \&x, const U\+Short3\+D\+Array \&sm\+\_\+mi, const U\+Short4\+D\+Array \&key, const Real\+Vector2\+D\+Array \&t1\+\_\+coeffs, const Real\+Matrix2\+D\+Array \&t2\+\_\+coeffs, const Sizet\+Array \&dvv, unsigned short level)\label{classPecos_1_1HierarchInterpPolyApproximation_a9139778c2ccb10bbab1e39350d83723f}
+
+\begin{DoxyCompactList}\small\item\em compute the approximate gradient with respect to the basis variables for a particular point, interpolation level, and D\+VV \end{DoxyCompactList}\item 
+const Real\+Vector \& \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_a1de3411a13a420dc114cd02c96ebc4d2}{gradient\+\_\+nonbasis\+\_\+variables} (const Real\+Vector \&x, const U\+Short3\+D\+Array \&sm\+\_\+mi, const U\+Short4\+D\+Array \&key, const Real\+Matrix2\+D\+Array \&t1\+\_\+coeff\+\_\+grads, unsigned short level)\label{classPecos_1_1HierarchInterpPolyApproximation_a1de3411a13a420dc114cd02c96ebc4d2}
+
+\begin{DoxyCompactList}\small\item\em compute the approximate gradient with respect to the nonbasis variables at a particular point for a particular interpolation level \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_a109b517f8ff17e6706d3d4fdb9e76961}{increment\+\_\+current\+\_\+from\+\_\+reference} ()\label{classPecos_1_1HierarchInterpPolyApproximation_a109b517f8ff17e6706d3d4fdb9e76961}
+
+\begin{DoxyCompactList}\small\item\em update bookkeeping when adding a grid increment relative to the grid reference \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_a06231ad34b1b67dbcb03127186bf3a06}{decrement\+\_\+current\+\_\+to\+\_\+reference} ()\label{classPecos_1_1HierarchInterpPolyApproximation_a06231ad34b1b67dbcb03127186bf3a06}
+
+\begin{DoxyCompactList}\small\item\em update bookkeeping when removing a grid increment and returning to the grid reference \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_af5705082b10f5d61987169b5a84f27dd}{reference\+\_\+mean} (const U\+Short2\+D\+Array \&ref\+\_\+key)\label{classPecos_1_1HierarchInterpPolyApproximation_af5705082b10f5d61987169b5a84f27dd}
+
+\begin{DoxyCompactList}\small\item\em compute the reference mean, excluding the current grid increment, using ref\+\_\+key \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_a9cb0a71afa77132fae9eac948c782880}{reference\+\_\+mean} (const Real\+Vector \&x, const U\+Short2\+D\+Array \&ref\+\_\+key)\label{classPecos_1_1HierarchInterpPolyApproximation_a9cb0a71afa77132fae9eac948c782880}
+
+\begin{DoxyCompactList}\small\item\em compute the reference mean, excluding the current grid increment, using ref\+\_\+key \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_a6a25f632a3b1b91ac183dd55320eaad7}{reference\+\_\+variance} (const U\+Short2\+D\+Array \&ref\+\_\+key)\label{classPecos_1_1HierarchInterpPolyApproximation_a6a25f632a3b1b91ac183dd55320eaad7}
+
+\begin{DoxyCompactList}\small\item\em compute the reference variance, excluding the current grid increment, using ref\+\_\+key \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_a5a884802084505eb75bda915e649e9eb}{reference\+\_\+variance} (const Real\+Vector \&x, const U\+Short2\+D\+Array \&ref\+\_\+key)\label{classPecos_1_1HierarchInterpPolyApproximation_a5a884802084505eb75bda915e649e9eb}
+
+\begin{DoxyCompactList}\small\item\em compute the reference variance, excluding the current grid increment, using ref\+\_\+key \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_a6a1e7ea9782d28b034be7aedf7197c7d}{delta\+\_\+covariance} (\hyperlink{classPecos_1_1PolynomialApproximation}{Polynomial\+Approximation} $\ast$poly\+\_\+approx\+\_\+2, const U\+Short2\+D\+Array \&ref\+\_\+key, const U\+Short2\+D\+Array \&incr\+\_\+key)\label{classPecos_1_1HierarchInterpPolyApproximation_a6a1e7ea9782d28b034be7aedf7197c7d}
+
+\begin{DoxyCompactList}\small\item\em compute the covariance increment due to the current grid increment \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_a931312a9e825efa5139f8110c2e48e7b}{delta\+\_\+covariance} (const Real\+Vector \&x, \hyperlink{classPecos_1_1PolynomialApproximation}{Polynomial\+Approximation} $\ast$poly\+\_\+approx\+\_\+2, const U\+Short2\+D\+Array \&ref\+\_\+key, const U\+Short2\+D\+Array \&incr\+\_\+key)\label{classPecos_1_1HierarchInterpPolyApproximation_a931312a9e825efa5139f8110c2e48e7b}
+
+\begin{DoxyCompactList}\small\item\em compute the covariance increment due to the current grid increment \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_a2ad19ef780b2f6df0a0fa7c6e5354b87}{delta\+\_\+mean} (const U\+Short2\+D\+Array \&incr\+\_\+key)\label{classPecos_1_1HierarchInterpPolyApproximation_a2ad19ef780b2f6df0a0fa7c6e5354b87}
+
+\begin{DoxyCompactList}\small\item\em compute the mean increment due to the current grid increment \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_a4aa71b3572421587c1982eaf73829532}{delta\+\_\+mean} (const Real\+Vector \&x, const U\+Short2\+D\+Array \&incr\+\_\+key)\label{classPecos_1_1HierarchInterpPolyApproximation_a4aa71b3572421587c1982eaf73829532}
+
+\begin{DoxyCompactList}\small\item\em compute the mean increment due to the current grid increment \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_a9c557ad7598b71069d615266242487a5}{delta\+\_\+variance} (const U\+Short2\+D\+Array \&ref\+\_\+key, const U\+Short2\+D\+Array \&incr\+\_\+key)\label{classPecos_1_1HierarchInterpPolyApproximation_a9c557ad7598b71069d615266242487a5}
+
+\begin{DoxyCompactList}\small\item\em compute the variance increment due to the current grid increment \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_a80b3297ec61c03c246326cbcbc2fd4b0}{delta\+\_\+variance} (const Real\+Vector \&x, const U\+Short2\+D\+Array \&ref\+\_\+key, const U\+Short2\+D\+Array \&incr\+\_\+key)\label{classPecos_1_1HierarchInterpPolyApproximation_a80b3297ec61c03c246326cbcbc2fd4b0}
+
+\begin{DoxyCompactList}\small\item\em compute the variance increment due to the current grid increment \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_aaf63c8320565d50ab4acf612438e93be}{delta\+\_\+std\+\_\+deviation} (const U\+Short2\+D\+Array \&ref\+\_\+key, const U\+Short2\+D\+Array \&incr\+\_\+key)\label{classPecos_1_1HierarchInterpPolyApproximation_aaf63c8320565d50ab4acf612438e93be}
+
+\begin{DoxyCompactList}\small\item\em compute the standard deviation increment due to the current grid increment \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_a3d0406d60c6804cb817a95cc61a5dd93}{delta\+\_\+std\+\_\+deviation} (const Real\+Vector \&x, const U\+Short2\+D\+Array \&ref\+\_\+key, const U\+Short2\+D\+Array \&incr\+\_\+key)\label{classPecos_1_1HierarchInterpPolyApproximation_a3d0406d60c6804cb817a95cc61a5dd93}
+
+\begin{DoxyCompactList}\small\item\em compute the standard deviation increment due to the current grid increment \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_a0f868257947afc0ce1b58d194bc414e8}{delta\+\_\+beta} (bool cdf\+\_\+flag, Real z\+\_\+bar, const U\+Short2\+D\+Array \&ref\+\_\+key, const U\+Short2\+D\+Array \&incr\+\_\+key)\label{classPecos_1_1HierarchInterpPolyApproximation_a0f868257947afc0ce1b58d194bc414e8}
+
+\begin{DoxyCompactList}\small\item\em compute the reliability index increment due to the current grid increment \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_a23bf48e6ed8ab2c0c04229866effa967}{delta\+\_\+beta} (const Real\+Vector \&x, bool cdf\+\_\+flag, Real z\+\_\+bar, const U\+Short2\+D\+Array \&ref\+\_\+key, const U\+Short2\+D\+Array \&incr\+\_\+key)\label{classPecos_1_1HierarchInterpPolyApproximation_a23bf48e6ed8ab2c0c04229866effa967}
+
+\begin{DoxyCompactList}\small\item\em compute the reliability index increment due to the current grid increment \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_aa98a30aa3967a620f7adeda20f3ebbeb}{delta\+\_\+beta\+\_\+map} (Real mu0, Real delta\+\_\+mu, Real var0, Real delta\+\_\+sigma, bool cdf\+\_\+flag, Real z\+\_\+bar)\label{classPecos_1_1HierarchInterpPolyApproximation_aa98a30aa3967a620f7adeda20f3ebbeb}
+
+\begin{DoxyCompactList}\small\item\em shared logic for handling exceptional cases \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_a0cbb05caf7c944d49bff491d393a4236}{delta\+\_\+z} (bool cdf\+\_\+flag, Real beta\+\_\+bar, const U\+Short2\+D\+Array \&ref\+\_\+key, const U\+Short2\+D\+Array \&incr\+\_\+key)\label{classPecos_1_1HierarchInterpPolyApproximation_a0cbb05caf7c944d49bff491d393a4236}
+
+\begin{DoxyCompactList}\small\item\em compute the response level increment due to the current grid increment \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_a0a9f4f936740e46b517449a7e935bb2b}{delta\+\_\+z} (const Real\+Vector \&x, bool cdf\+\_\+flag, Real beta\+\_\+bar, const U\+Short2\+D\+Array \&ref\+\_\+key, const U\+Short2\+D\+Array \&incr\+\_\+key)\label{classPecos_1_1HierarchInterpPolyApproximation_a0a9f4f936740e46b517449a7e935bb2b}
+
+\begin{DoxyCompactList}\small\item\em compute the response level increment due to the current grid increment \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_a56d259d2bc9e4b3c7177953e103ed70d}{product\+\_\+interpolant} (\hyperlink{classPecos_1_1HierarchInterpPolyApproximation}{Hierarch\+Interp\+Poly\+Approximation} $\ast$hip\+\_\+approx\+\_\+2, Real\+Vector2\+D\+Array \&r1r2\+\_\+t1\+\_\+coeffs, Real\+Matrix2\+D\+Array \&r1r2\+\_\+t2\+\_\+coeffs, const U\+Short2\+D\+Array \&reference\+\_\+key=U\+Short2\+D\+Array())
+\begin{DoxyCompactList}\small\item\em form type 1/2 coefficients for interpolation of R\+\_\+1 R\+\_\+2 \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_ad568c5307549ce96de86b1cd5fa0097d}{central\+\_\+product\+\_\+interpolant} (\hyperlink{classPecos_1_1HierarchInterpPolyApproximation}{Hierarch\+Interp\+Poly\+Approximation} $\ast$hip\+\_\+approx\+\_\+2, Real mean\+\_\+1, Real mean\+\_\+2, Real\+Vector2\+D\+Array \&cov\+\_\+t1\+\_\+coeffs, Real\+Matrix2\+D\+Array \&cov\+\_\+t2\+\_\+coeffs, const U\+Short2\+D\+Array \&reference\+\_\+key=U\+Short2\+D\+Array())
+\begin{DoxyCompactList}\small\item\em form type 1/2 coefficients for interpolation of (R\+\_\+1 -\/ mu\+\_\+1)(R\+\_\+2 -\/ mu\+\_\+2) \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_a0877cb2c939711ebe697928c6649affc}{central\+\_\+product\+\_\+gradient\+\_\+interpolant} (\hyperlink{classPecos_1_1HierarchInterpPolyApproximation}{Hierarch\+Interp\+Poly\+Approximation} $\ast$hip\+\_\+approx\+\_\+2, Real mean\+\_\+1, Real mean\+\_\+2, const Real\+Vector \&mean1\+\_\+grad, const Real\+Vector \&mean2\+\_\+grad, Real\+Matrix2\+D\+Array \&cov\+\_\+t1\+\_\+coeff\+\_\+grads, const U\+Short2\+D\+Array \&reference\+\_\+key=U\+Short2\+D\+Array())\label{classPecos_1_1HierarchInterpPolyApproximation_a0877cb2c939711ebe697928c6649affc}
+
+\begin{DoxyCompactList}\small\item\em form type1 coefficient gradients for interpolation of d/ds \mbox{[}(R\+\_\+1 -\/ mu\+\_\+1)(R\+\_\+2 -\/ mu\+\_\+2)\mbox{]} \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_af379a9ca4f3a57b0288206ca8bf4d726}{expectation} (const Real\+Vector2\+D\+Array \&t1\+\_\+coeffs, const Real\+Matrix2\+D\+Array \&t2\+\_\+coeffs, const U\+Short2\+D\+Array \&set\+\_\+partition=U\+Short2\+D\+Array())\label{classPecos_1_1HierarchInterpPolyApproximation_af379a9ca4f3a57b0288206ca8bf4d726}
+
+\begin{DoxyCompactList}\small\item\em compute the expected value of the interpolant given by t\{1,2\}\+\_\+coeffs using weights from the \hyperlink{classPecos_1_1HierarchSparseGridDriver}{Hierarch\+Sparse\+Grid\+Driver} \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_ac11a36763964807e2496970dd2a7170d}{expectation} (const Real\+Vector2\+D\+Array \&t1\+\_\+coeffs, const Real\+Vector2\+D\+Array \&t1\+\_\+wts, const Real\+Matrix2\+D\+Array \&t2\+\_\+coeffs, const Real\+Matrix2\+D\+Array \&t2\+\_\+wts, const U\+Short2\+D\+Array \&set\+\_\+partition=U\+Short2\+D\+Array())\label{classPecos_1_1HierarchInterpPolyApproximation_ac11a36763964807e2496970dd2a7170d}
+
+\begin{DoxyCompactList}\small\item\em compute the expected value of the interpolant given by t\{1,2\}\+\_\+coeffs using t\{1,2\}\+\_\+wts \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_a025b070b17e6ea1a80bf14b1ab59eeb8}{expectation} (const Real\+Vector \&x, const Real\+Vector2\+D\+Array \&t1\+\_\+coeffs, const Real\+Matrix2\+D\+Array \&t2\+\_\+coeffs, const U\+Short2\+D\+Array \&set\+\_\+partition=U\+Short2\+D\+Array())\label{classPecos_1_1HierarchInterpPolyApproximation_a025b070b17e6ea1a80bf14b1ab59eeb8}
+
+\begin{DoxyCompactList}\small\item\em compute the expected value of the interpolant given by t\{1,2\}\+\_\+coeffs using weights from the \hyperlink{classPecos_1_1HierarchSparseGridDriver}{Hierarch\+Sparse\+Grid\+Driver} \end{DoxyCompactList}\item 
+const Real\+Vector \& \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_a923b0e83c2a901b95842cc0f8cdfd038}{expectation\+\_\+gradient} (const Real\+Matrix2\+D\+Array \&t1\+\_\+coeff\+\_\+grads)\label{classPecos_1_1HierarchInterpPolyApproximation_a923b0e83c2a901b95842cc0f8cdfd038}
+
+\begin{DoxyCompactList}\small\item\em compute the expected value of the gradient interpolant given by t1\+\_\+coeff\+\_\+grads using weights from the \hyperlink{classPecos_1_1HierarchSparseGridDriver}{Hierarch\+Sparse\+Grid\+Driver} \end{DoxyCompactList}\item 
+const Real\+Vector \& \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_af7cb170e68ec826d583313ef224f47a0}{expectation\+\_\+gradient} (const Real\+Matrix2\+D\+Array \&t1\+\_\+coeff\+\_\+grads, const Real\+Vector2\+D\+Array \&t1\+\_\+wts)
+\begin{DoxyCompactList}\small\item\em compute the expected value of the gradient interpolant given by t1\+\_\+coeff\+\_\+grads using t1\+\_\+wts \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_a6e2bc30784df7fe2c7c058f55376a0a4}{expectation\+\_\+gradient} (const Real\+Vector \&x, const Real\+Matrix2\+D\+Array \&t1\+\_\+coeff\+\_\+grads, size\+\_\+t t1cg\+\_\+index)
+\begin{DoxyCompactList}\small\item\em compute the expectation of t1\+\_\+coeff\+\_\+grads for index t1cg\+\_\+index \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_ab1ddf31383c7e516aeb07b80339ec461}{expectation\+\_\+gradient} (const Real\+Vector \&x, const Real\+Vector2\+D\+Array \&t1\+\_\+coeffs, const Real\+Matrix2\+D\+Array \&t2\+\_\+coeffs, size\+\_\+t deriv\+\_\+index)
+\begin{DoxyCompactList}\small\item\em compute the expectation of the gradient of \{t1,t2\}\+\_\+coeffs for index deriv\+\_\+index \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_a9403f7c8e5fbfdb4b2142b088673c533}{increment\+\_\+coefficients} (const U\+Short\+Array \&index\+\_\+set)
+\begin{DoxyCompactList}\small\item\em increment expansion\{Type1\+Coeffs,Type2\+Coeffs,Type1\+Coeff\+Grads\} for a single index\+\_\+set \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_a85c57e8dbd99dfa66dcd11eda308432e}{push\+\_\+coefficients} (const U\+Short\+Array \&push\+\_\+set)
+\begin{DoxyCompactList}\small\item\em move the expansion coefficients for push\+\_\+set from popped\+Exp\{T1\+Coeffs,T2\+Coeffs,T1\+Coeff\+Grads\} to expansion\{Type1\+Coeffs,Type2\+Coeffs,Type1\+Coeff\+Grads\} \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_a3d614c925f2689e80288a4eb4da59fcf}{member\+\_\+coefficients\+\_\+weights} (const Bit\+Array \&member\+\_\+bits, Real\+Vector2\+D\+Array \&member\+\_\+t1\+\_\+coeffs, Real\+Vector2\+D\+Array \&member\+\_\+t1\+\_\+wts, Real\+Matrix2\+D\+Array \&member\+\_\+t2\+\_\+coeffs, Real\+Matrix2\+D\+Array \&member\+\_\+t2\+\_\+wts, U\+Short4\+D\+Array \&member\+\_\+colloc\+\_\+key, Sizet3\+D\+Array \&member\+\_\+colloc\+\_\+index)
+\begin{DoxyCompactList}\small\item\em compute member expansion for Sobol\textquotesingle{} index integration \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_ac10f275a789ace824cf685435e952caa}{central\+\_\+product\+\_\+member\+\_\+coefficients} (const Bit\+Array \&m\+\_\+bits, const Real\+Vector2\+D\+Array \&m\+\_\+t1\+\_\+coeffs, const Real\+Matrix2\+D\+Array \&m\+\_\+t2\+\_\+coeffs, const U\+Short4\+D\+Array \&m\+\_\+colloc\+\_\+key, const Sizet3\+D\+Array \&m\+\_\+colloc\+\_\+index, Real \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_adc6f262952d05a33ff68cae37929cbb2}{mean}, Real\+Vector2\+D\+Array \&cprod\+\_\+m\+\_\+t1\+\_\+coeffs, Real\+Matrix2\+D\+Array \&cprod\+\_\+m\+\_\+t2\+\_\+coeffs)\label{classPecos_1_1HierarchInterpPolyApproximation_ac10f275a789ace824cf685435e952caa}
+
+\begin{DoxyCompactList}\small\item\em form hierarchical interpolant of (h-\/mean)$^\wedge$2 from member-\/variable expansion of h \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+short \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_a05274c85108646d0aa803e46b8f379a4}{computed\+Ref\+Mean}\label{classPecos_1_1HierarchInterpPolyApproximation_a05274c85108646d0aa803e46b8f379a4}
+
+\begin{DoxyCompactList}\small\item\em bookkeeping to track computation of reference mean to avoid unnecessary recomputation \end{DoxyCompactList}\item 
+short \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_a0e72e83cbd24b925e31d8b8d50ff3e56}{computed\+Delta\+Mean}\label{classPecos_1_1HierarchInterpPolyApproximation_a0e72e83cbd24b925e31d8b8d50ff3e56}
+
+\begin{DoxyCompactList}\small\item\em bookkeeping to track computation of mean increment to avoid unnecessary recomputation \end{DoxyCompactList}\item 
+short \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_abdc437fc94e9e7c66ec7f16b1c322de8}{computed\+Ref\+Variance}\label{classPecos_1_1HierarchInterpPolyApproximation_abdc437fc94e9e7c66ec7f16b1c322de8}
+
+\begin{DoxyCompactList}\small\item\em bookkeeping to track computation of reference variance to avoid unnecessary recomputation \end{DoxyCompactList}\item 
+short \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_ad37f24bebad7a2c76f85bb1e0246cab8}{computed\+Delta\+Variance}\label{classPecos_1_1HierarchInterpPolyApproximation_ad37f24bebad7a2c76f85bb1e0246cab8}
+
+\begin{DoxyCompactList}\small\item\em bookkeeping to track computation of variance increment to avoid unnecessary recomputation \end{DoxyCompactList}\item 
+Real\+Vector \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_a15c0d1a4a6790857b13bd70ebb66eac5}{x\+Prev\+Ref\+Mean}\label{classPecos_1_1HierarchInterpPolyApproximation_a15c0d1a4a6790857b13bd70ebb66eac5}
+
+\begin{DoxyCompactList}\small\item\em track previous evaluation point for all\+\_\+variables reference mean to avoid unnecessary recomputation \end{DoxyCompactList}\item 
+Real\+Vector \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_a960da983934f42a2571c51fd8dc25e33}{x\+Prev\+Delta\+Mean}\label{classPecos_1_1HierarchInterpPolyApproximation_a960da983934f42a2571c51fd8dc25e33}
+
+\begin{DoxyCompactList}\small\item\em track previous evaluation point for all\+\_\+variables mean increment to avoid unnecessary recomputation \end{DoxyCompactList}\item 
+Real\+Vector \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_a2b975159e42ea87ebe6727b93b1fc910}{x\+Prev\+Ref\+Var}\label{classPecos_1_1HierarchInterpPolyApproximation_a2b975159e42ea87ebe6727b93b1fc910}
+
+\begin{DoxyCompactList}\small\item\em track previous evaluation point for all\+\_\+variables reference variance to avoid unnecessary recomputation \end{DoxyCompactList}\item 
+Real\+Vector \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_ac3573871bc9b05ed0b0a2ced38ae1ff8}{x\+Prev\+Delta\+Var}\label{classPecos_1_1HierarchInterpPolyApproximation_ac3573871bc9b05ed0b0a2ced38ae1ff8}
+
+\begin{DoxyCompactList}\small\item\em track previous evaluation point for all\+\_\+variables variance increment to avoid unnecessary recomputation \end{DoxyCompactList}\item 
+Real\+Vector \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_a6413a710bf4991e46c5d8c432f0be687}{reference\+Moments}\label{classPecos_1_1HierarchInterpPolyApproximation_a6413a710bf4991e46c5d8c432f0be687}
+
+\begin{DoxyCompactList}\small\item\em storage for reference mean and variance \end{DoxyCompactList}\item 
+Real\+Vector \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_af3a11e9c5081889c8f29c70df515d5c5}{delta\+Moments}\label{classPecos_1_1HierarchInterpPolyApproximation_af3a11e9c5081889c8f29c70df515d5c5}
+
+\begin{DoxyCompactList}\small\item\em storage for mean and variance increments \end{DoxyCompactList}\item 
+Real\+Vector \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_a6d6dc2dcd8270dc465405410a27872f1}{mean\+Ref\+Gradient}\label{classPecos_1_1HierarchInterpPolyApproximation_a6d6dc2dcd8270dc465405410a27872f1}
+
+\begin{DoxyCompactList}\small\item\em storage for reference mean gradient \end{DoxyCompactList}\item 
+Real\+Vector \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_a329e9ddbea4462741f4629f6aeb893d4}{variance\+Ref\+Gradient}\label{classPecos_1_1HierarchInterpPolyApproximation_a329e9ddbea4462741f4629f6aeb893d4}
+
+\begin{DoxyCompactList}\small\item\em storage for reference variance gradient \end{DoxyCompactList}\item 
+Real\+Vector2\+D\+Array \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_a48579624dbb5f01dd7c51966d3ec2dd0}{expansion\+Type1\+Coeffs}\label{classPecos_1_1HierarchInterpPolyApproximation_a48579624dbb5f01dd7c51966d3ec2dd0}
+
+\begin{DoxyCompactList}\small\item\em the type1 coefficients of the expansion for interpolating values \end{DoxyCompactList}\item 
+Real\+Matrix2\+D\+Array \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_a1ab17ab8f6a21083466a39ac7103a347}{expansion\+Type2\+Coeffs}\label{classPecos_1_1HierarchInterpPolyApproximation_a1ab17ab8f6a21083466a39ac7103a347}
+
+\begin{DoxyCompactList}\small\item\em the type2 coefficients of the expansion for interpolating gradients \end{DoxyCompactList}\item 
+Real\+Matrix2\+D\+Array \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_ad99e5330509824547f220676f9c250fe}{expansion\+Type1\+Coeff\+Grads}
+\begin{DoxyCompactList}\small\item\em the gradients of the type1 expansion coefficients \end{DoxyCompactList}\item 
+std\+::map$<$ U\+Short\+Array, Real\+Vector $>$ \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_a45dd45e174354fb9fe718c207a717c9e}{popped\+Exp\+T1\+Coeffs}\label{classPecos_1_1HierarchInterpPolyApproximation_a45dd45e174354fb9fe718c207a717c9e}
+
+\begin{DoxyCompactList}\small\item\em type 1 expansion coefficients popped during decrement for later restoration to expansion\+Type1\+Coeffs \end{DoxyCompactList}\item 
+std\+::map$<$ U\+Short\+Array, Real\+Matrix $>$ \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_a138110bf58dca9e55b2fc0abc118b6bb}{popped\+Exp\+T2\+Coeffs}\label{classPecos_1_1HierarchInterpPolyApproximation_a138110bf58dca9e55b2fc0abc118b6bb}
+
+\begin{DoxyCompactList}\small\item\em type 2 expansion coefficients popped during decrement for later restoration to expansion\+Type2\+Coeffs \end{DoxyCompactList}\item 
+std\+::map$<$ U\+Short\+Array, Real\+Matrix $>$ \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_ad39893a46b390e0dc8957f86c18dba47}{popped\+Exp\+T1\+Coeff\+Grads}\label{classPecos_1_1HierarchInterpPolyApproximation_ad39893a46b390e0dc8957f86c18dba47}
+
+\begin{DoxyCompactList}\small\item\em type 1 expansion coefficient gradients popped during decrement for later restoration to expansion\+Type1\+Coeff\+Grads \end{DoxyCompactList}\item 
+Real\+Vector3\+D\+Array \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_acaba84a6c4e25d925617fc82b662f7af}{stored\+Exp\+Type1\+Coeffs}\label{classPecos_1_1HierarchInterpPolyApproximation_acaba84a6c4e25d925617fc82b662f7af}
+
+\begin{DoxyCompactList}\small\item\em storage of expansion\+Type1\+Coeffs state for subsequent restoration/combination \end{DoxyCompactList}\item 
+Real\+Matrix3\+D\+Array \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_a400f3324a19bd61b57380766e71c99c0}{stored\+Exp\+Type2\+Coeffs}\label{classPecos_1_1HierarchInterpPolyApproximation_a400f3324a19bd61b57380766e71c99c0}
+
+\begin{DoxyCompactList}\small\item\em storage of expansion\+Type2\+Coeffs state for subsequent restoration/combination \end{DoxyCompactList}\item 
+Real\+Matrix3\+D\+Array \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_af1dd1b18eb871672957c24c6daa46a27}{stored\+Exp\+Type1\+Coeff\+Grads}\label{classPecos_1_1HierarchInterpPolyApproximation_af1dd1b18eb871672957c24c6daa46a27}
+
+\begin{DoxyCompactList}\small\item\em storage of expansion\+Type1\+Coeff\+Grads state for subsequent restoration/combination \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Derived approximation class for hierarchical interpolation polynomials (interpolating values and potentially gradients at collocation points). 
+
+The \hyperlink{classPecos_1_1HierarchInterpPolyApproximation}{Hierarch\+Interp\+Poly\+Approximation} class provides a polynomial approximation based on hierarchical interpolation. Both local and global hierarchical basis functions are available. It is used primarily for stochastic collocation approaches to uncertainty quantification. 
+
+\subsection{Member Function Documentation}
+\index{Pecos\+::\+Hierarch\+Interp\+Poly\+Approximation@{Pecos\+::\+Hierarch\+Interp\+Poly\+Approximation}!mean\+\_\+gradient@{mean\+\_\+gradient}}
+\index{mean\+\_\+gradient@{mean\+\_\+gradient}!Pecos\+::\+Hierarch\+Interp\+Poly\+Approximation@{Pecos\+::\+Hierarch\+Interp\+Poly\+Approximation}}
+\subsubsection[{\texorpdfstring{mean\+\_\+gradient()}{mean_gradient()}}]{\setlength{\rightskip}{0pt plus 5cm}const Real\+Vector \& mean\+\_\+gradient (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classPecos_1_1HierarchInterpPolyApproximation_a069c87a26fdb4b09af68db26abd646a0}
+In this function, all expansion variables are random variables and any design/state variables are omitted from the expansion. In this case, the derivative of the expectation is the expectation of the derivative. The mixed derivative case (some design variables are inserted and some are augmented) requires no special treatment. 
+
+Implements \hyperlink{classPecos_1_1PolynomialApproximation_abcb01df2fc2d4c44bab6b56ad7def50c}{Polynomial\+Approximation}.
+
+
+
+References Polynomial\+Approximation\+::computed\+Mean, Polynomial\+Approximation\+::expansion\+Coeff\+Grad\+Flag, Hierarch\+Interp\+Poly\+Approximation\+::expansion\+Type1\+Coeff\+Grads, Hierarch\+Interp\+Poly\+Approximation\+::expectation\+\_\+gradient(), Polynomial\+Approximation\+::mean\+Gradient, Shared\+Poly\+Approx\+Data\+::non\+Random\+Indices, and Basis\+Approximation\+::shared\+Data\+Rep.
+
+
+
+Referenced by Hierarch\+Interp\+Poly\+Approximation\+::variance\+\_\+gradient().
+
+\index{Pecos\+::\+Hierarch\+Interp\+Poly\+Approximation@{Pecos\+::\+Hierarch\+Interp\+Poly\+Approximation}!mean\+\_\+gradient@{mean\+\_\+gradient}}
+\index{mean\+\_\+gradient@{mean\+\_\+gradient}!Pecos\+::\+Hierarch\+Interp\+Poly\+Approximation@{Pecos\+::\+Hierarch\+Interp\+Poly\+Approximation}}
+\subsubsection[{\texorpdfstring{mean\+\_\+gradient(const Real\+Vector \&x, const Sizet\+Array \&dvv)}{mean_gradient(const RealVector &x, const SizetArray &dvv)}}]{\setlength{\rightskip}{0pt plus 5cm}const Real\+Vector \& mean\+\_\+gradient (
+\begin{DoxyParamCaption}
+\item[{const Real\+Vector \&}]{x, }
+\item[{const Sizet\+Array \&}]{dvv}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classPecos_1_1HierarchInterpPolyApproximation_a24f2edc21c9887121cda78faae1c1475}
+In this function, a subset of the expansion variables are random variables and any augmented design/state variables (i.\+e., not inserted as random variable distribution parameters) are included in the expansion. In this case, the mean of the expansion is the expectation over the random subset and the derivative of the mean is the derivative of the remaining expansion over the non-\/random subset. This function must handle the mixed case, where some design/state variables are augmented (and are part of the expansion\+: derivatives are evaluated as described above) and some are inserted (derivatives are obtained from expansion\+Type1\+Coeff\+Grads). 
+
+Implements \hyperlink{classPecos_1_1PolynomialApproximation_a941461d09fc3c204012a12ceda5cfdde}{Polynomial\+Approximation}.
+
+
+
+References Shared\+Poly\+Approx\+Data\+::basis\+Config\+Options, Polynomial\+Approximation\+::computed\+Mean, Hierarch\+Interp\+Poly\+Approximation\+::covariance(), Polynomial\+Approximation\+::expansion\+Coeff\+Flag, Polynomial\+Approximation\+::expansion\+Coeff\+Grad\+Flag, Hierarch\+Interp\+Poly\+Approximation\+::expansion\+Type1\+Coeff\+Grads, Hierarch\+Interp\+Poly\+Approximation\+::expansion\+Type1\+Coeffs, Hierarch\+Interp\+Poly\+Approximation\+::expansion\+Type2\+Coeffs, Hierarch\+Interp\+Poly\+Approximation\+::expectation\+\_\+gradient(), Shared\+Poly\+Approx\+Data\+::match\+\_\+nonrandom\+\_\+vars(), Polynomial\+Approximation\+::mean\+Gradient, Shared\+Poly\+Approx\+Data\+::non\+Random\+Indices, Shared\+Poly\+Approx\+Data\+::random\+Vars\+Key, Basis\+Approximation\+::shared\+Data\+Rep, Basis\+Config\+Options\+::use\+Derivs, and Polynomial\+Approximation\+::x\+Prev\+Mean\+Grad.
+
+\index{Pecos\+::\+Hierarch\+Interp\+Poly\+Approximation@{Pecos\+::\+Hierarch\+Interp\+Poly\+Approximation}!variance\+\_\+gradient@{variance\+\_\+gradient}}
+\index{variance\+\_\+gradient@{variance\+\_\+gradient}!Pecos\+::\+Hierarch\+Interp\+Poly\+Approximation@{Pecos\+::\+Hierarch\+Interp\+Poly\+Approximation}}
+\subsubsection[{\texorpdfstring{variance\+\_\+gradient()}{variance_gradient()}}]{\setlength{\rightskip}{0pt plus 5cm}const Real\+Vector \& variance\+\_\+gradient (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classPecos_1_1HierarchInterpPolyApproximation_ae898fc2f42f1077268f89fc2e9f2c71c}
+In this function, all expansion variables are random variables and any design/state variables are omitted from the expansion. The mixed derivative case (some design variables are inserted and some are augmented) requires no special treatment. 
+
+Implements \hyperlink{classPecos_1_1PolynomialApproximation_a9d096037fca9bfcc8af60186bf6e914f}{Polynomial\+Approximation}.
+
+
+
+References Hierarch\+Interp\+Poly\+Approximation\+::central\+\_\+product\+\_\+gradient\+\_\+interpolant(), Polynomial\+Approximation\+::computed\+Variance, Polynomial\+Approximation\+::expansion\+Coeff\+Flag, Polynomial\+Approximation\+::expansion\+Coeff\+Grad\+Flag, Hierarch\+Interp\+Poly\+Approximation\+::expectation\+\_\+gradient(), Hierarch\+Interp\+Poly\+Approximation\+::mean(), Hierarch\+Interp\+Poly\+Approximation\+::mean\+\_\+gradient(), Shared\+Poly\+Approx\+Data\+::non\+Random\+Indices, Basis\+Approximation\+::shared\+Data\+Rep, and Polynomial\+Approximation\+::variance\+Gradient.
+
+\index{Pecos\+::\+Hierarch\+Interp\+Poly\+Approximation@{Pecos\+::\+Hierarch\+Interp\+Poly\+Approximation}!variance\+\_\+gradient@{variance\+\_\+gradient}}
+\index{variance\+\_\+gradient@{variance\+\_\+gradient}!Pecos\+::\+Hierarch\+Interp\+Poly\+Approximation@{Pecos\+::\+Hierarch\+Interp\+Poly\+Approximation}}
+\subsubsection[{\texorpdfstring{variance\+\_\+gradient(const Real\+Vector \&x, const Sizet\+Array \&dvv)}{variance_gradient(const RealVector &x, const SizetArray &dvv)}}]{\setlength{\rightskip}{0pt plus 5cm}const Real\+Vector \& variance\+\_\+gradient (
+\begin{DoxyParamCaption}
+\item[{const Real\+Vector \&}]{x, }
+\item[{const Sizet\+Array \&}]{dvv}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classPecos_1_1HierarchInterpPolyApproximation_a791e127a445f8a6c9c3a7966d12c1431}
+In this function, a subset of the expansion variables are random variables and any augmented design/state variables (i.\+e., not inserted as random variable distribution parameters) are included in the expansion. This function must handle the mixed case, where some design/state variables are augmented (and are part of the expansion) and some are inserted (derivatives are obtained from expansion\+Type1\+Coeff\+Grads). 
+
+Implements \hyperlink{classPecos_1_1PolynomialApproximation_a1222664e145d8077eea75bfff3aca15a}{Polynomial\+Approximation}.
+
+
+
+References Shared\+Poly\+Approx\+Data\+::basis\+Config\+Options, Hierarch\+Interp\+Poly\+Approximation\+::central\+\_\+product\+\_\+gradient\+\_\+interpolant(), Hierarch\+Interp\+Poly\+Approximation\+::central\+\_\+product\+\_\+interpolant(), Polynomial\+Approximation\+::computed\+Variance, Polynomial\+Approximation\+::expansion\+Coeff\+Flag, Polynomial\+Approximation\+::expansion\+Coeff\+Grad\+Flag, Hierarch\+Interp\+Poly\+Approximation\+::expectation\+\_\+gradient(), Shared\+Poly\+Approx\+Data\+::match\+\_\+nonrandom\+\_\+vars(), Hierarch\+Interp\+Poly\+Approximation\+::mean(), Hierarch\+Interp\+Poly\+Approximation\+::mean\+\_\+gradient(), Shared\+Poly\+Approx\+Data\+::non\+Random\+Indices, Shared\+Poly\+Approx\+Data\+::random\+Vars\+Key, Hierarch\+Interp\+Poly\+Approximation\+::reference\+\_\+mean(), Basis\+Approximation\+::shared\+Data\+Rep, Basis\+Config\+Options\+::use\+Derivs, Polynomial\+Approximation\+::variance\+Gradient, and Polynomial\+Approximation\+::x\+Prev\+Var\+Grad.
+
+\index{Pecos\+::\+Hierarch\+Interp\+Poly\+Approximation@{Pecos\+::\+Hierarch\+Interp\+Poly\+Approximation}!compute\+\_\+partial\+\_\+variance@{compute\+\_\+partial\+\_\+variance}}
+\index{compute\+\_\+partial\+\_\+variance@{compute\+\_\+partial\+\_\+variance}!Pecos\+::\+Hierarch\+Interp\+Poly\+Approximation@{Pecos\+::\+Hierarch\+Interp\+Poly\+Approximation}}
+\subsubsection[{\texorpdfstring{compute\+\_\+partial\+\_\+variance(const Bit\+Array \&set\+\_\+value)}{compute_partial_variance(const BitArray &set_value)}}]{\setlength{\rightskip}{0pt plus 5cm}void compute\+\_\+partial\+\_\+variance (
+\begin{DoxyParamCaption}
+\item[{const Bit\+Array \&}]{set\+\_\+value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classPecos_1_1HierarchInterpPolyApproximation_a6eb2548a8c786f48478fabb6377be779}
+Computes the variance of component functions. Assumes that all subsets of set\+\_\+value have been computed in advance which will be true so long as the partial\+\_\+variance is called following appropriate enumeration of set value. 
+
+Reimplemented from \hyperlink{classPecos_1_1InterpPolyApproximation_a6eb2548a8c786f48478fabb6377be779}{Interp\+Poly\+Approximation}.
+
+
+
+References Hierarch\+Interp\+Poly\+Approximation\+::central\+\_\+product\+\_\+member\+\_\+coefficients(), Interp\+Poly\+Approximation\+::compute\+\_\+partial\+\_\+variance(), Hierarch\+Interp\+Poly\+Approximation\+::expectation(), Hierarch\+Interp\+Poly\+Approximation\+::mean(), Hierarch\+Interp\+Poly\+Approximation\+::member\+\_\+coefficients\+\_\+weights(), Shared\+Basis\+Approx\+Data\+::num\+Vars, Interp\+Poly\+Approximation\+::partial\+Variance, Basis\+Approximation\+::shared\+Data\+Rep, Shared\+Poly\+Approx\+Data\+::sobol\+Index\+Map, Polynomial\+Approximation\+::total\+Sobol\+Indices, and Hierarch\+Interp\+Poly\+Approximation\+::variance().
+
+
+
+Referenced by Hierarch\+Interp\+Poly\+Approximation\+::integrate\+\_\+expansion\+\_\+moments().
+
+\index{Pecos\+::\+Hierarch\+Interp\+Poly\+Approximation@{Pecos\+::\+Hierarch\+Interp\+Poly\+Approximation}!value@{value}}
+\index{value@{value}!Pecos\+::\+Hierarch\+Interp\+Poly\+Approximation@{Pecos\+::\+Hierarch\+Interp\+Poly\+Approximation}}
+\subsubsection[{\texorpdfstring{value(const Real\+Vector \&x, const U\+Short3\+D\+Array \&sm\+\_\+mi, const U\+Short4\+D\+Array \&key, const Real\+Vector2\+D\+Array \&t1\+\_\+coeffs, const Real\+Matrix2\+D\+Array \&t2\+\_\+coeffs, unsigned short level, const Sizet\+List \&subset\+\_\+indices)}{value(const RealVector &x, const UShort3DArray &sm_mi, const UShort4DArray &key, const RealVector2DArray &t1_coeffs, const RealMatrix2DArray &t2_coeffs, unsigned short level, const SizetList &subset_indices)}}]{\setlength{\rightskip}{0pt plus 5cm}Real value (
+\begin{DoxyParamCaption}
+\item[{const Real\+Vector \&}]{x, }
+\item[{const U\+Short3\+D\+Array \&}]{sm\+\_\+mi, }
+\item[{const U\+Short4\+D\+Array \&}]{key, }
+\item[{const Real\+Vector2\+D\+Array \&}]{t1\+\_\+coeffs, }
+\item[{const Real\+Matrix2\+D\+Array \&}]{t2\+\_\+coeffs, }
+\item[{unsigned short}]{level, }
+\item[{const Sizet\+List \&}]{subset\+\_\+indices}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classPecos_1_1HierarchInterpPolyApproximation_a814452cf28de0138f1095f9cbe1d5471}
+
+
+compute the value at a point for a particular interpolation level and for a specified subset of the variables 
+
+All variables version. 
+
+References Polynomial\+Approximation\+::expansion\+Coeff\+Flag, Hierarch\+Interp\+Poly\+Approximation\+::gradient\+\_\+basis\+\_\+variables(), Basis\+Approximation\+::shared\+Data\+Rep, and Shared\+Interp\+Poly\+Approx\+Data\+::tensor\+\_\+product\+\_\+value().
+
+\index{Pecos\+::\+Hierarch\+Interp\+Poly\+Approximation@{Pecos\+::\+Hierarch\+Interp\+Poly\+Approximation}!product\+\_\+interpolant@{product\+\_\+interpolant}}
+\index{product\+\_\+interpolant@{product\+\_\+interpolant}!Pecos\+::\+Hierarch\+Interp\+Poly\+Approximation@{Pecos\+::\+Hierarch\+Interp\+Poly\+Approximation}}
+\subsubsection[{\texorpdfstring{product\+\_\+interpolant(\+Hierarch\+Interp\+Poly\+Approximation $\ast$hip\+\_\+approx\+\_\+2, Real\+Vector2\+D\+Array \&r1r2\+\_\+t1\+\_\+coeffs, Real\+Matrix2\+D\+Array \&r1r2\+\_\+t2\+\_\+coeffs, const U\+Short2\+D\+Array \&reference\+\_\+key=\+U\+Short2\+D\+Array())}{product_interpolant(HierarchInterpPolyApproximation *hip_approx_2, RealVector2DArray &r1r2_t1_coeffs, RealMatrix2DArray &r1r2_t2_coeffs, const UShort2DArray &reference_key=UShort2DArray())}}]{\setlength{\rightskip}{0pt plus 5cm}void product\+\_\+interpolant (
+\begin{DoxyParamCaption}
+\item[{{\bf Hierarch\+Interp\+Poly\+Approximation} $\ast$}]{hip\+\_\+approx\+\_\+2, }
+\item[{Real\+Vector2\+D\+Array \&}]{r1r2\+\_\+t1\+\_\+coeffs, }
+\item[{Real\+Matrix2\+D\+Array \&}]{r1r2\+\_\+t2\+\_\+coeffs, }
+\item[{const U\+Short2\+D\+Array \&}]{reference\+\_\+key = {\ttfamily UShort2DArray()}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classPecos_1_1HierarchInterpPolyApproximation_a56d259d2bc9e4b3c7177953e103ed70d}
+
+
+form type 1/2 coefficients for interpolation of R\+\_\+1 R\+\_\+2 
+
+Whereas \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_af379a9ca4f3a57b0288206ca8bf4d726}{expectation()} supports either a reference or increment key (passed as generic set\+\_\+partition), functions forming hierarchical interpolant coefficients support only a reference key (starting point must be set 0; end point can be controlled). 
+
+References Shared\+Poly\+Approx\+Data\+::basis\+Config\+Options, Hierarch\+Interp\+Poly\+Approximation\+::central\+\_\+product\+\_\+interpolant(), Hierarch\+Sparse\+Grid\+Driver\+::collocation\+\_\+indices(), Hierarch\+Sparse\+Grid\+Driver\+::collocation\+\_\+key(), Hierarch\+Interp\+Poly\+Approximation\+::expansion\+Type1\+Coeffs, Hierarch\+Interp\+Poly\+Approximation\+::gradient\+\_\+basis\+\_\+variables(), Shared\+Hierarch\+Interp\+Poly\+Approx\+Data\+::hsg\+\_\+driver(), Shared\+Basis\+Approx\+Data\+::num\+Vars, Basis\+Approximation\+::shared\+Data\+Rep, Hierarch\+Sparse\+Grid\+Driver\+::smolyak\+\_\+multi\+\_\+index(), Polynomial\+Approximation\+::surr\+Data, Basis\+Config\+Options\+::use\+Derivs, and Hierarch\+Interp\+Poly\+Approximation\+::value().
+
+
+
+Referenced by Hierarch\+Interp\+Poly\+Approximation\+::delta\+\_\+covariance(), and Hierarch\+Interp\+Poly\+Approximation\+::expectation\+\_\+gradient().
+
+\index{Pecos\+::\+Hierarch\+Interp\+Poly\+Approximation@{Pecos\+::\+Hierarch\+Interp\+Poly\+Approximation}!central\+\_\+product\+\_\+interpolant@{central\+\_\+product\+\_\+interpolant}}
+\index{central\+\_\+product\+\_\+interpolant@{central\+\_\+product\+\_\+interpolant}!Pecos\+::\+Hierarch\+Interp\+Poly\+Approximation@{Pecos\+::\+Hierarch\+Interp\+Poly\+Approximation}}
+\subsubsection[{\texorpdfstring{central\+\_\+product\+\_\+interpolant(\+Hierarch\+Interp\+Poly\+Approximation $\ast$hip\+\_\+approx\+\_\+2, Real mean\+\_\+1, Real mean\+\_\+2, Real\+Vector2\+D\+Array \&cov\+\_\+t1\+\_\+coeffs, Real\+Matrix2\+D\+Array \&cov\+\_\+t2\+\_\+coeffs, const U\+Short2\+D\+Array \&reference\+\_\+key=\+U\+Short2\+D\+Array())}{central_product_interpolant(HierarchInterpPolyApproximation *hip_approx_2, Real mean_1, Real mean_2, RealVector2DArray &cov_t1_coeffs, RealMatrix2DArray &cov_t2_coeffs, const UShort2DArray &reference_key=UShort2DArray())}}]{\setlength{\rightskip}{0pt plus 5cm}void central\+\_\+product\+\_\+interpolant (
+\begin{DoxyParamCaption}
+\item[{{\bf Hierarch\+Interp\+Poly\+Approximation} $\ast$}]{hip\+\_\+approx\+\_\+2, }
+\item[{Real}]{mean\+\_\+1, }
+\item[{Real}]{mean\+\_\+2, }
+\item[{Real\+Vector2\+D\+Array \&}]{cov\+\_\+t1\+\_\+coeffs, }
+\item[{Real\+Matrix2\+D\+Array \&}]{cov\+\_\+t2\+\_\+coeffs, }
+\item[{const U\+Short2\+D\+Array \&}]{reference\+\_\+key = {\ttfamily UShort2DArray()}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classPecos_1_1HierarchInterpPolyApproximation_ad568c5307549ce96de86b1cd5fa0097d}
+
+
+form type 1/2 coefficients for interpolation of (R\+\_\+1 -\/ mu\+\_\+1)(R\+\_\+2 -\/ mu\+\_\+2) 
+
+Whereas \hyperlink{classPecos_1_1HierarchInterpPolyApproximation_af379a9ca4f3a57b0288206ca8bf4d726}{expectation()} supports either a reference or increment key (passed as generic set\+\_\+partition), functions forming hierarchical interpolant coefficients support only a reference key (starting point must be set 0; end point can be controlled). 
+
+References Shared\+Poly\+Approx\+Data\+::basis\+Config\+Options, Hierarch\+Interp\+Poly\+Approximation\+::central\+\_\+product\+\_\+gradient\+\_\+interpolant(), Hierarch\+Sparse\+Grid\+Driver\+::collocation\+\_\+indices(), Hierarch\+Sparse\+Grid\+Driver\+::collocation\+\_\+key(), Hierarch\+Interp\+Poly\+Approximation\+::expansion\+Type1\+Coeffs, Hierarch\+Interp\+Poly\+Approximation\+::gradient\+\_\+basis\+\_\+variables(), Shared\+Hierarch\+Interp\+Poly\+Approx\+Data\+::hsg\+\_\+driver(), Shared\+Basis\+Approx\+Data\+::num\+Vars, Basis\+Approximation\+::shared\+Data\+Rep, Hierarch\+Sparse\+Grid\+Driver\+::smolyak\+\_\+multi\+\_\+index(), Polynomial\+Approximation\+::surr\+Data, Basis\+Config\+Options\+::use\+Derivs, and Hierarch\+Interp\+Poly\+Approximation\+::value().
+
+
+
+Referenced by Hierarch\+Interp\+Poly\+Approximation\+::covariance(), Hierarch\+Interp\+Poly\+Approximation\+::product\+\_\+interpolant(), Hierarch\+Interp\+Poly\+Approximation\+::reference\+\_\+variance(), and Hierarch\+Interp\+Poly\+Approximation\+::variance\+\_\+gradient().
+
+\index{Pecos\+::\+Hierarch\+Interp\+Poly\+Approximation@{Pecos\+::\+Hierarch\+Interp\+Poly\+Approximation}!expectation\+\_\+gradient@{expectation\+\_\+gradient}}
+\index{expectation\+\_\+gradient@{expectation\+\_\+gradient}!Pecos\+::\+Hierarch\+Interp\+Poly\+Approximation@{Pecos\+::\+Hierarch\+Interp\+Poly\+Approximation}}
+\subsubsection[{\texorpdfstring{expectation\+\_\+gradient(const Real\+Matrix2\+D\+Array \&t1\+\_\+coeff\+\_\+grads, const Real\+Vector2\+D\+Array \&t1\+\_\+wts)}{expectation_gradient(const RealMatrix2DArray &t1_coeff_grads, const RealVector2DArray &t1_wts)}}]{\setlength{\rightskip}{0pt plus 5cm}const Real\+Vector \& expectation\+\_\+gradient (
+\begin{DoxyParamCaption}
+\item[{const Real\+Matrix2\+D\+Array \&}]{t1\+\_\+coeff\+\_\+grads, }
+\item[{const Real\+Vector2\+D\+Array \&}]{t1\+\_\+wts}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classPecos_1_1HierarchInterpPolyApproximation_af7cb170e68ec826d583313ef224f47a0}
+
+
+compute the expected value of the gradient interpolant given by t1\+\_\+coeff\+\_\+grads using t1\+\_\+wts 
+
+For inserted/augmented design/epistemic variables in standard mode. 
+
+References Polynomial\+Approximation\+::approx\+Gradient, and Hierarch\+Interp\+Poly\+Approximation\+::expectation\+\_\+gradient().
+
+\index{Pecos\+::\+Hierarch\+Interp\+Poly\+Approximation@{Pecos\+::\+Hierarch\+Interp\+Poly\+Approximation}!expectation\+\_\+gradient@{expectation\+\_\+gradient}}
+\index{expectation\+\_\+gradient@{expectation\+\_\+gradient}!Pecos\+::\+Hierarch\+Interp\+Poly\+Approximation@{Pecos\+::\+Hierarch\+Interp\+Poly\+Approximation}}
+\subsubsection[{\texorpdfstring{expectation\+\_\+gradient(const Real\+Vector \&x, const Real\+Matrix2\+D\+Array \&t1\+\_\+coeff\+\_\+grads, size\+\_\+t t1cg\+\_\+index)}{expectation_gradient(const RealVector &x, const RealMatrix2DArray &t1_coeff_grads, size_t t1cg_index)}}]{\setlength{\rightskip}{0pt plus 5cm}Real expectation\+\_\+gradient (
+\begin{DoxyParamCaption}
+\item[{const Real\+Vector \&}]{x, }
+\item[{const Real\+Matrix2\+D\+Array \&}]{t1\+\_\+coeff\+\_\+grads, }
+\item[{size\+\_\+t}]{t1cg\+\_\+index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classPecos_1_1HierarchInterpPolyApproximation_a6e2bc30784df7fe2c7c058f55376a0a4}
+
+
+compute the expectation of t1\+\_\+coeff\+\_\+grads for index t1cg\+\_\+index 
+
+For inserted design/epistemic variables in all\+\_\+variables mode. 
+
+References Hierarch\+Sparse\+Grid\+Driver\+::collocation\+\_\+key(), Hierarch\+Interp\+Poly\+Approximation\+::expectation\+\_\+gradient(), Shared\+Hierarch\+Interp\+Poly\+Approx\+Data\+::hsg\+\_\+driver(), Shared\+Poly\+Approx\+Data\+::non\+Random\+Indices, Shared\+Poly\+Approx\+Data\+::random\+Indices, Basis\+Approximation\+::shared\+Data\+Rep, Hierarch\+Sparse\+Grid\+Driver\+::smolyak\+\_\+multi\+\_\+index(), Shared\+Interp\+Poly\+Approx\+Data\+::type1\+\_\+interpolant\+\_\+value(), and Shared\+Interp\+Poly\+Approx\+Data\+::type1\+\_\+weight().
+
+\index{Pecos\+::\+Hierarch\+Interp\+Poly\+Approximation@{Pecos\+::\+Hierarch\+Interp\+Poly\+Approximation}!expectation\+\_\+gradient@{expectation\+\_\+gradient}}
+\index{expectation\+\_\+gradient@{expectation\+\_\+gradient}!Pecos\+::\+Hierarch\+Interp\+Poly\+Approximation@{Pecos\+::\+Hierarch\+Interp\+Poly\+Approximation}}
+\subsubsection[{\texorpdfstring{expectation\+\_\+gradient(const Real\+Vector \&x, const Real\+Vector2\+D\+Array \&t1\+\_\+coeffs, const Real\+Matrix2\+D\+Array \&t2\+\_\+coeffs, size\+\_\+t deriv\+\_\+index)}{expectation_gradient(const RealVector &x, const RealVector2DArray &t1_coeffs, const RealMatrix2DArray &t2_coeffs, size_t deriv_index)}}]{\setlength{\rightskip}{0pt plus 5cm}Real expectation\+\_\+gradient (
+\begin{DoxyParamCaption}
+\item[{const Real\+Vector \&}]{x, }
+\item[{const Real\+Vector2\+D\+Array \&}]{t1\+\_\+coeffs, }
+\item[{const Real\+Matrix2\+D\+Array \&}]{t2\+\_\+coeffs, }
+\item[{size\+\_\+t}]{deriv\+\_\+index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classPecos_1_1HierarchInterpPolyApproximation_ab1ddf31383c7e516aeb07b80339ec461}
+
+
+compute the expectation of the gradient of \{t1,t2\}\+\_\+coeffs for index deriv\+\_\+index 
+
+For augmented design/epistemic variables in all\+\_\+variables mode. 
+
+References Shared\+Poly\+Approx\+Data\+::basis\+Config\+Options, Hierarch\+Sparse\+Grid\+Driver\+::collocation\+\_\+key(), Shared\+Hierarch\+Interp\+Poly\+Approx\+Data\+::hsg\+\_\+driver(), Shared\+Poly\+Approx\+Data\+::non\+Random\+Indices, Shared\+Basis\+Approx\+Data\+::num\+Vars, Hierarch\+Interp\+Poly\+Approximation\+::product\+\_\+interpolant(), Shared\+Poly\+Approx\+Data\+::random\+Indices, Basis\+Approximation\+::shared\+Data\+Rep, Hierarch\+Sparse\+Grid\+Driver\+::smolyak\+\_\+multi\+\_\+index(), Shared\+Interp\+Poly\+Approx\+Data\+::type1\+\_\+interpolant\+\_\+gradient(), Shared\+Interp\+Poly\+Approx\+Data\+::type1\+\_\+weight(), Shared\+Interp\+Poly\+Approx\+Data\+::type2\+\_\+interpolant\+\_\+gradient(), Shared\+Interp\+Poly\+Approx\+Data\+::type2\+\_\+weight(), and Basis\+Config\+Options\+::use\+Derivs.
+
+\index{Pecos\+::\+Hierarch\+Interp\+Poly\+Approximation@{Pecos\+::\+Hierarch\+Interp\+Poly\+Approximation}!increment\+\_\+coefficients@{increment\+\_\+coefficients}}
+\index{increment\+\_\+coefficients@{increment\+\_\+coefficients}!Pecos\+::\+Hierarch\+Interp\+Poly\+Approximation@{Pecos\+::\+Hierarch\+Interp\+Poly\+Approximation}}
+\subsubsection[{\texorpdfstring{increment\+\_\+coefficients(const U\+Short\+Array \&index\+\_\+set)}{increment_coefficients(const UShortArray &index_set)}}]{\setlength{\rightskip}{0pt plus 5cm}void increment\+\_\+coefficients (
+\begin{DoxyParamCaption}
+\item[{const U\+Short\+Array \&}]{index\+\_\+set}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classPecos_1_1HierarchInterpPolyApproximation_a9403f7c8e5fbfdb4b2142b088673c533}
+
+
+increment expansion\{Type1\+Coeffs,Type2\+Coeffs,Type1\+Coeff\+Grads\} for a single index\+\_\+set 
+
+Lower level helper function to process a single index set. 
+
+References Shared\+Poly\+Approx\+Data\+::basis\+Config\+Options, Hierarch\+Sparse\+Grid\+Driver\+::collocation\+\_\+key(), Polynomial\+Approximation\+::expansion\+Coeff\+Flag, Polynomial\+Approximation\+::expansion\+Coeff\+Grad\+Flag, Hierarch\+Interp\+Poly\+Approximation\+::expansion\+Type1\+Coeff\+Grads, Hierarch\+Interp\+Poly\+Approximation\+::expansion\+Type1\+Coeffs, Hierarch\+Interp\+Poly\+Approximation\+::expansion\+Type2\+Coeffs, Hierarch\+Interp\+Poly\+Approximation\+::gradient\+\_\+basis\+\_\+variables(), Hierarch\+Interp\+Poly\+Approximation\+::gradient\+\_\+nonbasis\+\_\+variables(), Shared\+Hierarch\+Interp\+Poly\+Approx\+Data\+::hsg\+\_\+driver(), Hierarch\+Interp\+Poly\+Approximation\+::push\+\_\+coefficients(), Basis\+Approximation\+::shared\+Data\+Rep, Hierarch\+Sparse\+Grid\+Driver\+::smolyak\+\_\+multi\+\_\+index(), Polynomial\+Approximation\+::surr\+Data, Basis\+Config\+Options\+::use\+Derivs, and Hierarch\+Interp\+Poly\+Approximation\+::value().
+
+\index{Pecos\+::\+Hierarch\+Interp\+Poly\+Approximation@{Pecos\+::\+Hierarch\+Interp\+Poly\+Approximation}!push\+\_\+coefficients@{push\+\_\+coefficients}}
+\index{push\+\_\+coefficients@{push\+\_\+coefficients}!Pecos\+::\+Hierarch\+Interp\+Poly\+Approximation@{Pecos\+::\+Hierarch\+Interp\+Poly\+Approximation}}
+\subsubsection[{\texorpdfstring{push\+\_\+coefficients(const U\+Short\+Array \&push\+\_\+set)}{push_coefficients(const UShortArray &push_set)}}]{\setlength{\rightskip}{0pt plus 5cm}void push\+\_\+coefficients (
+\begin{DoxyParamCaption}
+\item[{const U\+Short\+Array \&}]{push\+\_\+set}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classPecos_1_1HierarchInterpPolyApproximation_a85c57e8dbd99dfa66dcd11eda308432e}
+
+
+move the expansion coefficients for push\+\_\+set from popped\+Exp\{T1\+Coeffs,T2\+Coeffs,T1\+Coeff\+Grads\} to expansion\{Type1\+Coeffs,Type2\+Coeffs,Type1\+Coeff\+Grads\} 
+
+Lower level helper function to process a single index set. 
+
+References Shared\+Poly\+Approx\+Data\+::basis\+Config\+Options, Polynomial\+Approximation\+::expansion\+Coeff\+Flag, Polynomial\+Approximation\+::expansion\+Coeff\+Grad\+Flag, Hierarch\+Interp\+Poly\+Approximation\+::expansion\+Type1\+Coeff\+Grads, Hierarch\+Interp\+Poly\+Approximation\+::expansion\+Type1\+Coeffs, Hierarch\+Interp\+Poly\+Approximation\+::expansion\+Type2\+Coeffs, Hierarch\+Interp\+Poly\+Approximation\+::popped\+Exp\+T1\+Coeff\+Grads, Hierarch\+Interp\+Poly\+Approximation\+::popped\+Exp\+T1\+Coeffs, Hierarch\+Interp\+Poly\+Approximation\+::popped\+Exp\+T2\+Coeffs, Basis\+Approximation\+::shared\+Data\+Rep, and Basis\+Config\+Options\+::use\+Derivs.
+
+\index{Pecos\+::\+Hierarch\+Interp\+Poly\+Approximation@{Pecos\+::\+Hierarch\+Interp\+Poly\+Approximation}!member\+\_\+coefficients\+\_\+weights@{member\+\_\+coefficients\+\_\+weights}}
+\index{member\+\_\+coefficients\+\_\+weights@{member\+\_\+coefficients\+\_\+weights}!Pecos\+::\+Hierarch\+Interp\+Poly\+Approximation@{Pecos\+::\+Hierarch\+Interp\+Poly\+Approximation}}
+\subsubsection[{\texorpdfstring{member\+\_\+coefficients\+\_\+weights(const Bit\+Array \&member\+\_\+bits, Real\+Vector2\+D\+Array \&member\+\_\+t1\+\_\+coeffs, Real\+Vector2\+D\+Array \&member\+\_\+t1\+\_\+wts, Real\+Matrix2\+D\+Array \&member\+\_\+t2\+\_\+coeffs, Real\+Matrix2\+D\+Array \&member\+\_\+t2\+\_\+wts, U\+Short4\+D\+Array \&member\+\_\+colloc\+\_\+key, Sizet3\+D\+Array \&member\+\_\+colloc\+\_\+index)}{member_coefficients_weights(const BitArray &member_bits, RealVector2DArray &member_t1_coeffs, RealVector2DArray &member_t1_wts, RealMatrix2DArray &member_t2_coeffs, RealMatrix2DArray &member_t2_wts, UShort4DArray &member_colloc_key, Sizet3DArray &member_colloc_index)}}]{\setlength{\rightskip}{0pt plus 5cm}void member\+\_\+coefficients\+\_\+weights (
+\begin{DoxyParamCaption}
+\item[{const Bit\+Array \&}]{member\+\_\+bits, }
+\item[{Real\+Vector2\+D\+Array \&}]{member\+\_\+t1\+\_\+coeffs, }
+\item[{Real\+Vector2\+D\+Array \&}]{member\+\_\+t1\+\_\+wts, }
+\item[{Real\+Matrix2\+D\+Array \&}]{member\+\_\+t2\+\_\+coeffs, }
+\item[{Real\+Matrix2\+D\+Array \&}]{member\+\_\+t2\+\_\+wts, }
+\item[{U\+Short4\+D\+Array \&}]{member\+\_\+colloc\+\_\+key, }
+\item[{Sizet3\+D\+Array \&}]{member\+\_\+colloc\+\_\+index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classPecos_1_1HierarchInterpPolyApproximation_a3d614c925f2689e80288a4eb4da59fcf}
+
+
+compute member expansion for Sobol\textquotesingle{} index integration 
+
+Forms a lower dimensional interpolant over variables that are members of the given set. 
+
+References Shared\+Poly\+Approx\+Data\+::basis\+Config\+Options, Hierarch\+Interp\+Poly\+Approximation\+::central\+\_\+product\+\_\+member\+\_\+coefficients(), Hierarch\+Sparse\+Grid\+Driver\+::collocation\+\_\+indices(), Hierarch\+Sparse\+Grid\+Driver\+::collocation\+\_\+key(), Hierarch\+Interp\+Poly\+Approximation\+::expansion\+Type1\+Coeffs, Hierarch\+Interp\+Poly\+Approximation\+::expansion\+Type2\+Coeffs, Shared\+Hierarch\+Interp\+Poly\+Approx\+Data\+::hsg\+\_\+driver(), Hierarch\+Sparse\+Grid\+Driver\+::levels\+\_\+to\+\_\+delta\+\_\+keys(), Hierarch\+Sparse\+Grid\+Driver\+::levels\+\_\+to\+\_\+delta\+\_\+sizes(), Shared\+Basis\+Approx\+Data\+::num\+Vars, Basis\+Approximation\+::shared\+Data\+Rep, Hierarch\+Sparse\+Grid\+Driver\+::smolyak\+\_\+multi\+\_\+index(), Shared\+Interp\+Poly\+Approx\+Data\+::type1\+\_\+weight(), Shared\+Interp\+Poly\+Approx\+Data\+::type2\+\_\+weight(), and Basis\+Config\+Options\+::use\+Derivs.
+
+
+
+Referenced by Hierarch\+Interp\+Poly\+Approximation\+::compute\+\_\+partial\+\_\+variance().
+
+
+
+\subsection{Member Data Documentation}
+\index{Pecos\+::\+Hierarch\+Interp\+Poly\+Approximation@{Pecos\+::\+Hierarch\+Interp\+Poly\+Approximation}!expansion\+Type1\+Coeff\+Grads@{expansion\+Type1\+Coeff\+Grads}}
+\index{expansion\+Type1\+Coeff\+Grads@{expansion\+Type1\+Coeff\+Grads}!Pecos\+::\+Hierarch\+Interp\+Poly\+Approximation@{Pecos\+::\+Hierarch\+Interp\+Poly\+Approximation}}
+\subsubsection[{\texorpdfstring{expansion\+Type1\+Coeff\+Grads}{expansionType1CoeffGrads}}]{\setlength{\rightskip}{0pt plus 5cm}Real\+Matrix2\+D\+Array expansion\+Type1\+Coeff\+Grads\hspace{0.3cm}{\ttfamily [private]}}\label{classPecos_1_1HierarchInterpPolyApproximation_ad99e5330509824547f220676f9c250fe}
+
+
+the gradients of the type1 expansion coefficients 
+
+may be interpreted as either the gradients of the expansion coefficients or the coefficients of expansions for the response gradients. This array is used when sensitivities of moments are needed with respect to variables that do not appear in the expansion (e.\+g., with respect to design variables for an expansion only over the random variables). 
+
+Referenced by Hierarch\+Interp\+Poly\+Approximation\+::allocate\+\_\+arrays(), Hierarch\+Interp\+Poly\+Approximation\+::central\+\_\+product\+\_\+gradient\+\_\+interpolant(), Hierarch\+Interp\+Poly\+Approximation\+::compute\+\_\+coefficients(), Hierarch\+Interp\+Poly\+Approximation\+::decrement\+\_\+coefficients(), Hierarch\+Interp\+Poly\+Approximation\+::finalize\+\_\+coefficients(), Hierarch\+Interp\+Poly\+Approximation\+::gradient\+\_\+nonbasis\+\_\+variables(), Hierarch\+Interp\+Poly\+Approximation\+::increment\+\_\+coefficients(), Hierarch\+Interp\+Poly\+Approximation\+::mean\+\_\+gradient(), Hierarch\+Interp\+Poly\+Approximation\+::push\+\_\+coefficients(), Hierarch\+Interp\+Poly\+Approximation\+::restore\+\_\+coefficients(), Hierarch\+Interp\+Poly\+Approximation\+::store\+\_\+coefficients(), and Hierarch\+Interp\+Poly\+Approximation\+::swap\+\_\+coefficients().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Hierarch\+Interp\+Poly\+Approximation.\+hpp\item 
+Hierarch\+Interp\+Poly\+Approximation.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,223 @@
+\section{Gen\+Laguerre\+Orthog\+Polynomial Class Reference}
+\label{classPecos_1_1GenLaguerreOrthogPolynomial}\index{Gen\+Laguerre\+Orthog\+Polynomial@{Gen\+Laguerre\+Orthog\+Polynomial}}
+
+
+Derived orthogonal polynomial class for generalized Laguerre polynomials.  
+
+
+Inheritance diagram for Gen\+Laguerre\+Orthog\+Polynomial\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classPecos_1_1GenLaguerreOrthogPolynomial}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPecos_1_1GenLaguerreOrthogPolynomial_a7a03d67906e4ef2afc868a23e93fd8b6}{Gen\+Laguerre\+Orthog\+Polynomial} ()\label{classPecos_1_1GenLaguerreOrthogPolynomial_a7a03d67906e4ef2afc868a23e93fd8b6}
+
+\begin{DoxyCompactList}\small\item\em default constructor \end{DoxyCompactList}\item 
+\hyperlink{classPecos_1_1GenLaguerreOrthogPolynomial_a2c97d43396fd28eb6040b943292959c0}{Gen\+Laguerre\+Orthog\+Polynomial} (Real \hyperlink{classPecos_1_1GenLaguerreOrthogPolynomial_aeeb4ce11a8d413209be1ec08eced8728}{alpha\+\_\+stat})\label{classPecos_1_1GenLaguerreOrthogPolynomial_a2c97d43396fd28eb6040b943292959c0}
+
+\begin{DoxyCompactList}\small\item\em standard constructor \end{DoxyCompactList}\item 
+\hyperlink{classPecos_1_1GenLaguerreOrthogPolynomial_a9d104277bc7d830f1ae5833c8809a7b0}{$\sim$\+Gen\+Laguerre\+Orthog\+Polynomial} ()\label{classPecos_1_1GenLaguerreOrthogPolynomial_a9d104277bc7d830f1ae5833c8809a7b0}
+
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1GenLaguerreOrthogPolynomial_acc5475d6b992e443e3cce753a48cfc32}{weight\+\_\+factor} ()\label{classPecos_1_1GenLaguerreOrthogPolynomial_acc5475d6b992e443e3cce753a48cfc32}
+
+\begin{DoxyCompactList}\small\item\em calculate and return wt\+Factor based on alpha\+Poly \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Real \hyperlink{classPecos_1_1GenLaguerreOrthogPolynomial_a8792a858ac05a2158880e876f9da2019}{type1\+\_\+value} (Real x, unsigned short order)
+\begin{DoxyCompactList}\small\item\em retrieve the value of the n\+\_\+th type 1 polynomial for a given parameter x using traditional characteristic polynomial formulation \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1GenLaguerreOrthogPolynomial_aac6751aa35bf5fcb42c520a322fc26dc}{type1\+\_\+gradient} (Real x, unsigned short order)
+\begin{DoxyCompactList}\small\item\em retrieve the gradient of the n\+\_\+th type 1 polynomial for a given parameter x using traditional characteristic polynomial formulation \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1GenLaguerreOrthogPolynomial_ae957c8c2e7ea13728bafbad0c9b2996e}{type1\+\_\+hessian} (Real x, unsigned short order)
+\begin{DoxyCompactList}\small\item\em retrieve the Hessian of the n\+\_\+th type 1 polynomial for a given parameter x using traditional characteristic polynomial formulation \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1GenLaguerreOrthogPolynomial_a77c0dbb874af1190d448d01da6efbe4e}{norm\+\_\+squared} (unsigned short order)
+\begin{DoxyCompactList}\small\item\em returns the norm-\/squared of the n\+\_\+th order polynomial defined by the inner product $<$Poly\+\_\+n, Poly\+\_\+n$>$ = $\vert$$\vert$\+Poly\+\_\+n$\vert$$\vert$$^\wedge$2 \end{DoxyCompactList}\item 
+const Real\+Array \& \hyperlink{classPecos_1_1GenLaguerreOrthogPolynomial_a10873b28f1284aff4ea214e00c4f86dd}{collocation\+\_\+points} (unsigned short order)
+\begin{DoxyCompactList}\small\item\em return collocation points corresponding to orthogonal polynomial order n \end{DoxyCompactList}\item 
+const Real\+Array \& \hyperlink{classPecos_1_1GenLaguerreOrthogPolynomial_aa010321cf47465dca5725fa15ba58bf6}{type1\+\_\+collocation\+\_\+weights} (unsigned short order)
+\begin{DoxyCompactList}\small\item\em return the type 1 collocation weights corresponding to a point set of size order \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1GenLaguerreOrthogPolynomial_a997bdeddf670667c476513fcacc779ca}{alpha\+\_\+polynomial} () const \label{classPecos_1_1GenLaguerreOrthogPolynomial_a997bdeddf670667c476513fcacc779ca}
+
+\begin{DoxyCompactList}\small\item\em return alpha\+Poly \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1GenLaguerreOrthogPolynomial_aeeb4ce11a8d413209be1ec08eced8728}{alpha\+\_\+stat} (Real alpha)\label{classPecos_1_1GenLaguerreOrthogPolynomial_aeeb4ce11a8d413209be1ec08eced8728}
+
+\begin{DoxyCompactList}\small\item\em set alpha\+Poly using the conversion alpha\+Poly = alpha\+\_\+stat-\/1. \end{DoxyCompactList}\item 
+bool \hyperlink{classPecos_1_1GenLaguerreOrthogPolynomial_abc2afafc150f648667a41e0ce656b6da}{parameterized} () const \label{classPecos_1_1GenLaguerreOrthogPolynomial_abc2afafc150f648667a41e0ce656b6da}
+
+\begin{DoxyCompactList}\small\item\em override default definition (false) since Gen\+Laguerre is parameterized \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1GenLaguerreOrthogPolynomial_a8c1e8d014e82efc5a1c20f973b5bc715}{length\+\_\+scale} () const 
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Real \hyperlink{classPecos_1_1GenLaguerreOrthogPolynomial_a11666846719189915a02ac6f1f96e393}{alpha\+Poly}\label{classPecos_1_1GenLaguerreOrthogPolynomial_a11666846719189915a02ac6f1f96e393}
+
+\begin{DoxyCompactList}\small\item\em the alpha parameter for the generalized Laguerre polynomial as defined by Abramowitz and Stegun (differs from statistical P\+DF notation) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Derived orthogonal polynomial class for generalized Laguerre polynomials. 
+
+The \hyperlink{classPecos_1_1GenLaguerreOrthogPolynomial}{Gen\+Laguerre\+Orthog\+Polynomial} class evaluates a univariate generalized/associated Laguerre polynomial L$^\wedge$(alpha)\+\_\+n of a particular order. These polynomials are orthogonal with respect to the weight function x$^\wedge$alpha exp(-\/x) when integrated over the support range of \mbox{[}0,+infinity\mbox{]}. This corresponds to the probability density function f(x) = x$^\wedge$alpha exp(-\/x) / Gamma(alpha+1) for the standard gamma distribution, although common statistical P\+DF parameter conventions (see, e.\+g., the uncertain variables section in the D\+A\+K\+O\+TA Reference Manual) and the Abramowitz and Stegun orthogonal polynomial parameter conventions require an offset conversion in this case (alpha\+\_\+poly = alpha\+\_\+stat -\/ 1 with the poly definition used in both cases above). It enables (mixed) multidimensional orthogonal polynomial basis functions within \hyperlink{classPecos_1_1OrthogPolyApproximation}{Orthog\+Poly\+Approximation}. A special case is the \hyperlink{classPecos_1_1LaguerreOrthogPolynomial}{Laguerre\+Orthog\+Polynomial} (implemented separately), for which alpha\+\_\+poly = 0 and weight function = exp(-\/x) (the standard exponential distribution). 
+
+\subsection{Member Function Documentation}
+\index{Pecos\+::\+Gen\+Laguerre\+Orthog\+Polynomial@{Pecos\+::\+Gen\+Laguerre\+Orthog\+Polynomial}!type1\+\_\+value@{type1\+\_\+value}}
+\index{type1\+\_\+value@{type1\+\_\+value}!Pecos\+::\+Gen\+Laguerre\+Orthog\+Polynomial@{Pecos\+::\+Gen\+Laguerre\+Orthog\+Polynomial}}
+\subsubsection[{\texorpdfstring{type1\+\_\+value(\+Real x, unsigned short order)}{type1_value(Real x, unsigned short order)}}]{\setlength{\rightskip}{0pt plus 5cm}Real type1\+\_\+value (
+\begin{DoxyParamCaption}
+\item[{Real}]{x, }
+\item[{unsigned short}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classPecos_1_1GenLaguerreOrthogPolynomial_a8792a858ac05a2158880e876f9da2019}
+
+
+retrieve the value of the n\+\_\+th type 1 polynomial for a given parameter x using traditional characteristic polynomial formulation 
+
+For orthogonal polynomials, n specifies the order of the polynomial, whereas for interpolation polynomials, it identifies the interpolant for the n-\/th point. 
+
+Reimplemented from \hyperlink{classPecos_1_1BasisPolynomial_a1fab871e99cec3a1933a2b1e9ed8a625}{Basis\+Polynomial}.
+
+
+
+References Gen\+Laguerre\+Orthog\+Polynomial\+::alpha\+Poly.
+
+
+
+Referenced by Gen\+Laguerre\+Orthog\+Polynomial\+::type1\+\_\+collocation\+\_\+weights(), and Gen\+Laguerre\+Orthog\+Polynomial\+::type1\+\_\+gradient().
+
+\index{Pecos\+::\+Gen\+Laguerre\+Orthog\+Polynomial@{Pecos\+::\+Gen\+Laguerre\+Orthog\+Polynomial}!type1\+\_\+gradient@{type1\+\_\+gradient}}
+\index{type1\+\_\+gradient@{type1\+\_\+gradient}!Pecos\+::\+Gen\+Laguerre\+Orthog\+Polynomial@{Pecos\+::\+Gen\+Laguerre\+Orthog\+Polynomial}}
+\subsubsection[{\texorpdfstring{type1\+\_\+gradient(\+Real x, unsigned short order)}{type1_gradient(Real x, unsigned short order)}}]{\setlength{\rightskip}{0pt plus 5cm}Real type1\+\_\+gradient (
+\begin{DoxyParamCaption}
+\item[{Real}]{x, }
+\item[{unsigned short}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classPecos_1_1GenLaguerreOrthogPolynomial_aac6751aa35bf5fcb42c520a322fc26dc}
+
+
+retrieve the gradient of the n\+\_\+th type 1 polynomial for a given parameter x using traditional characteristic polynomial formulation 
+
+For orthogonal polynomials, n specifies the order of the polynomial, whereas for interpolation polynomials, it identifies the interpolant for the n-\/th point. 
+
+Reimplemented from \hyperlink{classPecos_1_1BasisPolynomial_a6f69ec84983f551e7e0e4a18b78b4498}{Basis\+Polynomial}.
+
+
+
+References Gen\+Laguerre\+Orthog\+Polynomial\+::alpha\+Poly, and Gen\+Laguerre\+Orthog\+Polynomial\+::type1\+\_\+value().
+
+
+
+Referenced by Gen\+Laguerre\+Orthog\+Polynomial\+::type1\+\_\+hessian().
+
+\index{Pecos\+::\+Gen\+Laguerre\+Orthog\+Polynomial@{Pecos\+::\+Gen\+Laguerre\+Orthog\+Polynomial}!type1\+\_\+hessian@{type1\+\_\+hessian}}
+\index{type1\+\_\+hessian@{type1\+\_\+hessian}!Pecos\+::\+Gen\+Laguerre\+Orthog\+Polynomial@{Pecos\+::\+Gen\+Laguerre\+Orthog\+Polynomial}}
+\subsubsection[{\texorpdfstring{type1\+\_\+hessian(\+Real x, unsigned short order)}{type1_hessian(Real x, unsigned short order)}}]{\setlength{\rightskip}{0pt plus 5cm}Real type1\+\_\+hessian (
+\begin{DoxyParamCaption}
+\item[{Real}]{x, }
+\item[{unsigned short}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classPecos_1_1GenLaguerreOrthogPolynomial_ae957c8c2e7ea13728bafbad0c9b2996e}
+
+
+retrieve the Hessian of the n\+\_\+th type 1 polynomial for a given parameter x using traditional characteristic polynomial formulation 
+
+For orthogonal polynomials, n specifies the order of the polynomial, whereas for interpolation polynomials, it identifies the interpolant for the n-\/th point. 
+
+Reimplemented from \hyperlink{classPecos_1_1BasisPolynomial_a07d617dad8572dd606371e6c89ab6c35}{Basis\+Polynomial}.
+
+
+
+References Gen\+Laguerre\+Orthog\+Polynomial\+::alpha\+Poly, and Gen\+Laguerre\+Orthog\+Polynomial\+::type1\+\_\+gradient().
+
+\index{Pecos\+::\+Gen\+Laguerre\+Orthog\+Polynomial@{Pecos\+::\+Gen\+Laguerre\+Orthog\+Polynomial}!norm\+\_\+squared@{norm\+\_\+squared}}
+\index{norm\+\_\+squared@{norm\+\_\+squared}!Pecos\+::\+Gen\+Laguerre\+Orthog\+Polynomial@{Pecos\+::\+Gen\+Laguerre\+Orthog\+Polynomial}}
+\subsubsection[{\texorpdfstring{norm\+\_\+squared(unsigned short order)}{norm_squared(unsigned short order)}}]{\setlength{\rightskip}{0pt plus 5cm}Real norm\+\_\+squared (
+\begin{DoxyParamCaption}
+\item[{unsigned short}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classPecos_1_1GenLaguerreOrthogPolynomial_a77c0dbb874af1190d448d01da6efbe4e}
+
+
+returns the norm-\/squared of the n\+\_\+th order polynomial defined by the inner product $<$Poly\+\_\+n, Poly\+\_\+n$>$ = $\vert$$\vert$\+Poly\+\_\+n$\vert$$\vert$$^\wedge$2 
+
+This is defined only for orthogonal polynomials. 
+
+Reimplemented from \hyperlink{classPecos_1_1BasisPolynomial_ab74383be309d74823f2e5e85dad739b2}{Basis\+Polynomial}.
+
+
+
+References Gen\+Laguerre\+Orthog\+Polynomial\+::alpha\+Poly, Gen\+Laguerre\+Orthog\+Polynomial\+::collocation\+\_\+points(), Basis\+Polynomial\+::factorial(), and Basis\+Polynomial\+::pochhammer().
+
+\index{Pecos\+::\+Gen\+Laguerre\+Orthog\+Polynomial@{Pecos\+::\+Gen\+Laguerre\+Orthog\+Polynomial}!collocation\+\_\+points@{collocation\+\_\+points}}
+\index{collocation\+\_\+points@{collocation\+\_\+points}!Pecos\+::\+Gen\+Laguerre\+Orthog\+Polynomial@{Pecos\+::\+Gen\+Laguerre\+Orthog\+Polynomial}}
+\subsubsection[{\texorpdfstring{collocation\+\_\+points(unsigned short order)}{collocation_points(unsigned short order)}}]{\setlength{\rightskip}{0pt plus 5cm}const Real\+Array \& collocation\+\_\+points (
+\begin{DoxyParamCaption}
+\item[{unsigned short}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classPecos_1_1GenLaguerreOrthogPolynomial_a10873b28f1284aff4ea214e00c4f86dd}
+
+
+return collocation points corresponding to orthogonal polynomial order n 
+
+This is defined for orthogonal and piecewise interpolation polynomials. 
+
+Reimplemented from \hyperlink{classPecos_1_1BasisPolynomial_a0f96bd4e27ddc5c44117e7b68744b5a4}{Basis\+Polynomial}.
+
+
+
+References Gen\+Laguerre\+Orthog\+Polynomial\+::alpha\+Poly, Orthogonal\+Polynomial\+::colloc\+Points, Orthogonal\+Polynomial\+::colloc\+Weights, Gen\+Laguerre\+Orthog\+Polynomial\+::type1\+\_\+collocation\+\_\+weights(), and Gen\+Laguerre\+Orthog\+Polynomial\+::weight\+\_\+factor().
+
+
+
+Referenced by Gen\+Laguerre\+Orthog\+Polynomial\+::norm\+\_\+squared(), and Gen\+Laguerre\+Orthog\+Polynomial\+::type1\+\_\+collocation\+\_\+weights().
+
+\index{Pecos\+::\+Gen\+Laguerre\+Orthog\+Polynomial@{Pecos\+::\+Gen\+Laguerre\+Orthog\+Polynomial}!type1\+\_\+collocation\+\_\+weights@{type1\+\_\+collocation\+\_\+weights}}
+\index{type1\+\_\+collocation\+\_\+weights@{type1\+\_\+collocation\+\_\+weights}!Pecos\+::\+Gen\+Laguerre\+Orthog\+Polynomial@{Pecos\+::\+Gen\+Laguerre\+Orthog\+Polynomial}}
+\subsubsection[{\texorpdfstring{type1\+\_\+collocation\+\_\+weights(unsigned short order)}{type1_collocation_weights(unsigned short order)}}]{\setlength{\rightskip}{0pt plus 5cm}const Real\+Array \& type1\+\_\+collocation\+\_\+weights (
+\begin{DoxyParamCaption}
+\item[{unsigned short}]{order}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classPecos_1_1GenLaguerreOrthogPolynomial_aa010321cf47465dca5725fa15ba58bf6}
+
+
+return the type 1 collocation weights corresponding to a point set of size order 
+
+This is defined for orthogonal and piecewise interpolation polynomials. 
+
+Reimplemented from \hyperlink{classPecos_1_1BasisPolynomial_aa010321cf47465dca5725fa15ba58bf6}{Basis\+Polynomial}.
+
+
+
+References Gen\+Laguerre\+Orthog\+Polynomial\+::alpha\+Poly, Gen\+Laguerre\+Orthog\+Polynomial\+::collocation\+\_\+points(), Orthogonal\+Polynomial\+::colloc\+Points, Orthogonal\+Polynomial\+::colloc\+Weights, Basis\+Polynomial\+::factorial(), Basis\+Polynomial\+::pochhammer(), Gen\+Laguerre\+Orthog\+Polynomial\+::type1\+\_\+value(), and Gen\+Laguerre\+Orthog\+Polynomial\+::weight\+\_\+factor().
+
+
+
+Referenced by Gen\+Laguerre\+Orthog\+Polynomial\+::collocation\+\_\+points().
+
+\index{Pecos\+::\+Gen\+Laguerre\+Orthog\+Polynomial@{Pecos\+::\+Gen\+Laguerre\+Orthog\+Polynomial}!length\+\_\+scale@{length\+\_\+scale}}
+\index{length\+\_\+scale@{length\+\_\+scale}!Pecos\+::\+Gen\+Laguerre\+Orthog\+Polynomial@{Pecos\+::\+Gen\+Laguerre\+Orthog\+Polynomial}}
+\subsubsection[{\texorpdfstring{length\+\_\+scale() const }{length_scale() const }}]{\setlength{\rightskip}{0pt plus 5cm}Real length\+\_\+scale (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classPecos_1_1GenLaguerreOrthogPolynomial_a8c1e8d014e82efc5a1c20f973b5bc715}
+return max(mean,stdev) 
+
+Reimplemented from \hyperlink{classPecos_1_1BasisPolynomial_a8c1e8d014e82efc5a1c20f973b5bc715}{Basis\+Polynomial}.
+
+
+
+References Gen\+Laguerre\+Orthog\+Polynomial\+::alpha\+Poly.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Gen\+Laguerre\+Orthog\+Polynomial.\+hpp\item 
+Gen\+Laguerre\+Orthog\+Polynomial.\+cpp\end{DoxyCompactItemize}

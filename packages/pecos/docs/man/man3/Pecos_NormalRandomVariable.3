@@ -1,0 +1,239 @@
+.TH "NormalRandomVariable" 3 "Wed Dec 27 2017" "Version Version 1.0" "PECOS" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+NormalRandomVariable \- Derived random variable class for Gaussian random variables\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBRandomVariable\fP\&.
+.PP
+Inherited by \fBBoundedNormalRandomVariable\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBNormalRandomVariable\fP ()"
+.br
+.RI "\fIconstructor \fP"
+.ti -1c
+.RI "\fBNormalRandomVariable\fP (Real \fBmean\fP, Real stdev)"
+.br
+.RI "\fIalternate constructor \fP"
+.ti -1c
+.RI "\fB~NormalRandomVariable\fP ()"
+.br
+.RI "\fIdestructor \fP"
+.ti -1c
+.RI "Real \fBcdf\fP (Real x) const "
+.br
+.RI "\fIreturn the cumulative distribution function value of the random variable at x \fP"
+.ti -1c
+.RI "Real \fBccdf\fP (Real x) const "
+.br
+.RI "\fIreturn the complementary cumulative distribution function value of the random variable at x \fP"
+.ti -1c
+.RI "Real \fBinverse_cdf\fP (Real p_cdf) const "
+.br
+.RI "\fIreturn the x value corresponding to a cumulative probability \fP"
+.ti -1c
+.RI "Real \fBinverse_ccdf\fP (Real p_ccdf) const "
+.br
+.RI "\fIreturn the x value corresponding to a complementary cumulative probability \fP"
+.ti -1c
+.RI "Real \fBpdf\fP (Real x) const "
+.br
+.RI "\fIreturn the value of the random variable's probability density function at x \fP"
+.ti -1c
+.RI "Real \fBpdf_gradient\fP (Real x) const "
+.br
+.RI "\fIreturn the gradient of the random variable's probability density function at x \fP"
+.ti -1c
+.RI "Real \fBpdf_hessian\fP (Real x) const "
+.br
+.RI "\fIreturn the hessian of the random variable's probability density function at x \fP"
+.ti -1c
+.RI "Real \fBlog_pdf\fP (Real x) const "
+.br
+.RI "\fIreturn the value of the natural log of the random variable's probability density function at x (useful for calculations of log density in Bayesian methods) \fP"
+.ti -1c
+.RI "Real \fBlog_pdf_gradient\fP (Real x) const "
+.br
+.RI "\fIreturn the gradient of the natural log of the random variable's probability density function at x (useful for defining MCMC proposal distributions in Bayesian methods) \fP"
+.ti -1c
+.RI "Real \fBlog_pdf_hessian\fP (Real x) const "
+.br
+.RI "\fIreturn the Hessian of the natural log of the random variable's probability density function at x (useful for defining MCMC proposal distributions in Bayesian methods) \fP"
+.ti -1c
+.RI "Real \fBinverse_standard_cdf\fP (Real p_cdf) const "
+.br
+.RI "\fIreturn the x value for a standardized probability distribution corresponding to a cumulative probability \fP"
+.ti -1c
+.RI "Real \fBstandard_pdf\fP (Real z) const "
+.br
+.RI "\fIreturn the value of a standardized random variable's probability density function at x \fP"
+.ti -1c
+.RI "Real \fBlog_standard_pdf\fP (Real z) const "
+.br
+.RI "\fIreturn the natural log of a standardized random variable's probability density function at x (useful for calculations of log density in Bayesian methods) \fP"
+.ti -1c
+.RI "Real \fBlog_standard_pdf_gradient\fP (Real z) const "
+.br
+.RI "\fIreturn the gradient of the natural log of a standardized random variable's probability density function at x (useful for calculations of log density in Bayesian methods) \fP"
+.ti -1c
+.RI "Real \fBlog_standard_pdf_hessian\fP (Real z) const "
+.br
+.RI "\fIreturn the Hessian of the natural log of a standardized random variable's probability density function at x (useful for calculations of log density in Bayesian methods) \fP"
+.ti -1c
+.RI "Real \fBto_standard\fP (Real x) const "
+.br
+.RI "\fIscale variable value x from current to standardized distribution \fP"
+.ti -1c
+.RI "Real \fBfrom_standard\fP (Real z) const "
+.br
+.RI "\fIscale variable value z from standardized to current distribution \fP"
+.ti -1c
+.RI "Real \fBparameter\fP (short dist_param) const "
+.br
+.RI "\fIreturn the value of the named distribution parameter \fP"
+.ti -1c
+.RI "void \fBparameter\fP (short dist_param, Real val)"
+.br
+.RI "\fIupdate the value of the named distribution parameter \fP"
+.ti -1c
+.RI "Real \fBmean\fP () const "
+.br
+.RI "\fIreturn the distribution mean \fP"
+.ti -1c
+.RI "Real \fBmedian\fP () const "
+.br
+.RI "\fIreturn the distribution mode \fP"
+.ti -1c
+.RI "Real \fBmode\fP () const "
+.br
+.RI "\fIreturn the distribution mode \fP"
+.ti -1c
+.RI "Real \fBstandard_deviation\fP () const "
+.br
+.RI "\fIreturn the distribution variance \fP"
+.ti -1c
+.RI "Real \fBvariance\fP () const "
+.br
+.RI "\fIreturn the distribution variance \fP"
+.ti -1c
+.RI "RealRealPair \fBbounds\fP () const "
+.br
+.RI "\fIreturn the distribution lower and upper bounds as a pair \fP"
+.ti -1c
+.RI "Real \fBcorrelation_warping_factor\fP (const \fBRandomVariable\fP &rv, Real corr) const "
+.br
+.RI "\fIcompute the warping factor for correlation between the current variable and the one passed in (used in \fBNatafTransformation\fP) \fP"
+.ti -1c
+.RI "Real \fBdx_ds\fP (short dist_param, short u_type, Real x, Real z) const "
+.br
+.ti -1c
+.RI "Real \fBdz_ds_factor\fP (short u_type, Real x, Real z) const "
+.br
+.ti -1c
+.RI "void \fBupdate\fP (Real \fBmean\fP, Real stdev)"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static Real \fBpdf\fP (Real x, Real \fBmean\fP, Real std_dev)"
+.br
+.ti -1c
+.RI "static Real \fBcdf\fP (Real x, Real \fBmean\fP, Real std_dev)"
+.br
+.ti -1c
+.RI "static Real \fBstd_pdf\fP (Real z)"
+.br
+.ti -1c
+.RI "static Real \fBmvn_std_pdf\fP (Real beta, size_t n)"
+.br
+.ti -1c
+.RI "static Real \fBmvn_std_pdf\fP (const RealVector &u)"
+.br
+.ti -1c
+.RI "static Real \fBstd_cdf\fP (Real z)"
+.br
+.ti -1c
+.RI "static Real \fBstd_ccdf\fP (Real z)"
+.br
+.ti -1c
+.RI "static Real \fBinverse_std_cdf\fP (Real p_cdf)"
+.br
+.ti -1c
+.RI "static Real \fBinverse_std_ccdf\fP (Real p_ccdf)"
+.br
+.ti -1c
+.RI "static Real \fBlog_std_pdf\fP (Real z)"
+.br
+.ti -1c
+.RI "static Real \fBlog_std_pdf_gradient\fP (Real z)"
+.br
+.ti -1c
+.RI "static Real \fBlog_std_pdf_hessian\fP ()"
+.br
+.ti -1c
+.RI "static Real \fBlog_std_cdf\fP (Real z)"
+.br
+.ti -1c
+.RI "static Real \fBlog_std_ccdf\fP (Real z)"
+.br
+.ti -1c
+.RI "template<typename Engine > static Real \fBdraw_std_sample\fP (Engine &rng)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "Real \fBgaussMean\fP"
+.br
+.RI "\fImean of Gaussian random variable \fP"
+.ti -1c
+.RI "Real \fBgaussStdDev\fP"
+.br
+.RI "\fIstandard deviation of Gaussian random variable \fP"
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Derived random variable class for Gaussian random variables\&. 
+
+Manages mean and standard deviation\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "Real dx_ds (short dist_param, short u_type, Real x, Real z) const\fC [inline]\fP, \fC [virtual]\fP"
+dx/ds is derived by differentiating \fBNatafTransformation::trans_Z_to_X()\fP with respect to distribution parameter s\&. dz/ds is zero if uncorrelated, while \fBdz_ds_factor()\fP manages contributions in the correlated case\&. 
+.PP
+Reimplemented from \fBRandomVariable\fP\&.
+.PP
+References NormalRandomVariable::dz_ds_factor()\&.
+.PP
+Referenced by NormalRandomVariable::parameter()\&.
+.SS "Real dz_ds_factor (short u_type, Real x, Real z) const\fC [inline]\fP, \fC [virtual]\fP"
+dx/ds is derived by differentiating \fBNatafTransformation::trans_Z_to_X()\fP with respect to distribution parameter s\&. For the uncorrelated case, u and z are constants\&. For the correlated case, u is a constant, but z(s) = L(s) u due to Nataf dependence on s and dz/ds = dL/ds u\&. 
+.PP
+Reimplemented from \fBRandomVariable\fP\&.
+.PP
+References NormalRandomVariable::cdf(), NormalRandomVariable::gaussMean, NormalRandomVariable::gaussStdDev, NormalRandomVariable::mean(), and NormalRandomVariable::pdf()\&.
+.PP
+Referenced by NormalRandomVariable::dx_ds()\&.
+.SS "Real std_pdf (Real z)\fC [inline]\fP, \fC [static]\fP"
+returns a cumulative probability < 0\&.5 for negative z and a cumulative probability > 0\&.5 for positive z\&. 
+.PP
+Referenced by BoundedLognormalRandomVariable::dx_ds(), BoundedNormalRandomVariable::dx_ds(), LoguniformRandomVariable::dz_ds_factor(), TriangularRandomVariable::dz_ds_factor(), FrechetRandomVariable::dz_ds_factor(), WeibullRandomVariable::dz_ds_factor(), BoundedNormalRandomVariable::dz_ds_factor(), BoundedLognormalRandomVariable::dz_ds_factor(), GumbelRandomVariable::dz_ds_factor(), UniformRandomVariable::dz_ds_factor(), ExponentialRandomVariable::dz_ds_factor(), NumericGenOrthogPolynomial::hermite_unbounded_integral(), NatafTransformation::hessian_d2X_dZ2(), NatafTransformation::jacobian_dX_dZ(), NatafTransformation::jacobian_dZ_dX(), BoundedNormalRandomVariable::mean(), BoundedNormalRandomVariable::moments(), NormalRandomVariable::standard_pdf(), ProbabilityTransformation::u_pdf(), BoundedNormalRandomVariable::variance(), BoundedLognormalRandomVariable::~BoundedLognormalRandomVariable(), and BoundedNormalRandomVariable::~BoundedNormalRandomVariable()\&.
+.SS "Real std_cdf (Real z)\fC [inline]\fP, \fC [static]\fP"
+returns a cumulative probability < 0\&.5 for negative z and a cumulative probability > 0\&.5 for positive z\&. 
+.PP
+Referenced by BoundedLognormalRandomVariable::ccdf(), BoundedNormalRandomVariable::ccdf(), LoguniformRandomVariable::dx_ds(), TriangularRandomVariable::dx_ds(), BoundedNormalRandomVariable::dx_ds(), BoundedLognormalRandomVariable::dx_ds(), FrechetRandomVariable::dz_ds_factor(), BoundedLognormalRandomVariable::dz_ds_factor(), BoundedNormalRandomVariable::dz_ds_factor(), GumbelRandomVariable::dz_ds_factor(), BoundedLognormalRandomVariable::inverse_ccdf(), BoundedNormalRandomVariable::inverse_ccdf(), BoundedLognormalRandomVariable::inverse_cdf(), BoundedNormalRandomVariable::inverse_cdf(), BoundedLognormalRandomVariable::log_pdf(), BoundedNormalRandomVariable::log_pdf(), BoundedNormalRandomVariable::mean(), BoundedLognormalRandomVariable::mean(), BoundedNormalRandomVariable::moments(), BoundedLognormalRandomVariable::moments(), NatafTransformation::trans_Z_to_X(), BoundedNormalRandomVariable::variance(), BoundedLognormalRandomVariable::~BoundedLognormalRandomVariable(), and BoundedNormalRandomVariable::~BoundedNormalRandomVariable()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for PECOS from the source code\&.

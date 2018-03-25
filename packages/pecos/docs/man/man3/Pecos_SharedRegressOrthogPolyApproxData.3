@@ -1,0 +1,120 @@
+.TH "SharedRegressOrthogPolyApproxData" 3 "Wed Dec 27 2017" "Version Version 1.0" "PECOS" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SharedRegressOrthogPolyApproxData \- Derived approximation class for multivariate orthogonal polynomial approximation with coefficient estimation via regression\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSharedOrthogPolyApproxData\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSharedRegressOrthogPolyApproxData\fP (short basis_type, const UShortArray &approx_order, size_t num_vars)"
+.br
+.RI "\fIlightweight constructor \fP"
+.ti -1c
+.RI "\fBSharedRegressOrthogPolyApproxData\fP (short basis_type, const UShortArray &approx_order, size_t num_vars, const \fBExpansionConfigOptions\fP &ec_options, const \fBBasisConfigOptions\fP &bc_options, const \fBRegressionConfigOptions\fP &rc_options)"
+.br
+.RI "\fIfull constructor \fP"
+.ti -1c
+.RI "\fB~SharedRegressOrthogPolyApproxData\fP ()"
+.br
+.RI "\fIdestructor \fP"
+.ti -1c
+.RI "void \fBincrement_trial_set\fP (const UShortArray &trial_set, UShort2DArray &aggregated_mi)"
+.br
+.RI "\fIhelper function for incrementing that is modular on trial set and multi-index \fP"
+.ti -1c
+.RI "bool \fBset_restriction\fP (UShort2DArray &aggregated_mi, SizetSet &sparse_indices, SizetSet &save_tp)"
+.br
+.RI "\fIdefine the TP index sets that can be removed from a generalized sparse grid based on the recovered sparse_indices; used for the restriction operation within basis adaptation \fP"
+.ti -1c
+.RI "void \fBclear_adapted\fP ()"
+.br
+.RI "\fIclear adapted basis bookkeeping \fP"
+.ti -1c
+.RI "void \fBconfiguration_options\fP (const \fBRegressionConfigOptions\fP &rc_options)"
+.br
+.RI "\fIset regressConfigOptions \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBallocate_data\fP (size_t index=_NPOS)"
+.br
+.RI "\fIallocate the shared data prior to building the set of approximations \fP"
+.ti -1c
+.RI "void \fBincrement_data\fP (size_t index=_NPOS)"
+.br
+.RI "\fIupdate the shared data prior to rebuilding the set of approximations \fP"
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBupdate_approx_order\fP (unsigned short new_order)"
+.br
+.RI "\fIupdate shared approxOrder based on settings computed for one of the QoI \fP"
+.ti -1c
+.RI "void \fBpack_polynomial_data\fP (const RealVector &c_vars, const UShortArray &mi, bool add_val, double *pack_val, size_t &pv_cntr, bool add_grad, double *pack_grad, size_t &pg_cntr)"
+.br
+.RI "\fIpack polynomial contributions to Psi matrix for regression \fP"
+.ti -1c
+.RI "void \fBpack_response_data\fP (const SurrogateDataResp &sdr, bool add_val, double *pack_val, size_t &pv_cntr, bool add_grad, double *pack_grad, size_t &pg_cntr)"
+.br
+.RI "\fIpack response contributions to RHS for regression \fP"
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBRegressionConfigOptions\fP \fBregressConfigOptions\fP"
+.br
+.RI "\fIcontainer for regression configuration options \fP"
+.ti -1c
+.RI "\fBCompressedSensingTool\fP \fBCSTool\fP"
+.br
+.RI "\fIWrapper class that is used to solve regression problems\&. \fP"
+.ti -1c
+.RI "RealMatrix \fBlowerFactor\fP"
+.br
+.RI "\fIlower matrix factor in factorization \fP"
+.ti -1c
+.RI "RealMatrix \fBupperFactor\fP"
+.br
+.RI "\fIupper matrix factor in factorization \fP"
+.ti -1c
+.RI "RealMatrix \fBpivotHistory\fP"
+.br
+.RI "\fIpivoting history of block-LU factorization \fP"
+.ti -1c
+.RI "IntVector \fBpivotVect\fP"
+.br
+.RI "\fIpivoting vector \fP"
+.ti -1c
+.RI "\fBLightweightSparseGridDriver\fP \fBlsgDriver\fP"
+.br
+.RI "\fIsparse grid driver for adapting a CS candidate basis using greedy adaptation via the generalized sparse grid algorithm; it's state is reset for each response QoI \fP"
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBRegressOrthogPolyApproximation\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Derived approximation class for multivariate orthogonal polynomial approximation with coefficient estimation via regression\&. 
+
+The \fBSharedRegressOrthogPolyApproxData\fP class provides a global approximation based on multivariate orthogonal polynomials, where the coefficients are computed using regression approaches such as least squares (L2) or compressed sensing (L1)\&. It is used primarily for polynomial chaos expansion aproaches to UQ\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for PECOS from the source code\&.

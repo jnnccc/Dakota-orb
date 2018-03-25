@@ -1,0 +1,47 @@
+.TH "RandomNumberGenerator" 3 "Wed Dec 27 2017" "Version Version 1.0" "PECOS" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RandomNumberGenerator \- Easy to use wrapper to the Boost psuedo random number generator\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBRandomNumberGenerator\fP ()"
+.br
+.ti -1c
+.RI "\fB~RandomNumberGenerator\fP ()"
+.br
+.ti -1c
+.RI "void \fBuniform\fP (IntMatrix &A, int M, int N, unsigned int seed)"
+.br
+.ti -1c
+.RI "void \fBuniform\fP (RealMatrix &A, int M, int N, unsigned int seed)"
+.br
+.ti -1c
+.RI "void \fBgaussian\fP (RealMatrix &A, int M, int N, Real mean, Real variance, unsigned int seed)"
+.br
+.ti -1c
+.RI "void \fBbeta\fP (RealMatrix &A, int M, int N, Real alpha, Real beta, unsigned int seed)"
+.br
+.ti -1c
+.RI "void \fBpermutation\fP (IntMatrix &result, int M, int N, unsigned int seed)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Easy to use wrapper to the Boost psuedo random number generator\&. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "\fBRandomNumberGenerator\fP ()"
+Default constructor 
+.SS "~\fBRandomNumberGenerator\fP ()"
+Deconstructor 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for PECOS from the source code\&.

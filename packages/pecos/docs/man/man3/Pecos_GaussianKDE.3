@@ -1,0 +1,156 @@
+.TH "GaussianKDE" 3 "Wed Dec 27 2017" "Version Version 1.0" "PECOS" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+GaussianKDE \- Class for kernel density estimation with gaussian kernels\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBDensityEstimator\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBGaussianKDE\fP ()"
+.br
+.RI "\fIdefault constructor \fP"
+.ti -1c
+.RI "\fB~GaussianKDE\fP ()"
+.br
+.RI "\fIdestructor \fP"
+.ti -1c
+.RI "void \fBinitialize\fP (RealMatrix &samples, Teuchos::ETransp trans=Teuchos::NO_TRANS)"
+.br
+.RI "\fIinitialize the density estimator \fP"
+.ti -1c
+.RI "void \fBinitialize\fP (RealVectorArray &samples)"
+.br
+.ti -1c
+.RI "size_t \fBgetDim\fP ()"
+.br
+.RI "\fIget the dimensionality \fP"
+.ti -1c
+.RI "Real \fBmean\fP ()"
+.br
+.RI "\fIcomputes the sample mean \fP"
+.ti -1c
+.RI "Real \fBvariance\fP ()"
+.br
+.RI "\fIcomputed according to [Goodman, 1962] \fP"
+.ti -1c
+.RI "Real \fBstd_deviation\fP ()"
+.br
+.RI "\fIcomputes the standard deviation \fP"
+.ti -1c
+.RI "void \fBcov\fP (RealMatrix &cov)"
+.br
+.RI "\fIcomputes the covariance matrix \fP"
+.ti -1c
+.RI "Real \fBpdf\fP (const RealVector &x) const "
+.br
+.RI "\fIoperations for single samples \fP"
+.ti -1c
+.RI "void \fBpdf\fP (const RealMatrix &data, RealVector &res, Teuchos::ETransp trans=Teuchos::NO_TRANS) const "
+.br
+.RI "\fIoperations for a set of samples \fP"
+.ti -1c
+.RI "virtual void \fBmarginalize\fP (size_t dim, \fBDensityEstimator\fP &estimator)"
+.br
+.RI "\fImarginalization operations \fP"
+.ti -1c
+.RI "virtual void \fBmargToDimXs\fP (const IntVector &dims, \fBDensityEstimator\fP &estimator)"
+.br
+.RI "\fIcreates a maginalized density with remaining dims \fP"
+.ti -1c
+.RI "virtual void \fBmargToDimX\fP (size_t dim, \fBDensityEstimator\fP &estimator)"
+.br
+.RI "\fIcreates a maginalized density with one remaining dimension \fP"
+.ti -1c
+.RI "virtual void \fBconditionalize\fP (const RealVector &x, const IntVector &dims, \fBDensityEstimator\fP &estimator)"
+.br
+.RI "\fIconditionalization operations \fP"
+.ti -1c
+.RI "virtual void \fBcondToDimX\fP (const RealVector &x, size_t dim, \fBDensityEstimator\fP &estimator)"
+.br
+.ti -1c
+.RI "void \fBgetConditionalizationFactor\fP (RealVector &pcond)"
+.br
+.RI "\fIgetter and setter functions \fP"
+.ti -1c
+.RI "void \fBsetConditionalizationFactor\fP (const RealVector &pcond)"
+.br
+.ti -1c
+.RI "void \fBgetBandwidths\fP (RealVector &\fBbandwidths\fP)"
+.br
+.ti -1c
+.RI "const RealVectorArray & \fBgetSamples\fP () const "
+.br
+.RI "\fIget samples \fP"
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "RealVectorArray \fBsamplesVec\fP"
+.br
+.RI "\fIsamples \fP"
+.ti -1c
+.RI "size_t \fBnsamples\fP"
+.br
+.ti -1c
+.RI "size_t \fBndim\fP"
+.br
+.ti -1c
+.RI "RealVector \fBbandwidths\fP"
+.br
+.RI "\fIstandard deviations for the kernels in 1d \fP"
+.ti -1c
+.RI "RealVector \fBnorm\fP"
+.br
+.RI "\fInormalization factor for 1d kernels \fP"
+.ti -1c
+.RI "RealVector \fBcond\fP"
+.br
+.RI "\fIconditionalization factors \fP"
+.ti -1c
+.RI "Real \fBsumCond\fP"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBcomputeOptKDEbdwth\fP ()"
+.br
+.ti -1c
+.RI "Real \fBgetSampleMean\fP (RealVector &data)"
+.br
+.ti -1c
+.RI "Real \fBgetSampleVariance\fP (RealVector &data)"
+.br
+.ti -1c
+.RI "Real \fBgetSampleStd\fP (RealVector &data)"
+.br
+.ti -1c
+.RI "void \fBupdateConditionalizationFactors\fP (const RealVector &x, const IntVector &dims, RealVector &\fBcond\fP)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Class for kernel density estimation with gaussian kernels\&. 
+
+The kernel density estimation method estimates an unknown density based on realizations of it\&. The estimated probability density function is defined as 
+.PP
+.nf
+   f(x) = 1/n \sum_{i=1}^n K((x - \mu_i) / \sigma)
+
+.fi
+.PP
+.PP
+where  are the realizations and  is the bandwidth of the gaussian kernels K\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for PECOS from the source code\&.

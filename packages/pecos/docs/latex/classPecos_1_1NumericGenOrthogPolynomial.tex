@@ -1,0 +1,366 @@
+\section{Numeric\+Gen\+Orthog\+Polynomial Class Reference}
+\label{classPecos_1_1NumericGenOrthogPolynomial}\index{Numeric\+Gen\+Orthog\+Polynomial@{Numeric\+Gen\+Orthog\+Polynomial}}
+
+
+Derived orthogonal polynomial class for numerically-\/generated orthogonal polynomials.  
+
+
+Inheritance diagram for Numeric\+Gen\+Orthog\+Polynomial\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classPecos_1_1NumericGenOrthogPolynomial}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPecos_1_1NumericGenOrthogPolynomial_aed4a0fd6a1af04dc56a264c5678a2fac}{Numeric\+Gen\+Orthog\+Polynomial} ()\label{classPecos_1_1NumericGenOrthogPolynomial_aed4a0fd6a1af04dc56a264c5678a2fac}
+
+\begin{DoxyCompactList}\small\item\em default constructor \end{DoxyCompactList}\item 
+\hyperlink{classPecos_1_1NumericGenOrthogPolynomial_aa0cdaf73221c07cee322ba48adc4dea5}{$\sim$\+Numeric\+Gen\+Orthog\+Polynomial} ()\label{classPecos_1_1NumericGenOrthogPolynomial_aa0cdaf73221c07cee322ba48adc4dea5}
+
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1NumericGenOrthogPolynomial_a7ad109946452e70e95aa68ffefd2c37f}{alpha\+\_\+recursion} (unsigned short order)\label{classPecos_1_1NumericGenOrthogPolynomial_a7ad109946452e70e95aa68ffefd2c37f}
+
+\begin{DoxyCompactList}\small\item\em calculate and return alpha3\+TR\mbox{[}order\mbox{]} \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1NumericGenOrthogPolynomial_aa4e36e6a9911ff7214ebc87e505702f5}{beta\+\_\+recursion} (unsigned short order)\label{classPecos_1_1NumericGenOrthogPolynomial_aa4e36e6a9911ff7214ebc87e505702f5}
+
+\begin{DoxyCompactList}\small\item\em calculate and return beta3\+TR\mbox{[}order\mbox{]} \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1NumericGenOrthogPolynomial_ae391dd223bd9a29d15f7d75e7305b7b7}{bounded\+\_\+normal\+\_\+distribution} (Real mean, Real std\+\_\+dev, Real l\+\_\+bnd, Real u\+\_\+bnd)\label{classPecos_1_1NumericGenOrthogPolynomial_ae391dd223bd9a29d15f7d75e7305b7b7}
+
+\begin{DoxyCompactList}\small\item\em set distribution type and parameters for a B\+O\+U\+N\+D\+E\+D\+\_\+\+N\+O\+R\+M\+AL distribution \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1NumericGenOrthogPolynomial_ab467d60674465716b7a4b958e4c48875}{lognormal\+\_\+distribution} (Real lambda, Real zeta)\label{classPecos_1_1NumericGenOrthogPolynomial_ab467d60674465716b7a4b958e4c48875}
+
+\begin{DoxyCompactList}\small\item\em set distribution type and parameters for a L\+O\+G\+N\+O\+R\+M\+AL distribution \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1NumericGenOrthogPolynomial_aaa0279e513aed19ffce83c78553c1b8c}{bounded\+\_\+lognormal\+\_\+distribution} (Real lambda, Real zeta, Real l\+\_\+bnd, Real u\+\_\+bnd)\label{classPecos_1_1NumericGenOrthogPolynomial_aaa0279e513aed19ffce83c78553c1b8c}
+
+\begin{DoxyCompactList}\small\item\em set distribution type and parameters for a B\+O\+U\+N\+D\+E\+D\+\_\+\+L\+O\+G\+N\+O\+R\+M\+AL distribution \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1NumericGenOrthogPolynomial_afcfe468921c964e1935b9ed42990e51f}{loguniform\+\_\+distribution} (Real l\+\_\+bnd, Real u\+\_\+bnd)\label{classPecos_1_1NumericGenOrthogPolynomial_afcfe468921c964e1935b9ed42990e51f}
+
+\begin{DoxyCompactList}\small\item\em set distribution type and parameters for a L\+O\+G\+U\+N\+I\+F\+O\+RM distribution \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1NumericGenOrthogPolynomial_aa3e5afc92b1c583b0d0c3097074b862c}{triangular\+\_\+distribution} (Real l\+\_\+bnd, Real mode, Real u\+\_\+bnd)\label{classPecos_1_1NumericGenOrthogPolynomial_aa3e5afc92b1c583b0d0c3097074b862c}
+
+\begin{DoxyCompactList}\small\item\em set distribution type and parameters for a T\+R\+I\+A\+N\+G\+U\+L\+AR distribution \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1NumericGenOrthogPolynomial_a5a1cab747675e9bf5fef2d5a34acd23b}{gumbel\+\_\+distribution} (Real alpha, Real beta)\label{classPecos_1_1NumericGenOrthogPolynomial_a5a1cab747675e9bf5fef2d5a34acd23b}
+
+\begin{DoxyCompactList}\small\item\em set distribution type and parameters for a G\+U\+M\+B\+EL distribution \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1NumericGenOrthogPolynomial_ade2a656052c3e7822d99e007b0793f98}{frechet\+\_\+distribution} (Real alpha, Real beta)\label{classPecos_1_1NumericGenOrthogPolynomial_ade2a656052c3e7822d99e007b0793f98}
+
+\begin{DoxyCompactList}\small\item\em set distribution type and parameters for a F\+R\+E\+C\+H\+ET distribution \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1NumericGenOrthogPolynomial_ade0a6ad5814d47eea75c8ebea6db7227}{weibull\+\_\+distribution} (Real alpha, Real beta)\label{classPecos_1_1NumericGenOrthogPolynomial_ade0a6ad5814d47eea75c8ebea6db7227}
+
+\begin{DoxyCompactList}\small\item\em set distribution type and parameters for a W\+E\+I\+B\+U\+LL distribution \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1NumericGenOrthogPolynomial_a5b7f2dbecfc759d1370516a0387c296b}{histogram\+\_\+bin\+\_\+distribution} (const Real\+Real\+Map \&bin\+\_\+pairs)\label{classPecos_1_1NumericGenOrthogPolynomial_a5b7f2dbecfc759d1370516a0387c296b}
+
+\begin{DoxyCompactList}\small\item\em set distribution type and parameters for a H\+I\+S\+T\+O\+G\+R\+A\+M\+\_\+\+B\+IN distribution \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1NumericGenOrthogPolynomial_a1ed6582d7b2ecd6216c1675eeeee1e63}{histogram\+\_\+pt\+\_\+distribution} (const Int\+Real\+Map \&bin\+\_\+pairs)\label{classPecos_1_1NumericGenOrthogPolynomial_a1ed6582d7b2ecd6216c1675eeeee1e63}
+
+\begin{DoxyCompactList}\small\item\em set distribution type and parameters for a H\+I\+S\+T\+O\+G\+R\+A\+M\+\_\+\+P\+T\+\_\+\+I\+NT distribution \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1NumericGenOrthogPolynomial_a9c2ae33555e991263e00cca0e03b8173}{histogram\+\_\+pt\+\_\+distribution} (const String\+Real\+Map \&bin\+\_\+pairs)\label{classPecos_1_1NumericGenOrthogPolynomial_a9c2ae33555e991263e00cca0e03b8173}
+
+\begin{DoxyCompactList}\small\item\em set distribution type and parameters for a H\+I\+S\+T\+O\+G\+R\+A\+M\+\_\+\+P\+T\+\_\+\+S\+T\+R\+I\+NG distribution \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1NumericGenOrthogPolynomial_a7594170792e5fc5c27b94e61fa753d88}{histogram\+\_\+pt\+\_\+distribution} (const Real\+Real\+Map \&bin\+\_\+pairs)\label{classPecos_1_1NumericGenOrthogPolynomial_a7594170792e5fc5c27b94e61fa753d88}
+
+\begin{DoxyCompactList}\small\item\em set distribution type and parameters for a H\+I\+S\+T\+O\+G\+R\+A\+M\+\_\+\+P\+T\+\_\+\+R\+E\+AL distribution \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1NumericGenOrthogPolynomial_a738108531d8a83dd1a9c6021c76e6bee}{coefficients\+\_\+norms\+\_\+flag} (bool flag)\label{classPecos_1_1NumericGenOrthogPolynomial_a738108531d8a83dd1a9c6021c76e6bee}
+
+\begin{DoxyCompactList}\small\item\em set coeffs\+Norms\+Flag \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Real \hyperlink{classPecos_1_1NumericGenOrthogPolynomial_a8792a858ac05a2158880e876f9da2019}{type1\+\_\+value} (Real x, unsigned short order)
+\begin{DoxyCompactList}\small\item\em retrieve the value of the n\+\_\+th type 1 polynomial for a given parameter x using traditional characteristic polynomial formulation \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1NumericGenOrthogPolynomial_aac6751aa35bf5fcb42c520a322fc26dc}{type1\+\_\+gradient} (Real x, unsigned short order)
+\begin{DoxyCompactList}\small\item\em retrieve the gradient of the n\+\_\+th type 1 polynomial for a given parameter x using traditional characteristic polynomial formulation \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1NumericGenOrthogPolynomial_ae957c8c2e7ea13728bafbad0c9b2996e}{type1\+\_\+hessian} (Real x, unsigned short order)
+\begin{DoxyCompactList}\small\item\em retrieve the Hessian of the n\+\_\+th type 1 polynomial for a given parameter x using traditional characteristic polynomial formulation \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1NumericGenOrthogPolynomial_a77c0dbb874af1190d448d01da6efbe4e}{norm\+\_\+squared} (unsigned short order)
+\begin{DoxyCompactList}\small\item\em returns the norm-\/squared of the n\+\_\+th order polynomial defined by the inner product $<$Poly\+\_\+n, Poly\+\_\+n$>$ = $\vert$$\vert$\+Poly\+\_\+n$\vert$$\vert$$^\wedge$2 \end{DoxyCompactList}\item 
+const Real\+Array \& \hyperlink{classPecos_1_1NumericGenOrthogPolynomial_a10873b28f1284aff4ea214e00c4f86dd}{collocation\+\_\+points} (unsigned short order)
+\begin{DoxyCompactList}\small\item\em return collocation points corresponding to orthogonal polynomial order n \end{DoxyCompactList}\item 
+const Real\+Array \& \hyperlink{classPecos_1_1NumericGenOrthogPolynomial_aa010321cf47465dca5725fa15ba58bf6}{type1\+\_\+collocation\+\_\+weights} (unsigned short order)
+\begin{DoxyCompactList}\small\item\em return the type 1 collocation weights corresponding to a point set of size order \end{DoxyCompactList}\item 
+bool \hyperlink{classPecos_1_1NumericGenOrthogPolynomial_abc2afafc150f648667a41e0ce656b6da}{parameterized} () const \label{classPecos_1_1NumericGenOrthogPolynomial_abc2afafc150f648667a41e0ce656b6da}
+
+\begin{DoxyCompactList}\small\item\em return whether a derived \hyperlink{classPecos_1_1BasisPolynomial}{Basis\+Polynomial} type supports parameterization \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1NumericGenOrthogPolynomial_a8c1e8d014e82efc5a1c20f973b5bc715}{length\+\_\+scale} () const 
+\item 
+void \hyperlink{classPecos_1_1NumericGenOrthogPolynomial_ad1f50a6d03d3b48687bf9c4ca889b389}{precompute\+\_\+rules} (unsigned short order)\label{classPecos_1_1NumericGenOrthogPolynomial_ad1f50a6d03d3b48687bf9c4ca889b389}
+
+\begin{DoxyCompactList}\small\item\em precompute quadrature rules up to specified order \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classPecos_1_1NumericGenOrthogPolynomial_a4695676473df7032b5cf8d8939fa63f2}{solve\+\_\+eigenproblem} (unsigned short m)
+\begin{DoxyCompactList}\small\item\em solve a symmetric tridiagonal eigenvalue problem for the Gauss points and weights for an orthogonal polynomial of order m \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1NumericGenOrthogPolynomial_a37403d7492f13f1482ba45befc66c886}{polynomial\+\_\+recursion} (Real\+Vector \&poly\+\_\+coeffs\+\_\+ip1, Real alpha\+\_\+i, const Real\+Vector \&poly\+\_\+coeffs\+\_\+i, Real beta\+\_\+i, const Real\+Vector \&poly\+\_\+coeffs\+\_\+im1)\label{classPecos_1_1NumericGenOrthogPolynomial_a37403d7492f13f1482ba45befc66c886}
+
+\begin{DoxyCompactList}\small\item\em compute three point recursion for poly\+Coeffs\mbox{[}i+1\mbox{]} \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1NumericGenOrthogPolynomial_aa23ca624e849bda93121c362fa281a11}{polynomial\+\_\+recursion} (Real\+Vector \&poly\+\_\+coeffs\+\_\+ip1, Real alpha\+\_\+i, const Real\+Vector \&poly\+\_\+coeffs\+\_\+i)\label{classPecos_1_1NumericGenOrthogPolynomial_aa23ca624e849bda93121c362fa281a11}
+
+\begin{DoxyCompactList}\small\item\em compute truncated three point recursion for poly\+Coeffs\mbox{[}i+1\mbox{]} \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1NumericGenOrthogPolynomial_aa650c71abdded126ba7dccda064d1883}{inner\+\_\+product} (const Real\+Vector \&poly\+\_\+coeffs1, const Real\+Vector \&poly\+\_\+coeffs2)\label{classPecos_1_1NumericGenOrthogPolynomial_aa650c71abdded126ba7dccda064d1883}
+
+\begin{DoxyCompactList}\small\item\em compute inner product of specified polynomial orders \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1NumericGenOrthogPolynomial_accf380ff2a3ff767346a92dc62048c1c}{hermite\+\_\+unbounded\+\_\+integral} (const Real\+Vector \&poly\+\_\+coeffs1, const Real\+Vector \&poly\+\_\+coeffs2, N\+G\+F\+P\+Type weight\+\_\+fn)\label{classPecos_1_1NumericGenOrthogPolynomial_accf380ff2a3ff767346a92dc62048c1c}
+
+\begin{DoxyCompactList}\small\item\em compute an unbounded integral using Gauss-\/\+Hermite integration \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1NumericGenOrthogPolynomial_a721564810dcb06e9312fb31460c2ee21}{fejer\+\_\+unbounded\+\_\+integral} (const Real\+Vector \&poly\+\_\+coeffs1, const Real\+Vector \&poly\+\_\+coeffs2, N\+G\+F\+P\+Type weight\+\_\+fn, unsigned short quad\+\_\+order)\label{classPecos_1_1NumericGenOrthogPolynomial_a721564810dcb06e9312fb31460c2ee21}
+
+\begin{DoxyCompactList}\small\item\em compute an unbounded integral using Fejer integration and a change of variables \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1NumericGenOrthogPolynomial_ae17c3dfbaf740f88bc54e871d100e31b}{laguerre\+\_\+semibounded\+\_\+integral} (const Real\+Vector \&poly\+\_\+coeffs1, const Real\+Vector \&poly\+\_\+coeffs2, N\+G\+F\+P\+Type weight\+\_\+fn)\label{classPecos_1_1NumericGenOrthogPolynomial_ae17c3dfbaf740f88bc54e871d100e31b}
+
+\begin{DoxyCompactList}\small\item\em compute a semibounded integral using Gauss-\/\+Laguerre integration \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1NumericGenOrthogPolynomial_a727a5700d623d38660a42878f1c2aa5e}{fejer\+\_\+semibounded\+\_\+integral} (const Real\+Vector \&poly\+\_\+coeffs1, const Real\+Vector \&poly\+\_\+coeffs2, N\+G\+F\+P\+Type weight\+\_\+fn, unsigned short quad\+\_\+order)\label{classPecos_1_1NumericGenOrthogPolynomial_a727a5700d623d38660a42878f1c2aa5e}
+
+\begin{DoxyCompactList}\small\item\em compute a semibounded integral using Fejer integration and a change of variables \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1NumericGenOrthogPolynomial_af77a17f10ee8f8567e5be5bc77ec4e55}{legendre\+\_\+bounded\+\_\+integral} (const Real\+Vector \&poly\+\_\+coeffs1, const Real\+Vector \&poly\+\_\+coeffs2, N\+G\+F\+P\+Type weight\+\_\+fn, Real start, Real end)\label{classPecos_1_1NumericGenOrthogPolynomial_af77a17f10ee8f8567e5be5bc77ec4e55}
+
+\begin{DoxyCompactList}\small\item\em compute a bounded integral over the specified range using Gauss-\/\+Legendre integration \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1NumericGenOrthogPolynomial_ab9e633f52b778c0e737b90852cb0ab31}{cc\+\_\+bounded\+\_\+integral} (const Real\+Vector \&poly\+\_\+coeffs1, const Real\+Vector \&poly\+\_\+coeffs2, N\+G\+F\+P\+Type weight\+\_\+fn, Real start, Real end, unsigned short quad\+\_\+order)\label{classPecos_1_1NumericGenOrthogPolynomial_ab9e633f52b778c0e737b90852cb0ab31}
+
+\begin{DoxyCompactList}\small\item\em compute a bounded integral over the specified range using Clenshaw-\/\+Curtis integration \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1NumericGenOrthogPolynomial_a0c1eb0747d53f80138f824d23a61d42a}{riemann\+\_\+bounded\+\_\+integral} (const Real\+Vector \&poly\+\_\+coeffs1, const Real\+Vector \&poly\+\_\+coeffs2, N\+G\+F\+P\+Type weight\+\_\+fn, Real start, Real end)\label{classPecos_1_1NumericGenOrthogPolynomial_a0c1eb0747d53f80138f824d23a61d42a}
+
+\begin{DoxyCompactList}\small\item\em compute a bounded integral over the specified range using Riemann sums \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1NumericGenOrthogPolynomial_a0cf9a7908a8f181ea6109a0e9e70de2a}{native\+\_\+quadrature\+\_\+integral} (const Real\+Vector \&poly\+\_\+coeffs1, const Real\+Vector \&poly\+\_\+coeffs2)\label{classPecos_1_1NumericGenOrthogPolynomial_a0cf9a7908a8f181ea6109a0e9e70de2a}
+
+\begin{DoxyCompactList}\small\item\em compute an integral using the native Gaussian quadrature rule (up to order 2m-\/1 based on colloc\+Points and colloc\+Weights of order m) \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1NumericGenOrthogPolynomial_a36a2f2a688905b357c9aec50c32934e2}{type1\+\_\+value} (Real x, const Real\+Vector \&poly\+\_\+coeffs)\label{classPecos_1_1NumericGenOrthogPolynomial_a36a2f2a688905b357c9aec50c32934e2}
+
+\begin{DoxyCompactList}\small\item\em retrieve the value of the 1-\/D generated polynomial (of given coefficients) for a given parameter value \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1NumericGenOrthogPolynomial_a28912cbd5aeeb5fa8f25186709c61393}{type1\+\_\+gradient} (Real x, const Real\+Vector \&poly\+\_\+coeffs)\label{classPecos_1_1NumericGenOrthogPolynomial_a28912cbd5aeeb5fa8f25186709c61393}
+
+\begin{DoxyCompactList}\small\item\em retrieve the gradient of the 1-\/D generated polynomial (of given coefficients) with respect to its dimension for a given parameter value \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1NumericGenOrthogPolynomial_a8c6da1fc223948815cf8430fa34c6f92}{type1\+\_\+hessian} (Real x, const Real\+Vector \&poly\+\_\+coeffs)\label{classPecos_1_1NumericGenOrthogPolynomial_a8c6da1fc223948815cf8430fa34c6f92}
+
+\begin{DoxyCompactList}\small\item\em retrieve the Hessian of the 1-\/D generated polynomial (of given coefficients) with respect to its dimension for a given parameter value \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Real \hyperlink{classPecos_1_1NumericGenOrthogPolynomial_a984945a7eb3ccfbb71c04afb58f004e6}{bounded\+\_\+normal\+\_\+pdf} (Real x, const Real\+Vector \&params)\label{classPecos_1_1NumericGenOrthogPolynomial_a984945a7eb3ccfbb71c04afb58f004e6}
+
+\begin{DoxyCompactList}\small\item\em thin wrapper for bounded\+\_\+normal\+\_\+pdf for N\+G\+F\+P\+Type A\+PI \end{DoxyCompactList}\item 
+static Real \hyperlink{classPecos_1_1NumericGenOrthogPolynomial_a0e518b41ad31d7637ca61353a49677e8}{lognormal\+\_\+pdf} (Real x, const Real\+Vector \&params)\label{classPecos_1_1NumericGenOrthogPolynomial_a0e518b41ad31d7637ca61353a49677e8}
+
+\begin{DoxyCompactList}\small\item\em thin wrapper for lognormal\+\_\+pdf for N\+G\+F\+P\+Type A\+PI \end{DoxyCompactList}\item 
+static Real \hyperlink{classPecos_1_1NumericGenOrthogPolynomial_a18a2e54f42d2d707515a8e3db7f300a3}{bounded\+\_\+lognormal\+\_\+pdf} (Real x, const Real\+Vector \&params)\label{classPecos_1_1NumericGenOrthogPolynomial_a18a2e54f42d2d707515a8e3db7f300a3}
+
+\begin{DoxyCompactList}\small\item\em thin wrapper for bounded\+\_\+lognormal\+\_\+pdf for N\+G\+F\+P\+Type A\+PI \end{DoxyCompactList}\item 
+static Real \hyperlink{classPecos_1_1NumericGenOrthogPolynomial_a531874fbf054cc3f2f54700e44476cf9}{loguniform\+\_\+pdf} (Real x, const Real\+Vector \&params)\label{classPecos_1_1NumericGenOrthogPolynomial_a531874fbf054cc3f2f54700e44476cf9}
+
+\begin{DoxyCompactList}\small\item\em thin wrapper for loguniform\+\_\+pdf for N\+G\+F\+P\+Type A\+PI \end{DoxyCompactList}\item 
+static Real \hyperlink{classPecos_1_1NumericGenOrthogPolynomial_a9d18b08dbb5c90ed33f9d8fb820fcf30}{triangular\+\_\+pdf} (Real x, const Real\+Vector \&params)\label{classPecos_1_1NumericGenOrthogPolynomial_a9d18b08dbb5c90ed33f9d8fb820fcf30}
+
+\begin{DoxyCompactList}\small\item\em thin wrapper for triangular\+\_\+pdf for N\+G\+F\+P\+Type A\+PI \end{DoxyCompactList}\item 
+static Real \hyperlink{classPecos_1_1NumericGenOrthogPolynomial_a5644545bfb9382ef39793c479c47752a}{gumbel\+\_\+pdf} (Real x, const Real\+Vector \&params)\label{classPecos_1_1NumericGenOrthogPolynomial_a5644545bfb9382ef39793c479c47752a}
+
+\begin{DoxyCompactList}\small\item\em thin wrapper for gumbel\+\_\+pdf for N\+G\+F\+P\+Type A\+PI \end{DoxyCompactList}\item 
+static Real \hyperlink{classPecos_1_1NumericGenOrthogPolynomial_ad301cf09c365c9ca22fa42bee5e62a3a}{frechet\+\_\+pdf} (Real x, const Real\+Vector \&params)\label{classPecos_1_1NumericGenOrthogPolynomial_ad301cf09c365c9ca22fa42bee5e62a3a}
+
+\begin{DoxyCompactList}\small\item\em thin wrapper for frechet\+\_\+pdf for N\+G\+F\+P\+Type A\+PI \end{DoxyCompactList}\item 
+static Real \hyperlink{classPecos_1_1NumericGenOrthogPolynomial_a152a1b46c48783d167773e4a6c468bdb}{weibull\+\_\+pdf} (Real x, const Real\+Vector \&params)\label{classPecos_1_1NumericGenOrthogPolynomial_a152a1b46c48783d167773e4a6c468bdb}
+
+\begin{DoxyCompactList}\small\item\em thin wrapper for weibull\+\_\+pdf for N\+G\+F\+P\+Type A\+PI \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+short \hyperlink{classPecos_1_1NumericGenOrthogPolynomial_a885e61a742d9580b5d4df39f997cb706}{distribution\+Type}\label{classPecos_1_1NumericGenOrthogPolynomial_a885e61a742d9580b5d4df39f997cb706}
+
+\begin{DoxyCompactList}\small\item\em the type of non-\/\+Askey distribution\+: B\+O\+U\+N\+D\+E\+D\+\_\+\+N\+O\+R\+M\+AL, L\+O\+G\+N\+O\+R\+M\+AL, B\+O\+U\+N\+D\+E\+D\+\_\+\+L\+O\+G\+N\+O\+R\+M\+AL, L\+O\+G\+U\+N\+I\+F\+O\+RM, T\+R\+I\+A\+N\+G\+U\+L\+AR, G\+U\+M\+B\+EL, F\+R\+E\+C\+H\+ET, W\+E\+I\+B\+U\+LL, H\+I\+S\+T\+O\+G\+R\+A\+M\+\_\+\+B\+IN, or S\+T\+O\+C\+H\+A\+S\+T\+I\+C\+\_\+\+E\+X\+P\+A\+N\+S\+I\+ON \end{DoxyCompactList}\item 
+Real\+Vector \hyperlink{classPecos_1_1NumericGenOrthogPolynomial_a0e7787261b90d3559dfd8ac5aaaf2ba5}{dist\+Params}\label{classPecos_1_1NumericGenOrthogPolynomial_a0e7787261b90d3559dfd8ac5aaaf2ba5}
+
+\begin{DoxyCompactList}\small\item\em distribution parameters (e.\+g., mean, std\+\_\+dev, alpha, beta) \end{DoxyCompactList}\item 
+bool \hyperlink{classPecos_1_1NumericGenOrthogPolynomial_a216f184d63de7370a1a674f4b1b7728d}{coeffs\+Norms\+Flag}\label{classPecos_1_1NumericGenOrthogPolynomial_a216f184d63de7370a1a674f4b1b7728d}
+
+\begin{DoxyCompactList}\small\item\em flag identifying the need to compute poly\+Coeffs and orthog\+Poly\+Norms\+Sq (if false, only colloc\+Points and colloc\+Weights are computed) \end{DoxyCompactList}\item 
+Real\+Vector\+Array \hyperlink{classPecos_1_1NumericGenOrthogPolynomial_a05e14bc7c5a8f0567369ebd6c8eeb7b8}{poly\+Coeffs}\label{classPecos_1_1NumericGenOrthogPolynomial_a05e14bc7c5a8f0567369ebd6c8eeb7b8}
+
+\begin{DoxyCompactList}\small\item\em coefficients of the orthogonal polynomials, from order 0 to m \end{DoxyCompactList}\item 
+Real\+Vector \hyperlink{classPecos_1_1NumericGenOrthogPolynomial_af34122cfd7e48b5a261086156fce8ee7}{alpha3\+TR}\label{classPecos_1_1NumericGenOrthogPolynomial_af34122cfd7e48b5a261086156fce8ee7}
+
+\begin{DoxyCompactList}\small\item\em alpha three-\/term recurrence parameters\+: alpha3\+TR\mbox{[}i\mbox{]} multiplied by poly\+Coeffs\mbox{[}i\mbox{]} contributes to poly\+Coeffs\mbox{[}i+1\mbox{]} \end{DoxyCompactList}\item 
+Real\+Vector \hyperlink{classPecos_1_1NumericGenOrthogPolynomial_a8146884bd7a086c78eae2aa329e22b5e}{beta3\+TR}\label{classPecos_1_1NumericGenOrthogPolynomial_a8146884bd7a086c78eae2aa329e22b5e}
+
+\begin{DoxyCompactList}\small\item\em beta three-\/term recurrence parameters\+: beta3\+TR\mbox{[}i\mbox{]} multiplied by poly\+Coeffs\mbox{[}i-\/1\mbox{]} contributes to poly\+Coeffs\mbox{[}i+1\mbox{]} \end{DoxyCompactList}\item 
+Real\+Vector \hyperlink{classPecos_1_1NumericGenOrthogPolynomial_af1ac0a4c6b21213db496fb5ae70df0ea}{orthog\+Poly\+Norms\+Sq}\label{classPecos_1_1NumericGenOrthogPolynomial_af1ac0a4c6b21213db496fb5ae70df0ea}
+
+\begin{DoxyCompactList}\small\item\em norm-\/squared of all orthogonal polynomials, from order 0 to m, as defined by the inner product $<$Poly\+\_\+i, Poly\+\_\+i$>$ = $\vert$$\vert$\+Poly\+\_\+i$\vert$$\vert$$^\wedge$2 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Derived orthogonal polynomial class for numerically-\/generated orthogonal polynomials. 
+
+The \hyperlink{classPecos_1_1NumericGenOrthogPolynomial}{Numeric\+Gen\+Orthog\+Polynomial} class numerically generates a univariate orthogonal polynomial of a particular order, along with its Gauss points, Gauss weights, and norms. It uses a variety of algorithms due to Chebyshev and Stieltjes as reported by Golub and Welsch (Mathematics of Computation, Vol. 23, No. 106, 1969) and Gautschi (S\+I\+AM J. Sci. Stat. Comput., Vol. 3, No. 3, 1982). It enables (mixed) multidimensional orthogonal polynomial basis functions within \hyperlink{classPecos_1_1OrthogPolyApproximation}{Orthog\+Poly\+Approximation}. 
+
+\subsection{Member Function Documentation}
+\index{Pecos\+::\+Numeric\+Gen\+Orthog\+Polynomial@{Pecos\+::\+Numeric\+Gen\+Orthog\+Polynomial}!type1\+\_\+value@{type1\+\_\+value}}
+\index{type1\+\_\+value@{type1\+\_\+value}!Pecos\+::\+Numeric\+Gen\+Orthog\+Polynomial@{Pecos\+::\+Numeric\+Gen\+Orthog\+Polynomial}}
+\subsubsection[{\texorpdfstring{type1\+\_\+value(\+Real x, unsigned short order)}{type1_value(Real x, unsigned short order)}}]{\setlength{\rightskip}{0pt plus 5cm}Real type1\+\_\+value (
+\begin{DoxyParamCaption}
+\item[{Real}]{x, }
+\item[{unsigned short}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classPecos_1_1NumericGenOrthogPolynomial_a8792a858ac05a2158880e876f9da2019}
+
+
+retrieve the value of the n\+\_\+th type 1 polynomial for a given parameter x using traditional characteristic polynomial formulation 
+
+For orthogonal polynomials, n specifies the order of the polynomial, whereas for interpolation polynomials, it identifies the interpolant for the n-\/th point. 
+
+Reimplemented from \hyperlink{classPecos_1_1BasisPolynomial_a1fab871e99cec3a1933a2b1e9ed8a625}{Basis\+Polynomial}.
+
+
+
+References Numeric\+Gen\+Orthog\+Polynomial\+::poly\+Coeffs, and Numeric\+Gen\+Orthog\+Polynomial\+::solve\+\_\+eigenproblem().
+
+
+
+Referenced by Numeric\+Gen\+Orthog\+Polynomial\+::cc\+\_\+bounded\+\_\+integral(), Numeric\+Gen\+Orthog\+Polynomial\+::fejer\+\_\+semibounded\+\_\+integral(), Numeric\+Gen\+Orthog\+Polynomial\+::fejer\+\_\+unbounded\+\_\+integral(), Numeric\+Gen\+Orthog\+Polynomial\+::hermite\+\_\+unbounded\+\_\+integral(), Numeric\+Gen\+Orthog\+Polynomial\+::inner\+\_\+product(), Numeric\+Gen\+Orthog\+Polynomial\+::laguerre\+\_\+semibounded\+\_\+integral(), Numeric\+Gen\+Orthog\+Polynomial\+::legendre\+\_\+bounded\+\_\+integral(), Numeric\+Gen\+Orthog\+Polynomial\+::native\+\_\+quadrature\+\_\+integral(), and Numeric\+Gen\+Orthog\+Polynomial\+::riemann\+\_\+bounded\+\_\+integral().
+
+\index{Pecos\+::\+Numeric\+Gen\+Orthog\+Polynomial@{Pecos\+::\+Numeric\+Gen\+Orthog\+Polynomial}!type1\+\_\+gradient@{type1\+\_\+gradient}}
+\index{type1\+\_\+gradient@{type1\+\_\+gradient}!Pecos\+::\+Numeric\+Gen\+Orthog\+Polynomial@{Pecos\+::\+Numeric\+Gen\+Orthog\+Polynomial}}
+\subsubsection[{\texorpdfstring{type1\+\_\+gradient(\+Real x, unsigned short order)}{type1_gradient(Real x, unsigned short order)}}]{\setlength{\rightskip}{0pt plus 5cm}Real type1\+\_\+gradient (
+\begin{DoxyParamCaption}
+\item[{Real}]{x, }
+\item[{unsigned short}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classPecos_1_1NumericGenOrthogPolynomial_aac6751aa35bf5fcb42c520a322fc26dc}
+
+
+retrieve the gradient of the n\+\_\+th type 1 polynomial for a given parameter x using traditional characteristic polynomial formulation 
+
+For orthogonal polynomials, n specifies the order of the polynomial, whereas for interpolation polynomials, it identifies the interpolant for the n-\/th point. 
+
+Reimplemented from \hyperlink{classPecos_1_1BasisPolynomial_a6f69ec84983f551e7e0e4a18b78b4498}{Basis\+Polynomial}.
+
+
+
+References Numeric\+Gen\+Orthog\+Polynomial\+::poly\+Coeffs, and Numeric\+Gen\+Orthog\+Polynomial\+::solve\+\_\+eigenproblem().
+
+\index{Pecos\+::\+Numeric\+Gen\+Orthog\+Polynomial@{Pecos\+::\+Numeric\+Gen\+Orthog\+Polynomial}!type1\+\_\+hessian@{type1\+\_\+hessian}}
+\index{type1\+\_\+hessian@{type1\+\_\+hessian}!Pecos\+::\+Numeric\+Gen\+Orthog\+Polynomial@{Pecos\+::\+Numeric\+Gen\+Orthog\+Polynomial}}
+\subsubsection[{\texorpdfstring{type1\+\_\+hessian(\+Real x, unsigned short order)}{type1_hessian(Real x, unsigned short order)}}]{\setlength{\rightskip}{0pt plus 5cm}Real type1\+\_\+hessian (
+\begin{DoxyParamCaption}
+\item[{Real}]{x, }
+\item[{unsigned short}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classPecos_1_1NumericGenOrthogPolynomial_ae957c8c2e7ea13728bafbad0c9b2996e}
+
+
+retrieve the Hessian of the n\+\_\+th type 1 polynomial for a given parameter x using traditional characteristic polynomial formulation 
+
+For orthogonal polynomials, n specifies the order of the polynomial, whereas for interpolation polynomials, it identifies the interpolant for the n-\/th point. 
+
+Reimplemented from \hyperlink{classPecos_1_1BasisPolynomial_a07d617dad8572dd606371e6c89ab6c35}{Basis\+Polynomial}.
+
+
+
+References Numeric\+Gen\+Orthog\+Polynomial\+::poly\+Coeffs, and Numeric\+Gen\+Orthog\+Polynomial\+::solve\+\_\+eigenproblem().
+
+\index{Pecos\+::\+Numeric\+Gen\+Orthog\+Polynomial@{Pecos\+::\+Numeric\+Gen\+Orthog\+Polynomial}!norm\+\_\+squared@{norm\+\_\+squared}}
+\index{norm\+\_\+squared@{norm\+\_\+squared}!Pecos\+::\+Numeric\+Gen\+Orthog\+Polynomial@{Pecos\+::\+Numeric\+Gen\+Orthog\+Polynomial}}
+\subsubsection[{\texorpdfstring{norm\+\_\+squared(unsigned short order)}{norm_squared(unsigned short order)}}]{\setlength{\rightskip}{0pt plus 5cm}Real norm\+\_\+squared (
+\begin{DoxyParamCaption}
+\item[{unsigned short}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classPecos_1_1NumericGenOrthogPolynomial_a77c0dbb874af1190d448d01da6efbe4e}
+
+
+returns the norm-\/squared of the n\+\_\+th order polynomial defined by the inner product $<$Poly\+\_\+n, Poly\+\_\+n$>$ = $\vert$$\vert$\+Poly\+\_\+n$\vert$$\vert$$^\wedge$2 
+
+This is defined only for orthogonal polynomials. 
+
+Reimplemented from \hyperlink{classPecos_1_1BasisPolynomial_ab74383be309d74823f2e5e85dad739b2}{Basis\+Polynomial}.
+
+
+
+References Numeric\+Gen\+Orthog\+Polynomial\+::collocation\+\_\+points(), Numeric\+Gen\+Orthog\+Polynomial\+::orthog\+Poly\+Norms\+Sq, and Numeric\+Gen\+Orthog\+Polynomial\+::solve\+\_\+eigenproblem().
+
+\index{Pecos\+::\+Numeric\+Gen\+Orthog\+Polynomial@{Pecos\+::\+Numeric\+Gen\+Orthog\+Polynomial}!collocation\+\_\+points@{collocation\+\_\+points}}
+\index{collocation\+\_\+points@{collocation\+\_\+points}!Pecos\+::\+Numeric\+Gen\+Orthog\+Polynomial@{Pecos\+::\+Numeric\+Gen\+Orthog\+Polynomial}}
+\subsubsection[{\texorpdfstring{collocation\+\_\+points(unsigned short order)}{collocation_points(unsigned short order)}}]{\setlength{\rightskip}{0pt plus 5cm}const Real\+Array \& collocation\+\_\+points (
+\begin{DoxyParamCaption}
+\item[{unsigned short}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classPecos_1_1NumericGenOrthogPolynomial_a10873b28f1284aff4ea214e00c4f86dd}
+
+
+return collocation points corresponding to orthogonal polynomial order n 
+
+This is defined for orthogonal and piecewise interpolation polynomials. 
+
+Reimplemented from \hyperlink{classPecos_1_1BasisPolynomial_a0f96bd4e27ddc5c44117e7b68744b5a4}{Basis\+Polynomial}.
+
+
+
+References Orthogonal\+Polynomial\+::colloc\+Points, Numeric\+Gen\+Orthog\+Polynomial\+::solve\+\_\+eigenproblem(), and Numeric\+Gen\+Orthog\+Polynomial\+::type1\+\_\+collocation\+\_\+weights().
+
+
+
+Referenced by Numeric\+Gen\+Orthog\+Polynomial\+::norm\+\_\+squared().
+
+\index{Pecos\+::\+Numeric\+Gen\+Orthog\+Polynomial@{Pecos\+::\+Numeric\+Gen\+Orthog\+Polynomial}!type1\+\_\+collocation\+\_\+weights@{type1\+\_\+collocation\+\_\+weights}}
+\index{type1\+\_\+collocation\+\_\+weights@{type1\+\_\+collocation\+\_\+weights}!Pecos\+::\+Numeric\+Gen\+Orthog\+Polynomial@{Pecos\+::\+Numeric\+Gen\+Orthog\+Polynomial}}
+\subsubsection[{\texorpdfstring{type1\+\_\+collocation\+\_\+weights(unsigned short order)}{type1_collocation_weights(unsigned short order)}}]{\setlength{\rightskip}{0pt plus 5cm}const Real\+Array \& type1\+\_\+collocation\+\_\+weights (
+\begin{DoxyParamCaption}
+\item[{unsigned short}]{order}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classPecos_1_1NumericGenOrthogPolynomial_aa010321cf47465dca5725fa15ba58bf6}
+
+
+return the type 1 collocation weights corresponding to a point set of size order 
+
+This is defined for orthogonal and piecewise interpolation polynomials. 
+
+Reimplemented from \hyperlink{classPecos_1_1BasisPolynomial_aa010321cf47465dca5725fa15ba58bf6}{Basis\+Polynomial}.
+
+
+
+References Orthogonal\+Polynomial\+::colloc\+Weights, and Numeric\+Gen\+Orthog\+Polynomial\+::solve\+\_\+eigenproblem().
+
+
+
+Referenced by Numeric\+Gen\+Orthog\+Polynomial\+::collocation\+\_\+points().
+
+\index{Pecos\+::\+Numeric\+Gen\+Orthog\+Polynomial@{Pecos\+::\+Numeric\+Gen\+Orthog\+Polynomial}!length\+\_\+scale@{length\+\_\+scale}}
+\index{length\+\_\+scale@{length\+\_\+scale}!Pecos\+::\+Numeric\+Gen\+Orthog\+Polynomial@{Pecos\+::\+Numeric\+Gen\+Orthog\+Polynomial}}
+\subsubsection[{\texorpdfstring{length\+\_\+scale() const }{length_scale() const }}]{\setlength{\rightskip}{0pt plus 5cm}Real length\+\_\+scale (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classPecos_1_1NumericGenOrthogPolynomial_a8c1e8d014e82efc5a1c20f973b5bc715}
+return max(mean,stdev) 
+
+Reimplemented from \hyperlink{classPecos_1_1BasisPolynomial_a8c1e8d014e82efc5a1c20f973b5bc715}{Basis\+Polynomial}.
+
+
+
+References Numeric\+Gen\+Orthog\+Polynomial\+::dist\+Params, and Numeric\+Gen\+Orthog\+Polynomial\+::distribution\+Type.
+
+\index{Pecos\+::\+Numeric\+Gen\+Orthog\+Polynomial@{Pecos\+::\+Numeric\+Gen\+Orthog\+Polynomial}!solve\+\_\+eigenproblem@{solve\+\_\+eigenproblem}}
+\index{solve\+\_\+eigenproblem@{solve\+\_\+eigenproblem}!Pecos\+::\+Numeric\+Gen\+Orthog\+Polynomial@{Pecos\+::\+Numeric\+Gen\+Orthog\+Polynomial}}
+\subsubsection[{\texorpdfstring{solve\+\_\+eigenproblem(unsigned short m)}{solve_eigenproblem(unsigned short m)}}]{\setlength{\rightskip}{0pt plus 5cm}void solve\+\_\+eigenproblem (
+\begin{DoxyParamCaption}
+\item[{unsigned short}]{m}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classPecos_1_1NumericGenOrthogPolynomial_a4695676473df7032b5cf8d8939fa63f2}
+
+
+solve a symmetric tridiagonal eigenvalue problem for the Gauss points and weights for an orthogonal polynomial of order m 
+
+Numbering conventions follow Gautschi. 
+
+References Numeric\+Gen\+Orthog\+Polynomial\+::alpha3\+TR, Numeric\+Gen\+Orthog\+Polynomial\+::beta3\+TR, Numeric\+Gen\+Orthog\+Polynomial\+::coeffs\+Norms\+Flag, Orthogonal\+Polynomial\+::colloc\+Points, Orthogonal\+Polynomial\+::colloc\+Weights, Numeric\+Gen\+Orthog\+Polynomial\+::dist\+Params, Numeric\+Gen\+Orthog\+Polynomial\+::distribution\+Type, Numeric\+Gen\+Orthog\+Polynomial\+::inner\+\_\+product(), Numeric\+Gen\+Orthog\+Polynomial\+::native\+\_\+quadrature\+\_\+integral(), Numeric\+Gen\+Orthog\+Polynomial\+::orthog\+Poly\+Norms\+Sq, Numeric\+Gen\+Orthog\+Polynomial\+::poly\+Coeffs, and Numeric\+Gen\+Orthog\+Polynomial\+::polynomial\+\_\+recursion().
+
+
+
+Referenced by Numeric\+Gen\+Orthog\+Polynomial\+::alpha\+\_\+recursion(), Numeric\+Gen\+Orthog\+Polynomial\+::beta\+\_\+recursion(), Numeric\+Gen\+Orthog\+Polynomial\+::collocation\+\_\+points(), Numeric\+Gen\+Orthog\+Polynomial\+::norm\+\_\+squared(), Numeric\+Gen\+Orthog\+Polynomial\+::precompute\+\_\+rules(), Numeric\+Gen\+Orthog\+Polynomial\+::type1\+\_\+collocation\+\_\+weights(), Numeric\+Gen\+Orthog\+Polynomial\+::type1\+\_\+gradient(), Numeric\+Gen\+Orthog\+Polynomial\+::type1\+\_\+hessian(), and Numeric\+Gen\+Orthog\+Polynomial\+::type1\+\_\+value().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Numeric\+Gen\+Orthog\+Polynomial.\+hpp\item 
+Numeric\+Gen\+Orthog\+Polynomial.\+cpp\end{DoxyCompactItemize}

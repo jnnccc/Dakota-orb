@@ -1,0 +1,252 @@
+\section{Hierarch\+Sparse\+Grid\+Driver Class Reference}
+\label{classPecos_1_1HierarchSparseGridDriver}\index{Hierarch\+Sparse\+Grid\+Driver@{Hierarch\+Sparse\+Grid\+Driver}}
+
+
+Derived integration driver class that generates N-\/dimensional Smolyak sparse grids for numerical evaluation of expectation integrals over independent standard random variables.  
+
+
+Inheritance diagram for Hierarch\+Sparse\+Grid\+Driver\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classPecos_1_1HierarchSparseGridDriver}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPecos_1_1HierarchSparseGridDriver_ad6a2a4e748e03e3ba2bdd345500ef4f8}{Hierarch\+Sparse\+Grid\+Driver} ()\label{classPecos_1_1HierarchSparseGridDriver_ad6a2a4e748e03e3ba2bdd345500ef4f8}
+
+\begin{DoxyCompactList}\small\item\em default constructor \end{DoxyCompactList}\item 
+\hyperlink{classPecos_1_1HierarchSparseGridDriver_acac0f069a3580f15255657c0947bcce4}{Hierarch\+Sparse\+Grid\+Driver} (unsigned short ssg\+\_\+level, const Real\+Vector \&dim\+\_\+pref=Real\+Vector(), short \hyperlink{classPecos_1_1SparseGridDriver_a6f9061513ba25c62ee7a49b0d5da42cc}{growth\+\_\+rate}=M\+O\+D\+E\+R\+A\+T\+E\+\_\+\+R\+E\+S\+T\+R\+I\+C\+T\+E\+D\+\_\+\+G\+R\+O\+W\+TH, short refine\+\_\+control=N\+O\+\_\+\+C\+O\+N\+T\+R\+OL)\label{classPecos_1_1HierarchSparseGridDriver_acac0f069a3580f15255657c0947bcce4}
+
+\begin{DoxyCompactList}\small\item\em constructor \end{DoxyCompactList}\item 
+\hyperlink{classPecos_1_1HierarchSparseGridDriver_abc8d6a084fc56fef23762fee84792e12}{$\sim$\+Hierarch\+Sparse\+Grid\+Driver} ()\label{classPecos_1_1HierarchSparseGridDriver_abc8d6a084fc56fef23762fee84792e12}
+
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1HierarchSparseGridDriver_a30b0bccf09758808aeb7e9ca33fae2ff}{compute\+\_\+grid} (Real\+Matrix \&var\+\_\+sets)\label{classPecos_1_1HierarchSparseGridDriver_a30b0bccf09758808aeb7e9ca33fae2ff}
+
+\begin{DoxyCompactList}\small\item\em compute scaled variable and weight sets for the T\+PQ grid \end{DoxyCompactList}\item 
+int \hyperlink{classPecos_1_1HierarchSparseGridDriver_a4b04c73f01f5eb9e6171305141eb1f73}{grid\+\_\+size} ()\label{classPecos_1_1HierarchSparseGridDriver_a4b04c73f01f5eb9e6171305141eb1f73}
+
+\begin{DoxyCompactList}\small\item\em compute number of collocation points \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1HierarchSparseGridDriver_aeae6e6d94a2e3e77d612eee151c77799}{store\+\_\+grid} (size\+\_\+t index=\+\_\+\+N\+P\+OS)\label{classPecos_1_1HierarchSparseGridDriver_aeae6e6d94a2e3e77d612eee151c77799}
+
+\begin{DoxyCompactList}\small\item\em store configuration settings for the current grid before advancing to the next settings within a prescribed grid sequence (default is push\+\_\+back) \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1HierarchSparseGridDriver_a31ba839ff630bbc25292b448fff38a73}{restore\+\_\+grid} (size\+\_\+t index=\+\_\+\+N\+P\+OS)\label{classPecos_1_1HierarchSparseGridDriver_a31ba839ff630bbc25292b448fff38a73}
+
+\begin{DoxyCompactList}\small\item\em restore configuration settings from a previously stored grid \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1HierarchSparseGridDriver_a93215ecdfbc51b7c45998fa4d65fc7fd}{remove\+\_\+stored\+\_\+grid} (size\+\_\+t index=\+\_\+\+N\+P\+OS)\label{classPecos_1_1HierarchSparseGridDriver_a93215ecdfbc51b7c45998fa4d65fc7fd}
+
+\begin{DoxyCompactList}\small\item\em remove configuration settings for a stored grid (default is pop\+\_\+back) \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1HierarchSparseGridDriver_ae4337960917eda26a5672e5c6afbb62a}{clear\+\_\+stored} ()\label{classPecos_1_1HierarchSparseGridDriver_ae4337960917eda26a5672e5c6afbb62a}
+
+\begin{DoxyCompactList}\small\item\em clear stored grid settings following their usage/combination \end{DoxyCompactList}\item 
+size\+\_\+t \hyperlink{classPecos_1_1HierarchSparseGridDriver_a6edda8aad31eb8a64e180e6a76a6e0e9}{maximal\+\_\+grid} () const \label{classPecos_1_1HierarchSparseGridDriver_a6edda8aad31eb8a64e180e6a76a6e0e9}
+
+\begin{DoxyCompactList}\small\item\em return the index of the maximal stored grid state (\+\_\+\+N\+P\+OS if the current unstored grid state) \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1HierarchSparseGridDriver_ae42d43e21fe55d5b6cca7edf86e54818}{swap\+\_\+grid} (size\+\_\+t index)\label{classPecos_1_1HierarchSparseGridDriver_ae42d43e21fe55d5b6cca7edf86e54818}
+
+\begin{DoxyCompactList}\small\item\em swap settings between the current grid and the stored grid identified by index \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1HierarchSparseGridDriver_a059e9e1e03a5cd29771d369b76311261}{initialize\+\_\+sets} ()\label{classPecos_1_1HierarchSparseGridDriver_a059e9e1e03a5cd29771d369b76311261}
+
+\begin{DoxyCompactList}\small\item\em initializes old/active/evaluation sets for use within the generalized sparse grid procedure \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1HierarchSparseGridDriver_a99c17efb3a8e873b7708652cc1787370}{push\+\_\+trial\+\_\+set} (const U\+Short\+Array \&set)\label{classPecos_1_1HierarchSparseGridDriver_a99c17efb3a8e873b7708652cc1787370}
+
+\begin{DoxyCompactList}\small\item\em update smolyak\+Multi\+Index with a new trial set for use within the generalized sparse grid procedure \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1HierarchSparseGridDriver_ad9648693eacbe856825d2c78b73a3301}{restore\+\_\+set} ()\label{classPecos_1_1HierarchSparseGridDriver_ad9648693eacbe856825d2c78b73a3301}
+
+\begin{DoxyCompactList}\small\item\em update colloc\+Key, colloc\+Indices, and unique\+Index\+Mapping based on restoration of previous trial to smolyak\+Multi\+Index \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1HierarchSparseGridDriver_a392163a55c3c5c2b4357b5490009df62}{compute\+\_\+trial\+\_\+grid} (Real\+Matrix \&var\+\_\+sets)\label{classPecos_1_1HierarchSparseGridDriver_a392163a55c3c5c2b4357b5490009df62}
+
+\begin{DoxyCompactList}\small\item\em computes the tensor grid for the index set from \hyperlink{classPecos_1_1HierarchSparseGridDriver_a99c17efb3a8e873b7708652cc1787370}{push\+\_\+trial\+\_\+set()} \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1HierarchSparseGridDriver_a92b2604a79028bec35c176aee27e56bb}{pop\+\_\+trial\+\_\+set} ()\label{classPecos_1_1HierarchSparseGridDriver_a92b2604a79028bec35c176aee27e56bb}
+
+\begin{DoxyCompactList}\small\item\em remove the previously pushed trial set from smolyak\+Multi\+Index during the course of the generalized sparse grid procedure \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1HierarchSparseGridDriver_a07e01bf89eb07535ea78132b8d533088}{finalize\+\_\+sets} (bool output\+\_\+sets, bool converged\+\_\+within\+\_\+tol)\label{classPecos_1_1HierarchSparseGridDriver_a07e01bf89eb07535ea78132b8d533088}
+
+\begin{DoxyCompactList}\small\item\em accept all remaining trial sets within the generalized sparse grid procedure \end{DoxyCompactList}\item 
+const U\+Short\+Array \& \hyperlink{classPecos_1_1HierarchSparseGridDriver_a5c92e49dbfbcfa5b0d1523ed254b4d76}{trial\+\_\+set} () const \label{classPecos_1_1HierarchSparseGridDriver_a5c92e49dbfbcfa5b0d1523ed254b4d76}
+
+\begin{DoxyCompactList}\small\item\em return the trial index set from \hyperlink{classPecos_1_1HierarchSparseGridDriver_a99c17efb3a8e873b7708652cc1787370}{push\+\_\+trial\+\_\+set()} \end{DoxyCompactList}\item 
+int \hyperlink{classPecos_1_1HierarchSparseGridDriver_a3d8e458c7cf95eae26aa53a738844d89}{unique\+\_\+trial\+\_\+points} () const \label{classPecos_1_1HierarchSparseGridDriver_a3d8e458c7cf95eae26aa53a738844d89}
+
+\begin{DoxyCompactList}\small\item\em return the number of unique collocation points in the trial index set \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1HierarchSparseGridDriver_af2bf445b9a8d1f418dc3519a3305b05f}{compute\+\_\+grid\+\_\+increment} (Real\+Matrix \&var\+\_\+sets)\label{classPecos_1_1HierarchSparseGridDriver_af2bf445b9a8d1f418dc3519a3305b05f}
+
+\begin{DoxyCompactList}\small\item\em computes tensor grids for new index sets due to an isotropic/anisotropic refinement \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1HierarchSparseGridDriver_ae5bcc14a0e7bb726d5280c3dd10e6c98}{print\+\_\+smolyak\+\_\+multi\+\_\+index} () const \label{classPecos_1_1HierarchSparseGridDriver_ae5bcc14a0e7bb726d5280c3dd10e6c98}
+
+\begin{DoxyCompactList}\small\item\em print smolyak\+Multi\+Index \end{DoxyCompactList}\item 
+U\+Short\+U\+Short\+Pair {\bfseries level\+\_\+to\+\_\+delta\+\_\+pair} (size\+\_\+t i, unsigned short lev\+\_\+i)\label{classPecos_1_1HierarchSparseGridDriver_a848901ff3e8ea724fc2a7d114ce51ab2}
+
+\item 
+unsigned short {\bfseries level\+\_\+to\+\_\+delta\+\_\+size} (size\+\_\+t i, unsigned short lev\+\_\+i)\label{classPecos_1_1HierarchSparseGridDriver_a79cf86a8d2bf6874eb9654655c8e1236}
+
+\item 
+void {\bfseries level\+\_\+to\+\_\+delta\+\_\+key} (size\+\_\+t i, unsigned short lev\+\_\+i, U\+Short\+Array \&delta\+\_\+key\+\_\+i)\label{classPecos_1_1HierarchSparseGridDriver_ad28e1cd919d12b221e24c25a710ad91e}
+
+\item 
+void \hyperlink{classPecos_1_1HierarchSparseGridDriver_ac3ee15acadcdde2296dc77ecd10e94cb}{levels\+\_\+to\+\_\+delta\+\_\+keys} (const U\+Short\+Array \&levels, U\+Short2\+D\+Array \&delta\+\_\+keys)\label{classPecos_1_1HierarchSparseGridDriver_ac3ee15acadcdde2296dc77ecd10e94cb}
+
+\begin{DoxyCompactList}\small\item\em convert a Smolyak index set into hierarchical quadrature keys \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1HierarchSparseGridDriver_aa05285153ce9897c4a1815e5db24027a}{levels\+\_\+to\+\_\+delta\+\_\+sizes} (const U\+Short\+Array \&levels, U\+Short\+Array \&delta\+\_\+sizes)\label{classPecos_1_1HierarchSparseGridDriver_aa05285153ce9897c4a1815e5db24027a}
+
+\begin{DoxyCompactList}\small\item\em convert a Smolyak index set into the sizes of hierarchical quadrature increments \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1HierarchSparseGridDriver_a83a702e16bb1f910c689b0778f242588}{initialize\+\_\+grid} (unsigned short ssg\+\_\+level, const Real\+Vector \&dim\+\_\+pref, const Short\+Array \&u\+\_\+types, const \hyperlink{classPecos_1_1ExpansionConfigOptions}{Expansion\+Config\+Options} \&ec\+\_\+options, \hyperlink{classPecos_1_1BasisConfigOptions}{Basis\+Config\+Options} \&bc\+\_\+options, short \hyperlink{classPecos_1_1SparseGridDriver_a6f9061513ba25c62ee7a49b0d5da42cc}{growth\+\_\+rate}=M\+O\+D\+E\+R\+A\+T\+E\+\_\+\+R\+E\+S\+T\+R\+I\+C\+T\+E\+D\+\_\+\+G\+R\+O\+W\+TH, bool track\+\_\+colloc\+\_\+indices=true)\label{classPecos_1_1HierarchSparseGridDriver_a83a702e16bb1f910c689b0778f242588}
+
+\begin{DoxyCompactList}\small\item\em initialize all sparse grid settings except for distribution params \end{DoxyCompactList}\item 
+const U\+Short\+Array \& \hyperlink{classPecos_1_1HierarchSparseGridDriver_a519ca966ef4e784c01698731201e042a}{increment\+\_\+sets} () const \label{classPecos_1_1HierarchSparseGridDriver_a519ca966ef4e784c01698731201e042a}
+
+\begin{DoxyCompactList}\small\item\em return increment\+Sets \end{DoxyCompactList}\item 
+const U\+Short3\+D\+Array \& \hyperlink{classPecos_1_1HierarchSparseGridDriver_a319b6d1acf6169cf597ebfd6aca3dd08}{smolyak\+\_\+multi\+\_\+index} () const \label{classPecos_1_1HierarchSparseGridDriver_a319b6d1acf6169cf597ebfd6aca3dd08}
+
+\begin{DoxyCompactList}\small\item\em return smolyak\+Multi\+Index \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1HierarchSparseGridDriver_a2dd6028a82c1ac53ec629162e9edfea0}{track\+\_\+collocation\+\_\+indices} (bool track\+\_\+colloc\+\_\+indices)\label{classPecos_1_1HierarchSparseGridDriver_a2dd6028a82c1ac53ec629162e9edfea0}
+
+\begin{DoxyCompactList}\small\item\em set track\+Colloc\+Indices \end{DoxyCompactList}\item 
+bool \hyperlink{classPecos_1_1HierarchSparseGridDriver_a7d9947e97cdab5d7f3e1855e663a020d}{track\+\_\+collocation\+\_\+indices} () const \label{classPecos_1_1HierarchSparseGridDriver_a7d9947e97cdab5d7f3e1855e663a020d}
+
+\begin{DoxyCompactList}\small\item\em get track\+Colloc\+Indices \end{DoxyCompactList}\item 
+const U\+Short4\+D\+Array \& \hyperlink{classPecos_1_1HierarchSparseGridDriver_a36d15989b38fc5460654d6ce1c605998}{collocation\+\_\+key} () const \label{classPecos_1_1HierarchSparseGridDriver_a36d15989b38fc5460654d6ce1c605998}
+
+\begin{DoxyCompactList}\small\item\em return colloc\+Key \end{DoxyCompactList}\item 
+const Sizet3\+D\+Array \& \hyperlink{classPecos_1_1HierarchSparseGridDriver_a2422d7adf5fccacbc664189508f03022}{collocation\+\_\+indices} () const \label{classPecos_1_1HierarchSparseGridDriver_a2422d7adf5fccacbc664189508f03022}
+
+\begin{DoxyCompactList}\small\item\em return colloc\+Indices \end{DoxyCompactList}\item 
+const U\+Short3\+D\+Array \& \hyperlink{classPecos_1_1HierarchSparseGridDriver_a4477fb6676f396ab83aa198fe0331bea}{stored\+\_\+smolyak\+\_\+multi\+\_\+index} (size\+\_\+t index) const \label{classPecos_1_1HierarchSparseGridDriver_a4477fb6676f396ab83aa198fe0331bea}
+
+\begin{DoxyCompactList}\small\item\em return stored\+Lev\+Multi\+Index \end{DoxyCompactList}\item 
+const U\+Short4\+D\+Array \& \hyperlink{classPecos_1_1HierarchSparseGridDriver_a03ca3eb80aa3d844b7da9253cf2a2cca}{stored\+\_\+collocation\+\_\+key} (size\+\_\+t index) const \label{classPecos_1_1HierarchSparseGridDriver_a03ca3eb80aa3d844b7da9253cf2a2cca}
+
+\begin{DoxyCompactList}\small\item\em return stored\+Colloc\+Key \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1HierarchSparseGridDriver_a490283a942bdcd3be233d62f6bd6049b}{partition\+\_\+keys} (U\+Short2\+D\+Array \&reference\+\_\+set\+\_\+range, U\+Short2\+D\+Array \&increment\+\_\+set\+\_\+range) const \label{classPecos_1_1HierarchSparseGridDriver_a490283a942bdcd3be233d62f6bd6049b}
+
+\begin{DoxyCompactList}\small\item\em discriminate portions of the level-\/set hierarchy that are reference sets from those in the current increment \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1HierarchSparseGridDriver_a3f4e05177766404f7144267d11827730}{partition\+\_\+keys} (U\+Short3\+D\+Array \&reference\+\_\+pt\+\_\+range, U\+Short3\+D\+Array \&increment\+\_\+pt\+\_\+range) const \label{classPecos_1_1HierarchSparseGridDriver_a3f4e05177766404f7144267d11827730}
+
+\begin{DoxyCompactList}\small\item\em discriminate portions of the level-\/set-\/point hierarchy that are in the reference grid from those in the current increment \end{DoxyCompactList}\item 
+const Real\+Vector2\+D\+Array \& \hyperlink{classPecos_1_1HierarchSparseGridDriver_aeff94c7a8a4c656d3817c5e6b7a5f270}{type1\+\_\+weight\+\_\+set\+\_\+arrays} () const \label{classPecos_1_1HierarchSparseGridDriver_aeff94c7a8a4c656d3817c5e6b7a5f270}
+
+\begin{DoxyCompactList}\small\item\em return type1\+Weight\+Sets for use in hierarchical integration functions \end{DoxyCompactList}\item 
+const Real\+Matrix2\+D\+Array \& \hyperlink{classPecos_1_1HierarchSparseGridDriver_a320a9c7281ba87d1c1795ba96720fc08}{type2\+\_\+weight\+\_\+set\+\_\+arrays} () const \label{classPecos_1_1HierarchSparseGridDriver_a320a9c7281ba87d1c1795ba96720fc08}
+
+\begin{DoxyCompactList}\small\item\em return type2\+Weight\+Sets for use in hierarchical integration functions \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries update\+\_\+smolyak\+\_\+multi\+\_\+index} (bool clear\+\_\+sm\+\_\+mi=false)\label{classPecos_1_1HierarchSparseGridDriver_a548500f3592c3016a5c9f9158116dd45}
+
+\item 
+void {\bfseries assign\+\_\+collocation\+\_\+key} ()\label{classPecos_1_1HierarchSparseGridDriver_a9d17415950cab71229a9e2968121ff22}
+
+\item 
+void {\bfseries update\+\_\+collocation\+\_\+key} ()\label{classPecos_1_1HierarchSparseGridDriver_aa0afe77dc7d6ec1b1335b59429701e52}
+
+\item 
+void {\bfseries assign\+\_\+collocation\+\_\+indices} ()\label{classPecos_1_1HierarchSparseGridDriver_ad9e72cee34135fb982921365ccd615cd}
+
+\item 
+void {\bfseries update\+\_\+collocation\+\_\+indices} ()\label{classPecos_1_1HierarchSparseGridDriver_a280d7a1ff687e24bc8d27bc926ee11da}
+
+\item 
+void \hyperlink{classPecos_1_1HierarchSparseGridDriver_a09ad9a025482d9417274ed0a19afca8e}{compute\+\_\+points\+\_\+weights} (Real\+Matrix \&pts, Real\+Vector \&t1\+\_\+wts, Real\+Matrix \&t2\+\_\+wts, const U\+Short\+Array \&sm\+\_\+index, const U\+Short2\+D\+Array \&colloc\+\_\+key)\label{classPecos_1_1HierarchSparseGridDriver_a09ad9a025482d9417274ed0a19afca8e}
+
+\begin{DoxyCompactList}\small\item\em kernel routine used for trial set and full sparse grid computations \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1HierarchSparseGridDriver_aa034123d6d3477efb156ba1c8add03a9}{compute\+\_\+points\+\_\+weights} (Real\+Matrix \&pts, Real\+Vector \&t1\+\_\+wts, Real\+Matrix \&t2\+\_\+wts)\label{classPecos_1_1HierarchSparseGridDriver_aa034123d6d3477efb156ba1c8add03a9}
+
+\begin{DoxyCompactList}\small\item\em compute points and weights for a trial set \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1HierarchSparseGridDriver_a32c1b2db7b05e83d49b266876e9773ff}{compute\+\_\+points\+\_\+weights} (Real\+Matrix \&pts, Real\+Vector2\+D\+Array \&t1\+\_\+wts, Real\+Matrix2\+D\+Array \&t2\+\_\+wts)
+\begin{DoxyCompactList}\small\item\em compute points and weights for all levels of the (initial) sparse grid \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classPecos_1_1HierarchSparseGridDriver_a89ccad2f5ea68ce90e10140ba64cbd2b}{nested\+Grid}\label{classPecos_1_1HierarchSparseGridDriver_a89ccad2f5ea68ce90e10140ba64cbd2b}
+
+\begin{DoxyCompactList}\small\item\em flag for use of fully nested 1D rules, allowing formulation using collocation point increments \end{DoxyCompactList}\item 
+U\+Short3\+D\+Array \hyperlink{classPecos_1_1HierarchSparseGridDriver_a1899fc99ce06e7d1dab0c21445725cba}{smolyak\+Multi\+Index}
+\begin{DoxyCompactList}\small\item\em interpolation depth by index set by num\+Vars array for identifying the index to use within the polynomial\+Basis for a particular variable \end{DoxyCompactList}\item 
+unsigned short \hyperlink{classPecos_1_1HierarchSparseGridDriver_a69e006a77c0dcbba4d6784d0678a137c}{trial\+Level}\label{classPecos_1_1HierarchSparseGridDriver_a69e006a77c0dcbba4d6784d0678a137c}
+
+\begin{DoxyCompactList}\small\item\em level of trial evaluation set from \hyperlink{classPecos_1_1HierarchSparseGridDriver_a99c17efb3a8e873b7708652cc1787370}{push\+\_\+trial\+\_\+set()}; trial set corresponds to smolyak\+Multi\+Index\mbox{[}trial\+Level\mbox{]}.back() \end{DoxyCompactList}\item 
+U\+Short\+Array \hyperlink{classPecos_1_1HierarchSparseGridDriver_a36e2466de81a49ee32105f49eda11573}{increment\+Sets}\label{classPecos_1_1HierarchSparseGridDriver_a36e2466de81a49ee32105f49eda11573}
+
+\begin{DoxyCompactList}\small\item\em identifies the trailing index set increments within smolyak\+Multi\+Index due to an isotropic/anistropic grid refinement \end{DoxyCompactList}\item 
+bool \hyperlink{classPecos_1_1HierarchSparseGridDriver_a277523d2de6de32b78ab32f0e4d24e9f}{track\+Colloc\+Indices}\label{classPecos_1_1HierarchSparseGridDriver_a277523d2de6de32b78ab32f0e4d24e9f}
+
+\begin{DoxyCompactList}\small\item\em due to the hierarchical structure, collocation indices only need to be defined in special cases (e.\+g., generalized sparse grids for which index sets can appear in different orders). \end{DoxyCompactList}\item 
+U\+Short4\+D\+Array \hyperlink{classPecos_1_1HierarchSparseGridDriver_a7cbbd68b6b4e7320cb28a5e4b8894f52}{colloc\+Key}\label{classPecos_1_1HierarchSparseGridDriver_a7cbbd68b6b4e7320cb28a5e4b8894f52}
+
+\begin{DoxyCompactList}\small\item\em levels-\/by-\/index sets-\/by-\/num\+Delta\+Pts-\/by-\/num\+Vars array for identifying the 1-\/D point indices for sets of tensor-\/product collocation points \end{DoxyCompactList}\item 
+Sizet3\+D\+Array \hyperlink{classPecos_1_1HierarchSparseGridDriver_a9d5321a039a785dbc50d99212c18325c}{colloc\+Indices}\label{classPecos_1_1HierarchSparseGridDriver_a9d5321a039a785dbc50d99212c18325c}
+
+\begin{DoxyCompactList}\small\item\em levels-\/by-\/index sets-\/by-\/num\+Tensor\+Product\+Pts array for linking the set of tensor products to the unique collocation points evaluated \end{DoxyCompactList}\item 
+U\+Short4\+D\+Array \hyperlink{classPecos_1_1HierarchSparseGridDriver_a1bd8eb5cffea6b67f167ed179b36157e}{stored\+Lev\+Multi\+Index}\label{classPecos_1_1HierarchSparseGridDriver_a1bd8eb5cffea6b67f167ed179b36157e}
+
+\begin{DoxyCompactList}\small\item\em stored driver states\+: copies of smolyak\+Multi\+Index \end{DoxyCompactList}\item 
+U\+Short5\+D\+Array \hyperlink{classPecos_1_1HierarchSparseGridDriver_a686a8fd6e3090a7667c95d0a8d6c84da}{stored\+Colloc\+Key}\label{classPecos_1_1HierarchSparseGridDriver_a686a8fd6e3090a7667c95d0a8d6c84da}
+
+\begin{DoxyCompactList}\small\item\em stored driver states\+: copies of colloc\+Key \end{DoxyCompactList}\item 
+Real\+Vector2\+D\+Array \hyperlink{classPecos_1_1HierarchSparseGridDriver_a5de56b20e57fb8bb96f62e06de1e9ea3}{type1\+Weight\+Sets}\label{classPecos_1_1HierarchSparseGridDriver_a5de56b20e57fb8bb96f62e06de1e9ea3}
+
+\begin{DoxyCompactList}\small\item\em the set of type1 weights (for integration of value interpolants) associated with each point in the sparse grid \end{DoxyCompactList}\item 
+Real\+Matrix2\+D\+Array \hyperlink{classPecos_1_1HierarchSparseGridDriver_abdaca2cdf2efec3b6b5af2d9adc04a54}{type2\+Weight\+Sets}\label{classPecos_1_1HierarchSparseGridDriver_abdaca2cdf2efec3b6b5af2d9adc04a54}
+
+\begin{DoxyCompactList}\small\item\em the set of type2 weights (for integration of gradient interpolants) for each derivative component and for each point in the sparse grid \end{DoxyCompactList}\item 
+Real\+Vector3\+D\+Array \hyperlink{classPecos_1_1HierarchSparseGridDriver_ac4aeabf6ae4069caa0608b5f1c0be43d}{stored\+Type1\+Weight\+Sets}\label{classPecos_1_1HierarchSparseGridDriver_ac4aeabf6ae4069caa0608b5f1c0be43d}
+
+\begin{DoxyCompactList}\small\item\em stored driver state\+: copy of type1\+Weight\+Sets \end{DoxyCompactList}\item 
+Real\+Matrix3\+D\+Array \hyperlink{classPecos_1_1HierarchSparseGridDriver_a8e2675de76cb8b6db1efe3375ba408a1}{stored\+Type2\+Weight\+Sets}\label{classPecos_1_1HierarchSparseGridDriver_a8e2675de76cb8b6db1efe3375ba408a1}
+
+\begin{DoxyCompactList}\small\item\em stored driver state\+: copy of type2\+Weight\+Sets \end{DoxyCompactList}\item 
+std\+::map$<$ U\+Short\+Array, Real\+Vector $>$ \hyperlink{classPecos_1_1HierarchSparseGridDriver_adacb7309f3bcc04193e19e0f673d491f}{popped\+T1\+Wt\+Sets}\label{classPecos_1_1HierarchSparseGridDriver_adacb7309f3bcc04193e19e0f673d491f}
+
+\begin{DoxyCompactList}\small\item\em type 1 weight sets popped during decrement for later restoration to type1\+Weight\+Sets \end{DoxyCompactList}\item 
+std\+::map$<$ U\+Short\+Array, Real\+Matrix $>$ \hyperlink{classPecos_1_1HierarchSparseGridDriver_a76484c1349edf58640be2caa82d99a66}{popped\+T2\+Wt\+Sets}\label{classPecos_1_1HierarchSparseGridDriver_a76484c1349edf58640be2caa82d99a66}
+
+\begin{DoxyCompactList}\small\item\em type 2 weight sets popped during decrement for later restoration to type2\+Weight\+Sets \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Derived integration driver class that generates N-\/dimensional Smolyak sparse grids for numerical evaluation of expectation integrals over independent standard random variables. 
+
+This class is used by Dakota\+::\+Non\+D\+Sparse\+Grid, but could also be used for general numerical integration of moments. It employs 1-\/D Clenshaw-\/\+Curtis, Newton-\/\+Cotes, and Gaussian quadrature rules within Smolyak sparse grids. 
+
+\subsection{Member Function Documentation}
+\index{Pecos\+::\+Hierarch\+Sparse\+Grid\+Driver@{Pecos\+::\+Hierarch\+Sparse\+Grid\+Driver}!compute\+\_\+points\+\_\+weights@{compute\+\_\+points\+\_\+weights}}
+\index{compute\+\_\+points\+\_\+weights@{compute\+\_\+points\+\_\+weights}!Pecos\+::\+Hierarch\+Sparse\+Grid\+Driver@{Pecos\+::\+Hierarch\+Sparse\+Grid\+Driver}}
+\subsubsection[{\texorpdfstring{compute\+\_\+points\+\_\+weights(\+Real\+Matrix \&pts, Real\+Vector2\+D\+Array \&t1\+\_\+wts, Real\+Matrix2\+D\+Array \&t2\+\_\+wts)}{compute_points_weights(RealMatrix &pts, RealVector2DArray &t1_wts, RealMatrix2DArray &t2_wts)}}]{\setlength{\rightskip}{0pt plus 5cm}void compute\+\_\+points\+\_\+weights (
+\begin{DoxyParamCaption}
+\item[{Real\+Matrix \&}]{pts, }
+\item[{Real\+Vector2\+D\+Array \&}]{t1\+\_\+wts, }
+\item[{Real\+Matrix2\+D\+Array \&}]{t2\+\_\+wts}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classPecos_1_1HierarchSparseGridDriver_a32c1b2db7b05e83d49b266876e9773ff}
+
+
+compute points and weights for all levels of the (initial) sparse grid 
+
+Points are collapsed as required for compute\+\_\+grid(var\+\_\+sets), but t1/t2 weights are hierarchical 2D arrays. 
+
+References Hierarch\+Sparse\+Grid\+Driver\+::colloc\+Key, Hierarch\+Sparse\+Grid\+Driver\+::compute\+\_\+points\+\_\+weights(), Integration\+Driver\+::num\+Vars, and Hierarch\+Sparse\+Grid\+Driver\+::smolyak\+Multi\+Index.
+
+
+
+\subsection{Member Data Documentation}
+\index{Pecos\+::\+Hierarch\+Sparse\+Grid\+Driver@{Pecos\+::\+Hierarch\+Sparse\+Grid\+Driver}!smolyak\+Multi\+Index@{smolyak\+Multi\+Index}}
+\index{smolyak\+Multi\+Index@{smolyak\+Multi\+Index}!Pecos\+::\+Hierarch\+Sparse\+Grid\+Driver@{Pecos\+::\+Hierarch\+Sparse\+Grid\+Driver}}
+\subsubsection[{\texorpdfstring{smolyak\+Multi\+Index}{smolyakMultiIndex}}]{\setlength{\rightskip}{0pt plus 5cm}U\+Short3\+D\+Array smolyak\+Multi\+Index\hspace{0.3cm}{\ttfamily [private]}}\label{classPecos_1_1HierarchSparseGridDriver_a1899fc99ce06e7d1dab0c21445725cba}
+
+
+interpolation depth by index set by num\+Vars array for identifying the index to use within the polynomial\+Basis for a particular variable 
+
+The index sets correspond to j (0-\/based) for use as indices, which are offset from the i indices (1-\/based) normally used in the Smolyak expressions. The indices correspond to levels, one within each anisotropic tensor-\/product integration of a Smolyak recursion. 
+
+Referenced by Hierarch\+Sparse\+Grid\+Driver\+::compute\+\_\+grid\+\_\+increment(), Hierarch\+Sparse\+Grid\+Driver\+::compute\+\_\+points\+\_\+weights(), Hierarch\+Sparse\+Grid\+Driver\+::finalize\+\_\+sets(), Hierarch\+Sparse\+Grid\+Driver\+::grid\+\_\+size(), Hierarch\+Sparse\+Grid\+Driver\+::initialize\+\_\+sets(), Hierarch\+Sparse\+Grid\+Driver\+::partition\+\_\+keys(), Hierarch\+Sparse\+Grid\+Driver\+::pop\+\_\+trial\+\_\+set(), Hierarch\+Sparse\+Grid\+Driver\+::print\+\_\+smolyak\+\_\+multi\+\_\+index(), Hierarch\+Sparse\+Grid\+Driver\+::push\+\_\+trial\+\_\+set(), Hierarch\+Sparse\+Grid\+Driver\+::restore\+\_\+grid(), Hierarch\+Sparse\+Grid\+Driver\+::smolyak\+\_\+multi\+\_\+index(), Hierarch\+Sparse\+Grid\+Driver\+::store\+\_\+grid(), Hierarch\+Sparse\+Grid\+Driver\+::swap\+\_\+grid(), and Hierarch\+Sparse\+Grid\+Driver\+::trial\+\_\+set().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Hierarch\+Sparse\+Grid\+Driver.\+hpp\item 
+Hierarch\+Sparse\+Grid\+Driver.\+cpp\end{DoxyCompactItemize}

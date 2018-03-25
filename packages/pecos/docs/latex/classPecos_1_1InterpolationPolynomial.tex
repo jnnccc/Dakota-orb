@@ -1,0 +1,55 @@
+\section{Interpolation\+Polynomial Class Reference}
+\label{classPecos_1_1InterpolationPolynomial}\index{Interpolation\+Polynomial@{Interpolation\+Polynomial}}
+
+
+Derived basis polynomial class for 1-\/D Lagrange interpolation polynomials.  
+
+
+Inheritance diagram for Interpolation\+Polynomial\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classPecos_1_1InterpolationPolynomial}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPecos_1_1InterpolationPolynomial_a600a8ab653342299615a8c494aa33a5c}{Interpolation\+Polynomial} ()\label{classPecos_1_1InterpolationPolynomial_a600a8ab653342299615a8c494aa33a5c}
+
+\begin{DoxyCompactList}\small\item\em default constructor \end{DoxyCompactList}\item 
+\hyperlink{classPecos_1_1InterpolationPolynomial_a032b69c7d11f948db8cdef4e44d81f25}{Interpolation\+Polynomial} (const Real\+Array \&interp\+\_\+pts)\label{classPecos_1_1InterpolationPolynomial_a032b69c7d11f948db8cdef4e44d81f25}
+
+\begin{DoxyCompactList}\small\item\em standard constructor \end{DoxyCompactList}\item 
+virtual \hyperlink{classPecos_1_1InterpolationPolynomial_a3fc5373ce7b55a154e2b21ea7a75098b}{$\sim$\+Interpolation\+Polynomial} ()\label{classPecos_1_1InterpolationPolynomial_a3fc5373ce7b55a154e2b21ea7a75098b}
+
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\item 
+virtual void \hyperlink{classPecos_1_1InterpolationPolynomial_a9a5fd3dc945d15c8423dc66dcd137b4f}{precompute\+\_\+data} ()\label{classPecos_1_1InterpolationPolynomial_a9a5fd3dc945d15c8423dc66dcd137b4f}
+
+\begin{DoxyCompactList}\small\item\em precompute data that is reused repeatedly within interpolation \end{DoxyCompactList}\item 
+size\+\_\+t \hyperlink{classPecos_1_1InterpolationPolynomial_a3122d8fb10bc54de12fde87cffdf8fee}{interpolation\+\_\+size} () const \label{classPecos_1_1InterpolationPolynomial_a3122d8fb10bc54de12fde87cffdf8fee}
+
+\begin{DoxyCompactList}\small\item\em get size of interp\+Pts \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1InterpolationPolynomial_a6babe691e74f48a1b3597132cc739223}{interpolation\+\_\+points} (const Real\+Array \&interp\+\_\+pts)\label{classPecos_1_1InterpolationPolynomial_a6babe691e74f48a1b3597132cc739223}
+
+\begin{DoxyCompactList}\small\item\em set interp\+Pts \end{DoxyCompactList}\item 
+const Real\+Array \& \hyperlink{classPecos_1_1InterpolationPolynomial_af8e63614c42281644c4c0e099fb3e1f8}{interpolation\+\_\+points} () const \label{classPecos_1_1InterpolationPolynomial_af8e63614c42281644c4c0e099fb3e1f8}
+
+\begin{DoxyCompactList}\small\item\em get interp\+Pts \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Real\+Array \hyperlink{classPecos_1_1InterpolationPolynomial_ae944308ccb32a77df689397d462470b4}{interp\+Pts}\label{classPecos_1_1InterpolationPolynomial_ae944308ccb32a77df689397d462470b4}
+
+\begin{DoxyCompactList}\small\item\em set of 1-\/D interpolation points\+: the i\+\_\+th interpolation polynomial evaluated at the j\+\_\+th interpolation point produces Kronecker delta\+\_\+ij \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Derived basis polynomial class for 1-\/D Lagrange interpolation polynomials. 
+
+The \hyperlink{classPecos_1_1InterpolationPolynomial}{Interpolation\+Polynomial} class evaluates a univariate interpolation polynomial. It enables multidimensional interpolants within \hyperlink{classPecos_1_1InterpPolyApproximation}{Interp\+Poly\+Approximation}. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Interpolation\+Polynomial.\+hpp\item 
+Interpolation\+Polynomial.\+cpp\end{DoxyCompactItemize}

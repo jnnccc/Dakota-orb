@@ -1,0 +1,394 @@
+\section{Orthog\+Poly\+Approximation Class Reference}
+\label{classPecos_1_1OrthogPolyApproximation}\index{Orthog\+Poly\+Approximation@{Orthog\+Poly\+Approximation}}
+
+
+Derived approximation class for orthogonal polynomials (global approximation).  
+
+
+Inheritance diagram for Orthog\+Poly\+Approximation\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classPecos_1_1OrthogPolyApproximation}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPecos_1_1OrthogPolyApproximation_ac035faa53ad34098ac86dbd6b71e65ee}{Orthog\+Poly\+Approximation} (const \hyperlink{classPecos_1_1SharedBasisApproxData}{Shared\+Basis\+Approx\+Data} \&shared\+\_\+data)\label{classPecos_1_1OrthogPolyApproximation_ac035faa53ad34098ac86dbd6b71e65ee}
+
+\begin{DoxyCompactList}\small\item\em default constructor \end{DoxyCompactList}\item 
+\hyperlink{classPecos_1_1OrthogPolyApproximation_a50dc870dba75b5030aeb9870e5e6aa3c}{$\sim$\+Orthog\+Poly\+Approximation} ()\label{classPecos_1_1OrthogPolyApproximation_a50dc870dba75b5030aeb9870e5e6aa3c}
+
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\item 
+virtual size\+\_\+t \hyperlink{classPecos_1_1OrthogPolyApproximation_a1472574cce875722141b69b4eb629572}{expansion\+\_\+terms} () const 
+\begin{DoxyCompactList}\small\item\em retrieve number of terms in the orthogonal polynomial expansion \end{DoxyCompactList}\item 
+virtual const Real\+Vector \& \hyperlink{classPecos_1_1OrthogPolyApproximation_af479d04cda6ec328a589f1b63ddb37eb}{dimension\+\_\+decay\+\_\+rates} ()\label{classPecos_1_1OrthogPolyApproximation_af479d04cda6ec328a589f1b63ddb37eb}
+
+\begin{DoxyCompactList}\small\item\em estimate chaos expansion coefficient decay rates for each random variable dimension using linear least squares in semilog space \end{DoxyCompactList}\item 
+void {\bfseries basis\+\_\+matrix} (const Real\+Matrix \&x, Real\+Matrix \&basis\+\_\+values)\label{classPecos_1_1OrthogPolyApproximation_ad7879e5a6e4cc3acfd6e26cb25edefde}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{classPecos_1_1OrthogPolyApproximation_a737da4973b81df7d2f3f035bde58e4e7}{basis\+\_\+value} (const Real\+Vector \&x, std\+::vector$<$ \hyperlink{classPecos_1_1BasisPolynomial}{Basis\+Polynomial} $>$ \&polynomial\+\_\+basis, const U\+Short2\+D\+Array \&multi\+\_\+index, Real\+Vector \&basis\+\_\+values)\label{classPecos_1_1OrthogPolyApproximation_a737da4973b81df7d2f3f035bde58e4e7}
+
+\begin{DoxyCompactList}\small\item\em evaluate all pce basis functions at a single point \end{DoxyCompactList}\item 
+static void \hyperlink{classPecos_1_1OrthogPolyApproximation_a9e7918f42d9c8b52624750ee4882495e}{basis\+\_\+matrix} (const Real\+Matrix \&x, std\+::vector$<$ \hyperlink{classPecos_1_1BasisPolynomial}{Basis\+Polynomial} $>$ \&polynomial\+\_\+basis, const U\+Short2\+D\+Array \&multi\+\_\+index, Real\+Matrix \&basis\+\_\+values)\label{classPecos_1_1OrthogPolyApproximation_a9e7918f42d9c8b52624750ee4882495e}
+
+\begin{DoxyCompactList}\small\item\em evaluate all pce basis functions at a set of points \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classPecos_1_1OrthogPolyApproximation_ac789358ee49633613d6c97593be06f9d}{min\+\_\+coefficients} () const \label{classPecos_1_1OrthogPolyApproximation_ac789358ee49633613d6c97593be06f9d}
+
+\begin{DoxyCompactList}\small\item\em return the minimum number of samples (unknowns) required to build the derived class approximation type in num\+Vars dimensions \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1OrthogPolyApproximation_abc17a7104c33d8146f4a0ee7b6c6f37a}{store\+\_\+coefficients} (size\+\_\+t index=\+\_\+\+N\+P\+OS)\label{classPecos_1_1OrthogPolyApproximation_abc17a7104c33d8146f4a0ee7b6c6f37a}
+
+\begin{DoxyCompactList}\small\item\em store the current coefficients for later combination \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1OrthogPolyApproximation_ad05b093ee96314c9e05bad8e06c2dae7}{restore\+\_\+coefficients} (size\+\_\+t index=\+\_\+\+N\+P\+OS)\label{classPecos_1_1OrthogPolyApproximation_ad05b093ee96314c9e05bad8e06c2dae7}
+
+\begin{DoxyCompactList}\small\item\em restore a previously stored coefficient state \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1OrthogPolyApproximation_a859795ba714d81e821bec254479135ee}{swap\+\_\+coefficients} (size\+\_\+t maximal\+\_\+index)\label{classPecos_1_1OrthogPolyApproximation_a859795ba714d81e821bec254479135ee}
+
+\begin{DoxyCompactList}\small\item\em swap the current coefficients with a previously stored set \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1OrthogPolyApproximation_a63d12cc6021fda4896b8738d72dfcc86}{remove\+\_\+stored\+\_\+coefficients} (size\+\_\+t index=\+\_\+\+N\+P\+OS)\label{classPecos_1_1OrthogPolyApproximation_a63d12cc6021fda4896b8738d72dfcc86}
+
+\begin{DoxyCompactList}\small\item\em remove a redundant stored entry prior to combine\+\_\+coefficients (default is pop\+\_\+back) \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1OrthogPolyApproximation_ae4337960917eda26a5672e5c6afbb62a}{clear\+\_\+stored} ()\label{classPecos_1_1OrthogPolyApproximation_ae4337960917eda26a5672e5c6afbb62a}
+
+\begin{DoxyCompactList}\small\item\em clear stored approximation data \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1OrthogPolyApproximation_a7c794213befc83c9f90137f22e4cd39d}{combine\+\_\+coefficients} (size\+\_\+t swap\+\_\+index)\label{classPecos_1_1OrthogPolyApproximation_a7c794213befc83c9f90137f22e4cd39d}
+
+\begin{DoxyCompactList}\small\item\em combine the current coefficients with a previously stored set \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1OrthogPolyApproximation_a4beb4a3300443171ac2233e87c970e39}{print\+\_\+coefficients} (std\+::ostream \&s, bool normalized)\label{classPecos_1_1OrthogPolyApproximation_a4beb4a3300443171ac2233e87c970e39}
+
+\begin{DoxyCompactList}\small\item\em print the coefficient array computed in \hyperlink{classPecos_1_1PolynomialApproximation_aef8f0c32bdeff7756a9c614607c03058}{compute\+\_\+coefficients()} \end{DoxyCompactList}\item 
+Real\+Vector \hyperlink{classPecos_1_1OrthogPolyApproximation_ac64f16ff9fbfb80c4bafa969b4a92e1d}{approximation\+\_\+coefficients} (bool normalized) const \label{classPecos_1_1OrthogPolyApproximation_ac64f16ff9fbfb80c4bafa969b4a92e1d}
+
+\begin{DoxyCompactList}\small\item\em retrieve or form a set of dense coefficients that correspond to \hyperlink{classPecos_1_1SharedOrthogPolyApproxData_a0fbdd5817bc6dd026f6d42269ca8e703}{Shared\+Orthog\+Poly\+Approx\+Data\+::multi\+Index} \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1OrthogPolyApproximation_a2e7b82322962df3fd036b9e0783d8fc9}{approximation\+\_\+coefficients} (const Real\+Vector \&approx\+\_\+coeffs, bool normalized)\label{classPecos_1_1OrthogPolyApproximation_a2e7b82322962df3fd036b9e0783d8fc9}
+
+\begin{DoxyCompactList}\small\item\em set an array of dense coefficients corresponding to \hyperlink{classPecos_1_1SharedOrthogPolyApproxData_a0fbdd5817bc6dd026f6d42269ca8e703}{Shared\+Orthog\+Poly\+Approx\+Data\+::multi\+Index} \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1OrthogPolyApproximation_acbb94332d149ea052464dac73321ddcf}{coefficient\+\_\+labels} (std\+::vector$<$ std\+::string $>$ \&all\+\_\+coeff\+\_\+tags) const \label{classPecos_1_1OrthogPolyApproximation_acbb94332d149ea052464dac73321ddcf}
+
+\begin{DoxyCompactList}\small\item\em retrieve a vector of coefficient label strings, one per expansion term \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1OrthogPolyApproximation_a37ef37829b412fefa40d53b395846781}{allocate\+\_\+arrays} ()\label{classPecos_1_1OrthogPolyApproximation_a37ef37829b412fefa40d53b395846781}
+
+\begin{DoxyCompactList}\small\item\em initialize multi\+Index, expansion\+Coeffs, et al. \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1OrthogPolyApproximation_abec3f45a112004b53f83b3a03e0d06db}{compute\+\_\+component\+\_\+sobol} ()\label{classPecos_1_1OrthogPolyApproximation_abec3f45a112004b53f83b3a03e0d06db}
+
+\begin{DoxyCompactList}\small\item\em Performs global sensitivity analysis via variance-\/based decomposition; computes component (main and interaction) Sobol\textquotesingle{} indices. \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1OrthogPolyApproximation_ada0deadfa2c3202ed4e58d066ee079f2}{compute\+\_\+total\+\_\+sobol} ()\label{classPecos_1_1OrthogPolyApproximation_ada0deadfa2c3202ed4e58d066ee079f2}
+
+\begin{DoxyCompactList}\small\item\em Performs global sensitivity analysis via variance-\/based decomposition; computes total Sobol\textquotesingle{} indices. \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1OrthogPolyApproximation_a7bc9dcdf32fc46f97e286268c1ac51b0}{value} (const Real\+Vector \&x)\label{classPecos_1_1OrthogPolyApproximation_a7bc9dcdf32fc46f97e286268c1ac51b0}
+
+\begin{DoxyCompactList}\small\item\em retrieve the approximate function value for a given parameter vector \end{DoxyCompactList}\item 
+const Real\+Vector \& \hyperlink{classPecos_1_1OrthogPolyApproximation_ae3b6ea541392b74cf0cc8758e206277c}{gradient\+\_\+basis\+\_\+variables} (const Real\+Vector \&x)\label{classPecos_1_1OrthogPolyApproximation_ae3b6ea541392b74cf0cc8758e206277c}
+
+\begin{DoxyCompactList}\small\item\em retrieve the gradient for a response expansion with respect to all variables included in the polynomial bases using the given parameter vector and default D\+VV \end{DoxyCompactList}\item 
+const Real\+Vector \& \hyperlink{classPecos_1_1OrthogPolyApproximation_a3ffb563ae1658344bfc2ad882def9e7c}{gradient\+\_\+basis\+\_\+variables} (const Real\+Vector \&x, const Sizet\+Array \&dvv)\label{classPecos_1_1OrthogPolyApproximation_a3ffb563ae1658344bfc2ad882def9e7c}
+
+\begin{DoxyCompactList}\small\item\em retrieve the gradient for a response expansion with respect to variables included in the polynomial basis for a given parameter vector and a given D\+VV subset \end{DoxyCompactList}\item 
+const Real\+Vector \& \hyperlink{classPecos_1_1OrthogPolyApproximation_a518e8604f973a4b161a9b5718a0aa25e}{gradient\+\_\+nonbasis\+\_\+variables} (const Real\+Vector \&x)\label{classPecos_1_1OrthogPolyApproximation_a518e8604f973a4b161a9b5718a0aa25e}
+
+\begin{DoxyCompactList}\small\item\em retrieve the gradient for a response expansion with respect to all variables not included in the polynomial bases (nonprobabilistic variables such as design or epistemic when not in \char`\"{}all\char`\"{} mode) using the given parameter vector and default D\+VV \end{DoxyCompactList}\item 
+const Real\+Sym\+Matrix \& \hyperlink{classPecos_1_1OrthogPolyApproximation_a830729654265d84af637960f8c63f2bc}{hessian\+\_\+basis\+\_\+variables} (const Real\+Vector \&x)\label{classPecos_1_1OrthogPolyApproximation_a830729654265d84af637960f8c63f2bc}
+
+\begin{DoxyCompactList}\small\item\em retrieve the Hessian of the response expansion with respect to all variables included in the polynomial basis (e.\+g., probabilistic variables) for a given parameter vector \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1OrthogPolyApproximation_a1abe918dbdc66ac0fde85f1ab3c061af}{stored\+\_\+value} (const Real\+Vector \&x, size\+\_\+t index)\label{classPecos_1_1OrthogPolyApproximation_a1abe918dbdc66ac0fde85f1ab3c061af}
+
+\begin{DoxyCompactList}\small\item\em retrieve the response value for a stored expansion using the given parameter vector \end{DoxyCompactList}\item 
+const Real\+Vector \& \hyperlink{classPecos_1_1OrthogPolyApproximation_a7689fc058e2efdde6ce4dfe898864592}{stored\+\_\+gradient\+\_\+basis\+\_\+variables} (const Real\+Vector \&x, size\+\_\+t index)\label{classPecos_1_1OrthogPolyApproximation_a7689fc058e2efdde6ce4dfe898864592}
+
+\begin{DoxyCompactList}\small\item\em retrieve the response gradient for a stored expansion with respect to all variables included in the polynomial bases; evaluate for the given parameter vector. \end{DoxyCompactList}\item 
+const Real\+Vector \& \hyperlink{classPecos_1_1OrthogPolyApproximation_af0c9184d9a0da7b0e3d0d3ecbfc8f434}{stored\+\_\+gradient\+\_\+nonbasis\+\_\+variables} (const Real\+Vector \&x, size\+\_\+t index)\label{classPecos_1_1OrthogPolyApproximation_af0c9184d9a0da7b0e3d0d3ecbfc8f434}
+
+\begin{DoxyCompactList}\small\item\em retrieve the response gradient for a stored expansion with respect to all variables not included in the polynomial bases; evaluate for the given parameter vector. \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1OrthogPolyApproximation_adc6f262952d05a33ff68cae37929cbb2}{mean} ()
+\item 
+Real \hyperlink{classPecos_1_1OrthogPolyApproximation_aed107df248a4555c052446fbc10a8e61}{mean} (const Real\+Vector \&x)
+\item 
+const Real\+Vector \& \hyperlink{classPecos_1_1OrthogPolyApproximation_a069c87a26fdb4b09af68db26abd646a0}{mean\+\_\+gradient} ()
+\item 
+const Real\+Vector \& \hyperlink{classPecos_1_1OrthogPolyApproximation_a24f2edc21c9887121cda78faae1c1475}{mean\+\_\+gradient} (const Real\+Vector \&x, const Sizet\+Array \&dvv)
+\item 
+Real \hyperlink{classPecos_1_1OrthogPolyApproximation_a38f6da77468be17e02ce38af2c0976c3}{variance} ()
+\item 
+Real \hyperlink{classPecos_1_1OrthogPolyApproximation_acbdcb523a161d7d3a5cc190796e84ede}{variance} (const Real\+Vector \&x)
+\item 
+const Real\+Vector \& \hyperlink{classPecos_1_1OrthogPolyApproximation_ae898fc2f42f1077268f89fc2e9f2c71c}{variance\+\_\+gradient} ()
+\item 
+const Real\+Vector \& \hyperlink{classPecos_1_1OrthogPolyApproximation_a791e127a445f8a6c9c3a7966d12c1431}{variance\+\_\+gradient} (const Real\+Vector \&x, const Sizet\+Array \&dvv)
+\item 
+Real \hyperlink{classPecos_1_1OrthogPolyApproximation_ac0085912d4abb9caa3f480b9c6778c0e}{covariance} (\hyperlink{classPecos_1_1PolynomialApproximation}{Polynomial\+Approximation} $\ast$poly\+\_\+approx\+\_\+2)\label{classPecos_1_1OrthogPolyApproximation_ac0085912d4abb9caa3f480b9c6778c0e}
+
+\begin{DoxyCompactList}\small\item\em return the covariance between two response expansions, treating all variables as random \end{DoxyCompactList}\item 
+Real \hyperlink{classPecos_1_1OrthogPolyApproximation_afc1731a3d89818d49c03a3c20a7a2898}{covariance} (const Real\+Vector \&x, \hyperlink{classPecos_1_1PolynomialApproximation}{Polynomial\+Approximation} $\ast$poly\+\_\+approx\+\_\+2)\label{classPecos_1_1OrthogPolyApproximation_afc1731a3d89818d49c03a3c20a7a2898}
+
+\begin{DoxyCompactList}\small\item\em return the covariance between two response expansions for a given parameter vector, treating a subset of the variables as random \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1OrthogPolyApproximation_a5926c67431b0fc223fcfa6c11cb9de14}{compute\+\_\+moments} (bool full\+\_\+stats=true)\label{classPecos_1_1OrthogPolyApproximation_a5926c67431b0fc223fcfa6c11cb9de14}
+
+\begin{DoxyCompactList}\small\item\em compute expansion moments to order 2 \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1OrthogPolyApproximation_a2a6098ab4416bdcfdeadea5d46aa5f52}{compute\+\_\+moments} (const Real\+Vector \&x, bool full\+\_\+stats=true)\label{classPecos_1_1OrthogPolyApproximation_a2a6098ab4416bdcfdeadea5d46aa5f52}
+
+\begin{DoxyCompactList}\small\item\em compute expansion moments in all-\/variables mode to order 2 \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1OrthogPolyApproximation_a425685016976e6863c98b837883fa038}{size\+\_\+expansion} ()\label{classPecos_1_1OrthogPolyApproximation_a425685016976e6863c98b837883fa038}
+
+\begin{DoxyCompactList}\small\item\em size expansion\{Coeffs,Coeff\+Grads\} based on multi\+Index \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1OrthogPolyApproximation_a276dc60aec886932d86fd04e9698b63e}{size\+\_\+expansion} (size\+\_\+t num\+\_\+exp\+\_\+terms)\label{classPecos_1_1OrthogPolyApproximation_a276dc60aec886932d86fd04e9698b63e}
+
+\begin{DoxyCompactList}\small\item\em size expansion\{Coeffs,Coeff\+Grads\} based on multi\+Index \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1OrthogPolyApproximation_a9f739bb549630d4cc9ab914a17e16bd2}{resize\+\_\+expansion} ()\label{classPecos_1_1OrthogPolyApproximation_a9f739bb549630d4cc9ab914a17e16bd2}
+
+\begin{DoxyCompactList}\small\item\em synchronize expansion\{Coeffs,Coeff\+Grads\} with an updated multi\+Index \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1OrthogPolyApproximation_a5a7788b54991f0fa67d94eab7e9ef2a4}{resize\+\_\+expansion} (size\+\_\+t num\+\_\+exp\+\_\+terms)\label{classPecos_1_1OrthogPolyApproximation_a5a7788b54991f0fa67d94eab7e9ef2a4}
+
+\begin{DoxyCompactList}\small\item\em synchronize expansion\{Coeffs,Coeff\+Grads\} with an updated multi\+Index \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1OrthogPolyApproximation_a13c9bb4f0e799548d14f99a386bd34bb}{overlay\+\_\+expansion} (const Sizet\+Array \&multi\+\_\+index\+\_\+map, const Real\+Vector \&exp\+\_\+coeffs, const Real\+Matrix \&exp\+\_\+grads, int coeff)\label{classPecos_1_1OrthogPolyApproximation_a13c9bb4f0e799548d14f99a386bd34bb}
+
+\begin{DoxyCompactList}\small\item\em overlay the passed expansion with the aggregate expansion\{Coeffs,Coeff\+Grads\} as managed by the multi\+\_\+index\+\_\+map \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1OrthogPolyApproximation_ac55b330e5744fa8285ccae30dc691b13}{multiply\+\_\+expansion} (const U\+Short2\+D\+Array \&multi\+\_\+index\+\_\+b, const Real\+Vector \&exp\+\_\+coeffs\+\_\+b, const Real\+Matrix \&exp\+\_\+grads\+\_\+b, const U\+Short2\+D\+Array \&multi\+\_\+index\+\_\+c)\label{classPecos_1_1OrthogPolyApproximation_ac55b330e5744fa8285ccae30dc691b13}
+
+\begin{DoxyCompactList}\small\item\em multiply current expansion (\char`\"{}a\char`\"{}) with incoming expansion (\char`\"{}b\char`\"{}) and store in product expansion (\char`\"{}c\char`\"{}) \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1OrthogPolyApproximation_af98a9d8fd7b1b89052ce747c0ef483e4}{fail\+\_\+booleans} (Sizet\+Short\+Map\+::const\+\_\+iterator \&fit, size\+\_\+t j, bool \&add\+\_\+val, bool \&add\+\_\+grad)\label{classPecos_1_1OrthogPolyApproximation_af98a9d8fd7b1b89052ce747c0ef483e4}
+
+\begin{DoxyCompactList}\small\item\em update add\+\_\+val and add\+\_\+gradient based on surr\+Data\textquotesingle{}s failure map \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1OrthogPolyApproximation_a058505591316662aceef75a581e99db1}{integration\+\_\+checks} ()\label{classPecos_1_1OrthogPolyApproximation_a058505591316662aceef75a581e99db1}
+
+\begin{DoxyCompactList}\small\item\em perform sanity checks prior to numerical integration \end{DoxyCompactList}\item 
+void \hyperlink{classPecos_1_1OrthogPolyApproximation_ac321b5b2615931ac6032fc11521f58dd}{solve\+\_\+decay\+\_\+rates} (Real\+Vector\+Array \&A\+\_\+vectors, Real\+Vector\+Array \&b\+\_\+vectors, U\+Short\+Array \&max\+\_\+orders)\label{classPecos_1_1OrthogPolyApproximation_ac321b5b2615931ac6032fc11521f58dd}
+
+\begin{DoxyCompactList}\small\item\em utility function for solving the least squares estimation of decay rates \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Real\+Vector \hyperlink{classPecos_1_1OrthogPolyApproximation_a2f49361bc93de38b3804a32d14ec9da2}{expansion\+Coeffs}\label{classPecos_1_1OrthogPolyApproximation_a2f49361bc93de38b3804a32d14ec9da2}
+
+\begin{DoxyCompactList}\small\item\em the coefficients of the expansion \end{DoxyCompactList}\item 
+Real\+Matrix \hyperlink{classPecos_1_1OrthogPolyApproximation_aafa9e6fb757964c3ce070ae4f980b6af}{expansion\+Coeff\+Grads}
+\begin{DoxyCompactList}\small\item\em the gradients of the expansion coefficients \end{DoxyCompactList}\item 
+Real\+Vector\+Array \hyperlink{classPecos_1_1OrthogPolyApproximation_a644b1a5bba418a7f83d3222881eb701d}{stored\+Exp\+Coeffs}\label{classPecos_1_1OrthogPolyApproximation_a644b1a5bba418a7f83d3222881eb701d}
+
+\begin{DoxyCompactList}\small\item\em copies of expansion\+Coeffs stored in \hyperlink{classPecos_1_1OrthogPolyApproximation_abc17a7104c33d8146f4a0ee7b6c6f37a}{store\+\_\+coefficients()} for use in \hyperlink{classPecos_1_1OrthogPolyApproximation_a7c794213befc83c9f90137f22e4cd39d}{combine\+\_\+coefficients()} \end{DoxyCompactList}\item 
+Real\+Matrix\+Array \hyperlink{classPecos_1_1OrthogPolyApproximation_acbc4f397b56c437fd8c956c59ae081d8}{stored\+Exp\+Coeff\+Grads}\label{classPecos_1_1OrthogPolyApproximation_acbc4f397b56c437fd8c956c59ae081d8}
+
+\begin{DoxyCompactList}\small\item\em copies of expansion\+Coeff\+Grads stored in \hyperlink{classPecos_1_1OrthogPolyApproximation_abc17a7104c33d8146f4a0ee7b6c6f37a}{store\+\_\+coefficients()} for use in \hyperlink{classPecos_1_1OrthogPolyApproximation_a7c794213befc83c9f90137f22e4cd39d}{combine\+\_\+coefficients()} \end{DoxyCompactList}\item 
+Real\+Vector \hyperlink{classPecos_1_1OrthogPolyApproximation_a4dff847cf479b3d67e81aec3937c9935}{decay\+Rates}\label{classPecos_1_1OrthogPolyApproximation_a4dff847cf479b3d67e81aec3937c9935}
+
+\begin{DoxyCompactList}\small\item\em spectral coefficient decay rates estimated by L\+LS on log of univariate expansion coefficients \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries normalize} (const Real\+Vector \&std\+\_\+coeffs, Real\+Vector \&normalized\+\_\+coeffs) const \label{classPecos_1_1OrthogPolyApproximation_a8a62e62c51b185aa0cfe519a560ea413}
+
+\item 
+void {\bfseries denormalize} (const Real\+Vector \&normalized\+\_\+coeffs, Real\+Vector \&std\+\_\+coeffs) const \label{classPecos_1_1OrthogPolyApproximation_a6c3eb9538c7d44af423d8af4660364d6}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Derived approximation class for orthogonal polynomials (global approximation). 
+
+The \hyperlink{classPecos_1_1OrthogPolyApproximation}{Orthog\+Poly\+Approximation} class provides a global approximation based on orthogonal polynomials. It is used primarily for polynomial chaos expansions (for stochastic finite element approaches to uncertainty quantification). 
+
+\subsection{Member Function Documentation}
+\index{Pecos\+::\+Orthog\+Poly\+Approximation@{Pecos\+::\+Orthog\+Poly\+Approximation}!expansion\+\_\+terms@{expansion\+\_\+terms}}
+\index{expansion\+\_\+terms@{expansion\+\_\+terms}!Pecos\+::\+Orthog\+Poly\+Approximation@{Pecos\+::\+Orthog\+Poly\+Approximation}}
+\subsubsection[{\texorpdfstring{expansion\+\_\+terms() const }{expansion_terms() const }}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t expansion\+\_\+terms (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classPecos_1_1OrthogPolyApproximation_a1472574cce875722141b69b4eb629572}
+
+
+retrieve number of terms in the orthogonal polynomial expansion 
+
+default implementation if no sparsity (overridden in \hyperlink{classPecos_1_1RegressOrthogPolyApproximation}{Regress\+Orthog\+Poly\+Approximation} for CS) 
+
+Reimplemented in \hyperlink{classPecos_1_1RegressOrthogPolyApproximation_a1472574cce875722141b69b4eb629572}{Regress\+Orthog\+Poly\+Approximation}.
+
+
+
+References Shared\+Orthog\+Poly\+Approx\+Data\+::multi\+Index, and Basis\+Approximation\+::shared\+Data\+Rep.
+
+
+
+Referenced by Regress\+Orthog\+Poly\+Approximation\+::expansion\+\_\+terms(), Orthog\+Poly\+Approximation\+::resize\+\_\+expansion(), and Orthog\+Poly\+Approximation\+::size\+\_\+expansion().
+
+\index{Pecos\+::\+Orthog\+Poly\+Approximation@{Pecos\+::\+Orthog\+Poly\+Approximation}!mean@{mean}}
+\index{mean@{mean}!Pecos\+::\+Orthog\+Poly\+Approximation@{Pecos\+::\+Orthog\+Poly\+Approximation}}
+\subsubsection[{\texorpdfstring{mean()}{mean()}}]{\setlength{\rightskip}{0pt plus 5cm}Real mean (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classPecos_1_1OrthogPolyApproximation_adc6f262952d05a33ff68cae37929cbb2}
+In this case, all expansion variables are random variables and the mean of the expansion is simply the first chaos coefficient. 
+
+Implements \hyperlink{classPecos_1_1PolynomialApproximation_ae748f0525197363b2279cd36511fb791}{Polynomial\+Approximation}.
+
+
+
+References Polynomial\+Approximation\+::computed\+Mean, Polynomial\+Approximation\+::expansion\+Coeff\+Flag, Orthog\+Poly\+Approximation\+::expansion\+Coeffs, Polynomial\+Approximation\+::expansion\+Moments, Shared\+Poly\+Approx\+Data\+::non\+Random\+Indices, and Basis\+Approximation\+::shared\+Data\+Rep.
+
+
+
+Referenced by Project\+Orthog\+Poly\+Approximation\+::compute\+\_\+moments(), Orthog\+Poly\+Approximation\+::compute\+\_\+moments(), Project\+Orthog\+Poly\+Approximation\+::expectation(), Regress\+Orthog\+Poly\+Approximation\+::mean(), and Orthog\+Poly\+Approximation\+::mean().
+
+\index{Pecos\+::\+Orthog\+Poly\+Approximation@{Pecos\+::\+Orthog\+Poly\+Approximation}!mean@{mean}}
+\index{mean@{mean}!Pecos\+::\+Orthog\+Poly\+Approximation@{Pecos\+::\+Orthog\+Poly\+Approximation}}
+\subsubsection[{\texorpdfstring{mean(const Real\+Vector \&x)}{mean(const RealVector &x)}}]{\setlength{\rightskip}{0pt plus 5cm}Real mean (
+\begin{DoxyParamCaption}
+\item[{const Real\+Vector \&}]{x}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classPecos_1_1OrthogPolyApproximation_aed107df248a4555c052446fbc10a8e61}
+In this case, a subset of the expansion variables are random variables and the mean of the expansion involves evaluating the expectation over this subset. 
+
+Implements \hyperlink{classPecos_1_1PolynomialApproximation_a69da68e2a4dd4b51439150ebfe4dc239}{Polynomial\+Approximation}.
+
+
+
+Reimplemented in \hyperlink{classPecos_1_1RegressOrthogPolyApproximation_aed107df248a4555c052446fbc10a8e61}{Regress\+Orthog\+Poly\+Approximation}.
+
+
+
+References Polynomial\+Approximation\+::computed\+Mean, Polynomial\+Approximation\+::expansion\+Coeff\+Flag, Orthog\+Poly\+Approximation\+::expansion\+Coeffs, Polynomial\+Approximation\+::expansion\+Moments, Shared\+Poly\+Approx\+Data\+::match\+\_\+nonrandom\+\_\+vars(), Orthog\+Poly\+Approximation\+::mean(), Shared\+Orthog\+Poly\+Approx\+Data\+::multi\+Index, Shared\+Orthog\+Poly\+Approx\+Data\+::multivariate\+\_\+polynomial(), Shared\+Poly\+Approx\+Data\+::non\+Random\+Indices, Basis\+Approximation\+::shared\+Data\+Rep, Polynomial\+Approximation\+::x\+Prev\+Mean, and Shared\+Orthog\+Poly\+Approx\+Data\+::zero\+\_\+random().
+
+\index{Pecos\+::\+Orthog\+Poly\+Approximation@{Pecos\+::\+Orthog\+Poly\+Approximation}!mean\+\_\+gradient@{mean\+\_\+gradient}}
+\index{mean\+\_\+gradient@{mean\+\_\+gradient}!Pecos\+::\+Orthog\+Poly\+Approximation@{Pecos\+::\+Orthog\+Poly\+Approximation}}
+\subsubsection[{\texorpdfstring{mean\+\_\+gradient()}{mean_gradient()}}]{\setlength{\rightskip}{0pt plus 5cm}const Real\+Vector \& mean\+\_\+gradient (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classPecos_1_1OrthogPolyApproximation_a069c87a26fdb4b09af68db26abd646a0}
+In this function, all expansion variables are random variables and any design/state variables are omitted from the expansion. In this case, the derivative of the expectation is the expectation of the derivative. The mixed derivative case (some design variables are inserted and some are augmented) requires no special treatment. 
+
+Implements \hyperlink{classPecos_1_1PolynomialApproximation_abcb01df2fc2d4c44bab6b56ad7def50c}{Polynomial\+Approximation}.
+
+
+
+References Polynomial\+Approximation\+::computed\+Mean, Polynomial\+Approximation\+::expansion\+Coeff\+Grad\+Flag, Orthog\+Poly\+Approximation\+::expansion\+Coeff\+Grads, Polynomial\+Approximation\+::mean\+Gradient, Shared\+Poly\+Approx\+Data\+::non\+Random\+Indices, and Basis\+Approximation\+::shared\+Data\+Rep.
+
+
+
+Referenced by Regress\+Orthog\+Poly\+Approximation\+::mean(), and Regress\+Orthog\+Poly\+Approximation\+::mean\+\_\+gradient().
+
+\index{Pecos\+::\+Orthog\+Poly\+Approximation@{Pecos\+::\+Orthog\+Poly\+Approximation}!mean\+\_\+gradient@{mean\+\_\+gradient}}
+\index{mean\+\_\+gradient@{mean\+\_\+gradient}!Pecos\+::\+Orthog\+Poly\+Approximation@{Pecos\+::\+Orthog\+Poly\+Approximation}}
+\subsubsection[{\texorpdfstring{mean\+\_\+gradient(const Real\+Vector \&x, const Sizet\+Array \&dvv)}{mean_gradient(const RealVector &x, const SizetArray &dvv)}}]{\setlength{\rightskip}{0pt plus 5cm}const Real\+Vector \& mean\+\_\+gradient (
+\begin{DoxyParamCaption}
+\item[{const Real\+Vector \&}]{x, }
+\item[{const Sizet\+Array \&}]{dvv}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classPecos_1_1OrthogPolyApproximation_a24f2edc21c9887121cda78faae1c1475}
+In this function, a subset of the expansion variables are random variables and any augmented design/state variables (i.\+e., not inserted as random variable distribution parameters) are included in the expansion. In this case, the mean of the expansion is the expectation over the random subset and the derivative of the mean is the derivative of the remaining expansion over the non-\/random subset. This function must handle the mixed case, where some design/state variables are augmented (and are part of the expansion\+: derivatives are evaluated as described above) and some are inserted (derivatives are obtained from expansion\+Coeff\+Grads). 
+
+Implements \hyperlink{classPecos_1_1PolynomialApproximation_a941461d09fc3c204012a12ceda5cfdde}{Polynomial\+Approximation}.
+
+
+
+Reimplemented in \hyperlink{classPecos_1_1RegressOrthogPolyApproximation_a24f2edc21c9887121cda78faae1c1475}{Regress\+Orthog\+Poly\+Approximation}.
+
+
+
+References Polynomial\+Approximation\+::computed\+Mean, Orthog\+Poly\+Approximation\+::covariance(), Polynomial\+Approximation\+::expansion\+Coeff\+Flag, Polynomial\+Approximation\+::expansion\+Coeff\+Grad\+Flag, Orthog\+Poly\+Approximation\+::expansion\+Coeff\+Grads, Orthog\+Poly\+Approximation\+::expansion\+Coeffs, Shared\+Poly\+Approx\+Data\+::match\+\_\+nonrandom\+\_\+vars(), Polynomial\+Approximation\+::mean\+Gradient, Shared\+Orthog\+Poly\+Approx\+Data\+::multi\+Index, Shared\+Orthog\+Poly\+Approx\+Data\+::multivariate\+\_\+polynomial(), Shared\+Orthog\+Poly\+Approx\+Data\+::multivariate\+\_\+polynomial\+\_\+gradient(), Shared\+Poly\+Approx\+Data\+::non\+Random\+Indices, Shared\+Poly\+Approx\+Data\+::random\+Vars\+Key, Basis\+Approximation\+::shared\+Data\+Rep, Polynomial\+Approximation\+::x\+Prev\+Mean\+Grad, and Shared\+Orthog\+Poly\+Approx\+Data\+::zero\+\_\+random().
+
+\index{Pecos\+::\+Orthog\+Poly\+Approximation@{Pecos\+::\+Orthog\+Poly\+Approximation}!variance@{variance}}
+\index{variance@{variance}!Pecos\+::\+Orthog\+Poly\+Approximation@{Pecos\+::\+Orthog\+Poly\+Approximation}}
+\subsubsection[{\texorpdfstring{variance()}{variance()}}]{\setlength{\rightskip}{0pt plus 5cm}Real variance (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classPecos_1_1OrthogPolyApproximation_a38f6da77468be17e02ce38af2c0976c3}
+In this case, all expansion variables are random variables and the variance of the expansion is the sum over all but the first term of the coefficients squared times the polynomial norms squared. 
+
+Implements \hyperlink{classPecos_1_1PolynomialApproximation_ac20ad205d017d71c3c6b209c1dfafe6f}{Polynomial\+Approximation}.
+
+
+
+References Orthog\+Poly\+Approximation\+::covariance().
+
+
+
+Referenced by Project\+Orthog\+Poly\+Approximation\+::compute\+\_\+moments(), and Orthog\+Poly\+Approximation\+::compute\+\_\+moments().
+
+\index{Pecos\+::\+Orthog\+Poly\+Approximation@{Pecos\+::\+Orthog\+Poly\+Approximation}!variance@{variance}}
+\index{variance@{variance}!Pecos\+::\+Orthog\+Poly\+Approximation@{Pecos\+::\+Orthog\+Poly\+Approximation}}
+\subsubsection[{\texorpdfstring{variance(const Real\+Vector \&x)}{variance(const RealVector &x)}}]{\setlength{\rightskip}{0pt plus 5cm}Real variance (
+\begin{DoxyParamCaption}
+\item[{const Real\+Vector \&}]{x}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classPecos_1_1OrthogPolyApproximation_acbdcb523a161d7d3a5cc190796e84ede}
+In this case, a subset of the expansion variables are random variables and the variance of the expansion involves summations over this subset. 
+
+Implements \hyperlink{classPecos_1_1PolynomialApproximation_aa605184b6960045162f94a4f0302d95e}{Polynomial\+Approximation}.
+
+
+
+References Orthog\+Poly\+Approximation\+::approximation\+\_\+coefficients(), Orthog\+Poly\+Approximation\+::covariance(), Shared\+Orthog\+Poly\+Approx\+Data\+::multi\+Index, Shared\+Orthog\+Poly\+Approx\+Data\+::norm\+\_\+squared(), and Basis\+Approximation\+::shared\+Data\+Rep.
+
+\index{Pecos\+::\+Orthog\+Poly\+Approximation@{Pecos\+::\+Orthog\+Poly\+Approximation}!variance\+\_\+gradient@{variance\+\_\+gradient}}
+\index{variance\+\_\+gradient@{variance\+\_\+gradient}!Pecos\+::\+Orthog\+Poly\+Approximation@{Pecos\+::\+Orthog\+Poly\+Approximation}}
+\subsubsection[{\texorpdfstring{variance\+\_\+gradient()}{variance_gradient()}}]{\setlength{\rightskip}{0pt plus 5cm}const Real\+Vector \& variance\+\_\+gradient (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classPecos_1_1OrthogPolyApproximation_ae898fc2f42f1077268f89fc2e9f2c71c}
+In this function, all expansion variables are random variables and any design/state variables are omitted from the expansion. The mixed derivative case (some design variables are inserted and some are augmented) requires no special treatment. 
+
+Implements \hyperlink{classPecos_1_1PolynomialApproximation_a9d096037fca9bfcc8af60186bf6e914f}{Polynomial\+Approximation}.
+
+
+
+Reimplemented in \hyperlink{classPecos_1_1RegressOrthogPolyApproximation_ae898fc2f42f1077268f89fc2e9f2c71c}{Regress\+Orthog\+Poly\+Approximation}.
+
+
+
+References Polynomial\+Approximation\+::computed\+Variance, Polynomial\+Approximation\+::expansion\+Coeff\+Flag, Polynomial\+Approximation\+::expansion\+Coeff\+Grad\+Flag, Orthog\+Poly\+Approximation\+::expansion\+Coeff\+Grads, Orthog\+Poly\+Approximation\+::expansion\+Coeffs, Shared\+Orthog\+Poly\+Approx\+Data\+::multi\+Index, Shared\+Poly\+Approx\+Data\+::non\+Random\+Indices, Shared\+Orthog\+Poly\+Approx\+Data\+::norm\+\_\+squared(), Basis\+Approximation\+::shared\+Data\+Rep, and Polynomial\+Approximation\+::variance\+Gradient.
+
+
+
+Referenced by Regress\+Orthog\+Poly\+Approximation\+::variance\+\_\+gradient().
+
+\index{Pecos\+::\+Orthog\+Poly\+Approximation@{Pecos\+::\+Orthog\+Poly\+Approximation}!variance\+\_\+gradient@{variance\+\_\+gradient}}
+\index{variance\+\_\+gradient@{variance\+\_\+gradient}!Pecos\+::\+Orthog\+Poly\+Approximation@{Pecos\+::\+Orthog\+Poly\+Approximation}}
+\subsubsection[{\texorpdfstring{variance\+\_\+gradient(const Real\+Vector \&x, const Sizet\+Array \&dvv)}{variance_gradient(const RealVector &x, const SizetArray &dvv)}}]{\setlength{\rightskip}{0pt plus 5cm}const Real\+Vector \& variance\+\_\+gradient (
+\begin{DoxyParamCaption}
+\item[{const Real\+Vector \&}]{x, }
+\item[{const Sizet\+Array \&}]{dvv}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classPecos_1_1OrthogPolyApproximation_a791e127a445f8a6c9c3a7966d12c1431}
+In this function, a subset of the expansion variables are random variables and any augmented design/state variables (i.\+e., not inserted as random variable distribution parameters) are included in the expansion. This function must handle the mixed case, where some design/state variables are augmented (and are part of the expansion) and some are inserted (derivatives are obtained from expansion\+Coeff\+Grads). 
+
+Implements \hyperlink{classPecos_1_1PolynomialApproximation_a1222664e145d8077eea75bfff3aca15a}{Polynomial\+Approximation}.
+
+
+
+Reimplemented in \hyperlink{classPecos_1_1RegressOrthogPolyApproximation_a791e127a445f8a6c9c3a7966d12c1431}{Regress\+Orthog\+Poly\+Approximation}.
+
+
+
+References Polynomial\+Approximation\+::computed\+Variance, Polynomial\+Approximation\+::expansion\+Coeff\+Flag, Polynomial\+Approximation\+::expansion\+Coeff\+Grad\+Flag, Orthog\+Poly\+Approximation\+::expansion\+Coeff\+Grads, Orthog\+Poly\+Approximation\+::expansion\+Coeffs, Shared\+Poly\+Approx\+Data\+::match\+\_\+nonrandom\+\_\+vars(), Shared\+Poly\+Approx\+Data\+::match\+\_\+random\+\_\+key(), Shared\+Orthog\+Poly\+Approx\+Data\+::multi\+Index, Shared\+Orthog\+Poly\+Approx\+Data\+::multivariate\+\_\+polynomial(), Shared\+Orthog\+Poly\+Approx\+Data\+::multivariate\+\_\+polynomial\+\_\+gradient(), Shared\+Poly\+Approx\+Data\+::non\+Random\+Indices, Shared\+Orthog\+Poly\+Approx\+Data\+::norm\+\_\+squared(), Shared\+Poly\+Approx\+Data\+::random\+Indices, Shared\+Poly\+Approx\+Data\+::random\+Vars\+Key, Basis\+Approximation\+::shared\+Data\+Rep, Polynomial\+Approximation\+::variance\+Gradient, Polynomial\+Approximation\+::x\+Prev\+Var\+Grad, and Shared\+Orthog\+Poly\+Approx\+Data\+::zero\+\_\+random().
+
+
+
+\subsection{Member Data Documentation}
+\index{Pecos\+::\+Orthog\+Poly\+Approximation@{Pecos\+::\+Orthog\+Poly\+Approximation}!expansion\+Coeff\+Grads@{expansion\+Coeff\+Grads}}
+\index{expansion\+Coeff\+Grads@{expansion\+Coeff\+Grads}!Pecos\+::\+Orthog\+Poly\+Approximation@{Pecos\+::\+Orthog\+Poly\+Approximation}}
+\subsubsection[{\texorpdfstring{expansion\+Coeff\+Grads}{expansionCoeffGrads}}]{\setlength{\rightskip}{0pt plus 5cm}Real\+Matrix expansion\+Coeff\+Grads\hspace{0.3cm}{\ttfamily [protected]}}\label{classPecos_1_1OrthogPolyApproximation_aafa9e6fb757964c3ce070ae4f980b6af}
+
+
+the gradients of the expansion coefficients 
+
+may be interpreted as either the gradients of the expansion coefficients or the coefficients of expansions for the response gradients. This array is used when sensitivities of moments are needed with respect to variables that do not appear in the expansion (e.\+g., with respect to design or epistemic variables for an expansion only over probabilistic variables). 
+
+Referenced by Regress\+Orthog\+Poly\+Approximation\+::adapt\+\_\+regression(), Project\+Orthog\+Poly\+Approximation\+::append\+\_\+tensor\+\_\+expansions(), Regress\+Orthog\+Poly\+Approximation\+::compressed\+\_\+sensing(), Project\+Orthog\+Poly\+Approximation\+::compute\+\_\+coefficients(), Project\+Orthog\+Poly\+Approximation\+::decrement\+\_\+coefficients(), Project\+Orthog\+Poly\+Approximation\+::expectation(), Regress\+Orthog\+Poly\+Approximation\+::gradient\+\_\+nonbasis\+\_\+variables(), Orthog\+Poly\+Approximation\+::gradient\+\_\+nonbasis\+\_\+variables(), Regress\+Orthog\+Poly\+Approximation\+::mean\+\_\+gradient(), Orthog\+Poly\+Approximation\+::mean\+\_\+gradient(), Orthog\+Poly\+Approximation\+::multiply\+\_\+expansion(), Regress\+Orthog\+Poly\+Approximation\+::multiply\+\_\+expansion(), Orthog\+Poly\+Approximation\+::overlay\+\_\+expansion(), Regress\+Orthog\+Poly\+Approximation\+::overlay\+\_\+expansion(), Orthog\+Poly\+Approximation\+::resize\+\_\+expansion(), Orthog\+Poly\+Approximation\+::restore\+\_\+coefficients(), Orthog\+Poly\+Approximation\+::size\+\_\+expansion(), Orthog\+Poly\+Approximation\+::store\+\_\+coefficients(), Orthog\+Poly\+Approximation\+::swap\+\_\+coefficients(), Regress\+Orthog\+Poly\+Approximation\+::variance\+\_\+gradient(), and Orthog\+Poly\+Approximation\+::variance\+\_\+gradient().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Orthog\+Poly\+Approximation.\+hpp\item 
+Orthog\+Poly\+Approximation.\+cpp\end{DoxyCompactItemize}
