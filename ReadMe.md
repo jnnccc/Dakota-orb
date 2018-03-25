@@ -5,9 +5,8 @@
 + jnnccc@shao.ac.cn
 
 #### project planning
-project name: Dakota based planetary radio science research framework 
-Eligibility
-The aim of project is to build a general framework for planetary radio science research. Framework include solver based on Dakota(http://dakota.sandia.gov/) 
++ project name: Dakota based planetary radio science research framework 
++ The aim of project is to build a general framework for planetary radio science research. Framework include solver based on Dakota(http://dakota.sandia.gov/) 
 , modules(built-in) called by simulators and simulators which composed by researchers themselves. Motive of this work is that there exist many software for radio science
 research like GeodynII, Gmat, utopia, Mont etc. Each of these software has it's own solver, data supplier and simulator and is very complex and huge.
 The maintenance is a difficult job for these software. If there exists a general framework researcher need only  compose a simulator to do their work.
