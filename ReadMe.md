@@ -1,3 +1,9 @@
+# Dakota as a solver for planetary radio science
+
+#### Author
++ Nianchuan Jian
++ jnnccc@shao.ac.cn
+
 #### project planning
 project name: Dakota based planetary radio science research framework 
 Eligibility
