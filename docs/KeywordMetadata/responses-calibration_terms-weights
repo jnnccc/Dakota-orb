@@ -1,0 +1,14 @@
+Blurb::
+Apply different weights to each response
+
+Description:: 
+Specifies relative emphasis on residual elements: \f[ f =
+\sum_{i=1}^{n} w_i R_i^2 = \sum_{i=1}^{n} w_i (y^{Model}_i -
+y^{Data}_i)^2 \f] When scaling is also active, it is applied prior to
+weighting.
+
+Topics::	
+Examples::
+Theory::
+Faq::
+See_Also::	

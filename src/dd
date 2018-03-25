@@ -1,0 +1,57 @@
+./dakota.input.nspec:5753:    ( python {N_ifm(type,interfaceType_PYTHON_INTERFACE)}
+./dakota.input.summary:4705:	  ( python
+./dakota.xml:4624:	      <keyword id="python" name="python" code="{N_ifm(type,interfaceType_PYTHON_INTERFACE)}" label="Python Interface "  minOccurs="1" complexity="1">
+./DataInterface.hpp:54:  case PYTHON_INTERFACE:  return String("python");        break;
+./NIDR_keywds0.h:128:		{"python",8,1,3,1,kw_16},
+./NIDR_keywds.hpp:130:		{"python",8,1,3,1,kw_16,0.,0.,0,N_ifm(type,interfaceType_PYTHON_INTERFACE)},
+./NonDAdaptiveSampling.cpp:269:		//// these files with some python scripts
+./ProblemDescDB.cpp:3149:	{"python.numpy", P numpyFlag},
+./PythonInterface.cpp:38:    userNumpyFlag(problem_db.get_bool("interface.python.numpy")),
+./PythonInterface.cpp:91:  int fail_code = python_run(ac_name);
+./PythonInterface.cpp:104:int PythonInterface::python_run(const String& ac_name)
+./PythonInterface.cpp:122:  python_convert(xC, &cv);
+./PythonInterface.cpp:123:  python_convert_strlist(xCLabels, &cv_labels);
+./PythonInterface.cpp:124:  python_convert_int(xDI, xDI.length(), &div);
+./PythonInterface.cpp:125:  python_convert_strlist(xDILabels, &div_labels);
+./PythonInterface.cpp:126:  python_convert(xDR, &drv);
+./PythonInterface.cpp:127:  python_convert_strlist(xDRLabels, &drv_labels);
+./PythonInterface.cpp:128:  python_convert(xC, xDI, xDR, &av);
+./PythonInterface.cpp:129:  python_convert(xCLabels, xDILabels, xDRLabels, &av_labels);
+./PythonInterface.cpp:130:  python_convert_int(directFnASV, directFnASV.size(), &asv);
+./PythonInterface.cpp:131:  python_convert_int(directFnDVV, directFnDVV.size(), &dvv);
+./PythonInterface.cpp:134:    python_convert_strlist(analysisComponents[analysisDriverIndex], &an_comps);
+./PythonInterface.cpp:212:      Cerr << "Error (PythonInterface): Unknown error evaluating python "
+./PythonInterface.cpp:247:      if (!python_convert(obj, fnVals, numFns)) {
+./PythonInterface.cpp:258:      if (!python_convert(obj, fnGrads)) {
+./PythonInterface.cpp:269:      if (!python_convert(obj, fnHessians)){
+./PythonInterface.cpp:291:      python_convert(retVal, fnVals, numFns);
+./PythonInterface.cpp:303:python_convert_int(const ArrayT& src, Size sz, PyObject** dst)
+./PythonInterface.cpp:333:python_convert(const RealVector& src, PyObject** dst)
+./PythonInterface.cpp:364:python_convert(const RealVector& c_src, const IntVector& di_src,
+./PythonInterface.cpp:408:python_convert_strlist(const StringArrayT& src, PyObject** dst)
+./PythonInterface.cpp:424:python_convert(const StringMultiArray& c_src, const StringMultiArray& di_src,
+./PythonInterface.cpp:445:// Accepts python list or numpy array, DAKOTA RealVector,
+./PythonInterface.cpp:448:python_convert(PyObject *pyv, RealVector& rv, const int& dim)
+./PythonInterface.cpp:486:// Accepts python list or numpy array, pointer to double, e.g., view
+./PythonInterface.cpp:490:python_convert(PyObject *pyv, double *rv, const int& dim)
+./PythonInterface.cpp:530:bool PythonInterface::python_convert(PyObject *pym, RealMatrix &rm)
+./PythonInterface.cpp:558:	if (!python_convert(val, rm[i], numDerivVars))
+./PythonInterface.cpp:574:bool PythonInterface::python_convert(PyObject *pym, 
+./PythonInterface.cpp:632:python_convert(PyObject *pyma, RealSymMatrixArray &rma)
+./PythonInterface.cpp:665:	if (!python_convert(val, rma[i]))
+./PythonInterface.hpp:45:  int python_run(const String& ac_name);
+./PythonInterface.hpp:54:  bool python_convert_int(const ArrayT& src, Size size, PyObject** dst);
+./PythonInterface.hpp:56:  bool python_convert(const RealVector& src, PyObject** dst);
+./PythonInterface.hpp:59:  bool python_convert(const RealVector& c_src, const IntVector& di_src,
+./PythonInterface.hpp:63:  bool python_convert_strlist(const StringArrayT& src, PyObject** dst);
+./PythonInterface.hpp:65:  bool python_convert(const StringMultiArray& c_src, 
+./PythonInterface.hpp:68:  /// convert python [list of int or float] or [numpy array of double] to 
+./PythonInterface.hpp:70:  bool python_convert(PyObject *pyv, RealVector& rv, const int& dim);
+./PythonInterface.hpp:71:  /// convert python [list of int or float] or [numpy array of double] to 
+./PythonInterface.hpp:73:  bool python_convert(PyObject *pyv, double *rv, const int& dim);
+./PythonInterface.hpp:74:  /// convert python [list of lists of int or float] or [numpy array of dbl]
+./PythonInterface.hpp:76:  bool python_convert(PyObject *pym, RealMatrix &rm);
+./PythonInterface.hpp:77:  /// convert python [list of lists of int or float] or [numpy array of dbl]
+./PythonInterface.hpp:79:  bool python_convert(PyObject *pym, RealSymMatrix &rm);
+./PythonInterface.hpp:80:  /// convert python [list of lists of lists of int or float] or 
+./PythonInterface.hpp:82:  bool python_convert(PyObject *pyma, RealSymMatrixArray &rma);

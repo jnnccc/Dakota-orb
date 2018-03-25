@@ -1,0 +1,651 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+
+
+
+
+
+
+
+
+<head>
+  <meta name="sandia.approval_type" content="formal" />
+  <meta name="sandia.approved" content="pending" />
+  <meta name="sandia.create_date" content="unknown" />
+  <meta name="keywords" content="DAKOTA (Public) TBD" />
+  <meta name="description" content="DAKOTA (Public) Trac Pages" />
+  <link rev="owns" title="Content Owner" href="mailto:briadam@sandia.gov" />
+    <title>
+      dakota_scilab_latex.patch on Ticket #4069 – Attachment
+     – DAKOTA (Public)
+    </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link rel="search" href="/trac/dakota/search" />
+        <link rel="help" href="/trac/dakota/wiki/TracGuide" />
+        <link rel="alternate" href="/trac/dakota/raw-attachment/ticket/4069/dakota_scilab_latex.patch" type="text/x-diff; charset=iso-8859-15" title="Original Format" />
+        <link rel="up" href="/trac/dakota/ticket/4069" title="Ticket #4069" />
+        <link rel="start" href="/trac/dakota/wiki" />
+        <link rel="stylesheet" href="/trac/dakota/chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="/trac/dakota/chrome/common/css/diff.css" type="text/css" /><link rel="stylesheet" href="/trac/dakota/chrome/common/css/code.css" type="text/css" />
+        <link rel="shortcut icon" href="/trac/dakota/chrome/shared/sandia_icon.ico" type="image/x-icon" />
+        <link rel="icon" href="/trac/dakota/chrome/shared/sandia_icon.ico" type="image/x-icon" />
+      <link type="application/opensearchdescription+xml" rel="search" href="/trac/dakota/search/opensearch" title="Search DAKOTA (Public)" />
+    <script type="text/javascript" src="/trac/dakota/chrome/common/js/jquery.js"></script><script type="text/javascript" src="/trac/dakota/chrome/common/js/babel.js"></script><script type="text/javascript" src="/trac/dakota/chrome/common/js/trac.js"></script><script type="text/javascript" src="/trac/dakota/chrome/common/js/search.js"></script><script type="text/javascript" src="/trac/dakota/chrome/common/js/diff.js"></script>
+    <!--[if lt IE 7]>
+    <script type="text/javascript" src="/trac/dakota/chrome/common/js/ie_pre7_hacks.js"></script>
+    <![endif]-->
+      <script type="text/javascript" src="/trac/dakota/chrome/common/js/folding.js"></script>
+      <script type="text/javascript">
+        jQuery(document).ready(function($) {
+          $('#preview table.code').enableCollapsibleColumns($('#preview table.code thead th.content'));
+        });
+      </script>
+  <link rel="stylesheet" href="/trac/dakota/chrome/shared/snl.css" type="text/css" />
+  <style>
+    #header { margin-bottom: -73px; }
+    #sitenav {
+       clear: both;
+       color: #aaa;
+       font-size: 12px;
+       text-align: right;
+       margin-right: 10px;
+       margin-bottom: 14px;
+    }
+    #sitenav, #sitenav :link, #sitenav :visited {
+      color: #fff;
+    }
+    #sitenav :link:hover, #sitenav :visited:hover {
+      color: #333;
+      background-color: #08b; /* pulled from the background of the SNL logo */
+    }
+  </style>
+</head>
+<body>
+    <div style="background-image: url(/trac/dakota/chrome/shared/snl-banner-back.jpg);" id="banner">
+    <a id="snlbanner_link" href="http://www.sandia.gov"><img src="/trac/dakota/chrome/shared/snl-banner.gif" alt="Sandia National Laboratories" /></a>
+    <div id="header">
+    <table height="100%"><td valign="center">
+      <h1><a href="https://software.sandia.gov/trac/dakota">DAKOTA (Public)</a></h1>
+        <h2>Design and Analysis Kit for Terascale Applications<br /> </h2>
+    </td></table>
+      </div>
+    <div id="sitenav" class="nav">
+      <ul><li class="last"></li></ul>
+    </div>
+    <form name="search" id="search" action="/trac/dakota/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="Search DAKOTA (Public)" onblur="if(value==''){value='Search DAKOTA (Public)'}" onfocus="if(value=='Search DAKOTA (Public)'){value=''}" />
+          <input onclick="if (document.search.q.value == 'Search DAKOTA (Public)') document.search.q.value = ''" type="submit" value="Search" />
+        </div>
+    </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first"><a href="/trac/dakota/login">Login</a></li><li><a href="/trac/dakota/prefs">Preferences</a></li><li><a href="/trac/dakota/wiki/TracGuide">Help/Guide</a></li><li class="last"><a href="/trac/dakota/about">About Trac</a></li>
+    </ul>
+  </div>
+  </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="/trac/dakota/wiki">Wiki</a></li><li><a href="/trac/dakota/timeline">Timeline</a></li><li><a href="/trac/dakota/roadmap">Roadmap</a></li><li><a href="/trac/dakota/browser">Source</a></li><li><a href="/trac/dakota/query">Tickets</a></li><li class="last"><a href="/trac/dakota/search">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+          <ul>
+              <li class="last first"><a href="/trac/dakota/ticket/4069">Back to Ticket #4069</a></li>
+          </ul>
+        <hr />
+      </div>
+      <div id="notice" class="system-message">
+          <div id="moderation_required">Attachments you submit will be routed for moderation.  If you have an account, please <a href="/trac/dakota/login">log in</a> first.</div>
+      </div>
+    <div id="content" class="attachment">
+        <h1><a href="/trac/dakota/ticket/4069">Ticket #4069</a>: dakota_scilab_latex.patch</h1>
+        <table id="info" summary="Description">
+          <tbody>
+            <tr>
+              <th scope="col">File dakota_scilab_latex.patch,
+                <span title="9583 bytes">9.4 KB</span>
+                (added by anonymous, <a class="timeline" href="/trac/dakota/timeline?from=2011-08-30T09%3A10%3A01-06%3A00&amp;precision=second" title="2011-08-30T09:10:01-06:00 in Timeline">6 years</a> ago)</th>
+            </tr>
+            <tr>
+              <td class="message searchable">
+                
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div id="preview" class="searchable">
+          
+  <div class="diff">
+  <ul class="entries">
+      <li class="entry">
+        <h2>
+          <a>Users_Scilab_Dakota.tex</a>
+        </h2>
+        <table class="trac-diff inline" summary="Differences" cellspacing="0">
+              <colgroup><col class="lineno" /><col class="lineno" /><col class="content" /></colgroup>
+              <thead>
+                <tr>
+                  <th title="File Users_Scilab_Dakota.tex (rÃ©vision 0)">
+                  </th>
+                  <th title="File Users_Scilab_Dakota.tex (rÃ©vision 0)">
+                  </th>
+                  <td><em></em> </td>
+                </tr>
+              </thead>
+            <tbody class="add">
+                  <tr class="first">
+                          <th> </th><th>1</th><td class="r"><ins>\chapter{Scilab and Dakota}\label{scidak}</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>2</th><td class="r"><ins></ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3</th><td class="r"><ins>\section{Scilab Interfaces}\label{scidak:building}</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>4</th><td class="r"><ins></ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5</th><td class="r"><ins>Dakota has three interfaces with Scilab to solve optimization</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>6</th><td class="r"><ins>problems. Scilab is an open source computation software.</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>7</th><td class="r"><ins>For mathematics optimization, Scilab is used to evaluate some</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>8</th><td class="r"><ins>functions, like the objective function which is so important in</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>9</th><td class="r"><ins>optimization. Indeed, Dakota needs a computation software to</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>10</th><td class="r"><ins>do it. So, to optimize, Dakota calls Scilab to do the required</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>11</th><td class="r"><ins>computations. After, Dakota evaluate the Scilab results (objective</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>12</th><td class="r"><ins>function ...) at each iteration to determine if it is the</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>13</th><td class="r"><ins>solutions.</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>14</th><td class="r"><ins>The three interfaces are called Script Interface, Compiled Interface</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>15</th><td class="r"><ins>and Linked Interface. They are detailled next.</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>16</th><td class="r"><ins></ins> </td>
+                  </tr><tr>
+                          <th> </th><th>17</th><td class="r"><ins>\subsection{Scilab Script Interface} </ins> </td>
+                  </tr><tr>
+                          <th> </th><th>18</th><td class="r"><ins></ins> </td>
+                  </tr><tr>
+                          <th> </th><th>19</th><td class="r"><ins>The Script Interface directory is in examples directory.</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>20</th><td class="r"><ins>The {\tt Rosenbrock} directory contains four important files:</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>21</th><td class="r"><ins>\texttt{dakota\_cilab\_rosenbrock.in} (the DAKOTA input file),</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>22</th><td class="r"><ins>\texttt{rosenbrock.sci} (the Scilab computation code),</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>23</th><td class="r"><ins>\texttt{scilab\_rosen\_bb\_simulator.sh} (the analysis driver), and \\</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>24</th><td class="r"><ins>\texttt{scilab\_rosen\_wrapper.sci} (Scilab script).</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>25</th><td class="r"><ins></ins> </td>
+                  </tr><tr>
+                          <th> </th><th>26</th><td class="r"><ins>The \texttt{dakota\_scilab\_rosenbrock.in} file specifies the study that</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>27</th><td class="r"><ins>DAKOTA will perform and, in the interface section, describes the</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>28</th><td class="r"><ins>components to be used in performing function evaluations. In</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>29</th><td class="r"><ins>particular, it identifies \\ \texttt{scilab\_rosen\_bb\_simulator.sh} as</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>30</th><td class="r"><ins>its \texttt{analysis\_driver}.</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>31</th><td class="r"><ins></ins> </td>
+                  </tr><tr>
+                          <th> </th><th>32</th><td class="r"><ins>The \texttt{rosenbrock.sci} is the computation code which contains some</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>33</th><td class="r"><ins>mathematics expressions like objective functions, gradient or hessian.</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>34</th><td class="r"><ins>It is primordial. It is used by Scilab to compute some results asked by </ins> </td>
+                  </tr><tr>
+                          <th> </th><th>35</th><td class="r"><ins>Dakota optimization method (described in </ins> </td>
+                  </tr><tr>
+                          <th> </th><th>36</th><td class="r"><ins>\texttt{dakota\_scilab\_rosenbrock.in})</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>37</th><td class="r"><ins></ins> </td>
+                  </tr><tr>
+                          <th> </th><th>38</th><td class="r"><ins>The \texttt{scilab\_rosen\_bb\_simulator.sh} is a short shell driver script</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>39</th><td class="r"><ins>that DAKOTA executes to perform each function evaluation. The names of the </ins> </td>
+                  </tr><tr>
+                          <th> </th><th>40</th><td class="r"><ins>parameters and results files are passed to the script on its command line;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>41</th><td class="r"><ins>they are referenced in the script by \texttt{\$argv[1]}</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>42</th><td class="r"><ins>and \texttt{\$argv[2]}, respectively. The </ins> </td>
+                  </tr><tr>
+                          <th> </th><th>43</th><td class="r"><ins>\texttt{scilab\_rosen\_bb\_simulator.sh} is divided into three parts: </ins> </td>
+                  </tr><tr>
+                          <th> </th><th>44</th><td class="r"><ins>pre-processing, analysis, and post-processing.</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>45</th><td class="r"><ins>% is divided into five parts: set up, pre-processing, analysis,</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>46</th><td class="r"><ins>% post-processing, and clean up.</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>47</th><td class="r"><ins></ins> </td>
+                  </tr><tr>
+                          <th> </th><th>48</th><td class="r"><ins>In the analysis portion, the \texttt{scilab\_rosen\_bb\_simulator.sh} uses</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>49</th><td class="r"><ins>\texttt{scilab\_rosen\_wrapper.sci} to extract the</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>50</th><td class="r"><ins>current variable values from a input parameters file (\texttt{\$argv[1]})</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>51</th><td class="r"><ins>and communicate them to the computation code \texttt{rosenbrock.sci}.</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>52</th><td class="r"><ins>When the result of objective function is found, it is transmitted to</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>53</th><td class="r"><ins>Dakota with the output result file.</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>54</th><td class="r"><ins></ins> </td>
+                  </tr><tr>
+                          <th> </th><th>55</th><td class="r"><ins>After this, the \texttt{scilab\_rosen\_bb\_simulator.sh} clean-up all the</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>56</th><td class="r"><ins>temporaries files. An iteration is finished.</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>57</th><td class="r"><ins></ins> </td>
+                  </tr><tr>
+                          <th> </th><th>58</th><td class="r"><ins>There is another example in the directory like PID or FemTRUSS example. They</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>59</th><td class="r"><ins>run with the same way.</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>60</th><td class="r"><ins></ins> </td>
+                  </tr><tr>
+                          <th> </th><th>61</th><td class="r"><ins>\subsection{Scilab Compiled Interface} </ins> </td>
+                  </tr><tr>
+                          <th> </th><th>62</th><td class="r"><ins></ins> </td>
+                  </tr><tr>
+                          <th> </th><th>63</th><td class="r"><ins>The compiled Interface directory is in examples directory.</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>64</th><td class="r"><ins>The {\tt Rosenbrock} directory contains one important file:</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>65</th><td class="r"><ins>\texttt{dakscilab.c} (the analysis driver).</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>66</th><td class="r"><ins>There are another important files in the specific example</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>67</th><td class="r"><ins>directories, like the computation code and the Dakota configuration files. For</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>68</th><td class="r"><ins>example \texttt{rosenbrock.in} :</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>69</th><td class="r"><ins></ins> </td>
+                  </tr><tr>
+                          <th> </th><th>70</th><td class="r"><ins>\begin{small}</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>71</th><td class="r"><ins>\begin{verbatim}</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>72</th><td class="r"><ins>interface,</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>73</th><td class="r"><ins>&nbsp; fork</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>74</th><td class="r"><ins>&nbsp; &nbsp; analysis_driver = '../dakscilab -d -fp "exec fp.sci" -fpp "exec fpp.sci"'</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>75</th><td class="r"><ins>&nbsp; &nbsp; parameters_file = 'r.in'</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>76</th><td class="r"><ins>&nbsp; &nbsp; results_file = 'r.out'</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>77</th><td class="r"><ins>&nbsp; &nbsp; deactivate active_set_vector</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>78</th><td class="r"><ins>\end{verbatim} </ins> </td>
+                  </tr><tr>
+                          <th> </th><th>79</th><td class="r"><ins>\end{small}</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>80</th><td class="r"><ins></ins> </td>
+                  </tr><tr>
+                          <th> </th><th>81</th><td class="r"><ins>In this example, the dakscilab call is apparent. It is coupled with some</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>82</th><td class="r"><ins>options. Next, they are detailled.</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>83</th><td class="r"><ins></ins> </td>
+                  </tr><tr>
+                          <th> </th><th>84</th><td class="r"><ins>Dakscilab is a driver which launch a server. This server take care to</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>85</th><td class="r"><ins>link Scilab and Dakota thanks to named pipes communication. The user can also</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>86</th><td class="r"><ins>use the first named pipe (\texttt{\$\{DAKSCILAB\_PIPE\}1i}) to communicate with the </ins> </td>
+                  </tr><tr>
+                          <th> </th><th>87</th><td class="r"><ins>server.</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>88</th><td class="r"><ins></ins> </td>
+                  </tr><tr>
+                          <th> </th><th>89</th><td class="r"><ins>\begin{small}</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>90</th><td class="r"><ins>\begin{verbatim}</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>91</th><td class="r"><ins>&nbsp; &nbsp; echo dbg scilab_script.sce &gt; ${DAKSCILAB_PIPE}1</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>92</th><td class="r"><ins></ins> </td>
+                  </tr><tr>
+                          <th> </th><th>93</th><td class="r"><ins>&nbsp; &nbsp; echo quit &gt; ${DAKSCILAB_PIPE}1</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>94</th><td class="r"><ins>\end{verbatim} </ins> </td>
+                  </tr><tr>
+                          <th> </th><th>95</th><td class="r"><ins>\end{small}</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>96</th><td class="r"><ins></ins> </td>
+                  </tr><tr>
+                          <th> </th><th>97</th><td class="r"><ins>The first command, with the keyword 'dbg', launch a script evaluation in Scilab.</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>98</th><td class="r"><ins>It permits to give instructions to Scilab. The second command 'quit' stops the</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>99</th><td class="r"><ins>server. It is simple and useful.</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>100</th><td class="r"><ins></ins> </td>
+                  </tr><tr>
+                          <th> </th><th>101</th><td class="r"><ins>Go back to the Dakota configuration file (input file). In this case for the</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>102</th><td class="r"><ins>compiled interface, some options are available for the driver call</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>103</th><td class="r"><ins>(\texttt{dakscilab.c}).</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>104</th><td class="r"><ins></ins> </td>
+                  </tr><tr>
+                          <th> </th><th>105</th><td class="r"><ins>To resume them :</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>106</th><td class="r"><ins>&nbsp; &nbsp; &nbsp;-s to start the server</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>107</th><td class="r"><ins></ins> </td>
+                  </tr><tr>
+                          <th> </th><th>108</th><td class="r"><ins>&nbsp; &nbsp; &nbsp;-si to run an init script</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>109</th><td class="r"><ins></ins> </td>
+                  </tr><tr>
+                          <th> </th><th>110</th><td class="r"><ins>&nbsp; &nbsp; &nbsp;-sf to run a final script</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>111</th><td class="r"><ins></ins> </td>
+                  </tr><tr>
+                          <th> </th><th>112</th><td class="r"><ins>&nbsp; &nbsp; &nbsp;-f -fp -fpp to specify names of objective function, gradient</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>113</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;and hessian, then load them.</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>114</th><td class="r"><ins></ins> </td>
+                  </tr><tr>
+                          <th> </th><th>115</th><td class="r"><ins>In the PID example, the driver call is </ins> </td>
+                  </tr><tr>
+                          <th> </th><th>116</th><td class="r"><ins>\begin{small}</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>117</th><td class="r"><ins>\begin{verbatim}</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>118</th><td class="r"><ins>&nbsp; &nbsp; analysis_driver = '../dakscilab -d -si "exec init_test_automatic.sce;"</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>119</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;-sf "exec visualize_solution.sce;" -f "exec f_pid.sci"'</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>120</th><td class="r"><ins>\end{verbatim}</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>121</th><td class="r"><ins>\end{small}</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>122</th><td class="r"><ins></ins> </td>
+                  </tr><tr>
+                          <th> </th><th>123</th><td class="r"><ins>Here there is a initialization script (\texttt{init\_test\_automatic.sce;})</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>124</th><td class="r"><ins>which is launch before the commutation.It is to initialize a specific Scilab </ins> </td>
+                  </tr><tr>
+                          <th> </th><th>125</th><td class="r"><ins>module called xcos. A finalization script to visualize the xcos solution is </ins> </td>
+                  </tr><tr>
+                          <th> </th><th>126</th><td class="r"><ins>also precised (\texttt{visualize\_solution.sce}. Finally, the objective function</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>127</th><td class="r"><ins>is given with the computation code called \texttt{f\_pid.sci}.</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>128</th><td class="r"><ins></ins> </td>
+                  </tr><tr>
+                          <th> </th><th>129</th><td class="r"><ins>\subsection{Scilab Linked Interface} </ins> </td>
+                  </tr><tr>
+                          <th> </th><th>130</th><td class="r"><ins></ins> </td>
+                  </tr><tr>
+                          <th> </th><th>131</th><td class="r"><ins>The linked interface is very usefull. It allows Scilab to communicate with</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>132</th><td class="r"><ins>Dakota via the Dakota data structure.</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>133</th><td class="r"><ins>This Dakota structure is a opportunity to get a fast communication. Indeed,</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>134</th><td class="r"><ins>this type of communication uses RAM and not files or pipes. It is more</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>135</th><td class="r"><ins>efficient. This Dakota structure is composed by some variables :</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>136</th><td class="r"><ins></ins> </td>
+                  </tr><tr>
+                          <th> </th><th>137</th><td class="r"><ins>\begin{figure}</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>138</th><td class="r"><ins>\centering</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>139</th><td class="r"><ins>\begin{bigbox}</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>140</th><td class="r"><ins>\begin{small}</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>141</th><td class="r"><ins>\begin{verbatim}</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>142</th><td class="r"><ins>Dakota.</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>143</th><td class="r"><ins>&nbsp; dakota_type&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;dakota data structure labels</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>144</th><td class="r"><ins>&nbsp; numFns&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; number of functions (responses, constraints)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>145</th><td class="r"><ins>&nbsp; numVars&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;total number of variables</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>146</th><td class="r"><ins>&nbsp; numACV&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; number active continuous variables</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>147</th><td class="r"><ins>&nbsp; numADIV&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;number active discrete integer variables</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>148</th><td class="r"><ins>&nbsp; numADRV&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;number active discrete real variables</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>149</th><td class="r"><ins>&nbsp; numDerivVars&nbsp; &nbsp; &nbsp; &nbsp; number of derivative variables specified in directFnDVV</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>150</th><td class="r"><ins>&nbsp; xC&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; continuous variable values ([1 x numACV]) </ins> </td>
+                  </tr><tr>
+                          <th> </th><th>151</th><td class="r"><ins>&nbsp; xDI&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;discrete integer variable values ([1 x numADIV])</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>152</th><td class="r"><ins>&nbsp; xDR&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;discrete real variable values ([1 x numADRV])</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>153</th><td class="r"><ins>&nbsp; xCLabels&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; continuous variable labels (cell array of numACV strings)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>154</th><td class="r"><ins>&nbsp; xDILabels&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;discrete integer variable labels (cell array of num ADIV</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>155</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; strings)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>156</th><td class="r"><ins>&nbsp; xDRLabels&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;discrete real variable labels (cell array of numADRV </ins> </td>
+                  </tr><tr>
+                          <th> </th><th>157</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; strings)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>158</th><td class="r"><ins>&nbsp; directFnASV&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;active set vector ([1 x numFns])</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>159</th><td class="r"><ins>&nbsp; directFnASM&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;active set matrix ([3 x numFns]) -- see below</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>160</th><td class="r"><ins>&nbsp; directFnDVV&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;derivative variables vector ([1 x numDerivVars])</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>161</th><td class="r"><ins>&nbsp; directFnDVV_bool&nbsp; &nbsp; boolean DVV ([1 x numVars]) -- see below</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>162</th><td class="r"><ins>&nbsp; fnFlag&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; nonzero if function values requested</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>163</th><td class="r"><ins>&nbsp; gradFlag&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; nonzero if gradients requested</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>164</th><td class="r"><ins>&nbsp; hessFlag&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; nonzero if hessians requested</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>165</th><td class="r"><ins>&nbsp; fnVals&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; objective function values </ins> </td>
+                  </tr><tr>
+                          <th> </th><th>166</th><td class="r"><ins>&nbsp; fnGrads&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;gradient function values</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>167</th><td class="r"><ins>&nbsp; fnHessians&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; hessian function values</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>168</th><td class="r"><ins>&nbsp; fnLabels&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; labels function</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>169</th><td class="r"><ins>&nbsp; failure&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;error details</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>170</th><td class="r"><ins>&nbsp; fnEvalId&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; evaluation id</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>171</th><td class="r"><ins>\end{verbatim}</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>172</th><td class="r"><ins>\end{small}</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>173</th><td class="r"><ins>\end{bigbox}</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>174</th><td class="r"><ins>\caption{DAKOTA/Scilab data</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>175</th><td class="r"><ins>structure.\label{advint:figure:matlabparams}}</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>176</th><td class="r"><ins>\end{figure}</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>177</th><td class="r"><ins></ins> </td>
+                  </tr><tr>
+                          <th> </th><th>178</th><td class="r"><ins>This dakota structure is duplicate in Scilab to allows this software to</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>179</th><td class="r"><ins>manipulate optimization values during computation. In Scilab, this structure</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>180</th><td class="r"><ins>is an mlist (http://help.scilab.org/docs/5.3.2/en\_US/mlist.html).</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>181</th><td class="r"><ins></ins> </td>
+                  </tr><tr>
+                          <th> </th><th>182</th><td class="r"><ins>The linked interface source code is in the {\tt src} directory. Of course,</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>183</th><td class="r"><ins>a specific directory are reserved for add examples. Now, there are Rosenbrock</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>184</th><td class="r"><ins>and PID example. All of those has a specific input file and a specific</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>185</th><td class="r"><ins>computation code. For example (Rosenbrock), the input file is</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>186</th><td class="r"><ins>\texttt{dakota\_rosenbrock\_scilab.in} and the computation code is</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>187</th><td class="r"><ins>\texttt{rosenbrock.sci}.</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>188</th><td class="r"><ins></ins> </td>
+                  </tr><tr>
+                          <th> </th><th>189</th><td class="r"><ins>The observable difference with the others interfaces is visible in the input</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>190</th><td class="r"><ins>file :</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>191</th><td class="r"><ins></ins> </td>
+                  </tr><tr>
+                          <th> </th><th>192</th><td class="r"><ins>\begin{small}</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>193</th><td class="r"><ins>\begin{verbatim}</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>194</th><td class="r"><ins>interface,</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>195</th><td class="r"><ins>&nbsp; direct</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>196</th><td class="r"><ins>&nbsp; &nbsp; analysis_driver = 'scilab'</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>197</th><td class="r"><ins>&nbsp; &nbsp; analysis_components = 'rosenbrock.sci'</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>198</th><td class="r"><ins>\end{verbatim} </ins> </td>
+                  </tr><tr>
+                          <th> </th><th>199</th><td class="r"><ins>\end{small}</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>200</th><td class="r"><ins></ins> </td>
+                  </tr><tr>
+                          <th> </th><th>201</th><td class="r"><ins>Here, the interface is 'direct'. It is to precize that the driver is just Scilab</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>202</th><td class="r"><ins>(without external interface) and the communication used is the Dakota</ins> </td>
+                  </tr><tr class="last">
+                          <th> </th><th>203</th><td class="r"><ins>structure. This solution is faster than the others (script and compiled).</ins> </td>
+                  </tr>
+            </tbody>
+        </table>
+      </li>
+      <li class="entry">
+        <h2>
+          <a>Users_Main.tex</a>
+        </h2>
+        <table class="trac-diff inline" summary="Differences" cellspacing="0">
+              <colgroup><col class="lineno" /><col class="lineno" /><col class="content" /></colgroup>
+              <thead>
+                <tr>
+                  <th title="File Users_Main.tex (rÃ©vision 598)">
+                  </th>
+                  <th title="File Users_Main.tex (copie de travail)">
+                  </th>
+                  <td><em></em> </td>
+                </tr>
+              </thead>
+            <tbody class="unmod">
+                  <tr>
+                          <th>118</th><th>118</th><td class="l"><span>\input{Users_Advanced_Strategies}</span> </td>
+                  </tr><tr>
+                          <th>119</th><th>119</th><td class="l"><span>\input{Users_Advanced_Models}</span> </td>
+                  </tr><tr>
+                          <th>120</th><th>120</th><td class="l"><span>\input{Users_Advanced_Interfaces}</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="last first">
+                          <th> </th><th>121</th><td class="r"><ins>\input{Users_Scilab_Dakota}</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>121</th><th>122</th><td class="l"><span>\input{Users_Parallel}</span> </td>
+                  </tr><tr>
+                          <th>122</th><th>123</th><td class="l"><span>\input{Users_Guidance}</span> </td>
+                  </tr><tr>
+                          <th>123</th><th>124</th><td class="l"><span>\input{Users_Restart}</span> </td>
+                  </tr>
+            </tbody>
+        </table>
+      </li>
+      <li class="entry">
+        <h2>
+          <a>Users_Capabilities.tex</a>
+        </h2>
+        <table class="trac-diff inline" summary="Differences" cellspacing="0">
+              <colgroup><col class="lineno" /><col class="lineno" /><col class="content" /></colgroup>
+              <thead>
+                <tr>
+                  <th title="File Users_Capabilities.tex (rÃ©vision 598)">
+                  </th>
+                  <th title="File Users_Capabilities.tex (copie de travail)">
+                  </th>
+                  <td><em></em> </td>
+                </tr>
+              </thead>
+            <tbody class="unmod">
+                  <tr>
+                          <th>1</th><th>1</th><td class="l"><span>\chapter{DAKOTA Capability Overview}\label{capabilities}</span> </td>
+                  </tr>
+            </tbody><tbody class="rem">
+                  <tr class="last first">
+                          <th>2</th><th> </th><td class="l"><del></del> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>3</th><th>2</th><td class="l"><span>\section{Purpose}\label{capabilities:purpose}</span> </td>
+                  </tr><tr>
+                          <th>4</th><th>3</th><td class="l"><span></span> </td>
+                  </tr><tr>
+                          <th>5</th><th>4</th><td class="l"><span>This chapter provides a brief overview of DAKOTA's capabilities.</span> </td>
+                  </tr>
+            </tbody>
+        </table>
+      </li>
+  </ul>
+</div>
+
+        </div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="last first">
+          <a rel="nofollow" href="/trac/dakota/raw-attachment/ticket/4069/dakota_scilab_latex.patch">Original Format</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+  <div id="footer" lang="en" xml:lang="en">
+    <a id="traclogo" href="http://trac.edgewall.org/"><img src="/trac/dakota/chrome/common/trac_logo_mini.png" alt="Trac Powered" /></a>
+    <a id="snllogo" href="http://www.sandia.gov/"><img src="/trac/dakota/chrome/shared/sandia_logo.png" alt="Sandia National Laboratories" /></a>
+    <p align="center">
+      ©2010 Sandia Corporation <br />
+      <a href="http://www.sandia.gov/general/privacy-security/index.html">Privacy and Security</a> |
+        <a href="mailto:briadam@sandia.gov">Site Contact</a>
+    </p>
+  </div>
+</body>
+</html>

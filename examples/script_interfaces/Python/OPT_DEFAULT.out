@@ -1,0 +1,92 @@
+**********************************************************
+OPT++ version 2.4
+Job run at Tue Jan  2 02:52:11 2018
+
+**********************************************************
+readOptInput: No opt.input file found
+readOptInput: default values will be used
+
+
+=========  Initial state  ===========
+
+
+    i	    xc 		 grad 		 fcn_accrcy 
+     0-0x1.3333333333333p+0	-0x1.af33333333332p+7	     0x1p-52
+     1      0x1p+0	-0x1.5ffffffffffffp+6	     0x1p-52
+Function Value     = 0x1.8333333333332p+4
+Norm of gradient   = 0x1.d1bc4191bf16p+7
+
+
+==============================================
+
+
+		Bound constrained Newton Method with Line Search
+
+  Iter      F(x)       ||grad||     ||step||      f/g
+
+    0 0x1.8333333333332p+4 0x1.d1bc4191bf16p+7
+    1 0x1.2ed72dc8e6993p+2 0x1.28ed03f20056ep+2 0x1.86a17907f900dp-2  N     2     2
+    2 0x1.0b00c4c919773p+2 0x1.b09933ecfe07bp+3 0x1.7836e3404dc64p-2  B     4     3
+    3 0x1.da6d596bffff5p+1 0x1.05dafd97a85d9p+4 0x1.2f5b95b0fb059p-2  B     6     4
+    4 0x1.92ca35db5d1c1p+1 0x1.8b3479b0ea525p+4 0x1.04a653994b34ap-1  N     7     5
+    5 0x1.2c4399e4386aap+1 0x1.8fb0f5046712fp+2 0x1.156e3a8ad83d2p-3  N     8     6
+    6 0x1.0fb75b9425f67p+1 0x1.ae837e8e4dadp+2 0x1.ce161d93b818fp-4  B    10     7
+    7 0x1.d257da81be00bp+0 0x1.f5827fc9f1471p+2 0x1.47593e21003b4p-3  B    12     8
+    8 0x1.73bd2616caa79p+0 0x1.4cd6b9994a24fp+3 0x1.f9c76218db336p-3  N    13     9
+    9 0x1.0441e25a2a192p+0 0x1.809fc98233d5ep+1 0x1.bc3aa1acec086p-4  N    14    10
+   10 0x1.b265e6383f164p-1 0x1.cd7d9417f8843p+1 0x1.8d3c31c4840bcp-4  B    16    11
+   11 0x1.558e12df0c7a6p-1 0x1.2584b61d4b72cp+3 0x1.b375f50fbbc2dp-3  N    17    12
+   12 0x1.94018522a7478p-2 0x1.2f18969db0c59p+0 0x1.d3c2c6835cb0ap-4  N    18    13
+   13 0x1.49e54bd47758ep-2 0x1.bc705b76a0facp+0 0x1.4cd2bcade0cf1p-4  B    20    14
+   14 0x1.3fb5bcc4ef7b8p-2 0x1.b384ad180f8cap+3 0x1.214fcce362578p-2  N    21    15
+   15 0x1.9b37a83821b99p-4 0x1.83760cfda4163p-2 0x1.9022abf77f1f5p-4  N    22    16
+   16 0x1.347ca9b2da373p-4 0x1.61331eb137909p-1 0x1.30a26d4606a19p-4  B    24    17
+   17 0x1.73934f12bb09dp-5 0x1.1cd5e38c4d1d7p+1 0x1.026a7915db209p-3  B    26    18
+   18 0x1.357621718d94cp-6 0x1.63930d8a31dccp+1 0x1.562dad58093c3p-3  N    27    19
+   19 0x1.595ef432cc658p-8 0x1.a3af02552d09cp-1 0x1.a26ed3b0af44fp-4  N    28    20
+   20 0x1.ffe233f6c532ap-11 0x1.f01f3c6f6f9c5p-1 0x1.a641767325b65p-4  N    29    21
+   21 0x1.9c1c5cc241924p-15 0x1.536fd7fd28999p-4 0x1.176889b303a4cp-5  N    30    22
+   22 0x1.04bdb41e00d34p-22 0x1.24a8ec8e2aa11p-6 0x1.d91a9baf0a04bp-7  N    31    23
+checkConvg: deltaf = 0x1.9a12e15a0590ap-15  ftol = 0x1.a36e2eb1c432dp-14
+OptBCNewtonLike : reduced_grad_norm = 0.0178625
+OptBCNewtonLike : convergence achieved. 
+
+
+=========  Solution from Opt++  ===========
+
+Optimization method       = Bound constrained Newton
+Dimension of the problem  = 2
+No. of bound constraints  = 2
+Return code               = 2 (Algorithm converged - Difference in successive fcn values less than tolerance)
+No. iterations taken      = 22
+No. function evaluations  = 31
+No. gradient evaluations  = 23
+
+
+==========  Tolerances  ===========
+
+Machine Epsilon      = 2.22045e-16
+Maximum Step         = 1000
+Minimum Step         = 1.49012e-08
+Maximum Iter         = 50
+Maximum Backtracks   = 5
+Maximum Fcn Eval     = 1000
+Step Tolerance       = 1.49012e-08
+Function Tolerance   = 0.0001
+Constraint Tolerance = 1.49012e-08
+Gradient Tolerance   = 0.0001
+LineSearch Tolerance = 0.0001
+
+
+=========  Solution from Opt++  ===========
+
+
+    i	    xc 		 grad 		 fcn_accrcy 
+     00x1.ffdc3e50faa0fp-1	0x1.03ef8403288fap-6	     0x1p-52
+     10x1.ffb31e1d8add3p-1	-0x1.0cf2b819844p-7	     0x1p-52
+Function Value     = 0x1.04bdb41e00d34p-22
+Norm of gradient   = 0x1.24a8ec8e2aa11p-6
+
+
+==============================================
+

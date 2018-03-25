@@ -1,0 +1,15 @@
+#! /bin/bash -x
+echo "test"
+find . -type f -exec ls -F {} \; 2> /dev/null | sort -t' ' -k +6,6 -k +7,7 |grep "*"|grep -v "\.so"|grep -v CMakeFiles|grep -v examples |sed 's/\*$//g' >exefile
+find . -type f -exec ls -F {} \; 2> /dev/null | sort -t' ' -k +6,6 -k +7,7 |grep "\.so" |sed 's/\*$//g' >libfile
+for i in $(cat exefile|tr " " "?")                                                                                                                                      
+  do
+  	cp  "$i" ../../dakota-6.7.0-release/bin/.
+  done
+for i in $(cat libfile|tr " " "?")     
+   do
+    cp  "$i" ../../dakota-6.7.0-release/lib/.
+   done
+cd /home/jnc/soft/ ; tar -czf dakota-6.7.tgz dakota-6.7.0-release/
+sthome dakota-6.7.tgz
+rm dakota-6.7.tgz

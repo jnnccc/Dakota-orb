@@ -1,0 +1,708 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+
+
+
+
+
+
+
+
+<head>
+  <meta name="sandia.approval_type" content="formal" />
+  <meta name="sandia.approved" content="pending" />
+  <meta name="sandia.create_date" content="unknown" />
+  <meta name="keywords" content="DAKOTA (Public) TBD" />
+  <meta name="description" content="DAKOTA (Public) Trac Pages" />
+  <link rev="owns" title="Content Owner" href="mailto:briadam@sandia.gov" />
+    <title>
+      dakota_scilab.patch on Ticket #4069 – Attachment
+     – DAKOTA (Public)
+    </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link rel="search" href="/trac/dakota/search" />
+        <link rel="help" href="/trac/dakota/wiki/TracGuide" />
+        <link rel="alternate" href="/trac/dakota/raw-attachment/ticket/4069/dakota_scilab.patch" type="text/x-diff; charset=iso-8859-15" title="Original Format" />
+        <link rel="up" href="/trac/dakota/ticket/4069" title="Ticket #4069" />
+        <link rel="start" href="/trac/dakota/wiki" />
+        <link rel="stylesheet" href="/trac/dakota/chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="/trac/dakota/chrome/common/css/diff.css" type="text/css" /><link rel="stylesheet" href="/trac/dakota/chrome/common/css/code.css" type="text/css" />
+        <link rel="shortcut icon" href="/trac/dakota/chrome/shared/sandia_icon.ico" type="image/x-icon" />
+        <link rel="icon" href="/trac/dakota/chrome/shared/sandia_icon.ico" type="image/x-icon" />
+      <link type="application/opensearchdescription+xml" rel="search" href="/trac/dakota/search/opensearch" title="Search DAKOTA (Public)" />
+    <script type="text/javascript" src="/trac/dakota/chrome/common/js/jquery.js"></script><script type="text/javascript" src="/trac/dakota/chrome/common/js/babel.js"></script><script type="text/javascript" src="/trac/dakota/chrome/common/js/trac.js"></script><script type="text/javascript" src="/trac/dakota/chrome/common/js/search.js"></script><script type="text/javascript" src="/trac/dakota/chrome/common/js/diff.js"></script>
+    <!--[if lt IE 7]>
+    <script type="text/javascript" src="/trac/dakota/chrome/common/js/ie_pre7_hacks.js"></script>
+    <![endif]-->
+      <script type="text/javascript" src="/trac/dakota/chrome/common/js/folding.js"></script>
+      <script type="text/javascript">
+        jQuery(document).ready(function($) {
+          $('#preview table.code').enableCollapsibleColumns($('#preview table.code thead th.content'));
+        });
+      </script>
+  <link rel="stylesheet" href="/trac/dakota/chrome/shared/snl.css" type="text/css" />
+  <style>
+    #header { margin-bottom: -73px; }
+    #sitenav {
+       clear: both;
+       color: #aaa;
+       font-size: 12px;
+       text-align: right;
+       margin-right: 10px;
+       margin-bottom: 14px;
+    }
+    #sitenav, #sitenav :link, #sitenav :visited {
+      color: #fff;
+    }
+    #sitenav :link:hover, #sitenav :visited:hover {
+      color: #333;
+      background-color: #08b; /* pulled from the background of the SNL logo */
+    }
+  </style>
+</head>
+<body>
+    <div style="background-image: url(/trac/dakota/chrome/shared/snl-banner-back.jpg);" id="banner">
+    <a id="snlbanner_link" href="http://www.sandia.gov"><img src="/trac/dakota/chrome/shared/snl-banner.gif" alt="Sandia National Laboratories" /></a>
+    <div id="header">
+    <table height="100%"><td valign="center">
+      <h1><a href="https://software.sandia.gov/trac/dakota">DAKOTA (Public)</a></h1>
+        <h2>Design and Analysis Kit for Terascale Applications<br /> </h2>
+    </td></table>
+      </div>
+    <div id="sitenav" class="nav">
+      <ul><li class="last"></li></ul>
+    </div>
+    <form name="search" id="search" action="/trac/dakota/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="Search DAKOTA (Public)" onblur="if(value==''){value='Search DAKOTA (Public)'}" onfocus="if(value=='Search DAKOTA (Public)'){value=''}" />
+          <input onclick="if (document.search.q.value == 'Search DAKOTA (Public)') document.search.q.value = ''" type="submit" value="Search" />
+        </div>
+    </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first"><a href="/trac/dakota/login">Login</a></li><li><a href="/trac/dakota/prefs">Preferences</a></li><li><a href="/trac/dakota/wiki/TracGuide">Help/Guide</a></li><li class="last"><a href="/trac/dakota/about">About Trac</a></li>
+    </ul>
+  </div>
+  </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="/trac/dakota/wiki">Wiki</a></li><li><a href="/trac/dakota/timeline">Timeline</a></li><li><a href="/trac/dakota/roadmap">Roadmap</a></li><li><a href="/trac/dakota/browser">Source</a></li><li><a href="/trac/dakota/query">Tickets</a></li><li class="last"><a href="/trac/dakota/search">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+          <ul>
+              <li class="last first"><a href="/trac/dakota/ticket/4069">Back to Ticket #4069</a></li>
+          </ul>
+        <hr />
+      </div>
+      <div id="notice" class="system-message">
+          <div id="moderation_required">Attachments you submit will be routed for moderation.  If you have an account, please <a href="/trac/dakota/login">log in</a> first.</div>
+      </div>
+    <div id="content" class="attachment">
+        <h1><a href="/trac/dakota/ticket/4069">Ticket #4069</a>: dakota_scilab.patch</h1>
+        <table id="info" summary="Description">
+          <tbody>
+            <tr>
+              <th scope="col">File dakota_scilab.patch,
+                <span title="8187 bytes">8.0 KB</span>
+                (added by anonymous, <a class="timeline" href="/trac/dakota/timeline?from=2011-08-30T09%3A10%3A10-06%3A00&amp;precision=second" title="2011-08-30T09:10:10-06:00 in Timeline">6 years</a> ago)</th>
+            </tr>
+            <tr>
+              <td class="message searchable">
+                
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div id="preview" class="searchable">
+          
+  <div class="diff">
+  <ul class="entries">
+      <li class="entry">
+        <h2>
+          <a>CMakeLists.txt</a>
+        </h2>
+        <table class="trac-diff inline" summary="Differences" cellspacing="0">
+              <colgroup><col class="lineno" /><col class="lineno" /><col class="content" /></colgroup>
+              <thead>
+                <tr>
+                  <th title="File CMakeLists.txt (rÃ©vision 566)">
+                  </th>
+                  <th title="File CMakeLists.txt (copie de travail)">
+                  </th>
+                  <td><em></em> </td>
+                </tr>
+              </thead>
+            <tbody class="unmod">
+                  <tr>
+                          <th>10</th><th>10</th><td class="l"><span>)</span> </td>
+                  </tr><tr>
+                          <th>11</th><th>11</th><td class="l"><span></span> </td>
+                  </tr><tr>
+                          <th>12</th><th>12</th><td class="l"><span># Check for compilers after initializing MPI</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>13</th><th> </th><td class="l"><span>project("Dakota" <del>NONE</del>)</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>13</th><td class="r"><span>project("Dakota" <ins>C CXX Fortran</ins>)</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>14</th><th>14</th><td class="l"><span></span> </td>
+                  </tr><tr>
+                          <th>15</th><th>15</th><td class="l"><span># Attempt to detect MPI if not specified</span> </td>
+                  </tr><tr>
+                          <th>16</th><th>16</th><td class="l"><span>option(DAKOTA_HAVE_MPI "Enable MPI in DAKOTA" OFF)</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="#L27">…</a></th>
+                  <th><a href="#L27">…</a></th>
+                  <td><em></em> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>27</th><th>27</th><td class="l"><span>include(CheckIncludeFile)</span> </td>
+                  </tr><tr>
+                          <th>28</th><th>28</th><td class="l"><span>include(FindCURL)</span> </td>
+                  </tr><tr>
+                          <th>29</th><th>29</th><td class="l"><span></span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="first">
+                          <th> </th><th>30</th><td class="r"><ins>option(BUILD_STATIC "build static libraries" OFF)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>31</th><td class="r"><ins>option(BUILD_SCILAB_INTERFACE "build the Scilab interface" OFF)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>32</th><td class="r"><ins>option(CUSTOM_SCILAB_PATH "path for a custom scilab install" OFF)</ins> </td>
+                  </tr><tr class="last">
+                          <th> </th><th>33</th><td class="r"><ins></ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>30</th><th>34</th><td class="l"><span>if( CMAKE_SOURCE_DIR STREQUAL CMAKE_BINARY_DIR AND NOT MSVC_IDE )</span> </td>
+                  </tr><tr>
+                          <th>31</th><th>35</th><td class="l"><span>&nbsp; message(FATAL_ERROR "In-source builds are not allowed.</span> </td>
+                  </tr><tr>
+                          <th>32</th><th>36</th><td class="l"><span>Please create a directory and run cmake from there, passing the path</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="#L60">…</a></th>
+                  <th><a href="#L64">…</a></th>
+                  <td><em></em> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>60</th><th>64</th><td class="l"><span>&nbsp; set(LAPACK_LIBS lapack)</span> </td>
+                  </tr><tr>
+                          <th>61</th><th>65</th><td class="l"><span>endif()</span> </td>
+                  </tr><tr>
+                          <th>62</th><th>66</th><td class="l"><span></span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="first">
+                          <th> </th><th>67</th><td class="r"><ins># hack to be fixed when CMake does it automatically</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>68</th><td class="r"><ins>if(${CMAKE_Fortran_COMPILER_ID} MATCHES "Intel")</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>69</th><td class="r"><ins>&nbsp; set(FIXED_FLAG "-fixed")</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>70</th><td class="r"><ins>elseif(${CMAKE_Fortran_COMPILER_ID} MATCHES "GNU")</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>71</th><td class="r"><ins>&nbsp; set(FIXED_FLAG "-ffixed-form")</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>72</th><td class="r"><ins>elseif(${CMAKE_Fortran_COMPILER_ID} MATCHES "PGI")</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>73</th><td class="r"><ins>&nbsp; set(FIXED_FLAG "-Mfixed")</ins> </td>
+                  </tr><tr class="last">
+                          <th> </th><th>74</th><td class="r"><ins>endif()</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>63</th><th>75</th><td class="l"><span></span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="first">
+                          <th> </th><th>76</th><td class="r"><ins>if(CMAKE_SYSTEM_NAME MATCHES Darwin)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>77</th><td class="r"><ins>&nbsp; set(CMAKE_SHARED_LIBRARY_CREATE_CXX_FLAGS</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>78</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; "${CMAKE_SHARED_LIBRARY_CREATE_CXX_FLAGS} -undefined dynamic_lookup")</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>79</th><td class="r"><ins>endif()</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>80</th><td class="r"><ins></ins> </td>
+                  </tr><tr>
+                          <th> </th><th>81</th><td class="r"><ins>find_package(Boost 1.40 REQUIRED)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>82</th><td class="r"><ins></ins> </td>
+                  </tr><tr>
+                          <th> </th><th>83</th><td class="r"><ins># check for a MPI-enabled build</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>84</th><td class="r"><ins>if(CMAKE_CXX_COMPILER MATCHES mpicxx)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>85</th><td class="r"><ins></ins> </td>
+                  </tr><tr>
+                          <th> </th><th>86</th><td class="r"><ins>&nbsp; find_program(mpicxx mpicxx)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>87</th><td class="r"><ins>&nbsp; if(${mpicxx} MATCHES "mpicxx-NOTFOUND")</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>88</th><td class="r"><ins>&nbsp; &nbsp; message(FATAL_ERROR "Cannot build parallel configuration without mpicxx")</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>89</th><td class="r"><ins>&nbsp; endif()</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>90</th><td class="r"><ins></ins> </td>
+                  </tr><tr>
+                          <th> </th><th>91</th><td class="r"><ins>&nbsp; message(" ****&nbsp; &nbsp; &nbsp; dakota build&nbsp; &nbsp; ****&nbsp; &nbsp; MPIHOME is: " $ENV{MPIHOME})</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>92</th><td class="r"><ins>&nbsp; set(MPI_INCLUDE_PATH "$ENV{MPIHOME}/include"</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>93</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; CACHE PATH "Always use $MPIHOME to find MessagePassing header files" FORCE)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>94</th><td class="r"><ins>&nbsp; </ins> </td>
+                  </tr><tr>
+                          <th> </th><th>95</th><td class="r"><ins>&nbsp; find_package(MPI REQUIRED)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>96</th><td class="r"><ins>&nbsp; if(MPI_FOUND)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>97</th><td class="r"><ins>&nbsp; &nbsp; #message("MPI found - path to include is: ${MPI_INCLUDE_PATH}")</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>98</th><td class="r"><ins>&nbsp; &nbsp; set(HAVE_MPI "ON")</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>99</th><td class="r"><ins>&nbsp; &nbsp; add_definitions(-DHAVE_MPI)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>100</th><td class="r"><ins>&nbsp; &nbsp; include_directories(${MPI_INCLUDE_PATH})</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>101</th><td class="r"><ins></ins> </td>
+                  </tr><tr>
+                          <th> </th><th>102</th><td class="r"><ins>&nbsp; &nbsp; # Some TPLs have manage the setting with USE_MPI rather than HAVE_MPI</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>103</th><td class="r"><ins>&nbsp; &nbsp; set(USE_MPI "ON")</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>104</th><td class="r"><ins></ins> </td>
+                  </tr><tr>
+                          <th> </th><th>105</th><td class="r"><ins>&nbsp; else()</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>106</th><td class="r"><ins>&nbsp; &nbsp; message(FATAL_ERROR</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>107</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "Cannot find MPI.&nbsp; Please build a serial configuration instead")</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>108</th><td class="r"><ins>&nbsp; endif(MPI_FOUND)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>109</th><td class="r"><ins></ins> </td>
+                  </tr><tr>
+                          <th> </th><th>110</th><td class="r"><ins>endif()</ins> </td>
+                  </tr><tr class="last">
+                          <th> </th><th>111</th><td class="r"><ins></ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>64</th><th>112</th><td class="l"><span># Mandate a system or user-provided Boost, including some libraries</span> </td>
+                  </tr><tr>
+                          <th>65</th><th>113</th><td class="l"><span># DAKOTA requires Boost 1.37 or newer; PGI may demand 1.40 or newer</span> </td>
+                  </tr><tr>
+                          <th>66</th><th>114</th><td class="l"><span>if(HAVE_ACRO)</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="#L72">…</a></th>
+                  <th><a href="#L120">…</a></th>
+                  <td><em></em> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>72</th><th>120</th><td class="l"><span></span> </td>
+                  </tr><tr>
+                          <th>73</th><th>121</th><td class="l"><span>include(CTest)</span> </td>
+                  </tr><tr>
+                          <th>74</th><th>122</th><td class="l"><span></span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="first">
+                          <th> </th><th>123</th><td class="r"><ins>set( CMAKE_MODULE_PATH</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>124</th><td class="r"><ins>&nbsp; ${CMAKE_CURRENT_SOURCE_DIR}/config/share</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>125</th><td class="r"><ins>&nbsp; ${CMAKE_CURRENT_SOURCE_DIR}/config/share/utils</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>126</th><td class="r"><ins>&nbsp; ${CMAKE_CURRENT_SOURCE_DIR}/config/share/package_arch</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>127</th><td class="r"><ins>&nbsp; ${CMAKE_CURRENT_SOURCE_DIR}/config/share/config_tests</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>128</th><td class="r"><ins>&nbsp; ${CMAKE_MODULE_PATH}</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>129</th><td class="r"><ins>)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>130</th><td class="r"><ins></ins> </td>
+                  </tr><tr>
+                          <th> </th><th>131</th><td class="r"><ins></ins> </td>
+                  </tr><tr>
+                          <th> </th><th>132</th><td class="r"><ins>option(HAVE_PECOS "Build the Pecos package." ON)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>133</th><td class="r"><ins># WJB - ToDo with Zack - ASAP: option(HAVE_ACRO "Build the ACRO package." ON)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>134</th><td class="r"><ins>option(HAVE_AMPL "Build the AMPL package." ON)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>135</th><td class="r"><ins>option(HAVE_DDACE "Build the DDACE package." ON)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>136</th><td class="r"><ins>option(HAVE_DOT "Build the DOT package." OFF)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>137</th><td class="r"><ins>option(HAVE_CONMIN "Build the CONMIN package." ON)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>138</th><td class="r"><ins>option(HAVE_FSUDACE "Build the FSUDACE package." ON)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>139</th><td class="r"><ins>option(HAVE_HOPSPACK "Build the hopspack package." OFF)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>140</th><td class="r"><ins>option(HAVE_JEGA "Build the JEGA package." ON)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>141</th><td class="r"><ins>option(HAVE_NCSUOPT "Build the NCSUOPT package." ON)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>142</th><td class="r"><ins>option(HAVE_NL2SOL "Build the NL2SOL package." ON)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>143</th><td class="r"><ins>option(HAVE_NPSOL "Build the NPSOL package." ON)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>144</th><td class="r"><ins>option(HAVE_NLPQL "Build the NLPQL package." ON)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>145</th><td class="r"><ins>option(HAVE_OPTPP "Build the OPTPP package." ON)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>146</th><td class="r"><ins>option(HAVE_PSUADE "Build the PSUADE package." ON)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>147</th><td class="r"><ins>option(HAVE_SURFPACK "Build the Surfpack package." ON)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>148</th><td class="r"><ins>option(HAVE_TRACKING "Build the DAKOTA usage tracker module." ON)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>149</th><td class="r"><ins>option(HAVE_XDR "Build the XDR interface module." ON)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>150</th><td class="r"><ins>option(HAVE_SCILAB "Build Scilab module, if Scilab is detected." ON)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>151</th><td class="r"><ins></ins> </td>
+                  </tr><tr>
+                          <th> </th><th>152</th><td class="r"><ins>option(USE_SYSTEM_TEUCHOS</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>153</th><td class="r"><ins>&nbsp; "If false, DAKOTA will use the included version of Teuchos."</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>154</th><td class="r"><ins>&nbsp; OFF)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>155</th><td class="r"><ins></ins> </td>
+                  </tr><tr>
+                          <th> </th><th>156</th><td class="r"><ins>#if(USE_SYSTEM_TEUCHOS)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>157</th><td class="r"><ins>#&nbsp; # WJB: suspect SYSTEM_TEUCHOS settings specify incorrect paths -- try to get</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>158</th><td class="r"><ins>#&nbsp; #&nbsp; &nbsp; &nbsp; a review from someone interested in this case being enabled</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>159</th><td class="r"><ins>#&nbsp; find_package(Trilinos REQUIRED)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>160</th><td class="r"><ins>#&nbsp; ## Kitware version -- include(${Trilinos_DIR}/TrilinosConfig.cmake)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>161</th><td class="r"><ins>#&nbsp; include(${Trilinos_DIR}/TeuchosConfig.cmake)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>162</th><td class="r"><ins>#&nbsp; ##set(Teuchos_INCLUDE_DIRS ${Trilinos_INCLUDE_DIRS} CACHE FILEPATH "include dir for Teuchos" FORCE)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>163</th><td class="r"><ins>#&nbsp; ##set(Teuchos_LIBRARY_DIRS ${Trilinos_LIBRARY_DIRS} CACHE FILEPATH "library dir for Teuchos" FORCE)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>164</th><td class="r"><ins>#else()</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>165</th><td class="r"><ins>#&nbsp; set(Teuchos_INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/packages/teuchos/src</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>166</th><td class="r"><ins>#&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;${CMAKE_CURRENT_BINARY_DIR}/packages/teuchos/src)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>167</th><td class="r"><ins>#&nbsp; set(Teuchos_LIBRARY_DIRS ${CMAKE_CURRENT_BINARY_DIR}/packages/teuchos/src)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>168</th><td class="r"><ins>#endif()</ins> </td>
+                  </tr><tr class="last">
+                          <th> </th><th>169</th><td class="r"><ins></ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>75</th><th>170</th><td class="l"><span># Set the export name for install targets; parent packages likely want</span> </td>
+                  </tr><tr>
+                          <th>76</th><th>171</th><td class="l"><span># to override this to the name of their target</span> </td>
+                  </tr><tr>
+                          <th>77</th><th>172</th><td class="l"><span>set(ExportTarget ${CMAKE_PROJECT_NAME}-targets CACHE STRING </span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="#L104">…</a></th>
+                  <th><a href="#L199">…</a></th>
+                  <td><em></em> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>104</th><th>199</th><td class="l"><span>endif()</span> </td>
+                  </tr><tr>
+                          <th>105</th><th>200</th><td class="l"><span>endif()</span> </td>
+                  </tr><tr>
+                          <th>106</th><th>201</th><td class="l"><span></span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="last first">
+                          <th> </th><th>202</th><td class="r"><ins>if(HAVE_CONMIN)</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>107</th><th>203</th><td class="l"><span></span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="first">
+                          <th> </th><th>204</th><td class="r"><ins>&nbsp; if ( NOT CONMIN_DIR )</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>205</th><td class="r"><ins>&nbsp; &nbsp; set( CONMIN_DIR ${CMAKE_CURRENT_BINARY_DIR}/packages/CONMIN )</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>206</th><td class="r"><ins>&nbsp; &nbsp; message( "Setting CONMIN_DIR to ${CONMIN_DIR}" )</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>207</th><td class="r"><ins>&nbsp; &nbsp; add_subdirectory(packages/CONMIN)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>208</th><td class="r"><ins></ins> </td>
+                  </tr><tr>
+                          <th> </th><th>209</th><td class="r"><ins>&nbsp; else()</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>210</th><td class="r"><ins>&nbsp; &nbsp; message( "in ${CMAKE_CURRENT_BINARY_DIR} CONMIN_DIR already set to ${CONMIN_DIR}" )</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>211</th><td class="r"><ins>&nbsp; endif()</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>212</th><td class="r"><ins></ins> </td>
+                  </tr><tr>
+                          <th> </th><th>213</th><td class="r"><ins>&nbsp; find_package( CONMIN NO_MODULE REQUIRED )</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>214</th><td class="r"><ins>endif(HAVE_CONMIN)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>215</th><td class="r"><ins></ins> </td>
+                  </tr><tr>
+                          <th> </th><th>216</th><td class="r"><ins></ins> </td>
+                  </tr><tr>
+                          <th> </th><th>217</th><td class="r"><ins>if (BUILD_SCILAB_INTERFACE)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>218</th><td class="r"><ins>&nbsp; find_package(Scilab)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>219</th><td class="r"><ins>&nbsp; if (HAVE_SCILAB)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>220</th><td class="r"><ins>&nbsp; &nbsp; ##set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH}</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>221</th><td class="r"><ins>&nbsp; &nbsp; ##&nbsp; ${CMAKE_SOURCE_DIR})</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>222</th><td class="r"><ins>&nbsp; </ins> </td>
+                  </tr><tr>
+                          <th> </th><th>223</th><td class="r"><ins>&nbsp; &nbsp; if ( SCILAB_ROOT )</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>224</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; add_definitions("-DDAKOTA_SCILAB")</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>225</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; include_directories(${SCILAB_INCLUDE})</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>226</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; </ins> </td>
+                  </tr><tr>
+                          <th> </th><th>227</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; set(LINK_OPT "-Wl,-rpath,${SCILAB_ROOT}/lib/scilab")</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>228</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; set(LINK_OPT "${LINK_OPT} -Wl,-rpath-link,${SCILAB_ROOT}/lib/scilab")</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>229</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; set(LINK_OPT "${LINK_OPT} -Wl,-rpath,${SCILAB_ROOT}/lib/thirdparty")</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>230</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; set(LINK_OPT "${LINK_OPT} -Wl,-rpath-link,${SCILAB_ROOT}/lib/thirdparty")</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>231</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; </ins> </td>
+                  </tr><tr>
+                          <th> </th><th>232</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; if (EXISTS ${SCILAB_ROOT}/thirdparty/java/lib/amd64)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>233</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; set(LINK_OPT_ARCH "amd64")</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>234</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; else (EXISTS ${SCILAB_ROOT}/thirdparty/java/lib/amd64)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>235</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; set(LINK_OPT_ARCH "i386")</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>236</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; endif (EXISTS ${SCILAB_ROOT}/thirdparty/java/lib/amd64)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>237</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; </ins> </td>
+                  </tr><tr>
+                          <th> </th><th>238</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; set(LINK_OPT "${LINK_OPT} -Wl,-rpath,${SCILAB_ROOT}/thirdparty/java/lib/${LINK_OPT_ARCH}")</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>239</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; set(LINK_OPT "${LINK_OPT} -Wl,-rpath-link,${SCILAB_ROOT}/thirdparty/java/lib/${LINK_OPT_ARCH}")</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>240</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; set(LINK_OPT "${LINK_OPT} -Wl,-rpath,${SCILAB_ROOT}/thirdparty/java/lib/${LINK_OPT_ARCH}/server")</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>241</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; set(LINK_OPT "${LINK_OPT} -Wl,-rpath-link,${SCILAB_ROOT}/thirdparty/java/lib/${LINK_OPT_ARCH}/")</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>242</th><td class="r"><ins>&nbsp; &nbsp; else ( SCILAB_ROOT )</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>243</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; message( "Scilab not found" )</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>244</th><td class="r"><ins>&nbsp; &nbsp; endif ( SCILAB_ROOT )</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>245</th><td class="r"><ins>&nbsp; endif (HAVE_SCILAB)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>246</th><td class="r"><ins>endif (BUILD_SCILAB_INTERFACE)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>247</th><td class="r"><ins></ins> </td>
+                  </tr><tr>
+                          <th> </th><th>248</th><td class="r"><ins></ins> </td>
+                  </tr><tr>
+                          <th> </th><th>249</th><td class="r"><ins>#Keep track of what libraries should be included in libdakota</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>250</th><td class="r"><ins>## WJB - ToDo: determine whether this is needed at the top-level</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>251</th><td class="r"><ins>set(SUBLIBS dakota_src)</ins> </td>
+                  </tr><tr class="last">
+                          <th> </th><th>252</th><td class="r"><ins></ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>108</th><th>253</th><td class="l"><span># Manage option for graphics (default ON if possible)</span> </td>
+                  </tr><tr>
+                          <th>109</th><th>254</th><td class="l"><span>option(HAVE_X_GRAPHICS "Build the DAKOTA/Motif Graphics package." ON)</span> </td>
+                  </tr><tr>
+                          <th>110</th><th>255</th><td class="l"><span>if (HAVE_X_GRAPHICS)</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="#L138">…</a></th>
+                  <th><a href="#L283">…</a></th>
+                  <td><em></em> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>138</th><th>283</th><td class="l"><span>add_subdirectory(packages)</span> </td>
+                  </tr><tr>
+                          <th>139</th><th>284</th><td class="l"><span>add_subdirectory(src)</span> </td>
+                  </tr><tr>
+                          <th>140</th><th>285</th><td class="l"><span></span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="first">
+                          <th> </th><th>286</th><td class="r"><ins>#add_subdirectory(examples)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>287</th><td class="r"><ins>#add_subdirectory(test)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>288</th><td class="r"><ins></ins> </td>
+                  </tr><tr>
+                          <th> </th><th>289</th><td class="r"><ins># Package-specific configuration options</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>290</th><td class="r"><ins>include_directories(${Dakota_BINARY_DIR})</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>291</th><td class="r"><ins></ins> </td>
+                  </tr><tr>
+                          <th> </th><th>292</th><td class="r"><ins>configure_file("${Dakota_SOURCE_DIR}/config/dakota_config.h.in"</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>293</th><td class="r"><ins>&nbsp; "${Dakota_BINARY_DIR}/dakota_config.h"</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>294</th><td class="r"><ins>&nbsp; @ONLY</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>295</th><td class="r"><ins>)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>296</th><td class="r"><ins></ins> </td>
+                  </tr><tr>
+                          <th> </th><th>297</th><td class="r"><ins>add_definitions("-DHAVE_CONFIG_H")</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>298</th><td class="r"><ins></ins> </td>
+                  </tr><tr>
+                          <th> </th><th>299</th><td class="r"><ins></ins> </td>
+                  </tr><tr>
+                          <th> </th><th>300</th><td class="r"><ins>file(MAKE_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/docs)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>301</th><td class="r"><ins>set(docs_files</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>302</th><td class="r"><ins>&nbsp; Ref_Interface.dox</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>303</th><td class="r"><ins>&nbsp; Ref_Method.dox</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>304</th><td class="r"><ins>&nbsp; Ref_Model.dox</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>305</th><td class="r"><ins>&nbsp; Ref_Responses.dox</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>306</th><td class="r"><ins>&nbsp; Ref_Strategy.dox</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>307</th><td class="r"><ins>&nbsp; Ref_Variables.dox</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>308</th><td class="r"><ins>)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>309</th><td class="r"><ins>foreach(doc ${docs_files})</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>310</th><td class="r"><ins>&nbsp; configure_file(</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>311</th><td class="r"><ins>&nbsp; &nbsp; ${CMAKE_CURRENT_SOURCE_DIR}/docs/${doc}</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>312</th><td class="r"><ins>&nbsp; &nbsp; ${CMAKE_CURRENT_BINARY_DIR}/docs/${doc}</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>313</th><td class="r"><ins>&nbsp; &nbsp; COPYONLY)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>314</th><td class="r"><ins>endforeach()</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>315</th><td class="r"><ins></ins> </td>
+                  </tr><tr>
+                          <th> </th><th>316</th><td class="r"><ins>#generate dakota.input.desc</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>317</th><td class="r"><ins>find_package(Perl REQUIRED)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>318</th><td class="r"><ins>ADD_CUSTOM_COMMAND(</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>319</th><td class="r"><ins>&nbsp; OUTPUT "${CMAKE_CURRENT_BINARY_DIR}/dakota.input.desc"</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>320</th><td class="r"><ins>&nbsp; COMMAND ${PERL_EXECUTABLE} generate_desc.pl</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>321</th><td class="r"><ins>&nbsp; WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>322</th><td class="r"><ins>)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>323</th><td class="r"><ins></ins> </td>
+                  </tr><tr>
+                          <th> </th><th>324</th><td class="r"><ins>#clean up binary dir</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>325</th><td class="r"><ins>#file(REMOVE_RECURSE ${CMAKE_CURRENT_BINARY_DIR}/docs)</ins> </td>
+                  </tr><tr class="last">
+                          <th> </th><th>326</th><td class="r"><ins></ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>141</th><th>327</th><td class="l"><span>option(ENABLE_DAKOTA_TESTS "Enable Dakota tests." ON)</span> </td>
+                  </tr><tr>
+                          <th>142</th><th>328</th><td class="l"><span>if(ENABLE_DAKOTA_TESTS)</span> </td>
+                  </tr><tr>
+                          <th>143</th><th>329</th><td class="l"><span>&nbsp; add_subdirectory(test)</span> </td>
+                  </tr>
+            </tbody>
+        </table>
+      </li>
+  </ul>
+</div>
+
+        </div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="last first">
+          <a rel="nofollow" href="/trac/dakota/raw-attachment/ticket/4069/dakota_scilab.patch">Original Format</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+  <div id="footer" lang="en" xml:lang="en">
+    <a id="traclogo" href="http://trac.edgewall.org/"><img src="/trac/dakota/chrome/common/trac_logo_mini.png" alt="Trac Powered" /></a>
+    <a id="snllogo" href="http://www.sandia.gov/"><img src="/trac/dakota/chrome/shared/sandia_logo.png" alt="Sandia National Laboratories" /></a>
+    <p align="center">
+      ©2010 Sandia Corporation <br />
+      <a href="http://www.sandia.gov/general/privacy-security/index.html">Privacy and Security</a> |
+        <a href="mailto:briadam@sandia.gov">Site Contact</a>
+    </p>
+  </div>
+</body>
+</html>

@@ -1,0 +1,6 @@
+#!/bin/bash
+#PBS -l nodes=3:ppn=2:compute
+#PBS -l walltime=00:05:00
+#PBS -N DAKOTA_Case4_1
+cd /home/jnc/soft/dakota-6.7.0-dev/examples/parallelism/Case4-EvaluationSubmission/workdir.1
+mpiexec -n 6 text_book_simple_par application.in application.out
