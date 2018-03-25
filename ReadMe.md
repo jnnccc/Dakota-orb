@@ -6,9 +6,7 @@
 
 #### project planning
 + project name: Dakota based framework for planetary radio science research  
-+ The aim of project is to build a general framework for planetary radio science research. Framework include many featured solvers based on Dakota(http://dakota.sandia.gov/)
-. Motive of this work is that there exist many software for radio science
-research like GeodynII, Gmat, utopia, Mont etc. Each of these software has it's own solver, data supplier and simulator and is very complex and huge.
++ The aim of project is to build a general framework for planetary radio science research. Framework include many featured solvers based on Dakota(http://dakota.sandia.gov/)and simulators provided by users. Motive of this work is that there exist many software for radio science research such as GeodynII, Gmat, utopia, Mont etc. Each of these software has it's own solver, data supplier and simulator and volum is very huge.
 Maintenance of these software is a difficult job. If there exists a general framework researcher need only compose a simulator to do their research.
 
 
@@ -33,7 +31,7 @@ Planetary radio science focuses on the use of radio signals traveling between sp
 Radio science experiments fall into two broad categories of investigation. First, for the study of planetary environments, the orbit or trajectory of the spacecraft is arranged so that the spacecraft passes behind the planetary body as seen from the tracking station on the Earth. In this case the spacecraft is said to be occulted by the planet. In the Saturn occultation experiments with Voyager 1, for example, the spacecraft, when approaching Saturn, flew behind the satellite Titan and then, about 18 h later, passed behind the ball of Saturn itself and finally, after emerging from behind Saturn, passed behind Saturn's rings (Stone and Miner, 1981). In the occulted intervals radio signals were not blocked entirely, but passed through the atmospheres of Titan and Saturn, and through the rings before being received on Earth (Figure R18). During occultation events one’ senses’ the media of interest — atmospheres or rings — by use of the radio signal as an active probe (Eshleman, 1973). The geometry and other experimental conditions must be controlled so that the only unknown factors are the properties of the medium along the radio path. Changes in the radio signals that are not associated with known factors are used to infer the properties of the unknown medium. 
 
 #### data flow and interface
-Below is a example of orbit determination flow chart
+Below is a typical flow chart for orbit determination 
 ```
    +-----------+                                                                
    |observables|                                                                
