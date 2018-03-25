@@ -1,7 +1,0 @@
-#! /bin/bash -x
-rm -rf *.o libusr*
-gcc -c -I/usr/include/python2.7/ Dakota_user.cpp
-ifort -c -fPIC mod_usrdefine.f90 
-ifort --shared -o libusrdefine.so mod_usrdefine.o libspice.so
-#ifort -nofor-main Dakota_user.o libusrdefine.so libspice.so -lpython2.7 -o c_call
-#./c_call 

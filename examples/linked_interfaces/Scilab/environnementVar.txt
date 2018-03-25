@@ -1,3 +1,0 @@
-export DAKOTA_SCILAB_STARTUP="exec rosenbrock.sci;"
-export SCI=/home/yann/Programmes/scilab-5.3.1/share/scilab
-export LD_PRELOAD/usr/lib/i386-linux-gnu/gcc/i686-linux-gnu/4.5/libstdc++.so

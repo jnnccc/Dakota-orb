@@ -1,9 +1,0 @@
-var searchData=
-[
-  ['scalar_5ftype',['scalar_type',['../classTeuchos_1_1MatrixMarket_1_1details_1_1SetScientific.html#a99dfe6067cec03b99ecdea83e74be3ae',1,'Teuchos::MatrixMarket::details::SetScientific::scalar_type()'],['../classTeuchos_1_1Polynomial.html#a3e280335b40dd454540d2eaef3e1cc22',1,'Teuchos::Polynomial::scalar_type()'],['../classTeuchos_1_1PolynomialTraits.html#a7b95229b7c1b694d4bcf0231018e4499',1,'Teuchos::PolynomialTraits::scalar_type()']]],
-  ['scalartype',['scalarType',['../classTeuchos_1_1SerialDenseMatrix.html#a8e18b6c7b6ad838303966c4a8ecde95d',1,'Teuchos::SerialDenseMatrix::scalarType()'],['../classTeuchos_1_1SerialSymDenseMatrix.html#aa84c86780b9821bdff159e213a2dd20b',1,'Teuchos::SerialSymDenseMatrix::scalarType()']]],
-  ['scoped_5flock_5ftype',['scoped_lock_type',['../classTeuchos_1_1SharedAccessPolicy.html#a88606da4f680d7226529ff0171b54f1e',1,'Teuchos::SharedAccessPolicy']]],
-  ['size_5ftype',['size_type',['../classTeuchos_1_1Array.html#a52c4e4993406f849188b4fff3939b79d',1,'Teuchos::Array::size_type()'],['../classTeuchos_1_1ArrayRCP.html#a153bfb3201f8f3939014dbd92924f098',1,'Teuchos::ArrayRCP::size_type()'],['../classTeuchos_1_1ArrayRCP_3_01void_01_4.html#a4b607892a5450d2680fb074dd67c64ec',1,'Teuchos::ArrayRCP&lt; void &gt;::size_type()'],['../classTeuchos_1_1ArrayRCP_3_01const_01void_01_4.html#ad39010347dd42dd69cfba42562b94764',1,'Teuchos::ArrayRCP&lt; const void &gt;::size_type()'],['../classTeuchos_1_1ArrayView.html#af7439f60acba75e7ae3301dee4187470',1,'Teuchos::ArrayView::size_type()'],['../classTeuchos_1_1TwoDArray.html#aea537b6274230fa8e2ebfa2719d23eb5',1,'Teuchos::TwoDArray::size_type()']]],
-  ['stat_5fmap_5ftype',['stat_map_type',['../namespaceTeuchos.html#a6b9d5ac516b67471bf9ab8da897e803a',1,'Teuchos']]],
-  ['streambuf_5ft',['streambuf_t',['../classTeuchos_1_1basic__FancyOStream.html#aaa823aac5e31050c568e8655ed1ca5d3',1,'Teuchos::basic_FancyOStream']]]
-];

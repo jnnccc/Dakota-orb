@@ -1,1 +1,0 @@
-./configure --with-cppunit-prefix=/home/userid/cppunit
